@@ -1,0 +1,103 @@
+{
+  "workbook_num": 4,
+  "no_anchors_found": false,
+  "chapter_intro_page": 2,
+  "sections": [
+    {
+      "id": "sec1",
+      "title": "Cover & Table of Contents",
+      "session": null,
+      "breakout": null,
+      "start_page": 1,
+      "end_page": 2
+    },
+    {
+      "id": "sec2",
+      "title": "Session #1: Crafting Secret #2 - Breaking the Chains of Internal False Belief",
+      "session": "1",
+      "breakout": null,
+      "start_page": 3,
+      "end_page": 6
+    },
+    {
+      "id": "sec3",
+      "title": "Session #1 Workshop: Building Your Slides - Identify & Break Internal False Beliefs",
+      "session": "1",
+      "breakout": null,
+      "start_page": 7,
+      "end_page": 9
+    },
+    {
+      "id": "sec4",
+      "title": "Session #2: Crafting Secret #3 - Breaking the Chains of External False Belief",
+      "session": "2",
+      "breakout": null,
+      "start_page": 10,
+      "end_page": 13
+    },
+    {
+      "id": "sec5",
+      "title": "Session #2 Workshop: Building Your Slides - External False Beliefs",
+      "session": "2",
+      "breakout": null,
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "id": "sec6",
+      "title": "Session #2: Breakout Session",
+      "session": "2",
+      "breakout": "Session #2 Breakout",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "id": "sec7",
+      "title": "Session #3: Making The Transition - Asking Permission to Reveal Your Offer",
+      "session": "3",
+      "breakout": null,
+      "start_page": 16,
+      "end_page": 19
+    },
+    {
+      "id": "sec8",
+      "title": "Session #3 Workshop: Building Your Slides - The Transition",
+      "session": "3",
+      "breakout": null,
+      "start_page": 20,
+      "end_page": 20
+    },
+    {
+      "id": "sec9",
+      "title": "Session #4: Preparing Your Stack Slides",
+      "session": "4",
+      "breakout": null,
+      "start_page": 21,
+      "end_page": 22
+    },
+    {
+      "id": "sec10",
+      "title": "Session #4 Workshop: Build Your Slides - Stack Slides",
+      "session": "4",
+      "breakout": null,
+      "start_page": 23,
+      "end_page": 24
+    },
+    {
+      "id": "sec11",
+      "title": "Session #4: Breakout Session",
+      "session": "4",
+      "breakout": "Session #4 Breakout",
+      "start_page": 25,
+      "end_page": 25
+    },
+    {
+      "id": "sec12",
+      "title": "Next Week: What We'll Cover & Prework for Module #5",
+      "session": null,
+      "breakout": null,
+      "start_page": 26,
+      "end_page": 27
+    }
+  ]
+}

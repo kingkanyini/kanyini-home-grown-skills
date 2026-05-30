@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kanyini.dev/schemas/marketplace.schema.json",
+  "title": "Kanyini Home-Grown Skills — Marketplace Manifest",
+  "description": "Top-level .claude-plugin/marketplace.json contract. See PLAN-v3.md §4.5 + §5.2 (Release Train).",
+  "type": "object",
+  "required": ["name", "version", "plugins"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "Marketplace identifier. kebab-case."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Marketplace meta-version. Bumped on breaking marketplace.json shape changes, not skill releases."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "owner": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "Marketplace owner. EMAIL FIELD INTENTIONALLY OMITTED.",
+      "properties": {
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "plugins": {
+      "type": "object",
+      "description": "Per-plugin release-train metadata. Key = skill name (must match plugins/<key>/.claude-plugin/plugin.json name).",
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["latest"],
+        "additionalProperties": false,
+        "properties": {
+          "latest": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Exact semver pinning the currently-recommended release. Resolver installs this version."
+          },
+          "yanked": {
+            "type": "array",
+            "default": [],
+            "items": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+$"
+            },
+            "description": "Versions marked as bad. Resolver REFUSES to install. Already-installed copies show warning on next /plugin update."
+          },
+          "deprecated": {
+            "type": "boolean",
+            "default": false,
+            "description": "When true, resolver warns at install with replacedBy suggestion (per the plugin's own plugin.json.replacedBy)."
+          }
+        }
+      }
+    }
+  }
+}

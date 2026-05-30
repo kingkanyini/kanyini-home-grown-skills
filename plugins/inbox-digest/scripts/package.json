@@ -1,0 +1,19 @@
+{
+  "name": "inbox-digest-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone Node CLI replacement for the inbox-digest skill. Used by Task Scheduler cron when claude -p slash dispatch isn't viable.",
+  "main": "digest.js",
+  "type": "module",
+  "scripts": {
+    "start": "node digest.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.32.1",
+    "googleapis": "144.0.0",
+    "gray-matter": "4.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

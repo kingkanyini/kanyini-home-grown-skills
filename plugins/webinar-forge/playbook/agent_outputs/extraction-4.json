@@ -1,0 +1,786 @@
+{
+  "workbook_num": 4,
+  "workbook_title": "FOUNTAINHEAD Workbook Module 4: Internal & External False Beliefs",
+  "sections": {
+    "sec1": {
+      "questions": [],
+      "concepts": [
+        {
+          "name": "Module 4 Scope",
+          "definition": "Module 4 of the FOUNTAINHEAD Perfect Webinar workbook focuses on Internal & External False Beliefs. It walks participants through Secret #2 (breaking internal false beliefs), Secret #3 (breaking external false beliefs), Making the Transition (asking permission to reveal the offer), and Preparing the Stack Slides."
+        },
+        {
+          "name": "Module 4 Agenda",
+          "definition": "Session #1: Crafting Secret #2 (Overview of Perfect Webinar, Addressing Internal False Belief, Demonstrating the Framework, Workshop). Session #2: Crafting Secret #3 (Identifying External False Beliefs, Telling the New External-Belief Story, Showing the Framework to Support the New Belief, Workshop, Breakout). Session #3: Making the Transition (Asking Permission to Reveal Your Offer, Workshop). Session #4: Preparing Your Stack Slides (Workshop, Breakout). Next Week: What We'll Cover + Prework for Module #5."
+        }
+      ],
+      "exercises": [],
+      "teaching_slides": [
+        {
+          "page": 1,
+          "image_path": "workbook-4-images/page-001.png",
+          "caption": "FOUNTAINHEAD Workbook cover \u00e2\u20ac\u201d Module 4: Internal & External False Beliefs."
+        },
+        {
+          "page": 2,
+          "image_path": "workbook-4-images/page-002.png",
+          "caption": "Table of Contents \u00e2\u20ac\u201d Sessions #1 through #4 plus Next Week prework roadmap."
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "fewer-than-3-questions (cover/TOC section, no questions expected)"
+      ]
+    },
+    "sec2": {
+      "questions": [
+        {
+          "prompt": "How did it lay the foundation for your audience to believe in your framework?",
+          "context": "Reflect on the first hour of your Perfect Webinar presentation \u00e2\u20ac\u201d the critical setup before Secrets #2 and #3."
+        },
+        {
+          "prompt": "How will Secrets two and three build upon this?",
+          "context": "Consider how the Internal and External False Belief sections connect back to the Origin Story and Big Domino from Module 3."
+        },
+        {
+          "prompt": "What is the most common internal false belief your audience might have?",
+          "context": "Your task: identify the one dominant internal doubt that blocks your audience from believing they can personally succeed with your framework."
+        },
+        {
+          "prompt": "How do you complete the sentence: 'I believe in your framework, but I don't think I can succeed because of [insert personal doubt]'?",
+          "context": "This diagnostic sentence surfaces the internal doubt you must address head-on in Secret #2."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "The Critical First Hour",
+          "definition": "The first hour of your presentation is crucial \u00e2\u20ac\u201d it sets the stage, builds rapport, and prepares your framework. Session #1 guides you through enhancing your content by crafting Secret #2 and Secret #3, which tackle internal and external false beliefs."
+        },
+        {
+          "name": "Perfect Webinar Framework Structure",
+          "definition": "A whiteboard map: (1) Map Origin Story & New Opportunity \u00e2\u2020\u2019 (2) Big Domino: The ONE Thing \u00e2\u2020\u2019 (3) Secret #1 Vehicle, Secret #2 Internal Belief, Secret #3 External Belief \u00e2\u2020\u2019 (4) Break and Rebuild Their Belief Patterns \u00e2\u2020\u2019 (5) Let Me Ask You a Question (Stack/Close). The entire arc is designed to convince the audience your framework is the best way to achieve their desired result (via the Big Domino) and knock down every key secret, story, and framework so they have no other logical or emotional option but to purchase."
+        },
+        {
+          "name": "Internal False Belief (Secret #2)",
+          "definition": "Internal false beliefs are the doubts your audience has about their own ability to succeed with your framework. Secret #2 is designed to address and overcome these doubts. You discover the internal false belief by finishing the statement: 'I believe in your framework, but I don't think I can succeed because of [insert personal doubt].'"
+        },
+        {
+          "name": "Demonstrating the Framework",
+          "definition": "Your audience needs to see a clear, actionable path that proves they can achieve success with your framework. This is where you introduce a framework or case study that directly addresses their internal doubts. Most often done via a Demo or Case Study \u00e2\u20ac\u201d show a real-world example of someone like them who has succeeded using your framework."
+        },
+        {
+          "name": "The 45-Minute Mark",
+          "definition": "The workbook flags roughly 45 minutes into the presentation as the target window for addressing the internal false belief \u00e2\u20ac\u201d after rapport is built but before pitching the stack."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Have your slide deck open and ready.",
+          "type": "prep"
+        },
+        {
+          "prompt": "Reflect on the first secret you've crafted (Secret #1 vehicle). How did it lay the foundation for your audience to believe in your framework? How will Secrets two and three build upon this?",
+          "type": "reflection"
+        },
+        {
+          "prompt": "Identify the most common internal false belief your audience might have.",
+          "type": "identification"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 3,
+          "image_path": "workbook-4-images/page-003.png",
+          "caption": "Session #1 divider: Breaking the Chains of Internal False Belief."
+        },
+        {
+          "page": 4,
+          "image_path": "workbook-4-images/page-004.png",
+          "caption": "Overview of the Perfect Webinar Framework \u00e2\u20ac\u201d full whiteboard map (Origin Story \u00e2\u2020\u2019 Big Domino \u00e2\u2020\u2019 3 Secrets \u00e2\u2020\u2019 Break/Rebuild \u00e2\u2020\u2019 Let Me Ask You a Question)."
+        },
+        {
+          "page": 5,
+          "image_path": "workbook-4-images/page-005.png",
+          "caption": "Addressing the Internal False Belief \u00e2\u20ac\u201d Perfect Webinar map with Secret #2 circled and the 45-minute clock marker."
+        },
+        {
+          "page": 6,
+          "image_path": "workbook-4-images/page-006.png",
+          "caption": "Demonstrating the Framework \u00e2\u20ac\u201d screenshot of a ClickFunnels demo video in action."
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 5,
+          "image_path": "workbook-4-images/page-005.png",
+          "what_illustrates": "Network Marketing example \u00e2\u20ac\u201d Common False Belief: 'I'm not technical enough to succeed with this.' Demonstrates the diagnostic sentence-completion method applied to a real niche."
+        },
+        {
+          "page": 6,
+          "image_path": "workbook-4-images/page-006.png",
+          "what_illustrates": "ClickFunnels demo example \u00e2\u20ac\u201d showing how a non-technical person can create a successful funnel using ClickFunnels in less than 10 minutes. Illustrates demo-as-proof for collapsing internal doubt."
+        }
+      ],
+      "flags": []
+    },
+    "sec3": {
+      "questions": [
+        {
+          "prompt": "What is the primary internal doubt your audience might have? Write it down.",
+          "context": "The foundational workshop prompt \u00e2\u20ac\u201d name the single biggest self-limiting belief your audience carries into your offer."
+        },
+        {
+          "prompt": "Draft the story that counters this belief. How did someone with similar doubts overcome them using your framework?",
+          "context": "This is the belief-shift story \u00e2\u20ac\u201d demonstrate transformation through a real person who matched your avatar's doubt profile."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Slide Build Sequence for Secret #2",
+          "definition": "Follows five beats: (1) Identify the primary internal doubt, (2) Draft a counter-story, (3) Outline a step-by-step framework your audience can follow, (4) Demo the framework in action (or provide a detailed case study), (5) Incorporate testimonials/success stories."
+        },
+        {
+          "name": "Slides 34-42 Integration",
+          "definition": "After content is drafted, update slides 34-42 of the provided template to carry Secret #2. Each slide must clearly convey the framework, story, and proof. Rehearse the transition from one secret to the next so each builds upon the previous."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Write down the primary internal doubt your audience might have.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Draft the counter-story demonstrating how someone with similar doubts overcame them using your framework.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Outline a step-by-step framework your audience can follow to overcome their internal doubts.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "If possible, create a demo of your framework in action. Walk your audience through each step, simplifying the process and making it accessible.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "If a demo isn't feasible, provide a detailed case study. Highlight someone from your audience demographic who succeeded using your framework.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Incorporate testimonials or success stories from others who have used your framework successfully.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Using the structure provided, update your slides (using slides 34-42 of template provided) for Secret Two. Ensure each slide clearly conveys the framework, story, and proof.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Rehearse your presentation, focusing on how you transition from one secret to the next. Ensure that each secret builds upon the previous one, reinforcing the overall message.",
+          "type": "rehearsal"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 7,
+          "image_path": "workbook-4-images/page-007.png",
+          "caption": "Workshop header + fill-in prompts for identifying internal doubt and drafting the counter-story."
+        },
+        {
+          "page": 8,
+          "image_path": "workbook-4-images/page-008.png",
+          "caption": "Workshop continuation \u00e2\u20ac\u201d framework outline, demo, and case-study fill-in boxes."
+        },
+        {
+          "page": 9,
+          "image_path": "workbook-4-images/page-009.png",
+          "caption": "Final workshop page \u00e2\u20ac\u201d testimonials prompt plus a 4-slide thumbnail strip showing Secret #2 slide progression (Funnel Cloning / Strategy Meet / True Proof example)."
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 9,
+          "image_path": "workbook-4-images/page-009.png",
+          "what_illustrates": "4-slide thumbnail example strip showing how a finished Secret #2 sequence looks \u00e2\u20ac\u201d Funnel Cloning slide, Strategy Meet slide, True Proof/testimonial slide. Illustrates the target visual output for this workshop."
+        }
+      ],
+      "flags": [
+        "fewer-than-3-questions (workshop section \u00e2\u20ac\u201d 2 primary questions, other prompts captured as exercises)"
+      ]
+    },
+    "sec4": {
+      "questions": [
+        {
+          "prompt": "What is the external false belief your audience holds?",
+          "context": "Think about the external circumstances or challenges your audience blames for their lack of success \u00e2\u20ac\u201d the perceived obstacle outside their control."
+        },
+        {
+          "prompt": "What are the specific excuses they make because of this belief?",
+          "context": "Surface the concrete behaviors and reasons your audience cites for not taking action."
+        },
+        {
+          "prompt": "What story can you tell to reinforce the new belief?",
+          "context": "Share a personal story or case study that illustrates how you or someone else overcame the same external false belief \u00e2\u20ac\u201d the story should make the new belief feel achievable."
+        },
+        {
+          "prompt": "What is the framework that will guide them from the false belief to the new belief?",
+          "context": "Break down the steps they need to take to replace their old belief with the new one. Simple, actionable, directly addressing the external false belief."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "External False Belief (Secret #3)",
+          "definition": "External false beliefs are the doubts about external circumstances or challenges your audience blames for their lack of success. They are perceived obstacles that feel outside their control. Your goal in Secret #3 is to replace their false belief with a new empowering one. This new belief should open the door to success by showing them the obstacle is surmountable."
+        },
+        {
+          "name": "The 60-Minute Mark",
+          "definition": "Session #2 places Secret #3 roughly 60 minutes into the presentation \u00e2\u20ac\u201d the second belief-break beat after Secret #2 lands."
+        },
+        {
+          "name": "You Just Got Slapped... By Google",
+          "definition": "A visual framing for the external-belief story: the audience has been 'slapped' by some outside force (Google algorithm, platform change, market shift). The new-belief story proves someone navigated that exact slap and came out ahead."
+        },
+        {
+          "name": "External Belief Framework Template (Traffic Example)",
+          "definition": "A four-step framework that replaces the external false belief 'I can't drive traffic to my website': (1) Identify Your Competitors \u00e2\u20ac\u201d find out who your competitors are, (2) Analyze Their Traffic Sources \u00e2\u20ac\u201d use tools to see where your competitors are getting their traffic, (3) Target the Same Sites \u00e2\u20ac\u201d buy ads on the same websites where your competitors are advertising, (4) Drive Traffic to Your Funnel \u00e2\u20ac\u201d direct the traffic from these ads to your own funnel."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Identify the external false belief your audience holds.",
+          "type": "identification"
+        },
+        {
+          "prompt": "Write out the specific excuses your audience makes because of this belief.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Share a personal story or case study that illustrates how you or someone else overcame the same external false belief.",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Break down the steps your audience needs to take to replace their old belief with the new one.",
+          "type": "framework-build"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 10,
+          "image_path": "workbook-4-images/page-010.png",
+          "caption": "Session #2 divider: Breaking the Chains of External False Belief."
+        },
+        {
+          "page": 11,
+          "image_path": "workbook-4-images/page-011.png",
+          "caption": "Identifying & Addressing External False Beliefs \u00e2\u20ac\u201d Perfect Webinar map with Secret #3 circled and 60-minute clock marker."
+        },
+        {
+          "page": 12,
+          "image_path": "workbook-4-images/page-012.png",
+          "caption": "Telling the New External-Belief Story \u00e2\u20ac\u201d 'You Just Got Slapped... By Google' visual with animal avatars."
+        },
+        {
+          "page": 13,
+          "image_path": "workbook-4-images/page-013.png",
+          "caption": "Showing the Framework to Support the New Belief \u00e2\u20ac\u201d 4-slide strip demonstrating the competitor-traffic framework in action."
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 11,
+          "image_path": "workbook-4-images/page-011.png",
+          "what_illustrates": "Online Marketing example \u00e2\u20ac\u201d False Belief: 'I can't drive traffic to my website because I don't know where to find my audience.' Behavior: 'They avoid creating content or running ads because they believe it will be a waste of time and money without knowing how to attract the right audience.' New Belief: 'You can easily drive traffic by targeting the same sites where your competitors are already advertising.' Illustrates the false-belief / behavior / new-belief reframe pattern."
+        },
+        {
+          "page": 12,
+          "image_path": "workbook-4-images/page-012.png",
+          "what_illustrates": "Traffic Hack origin story example: 'When I first started, I struggled to get traffic because I had no idea where to find my audience. I tried various methods that didn't work until I discovered that my competitors were getting their traffic from a few key sites. I started advertising on those sites, and almost overnight, I saw a significant increase in traffic to my funnel. It was simpler than I ever imagined, and it completely changed my business.' Illustrates a complete new-external-belief story arc."
+        },
+        {
+          "page": 13,
+          "image_path": "workbook-4-images/page-013.png",
+          "what_illustrates": "Traffic-sourcing framework example \u00e2\u20ac\u201d 4 concrete steps visualized as a slide sequence, showing how to translate the new belief into an actionable system the audience can run themselves."
+        }
+      ],
+      "flags": []
+    },
+    "sec5": {
+      "questions": [
+        {
+          "prompt": "What is the external false belief your audience holds?",
+          "context": "Fill-in-the-template prompt #1."
+        },
+        {
+          "prompt": "What is the framework you will use to address this belief?",
+          "context": "Fill-in-the-template prompt #2."
+        },
+        {
+          "prompt": "What compelling story supports the new belief?",
+          "context": "Fill-in-the-template prompt #3."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Why This Workshop Matters",
+          "definition": "By systematically identifying and dismantling external false beliefs, you remove the last obstacle standing between your audience and their decision to purchase. This process not only builds confidence but also positions your product or service as the clear solution to their problem."
+        },
+        {
+          "name": "Slides 43-50 Integration",
+          "definition": "The workshop uses slides 43-50 of the provided template for Secret #3. Each slide is mapped to a specific workshop beat: belief identification, framework, story, and social proof."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Fill in the Template: Identify the external false belief your audience holds.",
+          "type": "template-fill"
+        },
+        {
+          "prompt": "Fill in the Template: Outline the framework you will use to address this process.",
+          "type": "template-fill"
+        },
+        {
+          "prompt": "Fill in the Template: Craft a compelling story that supports the new belief.",
+          "type": "template-fill"
+        },
+        {
+          "prompt": "Fill in the Template: Gather social proof to reinforce the framework.",
+          "type": "template-fill"
+        },
+        {
+          "prompt": "Apply the Framework: Use the completed workbook to structure your presentation or sales pitch.",
+          "type": "application"
+        },
+        {
+          "prompt": "Apply the Framework: Ensure each step flows logically, leading your audience from doubt to confidence.",
+          "type": "application"
+        },
+        {
+          "prompt": "Apply the Framework: Show a case study of a client who used the same traffic strategy to boost their sales and grow their business.",
+          "type": "application"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 14,
+          "image_path": "workbook-4-images/page-014.png",
+          "caption": "Workshop checklist for Secret #3 \u00e2\u20ac\u201d Fill-in-the-Template and Apply-the-Framework checkboxes, plus a 4-slide thumbnail strip showing the finished Secret #3 sequence."
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 14,
+          "image_path": "workbook-4-images/page-014.png",
+          "what_illustrates": "4-slide completed Secret #3 thumbnail strip \u00e2\u20ac\u201d shows the target visual output combining belief-identification, framework, story, and proof."
+        }
+      ],
+      "flags": []
+    },
+    "sec6": {
+      "questions": [
+        {
+          "prompt": "Which parts of your Secret #2 and Secret #3 slides need the most help from your breakout peers?",
+          "context": "Focus the feedback request \u00e2\u20ac\u201d you don't have time to share everything, so prioritize what you most need fresh eyes on."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Breakout Protocol",
+          "definition": "Quickly show your work on Secret #2 and Secret #3. Provide valuable, supportive feedback to others by sharing your screen. You don't have time to share all of the slides, so run through the basics very quickly to rehearse the basics."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Share your screen and run through the basics of your Secret #2 and Secret #3 slides.",
+          "type": "rehearsal"
+        },
+        {
+          "prompt": "Provide supportive, valuable feedback to each peer who shares.",
+          "type": "peer-review"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 15,
+          "image_path": "workbook-4-images/page-015.png",
+          "caption": "Session #2 Breakout divider + notes area for capturing peer feedback on Secrets #2 and #3."
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "fewer-than-3-questions (breakout session \u00e2\u20ac\u201d peer review, fewer questions expected)"
+      ]
+    },
+    "sec7": {
+      "questions": [
+        {
+          "prompt": "Today, I taught you three powerful strategies: [List strategies]. Do you feel they are valuable?",
+          "context": "Step 1 Acknowledge the Value Provided \u00e2\u20ac\u201d recap the key points you've taught and reinforce the value received."
+        },
+        {
+          "prompt": "How many of you would be interested in learning how I can help you implement these strategies in your business?",
+          "context": "Step 2 Ask for Permission \u00e2\u20ac\u201d directly ask if they are open to hearing about how they can take what they've learned further with your help."
+        },
+        {
+          "prompt": "If it's okay with you, I'd like to take 10-15 minutes to walk you through a special offer that can help you implement everything we've discussed. Is that okay?",
+          "context": "Step 3 Introduce the Offer \u00e2\u20ac\u201d introduce the offer as a natural extension of the value already provided."
+        },
+        {
+          "prompt": "Do you think if you implemented these strategies, you could achieve success?",
+          "context": "Step 5 Engage the Audience \u00e2\u20ac\u201d ask if they believe they could implement what they've learned."
+        },
+        {
+          "prompt": "Would it be okay if I spent a few minutes showing you a way to make this easier? Would you be open to me spending 10-15 minutes walking you through a special offer to help you implement this in your business?",
+          "context": "Step 7 Ask for Permission \u00e2\u20ac\u201d the formal permission-request that gates the stack reveal."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "The Transition (Joe Bauer Method)",
+          "definition": "A powerful technique, first introduced by Joe Bauer, that helps eliminate the awkwardness and makes the transition from teaching to selling feel natural and respectful. It is built on asking the audience for permission to reveal the offer, so they never feel ambushed."
+        },
+        {
+          "name": "The 8-Step Transition Sequence",
+          "definition": "(1) Acknowledge the Value Provided \u00e2\u20ac\u201d recap key points and reinforce value. (2) Ask for Permission \u00e2\u20ac\u201d ask if they're open to hearing how they can take this further with your help. (3) Introduce the Offer \u00e2\u20ac\u201d introduce the offer as a natural extension of the value. (4) Recap What You've Taught \u00e2\u20ac\u201d 'We've covered [list].' (5) Engage the Audience \u00e2\u20ac\u201d ask if they believe they could implement what they've learned. (6) Acknowledge Potential Overwhelm \u00e2\u20ac\u201d recognize that implementing everything might feel overwhelming. (7) Ask for Permission \u00e2\u20ac\u201d 'Would it be okay if I spent a few minutes showing you a way to make this easier?' (8) Pause for Response \u00e2\u20ac\u201d wait for the audience to respond; this pause builds anticipation and respect for their input."
+        },
+        {
+          "name": "Why Permission Matters",
+          "definition": "When you're delivering a presentation, the shift from teaching valuable content to offering a product or service can feel awkward. This session guides you on how to make this transition smoothly, ensuring your audience feels comfortable and receptive rather than caught off guard."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Write out your version of the Recap Slide bullets using Step 4 language: 'We've covered [key points or strategies].'",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Draft the Engagement question (Step 5) in your voice \u00e2\u20ac\u201d 'Do you think if you implemented these, you could achieve success?'",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Draft the Overwhelm Acknowledgment (Step 6) \u00e2\u20ac\u201d 'I understand that this might seem like a lot to take in all at once.'",
+          "type": "fill-in"
+        },
+        {
+          "prompt": "Draft the formal Permission Ask (Step 7) in your voice.",
+          "type": "fill-in"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 16,
+          "image_path": "workbook-4-images/page-016.png",
+          "caption": "Session #3 divider: Making The Transition."
+        },
+        {
+          "page": 17,
+          "image_path": "workbook-4-images/page-017.png",
+          "caption": "Asking Permission to Reveal Your Offer \u00e2\u20ac\u201d Steps 1-3 with example language for each."
+        },
+        {
+          "page": 18,
+          "image_path": "workbook-4-images/page-018.png",
+          "caption": "Transition Steps 4-8 \u00e2\u20ac\u201d Recap, Engage, Acknowledge Overwhelm, Ask for Permission, Pause."
+        },
+        {
+          "page": 19,
+          "image_path": "workbook-4-images/page-019.png",
+          "caption": "Build Your Slides Workshop \u00e2\u20ac\u201d Slides 52-55 structure: Recap Slide, 'If I Modeled What Works' Slide, Engagement Slide, Offer Introduction/Permission Slide."
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 17,
+          "image_path": "workbook-4-images/page-017.png",
+          "what_illustrates": "Joe Bauer-style transition example \u00e2\u20ac\u201d recap uses the concrete string 'Funnel Hacking, Funnel Cloning, and my Traffic Hack' to show how specific phrasing anchors the value recap."
+        },
+        {
+          "page": 19,
+          "image_path": "workbook-4-images/page-019.png",
+          "what_illustrates": "4-slide transition template example: Recap Slide \u00e2\u2020\u2019 'If I Modeled What Works' Slide \u00e2\u2020\u2019 Engagement Slide ('Let Me Ask You A Question...') \u00e2\u2020\u2019 Offer Introduction/Permission Slide. Illustrates the visual pacing of the permission arc."
+        }
+      ],
+      "flags": []
+    },
+    "sec8": {
+      "questions": [
+        {
+          "prompt": "What are the key points you will recap on your Recap Slide?",
+          "context": "Slide 52-55 structure \u00e2\u20ac\u201d summarize the key points you've taught (example: 'Funnel Hacking, Funnel Cloning, Traffic Hack')."
+        },
+        {
+          "prompt": "What image or statement will you use on your Engagement Slide to resonate with potential overwhelm?",
+          "context": "Use an image or statement that resonates \u00e2\u20ac\u201d example: 'A picture of a person looking overwhelmed, with a caption like Feeling a bit overwhelmed?'"
+        },
+        {
+          "prompt": "How will you phrase your Offer Introduction / Permission Slide?",
+          "context": "A slide that introduces the idea of your offer as a solution \u00e2\u20ac\u201d example: 'Here's how I can help you take the next step.'"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Transition Slide Architecture (Slides 52-55)",
+          "definition": "Four-slide sequence that carries the Joe Bauer transition: (1) Recap Slide \u00e2\u20ac\u201d summarizes the key points you've taught, (2) 'If I Modeled What Works' Slide \u00e2\u20ac\u201d convinces them they can get to the same results as with your frameworks ('If I modeled what works, would you feel confident that you can have the same result?'), (3) Engagement Slide (Let Me Ask You a Question...) \u00e2\u20ac\u201d image or statement that resonates with their potential overwhelm, (4) Offer Introduction/Permission Slide \u00e2\u20ac\u201d introduces the idea of your offer as a solution."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Build your Recap Slide \u00e2\u20ac\u201d summarize the key points you've taught.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Build your 'If I Modeled What Works' Slide \u00e2\u20ac\u201d convince them they can get the same results using your framework.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Build your Engagement Slide \u00e2\u20ac\u201d use an image or statement that resonates with their potential overwhelm.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Build your Offer Introduction / Permission Slide \u00e2\u20ac\u201d introduce the idea of your offer as a solution.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Share your transition during the breakout session and how you'll share it. If you don't have any slides designed yet, a quick summary of the bullet-points for each step will work.",
+          "type": "rehearsal"
+        },
+        {
+          "prompt": "Get feedback and make adjustments as needed.",
+          "type": "revision"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 20,
+          "image_path": "workbook-4-images/page-020.png",
+          "caption": "Session #3 Breakout page \u00e2\u20ac\u201d prompts for sharing the transition work and gathering peer feedback. Note: section label in sections-4.json is 'Workshop' but page header displays 'Breakout Session' \u00e2\u20ac\u201d the page functions as both the transition rehearsal and breakout prompt."
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "page-label-mismatch (sections-4.json titles this 'Session #3 Workshop' but page 20 itself is labeled 'Session #3 Breakout Session')"
+      ]
+    },
+    "sec9": {
+      "questions": [
+        {
+          "prompt": "What is the core product in your stack, and what is its dollar value?",
+          "context": "The First Stack Slide contains only the first bullet point and its value \u00e2\u20ac\u201d this anchors the build."
+        },
+        {
+          "prompt": "What are the 2nd, 3rd, 4th, and 5th components of your offer, and what are their individual values?",
+          "context": "Each subsequent stack slide adds the next component in sequence, with an updated total value."
+        },
+        {
+          "prompt": "What is the final total value of your complete offer?",
+          "context": "The Final Stack Slide reflects the entire offer with all components and the final total value."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "The Stack Slide Purpose",
+          "definition": "Stack slides are essential for building up to your final offer in a persuasive, structured way. By the end of this session, you will have all the stack slides ready, setting the stage for the next module where we dive into the stack and the close."
+        },
+        {
+          "name": "The Full Stack Slide",
+          "definition": "The master template \u00e2\u20ac\u201d 'What You're Gonna Get...' \u00e2\u20ac\u201d listing every product in the stack (Core Product In The Stack, 2nd through 5th Product In The Stack) each with its own dollar value, and a Total Value at the bottom. This is the base slide from which every intermediate stack slide is derived."
+        },
+        {
+          "name": "Progressive Stack Build",
+          "definition": "The stack is revealed one layer at a time. Save a copy of the full stack slide, then create progressively revealing versions: First Stack Slide (only the core product), Second Stack Slide (core + 2nd), and so on through the Final Stack Slide which restores all components."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Save the Full Stack Slide \u00e2\u20ac\u201d start by saving a copy of the full stack slide, which includes all components and the total value.",
+          "type": "prep"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 21,
+          "image_path": "workbook-4-images/page-021.png",
+          "caption": "Session #4 divider: Preparing Your Stack Slides."
+        },
+        {
+          "page": 22,
+          "image_path": "workbook-4-images/page-022.png",
+          "caption": "Build Your Slides Workshop intro \u00e2\u20ac\u201d Save the Full Stack Slide prompt + example 'What You're Gonna Get' full stack template showing 5 products with $?,??? values and Total Value: $???"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 22,
+          "image_path": "workbook-4-images/page-022.png",
+          "what_illustrates": "The Full Stack Slide template \u00e2\u20ac\u201d illustrates the master layout (bulleted product list, right-aligned dollar values, bold red 'Total Value: $???') that every progressive stack slide will be derived from."
+        }
+      ],
+      "flags": []
+    },
+    "sec10": {
+      "questions": [
+        {
+          "prompt": "What bullet point remains on your First Stack Slide, and does the total value correctly reflect only that first component?",
+          "context": "Calculation Required \u00e2\u20ac\u201d ensure the total value reflects only the first component, not the full stack yet."
+        },
+        {
+          "prompt": "What are the first two components on your Second Stack Slide, and does the total value correctly sum both?",
+          "context": "Keep the first and second bullet points; update the total value to include the sum of both components."
+        },
+        {
+          "prompt": "Does each subsequent stack slide add exactly one new component and update the total value accordingly?",
+          "context": "Repeat the process \u00e2\u20ac\u201d each new slide should include the next component in the sequence with an updated total value."
+        },
+        {
+          "prompt": "Does your Final Stack Slide reflect the entire offer with all components and the final total value?",
+          "context": "The last slide should match the Full Stack Slide you saved at the start of Session #4."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "First Stack Slide Build",
+          "definition": "Delete everything except for the first bullet point and its value. Calculation Required: ensure the total value reflects only the first component."
+        },
+        {
+          "name": "Second Stack Slide Build",
+          "definition": "Save another copy of the full stack slide. Keep the first and second bullet points. Update the total value to include the sum of both components."
+        },
+        {
+          "name": "Repeat the Process",
+          "definition": "Continue this process for each additional component of your offer. Each slide should include the next component in the sequence, with an updated total value."
+        },
+        {
+          "name": "Final Stack Slide",
+          "definition": "The last slide should reflect the entire offer with all components and the final total value \u00e2\u20ac\u201d effectively restoring the Full Stack Slide template as the climactic reveal."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Create the First Stack Slide \u00e2\u20ac\u201d delete everything except for the first bullet point and its value; verify total value matches only the first component.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Create the Second Stack Slide \u00e2\u20ac\u201d save another copy of the full stack slide, keep the first and second bullet points, update the total value to include both.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Repeat the Process \u00e2\u20ac\u201d continue for each additional component of your offer, with each slide including the next component in sequence and an updated total value.",
+          "type": "slide-build"
+        },
+        {
+          "prompt": "Create the Final Stack Slide \u00e2\u20ac\u201d ensure it reflects the entire offer with all components and the final total value.",
+          "type": "slide-build"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 23,
+          "image_path": "workbook-4-images/page-023.png",
+          "caption": "Create the First Stack Slide + Create the Second Stack Slide \u00e2\u20ac\u201d shows the First Stack Slide template (Core Product only) and Second Stack Slide template (Core + 2nd Product) with calculation instructions."
+        },
+        {
+          "page": 24,
+          "image_path": "workbook-4-images/page-024.png",
+          "caption": "Repeat the Process + Final Stack Slide \u00e2\u20ac\u201d shows the Third Stack Slide template (3 products) and the Final Stack Slide template (all 5 products restored)."
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 23,
+          "image_path": "workbook-4-images/page-023.png",
+          "what_illustrates": "First and Second Stack Slide templates \u00e2\u20ac\u201d illustrates the progressive reveal pattern (single bullet then two bullets) and the 'Total Value: $???' recalculation at each step."
+        },
+        {
+          "page": 24,
+          "image_path": "workbook-4-images/page-024.png",
+          "what_illustrates": "Third and Final Stack Slide templates \u00e2\u20ac\u201d illustrates the full build sequence climaxing in the Final Stack Slide which restores all 5 components with the final total value."
+        }
+      ],
+      "flags": []
+    },
+    "sec11": {
+      "questions": [
+        {
+          "prompt": "What are your biggest take-aways from building Transition and Stack Slides this week?",
+          "context": "Share take-aways during the breakout so peers can reinforce what landed."
+        },
+        {
+          "prompt": "What feedback did you get on your Transition and Stack Slides that you want to act on before Module #5?",
+          "context": "Capture notes on changes to make before Module #5."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Breakout Protocol",
+          "definition": "Share your biggest take-aways. You don't have time to share all of your Transition and Stack Slides, but share your screen and show your slides. Give feedback and support, and take notes on changes you can make before Module #5."
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Share your screen and show your Transition and Stack Slides to your breakout peers.",
+          "type": "rehearsal"
+        },
+        {
+          "prompt": "Take notes on feedback and changes to make before Module #5.",
+          "type": "note-taking"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 25,
+          "image_path": "workbook-4-images/page-025.png",
+          "caption": "Session #4 Breakout divider + notes area for capturing feedback on Transition and Stack Slides."
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "fewer-than-3-questions (breakout session \u00e2\u20ac\u201d peer review, fewer questions expected)"
+      ]
+    },
+    "sec12": {
+      "questions": [
+        {
+          "prompt": "Is your presentation prepared and polished enough to go through The Stack & The Close next week?",
+          "context": "Prework check \u00e2\u20ac\u201d Module #5 finishes the entire presentation with Stack & Close."
+        },
+        {
+          "prompt": "What still needs shining up before Module #5 so you can deliver your Pitch & Close naturally?",
+          "context": "The prework is about refining what already exists so that delivery feels natural, not scripted."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Module #5 Preview",
+          "definition": "Next week we're going to finish your entire presentation with The Stack & The Close. Make sure your presentation is prepared, take time to shine anything up and to go through a long haul to get your Pitch & Close done correctly in a way you can do it \u00e2\u20ac\u201d naturally!"
+        }
+      ],
+      "exercises": [
+        {
+          "prompt": "Make sure your presentation is prepared before Module #5.",
+          "type": "prep"
+        },
+        {
+          "prompt": "Take time to shine up any rough slides.",
+          "type": "revision"
+        },
+        {
+          "prompt": "Go through a long rehearsal haul to get your Pitch & Close done correctly in a way you can deliver naturally.",
+          "type": "rehearsal"
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 26,
+          "image_path": "workbook-4-images/page-026.png",
+          "caption": "Next Week / What We'll Cover \u00e2\u20ac\u201d preview of Module #5 (Stack & Close) plus prework notes area."
+        },
+        {
+          "page": 27,
+          "image_path": "workbook-4-images/page-027.png",
+          "caption": "Back cover \u00e2\u20ac\u201d copyright Etison LLC DBA Primemover 2024."
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "fewer-than-3-questions (wrap-up / prework section, fewer questions expected)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+# .gitleaks.toml — Custom rules for Kanyini Home-Grown Skills Marketplace.
+# Catches Kanyini-specific identity tokens that default gitleaks rules miss.
+# Per PLAN-v3.1 §4.6.3 (Git History Leak Gate) + CIPHER R3 gap #4.
+
+title = "Kanyini Home-Grown Skills custom leak rules"
+
+[extend]
+# Inherit gitleaks default rules (AWS keys, GitHub tokens, etc.)
+useDefault = true
+
+[[rules]]
+id = "kanyini-windows-username"
+description = "Windows username 'onebe' in paths or identifiers"
+regex = '''\bonebe\b'''
+tags = ["identity", "kanyini-marketplace"]
+
+[[rules]]
+id = "kanyini-name-capitalized"
+description = "Personal name 'Kanyini' (capitalized)"
+regex = '''Kanyini'''
+tags = ["identity", "kanyini-marketplace"]
+
+[[rules]]
+id = "kanyini-name-lowercase"
+description = "Personal handle 'kanyini' (lowercase)"
+regex = '''\bkanyini\b'''
+tags = ["identity", "kanyini-marketplace"]
+
+[[rules]]
+id = "kanyini-github-handle"
+description = "GitHub handle 'kingkanyini'"
+regex = '''kingkanyini'''
+tags = ["identity", "kanyini-marketplace"]
+
+[[rules]]
+id = "kanyini-real-name"
+description = "Real name 'Chris Benson'"
+regex = '''Chris Benson'''
+tags = ["identity", "kanyini-marketplace"]
+
+[[rules]]
+id = "kanyini-email-prefix"
+description = "Email prefix 'onebenson' (catches any onebenson@ variant)"
+regex = '''onebenson'''
+tags = ["identity", "kanyini-marketplace"]
+
+[[rules]]
+id = "kanyini-dropbox-path"
+description = "Dropbox vault path 'The Sanctuary'"
+regex = '''Dropbox.{1,5}The Sanctuary'''
+tags = ["path", "kanyini-marketplace"]
+
+[[rules]]
+id = "kanyini-claudebrain-vault"
+description = "Vault folder reference 'ClaudeBrain'"
+regex = '''ClaudeBrain'''
+tags = ["path", "kanyini-marketplace"]
+
+[[rules]]
+id = "windows-absolute-userpath"
+description = "Windows absolute path 'C:\\Users\\' or 'C:/Users/'"
+regex = '''C:[\\\/]Users[\\\/]'''
+tags = ["path", "kanyini-marketplace"]
+
+[[rules]]
+id = "claude-secrets-env"
+description = "Reference to .claude-secrets env file location"
+regex = '''\.claude-secrets'''
+tags = ["secret-path", "kanyini-marketplace"]
+
+[allowlist]
+description = "Files where Kanyini-name references are expected: (1) scripts that LITERALLY find-replace these tokens (sanitize, leak-audit), (2) docs that legitimately attribute the marketplace to Kanyini, (3) per-skill README/CHANGELOG, (4) plugin/marketplace metadata, (5) git/build infra."
+paths = [
+  # Top-level docs
+  '''README\.md$''',
+  '''LICENSE$''',
+  '''CHANGELOG\.md$''',
+  '''\.gitleaks\.toml$''',
+  '''\.gitignore$''',
+  # Per-skill required files
+  '''plugins/[^/]+/README\.md$''',
+  '''plugins/[^/]+/CHANGELOG\.md$''',
+  # Plugin + marketplace metadata
+  '''\.claude-plugin/marketplace\.json$''',
+  '''\.claude-plugin/plugin\.json$''',
+  # All docs (legitimately attribute marketplace to Kanyini)
+  '''docs/.*\.md$''',
+  # Scripts that literally contain identity tokens as find-replace sources
+  '''scripts/.*\.mjs$''',
+  '''scripts/.*\.sh$''',
+  '''scripts/.*\.ps1$''',
+  '''scripts/hooks/.*$''',
+  # JSON schemas
+  '''schemas/.*\.json$''',
+  # GitHub config
+  '''\.github/.*$''',
+  # Node dev tooling
+  '''package\.json$''',
+  '''package-lock\.json$''',
+  '''node_modules/.*$''',
+  # Sanitize artifacts (regeneratable, gitignored anyway)
+  '''LEAK-AUDIT\.md$''',
+  '''sanitize-report\.md$''',
+  '''gitleaks-report\.json$''',
+]

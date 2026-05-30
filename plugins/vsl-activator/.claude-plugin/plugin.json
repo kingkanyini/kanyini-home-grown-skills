@@ -1,0 +1,26 @@
+{
+  "name": "vsl-activator",
+  "version": "1.0.0",
+  "description": "Build high-converting VSL scripts merging Perfect Webinar + 6 Core Beliefs with VSL Allstar Squad counsel",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T7",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "voice-dna-blueprint-builder",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

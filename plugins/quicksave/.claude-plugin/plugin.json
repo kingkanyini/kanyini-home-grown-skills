@@ -1,0 +1,17 @@
+{
+  "name": "quicksave",
+  "version": "1.0.0",
+  "description": "Save progress of projects, conversations, or skills for personal reference",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T1",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

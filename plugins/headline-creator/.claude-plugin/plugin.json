@@ -1,0 +1,17 @@
+{
+  "name": "headline-creator",
+  "version": "1.0.0",
+  "description": "High Converting Headline Creator — builds ICA avatars and generates three-tier headline sets for Facebook ads and short-form video",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T8",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

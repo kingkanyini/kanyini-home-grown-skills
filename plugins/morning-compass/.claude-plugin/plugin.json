@@ -1,0 +1,34 @@
+{
+  "name": "morning-compass",
+  "version": "1.0.0",
+  "description": "7-minute morning briefing for coaches — pulls from Google Calendar, Stripe, Calendly, ClickFunnels, Basecamp, Instagram, YouTube. Delivers single-page brief.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T2",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [
+      "mcp__composio__*",
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [
+      "pwsh",
+      "node"
+    ],
+    "envVars": [
+      "COMPOSIO_API_KEY"
+    ],
+    "services": [
+      "Composio",
+      "Google Calendar",
+      "Stripe",
+      "Calendly",
+      "ClickFunnels",
+      "Basecamp",
+      "Instagram",
+      "YouTube"
+    ]
+  }
+}

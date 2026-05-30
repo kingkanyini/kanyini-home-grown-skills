@@ -1,0 +1,26 @@
+{
+  "name": "voice-dna-extractor",
+  "version": "1.0.0",
+  "description": "Extract clean voice DNA audio from IG, YouTube, or local video files. Auto-cleans, quality-gates, outputs MP3 + voice profile card.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T3",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [
+      "mcp__yt-dlp-mcp__*",
+      "mcp__ffmpeg-mcp__*"
+    ],
+    "clis": [
+      "yt-dlp",
+      "ffmpeg"
+    ],
+    "envVars": [],
+    "services": [
+      "YouTube",
+      "Instagram"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "charisma-codes",
+  "version": "1.0.0",
+  "description": "Discover your unique Charisma Code (Energetic + Trust + Authority) using McCall Jones framework with breathwork and RPG-style discovery",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T3",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

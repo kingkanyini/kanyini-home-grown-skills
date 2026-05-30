@@ -1,0 +1,19 @@
+{
+  "name": "counsel-dispatch",
+  "version": "1.0.0",
+  "description": "Dispatch a counsel member from the vault. Loads their stat sheet, embodies their voice, and logs the dispatch for XP accumulation.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T1",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

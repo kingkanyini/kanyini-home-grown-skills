@@ -1,0 +1,24 @@
+{
+  "name": "perplexity-research",
+  "version": "1.0.0",
+  "description": "On-demand citation-rich research via Perplexity Sonar API. Quick (~10s), Standard (~30s), or Deep (2-5min) tiers.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T2",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [
+      "mcp__perplexity__*",
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [],
+    "envVars": [
+      "PERPLEXITY_API_KEY"
+    ],
+    "services": [
+      "Perplexity"
+    ]
+  }
+}

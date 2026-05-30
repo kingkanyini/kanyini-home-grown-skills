@@ -1,0 +1,26 @@
+{
+  "name": "offer-optimizer",
+  "version": "1.0.0",
+  "description": "Comprehensive offer optimization — guides you through building messaging, positioning, and offer structure by reverse-engineering from your best client transformation",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T5",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__claude_ai_Canva__*"
+    ],
+    "clis": [],
+    "envVars": [],
+    "services": [
+      "Canva"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "funnel-audit",
+  "version": "1.0.0",
+  "description": "Funnel page audit with 6-agent scanning, belief architecture review, and micro-arc analysis",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T6",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "offer-optimizer",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

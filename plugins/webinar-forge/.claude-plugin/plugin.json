@@ -1,0 +1,29 @@
+{
+  "name": "webinar-forge",
+  "version": "1.0.0",
+  "description": "Forge a Perfect Webinar script (outline + 90min + variants) with counsel guidance",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T7",
+  "requires": [
+    {
+      "name": "voice-dna-blueprint-builder",
+      "version": "^1.0.0"
+    }
+  ],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

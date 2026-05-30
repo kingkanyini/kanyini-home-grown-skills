@@ -1,0 +1,17 @@
+{
+  "name": "exportskill",
+  "version": "1.0.0",
+  "description": "Export Claude Code skills to Claude Web project knowledge format",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T4",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

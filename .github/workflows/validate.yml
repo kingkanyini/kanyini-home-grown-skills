@@ -1,0 +1,48 @@
+# .github/workflows/validate.yml
+# Runs on every push to main and every PR.
+# Per PLAN-v3.1 §4.5 (Mosh CI gates) + §4.6.3 (CIPHER history scan).
+
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  schema-and-leak-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history for gitleaks --log-opts="--all"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dev dependencies
+        run: npm ci
+
+      - name: Validate plugin.json files
+        run: npm run validate:plugins
+
+      - name: Validate marketplace.json (cycle + diamond + completeness)
+        run: npm run validate:marketplace
+
+      - name: Run leak audit
+        run: npm run leak-audit
+
+      - name: gitleaks (working tree)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_CONFIG: .gitleaks.toml
+        with:
+          config-path: .gitleaks.toml
+
+      - name: gitleaks (full history)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/gitleaks/gitleaks/master/scripts/install.sh | sh -s -- -b /usr/local/bin
+          gitleaks detect --source . --log-opts="--all" --redact --config .gitleaks.toml

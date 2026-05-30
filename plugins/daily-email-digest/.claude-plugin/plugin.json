@@ -1,0 +1,27 @@
+{
+  "name": "daily-email-digest",
+  "version": "1.0.0",
+  "description": "Write, review, and brainstorm emails with 3-hat counsel, Voice Foreman quality gate, and 3-level template training",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T8",
+  "requires": [
+    {
+      "name": "voice-dna-blueprint-builder",
+      "version": "^1.0.0"
+    }
+  ],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

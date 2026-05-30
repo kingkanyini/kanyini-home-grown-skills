@@ -1,0 +1,21 @@
+{
+  "name": "savepoint",
+  "version": "1.0.0",
+  "description": "Save session context and git snapshots — your video game save point for agent work",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T1",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [
+      "git"
+    ],
+    "envVars": [],
+    "services": []
+  }
+}

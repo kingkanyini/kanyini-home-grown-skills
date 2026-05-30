@@ -1,0 +1,1051 @@
+{
+  "workbook_num": 5,
+  "title": "The Stack & Close",
+  "sections": {
+    "sec1": {
+      "flagged_low_questions": true,
+      "questions": [],
+      "concepts": [
+        {
+          "name": "Module Overview",
+          "definition": "FOUNTAINHEAD Module 5: The Stack & Close. Three sessions covering (1) Your Offer Stack's Superpower, (2) Building Your Offer Stack, (3) Crafting The Close Slides."
+        },
+        {
+          "name": "Module Structure",
+          "definition": "Session #1 covers Pre-Work, Stack & Close Framework, Storytelling/Hook Techniques, and Offer Stack Workshop. Session #2 covers Mastering the Stack, Mastering the Close, and three Close workshop parts. Session #3 covers Actionable Steps For Enhancing Your Presentation and Homework."
+        }
+      ],
+      "exercises": [],
+      "teaching_slides": [
+        {
+          "page": 1,
+          "image_path": "workbook-5-images/page-001.png",
+          "caption": "Cover: FOUNTAINHEAD Workbook Module 5: The Stack & Close"
+        },
+        {
+          "page": 2,
+          "image_path": "workbook-5-images/page-002.png",
+          "caption": "Table of Contents \u00e2\u20ac\u201d Sessions 1, 2, 3 with sub-topics and page numbers"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec2": {
+      "flagged_low_questions": true,
+      "questions": [
+        {
+          "prompt": "Are your Stack Slides from Module 4 ready to go?",
+          "type": "checklist_yes_no"
+        },
+        {
+          "prompt": "Have you rehearsed your presentation several times?",
+          "type": "checklist_yes_no"
+        },
+        {
+          "prompt": "Are you ready to pitch and close in a way that feels natural?",
+          "type": "checklist_yes_no"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Session #1 Focus",
+          "definition": "Your Offer Stack's Superpower \u00e2\u20ac\u201d the strategic engine that presents your offer so the audience is motivated to buy immediately."
+        },
+        {
+          "name": "Prework Readiness Principle",
+          "definition": "Before building stack and close, three gates must be cleared: deck-ready Stack Slides, multiple rehearsals, and pitch-and-close confidence that feels natural rather than forced."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Module 5 Prework Checklist",
+          "prompt": "Check off each item after you complete it: (1) Your Stack Slides from Module 4 are ready to go. (2) You've rehearsed your presentation several times. (3) You're ready to pitch and close in a way that feels natural.",
+          "fields": [
+            "Stack slides ready",
+            "Rehearsed several times",
+            "Ready to pitch naturally",
+            "Notes"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 3,
+          "image_path": "workbook-5-images/page-003.png",
+          "caption": "Session #1 divider: Your Offer Stack's Superpower"
+        },
+        {
+          "page": 4,
+          "image_path": "workbook-5-images/page-004.png",
+          "caption": "Prework For Module #5 checklist with three readiness gates and notes field"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec3": {
+      "flagged_low_questions": true,
+      "questions": [
+        {
+          "prompt": "Why do most people get the Stack & Close wrong?",
+          "type": "reflection",
+          "answer_hint": "They give too much attention to minor bonuses or details, causing the audience to undervalue the main offer. The human mind often focuses on the last item presented, leading to a mismatch between perceived value and the final price."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "The Stack & Close (Definition)",
+          "definition": "A strategy to present your offer in a way that motivates people to buy immediately. The process aims to create a sense of urgency and excitement for every element in your offer stack, making people eager to make a purchase."
+        },
+        {
+          "name": "Closes Stack (Russell Brunson's proven structure)",
+          "definition": "Sequenced pattern visualized on slide showing the progression of close elements from the opening question through escalating product/value tiers to the final clear close."
+        },
+        {
+          "name": "Track Record",
+          "definition": "For Russell, the Stack & Close has consistently generated high sales over the past 16+ years, amounting to over $1 billion. The key to the method's success is its ability to structure an offer to maximize perceived value."
+        },
+        {
+          "name": "Why Most People Get It Wrong",
+          "definition": "Many presenters give too much attention to minor bonuses or details, causing the audience to undervalue the main offer. The human mind often focuses on the last item presented, leading to a mismatch between perceived value and the final price."
+        },
+        {
+          "name": "What You're Gonna Get... Slide (The Framework Visual)",
+          "definition": "A summary slide template showing: Core Product In The Stack ($?,??? Value), 2nd Product In The Stack ($?,??? Value), 3rd Product In The Stack ($?,??? Value), 4th Product In The Stack ($?,??? Value), 5th Product In The Stack ($?,??? Value), Total Value: $???"
+        },
+        {
+          "name": "The 4-Step Stack & Close Process",
+          "definition": "(1) Transition To Selling \u00e2\u20ac\u201d finish the content portion, transition smoothly into the sales pitch. (2) Present The Offer In Components \u00e2\u20ac\u201d prove value of each part using Story, and after each component 'stack' the offers to show cumulative value. (3) Stacking Process \u00e2\u20ac\u201d introduce first component, then second stacked with the first showing combined value, continue for each component. (4) Final Offer Presentation \u00e2\u20ac\u201d present total combined value of all components, then offer a final price that seems highly valuable compared to the combined value."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Framework Notes Capture",
+          "prompt": "Take notes on the Stack & Close framework as you learn it \u00e2\u20ac\u201d the 4-step process, why most people get it wrong, and the 'What You're Gonna Get' slide structure.",
+          "fields": [
+            "Notes"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 5,
+          "image_path": "workbook-5-images/page-005.png",
+          "caption": "The Stack & Close Framework \u00e2\u20ac\u201d Let Me Ask You A Question + Closes Stack sequence + bullets on strategy, track record, and why people get it wrong"
+        },
+        {
+          "page": 6,
+          "image_path": "workbook-5-images/page-006.png",
+          "caption": "The Framework \u00e2\u20ac\u201d 'What You're Gonna Get...' slide template showing 5 stacked products + Total Value $???, plus 4-step framework (Transition, Present, Stacking, Final Offer)"
+        },
+        {
+          "page": 7,
+          "image_path": "workbook-5-images/page-007.png",
+          "caption": "Notes page for framework capture"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 5,
+          "image_path": "workbook-5-images/page-005.png",
+          "what_illustrates": "Visual sequence of the 'Closes Stack' pattern Russell uses \u00e2\u20ac\u201d a row of labeled stack elements showing escalation from opening question through components to the clear close"
+        }
+      ]
+    },
+    "sec4": {
+      "flagged_low_questions": true,
+      "questions": [
+        {
+          "prompt": "What is the hook, story, and offer structure for each component of your stack?",
+          "type": "reflection"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Hook \u00e2\u2020\u2019 Story \u00e2\u2020\u2019 Offer Structure",
+          "definition": "Every element of your stack should use the Hook, Story, Offer framework \u00e2\u20ac\u201d a hook grabs attention, a story demonstrates value and builds emotional connection, and an offer delivers the concrete purchase opportunity."
+        },
+        {
+          "name": "Sharpie Magnum Markers Example",
+          "definition": "Initial offer: Sell a pack of Sharpie Magnum markers for $10 (no takers). Story: Describes Tony Robbins using the markers, increasing their perceived value. Revised offer: Sell the same markers for $97 after telling the story (high interest)."
+        },
+        {
+          "name": "Fit2Fat2Fit Example",
+          "definition": "Drew Manning's story of gaining and losing weight created a powerful hook. His business success is largely attributed to the compelling hook and story, even though the offer itself was basic."
+        },
+        {
+          "name": "Developing Your Offer Stack Superpower",
+          "definition": "The 'Offer Stack Superpower' is about presenting your offer in a way that makes the perceived value much higher than the actual price. Use the 'Hook, Story, Offer' framework for every element of your stack. The goal is to make the perceived value greater than the cost."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Storytelling Notes Capture",
+          "prompt": "Take notes on the Sharpie Magnum Markers example and the Fit2Fat2Fit example. Extract the hook technique and the story lever each used to multiply perceived value.",
+          "fields": [
+            "Notes"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 8,
+          "image_path": "workbook-5-images/page-008.png",
+          "caption": "Examples of Effective Storytelling And Hook Techniques \u00e2\u20ac\u201d Hook \u00e2\u2020\u2019 Story \u00e2\u2020\u2019 Offer diagram + Sharpie Magnum and Fit2Fat2Fit case studies + 'Developing Your Offer Stack Superpower' principles"
+        },
+        {
+          "page": 9,
+          "image_path": "workbook-5-images/page-009.png",
+          "caption": "Notes page for storytelling and hook capture"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 8,
+          "image_path": "workbook-5-images/page-008.png",
+          "what_illustrates": "Illustration of 'Hooks & Headlines' ideation \u00e2\u2020\u2019 a storyteller figure \u00e2\u2020\u2019 an OFFER box \u00e2\u20ac\u201d visualizes how story is the bridge that transforms raw hooks into high-perceived-value offers"
+        }
+      ]
+    },
+    "sec5": {
+      "flagged_low_questions": false,
+      "questions": [
+        {
+          "prompt": "How did you create your core product?",
+          "type": "story_origin"
+        },
+        {
+          "prompt": "What was the experience behind this product?",
+          "type": "story_origin"
+        },
+        {
+          "prompt": "What pain did you go through to build this?",
+          "type": "story_origin"
+        },
+        {
+          "prompt": "What is the opportunity cost for your customers if they don't get this component?",
+          "type": "reflection"
+        },
+        {
+          "prompt": "What is the hook and story behind your 2nd Product?",
+          "type": "story_origin"
+        },
+        {
+          "prompt": "What is the hook and story behind your 3rd Product?",
+          "type": "story_origin"
+        },
+        {
+          "prompt": "What is the hook and story behind your 4th Product?",
+          "type": "story_origin"
+        },
+        {
+          "prompt": "What is the hook and story behind your 5th Product?",
+          "type": "story_origin"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Stack Story Engine",
+          "definition": "Each stack component needs a story addressing: how it was created, the experience behind it, the pain endured to build it, and the opportunity cost to the customer if they skip it."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Crafting Your Offer Stack Workshop",
+          "prompt": "Think about the hook and story behind each product in your offer stack. How did you create it? What was the experience? What pain did you go through? What is the opportunity cost for your customers if they don't get this component? Fill in the Product name and Story for Core Product, 2nd Product, 3rd Product, 4th Product, and 5th Product.",
+          "fields": [
+            "Core Product + Story",
+            "2nd Product + Story",
+            "3rd Product + Story",
+            "4th Product + Story",
+            "5th Product + Story"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 10,
+          "image_path": "workbook-5-images/page-010.png",
+          "caption": "Crafting Your Offer Stack Workshop \u00e2\u20ac\u201d five-product story capture worksheet with Product name + Story fields for each tier"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec6": {
+      "flagged_low_questions": true,
+      "questions": [],
+      "concepts": [
+        {
+          "name": "Session #2 Focus",
+          "definition": "Building Your Offer Stack \u00e2\u20ac\u201d move from the conceptual framework into actual stack slide construction for the Core Offer and Products 2-5, plus the Close in three workshop parts."
+        }
+      ],
+      "exercises": [],
+      "teaching_slides": [
+        {
+          "page": 11,
+          "image_path": "workbook-5-images/page-011.png",
+          "caption": "Session #2 divider: Building Your Offer Stack"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec7": {
+      "flagged_low_questions": false,
+      "questions": [
+        {
+          "prompt": "What is your core product?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What are the features of this product?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What will they be able to do?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What will they be able to get rid of?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "How did this solve your problem (and how will it solve theirs)?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What is the time and money you spent on this (which they are saving)?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Present the stack slide for your core offer \u00e2\u20ac\u201d what does it say?",
+          "type": "stack_braindump"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Slide 1: Introduce Your Core Offer",
+          "definition": "Introduce your main product with a clear explanation of what it is and the benefits it provides. Example shown: '6 Months Of ClickFunnels PLATINUM For FREE!'"
+        },
+        {
+          "name": "Slide 2: The Features Of Your Core Offer",
+          "definition": "Highlight the features of the core product upfront to set a strong foundation. Example: 'What Our Platinum Members Get... 70 Funnels... 100,000 Monthly Visitors... And MORE!!!'"
+        },
+        {
+          "name": "Slide 3: The Features Of Your Core Offer (Capabilities)",
+          "definition": "Highlight what benefits those features offer \u00e2\u20ac\u201d 'You'll Be Able To...' slide shows the outcomes/capabilities unlocked by the features."
+        },
+        {
+          "name": "Slide 4: The Pains They Are Avoiding",
+          "definition": "Highlight what they WON'T have to do anymore \u00e2\u20ac\u201d 'You'll Be Able To Get Rid Of...' Example list: Landing Page Software, Split Test Software, Shopping Cart, Email Autoresponders, Text Message Autoresponders, Automated Webinar, Affiliate Software, Membership Site Software, Photoshop, Wordpress, Your Hosting, Programmers, Designers, Webmasters."
+        },
+        {
+          "name": "Slide 5: Core Offer Value",
+          "definition": "The 'What You're Gonna Get...' summary slide with total value recap. Example: 'ClickFunnels: 6 Month Enterprise Account ($3,564 Value). Total Value: $3,564.' This first stack of five slides makes up your first slide stack. You repeat each step for every product in your offer and add the total slide value at the end of each slide stack."
+        },
+        {
+          "name": "Recap Of The Core Offer's Value",
+          "definition": "The first five slides become a reusable template \u00e2\u20ac\u201d repeat each step for every product in your offer, adding the total slide value at the end of each stack (e.g., Total Value: $6,561 \u00e2\u2020\u2019 $8,559 \u00e2\u2020\u2019 $10,555 \u00e2\u2020\u2019 $11,553)."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "First Stack Slide Braindump: Your Core Product",
+          "prompt": "Complete the Braindump worksheet answering all seven core-product questions, then present the stack slide for your core offer. Build out slides 57-63 of the provided slide template.",
+          "fields": [
+            "Core product",
+            "Features",
+            "What they'll be able to do",
+            "What they'll be able to get rid of",
+            "How it solved your problem",
+            "Time/money you spent they're saving",
+            "Core offer stack slide"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 12,
+          "image_path": "workbook-5-images/page-012.png",
+          "caption": "Mastering The Stack \u00e2\u20ac\u201d Slide 1: Introduce Your Core Offer. Example: '6 Months Of ClickFunnels PLATINUM For FREE!'"
+        },
+        {
+          "page": 13,
+          "image_path": "workbook-5-images/page-013.png",
+          "caption": "Slide 2: The Features Of Your Core Offer \u00e2\u20ac\u201d 'What Our Platinum Members Get...' (70 Funnels, 100,000 Monthly Visitors, And MORE!!!)"
+        },
+        {
+          "page": 14,
+          "image_path": "workbook-5-images/page-014.png",
+          "caption": "Slide 3: The Features Of Your Core Offer \u00e2\u20ac\u201d 'You'll Be Able To...' benefits/capabilities slide"
+        },
+        {
+          "page": 15,
+          "image_path": "workbook-5-images/page-015.png",
+          "caption": "Slide 4: The Pains They Are Avoiding \u00e2\u20ac\u201d 'You'll Be Able To Get Rid Of...' with full list (Landing Page Software, Split Test, Shopping Cart, Autoresponders, Automated Webinar, Affiliate Software, Membership Site, Photoshop, Wordpress, Hosting, Programmers, Designers, Webmasters)"
+        },
+        {
+          "page": 16,
+          "image_path": "workbook-5-images/page-016.png",
+          "caption": "Slide 5: Core Offer Value \u00e2\u20ac\u201d 'What You're Gonna Get...' ClickFunnels: 6 Month Enterprise Account $3,564 Value / Total Value: $3,564. Recap shows 4-card progression of cumulative stack values"
+        },
+        {
+          "page": 17,
+          "image_path": "workbook-5-images/page-017.png",
+          "caption": "First Stack Slide Braindump \u00e2\u20ac\u201d Your Core Product worksheet with 7 questions + stack slide template row"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 12,
+          "image_path": "workbook-5-images/page-012.png",
+          "what_illustrates": "Real ClickFunnels core-offer slide \u00e2\u20ac\u201d shows the visual execution of Slide 1 (big bold benefit headline + product mockup imagery)"
+        },
+        {
+          "page": 15,
+          "image_path": "workbook-5-images/page-015.png",
+          "what_illustrates": "Two-column 'Get Rid Of' pain list \u00e2\u20ac\u201d illustrates how to rapidly stack the things the customer no longer needs to do/buy/manage"
+        },
+        {
+          "page": 16,
+          "image_path": "workbook-5-images/page-016.png",
+          "what_illustrates": "Stack value escalation row ($6,561 \u00e2\u2020\u2019 $8,559 \u00e2\u2020\u2019 $10,555 \u00e2\u2020\u2019 $11,553) \u00e2\u20ac\u201d illustrates how each stack iteration compounds total value"
+        }
+      ]
+    },
+    "sec8": {
+      "flagged_low_questions": false,
+      "questions": [
+        {
+          "prompt": "What is the second product in your offer?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What is a brief story about why/how you created it?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Give a high-level view of what's included.",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What are the benefits of them getting this product?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Can you share testimonials and success stories?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "How can you resolve any of their concerns?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Present the stack slide for your second product.",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What is the third product in your offer?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What story can you tell to increase its value?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Give a high-level view of what's included in product 3.",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Present the stack slide for your third product.",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What is the fourth product in your offer?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What story can you tell to increase its value (product 4)?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Give a high-level view of what's included in product 4.",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Present the stack slide for your fourth product.",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What is the fifth product in your offer?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "What story can you tell to increase its value (product 5)?",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Give a high-level view of what's included in product 5.",
+          "type": "stack_braindump"
+        },
+        {
+          "prompt": "Present the stack slide for your fifth product.",
+          "type": "stack_braindump"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Second Stack Slide Pattern",
+          "definition": "For each additional product beyond the core, the braindump expands to include: product name, brief origin story, what's included, benefits, testimonials/success stories, concern resolutions, and the stack slide itself."
+        },
+        {
+          "name": "Stack Slide Template Locations",
+          "definition": "Second Product = slides 64-72 of provided slide template. Third Product = slides 73-78. Fourth Product = slides 79-83. Fifth Product = slides 84-88. Each stack ends with a 'What You're Gonna Get' recap and updated Total Value."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Second Stack Slide Braindump",
+          "prompt": "Complete the Braindump for your second product \u00e2\u20ac\u201d product name, origin story, high-level inclusions, benefits, testimonials, concern resolution, and stack slide. Build out slides 64-72 of the provided slide template.",
+          "fields": [
+            "2nd product",
+            "Origin story",
+            "What's included",
+            "Benefits",
+            "Testimonials",
+            "Concern resolution",
+            "Stack slide"
+          ]
+        },
+        {
+          "name": "Third Stack Slide Braindump",
+          "prompt": "Complete the Braindump for your third product \u00e2\u20ac\u201d what it is, value story, what's included, and stack slide. Build out slides 73-78 of the provided slide template.",
+          "fields": [
+            "3rd product",
+            "Value story",
+            "What's included",
+            "Stack slide"
+          ]
+        },
+        {
+          "name": "Fourth Stack Slide Braindump",
+          "prompt": "Complete the Braindump for your fourth product \u00e2\u20ac\u201d what it is, value story, what's included, and stack slide. Build out slides 79-83 of the provided slide template.",
+          "fields": [
+            "4th product",
+            "Value story",
+            "What's included",
+            "Stack slide"
+          ]
+        },
+        {
+          "name": "Fifth Stack Slide Braindump",
+          "prompt": "Complete the Braindump for your fifth product \u00e2\u20ac\u201d what it is, value story, what's included, and stack slide. Build out slides 84-88 of the provided slide template.",
+          "fields": [
+            "5th product",
+            "Value story",
+            "What's included",
+            "Stack slide"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 18,
+          "image_path": "workbook-5-images/page-018.png",
+          "caption": "Second Stack Slide Braindump worksheet with 7 questions + slides 64-72 template row"
+        },
+        {
+          "page": 19,
+          "image_path": "workbook-5-images/page-019.png",
+          "caption": "Third Stack Slide Braindump worksheet + slides 73-78 template row"
+        },
+        {
+          "page": 20,
+          "image_path": "workbook-5-images/page-020.png",
+          "caption": "Fourth Stack Slide Braindump worksheet + slides 79-83 template row"
+        },
+        {
+          "page": 21,
+          "image_path": "workbook-5-images/page-021.png",
+          "caption": "Fifth Stack Slide Braindump worksheet + slides 84-88 template row"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 18,
+          "image_path": "workbook-5-images/page-018.png",
+          "what_illustrates": "Example answers filled in (12 Weekly Live 90-minute breakthrough sessions with 30 mini coaching Q&As; story of Glenn and the breakthrough session; Glenn investment testimonial) \u00e2\u20ac\u201d shows how the braindump reads when populated with real content"
+        },
+        {
+          "page": 19,
+          "image_path": "workbook-5-images/page-019.png",
+          "what_illustrates": "Example answers using 'The Oracle GPT' \u00e2\u20ac\u201d lifetime access, custom story of Oracle GPT creation, quick demo/screenshots of answers in pre-recorded live form"
+        },
+        {
+          "page": 20,
+          "image_path": "workbook-5-images/page-020.png",
+          "what_illustrates": "Example answers using '24/7 Access to King <your-name>' \u00e2\u20ac\u201d narrative arc illustrating reframing for a high-access offer"
+        },
+        {
+          "page": 21,
+          "image_path": "workbook-5-images/page-021.png",
+          "what_illustrates": "Example answers for 'All Inclusive Retreat at Amaroo' \u00e2\u20ac\u201d story about believing we could create a new piece of paradise, with 4-day framing"
+        }
+      ]
+    },
+    "sec9": {
+      "flagged_low_questions": false,
+      "questions": [
+        {
+          "prompt": "What is your Vehicle Statement \u00e2\u20ac\u201d 'If all this did was give you a funnel that is profitable, would it be worth $11,552?'",
+          "type": "if_all_statement"
+        },
+        {
+          "prompt": "What is your Internal Statement \u00e2\u20ac\u201d 'If all this did was help you share your message with more people, would it be worth $11,552?'",
+          "type": "if_all_statement"
+        },
+        {
+          "prompt": "What is your External Statement \u00e2\u20ac\u201d 'If all this did was allow you to cancel all the monthly tools you currently use, would it be worth $11,552?'",
+          "type": "if_all_statement"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "When The Close Actually Begins",
+          "definition": "The close does not start at the end of the presentation; it begins the moment you start speaking. Every part of your presentation should lead towards the close."
+        },
+        {
+          "name": "Trial Closes",
+          "definition": "From the very beginning of your presentation, use simple questions that the audience can easily answer with a 'yes.' Examples: 'Are you getting this?' 'Does this make sense?' 'Are you excited about this today?'"
+        },
+        {
+          "name": "'If All' Statements (3 Types)",
+          "definition": "Reinforce the value of your offer. Before giving your final price point, direct your audience's attention to the total value, and ask them the following questions, while ensuring that the audience verbally agrees or nods their heads with each statement: (1) Vehicle Statement \u00e2\u20ac\u201d 'If all this did was give you a funnel that is profitable, would it be worth $11,552?' (2) Internal Statement \u00e2\u20ac\u201d 'If all this did was help you share your message with more people, would it be worth $11,552?' (3) External Statement \u00e2\u20ac\u201d 'If all this did was allow you to cancel all the monthly tools you currently use, would it be worth $11,552?'"
+        },
+        {
+          "name": "Introduce Scarcity And Urgency",
+          "definition": "Emphasize that your final prize point is available only today, or only for the first X amount of applicants."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Craft Your Three 'If All' Statements",
+          "prompt": "Write Vehicle, Internal, and External 'If all this did...' statements tied to your total stack value. Get the audience verbally agreeing or nodding to each one before revealing the price.",
+          "fields": [
+            "Vehicle statement",
+            "Internal statement",
+            "External statement"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 22,
+          "image_path": "workbook-5-images/page-022.png",
+          "caption": "Mastering The Close \u00e2\u20ac\u201d 'You Can See Why This Is A AMAZING Deal At $5,000 / $1,997 (For General Public) / Because You Are Here Today...' slide. Teaches trial closes, the 3 If-All Statements (Vehicle, Internal, External), and scarcity/urgency introduction"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 22,
+          "image_path": "workbook-5-images/page-022.png",
+          "what_illustrates": "Reveal of general-public price ($5,000) discounted to ($1,997) for today's audience \u00e2\u20ac\u201d illustrates the exact price-drop visual pattern taught in the lesson"
+        }
+      ]
+    },
+    "sec10": {
+      "flagged_low_questions": false,
+      "questions": [
+        {
+          "prompt": "What are your 'If All' statements?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "My Two Choices \u00e2\u20ac\u201d what are they?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What would this result be worth to you?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "Price Drop \u00e2\u20ac\u201d what is it (should be roughly 50% over your overall value)?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "Reason Why / Because \u00e2\u20ac\u201d why this price, why now?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What is your total discount TODAY?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What are your price justifications?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What are your two choices?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What is your guarantee?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What is The Real Question?",
+          "type": "close_braindump"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Strategies For Handling Objections During The Close",
+          "definition": "At this stage, you've revealed your final price point. Some people will be on board, some won't. This is where you need strategies to handle objections. Four strategies shown on slides: Price Justification, Your Two Choices, Guarantee, The Real Question Is This."
+        },
+        {
+          "name": "Price Justification",
+          "definition": "Example slide: '12 Months Of ClickFunnels Platinum Is Normally $3,564. You Get 6 Months FREE (With Your Investment Today).' Frames the investment against the retail cost of the core product alone."
+        },
+        {
+          "name": "Your Two Choices",
+          "definition": "Example slide: 'Now YOU Have Two Choices \u00e2\u20ac\u201d First Option: Do Nothing, and NOT Take This Leap Of Faith. Second Option: Pony Up The Small Investment and Pony Up For Your Future, And Press The Dream Investment button.' The frame contrasts staying stuck vs. the asymmetric upside of investing."
+        },
+        {
+          "name": "Guarantee",
+          "definition": "Example slide: '30 Day Guarantee... Sign Up Today, If You Don't Like It For ANY REASON (I Don't Care If It's 30 hours, 31 Hours or 32 Hours And 59 Minutes From Now) Just Let Me Know And We'll Give Your Money Back.'"
+        },
+        {
+          "name": "The Real Question Is This",
+          "definition": "Example slide: 'Is It Worth Gambling A Few Minutes Of Your Time To Check This Out... Even If It Does Even HALF Of What I've Claimed Today On The Training Will Pay For Itself As Soon As Your FIRST Funnel Is Live.' Reframes risk as 'what's the real risk of NOT finding out?'"
+        },
+        {
+          "name": "Price Justification Content",
+          "definition": "Reference the average cost of therapy, the average cost of a quality life coach, the cost of a retreat per year, plus vacation days away from family and the stress/anxiety tax \u00e2\u20ac\u201d to make the investment look tiny by comparison."
+        },
+        {
+          "name": "Two Choices Framing",
+          "definition": "(1) Decide NOT to invest in yourself, maybe buy the book and try to go at it on your own, get distracted by life, and continue winging it. (2) Decide to invest and get the full transformation with accountability."
+        },
+        {
+          "name": "Guarantee Example",
+          "definition": "60 Day Guarantee: if you show up to all the calls, complete the missions, and don't see 10x value in your investment, a refund is issued no questions asked."
+        },
+        {
+          "name": "The Real Question",
+          "definition": "Do you trust what your heart is telling you? Are you willing to follow your excitement to create the life that you came here to create?"
+        }
+      ],
+      "exercises": [
+        {
+          "name": "The Close (Part 1) Braindump",
+          "prompt": "Complete the Close braindump: If All statements, Your Two Choices, what the result would be worth, Price Drop (roughly 50% over your overall value), Reason Why/Because, and Total Discount TODAY. Build out slides 89-98 of the provided slide template.",
+          "fields": [
+            "If All statements",
+            "My Two Choices",
+            "Worth to them",
+            "Price Drop",
+            "Reason Why/Because",
+            "Total Discount TODAY"
+          ]
+        },
+        {
+          "name": "The Close (Part 2) Braindump",
+          "prompt": "Fill in: Price justifications, Two Choices, Guarantee, The Real Question. Build out slides 97-100 of the provided slide template.",
+          "fields": [
+            "Price justifications",
+            "Two Choices",
+            "Guarantee",
+            "Real Question"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 23,
+          "image_path": "workbook-5-images/page-023.png",
+          "caption": "Workshop: The Close (Part 1) Braindump \u00e2\u20ac\u201d If All statements, Two Choices, worth, Price Drop (~50% over overall value), Reason Why/Because, Total Discount TODAY + slides 89-98 template row"
+        },
+        {
+          "page": 24,
+          "image_path": "workbook-5-images/page-024.png",
+          "caption": "Strategies For Handling Objections During The Close \u00e2\u20ac\u201d 2x2 grid: Price Justification, Your Two Choices, Guarantee (30 Day), The Real Question Is This"
+        },
+        {
+          "page": 25,
+          "image_path": "workbook-5-images/page-025.png",
+          "caption": "Workshop: The Close (Part 2) Braindump \u00e2\u20ac\u201d Price justifications, Two Choices, Guarantee, Real Question + slides 97-100 template row"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 24,
+          "image_path": "workbook-5-images/page-024.png",
+          "what_illustrates": "2x2 Funnel Hack-Thon slide grid showing the four close tools visually \u00e2\u20ac\u201d Price Justification, Two Choices, 30 Day Guarantee, Real Question \u00e2\u20ac\u201d executed as actual slides"
+        },
+        {
+          "page": 25,
+          "image_path": "workbook-5-images/page-025.png",
+          "what_illustrates": "Example answers using therapy/life coach cost comparisons and the 60-day show-up-to-calls guarantee wording \u00e2\u20ac\u201d illustrates tone and specificity required"
+        }
+      ]
+    },
+    "sec11": {
+      "flagged_low_questions": false,
+      "questions": [
+        {
+          "prompt": "What is your recap stack slide?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "Do you have a Fast Movers Bonus?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What do they have to do right now?",
+          "type": "close_braindump"
+        },
+        {
+          "prompt": "What is your final CTA slide?",
+          "type": "close_braindump"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Recap Stack Slide",
+          "definition": "The 'What You're Gonna Get...' consolidated slide listing all 5 stacked products with their values, a Fast Action discount line, and the total value."
+        },
+        {
+          "name": "Fast Movers Bonus",
+          "definition": "A time-sensitive incentive to push fence-sitters over the edge. Example answer: 'Custom 1-on-1 Breakthrough Session $3000 Value.'"
+        },
+        {
+          "name": "Immediate Action Step",
+          "definition": "Tell them exactly what to do right now. Example answer: 'Submit Application for Enrollment with a 50% deposit.'"
+        },
+        {
+          "name": "Final CTA Slide",
+          "definition": "'Get Started NOW For Just $??? Today' \u00e2\u20ac\u201d the decisive call-to-action slide with questions slot and clear next step."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "The Close (Part 3) Braindump",
+          "prompt": "Capture your recap stack slide, Fast Movers Bonus, right-now action step, and final CTA slide. Build out slides 101-104 of the provided slide template.",
+          "fields": [
+            "Recap stack slide",
+            "Fast Movers Bonus",
+            "Do right now",
+            "Final CTA slide"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 26,
+          "image_path": "workbook-5-images/page-026.png",
+          "caption": "Notes page for Close Part 3 reflections"
+        },
+        {
+          "page": 27,
+          "image_path": "workbook-5-images/page-027.png",
+          "caption": "Workshop: The Close (Part 3) Braindump \u00e2\u20ac\u201d Recap stack slide, Fast Movers Bonus, Do right now, Final CTA slide + slides 101-104 template row"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 27,
+          "image_path": "workbook-5-images/page-027.png",
+          "what_illustrates": "Slide template row showing 'What You're Gonna Get / For The Final... Fast Ac.../ What You Need To Do / Get Started NOW For Just $??? Today' \u00e2\u20ac\u201d illustrates the final slide sequence of the entire Close"
+        }
+      ]
+    },
+    "sec12": {
+      "flagged_low_questions": true,
+      "questions": [
+        {
+          "prompt": "How can you reflect on your progress \u00e2\u20ac\u201d the core of your presentation, origin story, secrets, and the stack and close?",
+          "type": "reflection"
+        },
+        {
+          "prompt": "Why is continued selling post-price-reveal so important?",
+          "type": "reflection",
+          "answer_hint": "90% of sales occur after the initial price reveal. Continue engaging with additional tactics like guarantees, bonuses, and objection handling."
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Session #3: Crafting The Close Slides \u00e2\u20ac\u201d Objective",
+          "definition": "To refine and complete your offer stack presentation, including key elements like Q&A, overcoming objections, and using proven storytelling techniques."
+        },
+        {
+          "name": "Session #3 Key Insight",
+          "definition": "Many sales are lost by ending too early; continue engaging with your audience beyond the initial offer presentation to maximize conversions."
+        },
+        {
+          "name": "Reflect On Your Progress",
+          "definition": "You have built the core of your presentation, including the origin story, secrets, and the stack and close. Recognize that the stack and close are just the beginning; most sales occur after the price is revealed."
+        },
+        {
+          "name": "Importance Of Continued Selling Post-Price-Reveal",
+          "definition": "90% of sales occur after the initial price reveal. Continue to engage with your audience through additional selling tactics such as guarantees, bonuses, and addressing objections."
+        }
+      ],
+      "exercises": [],
+      "teaching_slides": [
+        {
+          "page": 28,
+          "image_path": "workbook-5-images/page-028.png",
+          "caption": "Session #3 divider: Enhancing Your Close"
+        },
+        {
+          "page": 29,
+          "image_path": "workbook-5-images/page-029.png",
+          "caption": "Session #3 Crafting The Close Slides \u00e2\u20ac\u201d Objective + Key Insight + Completing Your Offer Stack Presentation: (1) Reflect On Your Progress (2) Importance Of Continued Selling Post-Price-Reveal (90% stat)"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec13": {
+      "flagged_low_questions": false,
+      "questions": [
+        {
+          "prompt": "How will you run your 30-minute Q&A segment to address audience questions and concerns?",
+          "type": "reflection"
+        },
+        {
+          "prompt": "What pre-built questions and visuals will you prepare to maintain control during live Q&A?",
+          "type": "reflection"
+        },
+        {
+          "prompt": "Which student success stories will you invite to share live or share via pre-recorded videos during the extended period after Q&A?",
+          "type": "reflection"
+        },
+        {
+          "prompt": "How will you implement the 'You're Probably Thinking This' technique to address common concerns and false beliefs?",
+          "type": "reflection"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Step 1 \u00e2\u20ac\u201d Adding A Q&A Segment To Increase Sales",
+          "definition": "Address audience questions and concerns to help them make a buying decision. Include a 30-minute Q&A session after the initial presentation. Use a countdown clock (embedded as a video file) to create urgency. Prepare answers to the top 30 most frequently asked questions in advance to guide the Q&A smoothly."
+        },
+        {
+          "name": "Step 2 \u00e2\u20ac\u201d Using Pre-Prepared Questions And Visuals",
+          "definition": "Maintain control of the narrative to avoid negative interactions during live Q&A. Create slides with pre-built questions and answers to avoid engaging with negative or irrelevant comments. Include buying-related questions such as 'What is the offer again?' or 'What are the bonuses?' to reinforce key points."
+        },
+        {
+          "name": "Step 3 \u00e2\u20ac\u201d Leveraging Student Success Stories",
+          "definition": "Use testimonials and success stories to build trust and credibility. Invite students or successful clients to share their stories live or through pre-recorded videos. Consider having these success stories play for an extended period after the Q&A to continue building trust and driving sales."
+        },
+        {
+          "name": "Step 4 \u00e2\u20ac\u201d Implementing The 'You're Probably Thinking This' Technique",
+          "definition": "Proactively address and dismantle common objections and false beliefs. Use the phrase 'You're probably thinking this, right?' to introduce common concerns and immediately provide answers or counter-arguments. Prepare stories or examples that directly address these concerns to reinforce your point."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Plan Your Post-Reveal Enhancement Steps",
+          "prompt": "Plan how you'll implement each of the four actionable steps \u00e2\u20ac\u201d Q&A segment (with countdown + top 30 FAQ), pre-prepared questions/visuals, leveraging student success stories (live + pre-recorded), and the 'You're Probably Thinking This' technique.",
+          "fields": [
+            "Q&A plan",
+            "Pre-prepared questions/visuals",
+            "Success stories plan",
+            "You're Probably Thinking This examples",
+            "Notes"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 30,
+          "image_path": "workbook-5-images/page-030.png",
+          "caption": "Notes page for Actionable Steps reflections"
+        },
+        {
+          "page": 31,
+          "image_path": "workbook-5-images/page-031.png",
+          "caption": "Actionable Steps For Enhancing Your Presentation \u00e2\u20ac\u201d Step 1: Adding a Q&A Segment (30-min Q&A, countdown clock, top 30 FAQ)"
+        },
+        {
+          "page": 32,
+          "image_path": "workbook-5-images/page-032.png",
+          "caption": "Steps 2-4: Using Pre-Prepared Questions And Visuals, Leveraging Student Success Stories, Implementing 'You're Probably Thinking This' Technique"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 31,
+          "image_path": "workbook-5-images/page-031.png",
+          "what_illustrates": "Real post-offer slide: 'Get Started NOW For Just $997 Today' with a live 29:50 countdown clock and Questions slot \u00e2\u20ac\u201d shows exactly how the Q&A + countdown tactic appears live"
+        }
+      ]
+    },
+    "sec14": {
+      "flagged_low_questions": true,
+      "questions": [
+        {
+          "prompt": "Have you spent time adding images, adjusting stories, and perfecting the presentation flow?",
+          "type": "homework_check"
+        },
+        {
+          "prompt": "Have you used the completed slide deck to practice delivering your presentation smoothly?",
+          "type": "homework_check"
+        },
+        {
+          "prompt": "Have you recorded and reviewed your delivery to identify areas for improvement?",
+          "type": "homework_check"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Module 5 Homework",
+          "definition": "Two top-level homework tasks: (1) Refine And Polish Your Slide Deck \u00e2\u20ac\u201d spend time adding images, adjusting stories, perfecting presentation flow. (2) Practice And Deliver \u00e2\u20ac\u201d use the completed slide deck to practice delivering smoothly, then record and review your delivery to identify areas for improvement."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Module 5 Homework Checklist",
+          "prompt": "(1) Refine And Polish Your Slide Deck: Spend time adding images, adjusting stories, and perfecting the presentation flow. (2) Practice And Deliver: Use the completed slide deck to practice delivering your presentation smoothly. Record and review your delivery to identify areas for improvement.",
+          "fields": [
+            "Refine slide deck",
+            "Practice delivery",
+            "Record + review",
+            "Notes"
+          ]
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 33,
+          "image_path": "workbook-5-images/page-033.png",
+          "caption": "Module Five Homework \u00e2\u20ac\u201d Refine And Polish Your Slide Deck + Practice And Deliver (with record/review) + Notes"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec15": {
+      "flagged_low_questions": true,
+      "questions": [],
+      "concepts": [
+        {
+          "name": "Copyright",
+          "definition": "Copyright 2024. All Rights Reserved. Etison LLC, DBA Primemover."
+        }
+      ],
+      "exercises": [],
+      "teaching_slides": [
+        {
+          "page": 34,
+          "image_path": "workbook-5-images/page-034.png",
+          "caption": "Final notes page"
+        },
+        {
+          "page": 35,
+          "image_path": "workbook-5-images/page-035.png",
+          "caption": "Back cover with FOUNTAINHEAD logo and copyright notice"
+        }
+      ],
+      "example_moments": []
+    }
+  }
+}

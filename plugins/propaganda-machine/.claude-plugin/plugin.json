@@ -1,0 +1,31 @@
+{
+  "name": "propaganda-machine",
+  "version": "1.0.0",
+  "description": "Build a belief-shifting content system from your Offer Optimizer using the Propaganda Machine framework",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T5",
+  "requires": [
+    {
+      "name": "voice-dna-blueprint-builder",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "offer-optimizer",
+      "version": "^1.0.0"
+    }
+  ],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

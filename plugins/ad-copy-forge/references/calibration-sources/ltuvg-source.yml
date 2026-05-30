@@ -1,0 +1,759 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic: 
+    - generic [ref=e5]:
+      - heading " Every day without this book, you're playing life at 1x XP. Start playing at 5x." [level=1] [ref=e12]:
+        - generic [ref=e13]: 
+        - generic [ref=e15]: Every day without this book, you're playing life at 1x XP. Start playing at 5x.
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e20]: 
+          - img [ref=e24]
+          - generic [ref=e26]: 
+        - generic [ref=e29]:
+          - heading "\"FINALLY A SELF-HELP BOOK THAT SPEAKS TO GAMERS\"" [level=2] [ref=e31]:
+            - generic [ref=e33]: "\"FINALLY A SELF-HELP BOOK THAT SPEAKS TO GAMERS\""
+          - heading "How To Turn \"Something Is Broken In Me\" Into Your Most Powerful Superpower" [level=1] [ref=e35]:
+            - generic [ref=e37]:
+              - text: How To Turn
+              - text: "\"Something Is Broken In Me\" Into Your Most"
+              - text: Powerful Superpower
+          - heading "A Video Game In Book Form That Transforms Your Pain Into Real Life XP" [level=1] [ref=e39]:
+            - generic [ref=e41]:
+              - text: A Video Game In Book Form That Transforms Your Pain
+              - text: Into Real Life XP
+          - heading "If your hours of gaming built pattern recognition, resilience, and split-second adaptation. LTUVG is the instruction manual that finally puts those skills to work on the boss battle that matters — your life." [level=1] [ref=e43]:
+            - generic [ref=e45]: If your hours of gaming built pattern recognition, resilience, and split-second adaptation. LTUVG is the instruction manual that finally puts those skills to work on the boss battle that matters — your life.
+          - iframe [ref=e50]:
+            - region "Video Player" [ref=f5e3]:
+              - application [ref=f5e4]
+              - text: 
+              - generic:
+                - button "Pause":
+                  - text: 
+                  - generic: Pause
+                - generic:
+                  - button "Unmute":
+                    - text: 
+                    - generic: Unmute
+                  - generic:
+                    - slider "Volume Level":
+                      - generic: 
+                - generic:
+                  - slider "Progress Bar":
+                    - generic:
+                      - generic: "Loaded: 28.38%"
+                    - generic: 
+                - text: 
+                - generic: Remaining Time -3:00
+                - generic:
+                  - generic: 1x
+                  - button "Playback Rate":
+                    - generic: Playback Rate
+                - text:     
+                - button "Fullscreen":
+                  - text: 
+                  - generic: Fullscreen
+              - text: 
+              - generic [ref=f5e7] [cursor=pointer]:
+                - generic [ref=f5e8]: TURN ON SOUND
+                - img "Turn on sound" [ref=f5e10]
+                - generic [ref=f5e11]: CLICK HERE
+          - heading "You were never broken. You were just missing the tools to master the game of life." [level=1] [ref=e52]:
+            - generic [ref=e54]:
+              - text: You were never broken.
+              - text: You were just missing the tools to master the game of life.
+        - generic [ref=e57]:
+          - link "GET INSTAN" [ref=e59] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e60]:  GET INSTAN
+          - link "START PLAYING  JUST $1.99" [ref=e62] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e63]:
+              - text: 
+              - generic [ref=e64]:
+                - text: START PLAYING
+                - generic [ref=e65]: 
+            - generic [ref=e66]: JUST $1.99
+          - heading " Backed By Our 30-Day Ultimate Clarity Guarantee" [level=1] [ref=e68]:
+            - generic [ref=e69]: 
+            - generic [ref=e70]: Backed By Our 30-Day Ultimate Clarity Guarantee
+      - generic [ref=e72]:
+        - img [ref=e77]
+        - generic [ref=e80]:
+          - heading "BATTLE TESTED" [level=1] [ref=e82]:
+            - generic [ref=e83]: BATTLE TESTED
+          - heading "PLAYER APPROVED" [level=1] [ref=e85]:
+            - generic [ref=e87]: PLAYER APPROVED
+          - heading "This framework has already helped thousands of people shift their mindset, reclaim their confidence, and start winning in life again." [level=1] [ref=e89]:
+            - generic [ref=e91]: This framework has already helped thousands of people shift their mindset, reclaim their confidence, and start winning in life again.
+        - generic [ref=e92]:
+          - generic [ref=e94]:
+            - img [ref=e96]
+            - heading "Sean Clayton @abundance10000" [level=2] [ref=e98]:
+              - generic [ref=e99]: Sean Clayton @abundance10000
+          - generic [ref=e101]:
+            - img [ref=e103]
+            - heading "Tammy Scarlett @igobyscarlett" [level=2] [ref=e105]:
+              - generic [ref=e106]: Tammy Scarlett @igobyscarlett
+          - generic [ref=e108]:
+            - img [ref=e110]
+            - heading "Dr. Samuel Lee @drsamuellee" [level=2] [ref=e112]:
+              - generic [ref=e113]: Dr. Samuel Lee @drsamuellee
+        - generic [ref=e114]:
+          - generic [ref=e116]:
+            - img [ref=e118]
+            - heading "Dr. Evan Johnson @becomethemedicine" [level=2] [ref=e120]:
+              - generic [ref=e121]: Dr. Evan Johnson @becomethemedicine
+          - generic [ref=e123]:
+            - img [ref=e125]
+            - heading "Jackson Strong @jackson.mac.strong" [level=2] [ref=e127]:
+              - generic [ref=e128]: Jackson Strong @jackson.mac.strong
+          - generic [ref=e130]:
+            - img [ref=e132]
+            - heading "Zack Blakeny @remembrancecodex" [level=2] [ref=e134]:
+              - generic [ref=e135]: Zack Blakeny @remembrancecodex
+        - generic [ref=e138]:
+          - link "GET INSTAN" [ref=e140] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e141]:  GET INSTAN
+          - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e143] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e144]:
+              - text: 
+              - generic [ref=e145]:
+                - text: GET INSTANT ACCESS
+                - generic [ref=e146]: 
+            - generic [ref=e147]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+          - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e149]:
+            - generic [ref=e150]: 
+            - generic [ref=e151]: Backed by our 30-day Ultimate Clarity Guarantee
+      - generic [ref=e153]:
+        - img [ref=e158]
+        - generic [ref=e161]:
+          - heading "TURN EVERY PROBLEM INTO A BOSS BATTLE YOU HAVE THE SKILLS TO DEFEAT!" [level=1] [ref=e163]:
+            - generic [ref=e165]:
+              - text: TURN EVERY PROBLEM INTO A BOSS BATTLE
+              - text: YOU HAVE THE SKILLS TO DEFEAT!
+          - 'heading "WHAT IS LIFE: THE ULTIMATE VIDEO GAME?" [level=1] [ref=e167]':
+            - generic [ref=e169]:
+              - text: WHAT IS
+              - text: "LIFE: THE ULTIMATE VIDEO GAME?"
+        - generic [ref=e170]:
+          - generic [ref=e172]:
+            - img [ref=e174]
+            - heading "Tired Of Being The Hero In Someone Else's Game? Life The Ultimate Video Game (LTUVG) meets you where you are at, guiding you through a process to discover your \"Spirit Avatar\" in the game of Real Life. Are you a celestial monk, elven sorcerer, or dragon bard? Join this epic adventure to see!" [level=1] [ref=e176]:
+              - generic [ref=e178]:
+                - text: Tired Of Being The Hero In Someone Else's Game?
+                - text: Life The Ultimate Video Game (LTUVG) meets you where you are at, guiding you through a process to discover your "Spirit Avatar" in the game of Real Life.
+                - text: Are you a celestial monk, elven sorcerer, or dragon bard?
+                - generic [ref=e179]: Join this epic adventure to see!
+          - generic [ref=e181]:
+            - img [ref=e183]
+            - heading "Re-frame Pain as a Boss Battle, and Activate The Skills to Finally Win! LTUVG doesn't have chapters. Just like a game, you progress through levels, which include missions, quests and animated cut-scenes to empower you with real-life skills to not only visualize life's challenges as levels in a game, but also defeat them." [level=1] [ref=e185]:
+              - generic [ref=e187]:
+                - generic [ref=e188]: Re-frame Pain as a Boss Battle, and Activate The Skills to Finally Win!
+                - generic [ref=e189]:
+                  - text: LTUVG doesn't have chapters.
+                  - text: Just like a game, you progress through levels, which include missions, quests and animated cut-scenes to
+                  - generic [ref=e190]: empower you with real-life skills
+                  - text: to not only visualize life's challenges as levels in a game, but also defeat them.
+          - generic [ref=e192]:
+            - img [ref=e194]
+            - heading "Self-Transformation Has Never Been So Addictive. LTUVG is the first of its kind. A book with a fully immersive app that weaves together neuroscience, mindfulness, storytelling and metaphysics in a format that turns self-improvement into an EXPERIENCE. This is not theory. It’s structured action. Read, Play, Reflect, Share and Level-up again and again." [level=1] [ref=e196]:
+              - generic [ref=e198]:
+                - text: Self-Transformation Has Never Been So Addictive.
+                - text: LTUVG is the first of its kind. A book with a
+                - generic [ref=e199]: fully immersive app
+                - text: that weaves together neuroscience, mindfulness, storytelling and metaphysics in a format that turns self-improvement into an EXPERIENCE. This is not theory. It’s structured action. Read, Play, Reflect, Share and Level-up again and again.
+        - img [ref=e204]
+        - generic [ref=e207]:
+          - heading "THIS IS FOR YOU IF..." [level=1] [ref=e209]:
+            - generic [ref=e211]:
+              - text: THIS IS
+              - text: FOR YOU IF...
+          - 'heading "You''ve spent thousands of hours gaming and part of you wonders if that time was wasted — even though deep down, you know those hours built something. Therapy creates awareness but no permanent relief. Meditation apps feel like a chore. Self-help books are interesting but no fun to apply to real life. You''re smart, capable, and determined to grow, but are tired of grinding the same stage of life. Gaming helps you decompress, but the stress is still there when you put the controller down. There''s a fear within that you don''t say out loud: Am I broken? This book was written to relieve that fear." [level=1] [ref=e213]':
+            - generic [ref=e215]:
+              - generic [ref=e216]: You've spent thousands of hours gaming and part of you wonders if that time was wasted —
+              - generic [ref=e217]: even though deep down, you know those hours built something.
+              - generic [ref=e218]: Therapy creates awareness but no permanent relief.
+              - text: Meditation apps feel like a chore. Self-help books are interesting but no fun to apply to real life.
+              - text: You're smart, capable, and determined to grow, but are tired of grinding the same stage of life.
+              - text: Gaming helps you decompress, but the stress is still there when you put the controller down.
+              - text: "There's a fear within that you don't say out loud:"
+              - generic [ref=e219]: Am I broken?
+              - text: This book was written to relieve that fear.
+        - generic [ref=e222]:
+          - link "GET INSTAN" [ref=e224] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e225]:  GET INSTAN
+          - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e227] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e228]:
+              - text: 
+              - generic [ref=e229]:
+                - text: GET INSTANT ACCESS
+                - generic [ref=e230]: 
+            - generic [ref=e231]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+          - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e233]:
+            - generic [ref=e234]: 
+            - generic [ref=e235]: Backed by our 30-day Ultimate Clarity Guarantee
+      - generic [ref=e240]:
+        - heading "SAY GOODBYE TO" [level=1] [ref=e242]:
+          - generic [ref=e243]: SAY GOODBYE TO
+        - heading "BUTTON" [level=1] [ref=e245]:
+          - generic [ref=e246]: BUTTON
+        - heading "MASHING" [level=1] [ref=e248]:
+          - generic [ref=e249]: MASHING
+        - 'heading "Most people don''t fail because they lack knowledge. They fail because their mind is overloaded, reactive, and stuck in old loops. You wake up overwhelmed. You avoid difficult conversations. You overthink decisions. You game to decompress... to disconnect from the stress, but you never solve it. You''ve tried therapy, meditation apps, self-help books — none of it was built for the way your brain works. This isn''t laziness. It''s not lack of discipline. And underneath it all, a thought you don''t say out loud: Maybe something is broken in me." [level=1] [ref=e251]':
+          - generic [ref=e253]:
+            - text: Most people don't fail because they lack knowledge. They fail because their mind is overloaded, reactive, and stuck in old loops.
+            - text: You wake up overwhelmed. You avoid difficult conversations. You overthink decisions. You game to decompress... to disconnect from the stress, but you never solve it.
+            - text: You've tried therapy, meditation apps, self-help books — none of it was built for the way your brain works.
+            - text: "This isn't laziness. It's not lack of discipline. And underneath it all, a thought you don't say out loud: Maybe something is broken in me."
+        - img [ref=e255]
+        - generic [ref=e258]:
+          - generic [ref=e260]:
+            - heading "THE NPC MINDSET" [level=1] [ref=e262]:
+              - generic [ref=e264]: THE NPC MINDSET
+            - heading "In an NPC mindset, every setback feels like a personal failure instead of a challenge to overcome. You follow the same script, walk the same loop, react the same way — because nobody gave you different programming." [level=1] [ref=e266]:
+              - generic [ref=e267]: In an NPC mindset, every setback feels like a personal failure instead of a challenge to overcome. You follow the same script, walk the same loop, react the same way — because nobody gave you different programming.
+            - list [ref=e269]:
+              - generic [ref=e270]:
+                - listitem [ref=e271]:
+                  - generic [ref=e272]: 
+                  - generic [ref=e273]: Spiral after a bad day instead of resetting.
+                - listitem [ref=e274]:
+                  - generic [ref=e275]: 
+                  - generic [ref=e276]: Avoid opportunities because you fear failing.
+                - listitem [ref=e277]:
+                  - generic [ref=e278]: 
+                  - generic [ref=e279]: Replay old mistakes instead of moving forward.
+                - listitem [ref=e280]:
+                  - generic [ref=e281]: 
+                  - generic [ref=e282]: Feel drained instead of energized by life.
+                - listitem [ref=e283]:
+                  - generic [ref=e284]: 
+                  - generic [ref=e285]: Game to escape instead of playing life to win.
+            - heading "These aren’t random experiences — they’re symptoms of playing life without a strategy." [level=1] [ref=e287]:
+              - generic [ref=e289]: These aren’t random experiences — they’re symptoms of playing life without a strategy.
+          - generic [ref=e291]:
+            - heading "THE OLD PATH" [level=1] [ref=e293]:
+              - generic [ref=e294]: THE OLD PATH
+            - heading "So what do most people do?" [level=1] [ref=e296]:
+              - generic [ref=e297]: So what do most people do?
+            - heading "CONSUME CONTENT You've read the books. Downloaded the apps. Your shelf is full, your phone is full, your head is full — and you're still stuck on the same stage." [level=1] [ref=e304]:
+              - generic [ref=e306]:
+                - text: CONSUME CONTENT
+                - text: You've read the books. Downloaded the apps. Your shelf is full, your phone is full, your head is full — and you're still stuck on the same stage.
+            - heading "" [level=1] [ref=e308]:
+              - generic [ref=e309]: 
+            - heading "TRY HARDER More discipline. More willpower. More pushing through. Your body is keeping score and the bill is coming due." [level=1] [ref=e316]:
+              - generic [ref=e318]:
+                - text: TRY HARDER
+                - text: More discipline. More willpower. More pushing through. Your body is keeping score and the bill is coming due.
+            - heading "" [level=1] [ref=e320]:
+              - generic [ref=e321]: 
+            - heading "WAIT FOR MOTIVATION You're waiting for the right moment, the right spark, the right feeling. It never comes. Because motivation is a status effect — it wears off." [level=1] [ref=e328]:
+              - generic [ref=e330]:
+                - text: WAIT FOR MOTIVATION
+                - text: You're waiting for the right moment, the right spark, the right feeling. It never comes. Because motivation is a status effect — it wears off.
+            - heading "None of this fixes the root problem. It’s like grinding in the wrong area of the game and wondering why your character never levels up." [level=1] [ref=e332]:
+              - generic [ref=e334]: None of this fixes the root problem. It’s like grinding in the wrong area of the game and wondering why your character never levels up.
+      - generic [ref=e336]:
+        - generic [ref=e339]:
+          - link "GET INSTAN" [ref=e341] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e342]:  GET INSTAN
+          - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e344] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e345]:
+              - text: 
+              - generic [ref=e346]:
+                - text: GET INSTANT ACCESS
+                - generic [ref=e347]: 
+            - generic [ref=e348]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+          - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e350]:
+            - generic [ref=e351]: 
+            - generic [ref=e352]: Backed by our 30-day Ultimate Clarity Guarantee
+        - generic [ref=e355]:
+          - heading "SAY HELLO TO" [level=1] [ref=e357]:
+            - generic [ref=e358]: SAY HELLO TO
+          - heading "BECOMING" [level=1] [ref=e360]:
+            - generic [ref=e361]: BECOMING
+          - heading "THE HERO" [level=1] [ref=e363]:
+            - generic [ref=e364]: THE HERO
+          - heading "LTUVG doesn't give you motivation. It gives you a loadout — Breath Skills as your controller, a Gaming Reframe as your lens, and V.I.S.A. as your character build. Everything you built playing games — the pattern recognition, the resilience, the split-second adaptation — those are your real-life superpowers. You just needed the instruction manual to equip them." [level=1] [ref=e366]:
+            - generic [ref=e368]:
+              - text: LTUVG doesn't give you motivation. It gives you a loadout — Breath Skills as your controller, a Gaming Reframe as your lens, and V.I.S.A. as your character build.
+              - text: Everything you built playing games — the pattern recognition, the resilience, the split-second adaptation — those are your real-life superpowers. You just needed the instruction manual to equip them.
+          - img [ref=e370]
+        - generic [ref=e371]:
+          - generic [ref=e373]:
+            - heading "THE LIFE GAMER MINDSET" [level=1] [ref=e375]:
+              - generic [ref=e376]: THE LIFE GAMER MINDSET
+            - list [ref=e378]:
+              - generic [ref=e379]:
+                - listitem [ref=e380]:
+                  - generic [ref=e381]: 
+                  - generic [ref=e382]: "Status effects upgraded: fear → courage, anxiety → compassion, anger → love"
+                - listitem [ref=e383]:
+                  - generic [ref=e384]: 
+                  - generic [ref=e386]: Breath Skills give you direct control in 2 minutes
+                - listitem [ref=e387]:
+                  - generic [ref=e388]: 
+                  - generic [ref=e390]: Boss battles you're equipped to win
+                - listitem [ref=e391]:
+                  - generic [ref=e392]: 
+                  - generic [ref=e394]: Gaming guilt → conscious reward
+                - listitem [ref=e395]:
+                  - generic [ref=e396]: 
+                  - generic [ref=e398]: Pain → XP
+                - listitem [ref=e399]:
+                  - generic [ref=e400]: 
+                  - generic [ref=e401]:
+                    - generic [ref=e402]: Info overload →
+                    - text: equipped inventory
+                - listitem [ref=e403]:
+                  - generic [ref=e404]: 
+                  - generic [ref=e405]: Stop collecting self-help. Start playing.
+          - generic [ref=e407]:
+            - heading "THE GAME PLAN" [level=1] [ref=e409]:
+              - generic [ref=e410]: THE GAME PLAN
+            - heading "CONTROLLER CALIBRATION Breath Skills activate. Your nervous system comes online. First taste of direct control." [level=1] [ref=e417]:
+              - generic [ref=e419]:
+                - text: CONTROLLER CALIBRATION
+                - text: Breath Skills activate. Your nervous system comes online. First taste of direct control.
+            - heading "" [level=1] [ref=e421]:
+              - generic [ref=e422]: 
+            - heading "HUD ACTIVATION Reframe real life challenges as boss battles you can defeat." [level=1] [ref=e429]:
+              - generic [ref=e431]:
+                - text: HUD ACTIVATION
+                - text: Reframe real life challenges as boss battles you can defeat.
+            - heading "" [level=1] [ref=e433]:
+              - generic [ref=e434]: 
+            - heading "UPGRADE YOUR IDENTITY Unlock your V.I.S.A. Attributes. Your passport to mastering life." [level=1] [ref=e441]:
+              - generic [ref=e443]:
+                - text: UPGRADE YOUR IDENTITY
+                - text: Unlock your V.I.S.A. Attributes. Your passport to mastering life.
+            - heading "" [level=1] [ref=e445]:
+              - generic [ref=e446]: 
+            - heading "CONQUER YOUR CAMPAIGN 14 Levels of missions to build XP you can apply to real life." [level=1] [ref=e453]:
+              - generic [ref=e455]:
+                - text: CONQUER YOUR CAMPAIGN
+                - text: 14 Levels of missions to build XP you can apply to real life.
+            - heading "" [level=1] [ref=e457]:
+              - generic [ref=e458]: 
+            - heading "INNER CHILD RESCUE Face what you've been running from. Reclaim the part of you that remembers how to play." [level=1] [ref=e465]:
+              - generic [ref=e467]:
+                - text: INNER CHILD RESCUE
+                - text: Face what you've been running from. Reclaim the part of you that remembers how to play.
+            - heading "" [level=1] [ref=e469]:
+              - generic [ref=e470]: 
+            - heading "INVINCIBILITY MODE Activate Life Gamer Mode. Every challenge happens FOR you — to learn from, overcome, and level up." [level=1] [ref=e477]:
+              - generic [ref=e479]:
+                - text: INVINCIBILITY MODE
+                - text: Activate Life Gamer Mode. Every challenge happens FOR you — to learn from, overcome, and level up.
+        - generic [ref=e482]:
+          - heading "IMAGINE THIS..." [level=1] [ref=e484]:
+            - generic [ref=e485]: IMAGINE THIS...
+          - 'heading "Imagine waking up every day knowing exactly what level you’re on… What your current mission is… And what skill you’re upgrading next. Not because you’re hyped up — But because you’ve changed how you see yourself, your challenges, and your life. That’s what Life: The Ultimate Video Game delivers." [level=1] [ref=e487]':
+            - generic [ref=e489]:
+              - generic [ref=e490]: Imagine waking up every day knowing exactly what level you’re on… What your current mission is… And what skill you’re upgrading next.
+              - text: Not because you’re hyped up — But because you’ve changed how you see yourself, your challenges, and your life.
+              - text: "That’s what Life: The Ultimate Video Game delivers."
+        - generic [ref=e493]:
+          - link "GET INSTAN" [ref=e495] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e496]:  GET INSTAN
+          - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e498] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e499]:
+              - text: 
+              - generic [ref=e500]:
+                - text: GET INSTANT ACCESS
+                - generic [ref=e501]: 
+            - generic [ref=e502]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+          - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e504]:
+            - generic [ref=e505]: 
+            - generic [ref=e506]: Backed by our 30-day Ultimate Clarity Guarantee
+        - img [ref=e511]
+      - generic [ref=e513]:
+        - generic [ref=e516]:
+          - heading "PRAISE" [level=1] [ref=e518]:
+            - generic [ref=e519]: PRAISE
+          - heading "HEAR FROM PLAYERS" [level=1] [ref=e521]:
+            - generic [ref=e523]:
+              - text: HEAR FROM
+              - text: PLAYERS
+          - heading "This framework has helped thousands all over the world reframe their pain, reclaim their power, and start winning again." [level=1] [ref=e525]:
+            - generic [ref=e526]: This framework has helped thousands all over the world reframe their pain, reclaim their power, and start winning again.
+        - generic [ref=e527]:
+          - generic [ref=e529]:
+            - img [ref=e531]
+            - img [ref=e533]
+            - img [ref=e535]
+            - img [ref=e537]
+          - generic [ref=e539]:
+            - img [ref=e541]
+            - img [ref=e543]
+            - img [ref=e545]
+            - img [ref=e547]
+        - generic [ref=e550]:
+          - link "GET INSTAN" [ref=e552] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e553]:  GET INSTAN
+          - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e555] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e556]:
+              - text: 
+              - generic [ref=e557]:
+                - text: GET INSTANT ACCESS
+                - generic [ref=e558]: 
+            - generic [ref=e559]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+          - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e561]:
+            - generic [ref=e562]: 
+            - generic [ref=e563]: Backed by our 30-day Ultimate Clarity Guarantee
+      - generic [ref=e568]:
+        - generic [ref=e571]:
+          - img [ref=e575]
+          - generic [ref=e577]:
+            - heading "Meet The Author" [level=1] [ref=e579]:
+              - generic [ref=e580]: Meet The Author
+            - heading "KING KANYINI" [level=1] [ref=e582]:
+              - generic [ref=e583]: KING KANYINI
+        - generic [ref=e585]:
+          - heading [level=1] [ref=e590]:
+            - generic [ref=e592]:
+              - text: By the time I was 25 I thought I had it made. Princeton graduate, climbing the top of the finance ladder on Wall Street, living a life I could only dream about as a child. I checked every box society told me to... and I was dying inside.
+              - text: Running from the pain and suffering of the death and destruction that plagued the beginning of my life, everything caught up with me in my own near-death accident going 100mph on a motorcycle. And instead of being grateful for surviving, I went into a deep depression, where video games became my sanctuary.
+              - text: I immersed thousands of hours into worlds where no matter how dire the situation, the heroes always had the skills, weapons, and companions to save their world.
+              - text: Then I found breathwork, not the "take a deep breath" kind. The kind that releases the energetic blockages holding you back for decades and unlocks a state of euphoria within you. Yes. That's possible.
+              - text: I've since watched this method heal my father from 30 years of chronic pain and my wife from Lupus.
+              - text: I then studied with some of the best healers and ancestral wisdom keepers in the world, gamified it, and put it in a life-changing book so you don't have to figure out these cheat codes to transformation alone.
+              - text: The beauty of this book is you don't just read it, you play it.
+          - generic [ref=e595]:
+            - link "GET INSTAN" [ref=e597] [cursor=pointer]:
+              - /url: "#submit-form"
+              - generic [ref=e598]:  GET INSTAN
+            - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e600] [cursor=pointer]:
+              - /url: "#scroll-id-6Z-ZO7n8o-3420"
+              - generic [ref=e601]:
+                - text: 
+                - generic [ref=e602]:
+                  - text: GET INSTANT ACCESS
+                  - generic [ref=e603]: 
+              - generic [ref=e604]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+            - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e606]:
+              - generic [ref=e607]: 
+              - generic [ref=e608]: Backed by our 30-day Ultimate Clarity Guarantee
+      - generic [ref=e610]:
+        - generic [ref=e613]:
+          - heading "BREAKDOWN" [level=1] [ref=e615]:
+            - generic [ref=e616]: BREAKDOWN
+          - heading "YOUR LOADOUT FOR" [level=1] [ref=e618]:
+            - generic [ref=e619]: YOUR LOADOUT FOR
+          - heading "THE GAME OF LIFE" [level=1] [ref=e621]:
+            - generic [ref=e623]: THE GAME OF LIFE
+          - heading "You're Getting The Book Plus These Bonuses" [level=1] [ref=e625]:
+            - generic [ref=e626]: You're Getting The Book Plus These Bonuses
+        - generic [ref=e627]:
+          - img [ref=e631]
+          - generic [ref=e633]:
+            - heading "INCLUDED" [level=1] [ref=e635]:
+              - generic [ref=e636]: INCLUDED
+            - heading "THE BOOK" [level=1] [ref=e638]:
+              - generic [ref=e639]: THE BOOK
+            - 'heading "LIFE: THE ULTIMATE VIDEO GAME (Digital Book) The complete story, framework, and methodology to upgrade your mindset, reframe challenges, and play life at a higher level. (Instant PDF download — not a physical copy)" [level=1] [ref=e641]':
+              - generic [ref=e643]:
+                - text: "LIFE: THE ULTIMATE VIDEO GAME (Digital Book)"
+                - text: The complete story, framework, and methodology to upgrade your mindset, reframe challenges, and play life at a higher level.
+                - text: (Instant PDF download — not a physical copy)
+        - generic [ref=e644]:
+          - img [ref=e648]
+          - generic [ref=e650]:
+            - heading "FREE BONUS 1" [level=1] [ref=e652]:
+              - generic [ref=e653]: FREE BONUS 1
+            - heading "WEALTH MAGNET (Level 1 Breathquest)" [level=1] [ref=e655]:
+              - generic [ref=e657]:
+                - text: WEALTH MAGNET
+                - text: (Level 1 Breathquest)
+            - 'heading "Tap into the frequency of abundance with this guided breathwork mission. Through intentional breathing patterns and visualization, you’ll shift your energy, release scarcity blocks, and start attracting opportunities that align with your higher self. VALUE: $100" [level=1] [ref=e659]':
+              - generic [ref=e661]:
+                - text: Tap into the frequency of abundance with this guided breathwork mission. Through intentional breathing patterns and visualization, you’ll shift your energy, release scarcity blocks, and start attracting opportunities that align with your higher self.
+                - text: "VALUE: $100"
+        - generic [ref=e662]:
+          - img [ref=e666]
+          - generic [ref=e668]:
+            - heading "FREE BONUS 2" [level=1] [ref=e670]:
+              - generic [ref=e671]: FREE BONUS 2
+            - heading "ANXIETY ERASER (Level 1 Breathquest)" [level=1] [ref=e673]:
+              - generic [ref=e675]:
+                - text: ANXIETY ERASER
+                - text: (Level 1 Breathquest)
+            - 'heading "Melt away stress and overwhelm in minutes. This calming practice guides you through gentle breath sequences that regulate your nervous system, quiet racing thoughts, and create a deep sense of inner peace you can return to anytime. VALUE: $100" [level=1] [ref=e677]':
+              - generic [ref=e679]:
+                - text: Melt away stress and overwhelm in minutes. This calming practice guides you through gentle breath sequences that regulate your nervous system, quiet racing thoughts, and create a deep sense of inner peace you can return to anytime.
+                - text: "VALUE: $100"
+        - generic [ref=e682]:
+          - link "GET INSTAN" [ref=e684] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e685]:  GET INSTAN
+          - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e687] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e688]:
+              - text: 
+              - generic [ref=e689]:
+                - text: GET INSTANT ACCESS
+                - generic [ref=e690]: 
+            - generic [ref=e691]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+          - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e693]:
+            - generic [ref=e694]: 
+            - generic [ref=e695]: Backed by our 30-day Ultimate Clarity Guarantee
+      - generic [ref=e697]:
+        - generic [ref=e700]:
+          - heading "BREAKDOWN" [level=1] [ref=e702]:
+            - generic [ref=e703]: BREAKDOWN
+          - heading "SKILLS YOU'LL ACTIVATE" [level=1] [ref=e705]:
+            - generic [ref=e708]:
+              - text: SKILLS YOU'LL
+              - text: ACTIVATE
+          - img [ref=e710]
+          - list [ref=e712]:
+            - generic [ref=e713]:
+              - listitem [ref=e714]:
+                - generic [ref=e715]: 
+                - generic [ref=e716]: The hidden mindset loop keeping people stuck in the same life level.
+              - listitem [ref=e717]:
+                - generic [ref=e718]: 
+                - generic [ref=e719]: Why willpower alone doesn’t work — and what actually creates change.
+              - listitem [ref=e720]:
+                - generic [ref=e721]: 
+                - generic [ref=e722]: How to turn pain into progress and setbacks into skill upgrades.
+              - listitem [ref=e723]:
+                - generic [ref=e724]: 
+                - generic [ref=e725]: The identity shift that makes growth feel natural instead of forced.
+              - listitem [ref=e726]:
+                - generic [ref=e727]: 
+                - generic [ref=e728]: A simple framework to stay consistent without burnout.
+        - generic [ref=e731]:
+          - link "GET INSTAN" [ref=e733] [cursor=pointer]:
+            - /url: "#submit-form"
+            - generic [ref=e734]:  GET INSTAN
+          - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e736] [cursor=pointer]:
+            - /url: "#scroll-id-6Z-ZO7n8o-3420"
+            - generic [ref=e737]:
+              - text: 
+              - generic [ref=e738]:
+                - text: GET INSTANT ACCESS
+                - generic [ref=e739]: 
+            - generic [ref=e740]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+          - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e742]:
+            - generic [ref=e743]: 
+            - generic [ref=e744]: Backed by our 30-day Ultimate Clarity Guarantee
+      - generic [ref=e749]:
+        - img [ref=e751]
+        - heading "30-DAY MONEYBACK" [level=1] [ref=e753]:
+          - generic [ref=e755]:
+            - text: 30-DAY
+            - text: MONEYBACK
+        - heading "ULTIMATE CLARITY GUARANTEE" [level=1] [ref=e757]:
+          - generic [ref=e760]:
+            - text: ULTIMATE CLARITY
+            - text: GUARANTEE
+        - heading "If You Buy This Book And Don't Experience A Powerful Mindset Shift, Just Email Us At <your-org-email> Within 30 Days And We'll Give You Every Cent Of Your Money Back, And You Get To Keep The Book And All The Bonuses." [level=1] [ref=e762]:
+          - generic [ref=e764]: If You Buy This Book And Don't Experience A Powerful Mindset Shift, Just Email Us At <your-org-email> Within 30 Days And We'll Give You Every Cent Of Your Money Back, And You Get To Keep The Book And All The Bonuses.
+        - generic [ref=e767]:
+          - generic [ref=e769]:
+            - heading "HERE'S EVERYTHING YOU'RE GETTING TODAY" [level=1] [ref=e771]:
+              - generic [ref=e772]: HERE'S EVERYTHING YOU'RE GETTING TODAY
+            - img [ref=e774]
+            - heading "THIS 30-MINUTE MINDSET SHIFT CAN LEVEL UP YOUR LIFE — FAST..." [level=1] [ref=e776]:
+              - generic [ref=e778]:
+                - text: THIS 30-MINUTE MINDSET SHIFT CAN
+                - text: LEVEL UP YOUR LIFE — FAST...
+            - list [ref=e780]:
+              - listitem [ref=e782]:
+                - generic [ref=e783]: 
+                - generic [ref=e784]:
+                  - generic [ref=e785]: "LIFE: The Ultimate Video Game:"
+                  - text: Digital Download
+            - list [ref=e787]:
+              - listitem [ref=e789]:
+                - generic [ref=e790]: 
+                - generic [ref=e791]:
+                  - generic [ref=e792]: Wealth Magnet (Level 1 Breathquest)
+                  - text: Guided breathwork to shift your energy and release scarcity blocks
+            - list [ref=e794]:
+              - listitem [ref=e796]:
+                - generic [ref=e797]: 
+                - generic [ref=e799]:
+                  - text: Anxiety Eraser (Level 1 Breathquest)
+                  - text: Calming breath sequences to regulate your nervous system in minutes
+            - 'heading "Total Value: $200+ / Today Just $1.99" [level=1] [ref=e801]':
+              - generic [ref=e802]: "Total Value: $200+ / Today Just $1.99"
+            - generic [ref=e805]:
+              - img [ref=e809]
+              - generic [ref=e811]:
+                - heading "ULTIMATE CLARITY GUARANTEE" [level=1] [ref=e813]:
+                  - generic [ref=e814]: ULTIMATE CLARITY GUARANTEE
+                - heading "If you buy this book and don't experience a powerful mindset shift, just email us at <your-org-email> within 30 days and we'll give you every cent of your money back, and you get to keep the book and all the bonuses." [level=1] [ref=e816]:
+                  - generic [ref=e817]: If you buy this book and don't experience a powerful mindset shift, just email us at <your-org-email> within 30 days and we'll give you every cent of your money back, and you get to keep the book and all the bonuses.
+          - generic [ref=e819]:
+            - heading " Limited-Time Discount Expires On Apr 15, 2026" [level=1] [ref=e821]:
+              - generic [ref=e822]: 
+              - generic [ref=e824]:
+                - text: Limited-Time Discount Expires On
+                - text: Apr 15, 2026
+            - generic [ref=e826]:
+              - generic [ref=e828]:
+                - generic [ref=e830]: "0"
+                - generic [ref=e831]: Days
+              - generic [ref=e832]:
+                - generic [ref=e833]:
+                  - generic [ref=e835]: "00"
+                  - generic [ref=e836]: Hours
+                - generic [ref=e837]:
+                  - generic [ref=e839]: "00"
+                  - generic [ref=e840]: Minutes
+                - generic [ref=e841]:
+                  - generic [ref=e843]: "00"
+                  - generic [ref=e844]: Seconds
+            - heading "GET YOUR COPY TODAY" [level=1] [ref=e846]:
+              - generic [ref=e847]: GET YOUR COPY TODAY
+            - heading "80% Discount Available TODAY:" [level=1] [ref=e849]:
+              - generic [ref=e851]:
+                - generic [ref=e852]: 80% Discount
+                - text: Available
+                - generic [ref=e853]: "TODAY:"
+            - heading "NORMALLY $9.99" [level=1] [ref=e855]:
+              - generic [ref=e857]: NORMALLY $9.99
+            - heading "ONLY $1.99 TODAY" [level=1] [ref=e859]:
+              - generic [ref=e860]: ONLY $1.99 TODAY
+            - heading "Download The Book + Bonuses Instantly. Start Playing The Game OF Life In The Next 2 Minutes." [level=1] [ref=e862]:
+              - generic [ref=e863]: Download The Book + Bonuses Instantly. Start Playing The Game OF Life In The Next 2 Minutes.
+            - generic [ref=e866]:
+              - text:                                                                                                                                
+              - generic [ref=e868]:
+                - generic [ref=e871]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: "1"
+                        - generic:
+                          - generic: YOUR INFO
+                          - generic: Contact
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: "2"
+                        - generic:
+                          - generic: COMPLETE
+                          - generic: Instant Access
+                - generic [ref=e873]:
+                  - generic [ref=e876]:
+                    - generic [ref=e877]:
+                      - generic [ref=e878]:
+                        - textbox "First Name" [ref=e879]
+                        - generic:
+                          - generic:
+                            - generic: First Name
+                        - text: 
+                      - generic [ref=e880]:
+                        - textbox "Last Name" [ref=e881]
+                        - generic:
+                          - generic:
+                            - generic: Last Name
+                        - text: 
+                    - generic [ref=e883]:
+                      - textbox "Email" [ref=e884]
+                      - generic:
+                        - generic:
+                          - generic: Email
+                      - text: 
+                  - text:      
+                  - text: 
+                  - link "NEXT" [ref=e886] [cursor=pointer]:
+                    - /url: "#!next-step"
+                    - generic [ref=e887]:  NEXT
+                  - paragraph [ref=e888]: We Never Share Your Information With Anyone
+                - generic:                
+              - text:     
+              - generic: 
+            - heading "Terms & Conditions" [level=1] [ref=e890]:
+              - generic [ref=e892]: Terms & Conditions
+            - img [ref=e894]
+            - heading " By clicking \"Go to Step 2\" above you agree to receive email & text messages from King <your-name> regarding announcements and company updates as set forth in our Privacy Policy. You also agree to our Terms & Conditions. Please reply to any message with STOP at any time to stop receiving messages. The frequency of messages varies. Message and data rates may apply. Your data is 100% secured and will never be shared." [level=1] [ref=e896]:
+              - generic [ref=e897]: 
+              - generic [ref=e900]: By clicking "Go to Step 2" above you agree to receive email & text messages from King <your-name> regarding announcements and company updates as set forth in our Privacy Policy. You also agree to our Terms & Conditions. Please reply to any message with STOP at any time to stop receiving messages. The frequency of messages varies. Message and data rates may apply. Your data is 100% secured and will never be shared.
+        - generic [ref=e902]:
+          - generic [ref=e905]:
+            - heading "EARNINGS & INCOME DISCLAIMER" [level=1] [ref=e907]:
+              - generic [ref=e908]: EARNINGS & INCOME DISCLAIMER
+            - heading "Please understand my results I'm sharing with you are not typical. I’m not implying you’ll duplicate them (or do anything for that matter). I have the benefit of years of experience as a healing practitioner, breathwork facilitator, and author, and have an established following as a result. The average person who buys any “how to” information gets little to no results. I’m using these references for example purposes only. Your results will vary and depend on many factors …including but not limited to your background, experience, and work ethic. All business entails risk as well as massive and consistent effort and action. If you're not willing to accept that, please DO NOT GET THIS BOOK." [level=1] [ref=e910]:
+              - generic [ref=e911]: Please understand my results I'm sharing with you are not typical. I’m not implying you’ll duplicate them (or do anything for that matter). I have the benefit of years of experience as a healing practitioner, breathwork facilitator, and author, and have an established following as a result. The average person who buys any “how to” information gets little to no results. I’m using these references for example purposes only. Your results will vary and depend on many factors …including but not limited to your background, experience, and work ethic. All business entails risk as well as massive and consistent effort and action. If you're not willing to accept that, please DO NOT GET THIS BOOK.
+          - generic [ref=e914]:
+            - heading "STILL NOT SURE?" [level=1] [ref=e916]:
+              - generic [ref=e917]: STILL NOT SURE?
+            - heading "FREQUENTLY ASKED QUESTIONS" [level=1] [ref=e919]:
+              - generic [ref=e922]:
+                - text: FREQUENTLY ASKED
+                - text: QUESTIONS
+            - generic [ref=e924]:
+              - generic [ref=e926] [cursor=pointer]:
+                - generic [ref=e928]: I want this, what exactly am I getting?
+                - generic [ref=e930]: 
+              - generic [ref=e932] [cursor=pointer]:
+                - generic [ref=e934]: Who is this for?
+                - generic [ref=e936]: 
+              - generic [ref=e938] [cursor=pointer]:
+                - generic [ref=e940]: Is there deeper support available?
+                - generic [ref=e942]: 
+              - generic [ref=e944] [cursor=pointer]:
+                - generic [ref=e946]: Is there a guarantee?
+                - generic [ref=e948]: 
+              - generic [ref=e950] [cursor=pointer]:
+                - generic [ref=e952]: How fast will I see results?
+                - generic [ref=e954]: 
+              - generic [ref=e956] [cursor=pointer]:
+                - generic [ref=e958]: I still have a question.
+                - generic [ref=e960]: 
+          - generic [ref=e963]:
+            - link "GET INSTAN" [ref=e965] [cursor=pointer]:
+              - /url: "#submit-form"
+              - generic [ref=e966]:  GET INSTAN
+            - link "GET INSTANT ACCESS  INSTANT DIGITAL DOWNLOAD FOR JUST $1.99" [ref=e968] [cursor=pointer]:
+              - /url: "#scroll-id-6Z-ZO7n8o-3420"
+              - generic [ref=e969]:
+                - text: 
+                - generic [ref=e970]:
+                  - text: GET INSTANT ACCESS
+                  - generic [ref=e971]: 
+              - generic [ref=e972]: INSTANT DIGITAL DOWNLOAD FOR JUST $1.99
+            - heading " Backed by our 30-day Ultimate Clarity Guarantee" [level=1] [ref=e974]:
+              - generic [ref=e975]: 
+              - generic [ref=e976]: Backed by our 30-day Ultimate Clarity Guarantee
+      - generic [ref=e981]:
+        - img "Two-Comma-Club-X_logow png" [ref=e985]
+        - generic [ref=e988]:
+          - link "" [ref=e992] [cursor=pointer]:
+            - /url: https://www.facebook.com/christapher.benson
+            - generic [ref=e993]: 
+          - link "" [ref=e997] [cursor=pointer]:
+            - /url: https://www.instagram.com/<your-github-handle>healing/
+            - generic [ref=e998]: 
+          - link "" [ref=e1002] [cursor=pointer]:
+            - /url: https://www.youtube.com/@<your-github-handle>
+            - generic [ref=e1003]: 
+        - paragraph [ref=e1005]:
+          - generic [ref=e1007]:
+            - text: Privacy Policy | Terms & Condition
+            - text: ©2026 King <your-name>, Healing. All Rights Reserved.
+        - paragraph [ref=e1009]:
+          - generic [ref=e1011]:
+            - text: "DISCLAIMER: We can not and do not make any guarantees about your ability to get results or earn any money with our ideas, information, tools, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this page, any of our websites, or any of our content or curriculum is a promise or guarantee of results or future earnings, and we do not offer any legal, medical, tax or other professional advice. Any financial numbers referenced here, or on any of our sites, are illustrative of concepts only and should not be considered average earnings, exact earnings, or promises for actual or future performance. Use caution and always consult your accountant, lawyer or professional advisor before acting on this or any information related to a lifestyle change or your business or finances. You alone are responsible and accountable for your decisions, actions and results in life, and by your registration here you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance."
+            - text: "NOT FACEBOOK™: This site is not a part of the Facebook™ website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc."
+            - text: We use cookies, including third-party cookies, on this website to help operate our site and for analytics and advertising purposes. For more on how we use cookies and your cookie choices, go here for our cookie policy!
+  - text: 

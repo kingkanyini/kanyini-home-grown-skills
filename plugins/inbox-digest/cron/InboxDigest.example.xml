@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>Daily inbox-digest run for <example-client>. Fires 3x: 5 min after sign-on, at 13:00 local, and at 18:00 local. Runs hidden via VBS wrapper. No new mail = no report (Phase 3 skip-empty behavior).</Description>
+    <URI>\InboxDigest</URI>
+  </RegistrationInfo>
+  <Triggers>
+    <LogonTrigger>
+      <Enabled>true</Enabled>
+      <Delay>PT5M</Delay>
+    </LogonTrigger>
+    <CalendarTrigger>
+      <Enabled>true</Enabled>
+      <StartBoundary>2026-05-12T13:00:00</StartBoundary>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+    <CalendarTrigger>
+      <Enabled>true</Enabled>
+      <StartBoundary>2026-05-12T18:00:00</StartBoundary>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <LogonType>InteractiveToken</LogonType>
+      <RunLevel>LeastPrivilege</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <AllowHardTerminate>true</AllowHardTerminate>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>true</RunOnlyIfNetworkAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>false</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <Hidden>true</Hidden>
+    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <WakeToRun>false</WakeToRun>
+    <ExecutionTimeLimit>PT15M</ExecutionTimeLimit>
+    <Priority>7</Priority>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>wscript.exe</Command>
+      <Arguments>"~/.claude\plugins\local\inbox-digest\cron\inbox-digest-hidden.vbs"</Arguments>
+      <WorkingDirectory>~/.claude\plugins\local\inbox-digest\cron</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

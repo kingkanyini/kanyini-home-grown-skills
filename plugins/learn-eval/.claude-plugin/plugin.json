@@ -1,0 +1,19 @@
+{
+  "name": "learn-eval",
+  "version": "1.0.0",
+  "description": "Extract reusable patterns from the session, self-evaluate quality before saving, and determine the right save location (Global vs Project)",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T1",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

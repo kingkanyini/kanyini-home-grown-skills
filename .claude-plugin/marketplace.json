@@ -1,0 +1,150 @@
+{
+  "name": "kanyini-home-grown-skills",
+  "version": "1.0.0",
+  "description": "Private Claude Code plugin marketplace — coaches, healers, spiritual entrepreneurs building their agentic chief of staff",
+  "owner": {
+    "name": "Kanyini"
+  },
+  "plugins": {
+    "savepoint": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "quicksave": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "counsel-dispatch": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "learn-eval": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "morning-compass": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "inbox-digest": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "perplexity-research": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "voice-dna-extractor": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "voice-dna-blueprint-builder": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "charisma-codes": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "exportskill": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "quickshare": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "skill-to-site": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "offer-optimizer": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "magnetic-offer-blueprint": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "propaganda-machine": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "funnel-hack-research": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "funnel-hack-lvl-1": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "funnel-audit": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "funnel-translate": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "webinar-forge": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "vsl-activator": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "daily-email-digest": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "belief-shift-e-engine": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "headline-creator": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "ad-copy-forge": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "ss-ad-generator": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    },
+    "power-clip-pro": {
+      "latest": "1.0.0",
+      "yanked": [],
+      "deprecated": false
+    }
+  }
+}

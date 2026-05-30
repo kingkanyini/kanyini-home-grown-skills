@@ -1,0 +1,25 @@
+{
+  "name": "kanyini-home-grown-skills-tooling",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build + validation tooling for the Kanyini Home-Grown Skills marketplace. NOT a published package. Repo-root node_modules is gitignored; per-skill node_modules are forbidden.",
+  "type": "module",
+  "scripts": {
+    "sanitize": "node scripts/sanitize.mjs",
+    "sanitize:dry": "node scripts/sanitize.mjs --dry-run",
+    "leak-audit": "node scripts/leak-audit.mjs",
+    "validate:plugins": "node scripts/validate-plugin-jsons.mjs",
+    "validate:marketplace": "node scripts/validate-marketplace.mjs",
+    "validate:all": "npm run validate:plugins && npm run validate:marketplace && npm run leak-audit",
+    "diff": "node scripts/diff-since-last-ship.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "semver": "^7.6.3",
+    "glob": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

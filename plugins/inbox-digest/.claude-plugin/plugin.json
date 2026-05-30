@@ -1,0 +1,26 @@
+{
+  "name": "inbox-digest",
+  "version": "1.0.0",
+  "description": "Scan Gmail for client emails, file into vault per-client, generate per-client daily briefs",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T2",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [
+      "mcp__gmail-gong-mcp__*",
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [
+      "python",
+      "node",
+      "pwsh"
+    ],
+    "envVars": [],
+    "services": [
+      "Gmail"
+    ]
+  }
+}

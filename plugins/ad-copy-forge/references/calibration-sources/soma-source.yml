@@ -1,0 +1,1035 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic:      
+    - generic [ref=e5]:
+      - generic [ref=e10]:
+        - heading "SOMA" [level=1] [ref=e12]:
+          - generic [ref=e14]: SOMA
+        - heading "Embodiment · Energy · Execution" [level=1] [ref=e16]:
+          - generic [ref=e17]: Embodiment · Energy · Execution
+      - generic [ref=e19]:
+        - generic [ref=e22]:
+          - heading "HIGH PERFORMERS HITTING A CEILING?" [level=1] [ref=e24]:
+            - generic [ref=e25]: HIGH PERFORMERS HITTING A CEILING?
+          - heading "THE KEY TO BREAKING THROUGH wITHOUT burning OUT? AND iT ISN'T WHAT YOU THINK." [level=1] [ref=e27]:
+            - generic [ref=e29]:
+              - text: THE KEY TO BREAKING THROUGH wITHOUT burning OUT?
+              - text: AND iT ISN'T WHAT YOU THINK.
+        - generic [ref=e32]:
+          - iframe [ref=e37]:
+            - generic [active] [ref=f15e1]:
+              - generic "YouTube Video Player" [ref=f15e3]
+              - generic [ref=f15e5]:
+                - generic:
+                  - generic:
+                    - button "Play video" [ref=f15e10] [cursor=pointer]:
+                      - generic [ref=f15e13]:
+                        - img
+                    - button "Hide player controls" [ref=f15e14] [cursor=pointer]
+                    - generic [ref=f15e16]:
+                      - generic [ref=f15e21]:
+                        - generic [ref=f15e22]:
+                          - link "Why am I Short of Breath?" [ref=f15e23] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=KKxJ9Iwe5hI
+                          - link "American Lung Association" [ref=f15e24] [cursor=pointer]:
+                            - /url: /channel/UC7f9888CwQq-XmKYRGa7k_g
+                            - generic [ref=f15e25]: American Lung Association
+                        - generic [ref=f15e26]:
+                          - button "thumbnail-image" [ref=f15e27] [cursor=pointer]:
+                            - img "thumbnail-image" [ref=f15e28]
+                          - generic [ref=f15e29]:
+                            - generic [ref=f15e30]:
+                              - generic: American Lung Association
+                              - generic: 49.7K subscribers
+                            - generic [ref=f15e38]:
+                              - generic [ref=f15e39]:
+                                - generic:
+                                  - generic:
+                                    - img
+                                - button "Subscribe" [ref=f15e42] [cursor=pointer]:
+                                  - generic [ref=f15e43]: Subscribe
+                              - generic:
+                                - generic:
+                                  - img
+                      - generic [ref=f15e47]:
+                        - generic [ref=f15e48]:
+                          - button "Share" [ref=f15e50] [cursor=pointer]:
+                            - generic [ref=f15e54]:
+                              - img
+                          - button "Watch later" [ref=f15e59] [cursor=pointer]:
+                            - generic [ref=f15e63]:
+                              - img
+                        - link "Watch on YouTube" [ref=f15e70] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=KKxJ9Iwe5hI
+                          - generic [ref=f15e73]:
+                            - text: Watch on
+                            - img [ref=f15e75]:
+                              - generic [ref=f15e77]:
+                                - img
+          - heading "Discover the 8-week somatic Immersion For How High Achievers Who've Optimized Everything Except The Body Running It All." [level=1] [ref=e39]:
+            - generic [ref=e40]: Discover the 8-week somatic Immersion For How High Achievers Who've Optimized Everything Except The Body Running It All.
+        - generic [ref=e43]:
+          - heading "Tired of Being \"The Machine\"? Sharp. Successful. Respected. You've Built Everything, but can't enjoy any of it." [level=1] [ref=e45]:
+            - generic [ref=e47]:
+              - text: Tired of Being "The Machine"?
+              - text: Sharp. Successful. Respected.
+              - text: You've Built Everything, but can't enjoy any of it.
+          - link "Apply for SOMA IMMERSION  THE BODY LEADS. THE MIND FOLLOWS." [ref=e49] [cursor=pointer]:
+            - /url: "#open-popup"
+            - generic [ref=e50]:
+              - text: 
+              - generic [ref=e51]:
+                - text: Apply for SOMA IMMERSION
+                - generic [ref=e52]: 
+            - generic [ref=e53]: THE BODY LEADS. THE MIND FOLLOWS.
+          - heading "April–May 2026 — limited Space Available" [level=1] [ref=e55]:
+            - generic [ref=e56]: April–May 2026 — limited Space Available
+      - generic [ref=e67]:
+        - generic [ref=e68] [cursor=pointer]:
+          - img "Josephine" [ref=e70]
+          - generic [ref=e72]:
+            - text: Josephine
+            - generic [ref=e73]: Wellness Coach
+        - generic [ref=e74] [cursor=pointer]:
+          - img "Matias" [ref=e76]
+          - generic [ref=e78]:
+            - text: Matias
+            - generic [ref=e79]: AI Agency Owner
+        - generic [ref=e80] [cursor=pointer]:
+          - img "SHIFT" [ref=e82]
+          - generic [ref=e84]:
+            - text: SHIFT
+            - generic [ref=e85]: Testimonials
+        - generic [ref=e86] [cursor=pointer]:
+          - img "Daniel" [ref=e88]
+          - generic [ref=e90]:
+            - text: Daniel
+            - generic [ref=e91]: Doctor
+        - generic [ref=e92] [cursor=pointer]:
+          - img "Catalina" [ref=e94]
+          - generic [ref=e96]:
+            - text: Catalina
+            - generic [ref=e97]: Business Owner
+        - generic [ref=e98] [cursor=pointer]:
+          - img "Josephine" [ref=e100]
+          - generic [ref=e102]:
+            - text: Josephine
+            - generic [ref=e103]: Wellness Coach
+        - generic [ref=e104] [cursor=pointer]:
+          - img "Matias" [ref=e106]
+          - generic [ref=e108]:
+            - text: Matias
+            - generic [ref=e109]: AI Agency Owner
+        - generic [ref=e110] [cursor=pointer]:
+          - img "SHIFT" [ref=e112]
+          - generic [ref=e114]:
+            - text: SHIFT
+            - generic [ref=e115]: Testimonials
+        - generic [ref=e116] [cursor=pointer]:
+          - img "Daniel" [ref=e118]
+          - generic [ref=e120]:
+            - text: Daniel
+            - generic [ref=e121]: Doctor
+        - generic [ref=e122] [cursor=pointer]:
+          - img "Catalina" [ref=e124]
+          - generic [ref=e126]:
+            - text: Catalina
+            - generic [ref=e127]: Business Owner
+        - generic [ref=e128] [cursor=pointer]:
+          - img "Josephine" [ref=e130]
+          - generic [ref=e132]:
+            - text: Josephine
+            - generic [ref=e133]: Wellness Coach
+        - generic [ref=e134] [cursor=pointer]:
+          - img "Matias" [ref=e136]
+          - generic [ref=e138]:
+            - text: Matias
+            - generic [ref=e139]: AI Agency Owner
+        - generic [ref=e140] [cursor=pointer]:
+          - img "SHIFT" [ref=e142]
+          - generic [ref=e144]:
+            - text: SHIFT
+            - generic [ref=e145]: Testimonials
+        - generic [ref=e146] [cursor=pointer]:
+          - img "Daniel" [ref=e148]
+          - generic [ref=e150]:
+            - text: Daniel
+            - generic [ref=e151]: Doctor
+        - generic [ref=e152] [cursor=pointer]:
+          - img "Catalina" [ref=e154]
+          - generic [ref=e156]:
+            - text: Catalina
+            - generic [ref=e157]: Business Owner
+        - generic [ref=e158] [cursor=pointer]:
+          - img "Josephine" [ref=e160]
+          - generic [ref=e162]:
+            - text: Josephine
+            - generic [ref=e163]: Wellness Coach
+        - generic [ref=e164] [cursor=pointer]:
+          - img "Matias" [ref=e166]
+          - generic [ref=e168]:
+            - text: Matias
+            - generic [ref=e169]: AI Agency Owner
+        - generic [ref=e170] [cursor=pointer]:
+          - img "SHIFT" [ref=e172]
+          - generic [ref=e174]:
+            - text: SHIFT
+            - generic [ref=e175]: Testimonials
+        - generic [ref=e176] [cursor=pointer]:
+          - img "Daniel" [ref=e178]
+          - generic [ref=e180]:
+            - text: Daniel
+            - generic [ref=e181]: Doctor
+        - generic [ref=e182] [cursor=pointer]:
+          - img "Catalina" [ref=e184]
+          - generic [ref=e186]:
+            - text: Catalina
+            - generic [ref=e187]: Business Owner
+      - heading [level=1] [ref=e194]
+      - generic [ref=e197]:
+        - generic [ref=e200]:
+          - heading "Is SOMA IMMERSION For You?" [level=1] [ref=e202]:
+            - generic [ref=e203]: Is SOMA IMMERSION For You?
+          - heading "Yes — if any of this feels uncomfortably accurate:" [level=1] [ref=e205]:
+            - generic [ref=e207]: "Yes — if any of this feels uncomfortably accurate:"
+        - generic [ref=e208]:
+          - list [ref=e212]:
+            - generic [ref=e213]:
+              - listitem [ref=e214]:
+                - generic [ref=e215]: 
+                - generic [ref=e216]: You're successful on paper, but something fundamental is missing. Revenue is there but you continue to hit a ceiling. And underneath all of it, there's a tension you can't name and can't think your way out of.
+              - listitem [ref=e217]:
+                - generic [ref=e218]: 
+                - generic [ref=e219]:
+                  - generic [ref=e220]: You live in your head, and experience chronic pain in the body.
+                  - text: You're analytically sharp, but your body is in pain and you just got used to it. You're leading your business, your team, your relationships from a place you can't actually inhabit.
+              - listitem [ref=e221]:
+                - generic [ref=e222]: 
+                - generic [ref=e223]: Your nervous system is always on. Even when you have time off, you struggle being present. You're there, but you struggle to find the switch to just relax.
+              - listitem [ref=e224]:
+                - generic [ref=e225]: 
+                - generic [ref=e226]: You override the signals. Tight jaw. Shallow breathing. Poor sleep. Gut that protests. Your body is telling you something is wrong but you push through.
+              - listitem [ref=e227]:
+                - generic [ref=e228]: 
+                - generic [ref=e229]: You've done the programs. More discipline. More frameworks. More self-help. Some of it helped. But you can't pull yourself to let go of responsibility.
+              - listitem [ref=e230]:
+                - generic [ref=e231]: 
+                - generic [ref=e232]: You swing between control and shutdown. Either managing your inner state with an iron grip, or going numb. Neither is mastery. Both cost you connection.
+          - img [ref=e236]
+        - text:     
+        - generic [ref=e239]:
+          - list [ref=e241]:
+            - generic [ref=e242]:
+              - listitem [ref=e243]:
+                - generic [ref=e244]: 
+                - generic [ref=e245]: You're exhausted by the performance. Not the work — the performance of having it together. The gap between what you've achieved and how it actually feels is getting harder to ignore.
+              - listitem [ref=e246]:
+                - generic [ref=e247]: 
+                - generic [ref=e248]: You're worried you'll keep hitting this ceiling forever. Or worse — that you'll look back and realize you were never really present for any of it.
+          - heading "If you answered YES to even one of these… this was built for you." [level=1] [ref=e250]:
+            - generic [ref=e253]:
+              - generic [ref=e254]:
+                - text: If you answered
+                - link "YES" [ref=e256] [cursor=pointer]:
+                  - /url: "#"
+                - text: to even one of these…
+              - text: this was built for you.
+      - generic [ref=e261]:
+        - heading "Apply Today…" [level=1] [ref=e263]:
+          - generic [ref=e264]: Apply Today…
+        - heading "…and begin the process of becoming someone your nervous system has never let you be. No more thinking your way through it. No more pushing past it. Just 8 weeks of real, body-based work — and a regulated, authentic version of YOU on the other side." [level=1] [ref=e266]:
+          - generic [ref=e268]:
+            - text: …and begin the process of becoming someone your nervous system has never let you be.
+            - text: No more thinking your way through it.
+            - text: No more pushing past it.
+            - text: Just 8 weeks of real, body-based work — and a regulated, authentic version of YOU on the other side.
+        - link "ACTIVATE MY FULL POTENTIAL  BY TRANSFORMING MY BODY." [ref=e270] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e271]:
+            - text: 
+            - generic [ref=e272]:
+              - text: ACTIVATE MY FULL POTENTIAL
+              - generic [ref=e273]: 
+          - generic [ref=e274]: BY TRANSFORMING MY BODY.
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - generic [ref=e279]:
+            - heading "What Is the SOMA IMMERSION?" [level=1] [ref=e281]:
+              - generic [ref=e282]: What Is the SOMA IMMERSION?
+            - heading "The SOMA Collective is an 8-week embodiment experience for high-performing entrepreneurs. Designed to break through the ceiling in your business and create the deep level of intimacy in your relationships you've been craving by:" [level=1] [ref=e284]:
+              - generic [ref=e286]:
+                - text: The SOMA Collective is an 8-week embodiment experience for
+                - generic [ref=e287]: high-performing entrepreneurs.
+                - text: "Designed to break through the ceiling in your business and create the deep level of intimacy in your relationships you've been craving by:"
+            - list [ref=e289]:
+              - generic [ref=e290]:
+                - listitem [ref=e291]:
+                  - generic [ref=e292]: 
+                  - generic [ref=e293]: Mapping/Regulating Your Nervous System
+                - listitem [ref=e294]:
+                  - generic [ref=e295]: 
+                  - generic [ref=e296]: Purging Old Patterns Blocking Your Success
+                - listitem [ref=e297]:
+                  - generic [ref=e298]: 
+                  - generic [ref=e299]: Shadow Integration & Polarity Activation
+                - listitem [ref=e300]:
+                  - generic [ref=e301]: 
+                  - generic [ref=e302]: Breathwork & Somatic Mastery
+            - heading "This is not breathwork you watch on YouTube. This is not a mindset program with a new framework to install. This is not therapy. It works on a level deeper than conversation. The SOMA Immersion is lived practice. Breathwork. Shadow work. Dancing with Polarity. Ceremony. Community. You don't study this. You become it." [level=1] [ref=e304]:
+              - generic [ref=e306]:
+                - text: This is not breathwork you watch on YouTube.
+                - text: This is not a mindset program with a new framework to install.
+                - text: This is not therapy. It works on a level deeper than conversation.
+                - text: The SOMA Immersion is lived practice. Breathwork. Shadow work. Dancing with Polarity. Ceremony. Community.
+                - text: You don't study this. You become it.
+          - img [ref=e310]
+        - text:        
+        - heading "THE RESULT? Calm dominance. Magnetic presence. Decisions made from clarity, not cortisol. A body that works with you instead of running on override. You stop being a high-performer disconnected from their body. And lead from the deep intuition that comes from being intimately connected to it." [level=1] [ref=e315]:
+          - generic [ref=e317]:
+            - text: THE RESULT?
+            - text: Calm dominance. Magnetic presence. Decisions made from clarity, not cortisol. A body that works with you instead of running on override.
+            - text: You stop being a high-performer disconnected from their body.
+            - text: And lead from the deep intuition that comes from being intimately connected to it.
+      - generic [ref=e320]:
+        - img [ref=e324]
+        - heading "“Jonas has an amazing ability to connect your personal life and business in a way that’s clear and actionable. He thinks outside the box, delivers personalized solutions, and guides you to uncover even more yourself. Thanks to him, I’ve seen real results — including significant revenue growth — and a fresh perspective on my business.\" Daniel" [level=1] [ref=e328]:
+          - generic [ref=e330]:
+            - text: “Jonas has an amazing ability to connect your personal life and business in a way that’s clear and actionable. He thinks outside the box, delivers personalized solutions, and guides you to uncover even more yourself. Thanks to him, I’ve seen real results — including significant revenue growth — and a fresh perspective on my business."
+            - text: Daniel
+      - text:        
+      - generic [ref=e332]:
+        - generic [ref=e335]:
+          - heading "SAY GOODBYE TO" [level=1] [ref=e337]:
+            - generic [ref=e338]: SAY GOODBYE TO
+          - heading "THE MACHINE" [level=1] [ref=e340]:
+            - generic [ref=e341]: THE MACHINE
+          - heading "MIND" [level=1] [ref=e343]:
+            - generic [ref=e344]: MIND
+          - heading "Most people don’t struggle because they lack intelligence, strategy, or discipline. They struggle because they’ve learned to run their entire life through their head. Always thinking. Always solving. Always pushing. You wake up already processing problems. You replay conversations. You plan, analyze, and optimize everything. And even when things are going well… something inside still feels off. This isn’t laziness. It’s not lack of effort. It’s what we call The Machine Mind." [level=1] [ref=e346]:
+            - generic [ref=e348]:
+              - text: Most people don’t struggle because they lack intelligence, strategy, or discipline.
+              - text: They struggle because they’ve learned to run their entire life through their head.
+              - generic [ref=e349]:
+                - text: Always thinking.
+                - text: Always solving.
+                - text: Always pushing.
+              - text: You wake up already processing problems.
+              - text: You replay conversations.
+              - text: You plan, analyze, and optimize everything.
+              - text: And even when things are going well… something inside still feels off.
+              - text: This isn’t laziness.
+              - text: It’s not lack of effort.
+              - text: It’s what we call The Machine Mind.
+          - img [ref=e351]
+          - generic [ref=e353]:
+            - generic [ref=e354]:
+              - generic [ref=e356]:
+                - heading "THE OLD BELIEFS" [level=1] [ref=e358]:
+                  - generic [ref=e359]: THE OLD BELIEFS
+                - heading "The Machine Mind runs on beliefs that keep your nervous system locked in constant pressure." [level=1] [ref=e361]:
+                  - generic [ref=e362]: The Machine Mind runs on beliefs that keep your nervous system locked in constant pressure.
+                - list [ref=e364]:
+                  - generic [ref=e365]:
+                    - listitem [ref=e366]:
+                      - generic [ref=e367]: 
+                      - generic [ref=e368]: "Core Belief: Success comes from more discipline, more hustle, more mental sharpness."
+                    - listitem [ref=e369]:
+                      - generic [ref=e370]: 
+                      - generic [ref=e371]: "Real Problem: I need a better strategy — a better system, a better coach, a better plan."
+                    - listitem [ref=e372]:
+                      - generic [ref=e373]: 
+                      - generic [ref=e374]: "Time: I’ll work on my body and emotions when things calm down. Right now I need to focus on getting things done."
+                    - listitem [ref=e375]:
+                      - generic [ref=e376]: 
+                      - generic [ref=e377]: "Money: My money is best spent on business growth — another mastermind, another funnel, another hire."
+                    - listitem [ref=e378]:
+                      - generic [ref=e379]: 
+                      - generic [ref=e380]: "Method: More thinking, more discipline, more pushing through will eventually get me there."
+                    - listitem [ref=e381]:
+                      - generic [ref=e382]: 
+                      - generic [ref=e383]: "Help: I’ve always figured things out myself. I don’t need someone to guide me."
+              - generic [ref=e385]:
+                - heading "THE MACHINE IDENTITY" [level=1] [ref=e387]:
+                  - generic [ref=e388]: THE MACHINE IDENTITY
+                - heading "This identity looks strong on the outside. But inside, it runs on tension and constant effort. It can show up like this:" [level=1] [ref=e390]:
+                  - generic [ref=e392]:
+                    - text: This identity looks strong on the outside.
+                    - text: But inside, it runs on tension and constant effort.
+                    - text: "It can show up like this:"
+                - heading "Grinding and overworking while your body feels exhausted" [level=1] [ref=e399]:
+                  - generic [ref=e401]:
+                    - generic [ref=e402]: Grinding and overworking
+                    - text: while your body feels exhausted
+                - heading "" [level=1] [ref=e404]:
+                  - generic [ref=e405]: 
+                - heading "Always “on,” but rarely fully present" [level=1] [ref=e412]:
+                  - generic [ref=e414]:
+                    - generic [ref=e415]: Always “on,”
+                    - text: but rarely fully present
+                - heading "" [level=1] [ref=e417]:
+                  - generic [ref=e418]: 
+                - heading "Holding everything together while running on empty" [level=1] [ref=e425]:
+                  - generic [ref=e427]:
+                    - generic [ref=e428]: Holding everything together
+                    - text: while running on empty
+                - heading "" [level=1] [ref=e430]:
+                  - generic [ref=e431]: 
+                - heading "Solving everyone else’s problems but ignoring your own needs" [level=1] [ref=e438]:
+                  - generic [ref=e440]:
+                    - generic [ref=e441]: Solving everyone else’s problems
+                    - text: but ignoring your own needs
+                - heading "" [level=1] [ref=e443]:
+                  - generic [ref=e444]: 
+                - heading "Swinging between intense productivity and emotional shutdown" [level=1] [ref=e451]:
+                  - generic [ref=e453]: Swinging between intense productivity and emotional shutdown
+                - heading "" [level=1] [ref=e455]:
+                  - generic [ref=e456]: 
+                - heading "Achieving success but never fully feeling settled" [level=1] [ref=e463]:
+                  - generic [ref=e465]:
+                    - generic [ref=e466]: Achieving success
+                    - text: but never fully feeling settled
+            - 'heading "You become the person who handles everything. But the body eventually reaches a point where it says: There has to be another way to live." [level=1] [ref=e471]':
+              - generic [ref=e473]:
+                - text: You become the person who handles everything.
+                - text: "But the body eventually reaches a point where it says:"
+                - text: There has to be another way to live.
+        - link "GIVE THE MACHINE A REST  APPLY FOR SOMA IMMERSION." [ref=e478] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e479]:
+            - text: 
+            - generic [ref=e480]:
+              - text: GIVE THE MACHINE A REST
+              - generic [ref=e481]: 
+          - generic [ref=e482]: APPLY FOR SOMA IMMERSION.
+      - generic [ref=e487]:
+        - heading "SAY HELLO TO" [level=1] [ref=e489]:
+          - generic [ref=e490]: SAY HELLO TO
+        - heading "THE EMBODIED" [level=1] [ref=e492]:
+          - generic [ref=e493]: THE EMBODIED
+        - heading "LEADER" [level=1] [ref=e495]:
+          - generic [ref=e496]: LEADER
+        - heading "Real transformation doesn’t happen when you think harder. It happens when your body comes back online. When the nervous system regulates… clarity appears. When your body feels safe… presence returns. This is the shift SOMA is built around. The shift from The Machine to The Embodied Leader." [level=1] [ref=e498]:
+          - generic [ref=e500]:
+            - text: Real transformation doesn’t happen when you think harder.
+            - text: It happens when your body comes back online.
+            - text: When the nervous system regulates…
+            - text: clarity appears.
+            - text: When your body feels safe…
+            - text: presence returns.
+            - text: This is the shift SOMA is built around.
+            - text: The shift from The Machine
+            - text: to The Embodied Leader.
+        - img [ref=e502]
+        - generic [ref=e504]:
+          - generic [ref=e505]:
+            - generic [ref=e507]:
+              - heading "THE NEW BELIEFS" [level=1] [ref=e509]:
+                - generic [ref=e510]: THE NEW BELIEFS
+              - heading "Embodiment begins with a new set of beliefs about how transformation actually works." [level=1] [ref=e512]:
+                - generic [ref=e513]: Embodiment begins with a new set of beliefs about how transformation actually works.
+              - list [ref=e515]:
+                - generic [ref=e516]:
+                  - listitem [ref=e517]:
+                    - generic [ref=e518]: 
+                    - generic [ref=e519]: "Core Belief: The fastest way to truth, peace, and freedom is through your body. Align first. Everything else follows."
+                  - listitem [ref=e520]:
+                    - generic [ref=e521]: 
+                    - generic [ref=e522]: "Real Problem: The real issue isn’t strategy — it’s a dysregulated nervous system. When the body is allowed to heal itself, the failed strategies find instant success."
+                  - listitem [ref=e523]:
+                    - generic [ref=e524]: 
+                    - generic [ref=e525]: "Time: Every day you live disconnected from your body is a day you’re not fully here. Alignment is your foundation, not something to put off to tomorrow."
+                  - listitem [ref=e526]:
+                    - generic [ref=e527]: 
+                    - generic [ref=e528]: "Money: The strength of your nervous system determines the dreams you can hold: including success, money, and deeper relationships that fulfill you. Expand your capacity, and everything follows."
+                  - listitem [ref=e529]:
+                    - generic [ref=e530]: 
+                    - generic [ref=e531]: "Method: Thinking can’t release what’s stored in the body. Breath, presence, and embodiment activate what the mind cannot."
+                  - listitem [ref=e532]:
+                    - generic [ref=e533]: 
+                    - generic [ref=e534]: "Help: Freedom requires guidance from someone who has already walked the path."
+            - generic [ref=e536]:
+              - heading "THE EMBODIED IDENTITY" [level=1] [ref=e538]:
+                - generic [ref=e539]: THE EMBODIED IDENTITY
+              - heading "The Embodied Leader moves through the world differently. Not through force. Through presence. You might notice shifts like:" [level=1] [ref=e541]:
+                - generic [ref=e543]:
+                  - text: The Embodied Leader moves through the world differently.
+                  - text: Not through force.
+                  - text: Through presence.
+                  - text: "You might notice shifts like:"
+              - heading "Living from alignment, not adrenaline grounded, with energy to spare" [level=1] [ref=e550]:
+                - generic [ref=e552]:
+                  - generic [ref=e553]: Living from alignment, not adrenaline
+                  - text: grounded, with energy to spare
+              - heading "" [level=1] [ref=e555]:
+                - generic [ref=e556]: 
+              - heading "Decisions coming from clarity instead of anxiety" [level=1] [ref=e563]:
+                - generic [ref=e565]:
+                  - generic [ref=e566]: Decisions coming from clarity
+                  - text: instead of anxiety
+              - heading "" [level=1] [ref=e568]:
+                - generic [ref=e569]: 
+              - heading "A grounded presence people can feel the moment you enter a room" [level=1] [ref=e576]:
+                - generic [ref=e578]: A grounded presence people can feel the moment you enter a room
+              - heading "" [level=1] [ref=e580]:
+                - generic [ref=e581]: 
+              - heading "Emotional depth without losing stability" [level=1] [ref=e588]:
+                - generic [ref=e590]:
+                  - generic [ref=e591]: Emotional depth
+                  - text: without losing stability
+              - heading "" [level=1] [ref=e593]:
+                - generic [ref=e594]: 
+              - heading "A body that feels renewed with wisdom not something you ignore" [level=1] [ref=e601]:
+                - generic [ref=e604]:
+                  - text: A body that feels renewed with wisdom
+                  - text: not something you ignore
+              - heading "" [level=1] [ref=e606]:
+                - generic [ref=e607]: 
+              - heading "Magnetism replacing constant effort" [level=1] [ref=e614]:
+                - generic [ref=e616]:
+                  - generic [ref=e617]: Magnetism
+                  - text: replacing constant effort
+          - heading "You stop performing your life. And start living inside it." [level=1] [ref=e622]:
+            - generic [ref=e624]:
+              - text: You stop performing your life.
+              - text: And start living inside it.
+          - generic [ref=e627]:
+            - heading "IMAGINE THIS..." [level=1] [ref=e629]:
+              - generic [ref=e630]: IMAGINE THIS...
+            - heading "Imagine waking up and feeling fully present in your body. Your mind is clear. Your breath is steady. Your decisions feel natural. You’re not forcing life anymore. You’re inhabiting it. That’s the shift from The Machine to The Embodied Leader." [level=1] [ref=e632]:
+              - generic [ref=e634]:
+                - text: Imagine waking up and feeling fully present in your body.
+                - text: Your mind is clear.
+                - text: Your breath is steady.
+                - text: Your decisions feel natural.
+                - text: You’re not forcing life anymore.
+                - text: You’re inhabiting it.
+                - text: That’s the shift from The Machine
+                - text: to The Embodied Leader.
+            - link "I'M READY TO LEAD EMBODIED  APPLY FOR SOMA IMMERSION." [ref=e636] [cursor=pointer]:
+              - /url: "#open-popup"
+              - generic [ref=e637]:
+                - text: 
+                - generic [ref=e638]:
+                  - text: I'M READY TO LEAD EMBODIED
+                  - generic [ref=e639]: 
+              - generic [ref=e640]: APPLY FOR SOMA IMMERSION.
+      - generic [ref=e643]:
+        - img [ref=e647]
+        - heading "“I can’t recommend Jonas enough when it comes to creating ease in your business and life. He helps build a foundation where success and enjoyment go hand in hand — because what’s the point of all the money and achievement if the foundation underneath feels bitter? Working with Jonas, there’s always humor, energy, and a positive environment that makes even challenging tasks enjoyable. He makes it easy to stay motivated, inspired, and genuinely happy while growing your business.\" Calvin" [level=1] [ref=e651]:
+          - generic [ref=e653]:
+            - text: “I can’t recommend Jonas enough when it comes to creating ease in your business and life. He helps build a foundation where success and enjoyment go hand in hand — because what’s the point of all the money and achievement if the foundation underneath feels bitter? Working with Jonas, there’s always humor, energy, and a positive environment that makes even challenging tasks enjoyable. He makes it easy to stay motivated, inspired, and genuinely happy while growing your business."
+            - text: Calvin
+      - generic [ref=e655]:
+        - heading "What Would It Be Worth To You To…" [level=1] [ref=e660]:
+          - generic [ref=e661]: What Would It Be Worth To You To…
+        - generic [ref=e662]:
+          - generic [ref=e664]:
+            - heading "↠ Break through the financial ceiling you've been throwing all of your resources at to fix? Because you finally focused on regulating your nervous system." [level=1] [ref=e666]:
+              - generic [ref=e668]: ↠ Break through the financial ceiling you've been throwing all of your resources at to fix? Because you finally focused on regulating your nervous system.
+            - heading "↠ Have a nervous system that works for you — calm on command, focused when it matters, rested at night?" [level=1] [ref=e670]:
+              - generic [ref=e671]: ↠ Have a nervous system that works for you — calm on command, focused when it matters, rested at night?
+            - heading "↠ Feel fulfillment AND success in your body, not just see it on a screen?" [level=1] [ref=e673]:
+              - generic [ref=e674]: ↠ Feel fulfillment AND success in your body, not just see it on a screen?
+            - heading "↠ Hold emotional intensity in meetings and at home, without suppressing or exploding?" [level=1] [ref=e676]:
+              - generic [ref=e677]: ↠ Hold emotional intensity in meetings and at home, without suppressing or exploding?
+            - heading "↠ Hold emotional intimacy with your partner and rekindle your partnership?" [level=1] [ref=e679]:
+              - generic [ref=e680]: ↠ Hold emotional intimacy with your partner and rekindle your partnership?
+          - generic [ref=e682]:
+            - heading "↠ Waking up without the alarm startling you, no phone alerts, just... peace. Taking care of you before the day even starts?" [level=1] [ref=e684]:
+              - generic [ref=e685]: ↠ Waking up without the alarm startling you, no phone alerts, just... peace. Taking care of you before the day even starts?
+            - heading "↠ Make decisions from your body, not from anxiety? Clean, fast, sure — the way your best decisions have always come?" [level=1] [ref=e687]:
+              - generic [ref=e688]: ↠ Make decisions from your body, not from anxiety? Clean, fast, sure — the way your best decisions have always come?
+            - heading "↠ Have a community that holds you accountable to this — people doing the same real work, not just cheering from the sidelines?" [level=1] [ref=e690]:
+              - generic [ref=e691]: ↠ Have a community that holds you accountable to this — people doing the same real work, not just cheering from the sidelines?
+            - heading "↠ Show up in your relationships with real depth, not just function?" [level=1] [ref=e693]:
+              - generic [ref=e694]: ↠ Show up in your relationships with real depth, not just function?
+            - heading "↠ Because every entrepreneur has a nervous system thermostat. Below it, you hustle to get back. Above it, you unconsciously sabotage. SOMA elevates your capacity for more." [level=1] [ref=e696]:
+              - generic [ref=e698]: ↠ Because every entrepreneur has a nervous system thermostat. Below it, you hustle to get back. Above it, you unconsciously sabotage. SOMA elevates your capacity for more.
+        - generic [ref=e701]:
+          - heading "Your best months weren't your busiest months. They were your most aligned months. Same skills. Same business. Different body state. The SOMA Collective makes that your baseline, not an anomaly." [level=1] [ref=e703]:
+            - generic [ref=e705]:
+              - text: Your best months weren't your busiest months. They were your most aligned months. Same skills. Same business. Different body state.
+              - text: The SOMA Collective makes that your baseline, not an anomaly.
+          - heading "\"The price of anything is the amount of life you exchange for it.\"" [level=1] [ref=e707]:
+            - generic [ref=e709]: "\"The price of anything is the amount of life you exchange for it.\""
+          - link "Claim Your breakthrough  Apply For Soma Immersion Today" [ref=e711] [cursor=pointer]:
+            - /url: "#open-popup"
+            - generic [ref=e712]:
+              - text: 
+              - generic [ref=e713]:
+                - text: Claim Your breakthrough
+                - generic [ref=e714]: 
+            - generic [ref=e715]: Apply For Soma Immersion Today
+      - generic [ref=e717]:
+        - heading "What You Get Inside THE SOMA IMMERSION" [level=1] [ref=e722]:
+          - generic [ref=e723]: What You Get Inside THE SOMA IMMERSION
+        - generic [ref=e724]:
+          - generic [ref=e731]:
+            - img [ref=e733]
+            - heading "8 Weekly Live Group Calls" [level=1] [ref=e735]:
+              - generic [ref=e736]: 8 Weekly Live Group Calls
+            - heading "Jonas live, every week. Structured, direct, and built around practice — not slides. You're never navigating this alone, and you're never passive. The group holds you. The calls move you." [level=1] [ref=e738]:
+              - generic [ref=e739]: Jonas live, every week. Structured, direct, and built around practice — not slides. You're never navigating this alone, and you're never passive. The group holds you. The calls move you.
+          - generic [ref=e746]:
+            - img [ref=e748]
+            - heading "Private SOMA Community" [level=1] [ref=e750]:
+              - generic [ref=e751]: Private SOMA Community
+            - heading "Daily exchange, not weekly check-ins. A container of people doing the same real work — not a Facebook group full of announcements. The community is part of the protocol." [level=1] [ref=e753]:
+              - generic [ref=e754]: Daily exchange, not weekly check-ins. A container of people doing the same real work — not a Facebook group full of announcements. The community is part of the protocol.
+          - generic [ref=e761]:
+            - img [ref=e763]
+            - heading "Live Plant Medicine Ceremony in Stuttgart (IMMERSION + INITIATION tiers)" [level=1] [ref=e765]:
+              - generic [ref=e767]:
+                - text: Live Plant Medicine Ceremony in Stuttgart
+                - text: (IMMERSION + INITIATION tiers)
+            - heading "Facilitated by Jonas and Miriam. Real plant medicine. Real ritual. Held in a safe, intentional container. Some things can't be processed intellectually. They have to be experienced." [level=1] [ref=e769]:
+              - generic [ref=e770]: Facilitated by Jonas and Miriam. Real plant medicine. Real ritual. Held in a safe, intentional container. Some things can't be processed intellectually. They have to be experienced.
+        - generic [ref=e771]:
+          - generic [ref=e778]:
+            - img [ref=e780]
+            - heading "3-Day Cyprus Retreat — Week 10 (IMMERSION + INITIATION tiers)" [level=1] [ref=e782]:
+              - generic [ref=e784]:
+                - text: 3-Day Cyprus Retreat — Week 10
+                - text: (IMMERSION + INITIATION tiers)
+            - heading "Sun, sea, and deep integration with the community. In-person embodiment work. Where everything you've built in 8 weeks gets to land in the body fully. This is where it anchors." [level=1] [ref=e786]:
+              - generic [ref=e787]: Sun, sea, and deep integration with the community. In-person embodiment work. Where everything you've built in 8 weeks gets to land in the body fully. This is where it anchors.
+          - generic [ref=e794]:
+            - img [ref=e796]
+            - heading "VIP WhatsApp Access with Jonas (INITIATION tier)" [level=1] [ref=e798]:
+              - generic [ref=e800]:
+                - text: VIP WhatsApp Access with Jonas
+                - text: (INITIATION tier)
+            - heading "Direct access throughout the 8 weeks. For the person who wants precision alongside process — not a group pace, but a personal one." [level=1] [ref=e802]:
+              - generic [ref=e803]: Direct access throughout the 8 weeks. For the person who wants precision alongside process — not a group pace, but a personal one.
+          - generic [ref=e810]:
+            - img [ref=e812]
+            - heading "4 × 1:1 Coaching Sessions with Jonas (INITIATION tier)" [level=1] [ref=e814]:
+              - generic [ref=e816]:
+                - text: 4 × 1:1 Coaching Sessions with Jonas
+                - text: (INITIATION tier)
+            - heading "Your patterns. Your body. Your specific path through the protocol. Four private sessions where Jonas works with what only you carry." [level=1] [ref=e818]:
+              - generic [ref=e819]: Your patterns. Your body. Your specific path through the protocol. Four private sessions where Jonas works with what only you carry.
+        - generic [ref=e822]:
+          - heading "ONE DECISION. EIGHT WEEKS. A BODY YOU ACTUALLY INHABIT." [level=1] [ref=e824]:
+            - generic [ref=e825]: ONE DECISION. EIGHT WEEKS. A BODY YOU ACTUALLY INHABIT.
+          - link "JOIN SOMA IMMERSION TODAY  RELEASE WHAT'S HOLDING YOU BACK" [ref=e827] [cursor=pointer]:
+            - /url: "#open-popup"
+            - generic [ref=e828]:
+              - text: 
+              - generic [ref=e829]:
+                - text: JOIN SOMA IMMERSION TODAY
+                - generic [ref=e830]: 
+            - generic [ref=e831]: RELEASE WHAT'S HOLDING YOU BACK
+          - heading "The Body Never Lies. It's Time to Listen." [level=1] [ref=e833]:
+            - generic [ref=e834]: The Body Never Lies. It's Time to Listen.
+      - generic [ref=e836]:
+        - generic [ref=e839]:
+          - heading "Built on a" [level=1] [ref=e841]:
+            - generic [ref=e842]: Built on a
+          - heading "Science-Backed Method" [level=1] [ref=e844]:
+            - generic [ref=e845]: Science-Backed Method
+          - heading "Rooted in Ancient Practice" [level=1] [ref=e847]:
+            - generic [ref=e848]: Rooted in Ancient Practice
+          - heading "That literally changes the chemistry of your brain and body." [level=1] [ref=e850]:
+            - generic [ref=e852]: That literally changes the chemistry of your brain and body.
+        - generic [ref=e855]:
+          - heading "After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, Jonas Hilz built the SOMA Immersion because he watched brilliant, successful people hit the same invisible ceiling." [level=1] [ref=e857]:
+            - generic [ref=e859]: After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, Jonas Hilz built the SOMA Immersion because he watched brilliant, successful people hit the same invisible ceiling.
+          - heading [level=1] [ref=e861]:
+            - generic [ref=e863]:
+              - text: Not a capability ceiling. A regulation ceiling.
+              - text: The ceiling that no leadership course touches.
+              - text: The ceiling that lives in the nervous system — not the strategy deck.
+              - text: "The science is clear:"
+              - text: Dr. Stephen Porges' Polyvagal Theory demonstrated that when the vagus nerve is dysregulated, higher-order functions - clear thinking, emotional regulation, genuine connection - go offline.
+              - text: You can't strategy your way back from that state.
+              - text: You have to regulate the system first. Then everything else follows.
+              - text: Controlled breathing directly modulates vagal tone, heart rate variability, and cortisol — within minutes. Cognitive interventions like mindset reframing and journaling do not produce equivalent physiological shifts in equivalent timeframes. (Zaccaro et al., Frontiers in Human Neuroscience, 2018 — 15 controlled studies.)
+              - text: A long exhale activates the vagus nerve. The vagus nerve downregulates the sympathetic nervous system. This is not belief. It is biology.
+              - text: The body keeps the score. Ancient wisdom practiced it. Neuroscience proved it.
+              - text: The SOMA Collective draws from the wisdom of somatic therapy, breathwork, shadow integration, polarity work, and ceremony.
+              - text: To unlock what's actively trying to release itself, if your mind will just let it.
+              - text: "\"Between stimulus and response, there is a space. In that space is freedom.\""
+              - text: — Viktor Frankl
+          - heading "Your body is not just part of the journey. It is LEADING the journey." [level=1] [ref=e865]:
+            - generic [ref=e867]:
+              - text: Your body is not just part of the journey.
+              - text: It is LEADING the journey.
+        - link "JOIN SOMA IMMERSION  The Body Leads. The Mind Follows." [ref=e872] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e873]:
+            - text: 
+            - generic [ref=e874]:
+              - text: JOIN SOMA IMMERSION
+              - generic [ref=e875]: 
+          - generic [ref=e876]: The Body Leads. The Mind Follows.
+      - generic [ref=e878]:
+        - generic [ref=e881]:
+          - heading "The 3 Mechanisms That Drive Everything" [level=1] [ref=e883]:
+            - generic [ref=e884]: The 3 Mechanisms That Drive Everything
+          - heading "If you could only do three things and still get the results... This is What I'd Do. Every other element of the SOMA Immersion exists to make these three Elements Stick." [level=1] [ref=e886]:
+            - generic [ref=e888]:
+              - text: If you could only do three things and still get the results... This is What I'd Do.
+              - text: Every other element of the SOMA Immersion exists to make these three Elements Stick.
+        - generic [ref=e889]:
+          - generic [ref=e896]:
+            - 'heading "Mechanism 1: Nervous System Mastery Breathwork + somatic practices" [level=1] [ref=e898]':
+              - generic [ref=e900]:
+                - text: "Mechanism 1:"
+                - text: Nervous System Mastery
+                - text: Breathwork + somatic practices
+            - heading "When the nervous system is regulated, everything downstream shifts. Decisions. Emotions. Presence. Relationships. Sleep. Financial capacity. The secret? You cannot think your way to a regulated nervous system. You cannot hustle your way there. The body has to lead, and breath is the fastest lever. In the SOMA Immersion, you'll build a daily breathwork practice that moves you from wired to grounded on command. Not just as a stress-management tool. As a fundamental operating upgrade." [level=1] [ref=e902]:
+              - generic [ref=e904]:
+                - text: When the nervous system is regulated, everything downstream shifts. Decisions. Emotions. Presence. Relationships. Sleep. Financial capacity.
+                - text: The secret?
+                - generic [ref=e905]: You cannot think your way to a regulated nervous system
+                - text: . You cannot hustle your way there. The body has to lead, and breath is the fastest lever.
+                - text: In the SOMA Immersion, you'll build a daily breathwork practice that moves you from wired to grounded
+                - generic [ref=e906]: on command
+                - text: .
+                - text: Not just as a stress-management tool. As a fundamental operating upgrade.
+          - generic [ref=e913]:
+            - 'heading "Mechanism 2: Shadow & Pattern Release Inner child work + pattern identification" [level=1] [ref=e915]':
+              - generic [ref=e917]:
+                - text: "Mechanism 2:"
+                - text: Shadow &
+                - text: Pattern Release
+                - text: Inner child work + pattern identification
+            - 'heading "Until the unconscious patterns are surfaced and released, they continue running the show. The performance-driven entrepreneur keeps performing because somewhere inside, a voice says: \"You''re only as valuable as your last success.\" The over-giver keeps giving because somewhere inside, a voice says: \"If I say no, people won''t love me.\" These aren''t mindset problems. They''re stories that live in your body, and repeat over and over again. The patterns live in tissue, posture, and express themselves as thought. Shadow work in SOMA works with the body''s natural ability to release that trauma somatically." [level=1] [ref=e919]':
+              - generic [ref=e921]:
+                - text: Until the unconscious patterns are surfaced and released, they continue running the show.
+                - text: "The performance-driven entrepreneur keeps performing because somewhere inside, a voice says:"
+                - text: "\"You're only as valuable as your last success.\""
+                - text: "The over-giver keeps giving because somewhere inside, a voice says:"
+                - text: "\"If I say no, people won't love me.\""
+                - text: These aren't mindset problems. They're stories that live in your body, and repeat over and over again.
+                - text: The patterns live in tissue, posture, and express themselves as thought.
+                - text: Shadow work in SOMA works with the body's natural ability to release that trauma somatically.
+          - generic [ref=e928]:
+            - 'heading "Mechanism 3: Polarity Integration Masculine/feminine energy + embodied presence" [level=1] [ref=e930]':
+              - generic [ref=e932]:
+                - text: "Mechanism 3:"
+                - text: Polarity Integration
+                - text: Masculine/feminine energy + embodied presence
+            - heading "Most high-performers excel at pushing the limits, and don't know how to create balance. They either have too much structure, drive, and output. Or too much giving, managing, and holding. Neither is wrong, but both, when out of balance, create disconnection. Polarity work is about integration, not correction. When you can access both the penetrative power of the masculine and the infinite receptivity of the feminine, regardless of your gender, you become magnetic. In leadership. In relationships. In every room you enter, people feel something different in your presence. That's not metaphor. That's what a regulated, integrated nervous system produces." [level=1] [ref=e934]:
+              - generic [ref=e936]:
+                - text: Most high-performers excel at pushing the limits, and don't know how to create balance.
+                - text: They either have too much structure, drive, and output. Or too much giving, managing, and holding.
+                - text: Neither is wrong, but both, when out of balance, create disconnection.
+                - text: Polarity work is about integration, not correction.
+                - text: When you can access both the penetrative power of the masculine and the infinite receptivity of the feminine, regardless of your gender,
+                - generic [ref=e937]: you become magnetic
+                - text: .
+                - text: In leadership. In relationships. In every room you enter, people feel something different in your presence.
+                - text: That's not metaphor. That's what a regulated, integrated nervous system produces.
+      - generic [ref=e942]:
+        - heading "Here's What You Actually Build Inside the SOMA Collective:" [level=1] [ref=e944]:
+          - generic [ref=e945]: "Here's What You Actually Build Inside the SOMA Collective:"
+        - heading " How to inhabit your own life, not just manage it:" [level=1] [ref=e947]:
+          - generic [ref=e948]: 
+          - generic [ref=e949]: "How to inhabit your own life, not just manage it:"
+        - heading "You'll stop being the background operator and start being fully present to what you've built." [level=1] [ref=e951]:
+          - generic [ref=e952]: You'll stop being the background operator and start being fully present to what you've built.
+        - heading " How to regulate on command:" [level=1] [ref=e954]:
+          - generic [ref=e955]: 
+          - generic [ref=e956]: "How to regulate on command:"
+        - heading "Not through willpower. Through a breathwork practice that shifts your physiology in under 10 minutes, available anywhere, anytime." [level=1] [ref=e958]:
+          - generic [ref=e959]: Not through willpower. Through a breathwork practice that shifts your physiology in under 10 minutes, available anywhere, anytime.
+        - heading " How to feel without losing yourself:" [level=1] [ref=e961]:
+          - generic [ref=e962]: 
+          - generic [ref=e963]: "How to feel without losing yourself:"
+        - heading "Emotions become data instead of threats. You hold intensity without suppressing it or being overrun by it." [level=1] [ref=e965]:
+          - generic [ref=e966]: Emotions become data instead of threats. You hold intensity without suppressing it or being overrun by it.
+        - heading " How to lead from presence, not pressure:" [level=1] [ref=e968]:
+          - generic [ref=e969]: 
+          - generic [ref=e970]: "How to lead from presence, not pressure:"
+        - heading "The shift from \"doing\" to \"being\" isn't a spiritual concept here. It's a measurable change in how your body state affects everyone around you." [level=1] [ref=e972]:
+          - generic [ref=e973]: The shift from "doing" to "being" isn't a spiritual concept here. It's a measurable change in how your body state affects everyone around you.
+        - heading " How to expand your capacity for abundance:" [level=1] [ref=e975]:
+          - generic [ref=e976]: 
+          - generic [ref=e977]: "How to expand your capacity for abundance:"
+        - heading "Your nervous system has a financial thermostat. The amount of money, love, and possibility you can hold without unconsciously sabotaging is directly tied to your regulation. SOMA expands the container." [level=1] [ref=e979]:
+          - generic [ref=e980]: Your nervous system has a financial thermostat. The amount of money, love, and possibility you can hold without unconsciously sabotaging is directly tied to your regulation. SOMA expands the container.
+        - heading " HOW TO RECEIVE:" [level=1] [ref=e982]:
+          - generic [ref=e983]: 
+          - generic [ref=e984]: "HOW TO RECEIVE:"
+        - heading "Whether you've been giving too much or pushing too hard, the ability to actually receive — rest, support, success, presence — is a somatic skill. Most people have never been taught it. This is where you learn it." [level=1] [ref=e986]:
+          - generic [ref=e987]: Whether you've been giving too much or pushing too hard, the ability to actually receive — rest, support, success, presence — is a somatic skill. Most people have never been taught it. This is where you learn it.
+        - heading " How to build an identity that doesn't depend on output:" [level=1] [ref=e989]:
+          - generic [ref=e990]: 
+          - generic [ref=e991]: "How to build an identity that doesn't depend on output:"
+        - heading "Not through affirmations. Through 8 weeks of lived practice that changes what your body believes about who you are." [level=1] [ref=e993]:
+          - generic [ref=e994]: Not through affirmations. Through 8 weeks of lived practice that changes what your body believes about who you are.
+        - link "I'M READY FOR MY BREAKTHROUGH  APPLY TODAY." [ref=e996] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e997]:
+            - text: 
+            - generic [ref=e998]:
+              - text: I'M READY FOR MY BREAKTHROUGH
+              - generic [ref=e999]: 
+          - generic [ref=e1000]: APPLY TODAY.
+      - generic [ref=e1002]:
+        - generic [ref=e1005]:
+          - heading "What Happens Over" [level=1] [ref=e1007]:
+            - generic [ref=e1008]: What Happens Over
+          - heading "8 Weeks Of SOMA Immersion" [level=1] [ref=e1010]:
+            - generic [ref=e1011]: 8 Weeks Of SOMA Immersion
+        - generic [ref=e1014]:
+          - heading "Week 1" [level=1] [ref=e1016]:
+            - generic [ref=e1017]: Week 1
+          - heading "Arrival" [level=1] [ref=e1019]:
+            - generic [ref=e1020]: Arrival
+          - heading "Opening ceremony. Nervous system mapping. Intention setting. You arrive as you are. Not as you want to appear. Before we release anything, we establish your baseline — where your nervous system actually is, how your body currently speaks, and the places you override without realizing it. This is the foundation everything else is built on." [level=1] [ref=e1022]:
+            - generic [ref=e1024]:
+              - text: Opening ceremony. Nervous system mapping. Intention setting.
+              - text: You arrive as you are. Not as you want to appear. Before we release anything, we establish your baseline — where your nervous system actually is, how your body currently speaks, and the places you override without realizing it. This is the foundation everything else is built on.
+        - generic [ref=e1027]:
+          - heading "Week 2" [level=1] [ref=e1029]:
+            - generic [ref=e1030]: Week 2
+          - heading "Pattern Work" [level=1] [ref=e1032]:
+            - generic [ref=e1033]: Pattern Work
+          - heading "Surface and name the loops that keep you stuck. Every person in this container has a pattern. A specific way of organizing themselves that once served a purpose and now costs them. We surface it. We name it. We begin working with it instead of through it." [level=1] [ref=e1035]:
+            - generic [ref=e1037]:
+              - text: Surface and name the loops that keep you stuck.
+              - text: Every person in this container has a pattern. A specific way of organizing themselves that once served a purpose and now costs them. We surface it. We name it. We begin working with it instead of through it.
+        - generic [ref=e1040]:
+          - heading "Week 3" [level=1] [ref=e1042]:
+            - generic [ref=e1043]: Week 3
+          - heading "Inner Child & Shadow" [level=1] [ref=e1045]:
+            - generic [ref=e1046]: Inner Child & Shadow
+          - heading "Emotional release. Inner dialogue. Meeting what you've been managing. This is where most programs stop. SOMA goes here on purpose. The Machine — whether it runs as hustle or as over-giving — has been managing, not feeling. Managing looks like success. It costs connection. This week opens the internal permission to feel without collapsing." [level=1] [ref=e1048]:
+            - generic [ref=e1050]:
+              - text: Emotional release. Inner dialogue. Meeting what you've been managing.
+              - text: This is where most programs stop. SOMA goes here on purpose. The Machine — whether it runs as hustle or as over-giving — has been managing, not feeling. Managing looks like success. It costs connection. This week opens the internal permission to feel without collapsing.
+        - generic [ref=e1053]:
+          - heading "Week 4" [level=1] [ref=e1055]:
+            - generic [ref=e1056]: Week 4
+          - heading "Energy & Breathwork" [level=1] [ref=e1058]:
+            - generic [ref=e1059]: Energy & Breathwork
+          - heading "Deep somatic practice. Regulation at the cellular level. The technical heart of the protocol. The breathwork here is not relaxation breathing. It's the kind that changes your chemistry — that moves what's stuck, clears what's been stored, and builds the capacity to hold more intensity without bracing against it." [level=1] [ref=e1061]:
+            - generic [ref=e1063]:
+              - text: Deep somatic practice. Regulation at the cellular level.
+              - text: The technical heart of the protocol. The breathwork here is not relaxation breathing. It's the kind that changes your chemistry — that moves what's stuck, clears what's been stored, and builds the capacity to hold more intensity without bracing against it.
+        - generic [ref=e1066]:
+          - heading "Week 5" [level=1] [ref=e1068]:
+            - generic [ref=e1069]: Week 5
+          - heading "Live Ceremony" [level=1] [ref=e1071]:
+            - generic [ref=e1072]: Live Ceremony
+          - heading "(IMMERSION + INITIATION) Plant medicine ceremony in Stuttgart with Jonas and Miriam. Some things cannot be processed intellectually. They have to be lived. This is a held, facilitated ceremony — real plant medicine, real ritual, designed to go where somatic practice has been pointing. The ceremony doesn't replace the work. It accelerates it." [level=1] [ref=e1074]:
+            - generic [ref=e1076]:
+              - text: (IMMERSION + INITIATION) Plant medicine ceremony in Stuttgart with Jonas and Miriam.
+              - text: Some things cannot be processed intellectually. They have to be lived. This is a held, facilitated ceremony — real plant medicine, real ritual, designed to go where somatic practice has been pointing. The ceremony doesn't replace the work. It accelerates it.
+        - generic [ref=e1079]:
+          - heading "Week 6" [level=1] [ref=e1081]:
+            - generic [ref=e1082]: Week 6
+          - heading "Polarity Work" [level=1] [ref=e1084]:
+            - generic [ref=e1085]: Polarity Work
+          - heading "Masculine and feminine energy integration. Magnetic presence. When you can access both poles — structure and receptivity, drive and softness, action and stillness — something shifts in how you move through the world. This week builds that integration not as a concept, but as a felt experience in the body." [level=1] [ref=e1087]:
+            - generic [ref=e1089]:
+              - text: Masculine and feminine energy integration. Magnetic presence.
+              - text: When you can access both poles — structure and receptivity, drive and softness, action and stillness — something shifts in how you move through the world. This week builds that integration not as a concept, but as a felt experience in the body.
+        - generic [ref=e1092]:
+          - heading "Week 7" [level=1] [ref=e1094]:
+            - generic [ref=e1095]: Week 7
+          - heading "The Dark Edges" [level=1] [ref=e1097]:
+            - generic [ref=e1098]: The Dark Edges
+          - heading "Boundaries. Cutting off. The groundedness that protects your power. Not the pleasant parts. The edges that know when to say no, what to cut, where to hold the line without explanation. This is where you stop being available for everything and start being powerful for the things that matter." [level=1] [ref=e1100]:
+            - generic [ref=e1102]:
+              - text: Boundaries. Cutting off. The groundedness that protects your power.
+              - text: Not the pleasant parts. The edges that know when to say no, what to cut, where to hold the line without explanation. This is where you stop being available for everything and start being powerful for the things that matter.
+        - generic [ref=e1105]:
+          - heading "Week 8" [level=1] [ref=e1107]:
+            - generic [ref=e1108]: Week 8
+          - heading "Shameless vision. Identity anchoring. The closing ceremony." [level=1] [ref=e1110]:
+            - generic [ref=e1111]: Shameless vision. Identity anchoring. The closing ceremony.
+          - 'heading "You''re forever transformed. This week ensures the world knows it — and you don''t forget it. Vision without embodiment is fantasy. Embodiment without direction is just feeling. Week 8 integrates both: your new body state, your new identity, and the specific direction you''re moving from here. Closing ritual. Community. The end of this chapter — and the beginning of how you move now." [level=1] [ref=e1113]':
+            - generic [ref=e1115]:
+              - generic [ref=e1116]: You're forever transformed.
+              - text: "This week ensures the world knows it — and you don't forget it. Vision without embodiment is fantasy. Embodiment without direction is just feeling. Week 8 integrates both: your new body state, your new identity, and the specific direction you're moving from here."
+              - text: Closing ritual. Community. The end of this chapter — and the beginning of how you move now.
+      - generic [ref=e1118]:
+        - generic [ref=e1119]:
+          - generic [ref=e1121]:
+            - heading "The SOMA Collective Is For You If:" [level=1] [ref=e1123]:
+              - generic [ref=e1124]: "The SOMA Collective Is For You If:"
+            - heading "✓ You're a high-performing entrepreneur who's mastered the external game — and you know something fundamental is still missing ✓ You're done managing your inner state and ready to actually change it ✓ You make grounded decisions — not \"fired up today, regret it tomorrow\" ones ✓ You can sit in discomfort, receive feedback, and stay in the process without bolting ✓ You're ready to feel what you've been managing — even if it's uncomfortable ✓ You want real community. People doing the same actual work — not a hype group ✓ You understand that transformation is a practice, not a purchase ✓ You're ready to lead your life instead of react to it" [level=1] [ref=e1126]:
+              - generic [ref=e1128]:
+                - text: ✓ You're a high-performing entrepreneur who's mastered the external game — and you know something fundamental is still missing
+                - text: ✓ You're done managing your inner state and ready to actually change it
+                - text: ✓ You make grounded decisions — not "fired up today, regret it tomorrow" ones
+                - text: ✓ You can sit in discomfort, receive feedback, and stay in the process without bolting
+                - text: ✓ You're ready to feel what you've been managing — even if it's uncomfortable
+                - text: ✓ You want real community. People doing the same actual work — not a hype group
+                - text: ✓ You understand that transformation is a practice, not a purchase
+                - text: ✓ You're ready to lead your life instead of react to it
+          - img [ref=e1132]
+        - generic [ref=e1133]:
+          - img [ref=e1137]
+          - generic [ref=e1139]:
+            - heading "The SOMA Collective Is Not For You If:" [level=1] [ref=e1141]:
+              - generic [ref=e1142]: "The SOMA Collective Is Not For You If:"
+            - heading "✗ You expect something outside of you to fix something inside of you ✗ You're looking for another program to consume without changing ✗ You get excited at enrollment and bail when it gets real — this pattern costs everyone in the container, and Jonas will tell you directly if it's happening ✗ You want a weekend peak state with no integration plan ✗ You want spiritual language without somatic substance ✗ You believe your mind can solve what your body is holding ✗ You're not ready to be seen — and to see yourself — clearly" [level=1] [ref=e1144]:
+              - generic [ref=e1146]:
+                - text: ✗ You expect something outside of you to fix something inside of you
+                - text: ✗ You're looking for another program to consume without changing
+                - text: ✗ You get excited at enrollment and bail when it gets real — this pattern costs everyone in the container, and Jonas will tell you directly if it's happening
+                - text: ✗ You want a weekend peak state with no integration plan
+                - text: ✗ You want spiritual language without somatic substance
+                - text: ✗ You believe your mind can solve what your body is holding
+                - text: ✗ You're not ready to be seen — and to see yourself — clearly
+        - generic [ref=e1149]:
+          - heading "The SOMA Collective is for people making grounded choices — not for people chasing external solutions to internal problems." [level=1] [ref=e1151]:
+            - generic [ref=e1152]: The SOMA Collective is for people making grounded choices — not for people chasing external solutions to internal problems.
+          - link "TRANSFORM MY INNER WORLD  APPLY FOR SOMA IMMERSION." [ref=e1154] [cursor=pointer]:
+            - /url: "#open-popup"
+            - generic [ref=e1155]:
+              - text: 
+              - generic [ref=e1156]:
+                - text: TRANSFORM MY INNER WORLD
+                - generic [ref=e1157]: 
+            - generic [ref=e1158]: APPLY FOR SOMA IMMERSION.
+      - generic [ref=e1161]:
+        - img [ref=e1165]
+        - heading "“Working with Jonas has been a game-changer. He brings incredible clarity and guidance in such a personalized way that even when I felt completely stuck, he helped me find the right direction. Every session is a co-creation where ideas turn into actionable results. Through his coaching, I was able to focus fully on my clients, streamline my business approach, and grow my revenue from almost zero to $15,000 per month within just three months. Jonas is not just a mentor — he’s a partner in growth who helps you achieve real results while reigniting your passion and confidence.\" Matias" [level=1] [ref=e1169]:
+          - generic [ref=e1171]:
+            - text: “Working with Jonas has been a game-changer. He brings incredible clarity and guidance in such a personalized way that even when I felt completely stuck, he helped me find the right direction. Every session is a co-creation where ideas turn into actionable results. Through his coaching, I was able to focus fully on my clients, streamline my business approach, and grow my revenue from almost zero to $15,000 per month within just three months. Jonas is not just a mentor — he’s a partner in growth who helps you achieve real results while reigniting your passion and confidence."
+            - text: Matias
+      - generic [ref=e1173]:
+        - generic [ref=e1174]:
+          - generic [ref=e1176]:
+            - 'heading "Meet Your Guide: Jonas Hilz" [level=1] [ref=e1178]':
+              - generic [ref=e1179]: "Meet Your Guide: Jonas Hilz"
+            - heading "Here is My Story." [level=1] [ref=e1181]:
+              - generic [ref=e1182]: Here is My Story.
+            - heading "I spent 18 years working with the body, training clients, building a studio, publishing a book, running businesses. Over 300 people trusted me to help them change. And for most of that time, I had no idea how much my own definition of success was about to unravel. I could see the patterns in my clients because I knew them from the inside. The grinding. The performing. The nervous system running a program I never chose. I just hadn't finished the work myself. The turning point didn't come from a new book or a better framework. It came when I stopped asking \"What else do I need to know?\" and started asking \"What am I avoiding feeling?\" That question shifted everything." [level=1] [ref=e1184]:
+              - generic [ref=e1186]:
+                - text: I spent 18 years working with the body, training clients, building a studio, publishing a book, running businesses. Over 300 people trusted me to help them change.
+                - text: And for most of that time, I had no idea how much my own definition of success was about to unravel.
+                - text: I could see the patterns in my clients because I knew them from the inside. The grinding. The performing. The nervous system running a program I never chose. I just hadn't finished the work myself.
+                - text: The turning point didn't come from a new book or a better framework. It came when I stopped asking "What else do I need to know?" and started asking "What am I avoiding feeling?"
+                - text: That question shifted everything.
+          - img [ref=e1190]
+        - generic [ref=e1193]:
+          - heading "That shift — from accumulating knowledge to actually inhabiting the body — is what the SOMA immersion is created for." [level=1] [ref=e1195]:
+            - generic [ref=e1196]: That shift — from accumulating knowledge to actually inhabiting the body — is what the SOMA immersion is created for.
+          - link "JoIN ME FOR YOUR TRANSFORMATION  APPLY TO SOMA IMMERSION TODAY." [ref=e1198] [cursor=pointer]:
+            - /url: "#open-popup"
+            - generic [ref=e1199]:
+              - text: 
+              - generic [ref=e1200]:
+                - text: JoIN ME FOR YOUR TRANSFORMATION
+                - generic [ref=e1201]: 
+            - generic [ref=e1202]: APPLY TO SOMA IMMERSION TODAY.
+      - text:                 
+      - generic [ref=e1204]:
+        - heading "HERE ARE MORE CLIENT RESULTS." [level=1] [ref=e1209]:
+          - generic [ref=e1210]: HERE ARE MORE CLIENT RESULTS.
+        - generic [ref=e1211]:
+          - generic [ref=e1213]:
+            - heading "“I've been in business 10 years and thought I had it handled. then Jonas showed me the ONE thing I was missing and I literally didn't know it existed. earned 50,000 dollars more that year. you can't fix what you can't see” - Josephine" [level=1] [ref=e1215]:
+              - generic [ref=e1217]:
+                - text: “I've been in business 10 years and thought I had it handled. then Jonas showed me the ONE thing I was missing and I literally didn't know it existed. earned 50,000 dollars more that year. you can't fix what you can't see”
+                - text: "- Josephine"
+            - heading "“The biggest shift was realizing my personal life and my business aren't separate things. it's all just my path. my whole life. I kept putting the real stuff on hold thinking 'after the next launch' and the launch was never the thing” - Catalina" [level=1] [ref=e1219]:
+              - generic [ref=e1221]:
+                - text: “The biggest shift was realizing my personal life and my business aren't separate things. it's all just my path. my whole life. I kept putting the real stuff on hold thinking 'after the next launch' and the launch was never the thing”
+                - text: "- Catalina"
+          - generic [ref=e1223]:
+            - heading "“I don't even know how to explain it. I walked in totally drained and confused and 2 hours later I'm glowing. like actually glowing. it wasn't strategy. it was his energy. something shifted in my body and everything looks different now” - Dilek" [level=1] [ref=e1225]:
+              - generic [ref=e1227]:
+                - text: “I don't even know how to explain it. I walked in totally drained and confused and 2 hours later I'm glowing. like actually glowing. it wasn't strategy. it was his energy. something shifted in my body and everything looks different now”
+                - text: "- Dilek"
+            - heading "“Jonas didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came” - Matias" [level=1] [ref=e1229]:
+              - generic [ref=e1231]:
+                - text: “Jonas didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came”
+                - text: "- Matias"
+      - generic [ref=e1233]:
+        - heading "Frequently Asked Questions" [level=1] [ref=e1238]:
+          - generic [ref=e1239]: Frequently Asked Questions
+        - generic [ref=e1240]:
+          - generic [ref=e1244]:
+            - generic [ref=e1246] [cursor=pointer]:
+              - generic [ref=e1248]: Why does working with the body matter?
+              - generic [ref=e1250]: 
+            - generic [ref=e1252] [cursor=pointer]:
+              - generic [ref=e1254]: I've tried programs and nothing stuck. Why is this different?
+              - generic [ref=e1256]: 
+            - generic [ref=e1258] [cursor=pointer]:
+              - generic [ref=e1260]: What's the actual time commitment per week?
+              - generic [ref=e1262]: 
+            - generic [ref=e1264] [cursor=pointer]:
+              - generic [ref=e1266]: Is there any guarantee?
+              - generic [ref=e1268]: 
+          - generic [ref=e1272]:
+            - generic [ref=e1274] [cursor=pointer]:
+              - generic [ref=e1276]: I've done retreats and breathwork before. Why didn't it stick?
+              - generic [ref=e1278]: 
+            - generic [ref=e1280] [cursor=pointer]:
+              - generic [ref=e1282]: I'm already training hard. Is this going to conflict?
+              - generic [ref=e1284]: 
+            - generic [ref=e1286] [cursor=pointer]:
+              - generic [ref=e1288]: What does the Cyprus retreat involve?
+              - generic [ref=e1290]: 
+            - generic [ref=e1292] [cursor=pointer]:
+              - generic [ref=e1294]: I'm not sure which tier is right for me.
+              - generic [ref=e1296]: 
+      - generic [ref=e1301]:
+        - heading "The Body Has Been Waiting." [level=1] [ref=e1303]:
+          - generic [ref=e1304]: The Body Has Been Waiting.
+        - heading [level=1] [ref=e1306]:
+          - generic [ref=e1308]:
+            - text: You've built something real.
+            - text: The income. The discipline. The track record.
+            - text: Now it's time to Nourish the Foundation That made It Possible.
+            - text: The Machine gets results. But
+            - generic [ref=e1309]: the Machine is tired
+            - text: . And somewhere underneath the performance — underneath the constant motion and the overriding and the doing — you already know that more of the same won't get you somewhere different.
+            - text: SOMA Immersion doesn't ask you to become someone else.
+            - text: It asks you to finally become who you already are, without the armor, the override, and
+            - generic [ref=e1310]: the exhaustion of running everything through your head
+            - text: .
+            - text: Eight weeks.
+            - text: 15 Spots Available.
+            - text: April–May 2026.
+            - text: Your Breakthrough Is Waiting.
+            - text: Remember, The
+            - generic [ref=e1311]:
+              - text: people who
+              - generic [ref=e1312]: wait for the "right time"
+              - text: are the people waiting For It To "Be Their Turn".
+            - text: Your best decisions have always come from a calm body and a quiet mind.
+            - text: So If You Feel That Pull Now. You know what it is.
+            - text: It's Your Turn Now.
+            - text: The body leads. The mind follows. Let's begin.
+        - link "ITS MY TIME  APPLY FOR SOMA IMMERSION." [ref=e1314] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e1315]:
+            - text: 
+            - generic [ref=e1316]:
+              - text: ITS MY TIME
+              - generic [ref=e1317]: 
+          - generic [ref=e1318]: APPLY FOR SOMA IMMERSION.
+      - generic [ref=e1323]:
+        - heading "SOMA" [level=1] [ref=e1325]:
+          - generic [ref=e1327]: SOMA
+        - heading "Embodiment · Energy · Execution" [level=1] [ref=e1329]:
+          - generic [ref=e1330]: Embodiment · Energy · Execution
+        - heading "Coaching DJ / Collective Experiences Team & Vision" [level=1] [ref=e1332]:
+          - generic [ref=e1334]:
+            - link "Coaching" [ref=e1335] [cursor=pointer]:
+              - /url: https://www.somacollective.io/coaching
+            - link "DJ / Collective" [ref=e1336] [cursor=pointer]:
+              - /url: https://www.somacollective.io/collective
+            - link "Experiences" [ref=e1337] [cursor=pointer]:
+              - /url: https://www.somacollective.io/experiences
+            - link "Team & Vision" [ref=e1338] [cursor=pointer]:
+              - /url: https://www.somacollective.io/team-vision
+        - heading "Impressum Privacy Policy" [level=1] [ref=e1340]:
+          - generic [ref=e1342]:
+            - link "Impressum" [ref=e1343] [cursor=pointer]:
+              - /url: https://www.somacollective.io/imprint
+            - link "Privacy Policy" [ref=e1344] [cursor=pointer]:
+              - /url: https://www.somacollective.io/privacy
+        - heading "© 2026 SOMA. All rights reserved." [level=1] [ref=e1346]:
+          - generic [ref=e1347]: © 2026 SOMA. All rights reserved.
+  - text: 

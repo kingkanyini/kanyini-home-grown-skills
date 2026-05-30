@@ -1,0 +1,219 @@
+{
+  "workbook_num": 3,
+  "master": "Jason Fladlien",
+  "sections": {
+    "sec1": {
+      "lens": "This is the architectural x-ray — if the presenter can't sketch the entire webinar on a napkin before they touch a single slide, they've already lost the room.",
+      "emphasis": [
+        "Force them to recite the full arc (Origin Story -> Big Domino -> Three Secrets -> Stack -> Close) from memory before any design work — architecture lives in the head, not the deck",
+        "Prework gates matter: no headline, no 3 secrets, no offer stack = no slide build. Period.",
+        "The 'foundation of the house' metaphor is correct but too soft. This is load-bearing. Skip one piece and the close collapses and you blame the close."
+      ],
+      "common_traps": [
+        "Novices skim the framework overview and jump to making pretty slides — they confuse aesthetics with architecture",
+        "Treating the prework as optional 'reminder' rather than a hard gate",
+        "Not being able to explain why each block exists — they memorize the map but don't understand what job each block does in the buyer's brain"
+      ],
+      "voice_notes": [
+        "If you can't draw this on a cocktail napkin, you don't own it yet.",
+        "Every block on this map is earning its seat. If you can't tell me what JOB a block is doing in the buyer's brain, cut it or learn it.",
+        "Foundation of the house? Yeah. And the house is on fire if you skip a brick."
+      ],
+      "score": 8
+    },
+    "sec2": {
+      "lens": "The opening eight slides are the single highest-leverage real estate in the entire presentation — this is where you earn the right to be listened to, and most presenters blow it by being cute instead of commanding.",
+      "emphasis": [
+        "Bold Promise must be SPECIFIC enough that the listener can picture the outcome in five seconds — vague promises = vague attention",
+        "Take Control is not optional — if they keep Slack open, you already lost the sale. The hourly-rate framing ('you'd pay me $500/hr for this') is the play.",
+        "Street Cred beats Qualify Yourself — other people's results land 10x harder than your own. Front-load the student wins.",
+        "Hook-To-The-End is a commitment device — without it, 40% of your audience is gone by the teaching block. Make the bonus concrete, not vague.",
+        "One Sentence Persuasion (Blair Warren) is the secret weapon — weave it into the intro, not just add it as a slide. All five elements, one sentence, delivered with weight."
+      ],
+      "common_traps": [
+        "Boasting on Qualify Yourself instead of lifting others up — instant credibility destruction",
+        "Future Pacing written as generic 'imagine your dream life' fluff instead of a specific scenario tied to their actual pain",
+        "Take Control being apologetic ('sorry to ask, but...') instead of commanding — you are paying them in value, act like it",
+        "Skipping Hook-To-The-End because 'my content is good enough to keep them' — that's arrogance, not data",
+        "Bold Promise that is a feature promise instead of a transformation promise ('I'll teach you X' vs 'by the end you'll know how to Y')"
+      ],
+      "voice_notes": [
+        "Specificity is credibility. 'Make more money' is noise. 'Add $10K to your business in 30 days without hiring' is signal.",
+        "Your credibility slide is where the sale is either made possible or killed. Lift others, don't beat your chest.",
+        "If Slack dings and they pick up their phone, you just lost the sale. Take Control or take the loss.",
+        "Blair's One Sentence is the most underused weapon in this whole deck. Write it, memorize it, deliver it like a closing argument."
+      ],
+      "score": 9
+    },
+    "sec3": {
+      "lens": "Breakouts aren't feedback sessions — they're pattern-recognition drills. You learn more from watching five other decks than from anyone commenting on yours.",
+      "emphasis": [
+        "Speed over polish — fast share forces structural clarity",
+        "Eyes over ears — observe what's working in others' decks, study, adapt, honor the structure",
+        "Don't hunt for validation, hunt for gaps"
+      ],
+      "common_traps": [
+        "Turning breakout into a mini-pitch to feel good",
+        "Spending 15 minutes on one deck and nobody else shares",
+        "Writing down feedback instead of watching what lands when others share"
+      ],
+      "voice_notes": [
+        "Breakouts aren't therapy. Share fast, watch harder.",
+        "The best intel in the room is what other people are getting wrong AND right. Stay present.",
+        "If you leave the breakout without one structural idea to adapt, you slept through it."
+      ],
+      "score": 7
+    },
+    "sec4": {
+      "lens": "This is the engine of the entire webinar — Epiphany Bridge is the single most important story-technology in persuasion and 80% of presenters fake their way through it.",
+      "emphasis": [
+        "False Beliefs must be SPECIFIC to this audience — generic beliefs ('I'm not good enough') don't move money. 'Funnels are too technical for non-techies' moves money.",
+        "The Wall must be real and painful — if the wall is fake, the epiphany is fake, and the whole bridge collapses under its own weight",
+        "Emotion FIRST, then logic — the ah-ha is the permission slip that lets them accept the techno babble. Reverse it and you get a skeptic.",
+        "All 8 elements are non-negotiable — skip the Conflict and the story feels too easy; skip the Transformation and the story has no payoff",
+        "The story is NOT about you — it's a Trojan horse carrying a new belief into their head. Always serve the belief."
+      ],
+      "common_traps": [
+        "Writing the epiphany bridge as a resume or origin story — 'here's what I did' — instead of an emotional journey",
+        "Making the Desires too shallow (only external, no internal) — you need both the 'I want money' AND the 'I want to prove my father wrong'",
+        "Skipping the Conflict because it feels uncomfortable to share — but conflict is where trust is earned",
+        "Identifying false beliefs based on what YOU think they believe instead of what they actually tell themselves at 2am",
+        "Making the epiphany feel convenient/lucky instead of earned — 'then I met a guy who told me' lands hollow"
+      ],
+      "voice_notes": [
+        "The epiphany bridge is the most powerful persuasion structure on planet earth. Learn it, drill it, live it.",
+        "If your Wall isn't making YOU uncomfortable to tell, it's not big enough. Real stakes, real story.",
+        "You're not telling them your story. You're carrying a new belief into their brain wrapped in your story.",
+        "Emotion is the password. Logic is what you do AFTER you're inside. Get that order wrong and you're locked out."
+      ],
+      "score": 10
+    },
+    "sec5": {
+      "lens": "Framework-first share is a structural stress test — if the skeleton doesn't hold up when you say it out loud in 60 seconds, the full story is a house of cards.",
+      "emphasis": [
+        "Skeleton first, meat later — if you can't summarize in one pass, the arc is broken",
+        "Feedback on structure not style — style is personal, structure is mechanical",
+        "Notice what questions people ask when you share — those are the gaps in your arc"
+      ],
+      "common_traps": [
+        "Telling the full story instead of the framework — eats everyone's time",
+        "Getting defensive about feedback on the outline — the outline isn't sacred, the sale is",
+        "Skipping this step because 'I'll tell it better with the slides' — no you won't, you'll just hide the weakness"
+      ],
+      "voice_notes": [
+        "If the skeleton can't walk, the body's dead. Frame first.",
+        "60 seconds to share the bones. If it takes longer, your arc is broken.",
+        "The questions people ask after you share? Those ARE the gaps. Fix them."
+      ],
+      "score": 7
+    },
+    "sec6": {
+      "lens": "Slides are prompts for you, the presenter — not billboards for the audience. If they're reading your slides, they're not listening to your story, and story is what sells.",
+      "emphasis": [
+        "Raw-over-polished is mission critical — stock photos scream 'salesman,' Facebook photos scream 'I'm like you'",
+        "Each slide = one emotional beat, not one teaching point — this is a story, not a class",
+        "15-minute timer on the origin block is SACRED — run long and you bleed into teaching time and the whole thing falls apart",
+        "Image choice tells the audience whether to trust you — pick images that carry the emotion, not the info"
+      ],
+      "common_traps": [
+        "Walls of text because 'I want to make sure I don't forget' — use speaker notes for that, not slides",
+        "Polished stock photos because 'I want to look professional' — you want to look REAL. Professional = suspect.",
+        "Running 25 minutes on origin because the story is juicy — you just robbed your teaching block",
+        "One slide per sentence — kills the pace. One slide per beat."
+      ],
+      "voice_notes": [
+        "Slides are a teleprompter for you. They're not a textbook for them.",
+        "Raw photos beat stock photos 10 out of 10 times. Real beats polished.",
+        "The 15-minute timer is not a suggestion. It's the difference between a tight webinar and a bloated mess.",
+        "One beat, one slide. If the slide has five bullet points, it's five slides."
+      ],
+      "score": 8
+    },
+    "sec7": {
+      "lens": "Emotion check BEFORE logic build — if the origin slides don't make the room lean in, no amount of framework polish downstream will save the close.",
+      "emphasis": [
+        "Are they leaning in? If not, your emotional beats are off — fix them here before you build Secret #1",
+        "Missing visual cues = missing emotion — find them now",
+        "Watch for the silence — the places where nobody reacts are the places you're losing them"
+      ],
+      "common_traps": [
+        "Getting style feedback ('change the font') instead of emotion feedback ('I didn't feel the Wall')",
+        "Moving forward to framework build when the origin still isn't landing — you're building on sand",
+        "Not being honest about whether you felt something when others shared — be the honest mirror they need"
+      ],
+      "voice_notes": [
+        "If nobody leans in, nobody buys. Fix emotion here or die later.",
+        "The silence in a breakout is the signal. Where nobody reacts, they're not connecting.",
+        "Don't let them move forward until the origin actually lands. You're doing them a favor."
+      ],
+      "score": 7
+    },
+    "sec8": {
+      "lens": "Strategy vs. Tactics is THE line that separates webinars that sell from webinars that teach their way out of a sale — this is the single most violated rule in this whole framework.",
+      "emphasis": [
+        "Strategy (WHAT) in the webinar, Tactics (HOW) in the product — cross that line and you've given the milk away",
+        "Story-Strategy-Social Proof is the rhythm — hit that cadence every single Secret",
+        "Social proof isn't a testimonial slide at the end — it's woven into the teaching so every strategy point is validated in real-time",
+        "The story of how you LEARNED or EARNED the framework is as important as the framework itself — it's the credibility anchor",
+        "30-minute block = 3 frameworks at 10 min each OR one deeper framework — but whichever you choose, hit the formula cleanly"
+      ],
+      "common_traps": [
+        "Teaching the step-by-step because 'if I over-deliver they'll trust me' — wrong. If you over-deliver they feel satisfied and DON'T BUY.",
+        "Skipping the 'how I learned' story and jumping straight into the framework — now it's theory, not experience",
+        "Treating social proof as a single slide instead of a drumbeat throughout",
+        "Teaching a framework that isn't actually connected to the Big Domino — feels like content-filler",
+        "Getting so excited about the teaching that you blow past the 30-minute budget and lose the close"
+      ],
+      "voice_notes": [
+        "The moment you teach HOW, you just sold them the ability to NOT buy.",
+        "WHAT in the webinar, HOW in the product. Period. End of discussion.",
+        "Story, Strategy, Social Proof. That's the heartbeat. Skip a beat and they walk.",
+        "Over-delivering on free content is the amateur's move. Professionals deliver VALUE, not COMPLETION.",
+        "Social proof isn't a slide at the end. It's oxygen — you need it every few minutes or the room suffocates."
+      ],
+      "score": 10
+    },
+    "sec9": {
+      "lens": "Breakout here is about pressure-testing the strategy-vs-tactics line — did they hold it, or did they leak the how?",
+      "emphasis": [
+        "Listen for leaks — every time a peer gives away a tactic, flag it. That leak will cost them sales.",
+        "Bullet points are enough — this is about arc, not polish",
+        "Is the framework connected to the Big Domino? If not, it's orphan content."
+      ],
+      "common_traps": [
+        "Giving away tactics in the breakout 'just to show it works' — you're training the wrong muscle",
+        "Polishing slides instead of testing structure — wasted breakout",
+        "Failing to flag when a peer is crossing the strategy-tactics line — you're not doing them any favors by being polite"
+      ],
+      "voice_notes": [
+        "Listen for the leak. Every tactic given away in practice becomes a tactic given away in the live.",
+        "Bullets beat beauty at this stage. Prove the arc works naked.",
+        "If the framework isn't serving the Big Domino, cut it. Orphan content kills pace."
+      ],
+      "score": 7
+    },
+    "sec10": {
+      "lens": "Prework is where next week's success is born or killed — the presenters who show up with Secrets #2 and #3 already drafted will outperform the ones who wing it by 3x, guaranteed.",
+      "emphasis": [
+        "Secret #2 = Internal belief (the story they tell themselves about themselves) — hardest to shift, highest leverage",
+        "Secret #3 = External belief (the story they tell themselves about the world) — shifts the ecosystem narrative",
+        "Three legs per framework: Story, Strategy, Tactics-prep — don't show up with just an outline, show up with the story ALREADY TOLD once out loud",
+        "Community brainstorm is a force multiplier — the presenters who workshop with peers before the session outperform",
+        "If they don't have Secret #2 and #3 drafted, they don't have a webinar — they have a half-baked intro with a cliff"
+      ],
+      "common_traps": [
+        "Showing up to next session with only Secret #1 polished — now they're scrambling and the back half will be weak",
+        "Drafting frameworks without checking connection to the Big Domino — orphan frameworks waste time",
+        "Skipping the community check — ego says 'I got this,' reality says 'an outside eye finds the holes'",
+        "Treating prework as optional homework instead of the actual deliverable"
+      ],
+      "voice_notes": [
+        "Next week is won this week. Prework isn't homework — it's the real work.",
+        "Internal belief is the hardest shift and the most profitable one. Don't half-ass Secret #2.",
+        "Show up with all three legs already standing, or you'll limp through the whole session.",
+        "If your framework doesn't serve the Big Domino, it's content, not persuasion. Cut it."
+      ],
+      "score": 8
+    }
+  }
+}

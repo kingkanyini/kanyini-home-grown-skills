@@ -1,0 +1,26 @@
+{
+  "name": "skill-to-site",
+  "version": "1.0.0",
+  "description": "Turn any installed skill into a deployed Vercel chat site (Next.js + streaming Anthropic API + secret-safe env piping)",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T4",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "npx",
+      "node"
+    ],
+    "envVars": [
+      "ANTHROPIC_API_KEY",
+      "VERCEL_TOKEN"
+    ],
+    "services": [
+      "Vercel",
+      "Anthropic"
+    ]
+  }
+}

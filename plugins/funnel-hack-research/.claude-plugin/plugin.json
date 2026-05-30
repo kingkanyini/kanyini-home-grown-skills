@@ -1,0 +1,17 @@
+{
+  "name": "funnel-hack-research",
+  "version": "1.0.0",
+  "description": "Find the perfect funnels to hack — Phase B of the ABCDE framework. BMAD Analyst orchestrates parallel research agents.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T6",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

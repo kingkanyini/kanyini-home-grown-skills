@@ -1,0 +1,261 @@
+{
+  "workbook_num": 3,
+  "pdf_path": "C:\\Users\\<your-username>\\<your-vault-path> Movers\\Perfect Webinar Workbooks\\FOUNTAINHEAD_Workbook_Mod_3.pdf",
+  "pdf_hash": "10a3eb86cda856d9cf09dd70e285d8b8ba49819d456a09f268fce457ddc0e304",
+  "page_count": 36,
+  "dpi": 150,
+  "pages": [
+    {
+      "page": 1,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-001.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 950144
+    },
+    {
+      "page": 2,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-002.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 681421
+    },
+    {
+      "page": 3,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-003.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 705700
+    },
+    {
+      "page": 4,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-004.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 209313
+    },
+    {
+      "page": 5,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-005.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 323864
+    },
+    {
+      "page": 6,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-006.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 670061
+    },
+    {
+      "page": 7,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-007.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 306171
+    },
+    {
+      "page": 8,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-008.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 350711
+    },
+    {
+      "page": 9,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-009.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 551354
+    },
+    {
+      "page": 10,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-010.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 791316
+    },
+    {
+      "page": 11,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-011.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 785901
+    },
+    {
+      "page": 12,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-012.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 443424
+    },
+    {
+      "page": 13,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-013.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 283416
+    },
+    {
+      "page": 14,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-014.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 124740
+    },
+    {
+      "page": 15,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-015.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 179556
+    },
+    {
+      "page": 16,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-016.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 706453
+    },
+    {
+      "page": 17,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-017.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 347370
+    },
+    {
+      "page": 18,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-018.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 92666
+    },
+    {
+      "page": 19,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-019.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 346752
+    },
+    {
+      "page": 20,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-020.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 173639
+    },
+    {
+      "page": 21,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-021.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 96479
+    },
+    {
+      "page": 22,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-022.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 44760
+    },
+    {
+      "page": 23,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-023.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 177310
+    },
+    {
+      "page": 24,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-024.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 702214
+    },
+    {
+      "page": 25,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-025.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 379977
+    },
+    {
+      "page": 26,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-026.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 518689
+    },
+    {
+      "page": 27,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-027.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 227822
+    },
+    {
+      "page": 28,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-028.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 175105
+    },
+    {
+      "page": 29,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-029.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 704038
+    },
+    {
+      "page": 30,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-030.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 371314
+    },
+    {
+      "page": 31,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-031.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 298357
+    },
+    {
+      "page": 32,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-032.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 384430
+    },
+    {
+      "page": 33,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-033.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 323908
+    },
+    {
+      "page": 34,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-034.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 175279
+    },
+    {
+      "page": 35,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-035.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 204621
+    },
+    {
+      "page": 36,
+      "image_path": "C:\\Users\\<your-username>\\.claude\\plugins\\local\\webinar-forge\\playbook\\workbook-3-images\\page-036.png",
+      "width": 1275,
+      "height": 1650,
+      "size_bytes": 877608
+    }
+  ]
+}

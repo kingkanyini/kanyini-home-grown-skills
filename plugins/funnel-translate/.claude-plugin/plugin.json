@@ -1,0 +1,30 @@
+{
+  "name": "funnel-translate",
+  "version": "1.0.0",
+  "description": "Voice-aware funnel translation with counsel review, formatting preservation, and Vercel deployment for team handoff",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T6",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "voice-dna-blueprint-builder",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [
+      "npx"
+    ],
+    "envVars": [
+      "VERCEL_TOKEN"
+    ],
+    "services": [
+      "Vercel"
+    ]
+  }
+}

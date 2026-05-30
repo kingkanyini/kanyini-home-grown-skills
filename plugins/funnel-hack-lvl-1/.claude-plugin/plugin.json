@@ -1,0 +1,24 @@
+{
+  "name": "funnel-hack-lvl-1",
+  "version": "1.0.0",
+  "description": "Create a funnel for a new customer from scratch using the ABCDE + SWIPES framework with 3-hat copy counsel",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T6",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__obsidian-brain__*"
+    ],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

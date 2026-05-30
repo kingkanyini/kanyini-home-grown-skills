@@ -1,0 +1,286 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic: 
+    - generic [ref=e5]:
+      - img [ref=e12]
+      - generic [ref=e17]:
+        - heading "Live By" [level=1] [ref=e19]:
+          - generic [ref=e20]: Live By
+        - heading "Your Design" [level=1] [ref=e22]:
+          - generic [ref=e24]: Your Design
+        - heading "You’ve already seen your embodiment pattern. Now let’s feel it. The Embodied Design Session is a private space where your Human Design chart becomes something more than information. It becomes experience." [level=1] [ref=e26]:
+          - generic [ref=e28]:
+            - text: You’ve already seen your embodiment pattern.
+            - text: Now let’s feel it.
+            - text: The Embodied Design Session is a private space where your Human Design chart becomes something more than information.
+            - text: It becomes experience.
+        - heading "This is not a lecture. Not a reading where someone explains who you are. It’s a guided exploration into the places your design already lives inside you. The breath. The gut. The tension. The creative pulse waiting underneath the surface. Your chart becomes a doorway. Your body becomes the guide." [level=1] [ref=e30]:
+          - generic [ref=e32]:
+            - text: This is not a lecture.
+            - text: Not a reading where someone explains who you are.
+            - text: It’s a guided exploration into the places your design already lives inside you.
+            - text: The breath.
+            - text: The gut.
+            - text: The tension.
+            - text: The creative pulse waiting underneath the surface.
+            - text: Your chart becomes a doorway.
+            - text: Your body becomes the guide.
+        - link "Book Your Embodied Design Session FOR ONLY $333" [ref=e34] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e35]:  Book Your Embodied Design Session
+          - generic [ref=e36]: FOR ONLY $333
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e41]:
+            - heading "Most people understand their design… but they don’t feel it." [level=1] [ref=e43]:
+              - generic [ref=e45]:
+                - text: Most people understand their
+                - generic [ref=e46]: design…
+                - text: but they don’t
+                - generic [ref=e48]: feel it.
+            - heading "You learn your type. You read the descriptions. You watch videos explaining your authority. And for a moment, something clicks. “Ah… that explains me.” But your body is still holding the same patterns. Still performing. Still bracing. Still trying to live by rules that were never meant for you. Because information doesn’t automatically become embodiment. Your nervous system doesn’t change because you read about yourself. Your body has to experience something different." [level=1] [ref=e50]:
+              - generic [ref=e53]:
+                - text: You learn your type.
+                - text: You read the descriptions.
+                - text: You watch videos explaining your authority.
+                - text: And for a moment, something clicks.
+                - text: “Ah… that explains me.”
+                - text: But your body is still holding the same patterns.
+                - text: Still performing.
+                - text: Still bracing.
+                - text: Still trying to live by rules that were never meant for you.
+                - text: Because information doesn’t automatically become embodiment.
+                - text: Your nervous system doesn’t change because you read about yourself.
+                - text: Your body has to experience something different.
+            - link "Book Your Embodied Design Session FOR ONLY $333" [ref=e55] [cursor=pointer]:
+              - /url: "#open-popup"
+              - generic [ref=e56]:  Book Your Embodied Design Session
+              - generic [ref=e57]: FOR ONLY $333
+          - img [ref=e61]
+        - text: 
+      - generic [ref=e66]:
+        - heading "This is not a Human Design reading. It’s an initiation into your own energy." [level=1] [ref=e70]:
+          - generic [ref=e72]:
+            - text: This is
+            - generic [ref=e74]: not a Human Design reading.
+            - text: It’s an
+            - generic [ref=e75]: initiation
+            - text: into your own
+            - generic [ref=e76]: energy.
+        - heading "In this session, we translate your design out of theory and into sensation. We explore how your energy actually moves. Where it gets blocked. Where it’s been silenced. Where it’s ready to come back online. Through somatic awareness, breath, emotional presence, and creative activation… your chart stops being a concept. And starts becoming something you can feel in real time. Sometimes that looks like release. Sometimes it looks like clarity. Sometimes it looks like remembering something you forgot was yours. There is no script. Just the truth your body has been waiting to say." [level=1] [ref=e78]:
+          - generic [ref=e81]:
+            - text: In this session, we translate your design out of theory and into sensation.
+            - text: We explore how your energy actually moves.
+            - text: Where it gets blocked.
+            - text: Where it’s been silenced.
+            - text: Where it’s ready to come back online.
+            - text: Through somatic awareness, breath, emotional presence, and creative activation…
+            - text: your chart stops being a concept.
+            - text: And starts becoming something you can feel in real time.
+            - text: Sometimes that looks like release.
+            - text: Sometimes it looks like clarity.
+            - text: Sometimes it looks like remembering something you forgot was yours.
+            - text: There is no script.
+            - text: Just the truth your body has been waiting to say.
+        - link "Book Your Embodied Design Session FOR ONLY $333" [ref=e83] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e84]:  Book Your Embodied Design Session
+          - generic [ref=e85]: FOR ONLY $333
+      - generic [ref=e87]:
+        - heading "What Happens Inside an Embodied Design Session" [level=1] [ref=e94]:
+          - generic [ref=e96]:
+            - text: What Happens Inside an
+            - generic [ref=e97]: Embodied Design Session
+        - generic [ref=e98]:
+          - img [ref=e102]
+          - generic [ref=e104]:
+            - heading "1 — We look at your chart together" [level=1] [ref=e106]:
+              - generic [ref=e108]: 1 — We look at your chart together
+            - heading "Not every detail. Just the pieces that are alive for you right now." [level=1] [ref=e110]:
+              - generic [ref=e113]:
+                - text: Not every detail.
+                - text: Just the pieces that are alive for you right now.
+            - heading "2 — We listen to your body" [level=1] [ref=e115]:
+              - generic [ref=e117]: 2 — We listen to your body
+            - heading "Where does your design show up in sensation? In breath? In resistance? In expansion?" [level=1] [ref=e119]:
+              - generic [ref=e122]:
+                - text: Where does your design show up in sensation?
+                - text: In breath?
+                - text: In resistance?
+                - text: In expansion?
+            - heading "3 — We activate what’s been dormant" [level=1] [ref=e124]:
+              - generic [ref=e126]: 3 — We activate what’s been dormant
+            - heading "Through guided somatic prompts, emotional awareness, and creative expression. Your body begins to experience its natural rhythm again." [level=1] [ref=e128]:
+              - generic [ref=e131]:
+                - text: Through guided somatic prompts, emotional awareness, and creative expression.
+                - text: Your body begins to experience its natural rhythm again.
+            - heading "4 — You leave with practices" [level=1] [ref=e133]:
+              - generic [ref=e135]: 4 — You leave with practices
+            - heading "Simple ways to stay connected to what opened during the session. So the work continues beyond our time together." [level=1] [ref=e137]:
+              - generic [ref=e140]:
+                - text: Simple ways to stay connected to what opened during the session.
+                - text: So the work continues beyond our time together.
+            - link "Book Your Embodied Design Session FOR ONLY $333" [ref=e142] [cursor=pointer]:
+              - /url: "#open-popup"
+              - generic [ref=e143]:  Book Your Embodied Design Session
+              - generic [ref=e144]: FOR ONLY $333
+      - generic [ref=e146]:
+        - generic [ref=e152]:
+          - generic [ref=e154]:
+            - heading "This space might be for you if…" [level=1] [ref=e156]:
+              - generic [ref=e158]:
+                - text: This space might be
+                - generic [ref=e159]: for you if…
+            - heading "You’ve studied Human Design but still feel disconnected from yourself. You’re someone who holds a lot. Ideas. Emotions. Energy. But rarely feel safe enough to fully express it. You’re tired of spiritual advice that lives only in the mind. You want something deeper. Something honest. Something your body can actually trust." [level=1] [ref=e161]:
+              - generic [ref=e164]:
+                - text: You’ve studied Human Design but still feel disconnected from yourself.
+                - text: You’re someone who holds a lot.
+                - text: Ideas. Emotions. Energy.
+                - text: But rarely feel safe enough to fully express it.
+                - text: You’re tired of spiritual advice that lives only in the mind.
+                - text: You want something deeper.
+                - text: Something honest.
+                - text: Something your body can actually trust.
+          - img [ref=e168]
+        - generic [ref=e169]:
+          - img [ref=e173]
+          - generic [ref=e175]:
+            - heading "Not For" [level=1] [ref=e177]:
+              - generic [ref=e179]:
+                - text: Not
+                - generic [ref=e180]: For
+            - heading "If you’re looking for someone to tell you who you are… this probably isn’t the right space. I’m not here to define you. I’m here to help you meet yourself." [level=1] [ref=e182]:
+              - generic [ref=e185]:
+                - text: If you’re looking for someone to tell you who you are…
+                - text: this probably isn’t the right space.
+                - text: I’m not here to define you.
+                - text: I’m here to help you meet yourself.
+        - link "Book Your Embodied Design Session FOR ONLY $333" [ref=e190] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e191]:  Book Your Embodied Design Session
+          - generic [ref=e192]: FOR ONLY $333
+      - generic [ref=e194]:
+        - heading "After sessions, people often say things like…" [level=1] [ref=e201]:
+          - generic [ref=e203]:
+            - text: After sessions, people often say things
+            - generic [ref=e204]: like…
+        - generic [ref=e205]:
+          - heading "“I felt seen in a way I never have before.”" [level=1] [ref=e209]:
+            - generic [ref=e210]: “I felt seen in a way I never have before.”
+          - heading "“My body relaxed in places I didn’t realize were holding tension.”" [level=1] [ref=e214]:
+            - generic [ref=e215]: “My body relaxed in places I didn’t realize were holding tension.”
+        - generic [ref=e216]:
+          - heading "“I finally understood my design in a way that made sense in my life.”" [level=1] [ref=e220]:
+            - generic [ref=e221]: “I finally understood my design in a way that made sense in my life.”
+          - heading "“I left feeling more like myself than I have in years.”" [level=1] [ref=e225]:
+            - generic [ref=e226]: “I left feeling more like myself than I have in years.”
+      - generic [ref=e233]:
+        - generic [ref=e236]:
+          - heading "The" [level=1] [ref=e238]:
+            - generic [ref=e240]: The
+          - generic [ref=e245]:
+            - heading "EMBODIED DESIGN" [level=1] [ref=e247]:
+              - generic [ref=e249]: EMBODIED DESIGN
+            - heading "SESSION" [level=1] [ref=e251]:
+              - generic [ref=e252]: SESSION
+        - generic [ref=e253]:
+          - generic [ref=e260]:
+            - heading "Format" [level=1] [ref=e262]:
+              - generic [ref=e263]: Format
+            - heading "Private 1:1 Session" [level=1] [ref=e265]:
+              - generic [ref=e267]: Private 1:1 Session
+          - generic [ref=e274]:
+            - heading "Length" [level=1] [ref=e276]:
+              - generic [ref=e277]: Length
+            - heading "60–90 minutes" [level=1] [ref=e279]:
+              - generic [ref=e281]: 60–90 minutes
+          - generic [ref=e288]:
+            - heading "Location" [level=1] [ref=e290]:
+              - generic [ref=e291]: Location
+            - heading "Virtual or in-person (when available)" [level=1] [ref=e293]:
+              - generic [ref=e295]: Virtual or in-person (when available)
+        - generic [ref=e303]:
+          - heading "Includes" [level=1] [ref=e305]:
+            - generic [ref=e306]: Includes
+          - list [ref=e308]:
+            - generic [ref=e309]:
+              - listitem [ref=e310]:
+                - generic [ref=e311]: 
+                - generic [ref=e312]: personalized Human Design chart interpretation
+              - listitem [ref=e313]:
+                - generic [ref=e314]: 
+                - generic [ref=e315]: somatic activation practices
+              - listitem [ref=e316]:
+                - generic [ref=e317]: 
+                - generic [ref=e318]: nervous system awareness work
+              - listitem [ref=e319]:
+                - generic [ref=e320]: 
+                - generic [ref=e321]: session recording
+              - listitem [ref=e322]:
+                - generic [ref=e323]: 
+                - generic [ref=e324]: integration prompts
+        - link "Book Your Embodied Design Session FOR ONLY $333" [ref=e329] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e330]:  Book Your Embodied Design Session
+          - generic [ref=e331]: FOR ONLY $333
+      - generic [ref=e339]:
+        - img [ref=e343]
+        - generic [ref=e345]:
+          - heading "MEET" [level=1] [ref=e347]:
+            - generic [ref=e349]: MEET
+          - heading "Luna Lauren" [level=1] [ref=e351]:
+            - generic [ref=e354]:
+              - text: Luna
+              - generic [ref=e355]: Lauren
+          - heading [level=1] [ref=e357]:
+            - generic [ref=e360]:
+              - text: Luna Lauren is an Embodiment Activator and Transformational Speaker who helps people come home to themselves. She has guided over 3,000 people worldwide back to the truth of who they really are through workshops, coaching, and stages across the globe.
+              - text: As the founder of Sacral Uproar, Luna believes that creativity and well-being aren't separate. They're the same thing. When you free your emotions, you free your expression. And that's where the magic lives.
+              - text: Luna brings a practical, embodied approach to Human Design, sharing it in a grounded, tangible way that helps people understand their own unique operating systems. As someone who spent much of her life figuring out who she was the hard way, she now makes that journey clearer and more accessible for others.
+              - text: Her mission is to bring this work to schools, conferences, and festivals everywhere, empowering people to unlock their unique gifts through emotional freedom and liberated self-expression.
+          - heading "@LightworkLuna | SacralUproar.com" [level=1] [ref=e362]:
+            - generic [ref=e365]:
+              - link "@LightworkLuna" [ref=e366] [cursor=pointer]:
+                - /url: instagram.com/LightworkLuna
+              - text: "|"
+              - link "SacralUproar.com" [ref=e367] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e372]:
+        - heading "Sometimes This Session Is Just the Beginning." [level=1] [ref=e376]:
+          - generic [ref=e379]:
+            - text: Sometimes This Session Is Just the
+            - generic [ref=e380]: Beginning.
+        - heading "For many people, the Embodied Design Session is powerful on its own. But sometimes it opens a deeper door. If that happens for you, Luna may invite you into Sacral Uproar — her longer container for creative activation and deeper embodiment work. There is no pressure. Just an open path if you're ready for it." [level=1] [ref=e382]:
+          - generic [ref=e385]:
+            - text: For many people, the Embodied Design Session is powerful on its own.
+            - text: But sometimes it opens a deeper door.
+            - text: If that happens for you, Luna may invite you into
+            - link:
+              - /url: "#"
+            - generic [ref=e387]: Sacral Uproar
+            - text: — her longer container for creative activation and deeper embodiment work.
+            - text: There is no pressure.
+            - text: Just an open path if you're ready for it.
+      - generic [ref=e392]:
+        - img [ref=e396]
+        - heading "Your Design Was Never Meant to Stay on Paper." [level=1] [ref=e398]:
+          - generic [ref=e400]:
+            - text: Your Design Was Never Meant
+            - generic [ref=e402]:
+              - text: to Stay on
+              - generic [ref=e403]: Paper.
+        - 'heading "You''ve already taken the first step by discovering your embodiment pattern. Now the question becomes: What happens when you actually feel it?" [level=1] [ref=e405]':
+          - generic [ref=e407]:
+            - text: You've already taken the first step by discovering your embodiment pattern.
+            - text: "Now the question becomes:"
+            - text: What happens when you actually feel it?
+        - link "Book Your Embodied Design Session FOR ONLY $333 - $444" [ref=e409] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e410]:  Book Your Embodied Design Session
+          - generic [ref=e411]: FOR ONLY $333 - $444
+      - text:                          
+      - generic [ref=e416]:
+        - img [ref=e418]
+        - heading "Copyright Sacral Uproar 2025" [level=1] [ref=e420]:
+          - generic [ref=e421]: Copyright Sacral Uproar 2025
+  - text: 

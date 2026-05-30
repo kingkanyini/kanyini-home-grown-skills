@@ -1,0 +1,776 @@
+{
+  "workbook_num": 3,
+  "workbook_title": "Core Content + Belief Shifts (Teach-to-Buy)",
+  "sections": {
+    "sec1": {
+      "questions": [
+        {
+          "prompt": "Do you have your curiosity headline, the three secrets, and the offer stack slides completed from the previous modules?",
+          "type": "prework_check"
+        },
+        {
+          "prompt": "Have you thought through your framework origin story and its high-level steps?",
+          "type": "prework_check"
+        },
+        {
+          "prompt": "Do you have your slide deck template ready (install link provided)?",
+          "type": "prework_check"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Perfect Webinar Framework Overview",
+          "definition": "A full presentation architecture with three layers: (1) Map, Origin Story & The ONE Opportunity, (2) Big Domino: The ONE Thing, (3) Secret #1 (Internal Belief), Secret #2 (External Belief), Secret #3 (Framework Belief) + Break and Rebuild Their Belief Patterns, ending with the Stack and Close (Let Me Ask You A Question)."
+        },
+        {
+          "name": "Why Intro Slides Matter",
+          "definition": "Modules 1 and 2 covered the Offer, Headline and 3 Secrets slides. These are 'the foundation of the house' \u00e2\u20ac\u201d if you get this part right, the rest naturally falls into place. If you get it wrong, NOTHING works."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Prework Checklist for Module #3",
+          "prompt": "Check off each item after you complete it: curiosity headline + 3 secrets + offer stack slides done; framework origin story thought through with high-level steps; slide deck template ready."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 3,
+          "image_path": "../workbook-3-images/page-003.png",
+          "caption": "Introduction cover \u00e2\u20ac\u201d Crafting Your Presentation Slides"
+        },
+        {
+          "page": 4,
+          "image_path": "../workbook-3-images/page-004.png",
+          "caption": "Prework For Module #3 \u00e2\u20ac\u201d checklist of required prior assets"
+        },
+        {
+          "page": 5,
+          "image_path": "../workbook-3-images/page-005.png",
+          "caption": "Overview of the Perfect Webinar Framework with full architecture diagram"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 5,
+          "image_path": "../workbook-3-images/page-005.png",
+          "what_illustrates": "Hand-drawn Perfect Webinar map showing all layers \u00e2\u20ac\u201d origin story, big domino, 3 secrets, break/rebuild belief patterns, stack"
+        }
+      ]
+    },
+    "sec2": {
+      "questions": [
+        {
+          "prompt": "What bold promise will you make that sets the expectation for what the audience will achieve by the end of your presentation?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "Who is this presentation for? What different audience segments fall into your webinar (e.g., 'those who already have a business' vs 'those just starting out')?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "What bad habits or distractions will you call out in your Take Control slide, and how will you prove the value of paying full attention?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "What bonus or incentive can you offer to hook the audience to stay until the end?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "What one or two key achievements will you share to qualify yourself without being boastful?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "What success stories of previous clients will you use for your Street Cred slide?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "What will their dream scenario look like after implementing your strategies (Future Pacing)?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "Can you craft a single One Sentence Persuasion statement that encourages dreams, justifies failures, allays fears, confirms suspicions, and throws rocks at enemies?",
+          "type": "slide_build"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Bold Promise Slide",
+          "definition": "Opening slide that sets the expectation for what the audience will achieve by the end of your presentation. Use your headline as the bold promise."
+        },
+        {
+          "name": "Who Is This For? Slide",
+          "definition": "Clarifies how the presentation will benefit different audience segments by calling out each group and listing the specific benefits they'll receive no matter which bucket they fall into."
+        },
+        {
+          "name": "Take Control Slide",
+          "definition": "Ensures you have their full attention by calling out bad habits (Slack, Facebook, YouTube, Twitch, TikTok, Instagram) and proving the value of the presentation in dollar terms (e.g., XXX/hour consultation rate) so they set time aside and eliminate distractions."
+        },
+        {
+          "name": "Hook To The End Slide",
+          "definition": "Provides an incentive for the audience to stay until the end \u00e2\u20ac\u201d typically a valuable bonus revealed at the end of the presentation. Can also be offered as a bonus on the registration page."
+        },
+        {
+          "name": "Qualify Yourself Slide",
+          "definition": "Establishes your credibility without boasting. Share one or two key achievements, 3rd party awards, endorsements, or a quick history. Presents the promise they want to receive one day, but lifts others up instead of being boastful."
+        },
+        {
+          "name": "Street Cred Slide",
+          "definition": "Shows examples of how you've helped OTHERS achieve success. Different from Qualify Yourself \u00e2\u20ac\u201d these are success stories of previous clients. Can also be used as a reason to stay on the presentation."
+        },
+        {
+          "name": "Future Pacing Slide",
+          "definition": "Helps the audience visualize their future success by describing their dream scenario \u00e2\u20ac\u201d whether that's escaping pain or reaching desires and goals. Describe what their life could look like after implementing your strategies."
+        },
+        {
+          "name": "One Sentence Persuasion (Bonus)",
+          "definition": "Blair Warren's formula: 'People will do anything for those who encourage their dreams, justify their failures, allay their fears, confirm their suspicions, and help them throw rocks at their enemies.' Craft a single POWER statement that weaves all five elements into the introduction. (Allay = diminish or put at rest one's fears, suspicions or worries.)"
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Building Your Introductory Slides Workshop \u00e2\u20ac\u201d Step 1",
+          "prompt": "Build out the introductory slides using the templates and examples provided. Create slides for: Bold promise, Taking control, Who is this for, Hook to the end, Qualify yourself, Street cred, Future pacing."
+        },
+        {
+          "name": "Building Your Introductory Slides Workshop \u00e2\u20ac\u201d Step 2",
+          "prompt": "Find images to support your slides. Go through your Facebook or Instagram accounts to find relevant images. These images don't need to be professional; they just need to support your narrative."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 6,
+          "image_path": "../workbook-3-images/page-006.png",
+          "caption": "Quick Wins opening + Bold Promise Slide teaching with Funnel Scripts example"
+        },
+        {
+          "page": 7,
+          "image_path": "../workbook-3-images/page-007.png",
+          "caption": "Who Is This For? slide \u00e2\u20ac\u201d segment the audience buckets"
+        },
+        {
+          "page": 8,
+          "image_path": "../workbook-3-images/page-008.png",
+          "caption": "Take Control slide \u00e2\u20ac\u201d turn off distractions, value-per-hour framing"
+        },
+        {
+          "page": 9,
+          "image_path": "../workbook-3-images/page-009.png",
+          "caption": "Hook To The End slide \u00e2\u20ac\u201d block 2 hours, free bonus reveal"
+        },
+        {
+          "page": 10,
+          "image_path": "../workbook-3-images/page-010.png",
+          "caption": "Qualify Yourself slide \u00e2\u20ac\u201d share key achievements without boasting"
+        },
+        {
+          "page": 11,
+          "image_path": "../workbook-3-images/page-011.png",
+          "caption": "Street Cred slide \u00e2\u20ac\u201d client success stories as social proof"
+        },
+        {
+          "page": 12,
+          "image_path": "../workbook-3-images/page-012.png",
+          "caption": "Future Pacing slide \u00e2\u20ac\u201d visualize dream scenario for the audience"
+        },
+        {
+          "page": 13,
+          "image_path": "../workbook-3-images/page-013.png",
+          "caption": "One Sentence Persuasion bonus slide \u00e2\u20ac\u201d 5-element POWER statement diagram"
+        },
+        {
+          "page": 14,
+          "image_path": "../workbook-3-images/page-014.png",
+          "caption": "Building Your Introductory Slides Workshop \u00e2\u20ac\u201d full 2-step checklist"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 6,
+          "image_path": "../workbook-3-images/page-006.png",
+          "what_illustrates": "Russell's Funnel Scripts Bold Promise slide example with 'Instantly Outspend Your Competitors' and 'Steal ALL Of Your Customers' headlines"
+        },
+        {
+          "page": 7,
+          "image_path": "../workbook-3-images/page-007.png",
+          "what_illustrates": "Click Funnels 'Are You In The Right Place?' slide showing two audience buckets (has business / doesn't have business yet)"
+        },
+        {
+          "page": 8,
+          "image_path": "../workbook-3-images/page-008.png",
+          "what_illustrates": "'I Need Your Attention' slide \u00e2\u20ac\u201d airplane mode / shut down distractions call-to-action"
+        },
+        {
+          "page": 9,
+          "image_path": "../workbook-3-images/page-009.png",
+          "what_illustrates": "Two Hook-to-End examples \u00e2\u20ac\u201d 'Funnel Audibles' bonus (SalesFunnels) and Dan Kennedy 'Think and Grow Rich' manual bonus"
+        },
+        {
+          "page": 11,
+          "image_path": "../workbook-3-images/page-011.png",
+          "what_illustrates": "Trey Lewellen testimonial showing 'Trey Was On This Same Webclass About A Year Ago' with Facebook post of doubled revenue result"
+        },
+        {
+          "page": 12,
+          "image_path": "../workbook-3-images/page-012.png",
+          "what_illustrates": "'You're Just One Funnel Away\u00e2\u20ac\u00a6' + 'Happening To Hundreds Of Others Who Are Just Like YOU!' Future Pacing examples"
+        },
+        {
+          "page": 13,
+          "image_path": "../workbook-3-images/page-013.png",
+          "what_illustrates": "One Sentence Persuasion diagram: 5 circles (Justify Failures, Encourage Dreams, Allay Fears, Confirm Suspicions, Throw Rocks At Enemies) feeding one center node"
+        }
+      ]
+    },
+    "sec3": {
+      "questions": [
+        {
+          "prompt": "Can you give a basic overview of your introductory slides as quickly as possible so everyone has room to share?",
+          "type": "breakout_share"
+        },
+        {
+          "prompt": "What are you noticing by observing others' strategies and slides?",
+          "type": "breakout_reflection"
+        },
+        {
+          "prompt": "What direct feedback are you getting on your slide build-out?",
+          "type": "breakout_reflection"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Observation Over Feedback",
+          "definition": "In the breakout you may find that you learn more by seeing others' strategies and slides than by getting direct feedback at this point. Move fast, observe actively."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Breakout Share & Observe",
+          "prompt": "Check-in and review your slides quickly. Provide the basic overview as fast as you can so everyone has room to give ideas and feedback. Prioritize observing others over receiving feedback."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 15,
+          "image_path": "../workbook-3-images/page-015.png",
+          "caption": "Introduction Breakout Session instructions \u00e2\u20ac\u201d review slides quickly, observe others' strategies"
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "section_has_3_questions_exact"
+      ]
+    },
+    "sec4": {
+      "questions": [
+        {
+          "prompt": "What are the false beliefs your audience has about your product/service / your 'map' to success?",
+          "type": "belief_shift"
+        },
+        {
+          "prompt": "What experiences caused these false beliefs?",
+          "type": "belief_shift"
+        },
+        {
+          "prompt": "What story/stories do they tell themselves to reinforce these beliefs?",
+          "type": "belief_shift"
+        },
+        {
+          "prompt": "What is the New Belief you need them to adopt (traditionally the opposite of the false belief)?",
+          "type": "belief_shift"
+        },
+        {
+          "prompt": "What is the story you can tell about realizing your 'success map' that will trump their limiting beliefs and stories?",
+          "type": "belief_shift"
+        },
+        {
+          "prompt": "What is your Backstory \u00e2\u20ac\u201d the backstory that gives you a vested interest in your journey?",
+          "type": "epiphany_bridge"
+        },
+        {
+          "prompt": "What are your Desires \u00e2\u20ac\u201d what is it that you want to accomplish (External and Internal)?",
+          "type": "epiphany_bridge"
+        },
+        {
+          "prompt": "What is The Wall \u00e2\u20ac\u201d the wall/problem you hit within your current opportunity that started you on this new journey?",
+          "type": "epiphany_bridge"
+        },
+        {
+          "prompt": "What was The Epiphany you experienced, and the new opportunity you discovered?",
+          "type": "epiphany_bridge"
+        },
+        {
+          "prompt": "What is The Plan you created to achieve your desire?",
+          "type": "epiphany_bridge"
+        },
+        {
+          "prompt": "What was The Conflict \u00e2\u20ac\u201d what conflict did you experience along the way?",
+          "type": "epiphany_bridge"
+        },
+        {
+          "prompt": "What was The Achievement \u00e2\u20ac\u201d what was the end result that you achieved?",
+          "type": "epiphany_bridge"
+        },
+        {
+          "prompt": "What was The Transformation that you experienced?",
+          "type": "epiphany_bridge"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Chain of False Beliefs",
+          "definition": "All customers carry a chain of false beliefs that hold them back. These beliefs are true to them based on their past experiences and the stories they've created. Identify them, describe the triggering experience, describe the reinforcing story, then define the NEW belief and the Epiphany Bridge Story that replaces the old one."
+        },
+        {
+          "name": "Belief-Breaking Story Sequence (5 Parts)",
+          "definition": "1) Identify their False Belief. 2) Describe their Past Experience that gave them this belief. 3) Describe their Story (what they tell themselves). 4) Define the New Epiphany Bridge Story they can adopt. 5) Describe how the New Belief allowed them to succeed."
+        },
+        {
+          "name": "Epiphany Bridge Story",
+          "definition": "A script that takes someone through the hero's journey \u00e2\u20ac\u201d telling your story in a way that creates an emotional response and bridges the gap from fear to belief. Moves from Emotion (Ah-ha / Epiphany) to Logic (Techno Babble) via 8 elements."
+        },
+        {
+          "name": "8 Elements of a Correctly Presented Epiphany Bridge Story",
+          "definition": "1) The Backstory \u00e2\u20ac\u201d vested interest in your journey. 2) Your Desires \u00e2\u20ac\u201d External (struggle) and Internal (struggle). 3) The Wall \u00e2\u20ac\u201d the wall/problem that started this new journey. 4) The Epiphany \u00e2\u20ac\u201d the epiphany and new opportunity discovered. 5) The Plan \u00e2\u20ac\u201d the plan to achieve your desire. 6) The Conflict \u00e2\u20ac\u201d conflict experienced along the way. 7) The Achievement \u00e2\u20ac\u201d end result achieved. 8) The Transformation \u00e2\u20ac\u201d transformation experienced."
+        },
+        {
+          "name": "Emotion to Logic Bridge",
+          "definition": "A properly built epiphany bridge hands the listener an emotional Ah-ha (epiphany) on the left side of the bridge, which gives them permission to accept the logical, technical details (techno babble) on the right side of the bridge."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Identify & Break False Beliefs Worksheet",
+          "prompt": "Fill in 5 text boxes: (1) false beliefs your audience has about your map to success, (2) experiences that caused them, (3) stories they tell themselves to reinforce them, (4) the New Belief they need to adopt, (5) the story you can tell about realizing your success map that trumps their limiting beliefs."
+        },
+        {
+          "name": "Write Your Epiphany Bridge Story Workshop",
+          "prompt": "Using the 8 Epiphany Bridge elements, write out your story with one text-box per element: The Backstory, Your Desires (External & Internal), The Wall, The Epiphany, The Plan, The Conflict, The Achievement, The Transformation."
+        },
+        {
+          "name": "Network Marketing Example Walkthrough",
+          "prompt": "Follow Russell's network-marketing worked example (false belief = joining a network marketing program will result in constant rejection; past experience = tried and faced rejection; story = painful; new belief = there are online strategies that attract prospects without direct rejection; new story = Russell's online-marketing leverage)."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 16,
+          "image_path": "../workbook-3-images/page-016.png",
+          "caption": "Session #1 cover \u00e2\u20ac\u201d Breaking the Chains of False Belief"
+        },
+        {
+          "page": 17,
+          "image_path": "../workbook-3-images/page-017.png",
+          "caption": "False Beliefs & Storytelling diagram \u00e2\u20ac\u201d Chains, Experience, Story, New Epiphany Bridge, with network marketing example"
+        },
+        {
+          "page": 18,
+          "image_path": "../workbook-3-images/page-018.png",
+          "caption": "Identify & Break False Beliefs worksheet \u00e2\u20ac\u201d 5 core belief-shift questions"
+        },
+        {
+          "page": 19,
+          "image_path": "../workbook-3-images/page-019.png",
+          "caption": "Crafting Your Epiphany Bridge Story \u00e2\u20ac\u201d 8 elements framework"
+        },
+        {
+          "page": 20,
+          "image_path": "../workbook-3-images/page-020.png",
+          "caption": "Russell's 'Potato Gun' Epiphany Bridge Story \u00e2\u20ac\u201d full worked example for all 8 elements"
+        },
+        {
+          "page": 21,
+          "image_path": "../workbook-3-images/page-021.png",
+          "caption": "Write Your Epiphany Bridge Story Workshop \u00e2\u20ac\u201d Backstory, Desires, Wall, Epiphany boxes"
+        },
+        {
+          "page": 22,
+          "image_path": "../workbook-3-images/page-022.png",
+          "caption": "Write Your Epiphany Bridge Story Workshop continued \u00e2\u20ac\u201d Plan, Conflict, Achievement, Transformation boxes"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 17,
+          "image_path": "../workbook-3-images/page-017.png",
+          "what_illustrates": "Stick-figure diagram of Chains of False Belief, Experience, Story, and New Epiphany Bridge, plus network-marketing worked example"
+        },
+        {
+          "page": 19,
+          "image_path": "../workbook-3-images/page-019.png",
+          "what_illustrates": "Epiphany Bridge cartoon: emotional Ah-ha face on the left walking over the bridge of epiphany to the logical 'Techno Babble' face on the right"
+        },
+        {
+          "page": 20,
+          "image_path": "../workbook-3-images/page-020.png",
+          "what_illustrates": "Russell Brunson's full Potato Gun epiphany bridge \u00e2\u20ac\u201d Boise State / wife / potato gun DVD business \u00e2\u20ac\u201d used as a model for learners to study"
+        }
+      ]
+    },
+    "sec5": {
+      "questions": [
+        {
+          "prompt": "Can you share the main bullet points of your epiphany bridge story framework with the group (not the full story yet)?",
+          "type": "breakout_share"
+        },
+        {
+          "prompt": "What constructive feedback can you give to others as they share their frameworks?",
+          "type": "breakout_feedback"
+        },
+        {
+          "prompt": "What feedback did you receive on your own outline, and what will you revise?",
+          "type": "breakout_feedback"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Framework-First Share",
+          "definition": "At this breakout stage the job is NOT to tell the full story yet \u00e2\u20ac\u201d only to show the overarching framework. Support others as they share their own; give and request constructive feedback on the outline."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Share Framework, Not Story",
+          "prompt": "Share the main bullet points of your epiphany bridge story framework with others. Show the overarching framework only. Give constructive feedback and request it for your own outline."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 23,
+          "image_path": "../workbook-3-images/page-023.png",
+          "caption": "Session #1 Breakout Session instructions \u00e2\u20ac\u201d framework-level share only"
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "section_has_3_questions_exact"
+      ]
+    },
+    "sec6": {
+      "questions": [
+        {
+          "prompt": "How will you craft and integrate your origin story into your presentation slides to connect with your audience?",
+          "type": "slide_strategy"
+        },
+        {
+          "prompt": "How will you effectively communicate your journey and the value of your new opportunity through the slides?",
+          "type": "slide_strategy"
+        },
+        {
+          "prompt": "What are the main points of your origin story that need to appear in your slide deck?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "Which images or headlines (from your Facebook or Instagram) will you select as the visual cues for each point?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "What visual cues (raw photos vs. super-professional) will best support the emotional beats of your story?",
+          "type": "slide_build"
+        },
+        {
+          "prompt": "Which slides require an image, and which slides work as text-only reminders to you?",
+          "type": "slide_build"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Slides as Visual Cues for Storytelling",
+          "definition": "Slides are for the presenter's personal benefit \u00e2\u20ac\u201d they help you remember the flow and key elements of your story. Each slide represents a key point or emotion in the story, not a teaching bullet."
+        },
+        {
+          "name": "15-Minute Origin Story Block",
+          "definition": "Session #2 places a 15-minute timer on the origin story block \u00e2\u20ac\u201d first major time-bounded storytelling segment of the Perfect Webinar where you insert your origin story into your slides in a way that increases its impact."
+        },
+        {
+          "name": "Raw Over Polished",
+          "definition": "The best images for origin-story slides come from Facebook or Instagram \u00e2\u20ac\u201d nothing super-professional. The more raw, the better. Real images beat stock photography because they support the authentic narrative."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Building Your Slides Workshop (Origin Story)",
+          "prompt": "Complete 4 sub-steps: (1) Build Your Slide Deck \u00e2\u20ac\u201d start building out slides to tell your story. (2) Identify Key Story Points \u00e2\u20ac\u201d outline the main points of your origin story (the template has reminders \u00e2\u20ac\u201d not every slide needs an image). (3) Create Visual Cues \u00e2\u20ac\u201d select images or headlines for each point from Facebook or Instagram; the more raw, the better. (4) Design Your Slides \u00e2\u20ac\u201d incorporate your visual cues into your presentation slides."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 24,
+          "image_path": "../workbook-3-images/page-024.png",
+          "caption": "Session #2 cover \u00e2\u20ac\u201d Origin Story Slides"
+        },
+        {
+          "page": 25,
+          "image_path": "../workbook-3-images/page-025.png",
+          "caption": "Your Map's Origin Story & New Opportunity \u00e2\u20ac\u201d Perfect Webinar diagram with 15-minute timer on origin block"
+        },
+        {
+          "page": 26,
+          "image_path": "../workbook-3-images/page-026.png",
+          "caption": "Integrating Your Story Into Slides \u00e2\u20ac\u201d examples from Russell's deck, slides as visual cues"
+        },
+        {
+          "page": 27,
+          "image_path": "../workbook-3-images/page-027.png",
+          "caption": "Building Your Slides Workshop \u00e2\u20ac\u201d 4-step origin story slide build-out"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 25,
+          "image_path": "../workbook-3-images/page-025.png",
+          "what_illustrates": "Perfect Webinar schematic with red circle around 'Map, Origin Story & New Opportunity' block plus 15-minute countdown timer graphic"
+        },
+        {
+          "page": 26,
+          "image_path": "../workbook-3-images/page-026.png",
+          "what_illustrates": "Row of Russell's actual origin-story slides showing how raw image + bold headline supports each emotional beat (Fame And Glow With..., No Skills..., Potato Gun Secrets..., portrait shot, 'I Believe This Is The Same Thing...')"
+        },
+        {
+          "page": 27,
+          "image_path": "../workbook-3-images/page-027.png",
+          "what_illustrates": "Storyboard strip showing stick-figure thumbnail slides alternating with 'Case Study / Success Story' image \u00e2\u20ac\u201d model of what a story deck looks like when built"
+        }
+      ]
+    },
+    "sec7": {
+      "questions": [
+        {
+          "prompt": "Are you hitting the right emotional points as you share your slides and origin story with your small group?",
+          "type": "breakout_reflection"
+        },
+        {
+          "prompt": "Are there any visual cues missing that would better support your epiphany bridge story?",
+          "type": "breakout_review"
+        },
+        {
+          "prompt": "What feedback did you get, and what adjustments will you make to your slides?",
+          "type": "breakout_action"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Emotion Check Before Logic",
+          "definition": "Breakout goal at this stage: verify the presenter is hitting the right EMOTIONAL points as they walk through origin-story slides. Visual cue gaps are caught here before the logic/framework portion is built on top."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Origin Story Slide Review",
+          "prompt": "Share your slides and origin story with your small group. Hit the right emotional points. See if you're missing any visual cues that would support your epiphany bridge story. Get feedback and make adjustments as needed."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 28,
+          "image_path": "../workbook-3-images/page-028.png",
+          "caption": "Session #2 Breakout Session instructions \u00e2\u20ac\u201d emotional-point + visual-cue review"
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "section_has_3_questions_exact"
+      ]
+    },
+    "sec8": {
+      "questions": [
+        {
+          "prompt": "What story about how you learned or earned your first framework will you tell to build credibility and set up the teaching?",
+          "type": "framework_teach"
+        },
+        {
+          "prompt": "What is the overall strategy behind your framework \u00e2\u20ac\u201d the WHAT that needs to be done?",
+          "type": "framework_teach"
+        },
+        {
+          "prompt": "How will you teach the HOW of your framework (tactics) in the webinar \u00e2\u20ac\u201d without giving the step-by-step that belongs in your paid product?",
+          "type": "framework_teach"
+        },
+        {
+          "prompt": "What examples or testimonials (social proof) will you share to prove your framework works?",
+          "type": "framework_teach"
+        },
+        {
+          "prompt": "Can you identify which portions of your framework are the Strategy (keep in) vs the Tactics / step-by-step HOW-TO (skip)?",
+          "type": "teaching_discipline"
+        },
+        {
+          "prompt": "Does your Secret #1 slide sequence follow the formula: Story, Strategy, Tactics (skip step-by-step), Social Proof?",
+          "type": "slide_qa"
+        },
+        {
+          "prompt": "Are your slides used as visual cues only (not walls of text), with each slide representing a key point or strategy in the framework?",
+          "type": "slide_qa"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Session Time Architecture",
+          "definition": "First 5 minutes: Introduction and street cred. Next 15 minutes: your origin story of discovering the framework. NEXT 15 minutes: teaching the framework itself. Session #3 is where you deliver the VALUABLE CONTENT your audience came to learn."
+        },
+        {
+          "name": "Map As Framework #1",
+          "definition": "Your origin-story map IS Framework #1 (Secret #1). Session #3 converts that map into a taught framework \u00e2\u20ac\u201d the first of the three belief-shifting secrets in the Perfect Webinar."
+        },
+        {
+          "name": "Teaching Formula: Story, Strategy, Skip Tactics, Social Proof",
+          "definition": "Most people make mistakes teaching their framework, leading to ineffective webinars. Correct order: 1) Story of Learning or Earning \u00e2\u20ac\u201d start with a story about how you learned or earned the framework (builds credibility and sets the stage). 2) Teach the Strategy \u00e2\u20ac\u201d explain the overall strategy behind your framework; strategy = WHAT needs to be done. 3) Teach the Strategy (HOW) \u00e2\u20ac\u201d but SKIP the step-by-step how-to in your sales presentation; tactics = HOW to do it in your paid product. 4) Provide Social Proof \u00e2\u20ac\u201d share examples or testimonials showing your framework works."
+        },
+        {
+          "name": "Strategy vs. Tactics Line",
+          "definition": "Strategy = the WHAT (keep it in the webinar \u00e2\u20ac\u201d this is what they paid attention for). Tactics = the HOW / step-by-step (save it for your paid offer). Teaching tactics in the free presentation is the #1 reason webinars fail to convert."
+        },
+        {
+          "name": "Slides-as-Visual-Cues (Reinforced)",
+          "definition": "Slides in the framework section also serve the presenter. Each slide represents a key point or STRATEGY in the framework. They help you remember the flow; they are not walls of text for the audience to read."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Follow The Example \u00e2\u20ac\u201d Secret #1 Walkthrough",
+          "prompt": "Watch how Russell runs through his slides for 'Secret #1' and how he hits every part of the sequence. Framework: 'Secret #1 \u00e2\u20ac\u201d Funnel Hacking: How to ethically steal over a million dollars worth of funnel hacks from your competitors for under $100\u00e2\u20ac\u00a6' Story: How Russell discovered funnel hacking through experiences with mentors and real-life examples. Strategy steps: (1) Find a successful funnel to hack, (2) Buy the product to understand the process, (3) Sketch out the funnel's blueprint, (4) Build it in ClickFunnels. Tactics: SKIP. Social Proof: Share success stories of people who used funnel hacking to achieve great results."
+        },
+        {
+          "name": "Build Out Your 'Secret #1' Slides Workshop",
+          "prompt": "Start building out the slides in Secret #1 to share your framework. Reminders: use slides as visual cues for storytelling; each slide represents a key point or strategy in the framework; slides are usually more for the presenter's benefit than for customers \u00e2\u20ac\u201d they help you remember the flow and key elements of your frameworks."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 29,
+          "image_path": "../workbook-3-images/page-029.png",
+          "caption": "Session #3 cover \u00e2\u20ac\u201d Teaching Your Frameworks"
+        },
+        {
+          "page": 30,
+          "image_path": "../workbook-3-images/page-030.png",
+          "caption": "Your Map As Framework #1 \u00e2\u20ac\u201d Perfect Webinar with Big Domino circled, 30-minute timer, and time-architecture checklist"
+        },
+        {
+          "page": 31,
+          "image_path": "../workbook-3-images/page-031.png",
+          "caption": "How To Teach Your Frameworks \u00e2\u20ac\u201d 4-step formula: Story of Learning/Earning, Teach Strategy, Skip Step-By-Step, Provide Social Proof"
+        },
+        {
+          "page": 32,
+          "image_path": "../workbook-3-images/page-032.png",
+          "caption": "Follow This Example \u00e2\u20ac\u201d Russell's Secret #1 Funnel Hacking walkthrough with 4-step strategy and 'Skip This' tactics note"
+        },
+        {
+          "page": 33,
+          "image_path": "../workbook-3-images/page-033.png",
+          "caption": "Build Your Slides Workshop \u00e2\u20ac\u201d Secret #1 slides + slide-as-visual-cue reminder"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 30,
+          "image_path": "../workbook-3-images/page-030.png",
+          "what_illustrates": "Perfect Webinar schematic with red circle around 'Big Domino: The ONE Thing' and 30-minute timer showing time budget for the teaching block"
+        },
+        {
+          "page": 31,
+          "image_path": "../workbook-3-images/page-031.png",
+          "what_illustrates": "Four-panel diagram showing Story (Learned or Earned), Framework, Teachers (how), Social Proof / Examples loop \u00e2\u20ac\u201d with bold 'SKIP THE STEP-BY-STEP HOW-TO IN YOUR SALES PRESENTATION' rule"
+        },
+        {
+          "page": 32,
+          "image_path": "../workbook-3-images/page-032.png",
+          "what_illustrates": "Russell's Secret #1 slide row: Funnel Hacking headline, 'Step 1-4' strategy slides, and 'The Organelli' funnel hack screenshots \u00e2\u20ac\u201d with 'Skip This' warning on tactics"
+        },
+        {
+          "page": 33,
+          "image_path": "../workbook-3-images/page-033.png",
+          "what_illustrates": "Storyboard of Russell's Secret #1 slide deck showing how each slide is a visual cue (funnel icon, bullet headline, 'Step 1' panels, image slot) rather than a wall of text"
+        }
+      ]
+    },
+    "sec9": {
+      "questions": [
+        {
+          "prompt": "Can you share your breakdown of Secret #1's framework and how you'll share it with the audience?",
+          "type": "breakout_share"
+        },
+        {
+          "prompt": "If you don't have slides designed yet, can you share a quick summary of the bullet-points for each step of the framework?",
+          "type": "breakout_share"
+        },
+        {
+          "prompt": "What feedback are you receiving from the breakout, and what adjustments will you make?",
+          "type": "breakout_action"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Bullet-Point Is Enough",
+          "definition": "You don't need polished slides to participate \u00e2\u20ac\u201d a quick bullet-point summary of each step of the framework is enough to get useful feedback at this stage."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Secret #1 Framework Share",
+          "prompt": "Share your breakdown of Secret #1's framework and how you'll share it. If you don't have any slides designed yet, a quick summary of the bullet-points for each step will work. Get feedback and make adjustments as needed."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 34,
+          "image_path": "../workbook-3-images/page-034.png",
+          "caption": "Session #3 Breakout Session instructions \u00e2\u20ac\u201d Secret #1 framework review"
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "section_has_3_questions_exact"
+      ]
+    },
+    "sec10": {
+      "questions": [
+        {
+          "prompt": "Have you planned the Framework for Secret #2 (Internal False Belief \u00e2\u20ac\u201d the next 15 minutes of your presentation), including (1) Story, (2) Strategy, and (3) Tactics?",
+          "type": "prework_check"
+        },
+        {
+          "prompt": "Have you planned the Framework for Secret #3 (External False Belief \u00e2\u20ac\u201d 10-15 minutes of your presentation), including (1) Story, (2) Strategy, and (3) Tactics?",
+          "type": "prework_check"
+        },
+        {
+          "prompt": "Have you checked in with the community and your coaches and brainstormed your frameworks with them?",
+          "type": "prework_check"
+        }
+      ],
+      "concepts": [
+        {
+          "name": "Module #4 Scope Preview",
+          "definition": "Next week the group develops the next 30 minutes of the presentation: Framework For Secret #2 (Internal False Belief \u00e2\u20ac\u201d 15 min) and Framework For Secret #3 (External False Belief \u00e2\u20ac\u201d 10-15 min)."
+        },
+        {
+          "name": "Three-Legged Framework Prework",
+          "definition": "Each framework for Secrets #2 and #3 must include all three legs: (1) Story, (2) Strategy, (3) Tactics \u00e2\u20ac\u201d the same formula applied in Secret #1."
+        }
+      ],
+      "exercises": [
+        {
+          "name": "Prework For Module #4 Checklist",
+          "prompt": "(1) Plan the Framework for Secret #2, including (1) Story (2) Strategy (3) Tactics. (2) Plan the Framework for Secret #3 including (1) Story (2) Strategy (3) Tactics. (3) Check in with the community and your coaches, and brainstorm with them."
+        }
+      ],
+      "teaching_slides": [
+        {
+          "page": 35,
+          "image_path": "../workbook-3-images/page-035.png",
+          "caption": "Next Week \u00e2\u20ac\u201d What We'll Cover + Prework For Module #4 checklist"
+        },
+        {
+          "page": 36,
+          "image_path": "../workbook-3-images/page-036.png",
+          "caption": "Fountainhead closing page \u00e2\u20ac\u201d copyright Etison LLC dba Primemover"
+        }
+      ],
+      "example_moments": [],
+      "flags": [
+        "section_has_3_questions_exact"
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+# Kanyini Home-Grown Skills Marketplace — .gitignore
+# Per PLAN-v3.1 §3.6 (Universal DELETE patterns) + §4.6.2 (drift detection).
+
+# Node — repo root has package.json for dev tooling (ajv, semver), node_modules gitignored.
+node_modules/
+# Forbidden anywhere INSIDE plugins/ (per §3.6 + §5.5.3)
+**/node_modules/
+
+# Python build artifacts
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+**/.cache/
+
+# OS noise
+**/.DS_Store
+**/Thumbs.db
+
+# Build artifacts
+**/dist/
+**/build/
+**/.next/
+
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+**/secrets/
+
+# Logs
+**/*.log
+
+# Drift detection state
+.last-ship-manifest.json
+
+# Sanitize working artifacts (regenerable, not source-of-truth)
+LEAK-AUDIT.md
+sanitize-report.md
+sanitize-report-*.md
+
+# IDE noise
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Coverage
+**/coverage/

@@ -1,0 +1,384 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic:        
+    - generic [ref=e5]:
+      - img [ref=e12]
+      - generic [ref=e14]:
+        - generic [ref=e17]:
+          - heading "Want To Know The Secret To Launching Your Music Career?" [level=1] [ref=e19]:
+            - generic [ref=e21]: Want To Know The Secret To Launching Your Music Career?
+          - heading "Without Feeling Alone, Unworthy, or Talentless?" [level=1] [ref=e23]:
+            - generic [ref=e24]: Without Feeling Alone, Unworthy, or Talentless?
+        - img [ref=e29]
+        - generic [ref=e30]:
+          - generic [ref=e32]:
+            - heading "Join The BAD BITCH Experience" [level=1] [ref=e34]:
+              - generic [ref=e36]:
+                - text: Join The
+                - text: BAD BITCH Experience
+            - heading "And FINALLY Take The Stage!" [level=1] [ref=e38]:
+              - generic [ref=e40]: And FINALLY Take The Stage!
+            - link "Book A Call Today!" [ref=e42] [cursor=pointer]:
+              - /url: "#open-popup"
+              - generic [ref=e43]:  Book A Call Today!
+            - heading [level=1] [ref=e45]:
+              - generic [ref=e47]:
+                - text: You've felt the calling your whole life.
+                - text: To create.
+                - text: To perform.
+                - text: To share something only YOU can give.
+                - text: But somewhere along the way...
+                - text: Someone told you that you needed "natural talent."
+                - text: To be realistic.
+                - text: To have a backup plan.
+                - text: But you KNOW there's a gift inside of you, waiting to come out.
+                - text: So how do you make it real?
+                - text: You have the passion, the discipline.
+                - text: But do you have the day to day support?
+                - text: I've been on your journey.
+                - text: I didn't have natural talent.
+                - text: But I worked hard to develop my gifts...
+                - text: In the safety of my bedroom.
+                - text: Until one day, I just DID THE THING.
+                - text: I finally let myself be seen — and to my surprise...
+                - text: People showed up. More than I ever expected.
+                - text: For the first time, I felt like I belonged on that stage.
+                - text: To take up space.
+                - text: The feedback was so strong that I dove in head first.
+                - text: I quit my job, created my own tour, and years later am successfully living my dream.
+                - text: Looking back, I realize that the biggest changes I've created in my life
+                - generic [ref=e48]: took way too long
+                - text: .
+                - text: Not because I didn't have the talent.
+                - text: But because I didn't have the support
+                - text: system I needed to JUST DO THE THING.
+                - text: That's why I created
+                - generic [ref=e49]: The Bad Bitch Experience.
+                - text: Because the secret to launching your music career?
+                - text: It's not talent.
+                - text: It's whether your nervous system can stay regulated longer than you expected to be
+                - generic [ref=e50]: unseen
+                - text: .
+                - text: "Because the truth is:"
+                - text: "\"The music industry doesn't break voices. It breaks nervous systems.\" - LA Producer"
+                - text: The ability
+                - generic [ref=e52]: to perform after failure
+                - text: .
+                - generic [ref=e54]: To write when no one's listening.
+                - text: To keep
+                - generic [ref=e56]: creating when the algorithm ignores you.
+                - text: This is what
+                - generic [ref=e58]: leads to your success as an artist.
+                - generic [ref=e59]: The Bad Bitch Experience
+                - text: is the safe container for you to keep creating —
+                - text: Without collapsing into comparison, self-doubt, or losing trust in yourself.
+                - text: An intimate space where you'll receive my direct support — and be surrounded by talented, unique artists just like you.
+                - text: Ready to Claim Your Stage?
+            - link "Book A Call Today!" [ref=e62] [cursor=pointer]:
+              - /url: "#open-popup"
+              - generic [ref=e63]:  Book A Call Today!
+          - generic [ref=e65]:
+            - img [ref=e67]
+            - img [ref=e69]
+      - generic [ref=e78]:
+        - link "Luxiana BAD BiTCH music video" [ref=e79] [cursor=pointer]:
+          - /url: https://www.instagram.com/reel/DQ7XEnXEnzv/
+          - img "Luxiana BAD BiTCH music video" [ref=e80]
+        - link "Luxiana BAD BiTCH hype video" [ref=e81] [cursor=pointer]:
+          - /url: https://www.instagram.com/reel/DTlYzYFkc9P/
+          - img "Luxiana BAD BiTCH hype video" [ref=e82]
+        - link "Luxiana dont give up on your dream" [ref=e83] [cursor=pointer]:
+          - /url: https://www.instagram.com/reel/DQ0I86AEsld/
+          - img "Luxiana dont give up on your dream" [ref=e84]
+        - link "Luxiana organization enables liberation" [ref=e85] [cursor=pointer]:
+          - /url: https://www.instagram.com/reel/DQCjWuGjfaD/
+          - img "Luxiana organization enables liberation" [ref=e86]
+      - generic [ref=e88]:
+        - heading "Hear From My Coaching Clients" [level=1] [ref=e93]:
+          - generic [ref=e95]: Hear From My Coaching Clients
+        - generic [ref=e96]:
+          - img [ref=e100]
+          - img [ref=e104]
+          - img [ref=e108]
+          - img [ref=e112]
+      - generic [ref=e114]:
+        - heading "You Don't Need More Talent. You Need Someone In Your Corner." [level=1] [ref=e119]:
+          - generic [ref=e122]: You Don't Need More Talent. You Need Someone In Your Corner.
+        - generic [ref=e123]:
+          - generic [ref=e125]:
+            - heading "The Truth is..." [level=1] [ref=e127]:
+              - generic [ref=e128]: The Truth is...
+            - text:   
+            - generic [ref=e131]:
+              - generic [ref=e133]:
+                - img [ref=e135]
+                - img [ref=e137]
+                - img [ref=e139]
+              - generic [ref=e141]:
+                - heading "You can master your voice and still be terrified to use it. You can learn music theory, production, marketing — all of it — and still feel paralyzed when it's time to actually put yourself out there." [level=1] [ref=e143]:
+                  - generic [ref=e145]:
+                    - text: You can master your voice and still be terrified to use it. You can learn music theory, production, marketing — all of it — and still
+                    - generic [ref=e146]: feel paralyzed
+                    - text: when it's time to actually put yourself out there.
+                - heading "Courses focus so much on sharpening your gifts, that they forget to build your emotional resilience to actually use them. They don't teach you how to hold yourself together when the world doesn't respond, or how to keep creating when no one's listening." [level=1] [ref=e148]:
+                  - generic [ref=e150]: Courses focus so much on sharpening your gifts, that they forget to build your emotional resilience to actually use them. They don't teach you how to hold yourself together when the world doesn't respond, or how to keep creating when no one's listening.
+                - heading "Your body doesn't feel safe being the shining star you already are within. No vocal technique will fix that. No algorithm hack will heal that. The work isn't becoming more skilled — it's becoming safe enough in your body to finally let your star power through." [level=1] [ref=e152]:
+                  - generic [ref=e154]:
+                    - text: Your body
+                    - generic [ref=e155]: doesn't feel safe
+                    - text: being the shining star you already are within. No vocal technique will fix that. No algorithm hack will heal that. The work isn't becoming more skilled — it's becoming safe enough in your body to finally let your star power through.
+          - img [ref=e159]
+      - generic [ref=e162]:
+        - img [ref=e166]
+        - img [ref=e170]
+        - img [ref=e174]
+      - generic [ref=e177]:
+        - img [ref=e181]
+        - generic [ref=e183]:
+          - heading "Kayla G." [level=1] [ref=e185]:
+            - generic [ref=e187]: Kayla G.
+          - heading "\"Working with Luxiana was the best choice for my self growth and nurturing. She helped me writing songs I love, tap into poetry, and allowed me to reconnect with my love of performing and singing. Not only did I write my own song, but I found my voice in order to keep honoring my self worth in holding healthy boundaries, which I have struggled with all my life. Thank you so much for the confidence boost my Love! For anyone who is thinking about working with a voice and performance coach, Luciana will take you to heights unbounded.\"" [level=1] [ref=e189]:
+            - generic [ref=e192]:
+              - text: "\"Working with Luxiana was the best choice for my self growth and nurturing. She helped me writing songs I love, tap into poetry, and allowed me to reconnect with my love of performing and singing. Not only did I write my own song, but I found my voice in order to keep honoring my self worth in holding healthy boundaries, which I have struggled with all my life."
+              - text: Thank you so much for the confidence boost my Love! For anyone who is thinking about working with a voice and performance coach, Luciana will take you to heights unbounded."
+      - generic [ref=e194]:
+        - heading "Because the reality is, the GIFT is Already Inside you." [level=1] [ref=e199]:
+          - generic [ref=e201]: Because the reality is, the GIFT is Already Inside you.
+        - generic [ref=e202]:
+          - img [ref=e206]
+          - generic [ref=e208]:
+            - heading [level=1] [ref=e210]:
+              - generic [ref=e212]:
+                - text: You just need a safe space to nurture its growth.
+                - text: Inside the
+                - generic [ref=e213]: Bad Bitch Experience
+                - text: ", I've guided artists to write their first song with"
+                - generic [ref=e214]: no prior experience.
+                - text: And then find the courage to perform it!
+                - text: Not because they suddenly became "talented."
+                - text: But because they finally had a space where it was safe to play! To be messy.
+                - text: To be seen and coached BEFORE they were "ready."
+                - text: That's what this container creates.
+                - text: And yes, the industry will tell you there's a "right" way. Post every day. Chase the algorithm. Look a certain way. Be palatable.
+                - text: "But here's what I know for sure:"
+                - text: The artists who make it aren't the ones who fit in. They're the ones who
+                - generic [ref=e215]: refused to shrink
+                - text: .
+                - text: I want you to build a music career that actually looks like YOU - Not a
+                - generic [ref=e216]: copy
+                - text: of what worked for someone else.
+                - text: There's no one path to the stage. No one formula for success.
+                - text: Your "weird" is your edge. Your "too much" is your magic.
+                - text: And the
+                - generic [ref=e217]: Bad Bitch Experience
+                - text: exists so you can borrow my confidence until you remember the power of yours.
+            - link "I'm Ready To Activate My Gifts!" [ref=e219] [cursor=pointer]:
+              - /url: "#open-popup"
+              - generic [ref=e220]:  I'm Ready To Activate My Gifts!
+      - generic [ref=e222]:
+        - heading "Imagine Getting Results Like..." [level=1] [ref=e227]:
+          - generic [ref=e229]: Imagine Getting Results Like...
+        - generic [ref=e230]:
+          - img [ref=e234]
+          - img [ref=e238]
+          - img [ref=e242]
+        - generic [ref=e243]:
+          - img [ref=e247]
+          - img [ref=e251]
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - generic [ref=e256]:
+            - heading "What to Expect From Seed To Taking The Stage:" [level=1] [ref=e258]:
+              - generic [ref=e260]:
+                - generic [ref=e262]: What to Expect
+                - text: "From Seed To Taking The Stage:"
+            - generic [ref=e265]:
+              - generic [ref=e267]:
+                - img [ref=e269]
+                - img [ref=e271]
+                - img [ref=e273]
+                - img [ref=e275]
+              - generic [ref=e277]:
+                - 'heading "Stage 1: The Opening This is where we face the resistance — together. You''ll DO THE THING you''ve been putting off (write the song, book the mic, post the post) while we uncover the childhood moments where your shine got shut down. You''ll walk away with: The blockages keeping your voice small and unstable — identified and cleared." [level=1] [ref=e279]':
+                  - generic [ref=e281]:
+                    - generic [ref=e282]: "Stage 1:"
+                    - text: The Opening
+                    - text: This is where we face the resistance — together. You'll DO THE THING you've been putting off (write the song, book the mic, post the post) while we uncover the childhood moments where your shine got shut down.
+                    - generic [ref=e284]: "You'll walk away with:"
+                    - text: The blockages keeping your voice small and unstable —
+                    - generic [ref=e285]: identified and cleared
+                    - text: .
+                - 'heading "Stage 2: The Creation - Making The Art I''ll take you through my proprietary process that I''ve used to take ANYONE and write their first song. We''ll then produce it, allowing you to step into your artistic identity — not someday, but NOW. This is where you stretch your comfort zone, get messy, and build your \"talent.\" You''ll walk away with: Your first song — written and performed." [level=1] [ref=e287]':
+                  - generic [ref=e289]:
+                    - generic [ref=e290]: "Stage 2:"
+                    - text: The Creation - Making The Art
+                    - text: I'll take you through my proprietary process that I've used to take ANYONE and write their first song. We'll then produce it, allowing you to step into your artistic identity — not someday, but NOW. This is where you stretch your comfort zone, get messy, and build your "talent."
+                    - text: "You'll walk away with: Your first song — written and performed."
+                - 'heading "Stage 3: The Sustaining - Building The Artist Your art needs a foundation that can hold it. YOU are that foundation. Here we teach you the business — the frameworks, systems, and strategies that support your nervous system while turning your passion into a sustainable career. You''ll gain clarity on your vision, attract the right people, and learn to self-regulate when fear shows up. You''ll walk away with: Your toolkit to design your own shows." [level=1] [ref=e292]':
+                  - generic [ref=e294]:
+                    - generic [ref=e295]: "Stage 3:"
+                    - text: The Sustaining - Building The Artist
+                    - text: Your art needs a foundation that can hold it.
+                    - generic [ref=e296]: YOU are that foundation
+                    - text: . Here we teach you the business — the frameworks, systems, and strategies that support your nervous system while turning your passion into a sustainable career.
+                    - text: You'll gain clarity on your vision, attract the right people, and learn to self-regulate when fear shows up.
+                    - text: "You'll walk away with: Your toolkit to design your own shows."
+                - 'heading "Stage 4: The Explosion - Embodying Your STAR POWER This is the stage where you FLY. You''ll launch your creation into the world — your EP, your show, your tour — surrounded by your people, abundant doing what you love. You''re not just performing anymore. You''re LIVING it. You''ll walk away with: Your star power honed in and actionable next steps in your journey!" [level=1] [ref=e298]':
+                  - generic [ref=e300]:
+                    - generic [ref=e301]: "Stage 4:"
+                    - text: The Explosion - Embodying Your STAR POWER
+                    - text: This is the stage where you FLY. You'll launch your creation into the world — your EP, your show, your tour — surrounded by your people, abundant doing what you love. You're not just performing anymore. You're LIVING it.
+                    - text: "You'll walk away with: Your star power honed in and actionable next steps in your journey!"
+          - generic [ref=e303]:
+            - heading [level=1] [ref=e305]
+            - img [ref=e309]
+        - text:    
+      - generic [ref=e314]:
+        - heading "Build Unshakeable Faith In Your Talent With" [level=1] [ref=e316]:
+          - generic [ref=e318]: Build Unshakeable Faith In Your Talent With
+        - img [ref=e320]
+        - heading "A 12-month Artist Incubator for ACTION TAKING, ALL-IN performers ready to step things up in a BIG way!" [level=1] [ref=e322]:
+          - generic [ref=e323]: A 12-month Artist Incubator for ACTION TAKING, ALL-IN performers ready to step things up in a BIG way!
+        - link "THIS IS ME I'M READY! Book A Call Today." [ref=e325] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e326]:  THIS IS ME I'M READY!
+          - generic [ref=e327]: Book A Call Today.
+      - generic [ref=e329]:
+        - img [ref=e334]
+        - heading "What's Included?" [level=1] [ref=e339]:
+          - generic [ref=e341]: What's Included?
+        - generic [ref=e342]:
+          - img [ref=e346]
+          - generic [ref=e348]:
+            - img [ref=e350]
+            - img [ref=e352]
+            - img [ref=e354]
+            - img [ref=e356]
+            - img [ref=e358]
+            - img [ref=e360]
+          - generic [ref=e362]:
+            - heading "12 Courses — Seed to Stage" [level=1] [ref=e364]:
+              - generic [ref=e365]: 12 Courses — Seed to Stage
+            - heading "Monthly 90-min Group Calls w/ Luxiana" [level=1] [ref=e367]:
+              - generic [ref=e368]: Monthly 90-min Group Calls w/ Luxiana
+            - heading "Stage Ready Blueprint" [level=1] [ref=e370]:
+              - generic [ref=e371]: Stage Ready Blueprint
+            - heading "Bad Bitch Music Video Blueprint" [level=1] [ref=e373]:
+              - generic [ref=e374]: Bad Bitch Music Video Blueprint
+            - heading "Bad Bitch Biz Kit" [level=1] [ref=e376]:
+              - generic [ref=e377]: Bad Bitch Biz Kit
+            - heading "Skool Community" [level=1] [ref=e379]:
+              - generic [ref=e380]: Skool Community
+        - text:      
+        - generic [ref=e383]:
+          - heading "This Experience is for the Artist who is tired of playing small and ready to devote yourself to your dreams." [level=1] [ref=e385]:
+            - generic [ref=e387]: This Experience is for the Artist who is tired of playing small and ready to devote yourself to your dreams.
+          - link "BOOK A CALL TODAY" [ref=e389] [cursor=pointer]:
+            - /url: "#open-popup"
+            - generic [ref=e390]:  BOOK A CALL TODAY
+      - text:                    
+      - generic [ref=e393]:
+        - generic [ref=e395]:
+          - img [ref=e397]
+          - heading "I'm Luxiana." [level=1] [ref=e399]:
+            - generic [ref=e400]: I'm Luxiana.
+          - heading [level=1] [ref=e402]:
+            - generic [ref=e404]:
+              - text: It's important for you to know my story because I used to be where you are now.
+              - text: Maybe I'm wrong, maybe you're ahead of where I was, which is even better!
+              - text: I have always known that there was something unique about myself.
+              - text: Even when I was in school, I stood out from the others, and I used to hold shame towards this.
+              - text: Until I realized that the things that made me stand out were the exact gifts that I need to share with the world.
+              - text: They are my unique fingerprint — the key to unlocking my dreams.
+              - text: Here's the thing though...
+              - text: When I decided I was going to be a professional singer, I was tone deaf. Rhythm blind.
+              - text: I couldn't even feel a beat in my body.
+              - text: I was the definition of "no natural talent."
+              - text: But I didn't let this kill my dreams and, step-by-step, I recovered the power of my voice and body.
+              - text: Today I write my own songs, play shows around the world, and help artists like you do the same.
+              - text: So it doesn't matter where you're at.
+              - text: How far away the dream feels.
+              - text: Or how "untalented" you feel.
+              - text: If you have something inside you that wants to come OUT — this is for you.
+              - text: — Luxiana
+          - heading "If You've been asking these questions too, then you're ready to take the next step and claim your stage." [level=1] [ref=e406]:
+            - generic [ref=e407]: If You've been asking these questions too, then you're ready to take the next step and claim your stage.
+        - generic [ref=e410]:
+          - heading [level=1]
+      - generic [ref=e415]:
+        - generic [ref=e420]:
+          - heading "The Bad Bitch Experience with" [level=1] [ref=e422]:
+            - generic [ref=e424]:
+              - text: The Bad Bitch Experience
+              - text: with
+          - img [ref=e426]
+        - generic [ref=e428]:
+          - generic [ref=e429]:
+            - generic [ref=e431]:
+              - img [ref=e433]
+              - img [ref=e435]
+              - img [ref=e437]
+              - img [ref=e439]
+              - img [ref=e441]
+              - img [ref=e443]
+              - img [ref=e445]
+            - generic [ref=e447]:
+              - 'heading "12 Courses — Seed to Stage [Value: $3,000]" [level=1] [ref=e449]':
+                - generic [ref=e452]:
+                  - text: 12 Courses — Seed to Stage
+                  - text: "[Value: $3,000]"
+              - 'heading "Monthly 90-min Group Calls w/ Luxiana [Value: $997]" [level=1] [ref=e454]':
+                - generic [ref=e456]:
+                  - text: Monthly 90-min Group Calls w/ Luxiana
+                  - generic [ref=e457]: "[Value: $997]"
+              - 'heading "Stage Ready Blueprint — song creation, production & show launch [Value: $997]" [level=1] [ref=e459]':
+                - generic [ref=e462]:
+                  - text: Stage Ready Blueprint — song creation, production & show launch
+                  - text: "["
+                  - generic [ref=e463]: "Value: $997"
+                  - text: "]"
+              - 'heading "Bad Bitch Music Video Blueprint — pro video on any budget [Value: $197]" [level=1] [ref=e465]':
+                - generic [ref=e468]:
+                  - text: Bad Bitch Music Video Blueprint — pro video on any budget
+                  - text: "[Value: $197]"
+              - 'heading "Bad Bitch Biz Kit — turn passion into income [Value: $197]" [level=1] [ref=e470]':
+                - generic [ref=e473]:
+                  - text: Bad Bitch Biz Kit — turn passion into income
+                  - text: "[Value: $197]"
+              - 'heading "Skool Community — Your Tribe of Bad Bitches [Value: $1,200]" [level=1] [ref=e475]':
+                - generic [ref=e478]:
+                  - text: Skool Community — Your Tribe of Bad Bitches
+                  - text: "[Value: $1,200]"
+              - 'heading "BONUS: 1:1 Coaching Call w/ Luxiana (First 10 only) [Value: $497]" [level=1] [ref=e480]':
+                - generic [ref=e483]:
+                  - text: "BONUS: 1:1 Coaching Call w/ Luxiana (First 10 only)"
+                  - text: "[Value: $497]"
+          - generic [ref=e486]:
+            - 'heading "Total Value: $7,085" [level=1] [ref=e488]':
+              - generic [ref=e490]: "Total Value: $7,085"
+            - heading "TODAY'S PRICE" [level=1] [ref=e492]:
+              - generic [ref=e494]: TODAY'S PRICE
+            - heading "$1,111 or $111/month" [level=1] [ref=e496]:
+              - generic [ref=e498]: $1,111 or $111/month
+        - text:       
+        - link "I'M A BAD BITCH! Book A Call Today" [ref=e500] [cursor=pointer]:
+          - /url: "#open-popup"
+          - generic [ref=e501]:  I'M A BAD BITCH!
+          - generic [ref=e502]: Book A Call Today
+      - generic [ref=e505]:
+        - img [ref=e509]
+        - generic [ref=e516]:
+          - heading "Join The Bad Bitch Experience with" [level=1] [ref=e518]:
+            - generic [ref=e520]:
+              - text: Join
+              - text: The Bad Bitch Experience
+              - text: with
+          - img [ref=e522]
+          - link "ANSWER YOUR CALLING TODAY CLAIM YOUR STAGE!" [ref=e524] [cursor=pointer]:
+            - /url: "#open-popup"
+            - generic [ref=e525]:  ANSWER YOUR CALLING TODAY
+            - generic [ref=e526]: CLAIM YOUR STAGE!
+      - heading " 2026 Luxiana Music Coach" [level=1] [ref=e533]:
+        - generic [ref=e534]: 
+        - generic [ref=e535]: 2026 Luxiana Music Coach
+  - text: 

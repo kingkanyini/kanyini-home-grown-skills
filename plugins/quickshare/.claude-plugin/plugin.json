@@ -1,0 +1,17 @@
+{
+  "name": "quickshare",
+  "version": "1.0.0",
+  "description": "Save any skill or content as a shareable universal AI prompt with optional access control + expiration",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T4",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

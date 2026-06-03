@@ -1,77 +1,16 @@
 Kanyini Home-Grown Skills Marketplace
-Proprietary License v1.0
 Copyright (c) 2026 Kanyini
 
-All rights reserved.
+NOT FOR REDISTRIBUTION
 
-This software (the "Marketplace") and all skills, scripts, documentation, and
-supporting materials contained within (collectively, the "Materials") are the
-proprietary work of Kanyini. The Materials are licensed, not sold, under the
-following terms:
+These skills are shared for the Build Your Freedom with AI bootcamp community,
+to install and use in your own Claude Code, for your own work and your own clients.
 
-1. GRANT OF LIMITED USE
+Please don't redistribute, repackage, re-host, or resell them. The repo is public
+so the community can add it in one command, not so it can be re-shared. If you'd
+like to bring someone in, send them straight to the marketplace:
+https://github.com/kingkanyini/kanyini-home-grown-skills
 
-   You ("Licensee") are granted a non-exclusive, non-transferable, revocable
-   license to access, install, and use the Materials solely for your personal
-   use within the context of the community membership through which access was
-   granted. This license is contingent on your continued good standing in that
-   community.
+Provided as is, with no warranty. Use what helps, leave what doesn't.
 
-2. PROHIBITED ACTIONS
-
-   Without prior written consent from Kanyini, you may NOT:
-
-   a) Redistribute, sublicense, sell, lease, or rent the Materials or any
-      portion thereof to any third party.
-   b) Fork, mirror, or publish the Materials to any public or private
-      repository outside the Kanyini-controlled marketplace.
-   c) Remove or modify any attribution, copyright notice, or licensing
-      statement contained within the Materials.
-   d) Use the Materials to train, fine-tune, or otherwise inform any machine
-      learning model whose outputs are made available to third parties.
-   e) Reverse-engineer, decompile, or extract trade secrets from the Materials
-      for the purpose of building a competing product.
-
-3. REVOCATION
-
-   Kanyini may revoke this license at any time, with or without cause, by
-   removing your access to the source repository. Upon revocation:
-
-   a) You must cease all use of the Materials within thirty (30) days.
-   b) You must delete all installed copies, including any local clones,
-      forks, or derivative installations on your machines.
-   c) No refund or compensation is owed for any unused portion of the
-      community membership through which access was granted.
-
-4. NO WARRANTY
-
-   THE MATERIALS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED. KANYINI MAKES NO REPRESENTATIONS REGARDING THE FUNCTIONALITY,
-   FITNESS FOR PURPOSE, OR FREEDOM FROM DEFECTS. USE AT YOUR OWN RISK.
-
-5. NO SUPPORT GUARANTEE
-
-   Support is provided on a best-effort basis through the community channels
-   designated by Kanyini. No service level agreement (SLA), response time, or
-   resolution commitment is implied or guaranteed.
-
-6. LIMITATION OF LIABILITY
-
-   IN NO EVENT SHALL KANYINI BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-   SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM THE USE OR INABILITY TO USE
-   THE MATERIALS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-
-7. GOVERNING LAW
-
-   This license shall be governed by and construed in accordance with the
-   laws of the jurisdiction in which Kanyini resides, without regard to its
-   conflict-of-law provisions.
-
-8. ENTIRE AGREEMENT
-
-   This license constitutes the entire agreement between Licensee and Kanyini
-   regarding the Materials and supersedes all prior or contemporaneous
-   communications, whether oral or written.
-
-By accessing, installing, or using the Materials, you acknowledge that you
-have read, understood, and agreed to be bound by this license.
+Thank you for honoring the work.

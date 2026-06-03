@@ -92,8 +92,12 @@ No SLA. Best-effort response.
 
 ---
 
-## License
+## Not for redistribution
 
-Proprietary. Community-use only. See **[LICENSE](LICENSE)**.
+These skills are shared for the **Build Your Freedom with AI** bootcamp community, to install and use in your own Claude Code, for your own work and your own clients.
 
-Redistribution, forking, or sharing of any skill in this marketplace constitutes a breach of the access agreement and grounds for immediate revocation. See **[docs/MARKETPLACE-CONTRACT.md](docs/MARKETPLACE-CONTRACT.md)** for the full contract.
+**Please don't redistribute, repackage, re-host, or resell them.** The repo is public so the community can add it in one command, not so it can be re-shared. Want to bring someone in? Just send them this link.
+
+Provided as is, with no warranty. Thank you for honoring the work. 🙏
+
+See **[LICENSE](LICENSE)** for the short version.

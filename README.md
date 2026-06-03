@@ -1,10 +1,10 @@
 # Kanyini Home-Grown Skills Marketplace
 
-> A private Claude Code plugin marketplace for the Kanyini community — coaches, healers, and spiritual entrepreneurs building their own agentic chief of staff.
+> A Claude Code plugin marketplace for the Kanyini community — coaches, healers, and spiritual entrepreneurs building their own agentic chief of staff.
 
 **Version:** 1.0.0
 **Status:** Phase 1 — 28 skills across 9 tiers
-**Access:** Private. Collaborator invite required.
+**Access:** Public. Add it in one command — no invite or login needed.
 
 ---
 
@@ -21,24 +21,19 @@ Future phases will add:
 ## Quickstart
 
 ```bash
-# 1. Accept the GitHub collaborator invite emailed to you.
-
-# 2. Authenticate Claude Code to GitHub (one-time per machine).
-gh auth login
-
-# 3. Add the marketplace.
+# 1. Add the marketplace (public — no invite or login needed).
 /plugin marketplace add github:kingkanyini/kanyini-home-grown-skills
 
-# 4. Install T1 Foundation skills first (everything else depends on them).
+# 2. Install T1 Foundation skills first (everything else depends on them).
 /plugin install savepoint@kanyini-home-grown-skills
 /plugin install counsel-dispatch@kanyini-home-grown-skills
 /plugin install quicksave@kanyini-home-grown-skills
 /plugin install learn-eval@kanyini-home-grown-skills
 
-# 5. Build your voice profile + counsel registry (~20 min, one-time).
+# 3. Build your voice profile + counsel registry (~20 min, one-time).
 # See docs/voice-and-counsel-build-guide.md
 
-# 6. Install other tiers as needed.
+# 4. Install other tiers as needed.
 # Hard requires:[] dependencies will block install order automatically.
 ```
 
@@ -51,7 +46,7 @@ Full setup walkthrough: **[docs/QUICKSTART.md](docs/QUICKSTART.md)**
 | Required | Purpose |
 |----------|---------|
 | Claude Code (CLI or desktop) | Plugin runtime |
-| GitHub account | Marketplace access (collaborator) |
+| GitHub account | Optional — not needed to add a public marketplace; only if you want to clone or report issues |
 | Obsidian + obsidian-brain MCP | Memory infrastructure (T1, T2 skills) |
 | Various per-skill MCPs/CLIs/keys | Per-skill — see `docs/prereq-setup.md` |
 
@@ -90,7 +85,7 @@ If you don't have these yet, install T3 (Voice/Personalization) skills FIRST and
 ## Support & Issues
 
 - **Bug reports** — GitHub Issues using the templates in `.github/ISSUE_TEMPLATE/`
-- **Questions** — Designated community channel (see your invite for details)
+- **Questions** — Designated community channel (see the bootcamp materials for details)
 - **Feedback** — `docs/FEEDBACK.md`
 
 No SLA. Best-effort response.

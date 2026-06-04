@@ -46,7 +46,9 @@ async function main() {
     for (const e of validate.errors) err('SchemaError', `${e.instancePath || '/'} ${e.message}`);
   }
 
-  const pluginKeys = Object.keys(marketplace.plugins || {});
+  // marketplace.plugins is an ARRAY of { name, source } (Claude Code schema). Derive the
+  // name list from it. Per-plugin version/deps come from each plugin.json, loaded below.
+  const pluginKeys = (marketplace.plugins || []).map(p => p.name);
 
   // 2b. Every plugin key has matching plugins/<name>/ folder
   for (const name of pluginKeys) {
@@ -153,8 +155,8 @@ async function main() {
       // Check if all ranges are compatible (intersect)
       const ranges = occurrences.map(o => o.range).filter(r => r !== '*');
       if (ranges.length < 2) continue;
-      // Get the latest version from marketplace
-      const latest = marketplace.plugins[d]?.latest;
+      // Version source is each plugin's own plugin.json (release-train `latest` removed 2026-06-04).
+      const latest = plugins[d]?.version;
       if (!latest) continue;
       // Find which ranges are NOT satisfied by latest
       const unsatisfied = occurrences.filter(o => o.range !== '*' && !semver.satisfies(latest, o.range));

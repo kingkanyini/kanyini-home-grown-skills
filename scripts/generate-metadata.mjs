@@ -522,15 +522,20 @@ async function main() {
     console.log(`  ✓ ${skill}`);
   }
 
-  // marketplace.json — NO $schema field (additionalProperties: false in marketplace.schema.json)
+  // marketplace.json — MUST follow Claude Code's marketplace schema: `plugins` is an
+  // ARRAY of { name, source } entries. Per-plugin version lives in each
+  // plugins/<name>/.claude-plugin/plugin.json, NOT here. (Object-keyed form with
+  // latest/yanked/deprecated release-train metadata was removed 2026-06-04 — Claude Code
+  // ignores those fields and rejects the object shape. See schemas/marketplace.schema.json $comment.)
   const marketplaceJson = {
+    $schema: 'https://anthropic.com/claude-code/marketplace.schema.json',
     name: 'kanyini-home-grown-skills',
-    version: '1.0.0',
     description: 'Private Claude Code plugin marketplace — coaches, healers, spiritual entrepreneurs building their agentic chief of staff',
     owner: { name: 'Kanyini' },
-    plugins: Object.fromEntries(
-      Object.keys(METADATA).map(skill => [skill, { latest: '1.0.0', yanked: [], deprecated: false }])
-    ),
+    plugins: Object.keys(METADATA).map(skill => ({
+      name: skill,
+      source: `./plugins/${skill}`,
+    })),
   };
   await fs.writeFile(
     path.join(REPO_ROOT, '.claude-plugin', 'marketplace.json'),

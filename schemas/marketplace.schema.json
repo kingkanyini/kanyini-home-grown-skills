@@ -2,9 +2,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://kanyini.dev/schemas/marketplace.schema.json",
   "title": "Kanyini Home-Grown Skills — Marketplace Manifest",
-  "description": "Top-level .claude-plugin/marketplace.json contract. See PLAN-v3.md §4.5 + §5.2 (Release Train).",
+  "description": "Top-level .claude-plugin/marketplace.json contract. Mirrors Claude Code's OWN marketplace schema: `plugins` MUST be an array of { name, source } objects. Claude Code's /plugin marketplace add rejects any other shape.",
+  "$comment": "Release-train metadata (latest / yanked / deprecated, object-keyed plugins) was removed 2026-06-04. Reason: Claude Code never reads those fields, every skill is 1.0.0, and the object shape broke `/plugin marketplace add` with 'expected array, received object'. To re-introduce yank/deprecate later, add a SEPARATE release-train.json sidecar plus a custom installer that reads it — do NOT put it back in this file. Trigger to revisit: a bad version ships to an already-installed user base AND a custom installer exists.",
   "type": "object",
-  "required": ["name", "version", "plugins"],
+  "required": ["name", "plugins"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
@@ -12,11 +13,6 @@
       "type": "string",
       "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
       "description": "Marketplace identifier. kebab-case."
-    },
-    "version": {
-      "type": "string",
-      "pattern": "^\\d+\\.\\d+\\.\\d+$",
-      "description": "Marketplace meta-version. Bumped on breaking marketplace.json shape changes, not skill releases."
     },
     "description": {
       "type": "string",
@@ -32,34 +28,25 @@
       }
     },
     "plugins": {
-      "type": "object",
-      "description": "Per-plugin release-train metadata. Key = skill name (must match plugins/<key>/.claude-plugin/plugin.json name).",
-      "propertyNames": {
-        "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
-      },
-      "additionalProperties": {
+      "type": "array",
+      "description": "Claude Code requires an ARRAY of plugin entries. Each entry needs name + source. Per-plugin version/deps live in plugins/<name>/.claude-plugin/plugin.json, NOT here.",
+      "items": {
         "type": "object",
-        "required": ["latest"],
+        "required": ["name", "source"],
         "additionalProperties": false,
         "properties": {
-          "latest": {
+          "name": {
             "type": "string",
-            "pattern": "^\\d+\\.\\d+\\.\\d+$",
-            "description": "Exact semver pinning the currently-recommended release. Resolver installs this version."
+            "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+            "description": "Skill name. Must match plugins/<name>/.claude-plugin/plugin.json name."
           },
-          "yanked": {
-            "type": "array",
-            "default": [],
-            "items": {
-              "type": "string",
-              "pattern": "^\\d+\\.\\d+\\.\\d+$"
-            },
-            "description": "Versions marked as bad. Resolver REFUSES to install. Already-installed copies show warning on next /plugin update."
+          "source": {
+            "type": "string",
+            "description": "Relative path to the plugin folder, e.g. ./plugins/savepoint"
           },
-          "deprecated": {
-            "type": "boolean",
-            "default": false,
-            "description": "When true, resolver warns at install with replacedBy suggestion (per the plugin's own plugin.json.replacedBy)."
+          "description": {
+            "type": "string",
+            "description": "Optional. Claude Code falls back to the plugin's own plugin.json description if omitted."
           }
         }
       }

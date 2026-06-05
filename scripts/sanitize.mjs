@@ -35,7 +35,7 @@ const SNAPSHOT_ROOT = path.join(os.homedir(), '.claude', 'snapshots');
 // 28-skill bundle (PLAN-v3.1 §1). vsl-post-production EXCLUDED.
 const PHASE_1_SKILLS = [
   // T1 Foundation
-  'savepoint', 'quicksave', 'counsel-dispatch', 'learn-eval',
+  'savepoint', 'quicksave', 'counsel-dispatch', 'council-primer', 'learn-eval',
   // T2 Daily Intel
   'morning-compass', 'inbox-digest', 'perplexity-research',
   // T3 Voice

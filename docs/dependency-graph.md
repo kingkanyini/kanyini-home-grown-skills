@@ -26,6 +26,7 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `ad-copy-forge` | LEAF | Standalone |
 | `belief-shift-e-engine` | ROOT | Standalone |
 | `charisma-codes` | ROOT | Standalone |
+| `council-primer` | ROOT | Standalone |
 | `counsel-dispatch` | ROOT | Vault-only |
 | `daily-email-digest` | MID | Standalone |
 | `exportskill` | ROOT | Standalone |

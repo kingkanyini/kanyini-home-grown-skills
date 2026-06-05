@@ -43,6 +43,15 @@ const METADATA = {
     command: '/counsel-dispatch',
     usage: '/counsel-dispatch [slug] about [topic]',
   },
+  'council-primer': {
+    tier: 'T1',
+    description: 'The First-Council Forge — build a 4-person advisory council of real experts in any domain via guided interview + live research, then summon them. Ships a 3-council starter kit.',
+    requires: [],
+    recommends: [{ name: 'counsel-dispatch', version: '^1.0.0' }],
+    prereqs: { mcps: [], clis: [], envVars: [], services: [] },
+    command: '/council-primer',
+    usage: '/council-primer',
+  },
   'learn-eval': {
     tier: 'T1',
     description: 'Extract reusable patterns from the session, self-evaluate quality before saving, and determine the right save location (Global vs Project)',

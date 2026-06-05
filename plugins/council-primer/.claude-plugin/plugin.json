@@ -1,0 +1,22 @@
+{
+  "name": "council-primer",
+  "version": "1.0.0",
+  "description": "The First-Council Forge — build a 4-person advisory council of real experts in any domain via guided interview + live research, then summon them. Ships a 3-council starter kit.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T1",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

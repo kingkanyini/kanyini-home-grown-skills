@@ -4,6 +4,13 @@ Phase 1 ships 28 skills across 9 tiers. Install order matters — install T1 Fou
 
 ## T1 — Foundation / Memory
 
+### `council-primer`
+
+The First-Council Forge — build a 4-person advisory council of real experts in any domain via guided interview + live research, then summon them. Ships a 3-council starter kit.
+
+- **Requires:** _none_
+- **Recommends:** `counsel-dispatch`
+
 ### `counsel-dispatch`
 
 Dispatch a counsel member from the vault. Loads their stat sheet, embodies their voice, and logs the dispatch for XP accumulation.

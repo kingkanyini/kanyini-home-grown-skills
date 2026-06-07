@@ -49,7 +49,7 @@ async function generateSkillsByTier(plugins) {
   const lines = [
     '# Skills by Tier',
     '',
-    'Phase 1 ships 28 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).',
+    `The marketplace ships ${Object.keys(plugins).length} skills across ${new Set(Object.values(plugins).map(p => p.tier)).size} tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).`,
     '',
   ];
 

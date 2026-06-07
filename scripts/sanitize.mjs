@@ -52,6 +52,8 @@ const PHASE_1_SKILLS = [
   'daily-email-digest', 'belief-shift-e-engine', 'headline-creator',
   // T9 Ads/Video
   'ad-copy-forge', 'ss-ad-generator', 'power-clip-pro',
+  // Wave 2 (2026-06-06) — tiers provisional pending ARCHITECT review
+  'web-dev-bot', 'overlay-director',
 ];
 
 // §3.5 Folder name contract. Unknown top-level folders FAIL LOUD.
@@ -68,13 +70,15 @@ const FOLDER_RENAME_MAP = {
   'playbook': 'playbook',  // webinar-forge
   'cron': 'cron',  // inbox-digest scheduled task installer (consent prompt enforced via special-case)
   'modules': 'modules',  // inbox-digest phase modules + daily-email-digest modules
-  'templates': 'templates',  // daily-email-digest email templates
+  'templates': 'templates',  // daily-email-digest email templates + web-dev-bot project templates
+  'phases': 'phases',  // web-dev-bot phase modules
   '.claude-plugin': '.claude-plugin',
   // renames
   'reference': 'references',
   'reference files': 'references',
   'refrence': 'references',  // typo fix
   // deletes (null = DELETE)
+  'pipeline': null,  // council-primer runtime state (real council builds) — never ship
   'client files': null,
   'session history': null,
   'session-history': null,
@@ -134,6 +138,13 @@ const FIND_REPLACE = [
   { find: /C:\/Users\/onebe\//g, replace: '~/' },
   // Email — strip line entirely if just the email + placeholder otherwise
   { find: /onebenson@gmail\.com/g, replace: '<your-email>' },
+  // HTML files: angle-bracket placeholders parse as unknown HTML tags and render BLANK in
+  // demo comps (NSA PHANTOM #7). Plain-text placeholders for .html, ordered BEFORE the
+  // generic angle-bracket rules so they win.
+  { find: /Chris Benson/g, replace: 'Your Name', htmlOnly: true },
+  { find: /Kanyini/g, replace: 'Your Name', htmlOnly: true },
+  { find: /\bkanyini\b/g, replace: 'your-name', htmlOnly: true },
+  { find: /\bonebe\b/g, replace: 'your-username', htmlOnly: true },
   // Names — author fields, frontmatter, attribution
   { find: /Chris Benson/g, replace: '<your-name>' },
   // GitHub handle in source files (rare but possible)
@@ -149,9 +160,34 @@ const FIND_REPLACE = [
   { find: /\bkanyini\b/g, replace: '<your-username>' },
   // Secret env file references
   { find: /\.claude-secrets/g, replace: '.env' },
-  // Wikilinks — strip ALL [[...]] patterns to placeholder (Hogg R1 critical)
-  // Done LAST so other replacements happen first
-  { find: /\[\[([^\]]+)\]\]/g, replace: '<your-related-note>' },
+  // ── Re-identifier scrubs (NSA Wave-2 review, 2026-06-06) ──
+  // NOTE: book title ("Life: The Ultimate Video Game") is scrubbed via SPECIAL_CASE_EDITS on the two
+  // Wave-2 files only — ad-copy-forge's LTUVG style-calibration sources use it load-bearingly.
+  // Personal title — unique phrasing re-identifies despite name scrub
+  { find: /Breath Master · Modern Shaman/g, replace: 'Your Title · Your Craft' },
+  // Location-specific example points at the owner's real business
+  { find: /breathwork retreat in Ecuador/g, replace: 'breathwork retreat in the mountains' },
+  // AASM (program brand) — scrub per owner decision. Specific phrases first, catch-all last.
+  { find: /AASM liquid-glass, earthy-premium/g, replace: 'Earthy Premium liquid-glass' },  // heading form — avoid doubled "earthy-premium"
+  { find: /AASM liquid-glass/g, replace: 'Earthy Premium liquid-glass' },
+  { find: /the 2026-06-03 AASM Website Review build/g, replace: 'an early production build' },
+  { find: /the AASM Website Review build \(2026-06-03\)/g, replace: 'an early production build' },
+  { find: /the AASM Council Build/g, replace: 'the original production build' },
+  { find: /warm earthy AASM tones/g, replace: 'warm earthy tones' },  // grammar-safe (CIPHER R2 #2)
+  { find: /AASM tones/g, replace: 'earthy tones' },
+  { find: /aasm-build/g, replace: 'demo-build' },  // test fixture names
+  { find: /\bAASM\b/g, replace: '<example-brand>' },  // catch-all (placeholder form — reads clean after articles)
+  // Wikilinks — markdown files ONLY (Hogg R1 critical). The [[...]] regex previously ate
+  // JS array literals ([[90, 100]]) and template literals ([[${n.slug}]]) inside .js files,
+  // shipping syntax errors (NSA Wave-2 CRITICAL #1). mdOnly guards code files.
+  // overlay-* slugs are generic technique names (not vault PII) — keep as plain code text
+  // so the playbook index stays functional; all other wikilinks become the placeholder.
+  // Done LAST so other replacements happen first.
+  {
+    find: /\[\[([^\]]+)\]\]/g,
+    replace: (m, slug) => /^overlay-[a-z0-9-]+$/.test(slug) ? '`' + slug + '`' : '<your-related-note>',
+    mdOnly: true,  // md + yml — see loop guard. NEVER js/json (nested arrays/template literals are code, not wikilinks)
+  },
 ];
 
 // §3 sanitization findings — special-case skill-specific edits.
@@ -199,6 +235,97 @@ const SPECIAL_CASE_EDITS = [
     action: { type: 'rename', to: 'cron/run-example.bat' },
     note: 'Spot-check fix — file name encoded client identity',
   },
+  {
+    skill: 'inbox-digest',
+    file: 'cron/run-jen-the-gut-center.bat',
+    action: { type: 'delete' },
+    note: 'Wave-2 catch — client-named file (filename bypasses find-replace); run-example.bat already demonstrates the pattern',
+  },
+  {
+    skill: 'inbox-digest',
+    file: 'cron/install-jen.ps1',
+    action: { type: 'delete' },
+    note: 'NSA ARCHITECT R2 #1 — client-named sibling; install.ps1 covers the pattern',
+  },
+  {
+    skill: 'inbox-digest',
+    file: 'cron/JenScan.xml',
+    action: { type: 'delete' },
+    note: 'NSA ARCHITECT R2 #1 — client-named task XML with engagement details; InboxDigest.example.xml covers the pattern',
+  },
+  {
+    skill: 'inbox-digest',
+    file: 'cron/jen-the-gut-center-hidden.vbs',
+    action: { type: 'delete' },
+    note: 'NSA ARCHITECT R2 #1 — client-named launcher pointing at the deleted .bat; inbox-digest-hidden.vbs covers the pattern',
+  },
+  {
+    skill: 'web-dev-bot',
+    file: 'commands/web-dev-bot.md',
+    action: { type: 'replace', find: /## Effects Registry \(MANDATORY for all HTML builds\)\r?\n/g, replace: '## Effects Registry (MANDATORY for all HTML builds)\n\n> **Skip this section** if no effects-registry vault note (`website-effects-registry`) is configured in your environment — build effects from the animation library reference instead.\n' },
+    note: 'NSA CIPHER R2 #3 — guard the vault-backed effects registry for installs without the owner\'s vault',
+  },
+  // ── Wave 2 (2026-06-06) — NSA Elite Squad review fixes ──
+  {
+    skill: 'overlay-director',
+    file: 'references/moves-library/_impl/full-frame-quote.html',
+    action: { type: 'replace', find: /Life: The Ultimate Video Game/g, replace: 'Your Book' },
+    note: 'NSA CIPHER #3 — spelled-out book title defeats the name scrub (targeted: global rule would gut ad-copy-forge LTUVG calibration sources)',
+  },
+  {
+    skill: 'web-dev-bot',
+    file: 'references/voice-aligned-motion.md',
+    action: { type: 'replace', find: /Life: The Ultimate Video Game/g, replace: 'Your Book' },
+    note: 'NSA CIPHER #6 — same targeted book-title scrub',
+  },
+  {
+    skill: 'overlay-director',
+    file: 'commands/overlay-director.md',
+    action: { type: 'replace', find: /(?<![\w-])reference\//g, replace: 'references/' },
+    note: 'NSA PHANTOM #1 — §3.5 contract renamed reference/→references/; update all 14 engine-call + doc paths to match shipped folder',
+  },
+  {
+    skill: 'overlay-director',
+    file: 'references/scripts/constants.js',
+    action: { type: 'replace', find: /(?<![\w-])reference\//g, replace: 'references/' },
+    note: 'NSA PHANTOM #1 — comment path matches shipped folder name',
+  },
+  {
+    skill: 'overlay-director',
+    file: 'references/counsel/review-rubric.md',
+    action: { type: 'replace', find: /\[\[principles\/read-through-as-final-ship-gate\]\]/g, replace: 'principles/read-through-as-final-ship-gate' },
+    note: 'NSA PHANTOM R2 #2 — keep generic principle slug as plain text (runs pre-find-replace, so strip brackets here)',
+  },
+  {
+    skill: 'overlay-director',
+    file: 'references/counsel/visual-visionary-26.md',
+    action: { type: 'replace', find: /\[\[principles\/dissent-integration-synthesis\]\]/g, replace: 'principles/dissent-integration-synthesis' },
+    note: 'NSA PHANTOM R2 #2 — same bracket-strip for generic principle slug',
+  },
+  {
+    skill: 'overlay-director',
+    file: 'references/moves-library/comic-zoom-pan.md',
+    action: { type: 'replace', find: /Full technique \+ empirical validation in the learned skill `hyperframes-comic-zoom-pan-signature`\./g, replace: 'Full technique + empirical validation captured during the original build.' },
+    note: 'NSA finding — dangling pointer to a private learned skill not shipped in the pack',
+  },
+  {
+    skill: 'web-dev-bot',
+    file: 'commands/web-dev-bot.md',
+    action: { type: 'replace', find: /load the platform guide from `~\/\.claude\/references\/playwright-guide\.md` BEFORE automating:/g, replace: 'load the platform guide from `~/.claude/references/playwright-guide.md` BEFORE automating (if the guide file is missing, proceed with the gotchas table below):' },
+    note: 'NSA PHANTOM #11 — owner-machine file not shipped; guard with graceful degradation',
+  },
+  {
+    skill: 'web-dev-bot',
+    file: 'references/claude-design-build-rules.md',
+    action: { type: 'replace', find: /> Source spec: `~\/\.claude\/docs\/superpowers\/specs\/[^`]+`\r?\n/g, replace: '' },
+    note: 'NSA finding — breadcrumb to private spec path, strip line',
+  },
+  {
+    skill: 'web-dev-bot',
+    file: 'templates/claude-design-project/CLAUDE.md',
+    action: { type: 'replace', find: /it carries healing\/business\/personal context/g, replace: 'it may carry personal context' },
+    note: 'NSA CIPHER #11 — shipped template described owner\'s private config contents',
+  },
 ];
 
 // Leak audit token patterns — even after find-replace, scan for residual matches.
@@ -211,6 +338,7 @@ const SYSTEM_EMAIL_ALLOWLIST = [
   /email@domain\.com/i,
   /user@example\.com/i,
   /<example-client>@example\.com/i,
+  /jack@greensock\.com/i,  // GSAP author attribution inside vendored gsap.min.js (license header, not a leak)
 ];
 
 const LEAK_TOKENS = [
@@ -224,7 +352,8 @@ const LEAK_TOKENS = [
   { name: 'Dropbox path (identity-revealing)', pattern: /Dropbox[\\\/]+[A-Z][a-zA-Z ]+/g },
   { name: 'C:\\Users (Windows path)', pattern: /C:[\\\/]Users/g },
   { name: 'claude-secrets reference', pattern: /\.claude-secrets/g },
-  { name: 'Wikilink', pattern: /\[\[[^\]]+\]\]/g },
+  // mdYmlOnly: [[...]] in .js/.json is code (nested arrays, template literals), not a wikilink
+  { name: 'Wikilink', pattern: /\[\[[^\]]+\]\]/g, mdYmlOnly: true },
   // Generic email regex for residual unknown emails (allowlist applied below)
   { name: 'Generic email', pattern: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g, allowlist: SYSTEM_EMAIL_ALLOWLIST },
 ];
@@ -435,6 +564,18 @@ async function applySpecialCases() {
         log.push({ ...edit, status: 'deleted' });
         break;
       }
+      case 'replace': {
+        let content = await fs.readFile(actualPath, 'utf8');
+        const orig = content;
+        content = content.replace(edit.action.find, edit.action.replace);
+        if (content !== orig) {
+          await fs.writeFile(actualPath, content);
+          log.push({ ...edit, status: 'replaced' });
+        } else {
+          log.push({ ...edit, status: 'no-match' });
+        }
+        break;
+      }
     }
   }
   return log;
@@ -466,7 +607,9 @@ async function findReplaceTextFiles() {
           let content = await fs.readFile(p, 'utf8');
           let modified = false;
 
-          for (const { find, replace } of FIND_REPLACE) {
+          for (const { find, replace, mdOnly, htmlOnly } of FIND_REPLACE) {
+            if (mdOnly && !/\.(md|markdown|ya?ml(\.example)?)$/i.test(p)) continue;
+            if (htmlOnly && !/\.html?$/i.test(p)) continue;
             const matches = content.match(find);
             if (matches) {
               const key = find.source;
@@ -513,7 +656,8 @@ async function leakAudit() {
         } else if (entry.isFile()) {
           if (!await isTextFile(p)) continue;
           const content = await fs.readFile(p, 'utf8');
-          for (const { name, pattern, allowlist } of LEAK_TOKENS) {
+          for (const { name, pattern, allowlist, mdYmlOnly } of LEAK_TOKENS) {
+            if (mdYmlOnly && !/\.(md|markdown|ya?ml(\.example)?)$/i.test(p)) continue;
             const matches = [...content.matchAll(pattern)];
             for (const m of matches) {
               // Skip if the match is in this token's allowlist (e.g., system emails for the generic email pattern)

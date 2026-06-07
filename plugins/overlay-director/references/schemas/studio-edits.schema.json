@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "overlay-director studio-edits.json",
+  "type": "object",
+  "required": ["source", "edits"],
+  "properties": {
+    "source": { "enum": ["studio-json", "html-marker-block"] },
+    "html_marker": { "type": "string", "description": "raw marked block when source=html-marker-block" },
+    "edits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["moment_id", "op"],
+        "properties": {
+          "moment_id": { "type": "string" },
+          "op": { "enum": ["move", "retime", "swap-move", "rewrite-copy", "delete", "add"] },
+          "computed_left": { "type": "number", "description": "pre-GSAP computed px (GSAP wipes translate)" },
+          "computed_top": { "type": "number" },
+          "delta_t": { "type": "number", "description": "seconds; shift data_start AND every gsap_beat by this" },
+          "new_move_id": { "type": "string" },
+          "new_copy": { "type": "string" },
+          "moment": { "type": "object", "description": "full moment object for op=add" }
+        }
+      }
+    }
+  }
+}

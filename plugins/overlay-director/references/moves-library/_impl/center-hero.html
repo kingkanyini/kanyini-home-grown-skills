@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      .od-hero { position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+        color: #F7F0E4; opacity: 0; }
+      .od-hero .od-line { width: 64%; font: 800 56px/1.1 'Inter', system-ui, sans-serif;
+        text-shadow: 0 2px 18px rgba(20,14,9,0.6); }
+      .od-hero::before { content: ''; position: absolute; inset: -40% -20%; z-index: -1;
+        background: radial-gradient(ellipse at center, rgba(20,14,9,0.45), transparent 70%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="center-hero" data-start="0" data-duration="3.8"
+         data-width="1920" data-height="1080">
+      <div class="od-hero"><div class="od-line">Your imagination is the controller.</div></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.0; const S = '[data-composition-id="center-hero"]';
+      tl.set(`${S} .od-hero`, { opacity: 0 }).set(`${S} .od-line`, { scale: 0.94, transformOrigin: '50% 50%' });
+      tl.to(`${S} .od-hero`, { opacity: 1, duration: 0.5, ease: 'power3.out' }, 0)
+        .to(`${S} .od-line`, { scale: 1, duration: 0.5, ease: 'power3.out' }, 0);
+      tl.to(`${S} .od-hero`, { opacity: 0, duration: 0.5, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-hero`, { opacity: 0 }, HOLD + 0.5);
+      window.__timelines["center-hero"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

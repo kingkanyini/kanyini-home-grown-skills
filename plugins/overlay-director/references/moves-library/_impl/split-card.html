@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      .od-split { position: absolute; left: 15%; top: 26%; width: 70%;
+        display: grid; grid-template-columns: 1fr 1fr; gap: 18px; opacity: 0; }
+      .od-a, .od-b { padding: 20px 22px; border-radius: 20px; background: rgba(247,240,228,0.16);
+        border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(12px); color: #241B14;
+        font: 600 24px/1.25 'Inter', sans-serif; }
+      .od-b { border-color: #B06A3B; }
+      .od-label { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+        color: #7C8B6F; margin-bottom: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="split-card" data-start="0" data-duration="3.8"
+         data-width="1920" data-height="1080">
+      <div class="od-split">
+        <div class="od-a"><div class="od-label">Button Mashing</div>Reacting to life on autopilot.</div>
+        <div class="od-b"><div class="od-label">Life Gamer</div>Playing each level on purpose.</div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.0; const S = '[data-composition-id="split-card"]';
+      tl.set(`${S} .od-split`, { opacity: 1 }).set([`${S} .od-a`, `${S} .od-b`], { opacity: 0 });
+      tl.to(`${S} .od-a`, { opacity: 1, duration: 0.35, ease: 'power2.out' }, 0);
+      tl.to(`${S} .od-b`, { opacity: 1, duration: 0.35, ease: 'power2.out' }, 0.25);
+      tl.to(`${S} .od-split`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-split`, { opacity: 0 }, HOLD + 0.4);
+      window.__timelines["split-card"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

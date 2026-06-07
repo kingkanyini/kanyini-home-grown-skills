@@ -74,7 +74,7 @@ Before reviewing the FIRST section of a deck, lock these and capture them in a p
 4. Note what everyone LOVED (protect these in revision)
 5. Present to user with structured AskUserQuestion before producing revised draft
 
-**Sample synthesis output format:** See `~/.claude/plugins/local/webinar-forge/reference/agent-prompts.md` and the AASM project's `AASM-review-pipeline-policies.md` for templates.
+**Sample synthesis output format:** See `~/.claude/plugins/local/webinar-forge/reference/agent-prompts.md` and the <example-brand> project's `<example-brand>-review-pipeline-policies.md` for templates.
 
 ---
 
@@ -154,7 +154,7 @@ The Continuity Ledger is the foreman's working memory across sections. It's a st
 
 After each section review, the foreman updates the Ledger with any new entries this section added. Before reviewing the next section, the foreman loads the Ledger to check what that section MUST deliver, payoff, or callback.
 
-See AASM policies file `AASM-review-pipeline-policies.md` § "Continuity Ledger" for a worked example.
+See <example-brand> policies file `<example-brand>-review-pipeline-policies.md` § "Continuity Ledger" for a worked example.
 
 ---
 
@@ -230,7 +230,7 @@ See vault pattern note `patterns/multi-layer-content-review-pipeline.md` for the
 
 ## Pass-Number Dispatch + Between-Layer Gate (refined 2026-05-22)
 
-Two refinements to the pipeline shipped during AASM §4 review:
+Two refinements to the pipeline shipped during <example-brand> §4 review:
 
 **Pass-number dispatch:** First-pass uses agent mode (5 parallel) for fidelity; revision passes use persona mode for cost-efficiency. See vault principle <your-related-note> "Pass-Number Dimension" section for the full matrix.
 
@@ -240,4 +240,4 @@ The Anti-Patterns section below has been updated accordingly — "Persona mode f
 
 ---
 
-*Built 2026-05-21 from the AASM Opening template-pass. Updated 2026-05-22 (AASM §4). Update as new sections / projects reveal additional rules.*
+*Built 2026-05-21 from the <example-brand> Opening template-pass. Updated 2026-05-22 (<example-brand> §4). Update as new sections / projects reveal additional rules.*

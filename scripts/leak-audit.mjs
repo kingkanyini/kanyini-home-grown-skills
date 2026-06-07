@@ -21,6 +21,7 @@ const SYSTEM_EMAIL_ALLOWLIST = [
   /email@domain\.com/i,
   /user@example\.com/i,
   /<example-client>@example\.com/i,
+  /jack@greensock\.com/i,  // GSAP author attribution inside vendored gsap.min.js (license header, not a leak)
 ];
 
 const LEAK_TOKENS = [
@@ -35,9 +36,19 @@ const LEAK_TOKENS = [
   { name: 'ClaudeBrain vault folder', pattern: /ClaudeBrain/g },
   { name: 'C:\\Users (Windows path)', pattern: /C:[\\\/]Users/g },
   { name: 'claude-secrets reference', pattern: /\.claude-secrets/g },
-  { name: 'Wikilink', pattern: /\[\[[^\]]+\]\]/g },
+  // mdYmlOnly: [[...]] in .js/.json is code (nested arrays, template literals), not a vault wikilink —
+  // matches the sanitizer's mdOnly semantics (Wave-2 fix: the old scrub corrupted shipped JS).
+  { name: 'Wikilink', pattern: /\[\[[^\]]+\]\]/g, mdYmlOnly: true },
   // Generic email with allowlist for system addresses
   { name: 'Generic email', pattern: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g, allowlist: SYSTEM_EMAIL_ALLOWLIST },
+];
+
+// Client slugs in FILE NAMES — find-replace only scans contents, so client-named files
+// (run-jen-the-gut-center.bat, JenScan.xml) sail through. NSA ARCHITECT R2 #1.
+const FILENAME_LEAK_PATTERNS = [
+  { name: 'Client name in filename (jen)', pattern: /jen(?![a-z])|jen[-_]?scan|install[-_]?jen/i },
+  { name: 'Client name in filename (mara)', pattern: /\bmara\b|mara[-._]/i },
+  { name: 'Client name in filename (gut-center)', pattern: /gut[-_]?center/i },
 ];
 
 // Allowlist — files where these tokens are EXPECTED (legitimate attribution).
@@ -76,9 +87,16 @@ async function main() {
       } else if (entry.isFile()) {
         const rel = path.relative(REPO_ROOT, p);
         if (isAllowed(rel)) continue;
+        // Filename-level scan — runs even for binary files (names leak regardless of content)
+        for (const { name, pattern } of FILENAME_LEAK_PATTERNS) {
+          if (pattern.test(entry.name)) {
+            hits.push({ file: rel, line: 0, token: name, match: entry.name });
+          }
+        }
         if (!await isTextFile(p)) continue;
         const content = await fs.readFile(p, 'utf8');
-        for (const { name, pattern, allowlist } of LEAK_TOKENS) {
+        for (const { name, pattern, allowlist, mdYmlOnly } of LEAK_TOKENS) {
+          if (mdYmlOnly && !/\.(md|markdown|ya?ml(\.example)?)$/i.test(p)) continue;
           const matches = [...content.matchAll(pattern)];
           for (const m of matches) {
             if (allowlist && allowlist.some(a => a.test(m[0]))) continue;

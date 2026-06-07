@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* base left:4% so the timeline slides left 4%->6% (gate: styleDelta left) */
+      .od-lower { position: absolute; left: 4%; bottom: 9%; padding: 12px 20px; border-radius: 16px;
+        background: rgba(20,14,9,0.55); border-left: 4px solid #B06A3B; color: #F7F0E4; opacity: 0; }
+      .od-lower .od-name { font: 700 26px/1.1 'Inter', sans-serif; }
+      .od-lower .od-role { font: 500 17px/1.2 'Inter', sans-serif; color: #D9A05B; margin-top: 3px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="lower-third" data-start="0" data-duration="3.6"
+         data-width="1920" data-height="1080">
+      <div class="od-lower">
+        <div class="od-name">Your Name</div>
+        <div class="od-role">Your Title · Your Craft</div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 2.8; const S = '[data-composition-id="lower-third"]';
+      tl.set(`${S} .od-lower`, { opacity: 0, left: '4%' });
+      tl.to(`${S} .od-lower`, { opacity: 1, left: '6%', duration: 0.4, ease: 'power2.out' }, 0);
+      tl.to(`${S} .od-lower`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-lower`, { opacity: 0 }, HOLD + 0.4);
+      window.__timelines["lower-third"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

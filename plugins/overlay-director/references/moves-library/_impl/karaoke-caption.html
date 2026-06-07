@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* reserved bottom lane, plate per card; calm dissolve (no transform punch) */
+      .od-track { position: absolute; left: 0; right: 0; bottom: 18%; margin: 0 auto; width: max-content;
+        max-width: 80%; padding: 12px 22px; border-radius: 14px; background: rgba(20,14,9,0.65);
+        backdrop-filter: blur(8px); font: 700 34px/1.2 'Inter', sans-serif; text-align: center; opacity: 0; }
+      .od-word { margin: 0 5px; color: #A59A86; }   /* upcoming = muted; active=sage, spoken=white via GSAP */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="karaoke-caption" data-start="0" data-duration="3.4"
+         data-width="1920" data-height="1080">
+      <div class="od-track"><span class="od-word od-word-0">Your</span><span class="od-word od-word-1">imagination</span><span class="od-word od-word-2">is</span><span class="od-word od-word-3">the</span><span class="od-word od-word-4">console.</span></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 2.6; const S = '[data-composition-id="karaoke-caption"]';
+      const words = ['Your','imagination','is','the','console.']; const per = 0.32;  // baked fixture word timings
+      tl.set(`${S} .od-track`, { opacity: 0 });
+      tl.set(`${S} .od-word`, { color: '#A59A86' });
+      tl.to(`${S} .od-track`, { opacity: 1, duration: 0.3, ease: 'power1.out' }, 0);
+      words.forEach((_, i) => { const t = 0.3 + i * per;
+        tl.to(`${S} .od-word-${i}`, { color: '#8FA876', duration: 0.12, ease: 'none' }, t)          // active = sage
+          .to(`${S} .od-word-${i}`, { color: '#FFFFFF', duration: 0.12, ease: 'none' }, t + per * 0.6); // spoken = bright white
+      });
+      tl.to(`${S} .od-track`, { opacity: 0, duration: 0.3, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-track`, { opacity: 0 }, HOLD + 0.3);
+      window.__timelines["karaoke-caption"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

@@ -121,6 +121,14 @@
     {
       "name": "power-clip-pro",
       "source": "./plugins/power-clip-pro"
+    },
+    {
+      "name": "web-dev-bot",
+      "source": "./plugins/web-dev-bot"
+    },
+    {
+      "name": "overlay-director",
+      "source": "./plugins/overlay-director"
     }
   ]
 }

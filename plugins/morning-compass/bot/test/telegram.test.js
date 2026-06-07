@@ -23,7 +23,7 @@ test('sendMessage POSTs correct payload', async () => {
 });
 
 test('sendMessage includes reply_markup when provided', async () => {
-  const kb = { inline_keyboard: <your-related-note> };
+  const kb = { inline_keyboard: [[{ text: 'A', callback_data: 'a' }]] };
   await sendMessage('TOKEN', '12345', 'hi', kb);
   const body = JSON.parse(global.__lastFetch.opts.body);
   assert.deepEqual(body.reply_markup, kb);

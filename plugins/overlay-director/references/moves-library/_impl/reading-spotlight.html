@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      .od-spot { position: absolute; inset: 0; opacity: 0; }
+      /* faux document the spotlight illuminates */
+      .od-doc { position: absolute; left: 28%; top: 26%; width: 44%;
+        color: #F7F0E4; font: 600 26px/2.0 'Inter', sans-serif; }
+      /* the lit box: transparent interior (shows doc), STATIC 9999px dim-surround shadow + gold edge.
+         the "walk" moves its baked `top` between two regions (gate: distinctStates >=2). */
+      .od-lit { position: absolute; left: 26%; width: 48%; height: 80px; border-radius: 14px;
+        box-shadow: 0 0 0 9999px rgba(38,27,20,0.52); outline: 2px solid rgba(217,160,91,0.55); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="reading-spotlight" data-start="0" data-duration="4.4"
+         data-width="1920" data-height="1080">
+      <div class="od-spot">
+        <div class="od-doc">
+          Life doesn't happen to you.<br/>
+          It happens for you, to learn from.<br/>
+          Every challenge is a quest in disguise.<br/>
+          Your scars are XP. Level up.
+        </div>
+        <div class="od-lit"></div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.6; const S = '[data-composition-id="reading-spotlight"]';
+      tl.set(`${S} .od-spot`, { opacity: 0 });
+      tl.set(`${S} .od-lit`, { top: '30%' });
+      tl.to(`${S} .od-spot`, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0);   // surround dims, region 1 lit
+      tl.to(`${S} .od-lit`, { top: '55%', duration: 0.4, ease: 'power1.inOut' }, 1.8); // walk to region 2 (baked top, not shadow)
+      tl.to(`${S} .od-spot`, { opacity: 0, duration: 0.35, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-spot`, { opacity: 0 }, HOLD + 0.35);
+      window.__timelines["reading-spotlight"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

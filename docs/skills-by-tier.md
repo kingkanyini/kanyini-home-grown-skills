@@ -1,6 +1,6 @@
 # Skills by Tier
 
-Phase 1 ships 28 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
+The marketplace ships 31 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
 
 ## T1 — Foundation / Memory
 
@@ -108,6 +108,13 @@ Turn any installed skill into a deployed Vercel chat site (Next.js + streaming A
 - **Requires:** _none_
 - **Recommends:** _none_
 
+### `web-dev-bot`
+
+Build, clone, sketch, debug, and connect websites with Web Dev Counsel guidance
+
+- **Requires:** _none_
+- **Recommends:** `counsel-dispatch`
+
 ## T5 — Offer & Messaging
 
 ### `magnetic-offer-blueprint`
@@ -207,6 +214,13 @@ High Converting Headline Creator — builds ICA avatars and generates three-tier
 Convert video ad scripts into Meta-ready ad copy using the OO + Prop Machine + learned ad patterns with counsel review
 
 - **Requires:** `offer-optimizer`, `propaganda-machine`
+- **Recommends:** `counsel-dispatch`
+
+### `overlay-director`
+
+Turn any talking-head/screen-recording video into a counsel-reviewed animated-overlay HyperFrames build — auto-drafted from an accumulating playbook, tweaked by you, getting faster with every video
+
+- **Requires:** _none_
 - **Recommends:** `counsel-dispatch`
 
 ### `power-clip-pro`

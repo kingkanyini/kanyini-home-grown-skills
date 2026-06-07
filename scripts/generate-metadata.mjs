@@ -335,6 +335,35 @@ const METADATA = {
     command: '/power-clip-pro',
     usage: '/power-clip-pro',
   },
+  // Wave 2 (2026-06-06) — tiers provisional pending ARCHITECT review
+  'web-dev-bot': {
+    tier: 'T4',
+    description: 'Build, clone, sketch, debug, and connect websites with Web Dev Counsel guidance',
+    requires: [],
+    recommends: [{ name: 'counsel-dispatch', version: '^1.0.0' }],
+    prereqs: { mcps: ['mcp__playwright__*'], clis: ['node', 'python'], envVars: [], services: ['Optional: mcp__obsidian-brain__* vault MCP powers the effects registry — without it the feature no-ops'] },
+    command: '/web-dev-bot',
+    usage: '/web-dev-bot or /web-dev-bot "build a landing page for my retreat"',
+  },
+  'overlay-director': {
+    tier: 'T9',
+    description: 'Turn any talking-head/screen-recording video into a counsel-reviewed animated-overlay HyperFrames build — auto-drafted from an accumulating playbook, tweaked by you, getting faster with every video',
+    requires: [],
+    recommends: [{ name: 'counsel-dispatch', version: '^1.0.0' }],
+    prereqs: {
+      mcps: ['mcp__obsidian-brain__*'],
+      clis: ['node', 'npx', 'ffmpeg'],
+      envVars: [],
+      services: [
+        'hyperframes v0.6.x via npx — install: claude plugin marketplace add bradautomates/claude-video, then claude plugin install hyperframes, hyperframes-cli, hyperframes-media',
+        'Vault MCP (mcp__obsidian-brain__*) is OPTIONAL — without a vault, the skill cold-starts from its shipped playbook digest (Phase 0.5d)',
+        'Optional: Imaginator art generation (Gemini) — without it, art cards become labeled placeholders',
+        'Move-gate tooling: run npm install inside references/moves-library/_impl/gate/ before registering new moves',
+      ],
+    },
+    command: '/overlay-director',
+    usage: '/overlay-director path/to/talking-head.mp4',
+  },
 };
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -350,8 +379,9 @@ function preflightScript(skill, meta) {
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const SKILL_DIR = path.dirname(new URL(import.meta.url).pathname).replace(/^\\/([A-Z]:)/, '$1');
+const SKILL_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PLUGIN_JSON = path.join(SKILL_DIR, '.claude-plugin', 'plugin.json');
 
 async function main() {

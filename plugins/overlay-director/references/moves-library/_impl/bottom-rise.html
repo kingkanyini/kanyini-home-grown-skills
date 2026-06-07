@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* base bottom:8% -> timeline rises to 12% with back.out overshoot (gate: overshoot) */
+      .od-rise { position: absolute; left: 8%; bottom: 8%; max-width: 40%; padding: 18px 24px;
+        border-radius: 22px; background: rgba(247,240,228,0.16); border: 1px solid rgba(255,255,255,0.35);
+        border-left: 5px solid #B06A3B; backdrop-filter: blur(12px); box-shadow: 4px 6px 22px rgba(20,14,9,0.26);
+        color: #241B14; font: 600 26px/1.25 'Inter', sans-serif; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="bottom-rise" data-start="0" data-duration="3.6"
+         data-width="1920" data-height="1080">
+      <div class="od-rise">This is your boss battle. Breathe, then press start.</div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 2.8; const S = '[data-composition-id="bottom-rise"]';
+      tl.set(`${S} .od-rise`, { opacity: 0, bottom: '8%' });
+      tl.to(`${S} .od-rise`, { opacity: 1, bottom: '12%', duration: 0.5, ease: 'back.out(2.5)' }, 0);
+      tl.to(`${S} .od-rise`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-rise`, { opacity: 0 }, HOLD + 0.4);
+      window.__timelines["bottom-rise"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

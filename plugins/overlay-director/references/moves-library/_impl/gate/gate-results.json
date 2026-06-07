@@ -1,0 +1,65 @@
+{
+  "allPass": true,
+  "results": {
+    "liquid-glass-card": {
+      "pass": true,
+      "hash": "8c0f7f57624cac6e14a589ee67e84c97d01804c4cb626dd2aa82969890c354d5",
+      "failures": []
+    },
+    "center-hero": {
+      "pass": true,
+      "hash": "b48787e40947ae9c0cf8aa6557781be713e95330425bdde6aa0d347281fa057f",
+      "failures": []
+    },
+    "full-frame-quote": {
+      "pass": true,
+      "hash": "05a36fea501ed74ba32c104d208d7c503188779c69cb40138ef485ab36d06e03",
+      "failures": []
+    },
+    "image-card": {
+      "pass": true,
+      "hash": "888565ce5d2688957e772a81a0ac8316686d73335f2becdc8eb877a4870aef69",
+      "failures": []
+    },
+    "lower-third": {
+      "pass": true,
+      "hash": "573007b730f3916b123fb358aa162cde08e087b357d0d097c9c9336bbc39add4",
+      "failures": []
+    },
+    "top-pill": {
+      "pass": true,
+      "hash": "8037cee5d20f025c7ac4adb47ac6f6c2c4b0800459e458fcff17f1428f14919a",
+      "failures": []
+    },
+    "bottom-rise": {
+      "pass": true,
+      "hash": "ba1131ce64b9c01471a3afdcc731a5cc26fd947d4f8e866325b185ec5ce4f02d",
+      "failures": []
+    },
+    "split-card": {
+      "pass": true,
+      "hash": "7c223faf95f0c13f09cf8e7ad1d5b855b7d7475739c03365538b56e9e734abc6",
+      "failures": []
+    },
+    "sandwich-stack": {
+      "pass": true,
+      "hash": "1170419a1a0e12f1012f0949ca5b9109d37f8079693a64ed4d2fdb2a886ccf4b",
+      "failures": []
+    },
+    "bouncing-arrows": {
+      "pass": true,
+      "hash": "a45dcd3e8fd7a8d79832761fc47da6c55a130a6e95ba902478adca3892df4550",
+      "failures": []
+    },
+    "reading-spotlight": {
+      "pass": true,
+      "hash": "b4617e81994ad2c6a9f3aa42f62edc60dca43662348d16b1b282217f4bc76635",
+      "failures": []
+    },
+    "karaoke-caption": {
+      "pass": true,
+      "hash": "ee1e80ec141201d19c42d0eee586e89af6ee898d8523335947b6665ec7c434c7",
+      "failures": []
+    }
+  }
+}

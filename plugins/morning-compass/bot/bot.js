@@ -63,7 +63,10 @@ async function handleCallbackQuery(cq, opts) {
           process.env.TELEGRAM_BOT_TOKEN,
           process.env.TELEGRAM_CHAT_ID,
           `Energy noted: ${bucket}\\. Counsel may shift toward restoration\\. Refresh\\?`,
-          { inline_keyboard: <your-related-note>}
+          { inline_keyboard: [[
+            { text: '✅ Refresh', callback_data: 'cmd:refresh' },
+            { text: '❌ Keep current', callback_data: 'cmd:dismiss' }
+          ]]}
         );
       }
     }

@@ -264,7 +264,7 @@ inferred_action_items: <N>
 
 1. **<action>**
    - Why: <reason>
-   - Source: <your-related-note> — "<verbatim quote, max 200 chars>"
+   - Source: [[<note-slug>]] — "<verbatim quote, max 200 chars>"
    - Owner: <your-name> | Due: <YYYY-MM-DD or "asap">
 
 2. **<action>**
@@ -291,22 +291,22 @@ inferred_action_items: <N>
 
 ## Attachments Referenced
 
-- **<filename>** (<your-related-note>) — <2-sentence summary>
+- **<filename>** ([[<path>]]) — <2-sentence summary>
 
 ## Full Action Queue (added this scan)
 
 - [ ] **<action>** — owner: <name>, due: <YYYY-MM-DD>
-  Source: <your-related-note> — "<verbatim quote>"
+  Source: [[<note-slug>]] — "<verbatim quote>"
 
 ## New Threads This Scan
 
-- <your-related-note> — <subject>
+- [[<path>]] — <subject>
 
 </details>
 \`\`\`
 
 CRITICAL GROUNDING RULES (PATCH D24 from the orchestrator spec):
-- Every action item MUST cite a source thread note via <your-related-note>
+- Every action item MUST cite a source thread note via [[wikilink]]
 - Include a verbatim source_quote (≤200 chars, copied EXACTLY from a thread body) whenever possible
 - If no verbatim quote exists for an action, mark it *(inferred)* — never drop it silently
 - The 3 MOVES are the TOP 3 highest priority. Selection criteria (ranked):
@@ -315,7 +315,7 @@ CRITICAL GROUNDING RULES (PATCH D24 from the orchestrator spec):
   3. Decisions <your-name> owes someone
   4. Big-dollar / strategic items
 - Email content goes through <your-name>'s analytical lens — paraphrase, don't quote verbatim except in source_quote fields and attachment summaries
-- Use wikilinks for source notes: \`<your-related-note>\` — strip the .md extension. A post-processor will rewrite these to full vault-root paths so Obsidian can resolve them; if your link starts with \`inbox/\`, \`attachments/\`, or a bare \`YYYY-MM-DD_\` basename, the post-processor handles it. You do NOT need to write the full client path.`;
+- Use wikilinks for source notes: \`[[2026-05-12_subject-slug]]\` — strip the .md extension. A post-processor will rewrite these to full vault-root paths so Obsidian can resolve them; if your link starts with \`inbox/\`, \`attachments/\`, or a bare \`YYYY-MM-DD_\` basename, the post-processor handles it. You do NOT need to write the full client path.`;
 
 // ----- Wikilink normalization --------------------------------------------
 
@@ -324,26 +324,26 @@ CRITICAL GROUNDING RULES (PATCH D24 from the orchestrator spec):
  * can resolve.
  *
  * The synthesis LLM tends to write any of these broken forms:
- *   - <your-related-note>                      — folder-relative
- *   - <your-related-note>          — folder-relative
- *   - <your-related-note> — parent-relative
+ *   - [[inbox/2026-05-14_slug]]                      — folder-relative
+ *   - [[attachments/2026-04-13_offer/file]]          — folder-relative
+ *   - [[../inbox/attachments/2026-04-13_offer/file]] — parent-relative
  *
  * Obsidian wikilinks resolve only by (a) basename when unique or (b) full
  * vault-root path. The forms above don't match either, so they show up as
  * broken-link findings even though the target file exists.
  *
  * Rewrites applied when clientVaultPath is provided:
- *   <your-related-note>                → <your-related-note>
- *   <your-related-note>             → <your-related-note>
- *   <your-related-note>          → <your-related-note>
- *   <your-related-note> → <your-related-note>
+ *   [[inbox/<...>]]                → [[<clientVaultPath>/inbox/<...>]]
+ *   [[../inbox/<...>]]             → [[<clientVaultPath>/inbox/<...>]]
+ *   [[attachments/<...>]]          → [[<clientVaultPath>/inbox/attachments/<...>]]
+ *   [[../inbox/attachments/<...>]] → [[<clientVaultPath>/inbox/attachments/<...>]]
  *
  * Pass-through cases (intentional):
  *   - Empty targets `[[]]` (separate known defect)
  *   - Wikilinks already starting with `context/`, `_views/`, etc. — assumed
  *     already vault-root-rooted
- *   - Any basename-only wikilink — could be a brief (`<your-related-note>`),
- *     a hub ref (`<your-related-note>`), a GOU/pattern slug, etc. Auto-
+ *   - Any basename-only wikilink — could be a brief (`[[2026-05-11_brief]]`),
+ *     a hub ref (`[[<example-client>]]`), a GOU/pattern slug, etc. Auto-
  *     prepending a folder guesses wrong about half the time. Obsidian's
  *     basename resolution handles unique cases; ambiguous ones become broken-
  *     link findings, which is correct behavior.
@@ -379,7 +379,7 @@ export function normalizeWikilinks(markdown, clientVaultPath) {
     } else {
       return full; // basename-only or already vault-root-rooted — leave alone
     }
-    return `<your-related-note>`;
+    return `[[${rewritten}${anchor}${aliasSuffix}]]`;
   });
 }
 
@@ -394,7 +394,7 @@ function extractActionItems(briefMd) {
   if (!sectionMatch) return items;
   const section = sectionMatch[1];
 
-  // Parse each "- [ ] **action** — owner: X, due: Y\n  Source: <your-related-note> — \"quote\"" block
+  // Parse each "- [ ] **action** — owner: X, due: Y\n  Source: [[path]] — \"quote\"" block
   const itemRe = /-\s*\[\s*\]\s*\*\*([^*]+)\*\*\s*—\s*owner:\s*([^,\n]+),\s*due:\s*([^\n]+)(?:\s*\n\s*Source:\s*\[\[([^\]]+)\]\](?:\s*—\s*"([^"]+)")?)?/g;
   let m;
   while ((m = itemRe.exec(section))) {
@@ -436,7 +436,7 @@ async function appendTasks(clientDir, actionItems, clientSlug) {
     const inferredMark = a.inferred ? " *(inferred)*" : "";
     const quoteLine = a.source_quote ? ` — "${a.source_quote}"` : "";
     newBlocks.push(
-      `- [ ] **${a.action}** — owner: ${a.owner}, due: ${a.due}${inferredMark}\n  Source: <your-related-note>${quoteLine}\n`,
+      `- [ ] **${a.action}** — owner: ${a.owner}, due: ${a.due}${inferredMark}\n  Source: [[${a.source_note}]]${quoteLine}\n`,
     );
   }
   if (newBlocks.length === 1) {

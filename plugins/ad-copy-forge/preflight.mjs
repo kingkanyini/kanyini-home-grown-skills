@@ -7,8 +7,9 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const SKILL_DIR = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([A-Z]:)/, '$1');
+const SKILL_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PLUGIN_JSON = path.join(SKILL_DIR, '.claude-plugin', 'plugin.json');
 
 async function main() {

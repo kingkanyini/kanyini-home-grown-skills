@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      /* Local font, bundled — no network fetch (determinism) */
+      @font-face {
+        font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2');
+      }
+      /* card container owns the glass shell + the overall fade */
+      .od-card {
+        position: absolute; left: 34%; top: 30%; width: 34%; min-height: 150px;
+        border-radius: 24px; background: rgba(247,240,228,0.16);
+        border: 1px solid rgba(255,255,255,0.35); box-shadow: 6px 8px 28px rgba(20,14,9,0.28);
+        opacity: 0;
+      }
+      /* two stacked text layers, constant filters, cross-faded (seek-safe blur-in) */
+      .od-layer {
+        position: absolute; inset: 0; padding: 22px 26px; border-radius: 24px;
+        color: #241B14; font: 600 28px/1.25 'Inter', system-ui, sans-serif;
+        backdrop-filter: blur(14px) saturate(120%);
+      }
+      .od-blur  { filter: blur(6px); }
+      .od-sharp { filter: blur(0px); }
+      .od-eyebrow {
+        font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+        color: #B06A3B; margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="liquid-glass-card" data-start="0" data-duration="3.8"
+         data-width="1920" data-height="1080">
+      <div class="od-card">
+        <div class="od-layer od-blur">
+          <div class="od-eyebrow">Level Up</div>
+          <div class="od-body">Life doesn't happen to you. It happens for you, to learn from, and level up.</div>
+        </div>
+        <div class="od-layer od-sharp">
+          <div class="od-eyebrow">Level Up</div>
+          <div class="od-body">Life doesn't happen to you. It happens for you, to learn from, and level up.</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });   // synchronous registration
+      const HOLD = 3.0;
+      const S = '[data-composition-id="liquid-glass-card"]';
+      tl.set(`${S} .od-blur`,  { opacity: 1 }).set(`${S} .od-sharp`, { opacity: 0 });
+      tl.to(`${S} .od-card`,  { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0);   // card fades in
+      tl.to(`${S} .od-sharp`, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0)     // sharp rises…
+        .to(`${S} .od-blur`,  { opacity: 0, duration: 0.4, ease: 'power2.out' }, 0);    // …blur falls = comes into focus
+      tl.to(`${S} .od-card`,  { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);  // exit owns end of life
+      tl.set(`${S} .od-card`, { opacity: 0 }, HOLD + 0.4);                              // hard-kill
+      window.__timelines["liquid-glass-card"] = tl;   // key === root data-composition-id (NOT 'root')
+      // registration above is synchronous; only first visual apply waits on fonts
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

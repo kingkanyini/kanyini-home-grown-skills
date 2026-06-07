@@ -28,6 +28,10 @@ See https://github.com/obsidian-brain/mcp — install into your Claude Code MCP 
 
 See https://github.com/perplexity/mcp — requires `PERPLEXITY_API_KEY` env var.
 
+### `mcp__playwright__*`
+
+_(install docs TBD — see skill README)_
+
 ### `mcp__yt-dlp-mcp__*`
 
 See https://github.com/yt-dlp/mcp — requires `yt-dlp` CLI on PATH.
@@ -86,7 +90,12 @@ Some skills call out to managed services. You'll need accounts + auth for each.
 - **Gmail** — used by `inbox-digest`
 - **Google Calendar** — used by `morning-compass`
 - **Instagram** — used by `morning-compass`, `voice-dna-extractor`
+- **Move-gate tooling: run npm install inside references/moves-library/_impl/gate/ before registering new moves** — used by `overlay-director`
+- **Optional: Imaginator art generation (Gemini) — without it, art cards become labeled placeholders** — used by `overlay-director`
+- **Optional: mcp__obsidian-brain__* vault MCP powers the effects registry — without it the feature no-ops** — used by `web-dev-bot`
 - **Perplexity** — used by `perplexity-research`
 - **Stripe** — used by `morning-compass`
+- **Vault MCP (mcp__obsidian-brain__*) is OPTIONAL — without a vault, the skill cold-starts from its shipped playbook digest (Phase 0.5d)** — used by `overlay-director`
 - **Vercel** — used by `funnel-translate`, `skill-to-site`
 - **YouTube** — used by `morning-compass`, `voice-dna-extractor`
+- **hyperframes v0.6.x via npx — install: claude plugin marketplace add bradautomates/claude-video, then claude plugin install hyperframes, hyperframes-cli, hyperframes-media** — used by `overlay-director`

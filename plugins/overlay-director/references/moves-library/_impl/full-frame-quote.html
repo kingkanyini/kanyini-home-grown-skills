@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      .od-quote { position: absolute; inset: 0; display: grid; place-items: center; padding: 10%;
+        background: rgba(20,14,9,0.5); color: #F7F0E4; text-align: center;
+        font: 700 44px/1.3 'Inter', system-ui, sans-serif; opacity: 0; }
+      .od-quote .od-mark { color: #D9A05B; font-size: 1.4em; }
+      .od-quote .od-attrib { font: 500 22px/1.2 'Inter', sans-serif; color: #D9A05B; margin-top: 18px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="full-frame-quote" data-start="0" data-duration="4.0"
+         data-width="1920" data-height="1080">
+      <div class="od-quote">
+        <div><span class="od-mark">&ldquo;</span>Life doesn't happen to you. It happens for you.<span class="od-mark">&rdquo;</span>
+        <div class="od-attrib">Your Name · Your Book</div></div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.2; const S = '[data-composition-id="full-frame-quote"]';
+      tl.set(`${S} .od-quote`, { opacity: 0 });
+      tl.to(`${S} .od-quote`, { opacity: 1, duration: 0.5, ease: 'power2.out' }, 0);
+      tl.to(`${S} .od-quote`, { opacity: 0, duration: 0.5, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-quote`, { opacity: 0 }, HOLD + 0.5);
+      window.__timelines["full-frame-quote"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

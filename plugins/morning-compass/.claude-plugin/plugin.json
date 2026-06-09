@@ -10,8 +10,7 @@
   "recommends": [],
   "prereqs": {
     "mcps": [
-      "mcp__composio__*",
-      "mcp__obsidian-brain__*"
+      "mcp__composio__*"
     ],
     "clis": [
       "pwsh",

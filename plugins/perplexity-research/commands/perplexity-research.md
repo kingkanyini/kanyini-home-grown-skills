@@ -61,7 +61,7 @@ Render the response inline as markdown:
 ## Step 5: Save destination
 
 Ask via AskUserQuestion:
-- "Save to vault" → use `mcp__obsidian-brain__write_note` with path `research/YYYY-MM-DD-<slug>.md` and frontmatter (`type: research`, `tier`, `query`, `model`, `created`, `confidence: medium`)
+- "Save to vault" (needs the `obsidian-brain` MCP — pick flat file if you don't have a vault) → use `mcp__obsidian-brain__write_note` with path `research/YYYY-MM-DD-<slug>.md` and frontmatter (`type: research`, `tier`, `query`, `model`, `created`, `confidence: medium`)
 - "Save to flat file" → write to `~/.claude/projects/research/YYYY-MM-DD-<slug>.md`
 - "Save to Google Doc" → invoke `/google-doc-builder` skill protocols
 - "Skip — don't save"

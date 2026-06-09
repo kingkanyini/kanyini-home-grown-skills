@@ -24,9 +24,11 @@ If no slug is provided, list all available counsel members from the vault.
 
 ## PHASE 1 — LOAD THE MEMBER
 
-1. **Determine the member slug.** If user provided one, use it. If not, use `mcp__obsidian-brain__list_directory` with path `counsel/members` to list available members and ask which one.
+> **No vault?** If the `obsidian-brain` MCP isn't available, read members from the local seed directory `~/.claude/references/counsel/members/` instead — that's where `/council-primer` seeds them on a no-vault install. List the directory and load `[slug].md` with the file tools. The rest of this flow is identical; only the member-file source changes.
 
-2. **Read the member file** via `mcp__obsidian-brain__read_note` at path `counsel/members/[slug].md`.
+1. **Determine the member slug.** If user provided one, use it. If not, use `mcp__obsidian-brain__list_directory` with path `counsel/members` (or the local seed dir above) to list available members and ask which one.
+
+2. **Read the member file** via `mcp__obsidian-brain__read_note` at path `counsel/members/[slug].md` (or the local seed dir above when there's no vault).
 
 3. **If file not found:** Gracefully report: *"No stat sheet exists yet for [slug]. Available members: [list]. Would you like to build a new stat sheet via /counsel-refresh?"* (Note: /counsel-refresh is a Phase 2+ skill; fallback gracefully.)
 

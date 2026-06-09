@@ -27,33 +27,33 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `belief-shift-e-engine` | ROOT | Standalone |
 | `charisma-codes` | ROOT | Standalone |
 | `council-primer` | ROOT | Standalone |
-| `counsel-dispatch` | ROOT | Vault-only |
+| `counsel-dispatch` | ROOT | Standalone |
 | `daily-email-digest` | MID | Standalone |
 | `exportskill` | ROOT | Standalone |
-| `funnel-audit` | ROOT | Vault-only |
-| `funnel-hack-lvl-1` | ROOT | Vault-only |
+| `funnel-audit` | ROOT | Standalone |
+| `funnel-hack-lvl-1` | ROOT | Standalone |
 | `funnel-hack-research` | ROOT | Standalone |
-| `funnel-translate` | ROOT | Heavy-prereq |
+| `funnel-translate` | ROOT | Service-only |
 | `headline-creator` | ROOT | Standalone |
 | `inbox-digest` | ROOT | Heavy-prereq |
-| `learn-eval` | ROOT | Vault-only |
+| `learn-eval` | ROOT | Standalone |
 | `magnetic-offer-blueprint` | ROOT | Standalone |
 | `morning-compass` | ROOT | Heavy-prereq |
 | `offer-optimizer` | ROOT | Heavy-prereq |
-| `overlay-director` | ROOT | Heavy-prereq |
+| `overlay-director` | ROOT | Service-only |
 | `perplexity-research` | ROOT | Heavy-prereq |
 | `power-clip-pro` | ROOT | Standalone |
 | `propaganda-machine` | LEAF | Standalone |
 | `quicksave` | ROOT | Standalone |
 | `quickshare` | ROOT | Standalone |
-| `savepoint` | ROOT | Heavy-prereq |
+| `savepoint` | ROOT | Service-only |
 | `skill-to-site` | ROOT | Service-only |
 | `ss-ad-generator` | ROOT | Standalone |
 | `voice-dna-blueprint-builder` | MID | Standalone |
 | `voice-dna-extractor` | ROOT | Heavy-prereq |
 | `vsl-activator` | ROOT | Standalone |
 | `web-dev-bot` | ROOT | Heavy-prereq |
-| `webinar-forge` | MID | Vault-only |
+| `webinar-forge` | MID | Standalone |
 
 ## 3. MCP Reverse-Index
 
@@ -65,7 +65,6 @@ When an MCP server is down or missing, which skills break? `hermes-doctor` (Phas
 | `mcp__composio__` | `morning-compass` |
 | `mcp__ffmpeg-mcp__` | `voice-dna-extractor` |
 | `mcp__gmail-gong-mcp__` | `inbox-digest` |
-| `mcp__obsidian-brain__` | `counsel-dispatch`, `funnel-audit`, `funnel-hack-lvl-1`, `funnel-translate`, `inbox-digest`, `learn-eval`, `morning-compass`, `overlay-director`, `perplexity-research`, `savepoint`, `webinar-forge` |
 | `mcp__perplexity__` | `perplexity-research` |
 | `mcp__playwright__` | `web-dev-bot` |
 | `mcp__yt-dlp-mcp__` | `voice-dna-extractor` |

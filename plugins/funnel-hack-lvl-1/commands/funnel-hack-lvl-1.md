@@ -499,6 +499,8 @@ Save files:
 
 ## Effects Registry (MANDATORY for all HTML builds)
 
+> **Skip this section** if no effects-registry vault note (`website-effects-registry`) is configured in your environment — build effects from the animation library reference instead.
+
 ### Before Adding Effects
 1. Search vault for `website-effects-registry` via `mcp__obsidian-brain__search_notes` (flat file at `memory/reference_website_effects_registry.md` is cold backup only — do NOT read unless vault MCP is unavailable)
 2. Load `website-effects-snippets` from vault for implementation code
@@ -508,7 +510,7 @@ Save files:
 ### After Building Custom Effects
 If you created any new CSS animation, JS scroll handler, hover interaction, or visual effect NOT already in the registry:
 - Prompt user: "New effect: [description]. Save to registry as [CODE-NAME]?"
-- If yes: write to vault ONLY via `mcp__obsidian-brain__write_note` — update `patterns/website-effects-registry.md` (add row to Active Effects table) AND `patterns/website-effects-snippets.md` (append new snippet section). Flat files are frozen cold backup per Phase 3 vault-primary policy — do NOT write to them.
+- If yes: write to vault via `mcp__obsidian-brain__write_note` — update `patterns/website-effects-registry.md` (add row to Active Effects table) AND `patterns/website-effects-snippets.md` (append new snippet section). **If the `obsidian-brain` vault MCP isn't available, skip the save (no-op) and tell the user the effects registry needs a vault — do not error and do not write flat files.**
 - Include: CSS, JS, HTML structure, dependencies, source project
 
 ## GLOBAL BEHAVIORS

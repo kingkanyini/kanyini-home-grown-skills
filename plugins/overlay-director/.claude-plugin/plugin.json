@@ -14,9 +14,7 @@
     }
   ],
   "prereqs": {
-    "mcps": [
-      "mcp__obsidian-brain__*"
-    ],
+    "mcps": [],
     "clis": [
       "node",
       "npx",

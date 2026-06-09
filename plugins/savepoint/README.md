@@ -14,12 +14,10 @@
 
 ## Prerequisites
 
-**MCP servers:**
-- `mcp__obsidian-brain__*`
-
 **CLI tools:**
 - `git`
 
+> **Optional — vault sync (locked by default):** This build saves session notes to a local file and needs no MCP server. An advanced mode syncs to a personal Obsidian vault via the `mcp__obsidian-brain__*` MCP and snapshots `~/.claude.json`. It is disabled by default — set `VAULT_FEATURES: UNLOCKED` in `commands/savepoint.md` to enable it (requires that MCP plus the config-snapshot scripts).
 
 Run `node preflight.mjs` from this skill's folder to verify all prereqs are met.
 

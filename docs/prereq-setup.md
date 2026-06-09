@@ -20,10 +20,6 @@ See https://github.com/ffmpeg/mcp — requires `ffmpeg` CLI on PATH.
 
 See https://github.com/gongrzhe/gmail-mcp — requires Gmail OAuth credentials.
 
-### `mcp__obsidian-brain__*`
-
-See https://github.com/obsidian-brain/mcp — install into your Claude Code MCP config pointing at your Obsidian vault.
-
 ### `mcp__perplexity__*`
 
 See https://github.com/perplexity/mcp — requires `PERPLEXITY_API_KEY` env var.

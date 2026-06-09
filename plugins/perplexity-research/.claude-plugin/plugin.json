@@ -10,8 +10,7 @@
   "recommends": [],
   "prereqs": {
     "mcps": [
-      "mcp__perplexity__*",
-      "mcp__obsidian-brain__*"
+      "mcp__perplexity__*"
     ],
     "clis": [],
     "envVars": [

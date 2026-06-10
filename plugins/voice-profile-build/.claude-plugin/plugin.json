@@ -1,0 +1,29 @@
+{
+  "name": "voice-profile-build",
+  "version": "1.0.0",
+  "description": "Build a deep Voice DNA profile for any person. Recon → Copy Forensics Counsel #39 (4 parallel agents) → synthesis → 6-field Character Intake Card. Recon-based sibling to voice-dna-blueprint-builder.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T3",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "voice-dna-blueprint-builder",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "savepoint",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__yt-dlp-mcp__*",
+      "mcp__perplexity__*"
+    ],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

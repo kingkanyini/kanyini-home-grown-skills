@@ -47,6 +47,10 @@
       "source": "./plugins/voice-dna-blueprint-builder"
     },
     {
+      "name": "voice-profile-build",
+      "source": "./plugins/voice-profile-build"
+    },
+    {
       "name": "charisma-codes",
       "source": "./plugins/charisma-codes"
     },

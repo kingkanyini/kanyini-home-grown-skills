@@ -27,10 +27,6 @@
       "source": "./plugins/learn-eval"
     },
     {
-      "name": "morning-compass",
-      "source": "./plugins/morning-compass"
-    },
-    {
       "name": "inbox-digest",
       "source": "./plugins/inbox-digest"
     },

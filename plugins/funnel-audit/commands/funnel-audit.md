@@ -425,7 +425,7 @@ Side-by-side English | German chart:
 Update registry: `"translation": { "status": "complete", "target_lang": "[lang]", "format": "html|md" }`
 
 ### Step 4: Voice Fidelity Check
-For clients who are native speakers of the target language (e.g., Jonas is German-native):
+For clients who are native speakers of the target language (e.g., example-contact is German-native):
 - The translation should sound like the client WRITING in their native language, not a translated English page
 - Cross-reference Voice DNA — the native-language version should feel MORE natural than the English
 - Counsel reviews for voice match in the target language

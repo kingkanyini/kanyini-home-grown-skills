@@ -68,7 +68,7 @@ Post-production data lives in a `post_production` object on each project:
 - **THREAD-BLOCKED:** Cutting this would break a structural promise, callback chain, named method tease-to-deliver chain, or Secret-to-Secret bridge. NOT proposed as a cut.
 
 ### Common THREAD-BLOCKED Patterns
-- Named method tease-to-deliver chains (e.g., "SOMA Body Blueprint," "Regulation Reset")
+- Named method tease-to-deliver chains (e.g., "example-collective Body Blueprint," "Regulation Reset")
 - Explicit character callbacks ("I told you about Josephine")
 - Secret-to-Secret transition bridges ("But we're not done. Because...")
 - "Three things" structural promises

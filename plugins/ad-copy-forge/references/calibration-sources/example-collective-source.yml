@@ -3,8 +3,8 @@
     - generic:      
     - generic [ref=e5]:
       - generic [ref=e10]:
-        - heading "SOMA" [level=1] [ref=e12]:
-          - generic [ref=e14]: SOMA
+        - heading "example-collective" [level=1] [ref=e12]:
+          - generic [ref=e14]: example-collective
         - heading "Embodiment · Energy · Execution" [level=1] [ref=e16]:
           - generic [ref=e17]: Embodiment · Energy · Execution
       - generic [ref=e19]:
@@ -74,12 +74,12 @@
               - text: Tired of Being "The Machine"?
               - text: Sharp. Successful. Respected.
               - text: You've Built Everything, but can't enjoy any of it.
-          - link "Apply for SOMA IMMERSION  THE BODY LEADS. THE MIND FOLLOWS." [ref=e49] [cursor=pointer]:
+          - link "Apply for example-collective IMMERSION  THE BODY LEADS. THE MIND FOLLOWS." [ref=e49] [cursor=pointer]:
             - /url: "#open-popup"
             - generic [ref=e50]:
               - text: 
               - generic [ref=e51]:
-                - text: Apply for SOMA IMMERSION
+                - text: Apply for example-collective IMMERSION
                 - generic [ref=e52]: 
             - generic [ref=e53]: THE BODY LEADS. THE MIND FOLLOWS.
           - heading "April–May 2026 — limited Space Available" [level=1] [ref=e55]:
@@ -188,8 +188,8 @@
       - heading [level=1] [ref=e194]
       - generic [ref=e197]:
         - generic [ref=e200]:
-          - heading "Is SOMA IMMERSION For You?" [level=1] [ref=e202]:
-            - generic [ref=e203]: Is SOMA IMMERSION For You?
+          - heading "Is example-collective IMMERSION For You?" [level=1] [ref=e202]:
+            - generic [ref=e203]: Is example-collective IMMERSION For You?
           - heading "Yes — if any of this feels uncomfortably accurate:" [level=1] [ref=e205]:
             - generic [ref=e207]: "Yes — if any of this feels uncomfortably accurate:"
         - generic [ref=e208]:
@@ -254,11 +254,11 @@
       - generic [ref=e276]:
         - generic [ref=e277]:
           - generic [ref=e279]:
-            - heading "What Is the SOMA IMMERSION?" [level=1] [ref=e281]:
-              - generic [ref=e282]: What Is the SOMA IMMERSION?
-            - heading "The SOMA Collective is an 8-week embodiment experience for high-performing entrepreneurs. Designed to break through the ceiling in your business and create the deep level of intimacy in your relationships you've been craving by:" [level=1] [ref=e284]:
+            - heading "What Is the example-collective IMMERSION?" [level=1] [ref=e281]:
+              - generic [ref=e282]: What Is the example-collective IMMERSION?
+            - heading "The Example Collective is an 8-week embodiment experience for high-performing entrepreneurs. Designed to break through the ceiling in your business and create the deep level of intimacy in your relationships you've been craving by:" [level=1] [ref=e284]:
               - generic [ref=e286]:
-                - text: The SOMA Collective is an 8-week embodiment experience for
+                - text: The Example Collective is an 8-week embodiment experience for
                 - generic [ref=e287]: high-performing entrepreneurs.
                 - text: "Designed to break through the ceiling in your business and create the deep level of intimacy in your relationships you've been craving by:"
             - list [ref=e289]:
@@ -275,12 +275,12 @@
                 - listitem [ref=e300]:
                   - generic [ref=e301]: 
                   - generic [ref=e302]: Breathwork & Somatic Mastery
-            - heading "This is not breathwork you watch on YouTube. This is not a mindset program with a new framework to install. This is not therapy. It works on a level deeper than conversation. The SOMA Immersion is lived practice. Breathwork. Shadow work. Dancing with Polarity. Ceremony. Community. You don't study this. You become it." [level=1] [ref=e304]:
+            - heading "This is not breathwork you watch on YouTube. This is not a mindset program with a new framework to install. This is not therapy. It works on a level deeper than conversation. The example-collective Immersion is lived practice. Breathwork. Shadow work. Dancing with Polarity. Ceremony. Community. You don't study this. You become it." [level=1] [ref=e304]:
               - generic [ref=e306]:
                 - text: This is not breathwork you watch on YouTube.
                 - text: This is not a mindset program with a new framework to install.
                 - text: This is not therapy. It works on a level deeper than conversation.
-                - text: The SOMA Immersion is lived practice. Breathwork. Shadow work. Dancing with Polarity. Ceremony. Community.
+                - text: The example-collective Immersion is lived practice. Breathwork. Shadow work. Dancing with Polarity. Ceremony. Community.
                 - text: You don't study this. You become it.
           - img [ref=e310]
         - text:        
@@ -292,9 +292,9 @@
             - text: And lead from the deep intuition that comes from being intimately connected to it.
       - generic [ref=e320]:
         - img [ref=e324]
-        - heading "“Jonas has an amazing ability to connect your personal life and business in a way that’s clear and actionable. He thinks outside the box, delivers personalized solutions, and guides you to uncover even more yourself. Thanks to him, I’ve seen real results — including significant revenue growth — and a fresh perspective on my business.\" Daniel" [level=1] [ref=e328]:
+        - heading "“example-contact has an amazing ability to connect your personal life and business in a way that’s clear and actionable. He thinks outside the box, delivers personalized solutions, and guides you to uncover even more yourself. Thanks to him, I’ve seen real results — including significant revenue growth — and a fresh perspective on my business.\" Daniel" [level=1] [ref=e328]:
           - generic [ref=e330]:
-            - text: “Jonas has an amazing ability to connect your personal life and business in a way that’s clear and actionable. He thinks outside the box, delivers personalized solutions, and guides you to uncover even more yourself. Thanks to him, I’ve seen real results — including significant revenue growth — and a fresh perspective on my business."
+            - text: “example-contact has an amazing ability to connect your personal life and business in a way that’s clear and actionable. He thinks outside the box, delivers personalized solutions, and guides you to uncover even more yourself. Thanks to him, I’ve seen real results — including significant revenue growth — and a fresh perspective on my business."
             - text: Daniel
       - text:        
       - generic [ref=e332]:
@@ -393,14 +393,14 @@
                 - text: You become the person who handles everything.
                 - text: "But the body eventually reaches a point where it says:"
                 - text: There has to be another way to live.
-        - link "GIVE THE MACHINE A REST  APPLY FOR SOMA IMMERSION." [ref=e478] [cursor=pointer]:
+        - link "GIVE THE MACHINE A REST  APPLY FOR example-collective IMMERSION." [ref=e478] [cursor=pointer]:
           - /url: "#open-popup"
           - generic [ref=e479]:
             - text: 
             - generic [ref=e480]:
               - text: GIVE THE MACHINE A REST
               - generic [ref=e481]: 
-          - generic [ref=e482]: APPLY FOR SOMA IMMERSION.
+          - generic [ref=e482]: APPLY FOR example-collective IMMERSION.
       - generic [ref=e487]:
         - heading "SAY HELLO TO" [level=1] [ref=e489]:
           - generic [ref=e490]: SAY HELLO TO
@@ -408,7 +408,7 @@
           - generic [ref=e493]: THE EMBODIED
         - heading "LEADER" [level=1] [ref=e495]:
           - generic [ref=e496]: LEADER
-        - heading "Real transformation doesn’t happen when you think harder. It happens when your body comes back online. When the nervous system regulates… clarity appears. When your body feels safe… presence returns. This is the shift SOMA is built around. The shift from The Machine to The Embodied Leader." [level=1] [ref=e498]:
+        - heading "Real transformation doesn’t happen when you think harder. It happens when your body comes back online. When the nervous system regulates… clarity appears. When your body feels safe… presence returns. This is the shift example-collective is built around. The shift from The Machine to The Embodied Leader." [level=1] [ref=e498]:
           - generic [ref=e500]:
             - text: Real transformation doesn’t happen when you think harder.
             - text: It happens when your body comes back online.
@@ -416,7 +416,7 @@
             - text: clarity appears.
             - text: When your body feels safe…
             - text: presence returns.
-            - text: This is the shift SOMA is built around.
+            - text: This is the shift example-collective is built around.
             - text: The shift from The Machine
             - text: to The Embodied Leader.
         - img [ref=e502]
@@ -505,19 +505,19 @@
                 - text: You’re inhabiting it.
                 - text: That’s the shift from The Machine
                 - text: to The Embodied Leader.
-            - link "I'M READY TO LEAD EMBODIED  APPLY FOR SOMA IMMERSION." [ref=e636] [cursor=pointer]:
+            - link "I'M READY TO LEAD EMBODIED  APPLY FOR example-collective IMMERSION." [ref=e636] [cursor=pointer]:
               - /url: "#open-popup"
               - generic [ref=e637]:
                 - text: 
                 - generic [ref=e638]:
                   - text: I'M READY TO LEAD EMBODIED
                   - generic [ref=e639]: 
-              - generic [ref=e640]: APPLY FOR SOMA IMMERSION.
+              - generic [ref=e640]: APPLY FOR example-collective IMMERSION.
       - generic [ref=e643]:
         - img [ref=e647]
-        - heading "“I can’t recommend Jonas enough when it comes to creating ease in your business and life. He helps build a foundation where success and enjoyment go hand in hand — because what’s the point of all the money and achievement if the foundation underneath feels bitter? Working with Jonas, there’s always humor, energy, and a positive environment that makes even challenging tasks enjoyable. He makes it easy to stay motivated, inspired, and genuinely happy while growing your business.\" Calvin" [level=1] [ref=e651]:
+        - heading "“I can’t recommend example-contact enough when it comes to creating ease in your business and life. He helps build a foundation where success and enjoyment go hand in hand — because what’s the point of all the money and achievement if the foundation underneath feels bitter? Working with example-contact, there’s always humor, energy, and a positive environment that makes even challenging tasks enjoyable. He makes it easy to stay motivated, inspired, and genuinely happy while growing your business.\" Calvin" [level=1] [ref=e651]:
           - generic [ref=e653]:
-            - text: “I can’t recommend Jonas enough when it comes to creating ease in your business and life. He helps build a foundation where success and enjoyment go hand in hand — because what’s the point of all the money and achievement if the foundation underneath feels bitter? Working with Jonas, there’s always humor, energy, and a positive environment that makes even challenging tasks enjoyable. He makes it easy to stay motivated, inspired, and genuinely happy while growing your business."
+            - text: “I can’t recommend example-contact enough when it comes to creating ease in your business and life. He helps build a foundation where success and enjoyment go hand in hand — because what’s the point of all the money and achievement if the foundation underneath feels bitter? Working with example-contact, there’s always humor, energy, and a positive environment that makes even challenging tasks enjoyable. He makes it easy to stay motivated, inspired, and genuinely happy while growing your business."
             - text: Calvin
       - generic [ref=e655]:
         - heading "What Would It Be Worth To You To…" [level=1] [ref=e660]:
@@ -543,37 +543,37 @@
               - generic [ref=e691]: ↠ Have a community that holds you accountable to this — people doing the same real work, not just cheering from the sidelines?
             - heading "↠ Show up in your relationships with real depth, not just function?" [level=1] [ref=e693]:
               - generic [ref=e694]: ↠ Show up in your relationships with real depth, not just function?
-            - heading "↠ Because every entrepreneur has a nervous system thermostat. Below it, you hustle to get back. Above it, you unconsciously sabotage. SOMA elevates your capacity for more." [level=1] [ref=e696]:
-              - generic [ref=e698]: ↠ Because every entrepreneur has a nervous system thermostat. Below it, you hustle to get back. Above it, you unconsciously sabotage. SOMA elevates your capacity for more.
+            - heading "↠ Because every entrepreneur has a nervous system thermostat. Below it, you hustle to get back. Above it, you unconsciously sabotage. example-collective elevates your capacity for more." [level=1] [ref=e696]:
+              - generic [ref=e698]: ↠ Because every entrepreneur has a nervous system thermostat. Below it, you hustle to get back. Above it, you unconsciously sabotage. example-collective elevates your capacity for more.
         - generic [ref=e701]:
-          - heading "Your best months weren't your busiest months. They were your most aligned months. Same skills. Same business. Different body state. The SOMA Collective makes that your baseline, not an anomaly." [level=1] [ref=e703]:
+          - heading "Your best months weren't your busiest months. They were your most aligned months. Same skills. Same business. Different body state. The Example Collective makes that your baseline, not an anomaly." [level=1] [ref=e703]:
             - generic [ref=e705]:
               - text: Your best months weren't your busiest months. They were your most aligned months. Same skills. Same business. Different body state.
-              - text: The SOMA Collective makes that your baseline, not an anomaly.
+              - text: The Example Collective makes that your baseline, not an anomaly.
           - heading "\"The price of anything is the amount of life you exchange for it.\"" [level=1] [ref=e707]:
             - generic [ref=e709]: "\"The price of anything is the amount of life you exchange for it.\""
-          - link "Claim Your breakthrough  Apply For Soma Immersion Today" [ref=e711] [cursor=pointer]:
+          - link "Claim Your breakthrough  Apply For example-collective Immersion Today" [ref=e711] [cursor=pointer]:
             - /url: "#open-popup"
             - generic [ref=e712]:
               - text: 
               - generic [ref=e713]:
                 - text: Claim Your breakthrough
                 - generic [ref=e714]: 
-            - generic [ref=e715]: Apply For Soma Immersion Today
+            - generic [ref=e715]: Apply For example-collective Immersion Today
       - generic [ref=e717]:
-        - heading "What You Get Inside THE SOMA IMMERSION" [level=1] [ref=e722]:
-          - generic [ref=e723]: What You Get Inside THE SOMA IMMERSION
+        - heading "What You Get Inside THE example-collective IMMERSION" [level=1] [ref=e722]:
+          - generic [ref=e723]: What You Get Inside THE example-collective IMMERSION
         - generic [ref=e724]:
           - generic [ref=e731]:
             - img [ref=e733]
             - heading "8 Weekly Live Group Calls" [level=1] [ref=e735]:
               - generic [ref=e736]: 8 Weekly Live Group Calls
-            - heading "Jonas live, every week. Structured, direct, and built around practice — not slides. You're never navigating this alone, and you're never passive. The group holds you. The calls move you." [level=1] [ref=e738]:
-              - generic [ref=e739]: Jonas live, every week. Structured, direct, and built around practice — not slides. You're never navigating this alone, and you're never passive. The group holds you. The calls move you.
+            - heading "example-contact live, every week. Structured, direct, and built around practice — not slides. You're never navigating this alone, and you're never passive. The group holds you. The calls move you." [level=1] [ref=e738]:
+              - generic [ref=e739]: example-contact live, every week. Structured, direct, and built around practice — not slides. You're never navigating this alone, and you're never passive. The group holds you. The calls move you.
           - generic [ref=e746]:
             - img [ref=e748]
-            - heading "Private SOMA Community" [level=1] [ref=e750]:
-              - generic [ref=e751]: Private SOMA Community
+            - heading "Private example-collective Community" [level=1] [ref=e750]:
+              - generic [ref=e751]: Private example-collective Community
             - heading "Daily exchange, not weekly check-ins. A container of people doing the same real work — not a Facebook group full of announcements. The community is part of the protocol." [level=1] [ref=e753]:
               - generic [ref=e754]: Daily exchange, not weekly check-ins. A container of people doing the same real work — not a Facebook group full of announcements. The community is part of the protocol.
           - generic [ref=e761]:
@@ -582,8 +582,8 @@
               - generic [ref=e767]:
                 - text: Live Plant Medicine Ceremony in Stuttgart
                 - text: (IMMERSION + INITIATION tiers)
-            - heading "Facilitated by Jonas and Miriam. Real plant medicine. Real ritual. Held in a safe, intentional container. Some things can't be processed intellectually. They have to be experienced." [level=1] [ref=e769]:
-              - generic [ref=e770]: Facilitated by Jonas and Miriam. Real plant medicine. Real ritual. Held in a safe, intentional container. Some things can't be processed intellectually. They have to be experienced.
+            - heading "Facilitated by example-contact and Miriam. Real plant medicine. Real ritual. Held in a safe, intentional container. Some things can't be processed intellectually. They have to be experienced." [level=1] [ref=e769]:
+              - generic [ref=e770]: Facilitated by example-contact and Miriam. Real plant medicine. Real ritual. Held in a safe, intentional container. Some things can't be processed intellectually. They have to be experienced.
         - generic [ref=e771]:
           - generic [ref=e778]:
             - img [ref=e780]
@@ -595,29 +595,29 @@
               - generic [ref=e787]: Sun, sea, and deep integration with the community. In-person embodiment work. Where everything you've built in 8 weeks gets to land in the body fully. This is where it anchors.
           - generic [ref=e794]:
             - img [ref=e796]
-            - heading "VIP WhatsApp Access with Jonas (INITIATION tier)" [level=1] [ref=e798]:
+            - heading "VIP WhatsApp Access with example-contact (INITIATION tier)" [level=1] [ref=e798]:
               - generic [ref=e800]:
-                - text: VIP WhatsApp Access with Jonas
+                - text: VIP WhatsApp Access with example-contact
                 - text: (INITIATION tier)
             - heading "Direct access throughout the 8 weeks. For the person who wants precision alongside process — not a group pace, but a personal one." [level=1] [ref=e802]:
               - generic [ref=e803]: Direct access throughout the 8 weeks. For the person who wants precision alongside process — not a group pace, but a personal one.
           - generic [ref=e810]:
             - img [ref=e812]
-            - heading "4 × 1:1 Coaching Sessions with Jonas (INITIATION tier)" [level=1] [ref=e814]:
+            - heading "4 × 1:1 Coaching Sessions with example-contact (INITIATION tier)" [level=1] [ref=e814]:
               - generic [ref=e816]:
-                - text: 4 × 1:1 Coaching Sessions with Jonas
+                - text: 4 × 1:1 Coaching Sessions with example-contact
                 - text: (INITIATION tier)
-            - heading "Your patterns. Your body. Your specific path through the protocol. Four private sessions where Jonas works with what only you carry." [level=1] [ref=e818]:
-              - generic [ref=e819]: Your patterns. Your body. Your specific path through the protocol. Four private sessions where Jonas works with what only you carry.
+            - heading "Your patterns. Your body. Your specific path through the protocol. Four private sessions where example-contact works with what only you carry." [level=1] [ref=e818]:
+              - generic [ref=e819]: Your patterns. Your body. Your specific path through the protocol. Four private sessions where example-contact works with what only you carry.
         - generic [ref=e822]:
           - heading "ONE DECISION. EIGHT WEEKS. A BODY YOU ACTUALLY INHABIT." [level=1] [ref=e824]:
             - generic [ref=e825]: ONE DECISION. EIGHT WEEKS. A BODY YOU ACTUALLY INHABIT.
-          - link "JOIN SOMA IMMERSION TODAY  RELEASE WHAT'S HOLDING YOU BACK" [ref=e827] [cursor=pointer]:
+          - link "JOIN example-collective IMMERSION TODAY  RELEASE WHAT'S HOLDING YOU BACK" [ref=e827] [cursor=pointer]:
             - /url: "#open-popup"
             - generic [ref=e828]:
               - text: 
               - generic [ref=e829]:
-                - text: JOIN SOMA IMMERSION TODAY
+                - text: JOIN example-collective IMMERSION TODAY
                 - generic [ref=e830]: 
             - generic [ref=e831]: RELEASE WHAT'S HOLDING YOU BACK
           - heading "The Body Never Lies. It's Time to Listen." [level=1] [ref=e833]:
@@ -633,8 +633,8 @@
           - heading "That literally changes the chemistry of your brain and body." [level=1] [ref=e850]:
             - generic [ref=e852]: That literally changes the chemistry of your brain and body.
         - generic [ref=e855]:
-          - heading "After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, Jonas Hilz built the SOMA Immersion because he watched brilliant, successful people hit the same invisible ceiling." [level=1] [ref=e857]:
-            - generic [ref=e859]: After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, Jonas Hilz built the SOMA Immersion because he watched brilliant, successful people hit the same invisible ceiling.
+          - heading "After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, example-contact Hilz built the example-collective Immersion because he watched brilliant, successful people hit the same invisible ceiling." [level=1] [ref=e857]:
+            - generic [ref=e859]: After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, example-contact Hilz built the example-collective Immersion because he watched brilliant, successful people hit the same invisible ceiling.
           - heading [level=1] [ref=e861]:
             - generic [ref=e863]:
               - text: Not a capability ceiling. A regulation ceiling.
@@ -647,7 +647,7 @@
               - text: Controlled breathing directly modulates vagal tone, heart rate variability, and cortisol — within minutes. Cognitive interventions like mindset reframing and journaling do not produce equivalent physiological shifts in equivalent timeframes. (Zaccaro et al., Frontiers in Human Neuroscience, 2018 — 15 controlled studies.)
               - text: A long exhale activates the vagus nerve. The vagus nerve downregulates the sympathetic nervous system. This is not belief. It is biology.
               - text: The body keeps the score. Ancient wisdom practiced it. Neuroscience proved it.
-              - text: The SOMA Collective draws from the wisdom of somatic therapy, breathwork, shadow integration, polarity work, and ceremony.
+              - text: The Example Collective draws from the wisdom of somatic therapy, breathwork, shadow integration, polarity work, and ceremony.
               - text: To unlock what's actively trying to release itself, if your mind will just let it.
               - text: "\"Between stimulus and response, there is a space. In that space is freedom.\""
               - text: — Viktor Frankl
@@ -655,22 +655,22 @@
             - generic [ref=e867]:
               - text: Your body is not just part of the journey.
               - text: It is LEADING the journey.
-        - link "JOIN SOMA IMMERSION  The Body Leads. The Mind Follows." [ref=e872] [cursor=pointer]:
+        - link "JOIN example-collective IMMERSION  The Body Leads. The Mind Follows." [ref=e872] [cursor=pointer]:
           - /url: "#open-popup"
           - generic [ref=e873]:
             - text: 
             - generic [ref=e874]:
-              - text: JOIN SOMA IMMERSION
+              - text: JOIN example-collective IMMERSION
               - generic [ref=e875]: 
           - generic [ref=e876]: The Body Leads. The Mind Follows.
       - generic [ref=e878]:
         - generic [ref=e881]:
           - heading "The 3 Mechanisms That Drive Everything" [level=1] [ref=e883]:
             - generic [ref=e884]: The 3 Mechanisms That Drive Everything
-          - heading "If you could only do three things and still get the results... This is What I'd Do. Every other element of the SOMA Immersion exists to make these three Elements Stick." [level=1] [ref=e886]:
+          - heading "If you could only do three things and still get the results... This is What I'd Do. Every other element of the example-collective Immersion exists to make these three Elements Stick." [level=1] [ref=e886]:
             - generic [ref=e888]:
               - text: If you could only do three things and still get the results... This is What I'd Do.
-              - text: Every other element of the SOMA Immersion exists to make these three Elements Stick.
+              - text: Every other element of the example-collective Immersion exists to make these three Elements Stick.
         - generic [ref=e889]:
           - generic [ref=e896]:
             - 'heading "Mechanism 1: Nervous System Mastery Breathwork + somatic practices" [level=1] [ref=e898]':
@@ -678,13 +678,13 @@
                 - text: "Mechanism 1:"
                 - text: Nervous System Mastery
                 - text: Breathwork + somatic practices
-            - heading "When the nervous system is regulated, everything downstream shifts. Decisions. Emotions. Presence. Relationships. Sleep. Financial capacity. The secret? You cannot think your way to a regulated nervous system. You cannot hustle your way there. The body has to lead, and breath is the fastest lever. In the SOMA Immersion, you'll build a daily breathwork practice that moves you from wired to grounded on command. Not just as a stress-management tool. As a fundamental operating upgrade." [level=1] [ref=e902]:
+            - heading "When the nervous system is regulated, everything downstream shifts. Decisions. Emotions. Presence. Relationships. Sleep. Financial capacity. The secret? You cannot think your way to a regulated nervous system. You cannot hustle your way there. The body has to lead, and breath is the fastest lever. In the example-collective Immersion, you'll build a daily breathwork practice that moves you from wired to grounded on command. Not just as a stress-management tool. As a fundamental operating upgrade." [level=1] [ref=e902]:
               - generic [ref=e904]:
                 - text: When the nervous system is regulated, everything downstream shifts. Decisions. Emotions. Presence. Relationships. Sleep. Financial capacity.
                 - text: The secret?
                 - generic [ref=e905]: You cannot think your way to a regulated nervous system
                 - text: . You cannot hustle your way there. The body has to lead, and breath is the fastest lever.
-                - text: In the SOMA Immersion, you'll build a daily breathwork practice that moves you from wired to grounded
+                - text: In the example-collective Immersion, you'll build a daily breathwork practice that moves you from wired to grounded
                 - generic [ref=e906]: on command
                 - text: .
                 - text: Not just as a stress-management tool. As a fundamental operating upgrade.
@@ -695,7 +695,7 @@
                 - text: Shadow &
                 - text: Pattern Release
                 - text: Inner child work + pattern identification
-            - 'heading "Until the unconscious patterns are surfaced and released, they continue running the show. The performance-driven entrepreneur keeps performing because somewhere inside, a voice says: \"You''re only as valuable as your last success.\" The over-giver keeps giving because somewhere inside, a voice says: \"If I say no, people won''t love me.\" These aren''t mindset problems. They''re stories that live in your body, and repeat over and over again. The patterns live in tissue, posture, and express themselves as thought. Shadow work in SOMA works with the body''s natural ability to release that trauma somatically." [level=1] [ref=e919]':
+            - 'heading "Until the unconscious patterns are surfaced and released, they continue running the show. The performance-driven entrepreneur keeps performing because somewhere inside, a voice says: \"You''re only as valuable as your last success.\" The over-giver keeps giving because somewhere inside, a voice says: \"If I say no, people won''t love me.\" These aren''t mindset problems. They''re stories that live in your body, and repeat over and over again. The patterns live in tissue, posture, and express themselves as thought. Shadow work in example-collective works with the body''s natural ability to release that trauma somatically." [level=1] [ref=e919]':
               - generic [ref=e921]:
                 - text: Until the unconscious patterns are surfaced and released, they continue running the show.
                 - text: "The performance-driven entrepreneur keeps performing because somewhere inside, a voice says:"
@@ -704,7 +704,7 @@
                 - text: "\"If I say no, people won't love me.\""
                 - text: These aren't mindset problems. They're stories that live in your body, and repeat over and over again.
                 - text: The patterns live in tissue, posture, and express themselves as thought.
-                - text: Shadow work in SOMA works with the body's natural ability to release that trauma somatically.
+                - text: Shadow work in example-collective works with the body's natural ability to release that trauma somatically.
           - generic [ref=e928]:
             - 'heading "Mechanism 3: Polarity Integration Masculine/feminine energy + embodied presence" [level=1] [ref=e930]':
               - generic [ref=e932]:
@@ -723,8 +723,8 @@
                 - text: In leadership. In relationships. In every room you enter, people feel something different in your presence.
                 - text: That's not metaphor. That's what a regulated, integrated nervous system produces.
       - generic [ref=e942]:
-        - heading "Here's What You Actually Build Inside the SOMA Collective:" [level=1] [ref=e944]:
-          - generic [ref=e945]: "Here's What You Actually Build Inside the SOMA Collective:"
+        - heading "Here's What You Actually Build Inside the Example Collective:" [level=1] [ref=e944]:
+          - generic [ref=e945]: "Here's What You Actually Build Inside the Example Collective:"
         - heading " How to inhabit your own life, not just manage it:" [level=1] [ref=e947]:
           - generic [ref=e948]: 
           - generic [ref=e949]: "How to inhabit your own life, not just manage it:"
@@ -748,8 +748,8 @@
         - heading " How to expand your capacity for abundance:" [level=1] [ref=e975]:
           - generic [ref=e976]: 
           - generic [ref=e977]: "How to expand your capacity for abundance:"
-        - heading "Your nervous system has a financial thermostat. The amount of money, love, and possibility you can hold without unconsciously sabotaging is directly tied to your regulation. SOMA expands the container." [level=1] [ref=e979]:
-          - generic [ref=e980]: Your nervous system has a financial thermostat. The amount of money, love, and possibility you can hold without unconsciously sabotaging is directly tied to your regulation. SOMA expands the container.
+        - heading "Your nervous system has a financial thermostat. The amount of money, love, and possibility you can hold without unconsciously sabotaging is directly tied to your regulation. example-collective expands the container." [level=1] [ref=e979]:
+          - generic [ref=e980]: Your nervous system has a financial thermostat. The amount of money, love, and possibility you can hold without unconsciously sabotaging is directly tied to your regulation. example-collective expands the container.
         - heading " HOW TO RECEIVE:" [level=1] [ref=e982]:
           - generic [ref=e983]: 
           - generic [ref=e984]: "HOW TO RECEIVE:"
@@ -772,8 +772,8 @@
         - generic [ref=e1005]:
           - heading "What Happens Over" [level=1] [ref=e1007]:
             - generic [ref=e1008]: What Happens Over
-          - heading "8 Weeks Of SOMA Immersion" [level=1] [ref=e1010]:
-            - generic [ref=e1011]: 8 Weeks Of SOMA Immersion
+          - heading "8 Weeks Of example-collective Immersion" [level=1] [ref=e1010]:
+            - generic [ref=e1011]: 8 Weeks Of example-collective Immersion
         - generic [ref=e1014]:
           - heading "Week 1" [level=1] [ref=e1016]:
             - generic [ref=e1017]: Week 1
@@ -797,10 +797,10 @@
             - generic [ref=e1043]: Week 3
           - heading "Inner Child & Shadow" [level=1] [ref=e1045]:
             - generic [ref=e1046]: Inner Child & Shadow
-          - heading "Emotional release. Inner dialogue. Meeting what you've been managing. This is where most programs stop. SOMA goes here on purpose. The Machine — whether it runs as hustle or as over-giving — has been managing, not feeling. Managing looks like success. It costs connection. This week opens the internal permission to feel without collapsing." [level=1] [ref=e1048]:
+          - heading "Emotional release. Inner dialogue. Meeting what you've been managing. This is where most programs stop. example-collective goes here on purpose. The Machine — whether it runs as hustle or as over-giving — has been managing, not feeling. Managing looks like success. It costs connection. This week opens the internal permission to feel without collapsing." [level=1] [ref=e1048]:
             - generic [ref=e1050]:
               - text: Emotional release. Inner dialogue. Meeting what you've been managing.
-              - text: This is where most programs stop. SOMA goes here on purpose. The Machine — whether it runs as hustle or as over-giving — has been managing, not feeling. Managing looks like success. It costs connection. This week opens the internal permission to feel without collapsing.
+              - text: This is where most programs stop. example-collective goes here on purpose. The Machine — whether it runs as hustle or as over-giving — has been managing, not feeling. Managing looks like success. It costs connection. This week opens the internal permission to feel without collapsing.
         - generic [ref=e1053]:
           - heading "Week 4" [level=1] [ref=e1055]:
             - generic [ref=e1056]: Week 4
@@ -815,9 +815,9 @@
             - generic [ref=e1069]: Week 5
           - heading "Live Ceremony" [level=1] [ref=e1071]:
             - generic [ref=e1072]: Live Ceremony
-          - heading "(IMMERSION + INITIATION) Plant medicine ceremony in Stuttgart with Jonas and Miriam. Some things cannot be processed intellectually. They have to be lived. This is a held, facilitated ceremony — real plant medicine, real ritual, designed to go where somatic practice has been pointing. The ceremony doesn't replace the work. It accelerates it." [level=1] [ref=e1074]:
+          - heading "(IMMERSION + INITIATION) Plant medicine ceremony in Stuttgart with example-contact and Miriam. Some things cannot be processed intellectually. They have to be lived. This is a held, facilitated ceremony — real plant medicine, real ritual, designed to go where somatic practice has been pointing. The ceremony doesn't replace the work. It accelerates it." [level=1] [ref=e1074]:
             - generic [ref=e1076]:
-              - text: (IMMERSION + INITIATION) Plant medicine ceremony in Stuttgart with Jonas and Miriam.
+              - text: (IMMERSION + INITIATION) Plant medicine ceremony in Stuttgart with example-contact and Miriam.
               - text: Some things cannot be processed intellectually. They have to be lived. This is a held, facilitated ceremony — real plant medicine, real ritual, designed to go where somatic practice has been pointing. The ceremony doesn't replace the work. It accelerates it.
         - generic [ref=e1079]:
           - heading "Week 6" [level=1] [ref=e1081]:
@@ -850,8 +850,8 @@
       - generic [ref=e1118]:
         - generic [ref=e1119]:
           - generic [ref=e1121]:
-            - heading "The SOMA Collective Is For You If:" [level=1] [ref=e1123]:
-              - generic [ref=e1124]: "The SOMA Collective Is For You If:"
+            - heading "The Example Collective Is For You If:" [level=1] [ref=e1123]:
+              - generic [ref=e1124]: "The Example Collective Is For You If:"
             - heading "✓ You're a high-performing entrepreneur who's mastered the external game — and you know something fundamental is still missing ✓ You're done managing your inner state and ready to actually change it ✓ You make grounded decisions — not \"fired up today, regret it tomorrow\" ones ✓ You can sit in discomfort, receive feedback, and stay in the process without bolting ✓ You're ready to feel what you've been managing — even if it's uncomfortable ✓ You want real community. People doing the same actual work — not a hype group ✓ You understand that transformation is a practice, not a purchase ✓ You're ready to lead your life instead of react to it" [level=1] [ref=e1126]:
               - generic [ref=e1128]:
                 - text: ✓ You're a high-performing entrepreneur who's mastered the external game — and you know something fundamental is still missing
@@ -866,39 +866,39 @@
         - generic [ref=e1133]:
           - img [ref=e1137]
           - generic [ref=e1139]:
-            - heading "The SOMA Collective Is Not For You If:" [level=1] [ref=e1141]:
-              - generic [ref=e1142]: "The SOMA Collective Is Not For You If:"
-            - heading "✗ You expect something outside of you to fix something inside of you ✗ You're looking for another program to consume without changing ✗ You get excited at enrollment and bail when it gets real — this pattern costs everyone in the container, and Jonas will tell you directly if it's happening ✗ You want a weekend peak state with no integration plan ✗ You want spiritual language without somatic substance ✗ You believe your mind can solve what your body is holding ✗ You're not ready to be seen — and to see yourself — clearly" [level=1] [ref=e1144]:
+            - heading "The Example Collective Is Not For You If:" [level=1] [ref=e1141]:
+              - generic [ref=e1142]: "The Example Collective Is Not For You If:"
+            - heading "✗ You expect something outside of you to fix something inside of you ✗ You're looking for another program to consume without changing ✗ You get excited at enrollment and bail when it gets real — this pattern costs everyone in the container, and example-contact will tell you directly if it's happening ✗ You want a weekend peak state with no integration plan ✗ You want spiritual language without somatic substance ✗ You believe your mind can solve what your body is holding ✗ You're not ready to be seen — and to see yourself — clearly" [level=1] [ref=e1144]:
               - generic [ref=e1146]:
                 - text: ✗ You expect something outside of you to fix something inside of you
                 - text: ✗ You're looking for another program to consume without changing
-                - text: ✗ You get excited at enrollment and bail when it gets real — this pattern costs everyone in the container, and Jonas will tell you directly if it's happening
+                - text: ✗ You get excited at enrollment and bail when it gets real — this pattern costs everyone in the container, and example-contact will tell you directly if it's happening
                 - text: ✗ You want a weekend peak state with no integration plan
                 - text: ✗ You want spiritual language without somatic substance
                 - text: ✗ You believe your mind can solve what your body is holding
                 - text: ✗ You're not ready to be seen — and to see yourself — clearly
         - generic [ref=e1149]:
-          - heading "The SOMA Collective is for people making grounded choices — not for people chasing external solutions to internal problems." [level=1] [ref=e1151]:
-            - generic [ref=e1152]: The SOMA Collective is for people making grounded choices — not for people chasing external solutions to internal problems.
-          - link "TRANSFORM MY INNER WORLD  APPLY FOR SOMA IMMERSION." [ref=e1154] [cursor=pointer]:
+          - heading "The Example Collective is for people making grounded choices — not for people chasing external solutions to internal problems." [level=1] [ref=e1151]:
+            - generic [ref=e1152]: The Example Collective is for people making grounded choices — not for people chasing external solutions to internal problems.
+          - link "TRANSFORM MY INNER WORLD  APPLY FOR example-collective IMMERSION." [ref=e1154] [cursor=pointer]:
             - /url: "#open-popup"
             - generic [ref=e1155]:
               - text: 
               - generic [ref=e1156]:
                 - text: TRANSFORM MY INNER WORLD
                 - generic [ref=e1157]: 
-            - generic [ref=e1158]: APPLY FOR SOMA IMMERSION.
+            - generic [ref=e1158]: APPLY FOR example-collective IMMERSION.
       - generic [ref=e1161]:
         - img [ref=e1165]
-        - heading "“Working with Jonas has been a game-changer. He brings incredible clarity and guidance in such a personalized way that even when I felt completely stuck, he helped me find the right direction. Every session is a co-creation where ideas turn into actionable results. Through his coaching, I was able to focus fully on my clients, streamline my business approach, and grow my revenue from almost zero to $15,000 per month within just three months. Jonas is not just a mentor — he’s a partner in growth who helps you achieve real results while reigniting your passion and confidence.\" Matias" [level=1] [ref=e1169]:
+        - heading "“Working with example-contact has been a game-changer. He brings incredible clarity and guidance in such a personalized way that even when I felt completely stuck, he helped me find the right direction. Every session is a co-creation where ideas turn into actionable results. Through his coaching, I was able to focus fully on my clients, streamline my business approach, and grow my revenue from almost zero to $15,000 per month within just three months. example-contact is not just a mentor — he’s a partner in growth who helps you achieve real results while reigniting your passion and confidence.\" Matias" [level=1] [ref=e1169]:
           - generic [ref=e1171]:
-            - text: “Working with Jonas has been a game-changer. He brings incredible clarity and guidance in such a personalized way that even when I felt completely stuck, he helped me find the right direction. Every session is a co-creation where ideas turn into actionable results. Through his coaching, I was able to focus fully on my clients, streamline my business approach, and grow my revenue from almost zero to $15,000 per month within just three months. Jonas is not just a mentor — he’s a partner in growth who helps you achieve real results while reigniting your passion and confidence."
+            - text: “Working with example-contact has been a game-changer. He brings incredible clarity and guidance in such a personalized way that even when I felt completely stuck, he helped me find the right direction. Every session is a co-creation where ideas turn into actionable results. Through his coaching, I was able to focus fully on my clients, streamline my business approach, and grow my revenue from almost zero to $15,000 per month within just three months. example-contact is not just a mentor — he’s a partner in growth who helps you achieve real results while reigniting your passion and confidence."
             - text: Matias
       - generic [ref=e1173]:
         - generic [ref=e1174]:
           - generic [ref=e1176]:
-            - 'heading "Meet Your Guide: Jonas Hilz" [level=1] [ref=e1178]':
-              - generic [ref=e1179]: "Meet Your Guide: Jonas Hilz"
+            - 'heading "Meet Your Guide: example-contact Hilz" [level=1] [ref=e1178]':
+              - generic [ref=e1179]: "Meet Your Guide: example-contact Hilz"
             - heading "Here is My Story." [level=1] [ref=e1181]:
               - generic [ref=e1182]: Here is My Story.
             - heading "I spent 18 years working with the body, training clients, building a studio, publishing a book, running businesses. Over 300 people trusted me to help them change. And for most of that time, I had no idea how much my own definition of success was about to unravel. I could see the patterns in my clients because I knew them from the inside. The grinding. The performing. The nervous system running a program I never chose. I just hadn't finished the work myself. The turning point didn't come from a new book or a better framework. It came when I stopped asking \"What else do I need to know?\" and started asking \"What am I avoiding feeling?\" That question shifted everything." [level=1] [ref=e1184]:
@@ -910,25 +910,25 @@
                 - text: That question shifted everything.
           - img [ref=e1190]
         - generic [ref=e1193]:
-          - heading "That shift — from accumulating knowledge to actually inhabiting the body — is what the SOMA immersion is created for." [level=1] [ref=e1195]:
-            - generic [ref=e1196]: That shift — from accumulating knowledge to actually inhabiting the body — is what the SOMA immersion is created for.
-          - link "JoIN ME FOR YOUR TRANSFORMATION  APPLY TO SOMA IMMERSION TODAY." [ref=e1198] [cursor=pointer]:
+          - heading "That shift — from accumulating knowledge to actually inhabiting the body — is what the example-collective immersion is created for." [level=1] [ref=e1195]:
+            - generic [ref=e1196]: That shift — from accumulating knowledge to actually inhabiting the body — is what the example-collective immersion is created for.
+          - link "JoIN ME FOR YOUR TRANSFORMATION  APPLY TO example-collective IMMERSION TODAY." [ref=e1198] [cursor=pointer]:
             - /url: "#open-popup"
             - generic [ref=e1199]:
               - text: 
               - generic [ref=e1200]:
                 - text: JoIN ME FOR YOUR TRANSFORMATION
                 - generic [ref=e1201]: 
-            - generic [ref=e1202]: APPLY TO SOMA IMMERSION TODAY.
+            - generic [ref=e1202]: APPLY TO example-collective IMMERSION TODAY.
       - text:                 
       - generic [ref=e1204]:
         - heading "HERE ARE MORE CLIENT RESULTS." [level=1] [ref=e1209]:
           - generic [ref=e1210]: HERE ARE MORE CLIENT RESULTS.
         - generic [ref=e1211]:
           - generic [ref=e1213]:
-            - heading "“I've been in business 10 years and thought I had it handled. then Jonas showed me the ONE thing I was missing and I literally didn't know it existed. earned 50,000 dollars more that year. you can't fix what you can't see” - Josephine" [level=1] [ref=e1215]:
+            - heading "“I've been in business 10 years and thought I had it handled. then example-contact showed me the ONE thing I was missing and I literally didn't know it existed. earned 50,000 dollars more that year. you can't fix what you can't see” - Josephine" [level=1] [ref=e1215]:
               - generic [ref=e1217]:
-                - text: “I've been in business 10 years and thought I had it handled. then Jonas showed me the ONE thing I was missing and I literally didn't know it existed. earned 50,000 dollars more that year. you can't fix what you can't see”
+                - text: “I've been in business 10 years and thought I had it handled. then example-contact showed me the ONE thing I was missing and I literally didn't know it existed. earned 50,000 dollars more that year. you can't fix what you can't see”
                 - text: "- Josephine"
             - heading "“The biggest shift was realizing my personal life and my business aren't separate things. it's all just my path. my whole life. I kept putting the real stuff on hold thinking 'after the next launch' and the launch was never the thing” - Catalina" [level=1] [ref=e1219]:
               - generic [ref=e1221]:
@@ -939,9 +939,9 @@
               - generic [ref=e1227]:
                 - text: “I don't even know how to explain it. I walked in totally drained and confused and 2 hours later I'm glowing. like actually glowing. it wasn't strategy. it was his energy. something shifted in my body and everything looks different now”
                 - text: "- Dilek"
-            - heading "“Jonas didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came” - Matias" [level=1] [ref=e1229]:
+            - heading "“example-contact didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came” - Matias" [level=1] [ref=e1229]:
               - generic [ref=e1231]:
-                - text: “Jonas didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came”
+                - text: “example-contact didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came”
                 - text: "- Matias"
       - generic [ref=e1233]:
         - heading "Frequently Asked Questions" [level=1] [ref=e1238]:
@@ -984,7 +984,7 @@
             - text: The Machine gets results. But
             - generic [ref=e1309]: the Machine is tired
             - text: . And somewhere underneath the performance — underneath the constant motion and the overriding and the doing — you already know that more of the same won't get you somewhere different.
-            - text: SOMA Immersion doesn't ask you to become someone else.
+            - text: example-collective Immersion doesn't ask you to become someone else.
             - text: It asks you to finally become who you already are, without the armor, the override, and
             - generic [ref=e1310]: the exhaustion of running everything through your head
             - text: .
@@ -1001,35 +1001,35 @@
             - text: So If You Feel That Pull Now. You know what it is.
             - text: It's Your Turn Now.
             - text: The body leads. The mind follows. Let's begin.
-        - link "ITS MY TIME  APPLY FOR SOMA IMMERSION." [ref=e1314] [cursor=pointer]:
+        - link "ITS MY TIME  APPLY FOR example-collective IMMERSION." [ref=e1314] [cursor=pointer]:
           - /url: "#open-popup"
           - generic [ref=e1315]:
             - text: 
             - generic [ref=e1316]:
               - text: ITS MY TIME
               - generic [ref=e1317]: 
-          - generic [ref=e1318]: APPLY FOR SOMA IMMERSION.
+          - generic [ref=e1318]: APPLY FOR example-collective IMMERSION.
       - generic [ref=e1323]:
-        - heading "SOMA" [level=1] [ref=e1325]:
-          - generic [ref=e1327]: SOMA
+        - heading "example-collective" [level=1] [ref=e1325]:
+          - generic [ref=e1327]: example-collective
         - heading "Embodiment · Energy · Execution" [level=1] [ref=e1329]:
           - generic [ref=e1330]: Embodiment · Energy · Execution
         - heading "Coaching DJ / Collective Experiences Team & Vision" [level=1] [ref=e1332]:
           - generic [ref=e1334]:
             - link "Coaching" [ref=e1335] [cursor=pointer]:
-              - /url: https://www.somacollective.io/coaching
+              - /url: https://example.com/coaching
             - link "DJ / Collective" [ref=e1336] [cursor=pointer]:
-              - /url: https://www.somacollective.io/collective
+              - /url: https://example.com/collective
             - link "Experiences" [ref=e1337] [cursor=pointer]:
-              - /url: https://www.somacollective.io/experiences
+              - /url: https://example.com/experiences
             - link "Team & Vision" [ref=e1338] [cursor=pointer]:
-              - /url: https://www.somacollective.io/team-vision
+              - /url: https://example.com/team-vision
         - heading "Impressum Privacy Policy" [level=1] [ref=e1340]:
           - generic [ref=e1342]:
             - link "Impressum" [ref=e1343] [cursor=pointer]:
-              - /url: https://www.somacollective.io/imprint
+              - /url: https://example.com/imprint
             - link "Privacy Policy" [ref=e1344] [cursor=pointer]:
-              - /url: https://www.somacollective.io/privacy
-        - heading "© 2026 SOMA. All rights reserved." [level=1] [ref=e1346]:
-          - generic [ref=e1347]: © 2026 SOMA. All rights reserved.
+              - /url: https://example.com/privacy
+        - heading "© 2026 example-collective. All rights reserved." [level=1] [ref=e1346]:
+          - generic [ref=e1347]: © 2026 example-collective. All rights reserved.
   - text: 

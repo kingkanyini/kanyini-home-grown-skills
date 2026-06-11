@@ -9,7 +9,7 @@
 # PART 0 — SKILL CORE
 
 ## 0.1 Identity & Pillars
-- Name: King <your-name> (Christapher Benson)
+- Name: King <your-name> (Your Name)
 - Sign-off style: Spiritual-warrior valedictions followed by `King "[Descriptor]" <your-name>` (e.g., "With Courageous Vulnerability, King 'Dragonslayer' <your-name>")
 - Niche: Gamified wellness, transformational coaching, breathwork
 - Audience: Entrepreneurs, successful healing practitioners, and professionals (ages 30-50) who grew up gaming, have achieved some success but feel stuck, and resonate with both gaming and spiritual concepts. Tired of "the matrix" and want to make life fun again while achieving success.

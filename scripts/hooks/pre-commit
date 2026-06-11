@@ -8,9 +8,14 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-echo "[pre-commit] Running validators + leak audit..."
+echo "[pre-commit] Running leak audit + validators..."
 
-# 1. Schema validation
+# 1. Leak audit FIRST — only needs fs/path, so it runs even when node_modules is absent (ARCHITECT).
+#    This is the gate that prevents client/owner PII from ever reaching a commit.
+echo "[pre-commit] leak-audit"
+node scripts/leak-audit.mjs || { echo "❌ leak-audit found client/owner PII. Abort commit."; exit 1; }
+
+# 2. Schema validation
 if [ -d node_modules ]; then
   echo "[pre-commit] validate:plugins"
   node scripts/validate-plugin-jsons.mjs || { echo "❌ plugin.json validation failed."; exit 1; }

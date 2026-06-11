@@ -37,9 +37,9 @@ const PHASE_1_SKILLS = [
   // T1 Foundation
   'savepoint', 'quicksave', 'counsel-dispatch', 'council-primer', 'learn-eval',
   // T2 Daily Intel
-  'morning-compass', 'inbox-digest', 'perplexity-research',
+  'inbox-digest', 'perplexity-research',
   // T3 Voice
-  'voice-dna-extractor', 'voice-dna-blueprint-builder', 'charisma-codes',
+  'voice-dna-extractor', 'voice-dna-blueprint-builder', 'voice-profile-build', 'charisma-codes',
   // T4 Build & Ship
   'exportskill', 'quickshare', 'skill-to-site',
   // T5 Offer
@@ -126,6 +126,42 @@ const FIND_REPLACE = [
   { find: /run-mara\b/g, replace: 'run-example' },  // batch file name
   { find: /mara-feil/g, replace: '<example-client>' },  // slug example
   { find: /\bmara\b/gi, replace: '<example-client>' },  // case-insensitive bare match (catches "Mara" + "mara" in slugs + log prefixes)
+  // ── Client identifiers (NSA Triple Threat #30 sanitization, 2026-06-10) — mirror of the one-off scrub
+  // dictionary so rebuilds stay clean. Bracket-free placeholders (safe in paths/slugs/.js/.json).
+  // \bsoma\b is WORD-BOUNDED — never flags "somatic" (no boundary after the 'a'). Longest-match-first.
+  { find: /jen-the-gut-center/g, replace: 'example-client' },
+  { find: /jen-deliverables/g, replace: 'example-deliverables' },
+  { find: /gut-center/g, replace: 'example-client' },
+  { find: /GutCenter/g, replace: 'ExampleClient' },
+  { find: /\bJen\b/g, replace: 'Sam' },
+  { find: /two-eagles-construction/g, replace: 'summit-builders' },
+  { find: /two-eagles/g, replace: 'summit-builders' },
+  { find: /Adeyemi Adeyosoye/g, replace: 'Exemplar One' },
+  { find: /adeyemi-adeyosoye/g, replace: 'exemplar-one' },
+  { find: /\bAdeyemi\b/g, replace: 'Exemplar One' },
+  { find: /\badeyemi\b/g, replace: 'exemplar-one' },
+  { find: /\bAdeyosoye\b/g, replace: 'Exemplar One' },
+  { find: /Jemie Sae Koo/g, replace: 'Exemplar Two' },
+  { find: /jemie-sae-koo/g, replace: 'exemplar-two' },
+  { find: /\bJemie\b/g, replace: 'Exemplar Two' },
+  { find: /\bjemie\b/g, replace: 'exemplar-two' },
+  { find: /Psychable/gi, replace: 'Example Wellness Co' },
+  { find: /booking\.luxianamusic\.com/gi, replace: 'example.com' },
+  { find: /luxianamusic\.com/gi, replace: 'example.com' },
+  { find: /calendly\.com\/luxianamusic[\w/-]*/gi, replace: 'calendly.com/example' },
+  { find: /luxiana/gi, replace: 'example-artist' },
+  { find: /SOMA Collective/g, replace: 'Example Collective' },
+  { find: /(?:www\.)?somacollective\.io/gi, replace: 'example.com' },
+  { find: /\bsoma\b/gi, replace: 'example-collective' },
+  { find: /SacralUproar\.com/gi, replace: 'example.com' },
+  { find: /sacral-uproar/gi, replace: 'example-brand' },
+  { find: /SacralUproar/gi, replace: 'Example Brand' },
+  { find: /@?LightworkLuna/g, replace: 'ExampleHandle' },
+  { find: /\bjonas\b/gi, replace: 'example-contact' },
+  { find: /Christapher Benson/g, replace: 'Your Name' },
+  { find: /christapher[._]benson/gi, replace: 'your-handle' },
+  { find: /\bChristapher\b/g, replace: 'Your Name' },
+  { find: /warrior-sanctuary/g, replace: 'example-org' },
   // Kanyini's email (more specific than the general kingkanyini rule)
   { find: /kingkanyini@gmail\.com/g, replace: '<your-email>' },
   // Vercel team slug — broken for community otherwise

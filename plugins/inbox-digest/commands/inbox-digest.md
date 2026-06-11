@@ -104,37 +104,37 @@ Always print a concise summary at run end. Examples:
 
 **Single-client live run:**
 ```
-✓ /inbox-digest gut-center
+✓ /inbox-digest example-client
   Scanned 12 threads, filed 4 new (1 inferred), skipped 8 dupes, 2 attachments extracted.
-  Brief: context/clients/gut-center/briefs/2026-05-08_brief.md
+  Brief: context/clients/example-client/briefs/2026-05-08_brief.md
   Tasks added: 3 (1 needs verification — see *(inferred)* markers in tasks.md)
 ```
 
 **`--all` run (Sprint 1 — no Phase 4):**
 ```
 ✓ /inbox-digest --all
-  4 clients scanned: gut-center (4 new), warrior-sanctuary (1 new), psychable (0), two-eagles-construction (2 new).
+  4 clients scanned: example-client (4 new), example-org (1 new), Example Wellness Co (0), summit-builders (2 new).
   Per-client briefs: context/clients/<slug>/briefs/2026-05-08_brief.md
   Sprint 2 deferred: cross-client morning digest will land here once the per-client briefs prove they're being read.
 ```
 
 **Dry-run:**
 ```
-✓ /inbox-digest gut-center --dry-run (NO WRITES, NO GMAIL LABELS, NO last_scan UPDATE)
+✓ /inbox-digest example-client --dry-run (NO WRITES, NO GMAIL LABELS, NO last_scan UPDATE)
   Would scan 12 threads, file 4 new, skip 8 dupes, extract 2 attachments.
-  Would apply Gmail label "Clients/GutCenter" to 4 threads.
-  Would write brief to context/clients/gut-center/briefs/2026-05-08_brief.md
-  Would add 3 tasks to context/clients/gut-center/tasks.md
+  Would apply Gmail label "Clients/ExampleClient" to 4 threads.
+  Would write brief to context/clients/example-client/briefs/2026-05-08_brief.md
+  Would add 3 tasks to context/clients/example-client/tasks.md
 ```
 
 **Bootstrap (folder layout — default):**
 ```
-✓ Bootstrapped gut-center: <example-client>
+✓ Bootstrapped example-client: <example-client>
   Layout:      folder
-  Frontmatter: <vault>/context/clients/gut-center/index.md
+  Frontmatter: <vault>/context/clients/example-client/index.md
   Next steps:
-    /inbox-digest gut-center --since 2026-04-01    # backfill 30+ days
-    /inbox-digest gut-center                       # scan since now
+    /inbox-digest example-client --since 2026-04-01    # backfill 30+ days
+    /inbox-digest example-client                       # scan since now
 ```
 
 **Bootstrap (flat-client layout):**

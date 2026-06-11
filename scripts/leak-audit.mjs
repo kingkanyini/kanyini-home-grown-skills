@@ -29,13 +29,31 @@ const LEAK_TOKENS = [
   { name: 'Kanyini (capitalized)', pattern: /Kanyini/g },
   { name: 'kanyini (lowercase)', pattern: /\bkanyini\b/g },
   { name: 'kingkanyini (GitHub handle)', pattern: /kingkanyini/g },
-  { name: 'Chris Benson', pattern: /Chris Benson/g },
+  { name: 'Chris/Christapher Benson', pattern: /Christapher Benson|Chris Benson/g },
+  { name: 'christapher (handle/standalone)', pattern: /\bchristapher\b/gi },
   { name: 'onebenson email prefix', pattern: /onebenson/g },
   // Path-adjacent Dropbox only (heuristic: Dropbox followed by slash + capital letter — personal vault paths)
   { name: 'Dropbox path (identity-revealing)', pattern: /Dropbox[\\\/]+[A-Z][a-zA-Z ]+/g },
   { name: 'ClaudeBrain vault folder', pattern: /ClaudeBrain/g },
   { name: 'C:\\Users (Windows path)', pattern: /C:[\\\/]Users/g },
   { name: 'claude-secrets reference', pattern: /\.claude-secrets/g },
+  // ── Client PII content tokens (NSA Triple Threat #30, 2026-06-10) — the audit must KNOW the client
+  // names, not just owner identity. \bsoma\b is word-bounded so it never flags "somatic" (CIPHER).
+  { name: 'Client (Adeyemi/Adeyosoye)', pattern: /Adeyemi|Adeyosoye/gi },
+  { name: 'Client (Jemie / Sae Koo)', pattern: /Jemie|Sae Koo/gi },
+  { name: 'Client (Psychable)', pattern: /Psychable/gi },
+  { name: 'Client (The Gut Center / gut-center)', pattern: /the gut center|gut-center|gutcenter/gi },
+  { name: 'Client (Jen slug)', pattern: /jen-the-gut-center|jen-deliverables/gi },
+  { name: 'Client (Mara Feil)', pattern: /mara feil/gi },
+  { name: 'Client (two-eagles)', pattern: /two-eagles/gi },
+  { name: 'Client (Luxiana)', pattern: /luxiana/gi },
+  { name: 'Client (SOMA Collective / domain)', pattern: /soma collective|somacollective/gi },
+  { name: 'Client (SOMA standalone — protects "somatic")', pattern: /\bsoma\b/gi },
+  { name: 'Client (SacralUproar / Lightwork Luna)', pattern: /sacral-?uproar|lightwork ?luna/gi },
+  { name: 'Client (Jonas)', pattern: /\bjonas\b/gi },
+  // ── Fail-CLOSED heuristic (CONDUIT A): catch the NEXT unknown client by shape, not denylist.
+  // US phone numbers; allowlist the reserved 555-01xx fictional block.
+  { name: 'Phone number (possible PII)', pattern: /\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, allowlist: [/555[-.\s]?01\d\d/] },
   // mdYmlOnly: [[...]] in .js/.json is code (nested arrays, template literals), not a vault wikilink —
   // matches the sanitizer's mdOnly semantics (Wave-2 fix: the old scrub corrupted shipped JS).
   { name: 'Wikilink', pattern: /\[\[[^\]]+\]\]/g, mdYmlOnly: true },
@@ -49,6 +67,8 @@ const FILENAME_LEAK_PATTERNS = [
   { name: 'Client name in filename (jen)', pattern: /jen(?![a-z])|jen[-_]?scan|install[-_]?jen/i },
   { name: 'Client name in filename (mara)', pattern: /\bmara\b|mara[-._]/i },
   { name: 'Client name in filename (gut-center)', pattern: /gut[-_]?center/i },
+  { name: 'Client name in filename (luxiana/soma/sacral/lightwork)', pattern: /luxiana|soma-|sacral-?uproar|lightwork/i },
+  { name: 'Client name in filename (adeyemi/jemie/psychable/jonas/two-eagles)', pattern: /adeyemi|jemie|psychable|jonas|two-eagles/i },
 ];
 
 // Allowlist — files where these tokens are EXPECTED (legitimate attribution).

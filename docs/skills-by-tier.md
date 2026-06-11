@@ -48,13 +48,6 @@ Scan Gmail for client emails, file into vault per-client, generate per-client da
 - **Requires:** _none_
 - **Recommends:** _none_
 
-### `morning-compass`
-
-7-minute morning briefing for coaches — pulls from Google Calendar, Stripe, Calendly, ClickFunnels, Basecamp, Instagram, YouTube. Delivers single-page brief.
-
-- **Requires:** _none_
-- **Recommends:** _none_
-
 ### `perplexity-research`
 
 On-demand citation-rich research via Perplexity Sonar API. Quick (~10s), Standard (~30s), or Deep (2-5min) tiers.
@@ -84,6 +77,13 @@ Extract clean voice DNA audio from IG, YouTube, or local video files. Auto-clean
 
 - **Requires:** _none_
 - **Recommends:** _none_
+
+### `voice-profile-build`
+
+Build a deep Voice DNA profile for any person. Recon → Copy Forensics Counsel #39 (4 parallel agents) → synthesis → 6-field Character Intake Card. Recon-based sibling to voice-dna-blueprint-builder.
+
+- **Requires:** _none_
+- **Recommends:** `voice-dna-blueprint-builder`, `savepoint`
 
 ## T4 — Build & Ship
 

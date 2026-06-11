@@ -80,7 +80,7 @@ Before reviewing the FIRST section of a deck, lock these and capture them in a p
 
 ## Layer 2 — Voice (per-speaker agents)
 
-**Dispatch:** Spawn 1 subagent per distinct speaker. For a co-hosted webinar (e.g., Jemie + <your-name>), that's 2 agents in parallel. Each agent:
+**Dispatch:** Spawn 1 subagent per distinct speaker. For a co-hosted webinar (e.g., Exemplar Two + <your-name>), that's 2 agents in parallel. Each agent:
 - Loads the FULL voice profile from `~/.claude/references/voice-profiles/[speaker]/[speaker]-voice.md`
 - Audits ONLY their speaker's dialogue
 - Returns a voice fingerprint audit table (must-haves found vs missing, with counts)
@@ -89,11 +89,11 @@ Before reviewing the FIRST section of a deck, lock these and capture them in a p
 **Score calibration:** "9+/10 = if [their spouse / mother / closest collaborator] read this cold, they'd say 'yeah, that's [name].'" Be ruthless — the fingerprint audit catches what generic AI smoothing misses.
 
 **Key fingerprints to verify per speaker** (each voice profile should specify):
-- Signature verbal tics (e.g., Jemie's "right?" ~140+ hits / "and so" ~70+ / "what I'll say is" ~15 / "really really" ~12)
-- Master verbs (e.g., Jemie's "embody / resource as transitive verb")
+- Signature verbal tics (e.g., Exemplar Two's "right?" ~140+ hits / "and so" ~70+ / "what I'll say is" ~15 / "really really" ~12)
+- Master verbs (e.g., Exemplar Two's "embody / resource as transitive verb")
 - Sentence rhythm targets (e.g., <your-name>'s 40% short / 35% medium / 25% long)
 - Vocabulary cluster discipline
-- Em-dash budget per profile (e.g., Jemie max 1 per sentence, <your-name> max 2 inter-clause per section)
+- Em-dash budget per profile (e.g., Exemplar Two max 1 per sentence, <your-name> max 2 inter-clause per section)
 - Banned phrases specific to the speaker
 
 ---
@@ -132,7 +132,7 @@ Before reviewing the FIRST section of a deck, lock these and capture them in a p
 7. **Number / stat consistency** — Every number in this section matches the canonical value in the policies file (e.g., "1 in 2,000," "5 Levels," "$1,997"). Flag every contradiction.
 8. **Identity name + canonical language** — Single canonical identity term used (e.g., "Authentic AI Architect" — never "Builder" or "Operator"). Hermes language matches the locked phrasing where applicable.
 9. **Story / bio / framework continuity** — Bio details (e.g., Princeton + shaman + 1,000 hours + Amaroo + Warrior Sanctuary) match across sections. Frameworks (V.I.S.A., 6Cs, 5 Levels) named consistently.
-10. **Voice continuity per speaker across sections** — Does Jemie still sound like Jemie in this section as she did in the Opening? Does <your-name>'s AMAZE/STEADY/LIGHT register stay in profile? Cumulative tic budgets respected (e.g., Jemie's "right?" cadence rate matches Opening).
+10. **Voice continuity per speaker across sections** — Does Exemplar Two still sound like Exemplar Two in this section as she did in the Opening? Does <your-name>'s AMAZE/STEADY/LIGHT register stay in profile? Cumulative tic budgets respected (e.g., Exemplar Two's "right?" cadence rate matches Opening).
 
 **Promise → delivery continuity (the load-bearing arc):**
 11. **Promise → delivery** — Every promise made in the Opening (or any prior section) is DELIVERED in its scheduled section. If this section IS the delivery section for a prior promise, verify it actually delivers (not just references). If this section makes NEW promises, log them in the Continuity Ledger for the next section's foreman to track.
@@ -162,7 +162,7 @@ See <example-brand> policies file `<example-brand>-review-pipeline-policies.md` 
 
 **The AI-ism/Continuity Foreman does NOT load speaker-specific voice profiles.** It applies general AI-tell rules from CLAUDE.md.
 
-**When the foreman flags a phrase that is a documented voice tic in the voice profile** (e.g., Jemie's "and so" sentence-starter is one of her ~70+ corpus tics; the foreman may flag it as a "lazy opener" cousin of the banned "So," start), **the voice agent's call wins.** The voice agent has speaker-specific context the foreman lacks.
+**When the foreman flags a phrase that is a documented voice tic in the voice profile** (e.g., Exemplar Two's "and so" sentence-starter is one of her ~70+ corpus tics; the foreman may flag it as a "lazy opener" cousin of the banned "So," start), **the voice agent's call wins.** The voice agent has speaker-specific context the foreman lacks.
 
 **Override protocol:**
 1. Note the foreman's flag in the synthesis

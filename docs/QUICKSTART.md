@@ -56,7 +56,7 @@ Follow [`voice-and-counsel-build-guide.md`](voice-and-counsel-build-guide.md) �
 
 ## Step 6 — Try your first non-foundation skill
 
-Pick something that sounds useful — e.g., `/perplexity-research` if you do research, `/morning-compass` if you want a daily briefing.
+Pick something that sounds useful — e.g., `/perplexity-research` if you do research, `/inbox-digest` if you want per-client email briefings.
 
 ```
 /plugin install perplexity-research@kanyini-home-grown-skills

@@ -321,7 +321,7 @@ AskUserQuestion:
 
 AskUserQuestion:
 - "TBQ (The Breath Quotient)"
-- "SOMA Jonas"
+- "example-collective example-contact"
 - "Luna (Embodied Design)"
 - (Other — type client name)
 
@@ -490,9 +490,9 @@ AskUserQuestion:
 
 **Load at phase start:**
 - `reference/gold-standard-fidelity.md` (fidelity scoring rubric)
-- `reference/style-shots/style-shot-01-luxiana.md` (founder-voice gold standard)
+- `reference/style-shots/style-shot-01-example-artist.md` (founder-voice gold standard)
 - `reference/style-shots/style-shot-02-ltuvg.md` (gaming/low-ticket gold standard)
-- `reference/style-shots/style-shot-03-soma.md` (high-ticket somatic gold standard — primary default)
+- `reference/style-shots/style-shot-03-example-collective.md` (high-ticket somatic gold standard — primary default)
 - `reference/skeleton.md` (4-layer structural reference)
 - `reference/counsel-review-protocol.md`
 - Client voice profile from `~/.claude/references/voice-profiles/` (if exists)
@@ -504,10 +504,10 @@ AskUserQuestion:
 Follow `reference/gold-standard-fidelity.md` exactly:
 
 1. **Match each generated ad to its closest gold standard style shot** using the selection table in the rubric:
-   - Founder-voice (uses "I") → style-shot-01-luxiana
+   - Founder-voice (uses "I") → style-shot-01-example-artist
    - Gaming/metaphor-heavy/low-ticket → style-shot-02-ltuvg
-   - High-ticket coaching/healing/somatic → style-shot-03-soma (primary default)
-   - Other → style-shot-03-soma (most canonical)
+   - High-ticket coaching/healing/somatic → style-shot-03-example-collective (primary default)
+   - Other → style-shot-03-example-collective (most canonical)
 
 2. **Score the ad across 4 dimensions (100 points total):**
    - STRUCTURAL FIDELITY (30 pts) — sections present, order, proportions, formatting, length

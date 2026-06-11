@@ -80,7 +80,7 @@ Generate 5-7 headline options using these formulas:
 - Adding a time element ("in 8 weeks", "in 90 days") compresses the decision window
 - The phrasing should match the client's voice — "The Key To" creates a curiosity question, "How To" is more instructional
 - Populate BOTH sides from OO: Desire = OO Sec 4/7/8, Fear = OO Sec 3/10
-- Example: "The Key To Breaking Through Without Burning Out?" (SOMA — desire from Sec 4, fear from Sec 10)
+- Example: "The Key To Breaking Through Without Burning Out?" (example-collective — desire from Sec 4, fear from Sec 10)
 
 ---
 

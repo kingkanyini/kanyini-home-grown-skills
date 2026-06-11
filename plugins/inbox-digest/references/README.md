@@ -29,13 +29,13 @@ Phase 1 transparently resolves either layout at scan time, so all other commands
 ### Daily use
 
 ```
-/inbox-digest gut-center                  # one client, scan since last_scan
+/inbox-digest example-client                  # one client, scan since last_scan
 /inbox-digest --all                       # sweep every active client
-/inbox-digest gut-center --dry-run        # preview without any writes
-/inbox-digest gut-center --since 2026-04-01   # backfill window override
-/inbox-digest gut-center --triage         # also surface unmatched senders
-/inbox-digest gut-center --retention 365  # archive emails > 365 days old
-/inbox-digest gut-center --reset-last-scan 2026-05-01  # admin recovery
+/inbox-digest example-client --dry-run        # preview without any writes
+/inbox-digest example-client --since 2026-04-01   # backfill window override
+/inbox-digest example-client --triage         # also surface unmatched senders
+/inbox-digest example-client --retention 365  # archive emails > 365 days old
+/inbox-digest example-client --reset-last-scan 2026-05-01  # admin recovery
 ```
 
 ---

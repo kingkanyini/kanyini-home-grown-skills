@@ -10,7 +10,7 @@
 
 **Shared inputs for all 4 agents:**
 - Subject's interview transcript at `~/.claude/projects/[slug]-recon/interview-answers.md`
-- Gold-standard reference at `~/.claude/references/voice-profiles/adeyemi-adeyosoye/adeyemi-adeyosoye-blueprint.md`
+- Gold-standard reference at `~/.claude/references/voice-profiles/exemplar-one/exemplar-one-blueprint.md`
 - Blueprint template at `~/.claude/plugins/local/voice-dna-blueprint-builder/reference/blueprint-template.md`
 - Charisma Code MD if present at `~/.claude/references/voice-profiles/[slug]/[slug]-charisma-code.md`
 
@@ -21,7 +21,7 @@ You are Stefan Georgi, the RMBC copy architect. You are dispatched as the struct
 
 Read these files in order:
 1. Interview transcript: ~/.claude/projects/[slug]-recon/interview-answers.md
-2. Gold standard: ~/.claude/references/voice-profiles/adeyemi-adeyosoye/adeyemi-adeyosoye-blueprint.md
+2. Gold standard: ~/.claude/references/voice-profiles/exemplar-one/exemplar-one-blueprint.md
 3. Template: ~/.claude/plugins/local/voice-dna-blueprint-builder/reference/blueprint-template.md
 4. Charisma Code (if exists): ~/.claude/references/voice-profiles/[slug]/[slug]-charisma-code.md
 

@@ -8,10 +8,6 @@ This guide walks through every external dependency the Phase 1 bundle uses. Not 
 
 Built into claude.ai — link your Canva account in the integrations panel.
 
-### `mcp__composio__*`
-
-See https://docs.composio.dev/mcp — requires `COMPOSIO_API_KEY`. Bridges 100+ services (Calendar, Stripe, Calendly, ClickFunnels, etc.).
-
 ### `mcp__ffmpeg-mcp__*`
 
 See https://github.com/ffmpeg/mcp — requires `ffmpeg` CLI on PATH.
@@ -69,7 +65,6 @@ Set these in your `.env` file or your shell environment. Never commit `.env` to 
 | Variable | Used by | Where to get |
 |----------|---------|--------------|
 | `ANTHROPIC_API_KEY` | `skill-to-site` | _(set per service docs)_ |
-| `COMPOSIO_API_KEY` | `morning-compass` | _(set per service docs)_ |
 | `PERPLEXITY_API_KEY` | `perplexity-research` | _(set per service docs)_ |
 | `VERCEL_TOKEN` | `funnel-translate`, `skill-to-site` | _(set per service docs)_ |
 
@@ -78,20 +73,14 @@ Set these in your `.env` file or your shell environment. Never commit `.env` to 
 Some skills call out to managed services. You'll need accounts + auth for each.
 
 - **Anthropic** — used by `skill-to-site`
-- **Basecamp** — used by `morning-compass`
-- **Calendly** — used by `morning-compass`
 - **Canva** — used by `offer-optimizer`
-- **ClickFunnels** — used by `morning-compass`
-- **Composio** — used by `morning-compass`
 - **Gmail** — used by `inbox-digest`
-- **Google Calendar** — used by `morning-compass`
-- **Instagram** — used by `morning-compass`, `voice-dna-extractor`
+- **Instagram** — used by `voice-dna-extractor`
 - **Move-gate tooling: run npm install inside references/moves-library/_impl/gate/ before registering new moves** — used by `overlay-director`
 - **Optional: Imaginator art generation (Gemini) — without it, art cards become labeled placeholders** — used by `overlay-director`
 - **Optional: mcp__obsidian-brain__* vault MCP powers the effects registry — without it the feature no-ops** — used by `web-dev-bot`
 - **Perplexity** — used by `perplexity-research`
-- **Stripe** — used by `morning-compass`
 - **Vault MCP (mcp__obsidian-brain__*) is OPTIONAL — without a vault, the skill cold-starts from its shipped playbook digest (Phase 0.5d)** — used by `overlay-director`
 - **Vercel** — used by `funnel-translate`, `skill-to-site`
-- **YouTube** — used by `morning-compass`, `voice-dna-extractor`
+- **YouTube** — used by `voice-dna-extractor`
 - **hyperframes v0.6.x via npx — install: claude plugin marketplace add bradautomates/claude-video, then claude plugin install hyperframes, hyperframes-cli, hyperframes-media** — used by `overlay-director`

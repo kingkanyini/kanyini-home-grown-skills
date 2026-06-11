@@ -76,7 +76,7 @@ Check the funnel-audit registry for existing clients.
 
 **If client exists:**
 - Pre-fill: name, code, voice_dna_path, oo_path
-- Show what's available: "Found Jonas in the registry. Voice profile, OO, and section map ready."
+- Show what's available: "Found example-contact in the registry. Voice profile, OO, and section map ready."
 - Use AskUserQuestion to confirm or override
 
 **If new client:**
@@ -168,7 +168,7 @@ Add translation entry to the shared registry (nested under the page):
 ### Step 7: Initialize Deliverable Files
 Create both output files with headers:
 
-**HTML Preview** — Use the template structure from the gold standard (SOMA translation).
+**HTML Preview** — Use the template structure from the gold standard (example-collective translation).
 - Apply client brand colors to CSS variables
 - Set title, subtitle, nav placeholder
 - Save to `~/.claude/projects/funnel-audit/[client-code]/[client]-translation-[lang].html`
@@ -253,7 +253,7 @@ When translating testimonials, show BOTH the original and the translation:
 ```
 | EN (original) | DE (translation) |
 |---|---|
-| "Jonas has an amazing ability..." | „Jonas hat eine besondere Fähigkeit..." |
+| "example-contact has an amazing ability..." | „example-contact hat eine besondere Fähigkeit..." |
 ```
 Testimonials are translated as natural speech in the target language — NOT in the client's voice profile, but as a natural-sounding person giving feedback.
 
@@ -577,7 +577,7 @@ Store the deploy URL in the registry.
 
 ### Naming Convention
 Deploy project name: `[client]-funnel-translations`
-Example: `soma-funnel-translations.vercel.app`
+Example: `example-collective-funnel-translations.vercel.app`
 
 ---
 
@@ -674,7 +674,7 @@ If you created any new CSS animation, JS scroll handler, hover interaction, or v
 
 - This skill translates ONE language at a time. Run again for additional languages.
 - Voice profile quality directly determines translation quality. A lightweight profile produces lighter results — flag this to <your-name>.
-- The gold-standard reference for HTML template + master content format is the SOMA translation: `~/.claude/projects/soma-jonas/funnel build/`
+- The gold-standard reference for HTML template + master content format is the example-collective translation: `~/.claude/projects/example-collective-example-contact/funnel build/`
 - Testimonials are NOT translated in the client's voice — they're translated as natural speech from the testimonial giver.
 - The skill supports all page types: landing pages, destination pages, upsell/downsell, surveys, Calendly flow, WhatsApp templates, email sequences.
 - Progress is saved per-section so work can resume across sessions.

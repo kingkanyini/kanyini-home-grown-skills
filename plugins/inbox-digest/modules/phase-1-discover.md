@@ -135,7 +135,7 @@ Return list of work tuples for Phase 2:
   window_end_iso: "2026-05-08T19:00:00Z"
   priority: high
   match_strategy: any
-  gmail_label: "Clients/GutCenter"   # validated; null if not set
+  gmail_label: "Clients/ExampleClient"   # validated; null if not set
   expected_account: "<your-email>"
   client_dir: "<vault_root>\\context\\clients\\<example-client>"
 ```

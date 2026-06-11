@@ -2,7 +2,7 @@ VOICE DNA BLUEPRINT SHEET
 
 Comprehensive Breakdown of Style, Patterns, and Sequence Structure
 
-> **Template note:** This is the structural skeleton for `/voice-dna-blueprint-builder` Phase 3 synthesis. Match this format EXACTLY when generating the subject's blueprint. Field labels use bold + italic-description (CoS format), NOT markdown headers. Read alongside `~/.claude/references/voice-profiles/adeyemi-adeyosoye/adeyemi-adeyosoye-blueprint.md` for the gold-standard quality bar.
+> **Template note:** This is the structural skeleton for `/voice-dna-blueprint-builder` Phase 3 synthesis. Match this format EXACTLY when generating the subject's blueprint. Field labels use bold + italic-description (CoS format), NOT markdown headers. Read alongside `~/.claude/references/voice-profiles/exemplar-one/exemplar-one-blueprint.md` for the gold-standard quality bar.
 
 ---
 

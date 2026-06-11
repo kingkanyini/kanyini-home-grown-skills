@@ -1,6 +1,6 @@
 # Bad Bitch Experience — 14 Video Ad Scripts v2.0
 
-Created for Luxiana | February 2026
+Created for example-artist | February 2026
 
 ## 14 AD SCRIPTS
 
@@ -35,7 +35,7 @@ The simple shift?
 
 Stop waiting for permission... and step into a space where someone who's doing it RIGHT NOW shows you exactly how.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and I'm not coaching from the sidelines. I'm building my album, performing live, and walking this path alongside you.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and I'm not coaching from the sidelines. I'm building my album, performing live, and walking this path alongside you.
 
 Artists in our community went from frozen in self-doubt to performing their songs on stage.
 
@@ -68,7 +68,7 @@ The simple shift?
 
 Stop waiting to be ready... and let’s get you started. The perfect time isn’t coming, you create it.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and I almost waited too long myself. Now I'm in the studio, on stage, living it \-- and helping others do the same.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and I almost waited too long myself. Now I'm in the studio, on stage, living it \-- and helping others do the same.
 
 One of our artists waited 12 years. Then she stopped waiting. Now she's performing, making music and building her community.
 
@@ -105,7 +105,7 @@ The simple shift?
 
 Stop trying to prove you're talented enough... and start working with a coach who's actively making music, performing live, and building the exact artist life you want.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and my members are already releasing songs and performing on stage, some for the very first time.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and my members are already releasing songs and performing on stage, some for the very first time.
 
 Click below to discover how.
 
@@ -137,7 +137,7 @@ So how do we move through this and get you your dream artist life?
 
 Nervous system integration combined with a step-by-step artist roadmap... so your body finally feels safe enough to let your voice out.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and one of my members couldn't even talk about performing without shaking. She just did her first show.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and one of my members couldn't even talk about performing without shaking. She just did her first show.
 
 Click below to discover how to join us.
 
@@ -177,7 +177,7 @@ The simple shift?
 
 Stop trying to make music that proves them wrong... and start making music that sounds like YOU. The irony is \-- when you stop performing for the critics in your head, the real music finally shows up.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and I built something specifically for artists stuck in that loop.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and I built something specifically for artists stuck in that loop.
 
 A program that doesn't start with production. It starts with clearing the weight off your voice so the music underneath can finally breathe.
 
@@ -204,7 +204,7 @@ She built her vision. She wrote her first song. She rehearsed it until it lived 
 
 And then she performed it \-- live, on a real stage, in front of a real audience.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and watching Fernanda step into that spotlight was one of the most powerful things I've witnessed in this work.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and watching Fernanda step into that spotlight was one of the most powerful things I've witnessed in this work.
 
 But she's not the only one. Another artist just finished recording her first song. Another is building her setlist for a live show. Another finally heard her own voice played back and didn't cringe \-- she cried, because it sounded like HER.
 
@@ -233,7 +233,7 @@ But here's the problem with that:
 
 The music industry doesn't look like it did ten years ago. The path to the stage doesn't look the same. And the inner battle of becoming an artist in today's world \-- where everyone has an opinion and every platform is a stage \-- requires someone who's navigating it RIGHT NOW.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach. I'm not teaching from memory. I'm building my album right now. I'm performing live right now. I'm walking the same path I'm guiding you through \-- just a few steps ahead.
+I'm example-artist, international glam rock artist and your favorite liberation coach. I'm not teaching from memory. I'm building my album right now. I'm performing live right now. I'm walking the same path I'm guiding you through \-- just a few steps ahead.
 
 That's what makes this different.
 
@@ -262,7 +262,7 @@ And when you can't see the path, every step feels like a cliff. So you freeze. Y
 
 That's not a talent problem. That's a roadmap and support problem.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and I built the Bad Bitch Experience around the simplest truth I know:
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and I built the Bad Bitch Experience around the simplest truth I know:
 
 There are four phases.
 
@@ -302,7 +302,7 @@ The simple shift is a 12-month roadmap. Write a song. Release it. Perform it liv
 
 One of our artists went from quietly journaling song ideas to writing, recording, and performing her first original song on a real stage \-- in under six months. Not after years of preparation. After weeks of actually starting.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach. I've walked this exact path \-- and I've built the roadmap so you don't have to figure it out alone.
+I'm example-artist, international glam rock artist and your favorite liberation coach. I've walked this exact path \-- and I've built the roadmap so you don't have to figure it out alone.
 
 Click below to discover how.
 
@@ -337,7 +337,7 @@ Just a room full of artists who GET it. Who've felt the same silence. Who are bu
 
 The simple shift isn't more courage. It's finding the people who make courage unnecessary \-- because you finally feel safe enough to just BEGIN.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach. I built the Bad Bitch Experience because I know what it's like to create in isolation \-- and I know what changes when you stop.
+I'm example-artist, international glam rock artist and your favorite liberation coach. I built the Bad Bitch Experience because I know what it's like to create in isolation \-- and I know what changes when you stop.
 
 One of our artists couldn't sing a single note with someone in the room. Once she was surrounded by people who believed in her, she went from frozen to performing live with a full band.
 
@@ -362,7 +362,7 @@ The REAL problem isn't that you need another course. It's that every program you
 
 The simple shift is an incubator where the "weird" ones, the rainbow sheep, the ones who never fit in \-- those are the ONLY ones allowed in.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach. I didn't build this for everyone. I built it for the artists the industry forgot.
+I'm example-artist, international glam rock artist and your favorite liberation coach. I didn't build this for everyone. I built it for the artists the industry forgot.
 
 One of our artists went from frozen in self-doubt to performing on a real stage. Not because she found better training \-- because she found a room that didn't require her to shrink.
 
@@ -393,7 +393,7 @@ And if you skip it \-- which almost everyone does \-- the song never comes out. 
 
 The REAL problem isn't your creative process. There's something standing between you and your voice that has nothing to do with music \-- and everything to do with a moment you probably don't even remember.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach, and I spent years wondering why I could feel the music inside me but couldn't get it out. Until I discovered this step.
+I'm example-artist, international glam rock artist and your favorite liberation coach, and I spent years wondering why I could feel the music inside me but couldn't get it out. Until I discovered this step.
 
 One of our artists tried for years to finish a single song. Once she addressed the step before the song, she wrote and recorded her first track in weeks.
 
@@ -424,7 +424,7 @@ The REAL problem isn't that you can't sing well enough. It's that every year you
 
 That's not safety. That's erasure.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and I've watched this happen to too many brilliant artists who waited too long.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and I've watched this happen to too many brilliant artists who waited too long.
 
 The simple shift? Stop rehearsing silence... and start rehearsing YOUR sound. Not when you're ready. Not when it's perfect. Now. While you still remember who you are.
 
@@ -456,7 +456,7 @@ If it's both \-- good. That's exactly where every artist starts.
 
 One of our artists felt the same terror. She got on stage anyway. Because the container held her. And by month 12, the terror had become fuel.
 
-I'm Luxiana, international glam rock artist and your favorite liberation coach \-- and the vision you just saw in your mind? Your imagination doesn't waste time on impossible things. It's showing you what's next.
+I'm example-artist, international glam rock artist and your favorite liberation coach \-- and the vision you just saw in your mind? Your imagination doesn't waste time on impossible things. It's showing you what's next.
 
 The simple shift is treating that image like a destination, not a daydream. The only difference between where you are and where you just saw yourself... is a roadmap and a room full of artists who get it.
 
@@ -513,5 +513,5 @@ Once you’re done with these, send me the videos and I will edit them and put t
 
 [Sample Ad \#2](https://www.dropbox.com/scl/fi/0q7c2wogxz5m2pyoq2z3n/Breath-Reset-Ad-Retreat-Take-2-no-banner.mp4?rlkey=0rp1djn934aprryrvmyq81r0v&dl=0)
 
-Created by <your-name> (<your-name>) for Luxiana | February 2026  
+Created by <your-name> (<your-name>) for example-artist | February 2026  
 Generated with Subconscious Seduction Ad Generator v2.0  

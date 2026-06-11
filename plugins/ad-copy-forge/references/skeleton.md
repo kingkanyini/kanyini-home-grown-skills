@@ -1,7 +1,7 @@
 # Ad Copy Forge — Structural Skeleton
 
-**Extracted from:** 11 RocketeerAds ads across 4 clients (Luxiana x2, LTUVG x2, SOMA x5, Sacral Uproar x2)
-**Source pages:** Luxiana, LTUVG, SOMA Collective, Sacral Uproar (scraped via Playwright)
+**Extracted from:** 11 RocketeerAds ads across 4 clients (example-artist x2, LTUVG x2, example-collective x5, Sacral Uproar x2)
+**Source pages:** example-artist, LTUVG, Example Collective, Sacral Uproar (scraped via Playwright)
 **Date:** 2026-04-23
 **Counsel:** Copy Forensics Counsel #39 (Stefan Georgi, Kyle Milligan, Gary Bencivenga, Gary Halbert)
 **Forensic passes:** 3 (Structure → Words → Energy)
@@ -97,7 +97,7 @@ Tolerance: ±5% per section.
 - **Em dash `—`** is the primary connector (4-6 per ad). Not commas or hyphens.
 - **Single-sentence paragraphs** dominate — each line earns the next.
 - **ALL CAPS** reserved for:
-  - Program names (`BAD BITCH`, `SOMA`, `LTUVG`)
+  - Program names (`BAD BITCH`, `example-collective`, `LTUVG`)
   - Single-word emphasis (`WIN`, `BIG`, `NOW`)
   - Section labels (`OFFER BREAKDOWN:`, `SOCIAL PROOF:`, `BONUS:`, `P.S.`, `LIMITED TIME:`)
 - **Triple-dash dividers `---`** at major pivots
@@ -147,7 +147,7 @@ Tolerance: ±5% per section.
 ### Pain openers (🔒 MUST use at least one as scroll-stopper)
 - `"You've [verb]..."` — 11/11 ads use this form. The #1 opener.
   - *"You've been told you don't have 'natural talent.'"* (Lux #1)
-  - *"You've built the business. Hit the revenue targets."* (SOMA S2#1)
+  - *"You've built the business. Hit the revenue targets."* (example-collective S2#1)
   - *"You've studied Human Design."* (SU #1)
   - *"You've read the books. Watched the videos. Followed the gurus."* (LTUVG #2)
 - `"Your body..."` — 4 appearances
@@ -197,14 +197,14 @@ experience · immersion · protocol · framework · incubator · program (often 
 
 ### Client-specific metaphor families
 - **Gaming (LTUVG):** power-up · level · checkpoint · skill tree · instruction manual · Spirit Avatar · playing to win
-- **Body/leadership (SOMA):** ceiling · machine · running on X · grounded clarity · calm dominance · fight-or-flight · embodied leadership
-- **Stage/voice (Luxiana):** stage · voice · seen · shine · star power · touring · regulate under pressure
+- **Body/leadership (example-collective):** ceiling · machine · running on X · grounded clarity · calm dominance · fight-or-flight · embodied leadership
+- **Stage/voice (example-artist):** stage · voice · seen · shine · star power · touring · regulate under pressure
 - **Chart/design (Sacral Uproar):** chart · design · holding · translate · bracing · information vs embodiment
 
 ## 2C. Pronoun Density Rules (🔒 MUST)
 
 - **"you/your" per 100 words:** 12-16 range
-- **"I/my":** Use sparingly. Only for founder-voice ads (Luxiana style). Program-centric ads (SOMA/LTUVG/Sacral style) use zero "I."
+- **"I/my":** Use sparingly. Only for founder-voice ads (example-artist style). Program-centric ads (example-collective/LTUVG/Sacral style) use zero "I."
 - **"we/us":** Rare. Use only for the voice of the program delivering the transformation ("we translate your chart").
 - **90%+ pronoun weight** must fall on second person.
 
@@ -294,7 +294,7 @@ Every ad performs a single belief-transfer:
 
 **Examples from corpus:**
 - Lux #1: "I don't have talent" → *"The music industry doesn't break voices. It breaks nervous systems."* → "My nervous system is what's breaking"
-- SOMA S1#2: "I need better strategy" → *"It's your nervous system."* → "My nervous system is the bottleneck"
+- example-collective S1#2: "I need better strategy" → *"It's your nervous system."* → "My nervous system is the bottleneck"
 - LTUVG #1: "I'm broken" → *"You're not broken. You're just playing without a strategy."* → "I'm playing without a strategy"
 - Sacral #2: "Information = transformation" → *"Information doesn't automatically become embodiment."* → "I need embodiment, not more info"
 
@@ -341,9 +341,9 @@ Scrolling (cold)
   - After pivot = light (name the transformation)
 - **Client calibration:**
   - Sacral Uproar: ~70/30 shadow-heavy
-  - SOMA: ~65/35 shadow-heavy
+  - example-collective: ~65/35 shadow-heavy
   - LTUVG: ~55/45 balanced (gaming reframe carries light)
-  - Luxiana: widest swing (deepest shadow → brightest light)
+  - example-artist: widest swing (deepest shadow → brightest light)
 
 ## 3F. Trust-Building Mechanisms (🔒 MUST)
 
@@ -352,7 +352,7 @@ Scrolling (cold)
 1. **Specificity in symptoms** — "Tight neck. Shallow breathing." proves "I've seen you." 🔒 MUST
 2. **Paradox acknowledgment** — "successful on paper, disconnected in reality" 🟢 STRONG
 3. **Naming what nobody names** — "a thought you don't say out loud: Am I broken?" 🟢 STRONG
-4. **Quoted authority at tension peak** — rare; use sparingly (LA Producer quote in Luxiana)
+4. **Quoted authority at tension peak** — rare; use sparingly (LA Producer quote in example-artist)
 5. **Insider vocabulary** — nervous system regulation, shadow patterns, embodiment (shibboleths)
 6. **Quantified proof beats** — numbers placed at tension peaks
 
@@ -372,9 +372,9 @@ Every ad grants permission to put down an exhausting identity:
 
 | Client | Common permission |
 |--------|-------------------|
-| Luxiana | Stop self-blaming for lack of talent · Stop searching for talent already in you |
+| example-artist | Stop self-blaming for lack of talent · Stop searching for talent already in you |
 | LTUVG | Stop self-diagnosing as "broken" · Stop consuming without applying |
-| SOMA | Stop performing · Stop hustling from your head · Stop overriding your body |
+| example-collective | Stop performing · Stop hustling from your head · Stop overriding your body |
 | Sacral Uproar | Stop intellectualizing identity · Stop bracing |
 
 **Rule:** The permission-to-stop is the *hidden offer*. More load-bearing than the actual offer, because by the time the reader arrives at the bullets, the ad has already given them something for free: a reason to exhale.
@@ -501,11 +501,11 @@ The reader clicks not because they're afraid to miss out, but because they've be
 | Lux #2 | "I have voice but fear paralyzes me" | "I need to heal the part afraid to shine" | *"Because they healed the part of them that was afraid to shine."* |
 | LTUVG #1 | "My breakdowns mean I'm broken" | "My breakdowns are unplayed power-ups" | *"You're not broken. You're just playing without a strategy."* |
 | LTUVG #2 | "I've read the books, still stuck" | "Life isn't broken. I never got the manual" | *"Life isn't broken. You just never got the instruction manual."* |
-| SOMA S1#1 | "I need to perform harder" | "My body tells truth my mind overrides" | *"You're crushing it externally. But your body is screaming."* |
-| SOMA S1#2 | "The thing holding me back is strategy" | "The thing holding me back is my nervous system" | *"It's your nervous system."* |
-| SOMA S2#1 | "More discipline will fix this" | "No thinking fixes dysregulated nervous system" | *"Your nervous system is stuck in fight-or-flight. And no amount of thinking, strategizing, or hustling will fix it."* |
-| SOMA S2#2 | "Control or overwhelmed — that's me" | "That binary is survival mode" | *"Your nervous system doesn't care about your strategy. It's stuck in survival mode."* |
-| SOMA S2#3 | "Growing business, why body wrong?" | "Growth without embodiment is breaking me" | *"Your business is growing. Your bank account is growing. So why does your body feel like it's falling apart?"* |
+| example-collective S1#1 | "I need to perform harder" | "My body tells truth my mind overrides" | *"You're crushing it externally. But your body is screaming."* |
+| example-collective S1#2 | "The thing holding me back is strategy" | "The thing holding me back is my nervous system" | *"It's your nervous system."* |
+| example-collective S2#1 | "More discipline will fix this" | "No thinking fixes dysregulated nervous system" | *"Your nervous system is stuck in fight-or-flight. And no amount of thinking, strategizing, or hustling will fix it."* |
+| example-collective S2#2 | "Control or overwhelmed — that's me" | "That binary is survival mode" | *"Your nervous system doesn't care about your strategy. It's stuck in survival mode."* |
+| example-collective S2#3 | "Growing business, why body wrong?" | "Growth without embodiment is breaking me" | *"Your business is growing. Your bank account is growing. So why does your body feel like it's falling apart?"* |
 | Sacral #1 | "Study chart more = change" | "Nervous system doesn't change from reading" | *"Your nervous system doesn't change because you read about yourself. Your body has to experience something different."* |
 | Sacral #2 | "Information = transformation" | "Information ≠ embodiment" | *"Information doesn't automatically become embodiment."* |
 

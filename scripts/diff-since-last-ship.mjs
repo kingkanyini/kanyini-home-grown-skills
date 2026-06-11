@@ -17,7 +17,7 @@ const MANIFEST_PATH = path.join(REPO_ROOT, '.last-ship-manifest.json');
 
 const PHASE_1_SKILLS = [
   'savepoint', 'quicksave', 'counsel-dispatch', 'learn-eval',
-  'morning-compass', 'inbox-digest', 'perplexity-research',
+  'inbox-digest', 'perplexity-research',
   'voice-dna-extractor', 'voice-dna-blueprint-builder', 'charisma-codes',
   'exportskill', 'quickshare', 'skill-to-site',
   'offer-optimizer', 'magnetic-offer-blueprint', 'propaganda-machine',

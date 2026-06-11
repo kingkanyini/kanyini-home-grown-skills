@@ -63,7 +63,7 @@ Write an idempotency-safe scratchpad entry to track this dispatch. This is read 
 Use `mcp__obsidian-brain__write_note` with mode `append` to write to path `counsel/scratch/dispatch-[ISO8601-compact].jsonl` with a single JSONL line:
 
 ```json
-{"dispatch_uuid":"[uuidv4]","slug":"[slug]","timestamp":"[ISO8601]","session_id":"[available session id or placeholder]","sensitivity":"[from frontmatter]","project_context":"[brief tag: e.g., 'gut-center' or 'general-consultation']","topic":"[1-sentence user ask]"}
+{"dispatch_uuid":"[uuidv4]","slug":"[slug]","timestamp":"[ISO8601]","session_id":"[available session id or placeholder]","sensitivity":"[from frontmatter]","project_context":"[brief tag: e.g., 'example-client' or 'general-consultation']","topic":"[1-sentence user ask]"}
 ```
 
 **Sensitivity-based redaction:**

@@ -554,7 +554,7 @@ Use the `mcp__claude_ai_Canva__generate-design` tool with `design_type: "doc"` t
 
 ### If they choose Branded Google Doc:
 
-This creates a polished, brand-colored Google Doc that feels like a finished deliverable. Reference the SOMA Offer Optimizer Google Doc as the gold standard: `https://docs.google.com/document/d/1Bp9JdrvmzvwGuz5yVyHJfjPz54V8JrzzQbD67pKIb-o/edit`
+This creates a polished, brand-colored Google Doc that feels like a finished deliverable. Reference the example-collective Offer Optimizer Google Doc as the gold standard: `https://docs.google.com/document/d/1Bp9JdrvmzvwGuz5yVyHJfjPz54V8JrzzQbD67pKIb-o/edit`
 
 Follow these steps:
 

@@ -7,9 +7,9 @@
 **Threshold:** ≥95/100 required to proceed to counsel review
 
 **Gold Standards (compare against):**
-- `reference/style-shots/style-shot-01-luxiana.md` — founder-voice template
+- `reference/style-shots/style-shot-01-example-artist.md` — founder-voice template
 - `reference/style-shots/style-shot-02-ltuvg.md` — gaming/low-ticket template
-- `reference/style-shots/style-shot-03-soma.md` — high-ticket somatic template (primary default)
+- `reference/style-shots/style-shot-03-example-collective.md` — high-ticket somatic template (primary default)
 
 ---
 
@@ -40,9 +40,9 @@ Before scoring, pick the style shot that best matches the generated ad's categor
 
 | Generated ad type | Primary gold standard | Secondary |
 |-------------------|----------------------|-----------|
-| Founder-voice (includes "I") | Style Shot 01 (Luxiana) | — |
+| Founder-voice (includes "I") | Style Shot 01 (example-artist) | — |
 | Gaming/metaphor-heavy / low-ticket | Style Shot 02 (LTUVG) | Style Shot 03 for somatic elements |
-| High-ticket coaching/healing/somatic | Style Shot 03 (SOMA) | Style Shot 02 for metaphor rules |
+| High-ticket coaching/healing/somatic | Style Shot 03 (example-collective) | Style Shot 02 for metaphor rules |
 | Service/session-based (shorter offer) | Style Shot 01 or 03 blend | — |
 | Other | Style Shot 03 (most canonical default) | — |
 

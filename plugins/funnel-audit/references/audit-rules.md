@@ -15,7 +15,7 @@ Every content recommendation MUST cite the OO section it pulls from. If a recomm
 ### 2. Counsel Advises, <your-name> Decides
 The counsel scores and recommends. <your-name> makes the final call. If <your-name>'s instinct goes against counsel, EXPLORE it — often <your-name> sees something the counsel missed.
 
-**When <your-name> proposes their own direction:** Counsel must articulate WHY it works before offering alternatives. If counsel initially dismisses an idea and <your-name> pushes back, counsel reconsiders with fresh eyes. The pushback is signal — <your-name> knows the avatar personally. Counsel knows frameworks. Both perspectives are valid. (GOU: SOMA audit — counsel dismissed "ceiling" language as mid-ticket, <your-name> was right that it captured the avatar's core frustration.)
+**When <your-name> proposes their own direction:** Counsel must articulate WHY it works before offering alternatives. If counsel initially dismisses an idea and <your-name> pushes back, counsel reconsiders with fresh eyes. The pushback is signal — <your-name> knows the avatar personally. Counsel knows frameworks. Both perspectives are valid. (GOU: example-collective audit — counsel dismissed "ceiling" language as mid-ticket, <your-name> was right that it captured the avatar's core frustration.)
 
 ### 3. Client's Requested Changes Are Non-Negotiable
 If the client asked for something specific, that is not up for counsel debate. The counsel's job is to find the BEST way to implement the client's request, not to override it.
@@ -73,7 +73,7 @@ Certain words or phrases repeat intentionally across the page to create coherenc
 
 Save the register in the Foreman review file. During Phase 2 section reviews, check flagged words **against the register** before marking them as generic. If a word is in the register, it's a callback — note this in the review instead of flagging it.
 
-**Example:** Foreman flagged "Breakthrough" as motivational-poster language. But the hero H2 establishes "BREAKING THROUGH" — so "Your Breakthrough Is Waiting" in the final close is a through-line callback, not a cliché. Register caught it. (GOU from SOMA audit 2026-03-25.)
+**Example:** Foreman flagged "Breakthrough" as motivational-poster language. But the hero H2 establishes "BREAKING THROUGH" — so "Your Breakthrough Is Waiting" in the final close is a through-line callback, not a cliché. Register caught it. (GOU from example-collective audit 2026-03-25.)
 
 ---
 

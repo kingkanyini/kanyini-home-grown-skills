@@ -62,20 +62,6 @@ const METADATA = {
     usage: '/learn-eval',
   },
   // T2 Daily Intel
-  'morning-compass': {
-    tier: 'T2',
-    description: '7-minute morning briefing for coaches — pulls from Google Calendar, Stripe, Calendly, ClickFunnels, Basecamp, Instagram, YouTube. Delivers single-page brief.',
-    requires: [],
-    recommends: [],
-    prereqs: {
-      mcps: ['mcp__composio__*', 'mcp__obsidian-brain__*'],
-      clis: ['pwsh', 'node'],
-      envVars: ['COMPOSIO_API_KEY'],
-      services: ['Composio', 'Google Calendar', 'Stripe', 'Calendly', 'ClickFunnels', 'Basecamp', 'Instagram', 'YouTube'],
-    },
-    command: '/morning-compass',
-    usage: '/morning-compass',
-  },
   'inbox-digest': {
     tier: 'T2',
     description: 'Scan Gmail for client emails, file into vault per-client, generate per-client daily briefs',

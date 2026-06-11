@@ -1,4 +1,4 @@
-# **LUXIANA — 6-Email Belief-Shift Sequence (Bad Bitch Experience)**
+# **example-artist — 6-Email Belief-Shift Sequence (Bad Bitch Experience)**
 
 **Offer: Bad Bitch Experience ($111/month) | Traffic: Paid Ad | Cadence: Day 1, 3, 5, 7, 9, 12**
 
@@ -60,7 +60,7 @@ The Bad Bitch Experience is for artists who are done with almost.
 
 If any of this hit you in the chest — I'd love to talk.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 It's 30 minutes. Just a conversation. No pressure. Just two people talking about your music.
 
@@ -68,11 +68,11 @@ Tomorrow I'm going to tell you about the REAL reason you're stuck. It's not what
 
 Talk soon :)
 
-LUXIANA
+example-artist
 
 P.S. If you haven't pressed play yet — go back up. Listen to FRIKY. Then ask yourself: what if your song is sitting in a folder too?
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 ## **EMAIL \#2 — REAL PROBLEM (Day 3\)**
 
@@ -118,7 +118,7 @@ And it has a fix.
 
 If you're tired of collecting evidence against yourself — let's talk about what's actually going on.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 30 minutes. You and me. We look at what's really been in the way.
 
@@ -128,11 +128,11 @@ Something that changed everything about how I think about timing and "being read
 
 I'll tell you in two days.
 
-LUXIANA
+example-artist
 
 P.S. Remember that song I sent you? FRIKY? There's a reason I almost deleted it. And it has everything to do with what I'm going to share next.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 ## **EMAIL \#3 — TIME (Day 5\)**
 
@@ -192,7 +192,7 @@ You choose.
 
 I invite you to make that decision today. Your Liberation Call is 30 minutes. That's it.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 30 minutes could be the moment you stop waiting and start building. Like FRIKY was for me.
 
@@ -202,11 +202,11 @@ I spent $5K on a music career coach who never made it. And it crushed me.
 
 I'll tell you what happened in two days.
 
-LUXIANA
+example-artist
 
 P.S. Your best song is waiting for you to say yes to it. Don't let it die in a folder.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 ## **EMAIL \#4 — MONEY (Day 7\)**
 
@@ -250,7 +250,7 @@ You've already spent more on gear that collects dust. On recording sessions that
 
 This call is free.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 Let's look at where your investment actually belongs. 30 minutes. No cost. No pressure.
 
@@ -260,11 +260,11 @@ It was trying to do everything alone.
 
 I'll tell you that story in two days.
 
-LUXIANA
+example-artist
 
 P.S. Kayla was terrified of $333. Now she's running her own practice on her terms and actively making music. What's $111/month worth if it does the same for your music?
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 ## **EMAIL \#5 — METHOD (Day 9\)**
 
@@ -314,7 +314,7 @@ He stopped being someone who dreams about creating and became someone who create
 
 Your turn.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 30 minutes. Let's look at the method you've been using and build one that actually works.
 
@@ -324,11 +324,11 @@ I had a student who kept wanting to bail. Every time we got close to real work, 
 
 I'll tell you her story in three days.
 
-LUXIANA
+example-artist
 
 P.S. Sebastian dreamed about being a director his whole life. Next month he's filming his first short film. The only shift he made was having support to keep him accountable. What would change for you?
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 ## **EMAIL \#6 — HELP (Day 12\)**
 
@@ -394,14 +394,14 @@ Why keep waiting on your dreams?
 
 I invite you to book your Liberation Call.
 
-Book your Liberation Call → [https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/luxianamusic/liberationcall?hide_event_type_details=1&hide_gdpr_banner=1)
+Book your Liberation Call → [https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1](https://calendly.com/example?hide_event_type_details=1&hide_gdpr_banner=1)
 
 30 minutes. You and me. Let's find out what you're made of.
 
 Your legacy is waiting for you on the other side of this conversation.
 
-LUXIANA
+example-artist
 
 P.S. Someone told you your dream wasn't worth it. And you've been carrying that alone ever since. This changes that. I’ve got you. We’ve got you. 
 
-Book your Liberation Call → https://calendly.com/luxianamusic/liberationcall?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1
+Book your Liberation Call → https://calendly.com/example?hide\_event\_type\_details=1\&hide\_gdpr\_banner=1

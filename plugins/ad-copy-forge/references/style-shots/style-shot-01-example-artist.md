@@ -1,13 +1,13 @@
-# Style Shot 01 — Luxiana #1 (Gold Standard)
+# Style Shot 01 — example-artist #1 (Gold Standard)
 
-**Client:** Luxiana (booking.luxianamusic.com)
+**Client:** example-artist (example.com)
 **Headline:** From Tone Deaf to Touring Pro
 **Style category:** Founder-voice · transformation couplet · verbatim source preservation
 **Selected for:** Classic founder "I" voice, strong triple-parallel pain ladder, preserves source power phrase 1:1
 
 ---
 
-## SOURCE PAGE (key quoted text from Luxiana sales page)
+## SOURCE PAGE (key quoted text from example-artist sales page)
 
 > *"When I decided I was going to be a professional singer, I was tone deaf. Rhythm blind. I couldn't even feel a beat in my body. I was the definition of 'no natural talent.' But I didn't let this kill my dreams and, step-by-step, I recovered the power of my voice and body. Today I write my own songs, play shows around the world, and help artists like you do the same."*
 >
@@ -69,7 +69,7 @@ Because your "weird" is your edge. Your "too much" is your magic.
 
 **SOCIAL PROOF:**
 
-"Working with Luxiana was the best choice for my self growth. Not only did I write my own song, but I found my voice to honor my self worth." — Kayla G.
+"Working with example-artist was the best choice for my self growth. Not only did I write my own song, but I found my voice to honor my self worth." — Kayla G.
 
 ---
 

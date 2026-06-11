@@ -38,7 +38,6 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `inbox-digest` | ROOT | Heavy-prereq |
 | `learn-eval` | ROOT | Standalone |
 | `magnetic-offer-blueprint` | ROOT | Standalone |
-| `morning-compass` | ROOT | Heavy-prereq |
 | `offer-optimizer` | ROOT | Heavy-prereq |
 | `overlay-director` | ROOT | Service-only |
 | `perplexity-research` | ROOT | Heavy-prereq |
@@ -51,6 +50,7 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `ss-ad-generator` | ROOT | Standalone |
 | `voice-dna-blueprint-builder` | MID | Standalone |
 | `voice-dna-extractor` | ROOT | Heavy-prereq |
+| `voice-profile-build` | ROOT | Vault-only |
 | `vsl-activator` | ROOT | Standalone |
 | `web-dev-bot` | ROOT | Heavy-prereq |
 | `webinar-forge` | MID | Standalone |
@@ -62,9 +62,8 @@ When an MCP server is down or missing, which skills break? `hermes-doctor` (Phas
 | MCP Family | Skills That Depend On It |
 |------------|--------------------------|
 | `mcp__claude_ai_Canva__` | `offer-optimizer` |
-| `mcp__composio__` | `morning-compass` |
 | `mcp__ffmpeg-mcp__` | `voice-dna-extractor` |
 | `mcp__gmail-gong-mcp__` | `inbox-digest` |
-| `mcp__perplexity__` | `perplexity-research` |
+| `mcp__perplexity__` | `perplexity-research`, `voice-profile-build` |
 | `mcp__playwright__` | `web-dev-bot` |
-| `mcp__yt-dlp-mcp__` | `voice-dna-extractor` |
+| `mcp__yt-dlp-mcp__` | `voice-dna-extractor`, `voice-profile-build` |

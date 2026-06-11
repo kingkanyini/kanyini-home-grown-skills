@@ -238,12 +238,12 @@
               - text: As the founder of Sacral Uproar, Luna believes that creativity and well-being aren't separate. They're the same thing. When you free your emotions, you free your expression. And that's where the magic lives.
               - text: Luna brings a practical, embodied approach to Human Design, sharing it in a grounded, tangible way that helps people understand their own unique operating systems. As someone who spent much of her life figuring out who she was the hard way, she now makes that journey clearer and more accessible for others.
               - text: Her mission is to bring this work to schools, conferences, and festivals everywhere, empowering people to unlock their unique gifts through emotional freedom and liberated self-expression.
-          - heading "@LightworkLuna | SacralUproar.com" [level=1] [ref=e362]:
+          - heading "ExampleHandle | example.com" [level=1] [ref=e362]:
             - generic [ref=e365]:
-              - link "@LightworkLuna" [ref=e366] [cursor=pointer]:
-                - /url: instagram.com/LightworkLuna
+              - link "ExampleHandle" [ref=e366] [cursor=pointer]:
+                - /url: instagram.com/ExampleHandle
               - text: "|"
-              - link "SacralUproar.com" [ref=e367] [cursor=pointer]:
+              - link "example.com" [ref=e367] [cursor=pointer]:
                 - /url: "#"
       - generic [ref=e372]:
         - heading "Sometimes This Session Is Just the Beginning." [level=1] [ref=e376]:

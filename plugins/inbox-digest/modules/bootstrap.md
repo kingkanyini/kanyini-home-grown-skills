@@ -57,7 +57,7 @@ Ask these questions together in one `AskUserQuestion` invocation (max 4 per call
 
 ### B.4 Derive computed fields
 
-- `label_slug` = PascalCase of `slug` (e.g., `gut-center` → `GutCenter`). Implementation: split on `-`, capitalize each token, concat. NO spaces, NO underscores in result.
+- `label_slug` = PascalCase of `slug` (e.g., `example-client` → `ExampleClient`). Implementation: split on `-`, capitalize each token, concat. NO spaces, NO underscores in result.
 - `gmail_label` = `Clients/<label_slug>` — verify matches allowlist `^Clients/[A-Za-z0-9][A-Za-z0-9_-]*$` (CIPHER-F5). If fail (e.g., user gave a slug that PascalCases to something with disallowed chars), halt with explicit error.
 
 ### B.5 Render + write

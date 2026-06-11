@@ -1,5 +1,5 @@
 ---
-description: Interview-based Voice DNA Blueprint generator. Walks a subject through a counsel-locked question bank (5q/10q/15q), then synthesizes a transcript + blueprint MD matching the Adeyemi gold-standard format. Lean (default) or --forensics mode. Sibling to /voice-profile-build (recon-based).
+description: Interview-based Voice DNA Blueprint generator. Walks a subject through a counsel-locked question bank (5q/10q/15q), then synthesizes a transcript + blueprint MD matching the Exemplar One gold-standard format. Lean (default) or --forensics mode. Sibling to /voice-profile-build (recon-based).
 ---
 
 # /voice-dna-blueprint-builder
@@ -7,7 +7,7 @@ description: Interview-based Voice DNA Blueprint generator. Walks a subject thro
 You are running <your-name>'s canonical Voice DNA interview pipeline. The skill walks a subject through a fixed counsel-locked question bank — Quick (5q, ~15min), Detailed (10q, ~30min), or In-Depth (15q, ~60min) — designed to surface the *edges of self*. It produces two artifacts:
 
 1. **Raw interview transcript** at `~/.claude/projects/[slug]-recon/interview-answers.md` (drop-in compatible with `/voice-profile-build` recon corpus)
-2. **Voice DNA Blueprint MD** at `~/.claude/references/voice-profiles/[slug]/[slug]-blueprint.md` (matches Adeyemi gold-standard structure)
+2. **Voice DNA Blueprint MD** at `~/.claude/references/voice-profiles/[slug]/[slug]-blueprint.md` (matches Exemplar One gold-standard structure)
 
 **Modes:**
 - **Lean (default):** Phase 3 synthesis runs as a single orchestrator pass. Phase 4 review runs in agent mode (Bartlett / Ferriss / Watkins).
@@ -25,7 +25,7 @@ You are running <your-name>'s canonical Voice DNA interview pipeline. The skill 
 - `reference/counsel-prompts.md` — Phase 3 Forensics + Phase 4 review agent prompts
 - `reference/ai-ism-patterns.md` — Phase 2 probe trigger patterns
 
-**Always read in Phase 3:** `~/.claude/references/voice-profiles/adeyemi-adeyosoye/adeyemi-adeyosoye-blueprint.md` — structural fidelity target.
+**Always read in Phase 3:** `~/.claude/references/voice-profiles/exemplar-one/exemplar-one-blueprint.md` — structural fidelity target.
 
 ---
 
@@ -69,7 +69,7 @@ Collect inputs via a single `AskUserQuestion` call (4 questions max per call —
 **Question 1 — Subject name (free text via AskUserQuestion "Other"):**
 
 Frame: "Who are we building a Voice DNA Blueprint for today?"
-Capture the full name. Convert to kebab-case slug (lowercase, spaces → hyphens, strip punctuation). Example: "Adeyemi Adeyosoye" → `adeyemi-adeyosoye`.
+Capture the full name. Convert to kebab-case slug (lowercase, spaces → hyphens, strip punctuation). Example: "Exemplar One" → `exemplar-one`.
 
 If the slug collides with an existing folder at `~/.claude/references/voice-profiles/[slug]/`: append `-2` (or `-3`, etc.) and confirm with the user.
 
@@ -267,7 +267,7 @@ If "Proceed": continue to Phase 3.
 ## Phase 3: Synthesis
 
 **Always read first:**
-- `~/.claude/references/voice-profiles/adeyemi-adeyosoye/adeyemi-adeyosoye-blueprint.md` (gold-standard reference)
+- `~/.claude/references/voice-profiles/exemplar-one/exemplar-one-blueprint.md` (gold-standard reference)
 - `reference/blueprint-template.md` (structural skeleton)
 - The transcript at `~/.claude/projects/[slug]-recon/interview-answers.md`
 - The Charisma Code MD if present (per Phase 1.5 outcome)

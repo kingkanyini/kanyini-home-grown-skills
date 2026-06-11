@@ -9,13 +9,13 @@
 #   - gmail_label MUST start with "Clients/" prefix (CIPHER-F5 patch)
 #
 # Placeholder note:
-#   - {{label_slug}} = PascalCase of slug (e.g., "gut-center" → "GutCenter"). Derived by bootstrap, not entered manually.
+#   - {{label_slug}} = PascalCase of slug (e.g., "example-client" → "ExampleClient"). Derived by bootstrap, not entered manually.
 #
 # Replace {{placeholders}} with actual values during /inbox-digest --bootstrap.
 # The leading frontmatter block is YAML; everything below the second --- is markdown body.
 ---
 client: "{{display_name}}"             # e.g., "<example-client>"
-slug: "{{slug}}"                       # e.g., "gut-center"
+slug: "{{slug}}"                       # e.g., "example-client"
 status: active                         # active | paused | archived
 gmail_accounts:                        # v1: informational only. v2: scan-routing (which accounts to query for this client).
   - "{{primary_account}}"              # e.g., <your-email>
@@ -29,7 +29,7 @@ relay_senders:                         # trusted third-party senders (file when 
   - no-reply@zoom.us
   - calendar-notification@google.com
 match_strategy: any                    # OR-logic across all match channels
-gmail_label: "Clients/{{label_slug}}"  # e.g., Clients/GutCenter — auto-applied as side-effect
+gmail_label: "Clients/{{label_slug}}"  # e.g., Clients/ExampleClient — auto-applied as side-effect
 last_scan: null                        # ISO 8601; updated atomically at end of Phase 2
 priority: medium                       # high | medium | low — feeds counsel weighting (Sprint 2)
 backfill_confirm_threshold: 100        # Phase 1 prompts before scanning more than this many threads

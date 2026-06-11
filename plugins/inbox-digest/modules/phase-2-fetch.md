@@ -142,16 +142,16 @@ NO PII (no email bodies, no full sender names — local-part only if needed for 
 Per-client summary:
 
 ```yaml
-- client_slug: gut-center
+- client_slug: example-client
   client_display: "<example-client>"
-  client_dir: "<vault_root>\\context\\clients\\gut-center"
+  client_dir: "<vault_root>\\context\\clients\\example-client"
   new_thread_paths:
     - "inbox/2026-05-08_katie-followup.md"
-    - "inbox/2026-05-08_jen-deliverables.md"
+    - "inbox/2026-05-08_example-deliverables.md"
   merged_thread_paths: []                  # threads where existing notes got new messages appended
   attachments_extracted:                   # successfully extracted PDFs
-    - path: "inbox/attachments/2026-05-08_jen-deliverables/shopify-stack.pdf"
-      extracted: "inbox/attachments/2026-05-08_jen-deliverables/shopify-stack.pdf.extracted.md"
+    - path: "inbox/attachments/2026-05-08_example-deliverables/shopify-stack.pdf"
+      extracted: "inbox/attachments/2026-05-08_example-deliverables/shopify-stack.pdf.extracted.md"
   attachments_url_only: []                 # binary download deferred (get_attachment MCP missing)
   filing_conflicts: []
   errors: []

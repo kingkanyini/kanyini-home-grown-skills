@@ -59,7 +59,7 @@ When Phase 0 refines these rules, it appends a "## Learned Patterns" section bel
 
 ## Learned Patterns (from Phase 0 — 2026-04-23)
 
-**Source:** 11 RocketeerAds ads across 4 clients (Luxiana, LTUVG, SOMA, Sacral Uproar)
+**Source:** 11 RocketeerAds ads across 4 clients (example-artist, LTUVG, example-collective, Sacral Uproar)
 **Forensic passes:** 3 (Structure → Words → Energy)
 **Extracted by:** Copy Forensics Counsel #39 (Georgi, Milligan, Bencivenga, Halbert)
 **Primary reference:** `reference/skeleton.md` (full 4-layer skeleton)
@@ -139,14 +139,14 @@ If none appear, flag for revision in Phase 3A (fidelity gate).
 | Universal / default | ✅ | 🎁 | Most common in corpus |
 | Feminine / spiritual | ✨ | 💎 | Sacral Uproar style |
 | Gaming / LTUVG | 🎮 | 💎 | Consistent with product ETHOS |
-| Somatic / high-ticket | ✓ (plain) | — | SOMA style — softer, more clinical |
+| Somatic / high-ticket | ✓ (plain) | — | example-collective style — softer, more clinical |
 | Process steps | → | — | For journey/sequence bullets (vs. outcome bullets) |
 
 ### 8. Pronoun Transformation Rule (refined)
 
 Source pages often over-use "I" and "we." RocketeerAds redistributes pronoun weight:
 - **"you/your":** Amplify to 12-16 per 100 words (from source's typical 5-8 per 100)
-- **"I/my":** Compress or delete entirely; only preserve for founder-voice ads (Luxiana style)
+- **"I/my":** Compress or delete entirely; only preserve for founder-voice ads (example-artist style)
 - **"we/us":** Rare — only for the program delivering transformation ("we translate your chart")
 
 ### 9. Section Reorganization Pattern

@@ -488,10 +488,10 @@ Launch **7 parallel Task agents** using `general-purpose` subagent type with `mo
 8. **Gender and pronouns:** "Use the GENDER assigned on your card (HIM/HER/THEM) for: the anonymous archetype character, any story pronouns, and the CTA bridge. Do NOT mix genders within a single ad."
 9. **CTA personalization:** "If your card says 'story-based,' the CTA MUST bridge FROM the story character TO the viewer using the assigned gender pronoun (e.g., 'If his story sounds familiar...' or 'If you saw yourself in her experience...'). If your card says 'direct-address,' use the generic CTA as written."
 10. **Overlay hook rule:** "The overlay hook and spoken hook are TWO DIFFERENT creative units. Use the overlay formula assigned on your card. The overlay is TEXT ON SCREEN that stops the scroll. The spoken hook is the first audio. They must not be identical."
-11. **Name the offer/method in the body (OPTIONAL BUT POWERFUL):** "Where it fits naturally, name the actual offer/container in the ad body (e.g., 'The SOMA Collective is your safe container for this work' or 'Inside Sacral Uproar, we...'). This is NOT required in every ad, but when it lands, it pre-sells the container. Use it in 3-4 of your strongest trigger ads — not all 14."
+11. **Name the offer/method in the body (OPTIONAL BUT POWERFUL):** "Where it fits naturally, name the actual offer/container in the ad body (e.g., 'The Example Collective is your safe container for this work' or 'Inside Sacral Uproar, we...'). This is NOT required in every ad, but when it lands, it pre-sells the container. Use it in 3-4 of your strongest trigger ads — not all 14."
 12. **Simple Shift gate (BLOCKING):** Before returning, each writer MUST self-verify that Part 5 (Simple Shift) exists as a standalone beat. If ANY ad is missing a distinct Simple Shift section, the writer MUST add one before returning. An ad without a Simple Shift is an INCOMPLETE ad and will be rejected.
 13. **Output format:** Return ONLY the 2 completed ad scripts in standard format (overlay hook + script)
-14. **Core modality placement:** "The offer's central method/modality (e.g., Human Design, breathwork, SOMA) must be mentioned by name within the FIRST 30% of the ad script. The audience needs to know what this ad is ABOUT before they're asked to care. Introduce it naturally — not as a pitch, but as the frame."
+14. **Core modality placement:** "The offer's central method/modality (e.g., Human Design, breathwork, example-collective) must be mentioned by name within the FIRST 30% of the ad script. The audience needs to know what this ad is ABOUT before they're asked to care. Introduce it naturally — not as a pitch, but as the frame."
 15. **Em dash limit:** "Maximum ONE em dash (—) per ad. AI-generated copy overuses em dashes. Use commas or periods instead. If you have 2+ em dashes, rewrite all but the strongest one."
 
 **Launch all 7 as foreground parallel tasks** (NOT background).
@@ -544,7 +544,7 @@ Launch **1 Opus agent** with:
 | 3 | **Opening Realization** | Relatable false belief? Stacking rhythm? |
 | 4 | **REAL Problem Reveal** | DEEPER layer — not a restatement? "The REAL problem" framing? |
 | 5 | **Simple Shift** | Mechanism introduced naturally? Discovery, not pitch? **STANDALONE BEAT (MANDATORY):** The Simple Shift MUST appear as its own distinct section in every ad — clearly separated from the REAL Problem Reveal above it and the Proof section below it. Look for a clear transition line (e.g., "The simple shift?" or "Here's what changed..."). If the Simple Shift is missing, merged into another beat, or only implied, it's a REQUIRED fix. |
-| 6 | **Proof Layer** | Specific results? Matches assigned proof type from Foreman card? **PROOF TEMPLATE (MANDATORY):** Every proof beat MUST (a) NAME the proprietary method/mechanism (e.g., "somatic breathwork ceremony," "SOMA protocol," NOT just "this work"), AND (b) END with a VISIBLE result the audience can picture themselves having (e.g., "quit her anxiety meds in 6 weeks" or "booked 3 new clients that month," NOT vague internal states like "the hesitation dissolved" or "she felt a shift"). If proof fails either test, it's a REQUIRED fix. |
+| 6 | **Proof Layer** | Specific results? Matches assigned proof type from Foreman card? **PROOF TEMPLATE (MANDATORY):** Every proof beat MUST (a) NAME the proprietary method/mechanism (e.g., "somatic breathwork ceremony," "example-collective protocol," NOT just "this work"), AND (b) END with a VISIBLE result the audience can picture themselves having (e.g., "quit her anxiety meds in 6 weeks" or "booked 3 new clients that month," NOT vague internal states like "the hesitation dissolved" or "she felt a shift"). If proof fails either test, it's a REQUIRED fix. |
 | 7 | **Social Proof** | "Others like you" woven conversationally? |
 | 8 | **Soft CTA** | Matches locked CTA from Phase 1? Not aggressive? **CTA PERSONALIZATION:** If the ad tells a story about a specific person (named or archetypal), the CTA must bridge FROM that person's story TO the viewer. Use "his/her/their" → "your" transition (e.g., "If her story sounds familiar..." or "If you recognized yourself in that..."). If the ad has NO story character (direct-address throughout), use generic "your" CTA. Generic CTAs on story-based ads = REQUIRED fix. |
 | 9 | **One Trigger Only** | Strictly one trigger per ad? No blending? |
@@ -876,7 +876,7 @@ Display patterns that will be applied (pulled from session learnings or defaults
 
 ```
 LOCKED PATTERNS FOR THIS PUNCH-UP:
-1. ☐ SOMA naming in proof sections
+1. ☐ example-collective naming in proof sections
 2. ☐ Overlay headline formula (not identical to spoken hook)
 3. ☐ CTA personalization (story-bridge for story ads)
 4. ☐ Simple Shift as standalone beat
@@ -945,7 +945,7 @@ After all ads are reviewed, offer the same delivery options as Phase 5 (Google D
 
 11. **All 7 Beats Present** — Every ad MUST contain all 7 parts of Vince Reed's structure as distinct, identifiable beats: (1) Overlay Hook, (2) Spoken Hook, (3) Opening Realization, (4) REAL Problem Reveal, (5) Simple Shift, (6) Proof + Social Proof, (7) Soft CTA. No beat may be merged into another or omitted. The Simple Shift in particular MUST stand alone — it is the mechanism reveal and gets its own lines.
 
-12. **Proof Specificity Floor** — No proof section passes with only vague internal states. Every proof beat must (a) name the proprietary method and (b) end with a visible, external result. "She felt a shift" is not proof. "After 3 SOMA sessions, she slept through the night for the first time in 2 years" is proof.
+12. **Proof Specificity Floor** — No proof section passes with only vague internal states. Every proof beat must (a) name the proprietary method and (b) end with a visible, external result. "She felt a shift" is not proof. "After 3 example-collective sessions, she slept through the night for the first time in 2 years" is proof.
 
 13. **Emotional Lane Uniqueness** — No two ads may share the same emotional entry point. 14 triggers = 14 distinct emotional doors. If punch-ups or revisions cause two ads to converge on the same feeling, the second ad must be rewritten to enter through a different emotion.
 

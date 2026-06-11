@@ -81,18 +81,18 @@
             - img [ref=e67]
             - img [ref=e69]
       - generic [ref=e78]:
-        - link "Luxiana BAD BiTCH music video" [ref=e79] [cursor=pointer]:
+        - link "example-artist BAD BiTCH music video" [ref=e79] [cursor=pointer]:
           - /url: https://www.instagram.com/reel/DQ7XEnXEnzv/
-          - img "Luxiana BAD BiTCH music video" [ref=e80]
-        - link "Luxiana BAD BiTCH hype video" [ref=e81] [cursor=pointer]:
+          - img "example-artist BAD BiTCH music video" [ref=e80]
+        - link "example-artist BAD BiTCH hype video" [ref=e81] [cursor=pointer]:
           - /url: https://www.instagram.com/reel/DTlYzYFkc9P/
-          - img "Luxiana BAD BiTCH hype video" [ref=e82]
-        - link "Luxiana dont give up on your dream" [ref=e83] [cursor=pointer]:
+          - img "example-artist BAD BiTCH hype video" [ref=e82]
+        - link "example-artist dont give up on your dream" [ref=e83] [cursor=pointer]:
           - /url: https://www.instagram.com/reel/DQ0I86AEsld/
-          - img "Luxiana dont give up on your dream" [ref=e84]
-        - link "Luxiana organization enables liberation" [ref=e85] [cursor=pointer]:
+          - img "example-artist dont give up on your dream" [ref=e84]
+        - link "example-artist organization enables liberation" [ref=e85] [cursor=pointer]:
           - /url: https://www.instagram.com/reel/DQCjWuGjfaD/
-          - img "Luxiana organization enables liberation" [ref=e86]
+          - img "example-artist organization enables liberation" [ref=e86]
       - generic [ref=e88]:
         - heading "Hear From My Coaching Clients" [level=1] [ref=e93]:
           - generic [ref=e95]: Hear From My Coaching Clients
@@ -137,9 +137,9 @@
         - generic [ref=e183]:
           - heading "Kayla G." [level=1] [ref=e185]:
             - generic [ref=e187]: Kayla G.
-          - heading "\"Working with Luxiana was the best choice for my self growth and nurturing. She helped me writing songs I love, tap into poetry, and allowed me to reconnect with my love of performing and singing. Not only did I write my own song, but I found my voice in order to keep honoring my self worth in holding healthy boundaries, which I have struggled with all my life. Thank you so much for the confidence boost my Love! For anyone who is thinking about working with a voice and performance coach, Luciana will take you to heights unbounded.\"" [level=1] [ref=e189]:
+          - heading "\"Working with example-artist was the best choice for my self growth and nurturing. She helped me writing songs I love, tap into poetry, and allowed me to reconnect with my love of performing and singing. Not only did I write my own song, but I found my voice in order to keep honoring my self worth in holding healthy boundaries, which I have struggled with all my life. Thank you so much for the confidence boost my Love! For anyone who is thinking about working with a voice and performance coach, Luciana will take you to heights unbounded.\"" [level=1] [ref=e189]:
             - generic [ref=e192]:
-              - text: "\"Working with Luxiana was the best choice for my self growth and nurturing. She helped me writing songs I love, tap into poetry, and allowed me to reconnect with my love of performing and singing. Not only did I write my own song, but I found my voice in order to keep honoring my self worth in holding healthy boundaries, which I have struggled with all my life."
+              - text: "\"Working with example-artist was the best choice for my self growth and nurturing. She helped me writing songs I love, tap into poetry, and allowed me to reconnect with my love of performing and singing. Not only did I write my own song, but I found my voice in order to keep honoring my self worth in holding healthy boundaries, which I have struggled with all my life."
               - text: Thank you so much for the confidence boost my Love! For anyone who is thinking about working with a voice and performance coach, Luciana will take you to heights unbounded."
       - generic [ref=e194]:
         - heading "Because the reality is, the GIFT is Already Inside you." [level=1] [ref=e199]:
@@ -259,8 +259,8 @@
           - generic [ref=e362]:
             - heading "12 Courses — Seed to Stage" [level=1] [ref=e364]:
               - generic [ref=e365]: 12 Courses — Seed to Stage
-            - heading "Monthly 90-min Group Calls w/ Luxiana" [level=1] [ref=e367]:
-              - generic [ref=e368]: Monthly 90-min Group Calls w/ Luxiana
+            - heading "Monthly 90-min Group Calls w/ example-artist" [level=1] [ref=e367]:
+              - generic [ref=e368]: Monthly 90-min Group Calls w/ example-artist
             - heading "Stage Ready Blueprint" [level=1] [ref=e370]:
               - generic [ref=e371]: Stage Ready Blueprint
             - heading "Bad Bitch Music Video Blueprint" [level=1] [ref=e373]:
@@ -280,8 +280,8 @@
       - generic [ref=e393]:
         - generic [ref=e395]:
           - img [ref=e397]
-          - heading "I'm Luxiana." [level=1] [ref=e399]:
-            - generic [ref=e400]: I'm Luxiana.
+          - heading "I'm example-artist." [level=1] [ref=e399]:
+            - generic [ref=e400]: I'm example-artist.
           - heading [level=1] [ref=e402]:
             - generic [ref=e404]:
               - text: It's important for you to know my story because I used to be where you are now.
@@ -300,7 +300,7 @@
               - text: How far away the dream feels.
               - text: Or how "untalented" you feel.
               - text: If you have something inside you that wants to come OUT — this is for you.
-              - text: — Luxiana
+              - text: — example-artist
           - heading "If You've been asking these questions too, then you're ready to take the next step and claim your stage." [level=1] [ref=e406]:
             - generic [ref=e407]: If You've been asking these questions too, then you're ready to take the next step and claim your stage.
         - generic [ref=e410]:
@@ -327,9 +327,9 @@
                 - generic [ref=e452]:
                   - text: 12 Courses — Seed to Stage
                   - text: "[Value: $3,000]"
-              - 'heading "Monthly 90-min Group Calls w/ Luxiana [Value: $997]" [level=1] [ref=e454]':
+              - 'heading "Monthly 90-min Group Calls w/ example-artist [Value: $997]" [level=1] [ref=e454]':
                 - generic [ref=e456]:
-                  - text: Monthly 90-min Group Calls w/ Luxiana
+                  - text: Monthly 90-min Group Calls w/ example-artist
                   - generic [ref=e457]: "[Value: $997]"
               - 'heading "Stage Ready Blueprint — song creation, production & show launch [Value: $997]" [level=1] [ref=e459]':
                 - generic [ref=e462]:
@@ -349,9 +349,9 @@
                 - generic [ref=e478]:
                   - text: Skool Community — Your Tribe of Bad Bitches
                   - text: "[Value: $1,200]"
-              - 'heading "BONUS: 1:1 Coaching Call w/ Luxiana (First 10 only) [Value: $497]" [level=1] [ref=e480]':
+              - 'heading "BONUS: 1:1 Coaching Call w/ example-artist (First 10 only) [Value: $497]" [level=1] [ref=e480]':
                 - generic [ref=e483]:
-                  - text: "BONUS: 1:1 Coaching Call w/ Luxiana (First 10 only)"
+                  - text: "BONUS: 1:1 Coaching Call w/ example-artist (First 10 only)"
                   - text: "[Value: $497]"
           - generic [ref=e486]:
             - 'heading "Total Value: $7,085" [level=1] [ref=e488]':
@@ -378,7 +378,7 @@
             - /url: "#open-popup"
             - generic [ref=e525]:  ANSWER YOUR CALLING TODAY
             - generic [ref=e526]: CLAIM YOUR STAGE!
-      - heading " 2026 Luxiana Music Coach" [level=1] [ref=e533]:
+      - heading " 2026 example-artist Music Coach" [level=1] [ref=e533]:
         - generic [ref=e534]: 
-        - generic [ref=e535]: 2026 Luxiana Music Coach
+        - generic [ref=e535]: 2026 example-artist Music Coach
   - text: 

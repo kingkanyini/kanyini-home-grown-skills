@@ -47,7 +47,7 @@ A skill being retired gets two fields:
 
 ## Keeping your configs across updates
 
-User configs (e.g., `morning-compass`'s `coaches/<your-username>/integrations.yml`) should NEVER live inside a plugin's folder. They get overwritten on update.
+User configs (e.g., a skill's per-user `config/<your-username>/integrations.yml`) should NEVER live inside a plugin's folder. They get overwritten on update.
 
 Per PLAN-v3.1 §5, skills write user configs to:
 

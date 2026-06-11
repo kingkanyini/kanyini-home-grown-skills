@@ -109,12 +109,12 @@ If no prior brief exists (first run): omit this metric line.
 Per-client digest summary:
 
 ```yaml
-- client_slug: gut-center
-  brief_path: "context/clients/gut-center/briefs/2026-05-08_brief.md"
+- client_slug: example-client
+  brief_path: "context/clients/example-client/briefs/2026-05-08_brief.md"
   new_action_items: 3
   inferred_count: 1
   hot_attachments:
-    - "context/clients/gut-center/inbox/attachments/2026-05-08_jen-deliverables/shopify-stack.pdf"
+    - "context/clients/example-client/inbox/attachments/2026-05-08_example-deliverables/shopify-stack.pdf"
   priority: high
 ```
 

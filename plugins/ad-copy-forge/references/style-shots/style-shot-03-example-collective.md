@@ -1,21 +1,21 @@
-# Style Shot 03 — SOMA S1#1 (Gold Standard)
+# Style Shot 03 — example-collective S1#1 (Gold Standard)
 
-**Client:** SOMA Collective (booking.somacollective.io)
+**Client:** Example Collective (booking.example.com)
 **Headline:** Stop Performing. Start Being.
 **Style category:** Somatic/body · high-ticket · chiasmus signature · triple-stacked CTA menu · program-centric voice
 **Selected for:** Most complete 11-section canonical flow · near-perfect proportions · cleanest template in corpus
 
 ---
 
-## SOURCE PAGE (key themes from SOMA sales page)
+## SOURCE PAGE (key themes from example-collective sales page)
 
-> Program: SOMA 8-Week Embodiment Protocol / 8-week somatic immersion
+> Program: example-collective 8-Week Embodiment Protocol / 8-week somatic immersion
 >
 > Audience: Entrepreneurs earning €5k-20k+/month who are successful on paper but physically disconnected
 >
 > Core mechanism: Nervous system regulation · somatic disconnection · shadow pattern release · embodiment
 >
-> Tiers: SOMA Core · SOMA Immersion (€3,999) · SOMA Initiation (VIP with 1:1)
+> Tiers: example-collective Core · example-collective Immersion (€3,999) · example-collective Initiation (VIP with 1:1)
 >
 > Scarcity: 4 spots per tier
 >
@@ -45,7 +45,7 @@ Here's what most high-performers don't realize:
 
 Your body isn't the problem. It's trying to protect you with outdated patterns.
 
-SOMA is an 8-week somatic immersion designed to help you:
+example-collective is an 8-week somatic immersion designed to help you:
 
 ✓ Regulate your nervous system — move from constant fight-or-flight to calm dominance
 
@@ -61,7 +61,7 @@ Designed for entrepreneurs earning €5k–€20k+/month who are ready to stop p
 
 3 tiers. Live ceremonies in Stuttgart. Optional 3-day Cyprus retreat.
 
-Explore SOMA Experiences
+Explore example-collective Experiences
 
 Claim Your Spot in the Next Cohort
 
@@ -78,11 +78,11 @@ P.S. Only 4 spots per tier. This isn't for everyone — it's for entrepreneurs r
 | Hook | "You're crushing it externally. But your body is screaming." | Statement opener, paradox-pair |
 | Pain Stacking | "You've built the business. Hit the revenue targets. Proven you can perform." + "Tight neck. Shallow breathing. Always activated." | **TWO triple-parallel pain ladders** — honor-ladder + symptom-ladder |
 | Industry Reframe | "Here's what most high-performers don't realize: Your body isn't the problem. It's trying to protect you with outdated patterns." | Pivot opener + mechanism reveal |
-| Program Intro | "SOMA is an 8-week somatic immersion..." | Naming sentence with time-bound container |
+| Program Intro | "example-collective is an 8-week somatic immersion..." | Naming sentence with time-bound container |
 | Offer Breakdown | 5 `✓` bullets | **Verb-first internal outcomes** (Regulate, Reconnect, Release, Embody, Master) |
 | Qualifier | "Designed for entrepreneurs earning €5k–€20k+/month..." | Earnings-range qualifier |
 | Logistics | "3 tiers. Live ceremonies in Stuttgart. Optional 3-day Cyprus retreat." | Fragment triple for deliverables |
-| CTA (triple-stacked menu) | Explore SOMA Experiences · Claim Your Spot in the Next Cohort · Discover Which Tier Fits Your Transformation | Triple-CTA pattern (rare but signature for SOMA) |
+| CTA (triple-stacked menu) | Explore example-collective Experiences · Claim Your Spot in the Next Cohort · Discover Which Tier Fits Your Transformation | Triple-CTA pattern (rare but signature for example-collective) |
 | P.S. (stakes amplifier) | "Only 4 spots per tier. This isn't for everyone..." | Scarcity + identity exclusion |
 
 ## ENERGY MAPPING
@@ -106,7 +106,7 @@ P.S. Only 4 spots per tier. This isn't for everyone — it's for entrepreneurs r
 4. **Honor-first opening:** Best example of the honor-first rule (*"You've built the business..."* before *"your body is screaming"*).
 5. **Triple-stacked CTA menu:** Demonstrates the high-ticket CTA pattern (3 parallel CTA lines instead of single button).
 6. **P.S. as stakes amplifier:** Scarcity + qualifier ("isn't for everyone") + identity reframe — maximizes P.S. slot.
-7. **Program-centric voice:** Zero "I" — program is the hero. Template for SOMA/coaching/healing ads without founder-voice.
+7. **Program-centric voice:** Zero "I" — program is the hero. Template for example-collective/coaching/healing ads without founder-voice.
 
 ## FIDELITY NOTES
 

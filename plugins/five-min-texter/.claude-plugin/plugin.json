@@ -1,0 +1,29 @@
+{
+  "name": "five-min-texter",
+  "version": "1.0.0",
+  "description": "Stand up a 5-minute SMS auto-responder for a solo wellness practice: guided intake interview, then n8n + Twilio + A2P 10DLC setup on a council-reviewed engine. Crisis screen (988) runs first.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T4",
+  "requires": [],
+  "recommends": [
+    "voice-dna-blueprint-builder"
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__n8n-mcp__*"
+    ],
+    "clis": [
+      "node"
+    ],
+    "envVars": [],
+    "services": [
+      "n8n Cloud",
+      "Twilio",
+      "Airtable",
+      "Telegram",
+      "Anthropic"
+    ]
+  }
+}

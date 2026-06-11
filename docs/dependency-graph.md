@@ -30,6 +30,7 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `counsel-dispatch` | ROOT | Standalone |
 | `daily-email-digest` | MID | Standalone |
 | `exportskill` | ROOT | Standalone |
+| `five-min-texter` | ROOT | Heavy-prereq |
 | `funnel-audit` | ROOT | Standalone |
 | `funnel-hack-lvl-1` | ROOT | Standalone |
 | `funnel-hack-research` | ROOT | Standalone |
@@ -64,6 +65,7 @@ When an MCP server is down or missing, which skills break? `hermes-doctor` (Phas
 | `mcp__claude_ai_Canva__` | `offer-optimizer` |
 | `mcp__ffmpeg-mcp__` | `voice-dna-extractor` |
 | `mcp__gmail-gong-mcp__` | `inbox-digest` |
+| `mcp__n8n-mcp__` | `five-min-texter` |
 | `mcp__perplexity__` | `perplexity-research`, `voice-profile-build` |
 | `mcp__playwright__` | `web-dev-bot` |
 | `mcp__yt-dlp-mcp__` | `voice-dna-extractor`, `voice-profile-build` |

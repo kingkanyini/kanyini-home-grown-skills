@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "name": "5-Minute Texter — Error Handler (fail-loud)",
+    "version": "1.0.0"
+  },
+  "name": "5-Min Texter - Error Handler",
+  "nodes": [
+    {
+      "id": "err_trigger",
+      "name": "On Workflow Error",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "err_format",
+      "name": "Format Alert (defensive)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Build a single fail-loud alert line. Optional chaining is fine here (Code node, not an n8n expression).\nconst e = $json.execution || {};\nconst w = $json.workflow || {};\nconst node = e.lastNodeExecuted ? ` at node \"${e.lastNodeExecuted}\"` : '';\nconst reason = e.error && e.error.message ? `: ${e.error.message}` : '';\nconst execId = e.id ? ` (exec ${e.id})` : '';\nconst alert = `\\u26A0\\uFE0F 5-Min Texter ERROR. Workflow \"${w.name || 'unknown'}\" failed${node}${reason}${execId}. Check n8n.`;\nreturn [{ json: { alert } }];"
+      }
+    },
+    {
+      "id": "err_alert_tg",
+      "name": "Alert the owner (Telegram)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        480,
+        0
+      ],
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "{{OWNER_TELEGRAM_CHAT_ID}}",
+        "text": "={{ $json.alert }}"
+      },
+      "_note": "onError=continueRegularOutput: if Telegram itself is down, execution CONTINUES to the Twilio alert. Both channels always attempt."
+    },
+    {
+      "id": "err_alert",
+      "name": "Alert the owner (Twilio)",
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {
+        "operation": "send",
+        "from": "{{TWILIO_FROM}}",
+        "to": "{{OWNER_CELL_E164}}",
+        "message": "={{ $json.alert }}"
+      }
+    }
+  ],
+  "connections": {
+    "On Workflow Error": {
+      "main": [
+        [
+          {
+            "node": "Format Alert (defensive)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Alert (defensive)": {
+      "main": [
+        [
+          {
+            "node": "Alert the owner (Telegram)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alert the owner (Telegram)": {
+      "main": [
+        [
+          {
+            "node": "Alert the owner (Twilio)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {}
+}

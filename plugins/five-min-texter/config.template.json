@@ -1,0 +1,78 @@
+{
+  "_about": "the owner's filled config — the SINGLE source for every engine {{PLACEHOLDER}}. The skill writes a copy as config.json with values filled from the intake interview. engine/lib/config-check.js validates this 1:1 against the engine: every placeholder has exactly one source here (no orphan placeholders), and every mapped field is real (no dead entries). At go-live, config-check --filled asserts nothing is empty.",
+  "_secrets_note": "NEVER put the Twilio Auth Token or the Anthropic API key in this file. They live ONLY in n8n's credential vault (and TWILIO_AUTH_TOKEN as an n8n env var). This file is config, not secrets, and may be committed.",
+  "_placeholder_map": {
+    "PRACTICE_NAME": "practice_name",
+    "OWNER_FIRST": "owner_first",
+    "BOOKING_LINK": "booking_link",
+    "QUIET_HOURS": "quiet_hours",
+    "OWNER_CELL_E164": "owner_cell_e164",
+    "TWILIO_FROM": "twilio_from",
+    "AIRTABLE_BASE": "airtable_base",
+    "SP_SENDER_DOMAIN": "sp_sender_domain",
+    "WEBHOOK_PUBLIC_URL": "webhook_public_url",
+    "OWNER_TELEGRAM_CHAT_ID": "owner_telegram_chat_id",
+    "ERROR_WORKFLOW_ID": "error_workflow_id",
+    "FAQ_TEXT": "@assemble:faq",
+    "VOICE_DNA_BLOCK": "@assemble:voice_dna"
+  },
+
+  "practice_name": "",
+  "owner_first": "",
+  "booking_link": "",
+  "quiet_hours": "8:00am-8:30pm",
+  "owner_cell_e164": "",
+  "twilio_from": "",
+  "airtable_base": "",
+  "sp_sender_domain": "simplepractice.com",
+  "webhook_public_url": "",
+  "owner_telegram_chat_id": "",
+  "error_workflow_id": "",
+
+  "faq": {
+    "services": [],
+    "hours": "",
+    "location": "",
+    "rate_band": "",
+    "insurance_stance": "",
+    "will_not_discuss": [
+      "specific health concerns, symptoms, or diagnoses",
+      "anything that sounds like medical or mental-health advice",
+      "detailed pricing beyond rate_band",
+      "scheduling specifics beyond sharing the booking link"
+    ]
+  },
+
+  "voice_dna": {
+    "cadence": "",
+    "warmth": "",
+    "sign_off": "",
+    "tone_words": [],
+    "sample_phrasings": [],
+    "avoid": []
+  },
+
+  "a2p": {
+    "entity_type": "",
+    "legal_name": "",
+    "business_address": "",
+    "ein": "",
+    "mobile_for_otp": ""
+  },
+
+  "categories": [],
+  "tone_band_default": "gentle",
+  "crisis": {
+    "approved": false,
+    "local_line": ""
+  },
+
+  "_automation_note": "Round 0 capture. INFORMATIONAL / NON-PLACEHOLDER — do NOT add to _placeholder_map (no {{TOKEN}} consumes it; a map entry would read as a DEAD entry to config-check). Feeds automation-roadmap.md. v1 always ships at Stage 1 (draft-and-approve) regardless of target_state.",
+  "automation": {
+    "current_state": "",
+    "target_state": "",
+    "graduation_gate": ""
+  },
+
+  "_timezone": ""
+}

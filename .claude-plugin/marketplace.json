@@ -129,6 +129,10 @@
     {
       "name": "overlay-director",
       "source": "./plugins/overlay-director"
+    },
+    {
+      "name": "five-min-texter",
+      "source": "./plugins/five-min-texter"
     }
   ]
 }

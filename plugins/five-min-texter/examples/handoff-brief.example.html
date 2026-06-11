@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your 5-Minute Texter · Build Brief</title>
+<style>
+  :root{
+    --ink:#1c1530; --royal:#3b2466; --royal2:#5a3aa0; --gold:#c9a227; --gold-soft:#e7cf7a;
+    --cream:#faf6ec; --paper:#ffffff; --line:#e7e0d0; --muted:#6b6378;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px 64px}
+  header{background:linear-gradient(135deg,var(--royal) 0%,var(--royal2) 100%);color:#fff;
+    padding:54px 22px 46px;text-align:center;border-bottom:5px solid var(--gold)}
+  header .crown{font-size:30px;margin-bottom:10px}
+  header h1{margin:0;font-size:34px;letter-spacing:.2px}
+  header p{margin:12px auto 0;max-width:520px;color:var(--gold-soft);font-size:18px}
+  h2{color:var(--royal);font-size:22px;margin:40px 0 12px;display:flex;align-items:center;gap:10px}
+  h2 .n{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#2a1c0a;
+    font-size:15px;font-weight:700;align-items:center;justify-content:center;flex:0 0 auto}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-top:14px}
+  .promise{border-left:5px solid var(--gold);background:#fffdf6}
+  .promise strong{color:var(--royal)}
+  .flip{background:#f6f1ff;border:1px solid #e2d6fb;border-radius:10px;padding:14px 16px;margin-top:14px}
+  .flip b{color:var(--royal2)}
+  ul{margin:8px 0 0;padding-left:22px}
+  li{margin:6px 0}
+  .cost{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .cost div{flex:1 1 200px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .cost .big{font-size:22px;color:var(--royal);font-weight:700}
+  .do{display:flex;gap:14px;margin-top:14px}
+  .do .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
+  .do .step .k{font-size:24px}
+  .seal{margin-top:40px;text-align:center;color:var(--muted);font-size:14px;
+    border-top:1px solid var(--line);padding-top:22px}
+  .seal b{color:var(--royal)}
+  .safe{color:var(--royal);font-weight:600}
+</style>
+</head>
+<body>
+<header>
+  <div class="crown">♛</div>
+  <h1>Your 5-Minute Texter</h1>
+  <p>When someone reaches out, they hear back fast, in your voice, with your thumb on every send.</p>
+</header>
+
+<div class="wrap">
+
+  <h2><span class="n">1</span>The promise</h2>
+  <div class="card promise">
+    <p>Someone new texts your number. Within seconds they get a warm acknowledgment so they know they
+      were heard. Moments later, a reply written in <strong>your</strong> voice is ready for you to send.
+      The target is <strong>under five minutes</strong>, start to finish.</p>
+    <div class="flip">
+      <b>The honest catch:</b> that five-minute reply depends on <b>you</b>. The acknowledgment is
+      automatic, but the real reply waits for your approval. Approve quickly and it feels instant. Sit on
+      it and the person still got the acknowledgment, just not the full reply yet. At 15 minutes the
+      system flags the inquiry in your Airtable view and nudges you once more in Telegram with the
+      draft, so nothing slips.
+    </div>
+  </div>
+
+  <h2><span class="n">2</span>How it keeps people safe</h2>
+  <div class="card">
+    <ul>
+      <li><span class="safe">A crisis is caught before anything else.</span> If someone sends language
+        that signals they're in danger, the system instantly shares the 988 Suicide &amp; Crisis Lifeline,
+        the Crisis Text Line (text HOME to 741741), and 911 for immediate danger, alerts you, and steps
+        out of that conversation so a real human (you) can step in. That message is never reworded. It
+        exists to get help fast. And if that person reaches out again later, ready to book, they aren't
+        locked out — their reply waits for your approval like any other, with your thumb on the send.</li>
+      <li><span class="safe">It never repeats what someone told you.</span> By the time it writes a reply,
+        it doesn't even have the person's words, only the safe facts you approved.</li>
+      <li><span class="safe">It only says what's on your FAQ.</span> No improvised prices, hours, or
+        advice. Anything outside the lines routes to you.</li>
+      <li><span class="safe">Nothing sends without you.</span> You read and approve every reply.</li>
+    </ul>
+  </div>
+
+  <h2><span class="n">3</span>What you own</h2>
+  <div class="card">
+    <p>This isn't a seat you rent in someone else's tool. The engine runs in <b>your</b> n8n account, on
+      <b>your</b> phone number, with <b>your</b> data in <b>your</b> Airtable. If you ever want to change
+      it, pause it, or walk away with it, it's yours.</p>
+  </div>
+
+  <h2><span class="n">4</span>What it costs</h2>
+  <div class="card">
+    <div class="cost">
+      <div><div class="big">~$24–30</div><b>per month</b><br>n8n Cloud (your engine)</div>
+      <div><div class="big">pennies</div><b>per text</b><br>Twilio</div>
+      <div><div class="big">one-time</div><b>A2P setup</b><br>carrier registration</div>
+    </div>
+    <p style="margin-top:14px;color:var(--muted);font-size:15px">Exact carrier fees are confirmed live in
+      the console during setup, because they shift and we never quote them from memory.</p>
+  </div>
+
+  <h2><span class="n">5</span>The two things you do</h2>
+  <div class="card">
+    <div class="do">
+      <div class="step"><div class="k">🧭</div><b>Run the wizard</b><br>We sit down once and set up your
+        voice, your FAQ, the whole thing together.</div>
+      <div class="step"><div class="k">👍</div><b>Approve replies</b><br>A draft lands in Telegram; you
+        approve, edit, or ignore. That's the daily job.</div>
+    </div>
+    <p style="margin-top:14px;color:var(--muted);font-size:15px">Setup is one session. Going live then
+      waits on carrier approval (the A2P registration), usually a few days to a week. We file it first
+      so it's clearing while everything else gets built.</p>
+  </div>
+
+  <h2><span class="n">6</span>Who checked it</h2>
+  <div class="card">
+    <p>Before it reached you, the engine was reviewed by a build council: automation and reliability
+      engineers (the Automation Forge) and a product, architecture, and security review squad (the
+      Triple Threat). They checked the crisis handling and the safety guards line by line. It passed at
+      9.6 out of 10, twice.</p>
+  </div>
+
+  <div class="seal">
+    Built for the owner  · <b>Build Your Freedom</b> · reviewed by Automation Forge #61 + Triple Threat #30<br>
+    A real reply in your voice, fast, while you get on with your day.
+  </div>
+
+</div>
+</body>
+</html>

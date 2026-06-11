@@ -156,6 +156,23 @@ const METADATA = {
     command: '/skill-to-site',
     usage: '/skill-to-site [skill-name]',
   },
+  'five-min-texter': {
+    tier: 'T4',
+    description: 'Stand up a 5-minute SMS auto-responder for a solo wellness practice: guided intake interview, then n8n + Twilio + A2P 10DLC setup on a council-reviewed engine. Crisis screen (988) runs first.',
+    requires: [],
+    recommends: ['voice-dna-blueprint-builder'],
+    prereqs: {
+      mcps: ['mcp__n8n-mcp__*'],
+      clis: ['node'],
+      envVars: [],
+      services: ['n8n Cloud', 'Twilio', 'Airtable', 'Telegram', 'Anthropic'],
+    },
+    command: '/five-min-texter',
+    usage: '/five-min-texter',
+    // Hand-authored README/CHANGELOG/preflight (rich n8n engine docs) — generator regenerates
+    // plugin.json (the metadata contract) but SKIPS the docs so they are never clobbered.
+    customDocs: true,
+  },
   // T5 Offer
   'offer-optimizer': {
     tier: 'T5',
@@ -535,16 +552,16 @@ async function main() {
     await fs.mkdir(path.dirname(pluginJsonPath), { recursive: true });
     await fs.writeFile(pluginJsonPath, JSON.stringify(pluginJson, null, 2) + '\n');
 
-    // preflight.mjs
-    await fs.writeFile(path.join(skillDir, 'preflight.mjs'), preflightScript(skill, meta));
-
-    // README.md
-    await fs.writeFile(path.join(skillDir, 'README.md'), readmeContent(skill, meta));
-
-    // CHANGELOG.md
-    await fs.writeFile(path.join(skillDir, 'CHANGELOG.md'), changelogContent(skill));
-
-    console.log(`  ✓ ${skill}`);
+    // preflight.mjs + README.md + CHANGELOG.md — SKIPPED for customDocs skills
+    // (hand-authored docs/preflight that the templates would otherwise overwrite).
+    if (meta.customDocs) {
+      console.log(`  ✓ ${skill} (plugin.json only — customDocs: preserved hand-authored README/CHANGELOG/preflight)`);
+    } else {
+      await fs.writeFile(path.join(skillDir, 'preflight.mjs'), preflightScript(skill, meta));
+      await fs.writeFile(path.join(skillDir, 'README.md'), readmeContent(skill, meta));
+      await fs.writeFile(path.join(skillDir, 'CHANGELOG.md'), changelogContent(skill));
+      console.log(`  ✓ ${skill}`);
+    }
   }
 
   // marketplace.json — MUST follow Claude Code's marketplace schema: `plugins` is an

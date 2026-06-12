@@ -14,9 +14,7 @@
 
 ## Prerequisites
 
-**MCP servers:**
-- `mcp__obsidian-brain__*`
-
+No prerequisites — standalone skill.
 
 Run `node preflight.mjs` from this skill's folder to verify all prereqs are met.
 

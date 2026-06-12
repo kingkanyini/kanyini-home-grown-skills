@@ -17,9 +17,6 @@
 **Recommended skills** (warning if missing, not blocking):
 - `counsel-dispatch`
 
-**MCP servers:**
-- `mcp__obsidian-brain__*`
-
 
 Run `node preflight.mjs` from this skill's folder to verify all prereqs are met.
 

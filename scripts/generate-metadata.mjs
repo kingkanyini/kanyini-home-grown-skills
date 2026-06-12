@@ -21,9 +21,12 @@ const METADATA = {
     description: 'Save session context and git snapshots — your video game save point for agent work',
     requires: [],
     recommends: [],
-    prereqs: { mcps: ['mcp__obsidian-brain__*'], clis: ['git'], envVars: [], services: [] },
+    prereqs: { mcps: [], clis: ['git'], envVars: [], services: [] },
     command: '/savepoint',
     usage: '/savepoint or /savepoint "brief description"',
+    // Hand-authored README carries the public "vault sync locked by default" note —
+    // protect it from the template. plugin.json (mcps: []) is still generator-owned.
+    customDocs: true,
   },
   quicksave: {
     tier: 'T1',
@@ -39,7 +42,7 @@ const METADATA = {
     description: 'Dispatch a counsel member from the vault. Loads their stat sheet, embodies their voice, and logs the dispatch for XP accumulation.',
     requires: [],
     recommends: [],
-    prereqs: { mcps: ['mcp__obsidian-brain__*'], clis: [], envVars: [], services: [] },
+    prereqs: { mcps: [], clis: [], envVars: [], services: [] },
     command: '/counsel-dispatch',
     usage: '/counsel-dispatch [slug] about [topic]',
   },
@@ -57,7 +60,7 @@ const METADATA = {
     description: 'Extract reusable patterns from the session, self-evaluate quality before saving, and determine the right save location (Global vs Project)',
     requires: [],
     recommends: [],
-    prereqs: { mcps: ['mcp__obsidian-brain__*'], clis: [], envVars: [], services: [] },
+    prereqs: { mcps: [], clis: [], envVars: [], services: [] },
     command: '/learn-eval',
     usage: '/learn-eval',
   },
@@ -68,7 +71,7 @@ const METADATA = {
     requires: [],
     recommends: [],
     prereqs: {
-      mcps: ['mcp__gmail-gong-mcp__*', 'mcp__obsidian-brain__*'],
+      mcps: ['mcp__gmail-gong-mcp__*'],
       clis: ['python', 'node', 'pwsh'],
       envVars: [],
       services: ['Gmail'],
@@ -82,7 +85,7 @@ const METADATA = {
     requires: [],
     recommends: [],
     prereqs: {
-      mcps: ['mcp__perplexity__*', 'mcp__obsidian-brain__*'],
+      mcps: ['mcp__perplexity__*'],
       clis: [],
       envVars: ['PERPLEXITY_API_KEY'],
       services: ['Perplexity'],
@@ -113,6 +116,18 @@ const METADATA = {
     prereqs: { mcps: [], clis: [], envVars: [], services: [] },
     command: '/voice-dna-blueprint-builder',
     usage: '/voice-dna-blueprint-builder',
+  },
+  'voice-profile-build': {
+    tier: 'T3',
+    description: 'Build a deep Voice DNA profile for any person. Recon → Copy Forensics Counsel #39 (4 parallel agents) → synthesis → 6-field Character Intake Card. Recon-based sibling to voice-dna-blueprint-builder.',
+    requires: [],
+    recommends: [
+      { name: 'voice-dna-blueprint-builder', version: '^1.0.0' },
+      { name: 'savepoint', version: '^1.0.0' },
+    ],
+    prereqs: { mcps: ['mcp__yt-dlp-mcp__*', 'mcp__perplexity__*'], clis: [], envVars: [], services: [] },
+    command: '/voice-profile-build',
+    usage: '/voice-profile-build',
   },
   'charisma-codes': {
     tier: 'T3',
@@ -224,7 +239,7 @@ const METADATA = {
     description: 'Create a funnel for a new customer from scratch using the ABCDE + SWIPES framework with 3-hat copy counsel',
     requires: [],
     recommends: [{ name: 'counsel-dispatch', version: '^1.0.0' }],
-    prereqs: { mcps: ['mcp__obsidian-brain__*'], clis: [], envVars: [], services: [] },
+    prereqs: { mcps: [], clis: [], envVars: [], services: [] },
     command: '/funnel-hack-lvl-1',
     usage: '/funnel-hack-lvl-1',
   },
@@ -236,7 +251,7 @@ const METADATA = {
       { name: 'counsel-dispatch', version: '^1.0.0' },
       { name: 'offer-optimizer', version: '^1.0.0' },
     ],
-    prereqs: { mcps: ['mcp__obsidian-brain__*'], clis: [], envVars: [], services: [] },
+    prereqs: { mcps: [], clis: [], envVars: [], services: [] },
     command: '/funnel-audit',
     usage: '/funnel-audit [url]',
   },
@@ -246,7 +261,7 @@ const METADATA = {
     requires: [],
     recommends: [{ name: 'voice-dna-blueprint-builder', version: '^1.0.0' }],
     prereqs: {
-      mcps: ['mcp__obsidian-brain__*'],
+      mcps: [],
       clis: ['npx'],
       envVars: ['VERCEL_TOKEN'],
       services: ['Vercel'],
@@ -260,7 +275,7 @@ const METADATA = {
     description: 'Forge a Perfect Webinar script (outline + 90min + variants) with counsel guidance',
     requires: [{ name: 'voice-dna-blueprint-builder', version: '^1.0.0' }],
     recommends: [{ name: 'counsel-dispatch', version: '^1.0.0' }],
-    prereqs: { mcps: ['mcp__obsidian-brain__*'], clis: [], envVars: [], services: [] },
+    prereqs: { mcps: [], clis: [], envVars: [], services: [] },
     command: '/webinar-forge',
     usage: '/webinar-forge',
   },
@@ -354,7 +369,7 @@ const METADATA = {
     requires: [],
     recommends: [{ name: 'counsel-dispatch', version: '^1.0.0' }],
     prereqs: {
-      mcps: ['mcp__obsidian-brain__*'],
+      mcps: [],
       clis: ['node', 'npx', 'ffmpeg'],
       envVars: [],
       services: [

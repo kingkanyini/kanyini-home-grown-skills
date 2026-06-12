@@ -17,9 +17,6 @@
 **Recommended skills** (warning if missing, not blocking):
 - `counsel-dispatch`
 
-**MCP servers:**
-- `mcp__obsidian-brain__*`
-
 **CLI tools:**
 - `node`
 - `npx`

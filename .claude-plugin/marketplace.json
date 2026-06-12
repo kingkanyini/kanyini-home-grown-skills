@@ -63,6 +63,10 @@
       "source": "./plugins/skill-to-site"
     },
     {
+      "name": "five-min-texter",
+      "source": "./plugins/five-min-texter"
+    },
+    {
       "name": "offer-optimizer",
       "source": "./plugins/offer-optimizer"
     },
@@ -129,10 +133,6 @@
     {
       "name": "overlay-director",
       "source": "./plugins/overlay-director"
-    },
-    {
-      "name": "five-min-texter",
-      "source": "./plugins/five-min-texter"
     }
   ]
 }

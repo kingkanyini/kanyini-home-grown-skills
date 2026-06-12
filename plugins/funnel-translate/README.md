@@ -17,9 +17,6 @@
 **Recommended skills** (warning if missing, not blocking):
 - `voice-dna-blueprint-builder`
 
-**MCP servers:**
-- `mcp__obsidian-brain__*`
-
 **CLI tools:**
 - `npx`
 

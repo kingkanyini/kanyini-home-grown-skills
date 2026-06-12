@@ -16,7 +16,6 @@
 
 **MCP servers:**
 - `mcp__gmail-gong-mcp__*`
-- `mcp__obsidian-brain__*`
 
 **CLI tools:**
 - `python`

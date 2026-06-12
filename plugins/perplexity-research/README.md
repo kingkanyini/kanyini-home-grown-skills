@@ -16,7 +16,6 @@
 
 **MCP servers:**
 - `mcp__perplexity__*`
-- `mcp__obsidian-brain__*`
 
 **Environment variables:**
 - `PERPLEXITY_API_KEY`

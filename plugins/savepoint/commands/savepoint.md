@@ -30,8 +30,8 @@ This is the **distribution build**. Two advanced systems are **locked off** so t
 
 The AI-brain layout is **Context** (loaded every session) · **Skills** · **Automation**. Episodic session notes belong in a `memory/` subfolder **inside** the Context layer — stored, but NOT part of the always-loaded context.
 
-1. **Determine the workspace root** — the top-level folder Claude Code is connected to this session (the dir that contains `.git`/`.claude`), **not** a subfolder, **not** your home `~`.
-2. **Brain-root gate** — treat the workspace root as an installed brain ONLY if it shows a brain signal: a `.claude/` directory at the root **OR** a `context/` folder alongside a `skills/` or `automation/` sibling (an optional `.ai-brain` marker file also counts).
+1. **Determine the workspace root** — the top-level folder Claude Code is connected to this session (typically the dir that contains `.git`), **not** a subfolder, **not** your home `~`.
+2. **Brain-root gate** — treat the workspace root as an installed brain ONLY if it shows a brain signal: a `context/` folder alongside a `skills/` or `automation/` sibling, **OR** an explicit `.ai-brain` marker file at the root. **A bare `.claude/` directory does NOT count** — it only proves Claude Code has run in this repo, not that this is the user's brain (every client repo you've opened has one).
    - **Brain confirmed →** save to `<workspace-root>/context/memory/`. Create the `memory/` subfolder if missing (safe — it's inside the brain).
    - **Not confirmed** (no brain signal / no folder open / ambiguous cwd) → **fall back** to `~/.claude/references/context/` (your own home dir — always safe). **Never** create a bare `context/` folder in a workspace that isn't a confirmed brain — that would pollute someone else's repo.
 3. **Always state which location you used** when you confirm (step "Confirm").
@@ -69,7 +69,7 @@ The AI-brain layout is **Context** (loaded every session) · **Skills** · **Aut
 
 5. **(ACTIVE) Git snapshot (if applicable)** — If working in a folder with git initialized, commit a snapshot with message `Save point: [brief description]`. Commit TARGETED files (not `git add -A`) so unrelated in-flight work isn't accidentally swept up.
 
-   > **⚠️ Never commit the session note into the client's own repo.** When the save landed in `<workspace-root>/context/memory/` and that workspace is a git repo, the note must NOT be staged/committed into it (it can contain private decisions and context). Exclude `context/memory/` from this commit, and offer once to add `context/memory/` to the workspace `.gitignore`. If the user declines, warn that session notes will show in `git status`.
+   > **⚠️ Never commit the session note into the client's own repo.** When the save landed in `<workspace-root>/context/memory/` and that workspace is a git repo, the note must NOT be staged/committed into it (it can contain private decisions and context). Exclude `context/memory/` from this commit, and offer once to add `context/memory/` to the workspace `.gitignore`. If the user declines, **strongly recommend it anyway** — warn that until it's gitignored, the note is one `git add -A` away from being committed into the client's own repo.
 
    > **🔒 LOCKED — Vault repo commit (only when `VAULT_FEATURES: UNLOCKED`):**
    > Also commit the session note in the vault repo if it changed:
@@ -125,7 +125,7 @@ The AI-brain layout is **Context** (loaded every session) · **Skills** · **Aut
 - **Be accurate.** Only include files you actually saw modified. Don't guess.
 - **Be useful.** The resume command should be specific enough that a fresh Claude session can pick up exactly where this one left off.
 - **Don't nag.** If <your-name> declines git init or rotation, accept and move on.
-- **Project naming.** Use kebab-case for project names in filenames (e.g., `luna-quiz-funnel-2026-03-17.md`).
+- **Project naming + path safety.** Use kebab-case for project names in filenames (e.g., `luna-quiz-funnel-2026-03-17.md`). Before composing the filename, reduce `[project]` to `[a-z0-9-]` — strip/replace path separators, `..`, and leading dots. Reject any stem still containing `/` or `\`. The filename must resolve INSIDE the resolved save location, never above it.
 - **Multiple saves per day.** If a project already has a save from today, append a counter: `[project]-2026-03-17-2.md`.
 - **Targeted git commits.** Stage only the files you intend to snapshot — `git add -A` can sweep up unrelated in-flight work.
 

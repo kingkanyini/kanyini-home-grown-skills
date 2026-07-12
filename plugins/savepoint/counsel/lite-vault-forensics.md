@@ -16,20 +16,21 @@ Portable by design: **no MCP, no vault, no network.** It works on any client's f
 - **HAMEDANI** *(file org, naming, frontmatter)* — do the saved notes follow the naming + frontmatter conventions? Catches drift and duplicates.
 - **HOGG** *(reference & data integrity, never-fail-silent)* — do cross-references still resolve, and is anything orphaned? Catches danglers loudly.
 
-## The 6-point audit
+## The audit
 
 Resolve the **workspace root** and **brain confirmation** exactly as the savepoint skill's *Where saves go* section does. Then check:
 
 1. **Placement (ARCHITECT).** Confirm the memory store lives at `<workspace-root>/context/memory/` inside a confirmed brain. Scan for **stray** `context/memory/` folders created outside a brain (a mis-write). From the workspace root:
    `find . -type d -name memory -path '*/context/memory' 2>/dev/null` — flag any not at the confirmed brain root.
-2. **Git-contamination (CIPHER safety gate — highest priority).** A session note must never be tracked or committed inside a client's own repo. Check:
+2. **Git-contamination (HOGG safety gate — highest priority).** A session note must never be tracked or committed inside a client's own repo. Check:
    `git ls-files --error-unmatch context/memory/ 2>/dev/null` (tracked = breach) and whether `context/memory/` is in `.gitignore`. **Flag loudly** if memory notes are tracked/committed — they can carry private decisions and context. Offer to `git rm --cached` + add the `.gitignore` entry (never auto-run).
-3. **Orphans (HOGG).** After the v1.1.0 re-route, older saves may be stranded at the legacy `~/.claude/references/context/`. List them so the user can migrate or delete. Report count + paths; never auto-move.
-4. **Referential integrity (HOGG).** If learned skills exist (`~/.claude/skills/learned/*.md` or `.claude/skills/learned/*.md`), check each `source_session:` value still resolves to a note that exists in the resolved memory store. Report danglers.
-5. **Convention drift (HAMEDANI).** Every note should be `[project]-[YYYY-MM-DD].md` (kebab-case project) and carry `type`, `created`, `source` frontmatter. Flag filename-pattern misses, missing frontmatter, and duplicate/near-duplicate project stems.
+3. **Home-fallback saves (HOGG) — migrate, don't delete.** `~/.claude/references/context/` is the **active home fallback** (used whenever a session runs outside a confirmed brain), NOT a legacy path — so **never** flag its notes for deletion. When a confirmed brain exists, list any home-fallback notes for the same projects and offer to **migrate** them into `context/memory/` (migrate only; never auto-move, never delete).
+4. **Referential integrity (HOGG).** If learned skills exist (`~/.claude/skills/learned/*.md` or `.claude/skills/learned/*.md`), check each `source_session:` value still resolves to a note that exists in the resolved memory store. Report danglers. Note: on a flat (LOCKED) build `source_session` should reference a `context/memory/` note; a value pointing at a vault `context/sessions/...` shape is expected divergence in a vault build, not a dangler.
+5. **Convention drift (HAMEDANI).** Every note should be `[project]-[YYYY-MM-DD].md` — or the same-day counter variant `[project]-[YYYY-MM-DD]-N.md` — with a kebab-case project, carrying `type`, `created`, `source` frontmatter. Flag filename-pattern misses (the `-N` counter is valid, not drift), missing frontmatter, and duplicate/near-duplicate project stems.
 6. **Rotation health.** Per project stem, count notes vs the ceiling (10 active / 5 paused). List over-ceiling projects and offer rotation — **never auto-delete** (matches the savepoint rotation rule).
+7. **Split store (HOGG).** The same project stem living in BOTH the brain `context/memory/` and the home fallback `~/.claude/references/context/` = fragmented memory + rotation ceilings under-counted (each store rotates independently while the true count is higher). List cross-store duplicate stems and offer to consolidate into the brain (migrate only; never delete).
 
-## Output (make problems loud — PHANTOM)
+## Output (make problems loud — HOGG)
 
 Lead with a one-line verdict a human reads in 10 seconds:
 

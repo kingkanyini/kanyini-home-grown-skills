@@ -1,6 +1,6 @@
 {
   "name": "savepoint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Save session context and git snapshots — your video game save point for agent work",
   "author": {
     "name": "Kanyini"

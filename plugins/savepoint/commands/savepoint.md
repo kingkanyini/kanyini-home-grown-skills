@@ -23,14 +23,26 @@ This is the **distribution build**. Two advanced systems are **locked off** so t
 
 ## Memory Policy
 
-- **`LOCKED` (default):** session notes are written to a **local flat file** at `~/.claude/references/context/`. No vault, no MCP, no external dependency.
+- **`LOCKED` (default):** session notes are written to a **local flat file**. WHERE depends on whether the current workspace is an installed AI-brain — see **Where saves go** below. No vault, no MCP, no external dependency.
 - **`UNLOCKED`:** the Obsidian vault becomes the single source of truth via `mcp__obsidian-brain__write_note`; the flat file is then only an emergency fallback when the vault MCP is unreachable. Never write both.
+
+### Where saves go (`LOCKED` build — resolve this ONCE, then reuse for steps 3, 7, and error handling)
+
+The AI-brain layout is **Context** (loaded every session) · **Skills** · **Automation**. Episodic session notes belong in a `memory/` subfolder **inside** the Context layer — stored, but NOT part of the always-loaded context.
+
+1. **Determine the workspace root** — the top-level folder Claude Code is connected to this session (the dir that contains `.git`/`.claude`), **not** a subfolder, **not** your home `~`.
+2. **Brain-root gate** — treat the workspace root as an installed brain ONLY if it shows a brain signal: a `.claude/` directory at the root **OR** a `context/` folder alongside a `skills/` or `automation/` sibling (an optional `.ai-brain` marker file also counts).
+   - **Brain confirmed →** save to `<workspace-root>/context/memory/`. Create the `memory/` subfolder if missing (safe — it's inside the brain).
+   - **Not confirmed** (no brain signal / no folder open / ambiguous cwd) → **fall back** to `~/.claude/references/context/` (your own home dir — always safe). **Never** create a bare `context/` folder in a workspace that isn't a confirmed brain — that would pollute someone else's repo.
+3. **Always state which location you used** when you confirm (step "Confirm").
+
+> **Loader dependency (installs must honor):** for `memory/` to stay *episodic* and not bloat every session, the brain's context loader / `CLAUDE.md` must load `context/` but **exclude `context/memory/**`** from always-load. This skill routes the save; it does not control loading.
 
 ## What You Do
 
 1. **(ACTIVE) Identify the project** — Determine what project/task is active from conversation context, working directory, or ask <your-name>.
 2. **(ACTIVE) Summarize session state** — Capture: current task, key decisions made, files modified, what's left to do, active counsel (if any).
-3. **(ACTIVE) Save context locally** — Write the session note to `~/.claude/references/context/[project]-[YYYY-MM-DD].md` (create the folder if it doesn't exist). Use the template in the **Session Note Template** section, with this frontmatter:
+3. **(ACTIVE) Save context locally** — Resolve the save location per **Where saves go** above, then write the session note to `<resolved-location>/[project]-[YYYY-MM-DD].md` — i.e. `<workspace-root>/context/memory/[project]-[YYYY-MM-DD].md` in a confirmed brain, or `~/.claude/references/context/[project]-[YYYY-MM-DD].md` on fallback (create the folder per the rules above). Use the template in the **Session Note Template** section, with this frontmatter:
    ```yaml
    ---
    type: context
@@ -57,6 +69,8 @@ This is the **distribution build**. Two advanced systems are **locked off** so t
 
 5. **(ACTIVE) Git snapshot (if applicable)** — If working in a folder with git initialized, commit a snapshot with message `Save point: [brief description]`. Commit TARGETED files (not `git add -A`) so unrelated in-flight work isn't accidentally swept up.
 
+   > **⚠️ Never commit the session note into the client's own repo.** When the save landed in `<workspace-root>/context/memory/` and that workspace is a git repo, the note must NOT be staged/committed into it (it can contain private decisions and context). Exclude `context/memory/` from this commit, and offer once to add `context/memory/` to the workspace `.gitignore`. If the user declines, warn that session notes will show in `git status`.
+
    > **🔒 LOCKED — Vault repo commit (only when `VAULT_FEATURES: UNLOCKED`):**
    > Also commit the session note in the vault repo if it changed:
    > ```bash
@@ -66,7 +80,7 @@ This is the **distribution build**. Two advanced systems are **locked off** so t
    > ```
 
 6. **(ACTIVE) Git init offer (if applicable)** — If editing files in a skill or project folder WITHOUT git, offer ONCE to init git there. If declined, skip. Don't ask again in same session.
-7. **(ACTIVE) Rotate old saves** — Keep the per-project flat session notes tidy in `~/.claude/references/context/`:
+7. **(ACTIVE) Rotate old saves** — Keep the per-project flat session notes tidy in the **resolved save location** (`<workspace-root>/context/memory/` in a brain, else `~/.claude/references/context/`) — rotate only that location, never both:
    - **Actively-building projects** (≥2 savepoints in the last 7 days, or <your-name> signals "active"/"in build"): keep last **10**.
    - **Inactive / paused projects** (>14 days since last session): keep last **5**.
    - Only offer deletion when the count exceeds the ceiling. List the oldest files and offer to delete them. **Never auto-delete.**
@@ -79,7 +93,7 @@ This is the **distribution build**. Two advanced systems are **locked off** so t
 9. > **🔒 LOCKED — Bump vault references (only when `VAULT_FEATURES: UNLOCKED`):**
    > If any vault notes were referenced during this session, bump their `updated` date via `mcp__obsidian-brain__update_frontmatter` to feed the confidence lifecycle. (Disabled in this build.)
 
-10. **(ACTIVE) Confirm** — Show what was saved: the local session-note path, git commit hash (if applicable), and any rotation offered. When `VAULT_FEATURES: UNLOCKED`, also report the vault note path, config-snapshot status, and any GOU/pattern notes created.
+10. **(ACTIVE) Confirm** — Show what was saved: the local session-note path **and which location it resolved to** (brain `context/memory/` vs `~/.claude/references/context/` fallback), git commit hash (if applicable), and any rotation offered. When `VAULT_FEATURES: UNLOCKED`, also report the vault note path, config-snapshot status, and any GOU/pattern notes created.
 
 ## Session Note Template
 
@@ -136,10 +150,15 @@ If a Save Point Protocol triggers this (not manual invocation), the behavior is 
 - Don't ask about git init — just save the context note.
 - Don't ask about rotation — just save and confirm quickly.
 - Always write the context note (step 3). Emergency auto-saves are the MOST important to persist.
+- **This path is unattended, so it must be the MOST guarded, not the least:** apply the **Where saves go** brain-root gate strictly. If the workspace root is NOT a confirmed brain, save to `~/.claude/references/context/` — do NOT silent-create a `context/memory/` folder in an unconfirmed workspace.
+
+## Memory Forensics (maintenance mode)
+
+When invoked as `/savepoint forensics` — or whenever the user asks to "check memory health," "audit the saves," or clean up the memory store — do NOT run the save flow. Instead run the bundled **read-only** maintenance pass in `counsel/lite-vault-forensics.md`: a lite Vault Forensics council (persona mode) that audits `context/memory/` for placement, git-contamination, orphans, referential integrity, convention drift, and rotation health. It **reports and offers fixes; it never deletes or moves anything unless the user picks a fix.**
 
 ## Error Handling
 
 - If not sure what project is active, ask <your-name> before saving.
 - If in a git repo but there are no changes to commit, skip the git step and note "No uncommitted file changes to snapshot".
-- If `~/.claude/references/context/` doesn't exist, create it without asking.
+- In a **confirmed brain** (per **Where saves go**), if `<workspace-root>/context/memory/` doesn't exist, create it without asking (it's inside the brain). On **fallback**, if `~/.claude/references/context/` doesn't exist, create it without asking (it's your own home dir). **Never** create a `context/` folder in a workspace that isn't a confirmed brain — fall back instead.
 - When `VAULT_FEATURES: UNLOCKED` and the vault MCP is unreachable: fall back to the flat file (step 3) and flag the MCP issue.

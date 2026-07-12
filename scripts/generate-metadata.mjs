@@ -18,6 +18,7 @@ const METADATA = {
   // T1 Foundation
   savepoint: {
     tier: 'T1',
+    version: '1.1.0',
     description: 'Save session context and git snapshots — your video game save point for agent work',
     requires: [],
     recommends: [],
@@ -555,7 +556,7 @@ async function main() {
     // plugin.json — NO $schema field (top-level additionalProperties: false in plugin.schema.json)
     const pluginJson = {
       name: skill,
-      version: '1.0.0',
+      version: meta.version ?? '1.0.0',
       description: meta.description,
       author: { name: 'Kanyini' },
       tier: meta.tier,

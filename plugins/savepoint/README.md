@@ -3,7 +3,7 @@
 > Save session context and git snapshots — your video game save point for agent work
 
 **Tier:** T1
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Command:** `/savepoint`
 
 ## Usage

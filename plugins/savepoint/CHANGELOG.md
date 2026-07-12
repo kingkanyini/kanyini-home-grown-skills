@@ -2,7 +2,7 @@
 
 ## 1.1.0 — Save into the brain's `context/memory/`
 
-- **Re-routed the LOCKED-build save location.** Session notes now save to `<workspace-root>/context/memory/` when the workspace is a confirmed AI-brain (a `.claude/` dir, or `context/` + a `skills/`/`automation/` sibling, or a `.ai-brain` marker). When the workspace is NOT a confirmed brain, saves fall back to the previous `~/.claude/references/context/` — so the skill never creates a stray `context/` folder in an unrelated repo.
+- **Permission-based save location.** On first run in a workspace, savepoint ASKS where to save session notes (suggesting `<workspace-root>/context/memory/` — episodic memory inside the Context layer) and remembers the choice in a `.savepoint-location` marker. Later runs read the marker; the skill never creates a save folder the user hasn't approved. Unattended auto-compact saves with no marker fall back to `~/.claude/references/context/` (the user's own home) — never a silent write into an unconfigured workspace.
 - **Git-contamination guard.** The session note is never staged/committed into the client's own repo; the skill offers to add `context/memory/` to the workspace `.gitignore`.
 - **Auto-compact saves are strictly gated** to the brain marker (unattended path); no marker → home fallback.
 - **Bundled a read-only "Memory Forensics" maintenance pass** (lite Vault Forensics council — persona mode) at `counsel/lite-vault-forensics.md` to audit the `context/memory/` store (placement, git-contamination, orphans, convention drift, rotation health). Reports and offers fixes; never deletes.

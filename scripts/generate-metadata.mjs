@@ -65,6 +65,26 @@ const METADATA = {
     command: '/learn-eval',
     usage: '/learn-eval',
   },
+  'obsidian-brain-install': {
+    tier: 'T1',
+    version: '1.0.0',
+    description: 'Scaffold a self-compounding Obsidian memory layer into an AI-Brain — /obsidian-brain-install plus /ingest, /brain-lint, /brain-status. Layer-1 becomes the wiki; deterministic, idempotent, PII-safe.',
+    requires: [],
+    recommends: [{ name: 'savepoint', version: '^1.0.0' }],
+    prereqs: {
+      mcps: [],
+      clis: ['node'],
+      envVars: [],
+      services: [
+        'git — OPTIONAL. If the target workspace is a git repo with a remote, the installer runs a safety HALT when confidential client files are tracked. Without git, the installer still scaffolds normally.',
+        'Obsidian desktop app — OPTIONAL, for the visual graph view. The memory layer is plain Markdown and works with or without Obsidian open.',
+      ],
+    },
+    command: '/obsidian-brain-install',
+    usage: '/obsidian-brain-install (run from inside the target AI-Brain workspace)',
+    // Hand-authored README carries the 4-command table + Karpathy framing; protect it from the single-command template.
+    customDocs: true,
+  },
   // T2 Daily Intel
   'inbox-digest': {
     tier: 'T2',

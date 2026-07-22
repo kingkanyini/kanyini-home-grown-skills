@@ -1,0 +1,15 @@
+# --- Client PII & confidential data (local-only, never committed) ---
+layer-1-context/clients/
+outputs/
+raw/
+
+# --- Secrets ---
+*.env
+.env*
+**/secrets*
+**/*secret*
+
+# --- Generated / regenerable ---
+graphify-out/
+.obsidian/workspace.json
+.obsidian/workspace*.json

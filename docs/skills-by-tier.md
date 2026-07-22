@@ -1,6 +1,6 @@
 # Skills by Tier
 
-The marketplace ships 31 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
+The marketplace ships 33 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
 
 ## T1 — Foundation / Memory
 
@@ -24,6 +24,13 @@ Extract reusable patterns from the session, self-evaluate quality before saving,
 
 - **Requires:** _none_
 - **Recommends:** _none_
+
+### `obsidian-brain-install`
+
+Scaffold a self-compounding Obsidian memory layer into an AI-Brain — /obsidian-brain-install plus /ingest, /brain-lint, /brain-status. Layer-1 becomes the wiki; deterministic, idempotent, PII-safe.
+
+- **Requires:** _none_
+- **Recommends:** `savepoint`
 
 ### `quicksave`
 
@@ -93,6 +100,13 @@ Export Claude Code skills to Claude Web project knowledge format
 
 - **Requires:** _none_
 - **Recommends:** _none_
+
+### `five-min-texter`
+
+Stand up a 5-minute SMS auto-responder for a solo wellness practice: guided intake interview, then n8n + Twilio + A2P 10DLC setup on a council-reviewed engine. Crisis screen (988) runs first.
+
+- **Requires:** _none_
+- **Recommends:** `voice-dna-blueprint-builder`
 
 ### `quickshare`
 

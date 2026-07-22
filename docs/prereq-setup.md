@@ -16,6 +16,10 @@ See https://github.com/ffmpeg/mcp — requires `ffmpeg` CLI on PATH.
 
 See https://github.com/gongrzhe/gmail-mcp — requires Gmail OAuth credentials.
 
+### `mcp__n8n-mcp__*`
+
+_(install docs TBD — see skill README)_
+
 ### `mcp__perplexity__*`
 
 See https://github.com/perplexity/mcp — requires `PERPLEXITY_API_KEY` env var.
@@ -72,15 +76,21 @@ Set these in your `.env` file or your shell environment. Never commit `.env` to 
 
 Some skills call out to managed services. You'll need accounts + auth for each.
 
-- **Anthropic** — used by `skill-to-site`
+- **Airtable** — used by `five-min-texter`
+- **Anthropic** — used by `five-min-texter`, `skill-to-site`
 - **Canva** — used by `offer-optimizer`
 - **Gmail** — used by `inbox-digest`
 - **Instagram** — used by `voice-dna-extractor`
 - **Move-gate tooling: run npm install inside references/moves-library/_impl/gate/ before registering new moves** — used by `overlay-director`
+- **Obsidian desktop app — OPTIONAL, for the visual graph view. The memory layer is plain Markdown and works with or without Obsidian open.** — used by `obsidian-brain-install`
 - **Optional: Imaginator art generation (Gemini) — without it, art cards become labeled placeholders** — used by `overlay-director`
 - **Optional: mcp__obsidian-brain__* vault MCP powers the effects registry — without it the feature no-ops** — used by `web-dev-bot`
 - **Perplexity** — used by `perplexity-research`
+- **Telegram** — used by `five-min-texter`
+- **Twilio** — used by `five-min-texter`
 - **Vault MCP (mcp__obsidian-brain__*) is OPTIONAL — without a vault, the skill cold-starts from its shipped playbook digest (Phase 0.5d)** — used by `overlay-director`
 - **Vercel** — used by `funnel-translate`, `skill-to-site`
 - **YouTube** — used by `voice-dna-extractor`
+- **git — OPTIONAL. If the target workspace is a git repo with a remote, the installer runs a safety HALT when confidential client files are tracked. Without git, the installer still scaffolds normally.** — used by `obsidian-brain-install`
 - **hyperframes v0.6.x via npx — install: claude plugin marketplace add bradautomates/claude-video, then claude plugin install hyperframes, hyperframes-cli, hyperframes-media** — used by `overlay-director`
+- **n8n Cloud** — used by `five-min-texter`

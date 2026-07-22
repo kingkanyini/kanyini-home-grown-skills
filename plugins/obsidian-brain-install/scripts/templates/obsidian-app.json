@@ -1,0 +1,4 @@
+{
+  "userIgnoreFilters": ["graphify-out/", "raw/processed/"],
+  "attachmentFolderPath": "raw/assets"
+}

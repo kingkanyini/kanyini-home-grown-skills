@@ -79,6 +79,10 @@ const ALLOWLIST_PATHS = [
   /\.gitleaks\.toml$/,
   /\.claude-plugin[\\\/]marketplace\.json$/,
   /\.claude-plugin[\\\/]plugin\.json$/,
+  // obsidian-brain-install teaches Obsidian [[wikilink]] syntax — its command + template
+  // docs legitimately contain [[...]] examples (generic syntax like [[links]], never vault-note names).
+  /obsidian-brain-install[\\\/]commands[\\\/].*\.md$/,
+  /obsidian-brain-install[\\\/]scripts[\\\/]templates[\\\/].*\.md$/,
 ];
 
 async function isTextFile(filePath) {

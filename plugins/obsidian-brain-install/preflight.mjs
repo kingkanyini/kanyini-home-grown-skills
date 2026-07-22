@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+// preflight.mjs — obsidian-brain-install
+// Verifies prereqs declared in .claude-plugin/plugin.json before skill runs.
+// Per PLAN-v3.1 §4.6 contract:
+//   exit 0 = ready · exit 1 = missing prereq · exit 2 = config error
+//   stdout = human-readable status · stderr = MISSING:<name> per line (machine-parsable)
+
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const SKILL_DIR = path.dirname(fileURLToPath(import.meta.url));
+const PLUGIN_JSON = path.join(SKILL_DIR, '.claude-plugin', 'plugin.json');
+
+async function main() {
+  let manifest;
+  try {
+    manifest = JSON.parse(await fs.readFile(PLUGIN_JSON, 'utf8'));
+  } catch (err) {
+    console.error('CONFIG_ERROR: cannot read plugin.json:', err.message);
+    process.exit(2);
+  }
+
+  const { prereqs = {} } = manifest;
+  const missing = [];
+
+  for (const mcp of prereqs.mcps || []) {
+    console.log('Expects MCP:', mcp);
+  }
+
+  const { execSync } = await import('node:child_process');
+  for (const cli of prereqs.clis || []) {
+    try {
+      execSync(`${process.platform === 'win32' ? 'where' : 'which'} ${cli}`, { stdio: 'ignore' });
+      console.log(`✓ CLI: ${cli}`);
+    } catch {
+      console.log(`✗ CLI missing: ${cli}`);
+      console.error(`MISSING:cli:${cli}`);
+      missing.push(`cli:${cli}`);
+    }
+  }
+
+  for (const v of prereqs.envVars || []) {
+    if (process.env[v]) {
+      console.log(`✓ Env: ${v}`);
+    } else {
+      console.log(`✗ Env missing: ${v}`);
+      console.error(`MISSING:env:${v}`);
+      missing.push(`env:${v}`);
+    }
+  }
+
+  for (const svc of prereqs.services || []) {
+    console.log('Optional service:', svc);
+  }
+
+  for (const dep of manifest.requires || []) {
+    const depName = typeof dep === 'string' ? dep : dep.name;
+    console.log('Requires installed skill:', depName);
+  }
+
+  if (missing.length > 0) {
+    console.log(`\nPREFLIGHT FAILED — ${missing.length} prereq(s) missing. See docs/prereq-setup.md.`);
+    process.exit(1);
+  }
+
+  console.log('\nPREFLIGHT OK — obsidian-brain-install is ready to run.');
+  process.exit(0);
+}
+
+main();

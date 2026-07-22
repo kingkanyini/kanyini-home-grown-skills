@@ -39,6 +39,7 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `inbox-digest` | ROOT | Heavy-prereq |
 | `learn-eval` | ROOT | Standalone |
 | `magnetic-offer-blueprint` | ROOT | Standalone |
+| `obsidian-brain-install` | ROOT | Service-only |
 | `offer-optimizer` | ROOT | Heavy-prereq |
 | `overlay-director` | ROOT | Service-only |
 | `perplexity-research` | ROOT | Heavy-prereq |

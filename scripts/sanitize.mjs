@@ -54,6 +54,12 @@ const PHASE_1_SKILLS = [
   'ad-copy-forge', 'ss-ad-generator', 'power-clip-pro',
   // Wave 2 (2026-06-06) — tiers provisional pending ARCHITECT review
   'web-dev-bot', 'overlay-director',
+  // Wave 3 (2026-08-04) — SixthSense video family, all T9.
+  // watch-autopilot EXCLUDED: no plugin manifest, no commands/, and its runner/worker/
+  // mcp-deps folders would trip the §3.5 loud check. It is a Windows scheduled-task
+  // service, not a plugin.
+  'transcript-extractor-plus', 'snapshot', 'sixth-sense-scissors',
+  'sixth-sense-xray', 'sixth-sense-sage', 'sixth-sense',
 ];
 
 // §3.5 Folder name contract. Unknown top-level folders FAIL LOUD.
@@ -61,6 +67,7 @@ const FOLDER_RENAME_MAP = {
   // canonical → canonical (no-op, allowed)
   'commands': 'commands',
   'references': 'references',
+  'assets': 'assets',  // snapshot: overlay-template.html etc. Without this the §3.5 loud check ABORTS the run.
   'scripts': 'scripts',
   'examples': 'examples',
   'docs': 'docs',
@@ -133,7 +140,24 @@ const FIND_REPLACE = [
   { find: /jen-deliverables/g, replace: 'example-deliverables' },
   { find: /gut-center/g, replace: 'example-client' },
   { find: /GutCenter/g, replace: 'ExampleClient' },
+  // Bare "Gut Center" (space, no leading "The"). The rules above only caught
+  // "The Gut Center" and the hyphenated slug, so the plain form was shipping in
+  // inbox-digest prose and task descriptions (2026-08-04 audit).
+  { find: /\bGut Center\b/gi, replace: 'example-client' },
+  // A real-looking contact address left in an inbox-digest test fixture. Caught by the
+  // pre-commit leak gate 2026-08-04 — a person's name at a live company domain is not
+  // something to allowlist, so it gets scrubbed at source like any other identifier.
+  { find: /natalia@fundandgrow\.com/gi, replace: 'sam@example.com' },
+  { find: /fundandgrow\.com/gi, replace: 'example.com' },
   { find: /\bJen\b/g, replace: 'Sam' },
+  // Rest of the Gut Center team — Jen had rules, Katie and Shevie never did, so their
+  // names shipped in inbox-digest cron filenames (2026-08-04 audit).
+  { find: /katie-the-gut-center/gi, replace: 'example-person-example-client' },
+  { find: /shevie-the-gut-center/gi, replace: 'example-person-example-client' },
+  { find: /KatieScan/g, replace: 'ExampleScan' },
+  { find: /ShevieScan/g, replace: 'ExampleScanTwo' },
+  { find: /\bKatie\b/gi, replace: 'Robin' },
+  { find: /\bShevie\b/gi, replace: 'Alex' },
   { find: /two-eagles-construction/g, replace: 'summit-builders' },
   { find: /two-eagles/g, replace: 'summit-builders' },
   { find: /Adeyemi Adeyosoye/g, replace: 'Exemplar One' },
@@ -158,6 +182,16 @@ const FIND_REPLACE = [
   { find: /SacralUproar/gi, replace: 'Example Brand' },
   { find: /@?LightworkLuna/g, replace: 'ExampleHandle' },
   { find: /\bjonas\b/gi, replace: 'example-contact' },
+  // ── Client surnames + secondary contacts (video-skills publish review, 2026-08-04).
+  // Gap found by audit: \bjonas\b swapped the FIRST name while the surname survived intact.
+  // The \bjonas\b rule above already consumes the first name, so the surname is a separate catch.
+  // Verified: "Jonas Hils" -> "example-contact example-surname".
+  // NOT matching "Hill"/"Hills" — too common a word to genericize safely.
+  { find: /\bHil[sz]\b/gi, replace: 'example-surname' },
+  { find: /\bDilek\b/gi, replace: 'example-contact-two' },
+  { find: /TBQ-BREATHWORK/gi, replace: 'EXAMPLE-BREATHWORK' },
+  { find: /\bTBQ\b/g, replace: 'EXAMPLE-BRAND' },
+  { find: /\bDelaney\b/gi, replace: 'example-client-three' },
   { find: /Christapher Benson/g, replace: 'Your Name' },
   { find: /christapher[._]benson/gi, replace: 'your-handle' },
   { find: /\bChristapher\b/g, replace: 'Your Name' },
@@ -417,6 +451,34 @@ async function exists(p) {
   try { await fs.access(p); return true; } catch { return false; }
 }
 
+// Apply the §4 identity dictionary to a FILE NAME, not just file contents.
+//
+// Why this exists (2026-08-04): sanitization scrubbed contents but copied names
+// verbatim. Filename leaks were handled one-by-one via SPECIAL_CASE_EDITS rename entries —
+// a hand-maintained allowlist that had drifted. `jen-the-gut-center` had entries;
+// `katie-*`, `shevie-*`, `luxiana-*`, `soma-*` and `sacral-uproar-*` did not, so a
+// fresh full run reintroduced 10 client-named files the published repo did not have.
+// Doing it at the mechanism means new client files cannot silently ship a name.
+function sanitizeName(name) {
+  let out = name;
+  for (const rule of FIND_REPLACE) {
+    // Skip every content-SCOPED rule (mdOnly, htmlOnly, …). A filename is not file
+    // content, so a rule that only applies inside .html must not rewrite a name —
+    // that is how `kanyini-example-voice.md` got renamed out from under the
+    // SPECIAL_CASE_EDITS entry that expected it.
+    if (Object.keys(rule).some(k => k.endsWith('Only'))) continue;
+    out = out.replace(rule.find, rule.replace);
+  }
+  // Several dictionary placeholders are bracketed (e.g. <example-client>). Angle brackets
+  // are ILLEGAL in Windows filenames, so strip them — the placeholder text still reads fine.
+  out = out.replace(/[<>]/g, '');
+  // Collapse any whitespace/separator debris the substitution left behind.
+  return out.replace(/\s+/g, ' ').trim();
+}
+
+// NOTE: copyDir is the SNAPSHOT path (phase 1). It must stay a faithful, unsanitized
+// mirror of source so a bad regex can be diffed and rolled back. Name sanitization
+// belongs on the publish copy in phase 2, not here.
 async function copyDir(src, dest) {
   await fs.mkdir(dest, { recursive: true });
   const entries = await fs.readdir(src, { withFileTypes: true });
@@ -473,6 +535,16 @@ async function copyAndPrune(skill) {
   const actions = [];
   await fs.mkdir(dst, { recursive: true });
 
+  // Files with an explicit SPECIAL_CASE_EDITS entry are looked up by their ORIGINAL relative
+  // path in phase 3. Auto-renaming them here would make those lookups miss and silently
+  // drop the file (caught 2026-08-04: it dropped 3 files the published repo had).
+  // Explicit rules win; sanitizeName only catches what nothing else claims.
+  const specialCasePaths = new Set(
+    SPECIAL_CASE_EDITS
+      .filter(e => e.skill === skill && e.file)
+      .map(e => e.file.replace(/\\/g, '/'))
+  );
+
   async function walk(srcDir, dstDir, depth = 0) {
     const entries = await fs.readdir(srcDir, { withFileTypes: true });
     for (const entry of entries) {
@@ -528,7 +600,21 @@ async function copyAndPrune(skill) {
           }
         }
 
-        const dstPath = path.join(dstDir, entry.name);
+        // Sanitize the FILE NAME, not just its contents (see sanitizeName) — unless an
+        // explicit SPECIAL_CASE_EDITS rule already owns this path.
+        // SPECIAL_CASE_EDITS paths use POST-rename folder names (e.g. 'references/…'),
+        // but srcPath still carries the source name (e.g. 'reference/…'). Normalize the
+        // first segment through FOLDER_RENAME_MAP before comparing, or the lookup misses.
+        const relRaw = path.relative(src, srcPath).replace(/\\/g, '/');
+        const segs = relRaw.split('/');
+        if (segs.length > 1 && FOLDER_RENAME_MAP[segs[0]]) segs[0] = FOLDER_RENAME_MAP[segs[0]];
+        const relFromSkill = segs.join('/');
+        const claimed = specialCasePaths.has(relFromSkill) || specialCasePaths.has(relRaw);
+        const safeName = claimed ? entry.name : sanitizeName(entry.name);
+        if (safeName !== entry.name) {
+          actions.push({ type: 'rename-file-identity', from: entry.name, to: safeName });
+        }
+        const dstPath = path.join(dstDir, safeName);
         await fs.copyFile(srcPath, dstPath);
       }
     }

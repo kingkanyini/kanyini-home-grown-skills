@@ -5,6 +5,9 @@ move_type: spotlight
 affects: [sequence.layering, sequence.variety, placement.horizontal]
 hero_capable: false
 requires: [layer-field, needs-studio-input]
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: FADE
 ---
 
 # Reading Spotlight
@@ -58,11 +61,15 @@ Creator Counsel #57). Re-skinned to <your-name>'s warm/calm aesthetic.
 
 ## GSAP
 ```js
-/* Discrete card per block. HOLD = the block's spoken span (topic-layer). */
+/* SMOOTH / FADE (Layer 1 motion upgrade — light touch on the crown-jewel move). House ease
+   power3.out on the illumination (was power2.out) + a gentle scale-in on the lit box so it reads as
+   "landing" on the passage. The block-to-block WALK stays a baked `top` change (seek-safe, NOT a
+   shadow-spread tween). Discrete card per block. HOLD = the block's spoken span (topic-layer). */
 function odReadingSpotlight(el, t) {
-  const tl = gsap.timeline();
-  tl.set(el, { opacity: 0, left: el.dataset.left, top: el.dataset.top });   // baked, not translate
-  tl.to(el, { opacity: 1, duration: 0.4, ease: 'power2.out' }, t);          // box brightens, surround dims
+  const tl = gsap.timeline(), lit = el.querySelector('.od-lit');
+  tl.set(el, { opacity: 0 }).set(lit, { scale: 0.96, transformOrigin: '50% 50%' });   // baked, not translate
+  tl.to(el, { opacity: 1, duration: 0.4, ease: 'power3.out' }, t);          // box brightens, surround dims
+  tl.to(lit, { scale: 1, duration: 0.4, ease: 'power3.out' }, t);           // lit box settles onto the block
   tl.to(el, { opacity: 0, duration: 0.35, ease: 'power1.in' }, t + HOLD);   // fade owns life (principle 3)
   tl.set(el, { opacity: 0 }, t + HOLD + 0.36);                              // hard-kill, seek-safe (rule 1)
   return tl;

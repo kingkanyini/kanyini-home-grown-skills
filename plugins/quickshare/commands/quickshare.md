@@ -25,6 +25,7 @@ Ask the user what they want to save:
 **If skill:**
 - Ask which skill (or they may have specified in the command)
 - Read the skill from `~/.claude/plugins/local/[skill-name]/commands/[skill-name].md`
+- **Export-anonymization gate (MUST):** grep the skill's whole folder (`commands/` + `reference/`) for the marker `ANONYMIZE BEFORE EXPORT`. If found in the command file OR in any reference content you will include, HARD-STOP: show the flagged file + the client-specific data, and AskUserQuestion — "I've stripped/generalized it, re-scan and continue" / "Exclude that content" / "Cancel". Only proceed once the marker is gone from what will be packaged. Never share live client data flagged for anonymization. (Quickshare normally packages only the command file, but this catches the marker if it ever lives there or if reference content is pulled in.)
 
 **If conversation output:**
 - Ask them to specify what from the conversation

@@ -10,13 +10,18 @@
       #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
       @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
         font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
-      /* baked position, no translate (gate: noTranslate). Distinct motion = opacity fade-in. */
+      /* baked position, NO transform on .od-img (gate: noTranslate). Fade owns the container's life. */
       .od-img { position: absolute; left: 32%; top: 26%; width: 36%; border-radius: 24px; overflow: hidden;
         box-shadow: 6px 8px 28px rgba(20,14,9,0.3); opacity: 0; }
-      .od-img .od-illus { width: 100%; height: 420px;
+      .od-illus { width: 100%; height: 420px;
         background: radial-gradient(120% 120% at 30% 20%, #3A2A1C, #1A130D 70%),
                     linear-gradient(135deg, #B06A3B33, #7C8B6F22); }
-      .od-img .od-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px;
+      /* velocity-blur ghosts: opacity-decaying copies of the illustration that streak in and collapse */
+      .od-ghost { position: absolute; left: 0; top: 0; width: 100%; height: 420px; opacity: 0; pointer-events: none;
+        background: radial-gradient(120% 120% at 30% 20%, #3A2A1C, #1A130D 70%),
+                    linear-gradient(135deg, #B06A3B33, #7C8B6F22); }
+      .od-lead { position: relative; will-change: transform; }
+      .od-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px;
         background: rgba(20,14,9,0.55); backdrop-filter: blur(8px);
         color: #F7F0E4; font: 600 20px/1.25 'Inter', sans-serif; }
     </style>
@@ -25,16 +30,33 @@
     <div id="root" data-composition-id="image-card" data-start="0" data-duration="3.8"
          data-width="1920" data-height="1080">
       <div class="od-img">
-        <div class="od-illus"></div>
-        <div class="od-caption">The inner child, waiting in the castle trauma built.</div>
+        <div class="od-ghost" data-i="2" aria-hidden="true"></div>
+        <div class="od-ghost" data-i="1" aria-hidden="true"></div>
+        <div class="od-lead">
+          <div class="od-illus"></div>
+          <div class="od-caption">The inner child, waiting in the castle trauma built.</div>
+        </div>
       </div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       const HOLD = 3.0; const S = '[data-composition-id="image-card"]';
-      tl.set(`${S} .od-img`, { opacity: 0 });                                  // baked left/top, no translate
-      tl.to(`${S} .od-img`, { opacity: 1, duration: 0.45, ease: 'power2.out' }, 0);
+      const STEP = 14; // BLUR_GHOST_STEP_PX — per-echo offset along the (x) motion axis
+      const STAGGER = 0.1; // ENTRANCE_STAGGER_S (constants.js) — the streak-in trails the fade (overlapping action)
+      // MOTION UPGRADE (Layer 1): SMOOTH / BLUR-STREAK. The container keeps a bare seek-safe opacity
+      // arc with NO transform (gate: opacityArc>=0.9 + noTranslate). The fly-in + coupled velocity-blur
+      // live INSIDE: the lead streaks in on x while 2 opacity-decaying ghost copies trail behind and
+      // collapse into it on the SAME window+ease (§0 recipe b — no live filter tween). House power3.out.
+      tl.set(`${S} .od-img`, { opacity: 0 });
+      tl.to(`${S} .od-img`, { opacity: 1, duration: 0.45, ease: 'power3.out' }, 0);              // container fade leads at t
+      // the streak-in + coupled velocity-blur ghosts trail the fade by ENTRANCE_STAGGER_S (overlapping action)
+      tl.fromTo(`${S} .od-lead`, { x: 3 * STEP }, { x: 0, duration: 0.5, ease: 'power3.out' }, STAGGER);
+      ['[data-i="1"]', '[data-i="2"]'].forEach((g, k) => { const i = k + 1;
+        tl.fromTo(`${S} .od-ghost${g}`,
+          { x: (i + 1) * STEP, opacity: 0.34 / i },
+          { x: 0, opacity: 0, duration: 0.5, ease: 'power3.out' }, STAGGER);
+      });
       tl.to(`${S} .od-img`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
       tl.set(`${S} .od-img`, { opacity: 0 }, HOLD + 0.4);
       window.__timelines["image-card"] = tl;

@@ -5,6 +5,9 @@ move_type: caption-track
 affects: []
 hero_capable: false
 requires: [word-level-srt]
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: FADE
 ---
 
 # Karaoke Caption

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+
+      /* Standalone-gate footage sim ONLY — delete when compositing over real footage. */
+      .od-footage-sim {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(120% 90% at 20% 42%, #6c7a86 0%, #3f4a54 45%, #232a31 100%),
+          linear-gradient(180deg, #4a5560, #20262c);
+      }
+      .od-dim { position: absolute; inset: 0; z-index: 1; background: rgba(0, 0, 0, 0.8); opacity: 0; }
+      .od-board { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
+      .od-ink { position: absolute; inset: 0; }
+      .od-ink svg { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: visible; }
+
+      /* Fat round-cap marker strokes. NO CSS filter: inside a tween anywhere (seek-safety). */
+      .od-stroke { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .ink-blue { stroke: #3b9be8; }   /* DRAWBOARD_INK */
+      .ink-yellow { stroke: #f2d021; } /* DRAWBOARD_HL_YELLOW */
+      .ink-green { stroke: #3fbf52; }  /* DRAWBOARD_GREEN */
+      .thick { stroke-width: 12; }
+      .thin  { stroke-width: 6; opacity: 0.9; }
+      .lasso-thick { stroke-width: 34; opacity: 0.5; }
+      .lasso-thin  { stroke-width: 34; opacity: 0.28; }
+
+      /* Small blue words the marks annotate (so it reads like a board, not a legend). */
+      .od-anno-word {
+        position: absolute; z-index: 2;
+        font-family: "Permanent Marker", "Bradley Hand", "Segoe Print", cursive;
+        color: #3b9be8; text-transform: uppercase; font-size: 40px; opacity: 0;
+      }
+      .od-num {
+        position: absolute; z-index: 3;
+        font-family: "Permanent Marker", "Bradley Hand", "Segoe Print", cursive;
+        color: #3b9be8; font-size: 60px; opacity: 0; transform-origin: center center;
+      }
+      /* Dashed arrow lives in its own SVG so it reveals via a clipPath wipe (dashes stay intact). */
+      .od-dash-arrow {
+        position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 2; overflow: visible;
+        clip-path: inset(0 0 100% 0); -webkit-clip-path: inset(0 0 100% 0); /* revealed top→bottom */
+      }
+      .od-dash-arrow path { fill: none; stroke: #3b9be8; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+      .od-dash-shaft { stroke-dasharray: 22 15; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="draw-board-annotate"
+      data-root="true"
+      data-start="0"
+      data-duration="8"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div class="od-footage-sim" data-preview-only="true"></div>
+      <div class="od-dim"></div>
+      <div class="od-board">
+        <div class="od-ink">
+          <!-- All static felt-tip wobble is this ONE filter, applied via filter="url()" (never tweened). -->
+          <svg viewBox="0 0 1920 1080" aria-hidden="true" data-layout-ignore>
+            <defs>
+              <filter id="od-wobble" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.018 0.026" numOctaves="2" seed="7" result="n" />
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </defs>
+
+            <g filter="url(#od-wobble)">
+              <!-- 1. CIRCLE (blue, double-stroke, lumpy, start≠end overshoot) -->
+              <path class="od-stroke ink-blue thick" data-cue="0.30" data-dur="0.62" data-ease="power2.out"
+                d="M 812 306 C 800 224 902 200 992 224 C 1072 245 1004 218 1000 310 C 997 400 892 420 810 396 C 744 376 826 360 842 330" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="0.52" data-dur="0.50" data-ease="power2.out"
+                d="M 812 306 C 800 224 902 200 992 224 C 1072 245 1004 218 1000 310 C 997 400 892 420 810 396 C 744 376 826 360 842 330" />
+
+              <!-- 2. BOX (blue, double-stroke, corners overshoot) -->
+              <path class="od-stroke ink-blue thick" data-cue="0.90" data-dur="0.50" data-ease="power2.out"
+                d="M 1214 240 L 1406 232 L 1412 240 L 1406 378 L 1216 384 L 1210 375 L 1216 246" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="1.12" data-dur="0.40" data-ease="power2.out"
+                d="M 1214 240 L 1406 232 L 1412 240 L 1406 378 L 1216 384 L 1210 375 L 1216 246" />
+
+              <!-- 3. LASSO (yellow, fat translucent, overshoots closure) -->
+              <path class="od-stroke ink-yellow lasso-thick" data-cue="1.50" data-dur="0.55" data-ease="power2.out"
+                d="M 1560 322 C 1548 250 1660 226 1758 244 C 1846 260 1828 236 1826 316 C 1824 396 1720 420 1618 402 C 1540 388 1548 366 1600 352" />
+              <path class="od-stroke ink-yellow lasso-thin" transform="translate(4 3)" data-cue="1.72" data-dur="0.44" data-ease="power2.out"
+                d="M 1560 322 C 1548 250 1660 226 1758 244 C 1846 260 1828 236 1826 316 C 1824 396 1720 420 1618 402 C 1540 388 1548 366 1600 352" />
+
+              <!-- 4. ARROW straight (blue): shaft double-stroke, head drawn LAST -->
+              <path class="od-stroke ink-blue thick" data-cue="2.10" data-dur="0.40" data-ease="power2.out"
+                d="M 882 470 C 876 520 886 560 880 616" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="2.28" data-dur="0.32" data-ease="power2.out"
+                d="M 882 470 C 876 520 886 560 880 616" />
+              <path class="od-stroke ink-blue thick" data-cue="2.55" data-dur="0.14" data-ease="none"
+                d="M 856 590 L 880 622 L 904 588" />
+
+              <!-- 5. ARROW curved (blue): shaft double-stroke, head LAST -->
+              <path class="od-stroke ink-blue thick" data-cue="2.70" data-dur="0.42" data-ease="power2.out"
+                d="M 1210 474 C 1210 560 1252 604 1338 630" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="2.88" data-dur="0.34" data-ease="power2.out"
+                d="M 1210 474 C 1210 560 1252 604 1338 630" />
+              <path class="od-stroke ink-blue thick" data-cue="3.16" data-dur="0.14" data-ease="none"
+                d="M 1306 606 L 1344 636 L 1350 594" />
+
+              <!-- 7. UNDERLINE (green, double-stroke) -->
+              <path class="od-stroke ink-green thick" data-cue="3.90" data-dur="0.30" data-ease="power2.out"
+                d="M 812 884 C 880 876 940 892 1004 882" />
+              <path class="od-stroke ink-green thin" transform="translate(2 3)" data-cue="4.02" data-dur="0.24" data-ease="power2.out"
+                d="M 812 884 C 880 876 940 892 1004 882" />
+
+              <!-- 8. CHECK (green, double-stroke) -->
+              <path class="od-stroke ink-green thick" data-cue="4.30" data-dur="0.30" data-ease="power2.out"
+                d="M 1256 884 L 1288 926 L 1354 836" />
+              <path class="od-stroke ink-green thin" transform="translate(2 2)" data-cue="4.42" data-dur="0.24" data-ease="power2.out"
+                d="M 1256 884 L 1288 926 L 1354 836" />
+
+              <!-- 9. CIRCLED-NUMBER (blue circle, double-stroke; number pops after) -->
+              <path class="od-stroke ink-blue thick" data-cue="4.70" data-dur="0.50" data-ease="power2.out"
+                d="M 1620 884 C 1614 838 1666 820 1712 834 C 1750 846 1732 828 1730 882 C 1728 930 1668 944 1622 928 C 1594 916 1638 906 1650 890" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="4.92" data-dur="0.40" data-ease="power2.out"
+                d="M 1620 884 C 1614 838 1666 820 1712 834 C 1750 846 1732 828 1730 882 C 1728 930 1668 944 1622 928 C 1594 916 1638 906 1650 890" />
+            </g>
+          </svg>
+
+          <!-- 6. ARROW dashed (blue): separate SVG, revealed by a clipPath wipe so the dashes stay intact -->
+          <svg class="od-dash-arrow" viewBox="0 0 1920 1080" aria-hidden="true" data-layout-ignore>
+            <g filter="url(#od-wobble)">
+              <path class="od-dash-shaft" d="M 1650 470 C 1644 522 1656 566 1652 618" />
+              <path d="M 1626 594 L 1652 626 L 1678 592" />
+            </g>
+          </svg>
+
+          <!-- words the marks annotate + the circled number glyph -->
+          <div class="od-anno-word" style="left: 1636px; top: 292px;">Ai</div>
+          <div class="od-num" style="left: 1658px; top: 856px;">1</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      // Mirrors reference/scripts/constants.js.
+      const DRAW_SECONDARY_LAG_S = 0.22;    // encoded into each thin path's data-cue
+      const DRAW_SECONDARY_DUR_FACTOR = 0.8; // encoded into each thin path's data-dur
+
+      const S = '[data-composition-id="draw-board-annotate"]';
+      const tl = gsap.timeline({ paused: true, defaults: { overwrite: "auto" } });
+
+      // Data-driven double-stroke draw: measure each stroke, set its dash, tween offset→0 at its cue.
+      document.querySelectorAll(`${S} .od-stroke`).forEach((p) => {
+        const len = p.getTotalLength() * 1.02; // slight over-measure so the end never clips
+        gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+        tl.to(
+          p,
+          {
+            strokeDashoffset: 0,
+            duration: parseFloat(p.dataset.dur),
+            ease: p.dataset.ease,
+          },
+          parseFloat(p.dataset.cue),
+        );
+      });
+
+      // 6. Dashed arrow — clipPath wipe (top→bottom), dashes preserved. Seek-safe (full string/frame).
+      gsap.set(`${S} .od-dash-arrow`, { clipPath: "inset(0 0 100% 0)" }); // explicit start
+      tl.to(
+        `${S} .od-dash-arrow`,
+        { clipPath: "inset(0 0 0% 0)", duration: 0.5, ease: "power2.out" },
+        3.30,
+      );
+
+      // Annotated word fades in as the lasso lands; circled number pops after its circle draws.
+      tl.to(`${S} .od-anno-word`, { opacity: 1, duration: 0.3, ease: "power2.out" }, 1.5);
+      gsap.set(`${S} .od-num`, { scale: 0, opacity: 0 });
+      tl.to(`${S} .od-num`, { scale: 1, opacity: 1, duration: 0.34, ease: "back.out(1.6)" }, 5.35);
+
+      // Catalog HOLDS to the cut (resting seek state = every mark drawn). No exit — additive marks persist.
+      // Optional exit (fade the whole ink layer, never un-draw), if a hold-to-cut isn't wanted:
+      //   tl.to(`${S} .od-ink`, { opacity: 0, duration: 0.4, ease: "power1.in" }, 7.4);
+      //   tl.set(`${S} .od-ink`, { opacity: 0 }, 7.8);
+
+      window.__timelines["draw-board-annotate"] = tl;
+    </script>
+  </body>
+</html>

@@ -81,7 +81,7 @@ The "Date Created" field in Section 2 is the synthesis date, not the corpus coll
 Where `[slug]` = lowercase, hyphenated full name. Examples:
 - "Exemplar One" → `exemplar-one-voice.md`
 - "Exemplar Two" → `exemplar-two-voice.md`
-- "Jane Doe" → `jane-doe-voice.md`
+- "example-contact example-surname" → `example-contact-example-surname-voice.md`
 
 ---
 

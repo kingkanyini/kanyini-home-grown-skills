@@ -19,8 +19,17 @@ const SYSTEM_EMAIL_ALLOWLIST = [
   /calendar-notification@google\.com/i,
   /drive-shares-noreply@google\.com/i,
   /email@domain\.com/i,
-  /user@example\.com/i,
+  // RFC 2606 reserves example.com/.net/.org for documentation — an address there is
+  // by definition not a real person. Was pinned to user@example.com only, which left
+  // pat@example.com, postmaster@example.com etc. failing the gate.
+  /@example\.(com|net|org)\b/i,
   /<example-client>@example\.com/i,
+  // Obvious synthetic test domains used in inbox-digest's reply-matching fixtures.
+  /@(x|ac|mail\.example)\.com\b/i,
+  /@(y|b|evil)\.com\b/i,
+  // Bounce/system senders the digest must recognize — infrastructure, not people.
+  /mailer-daemon@/i,
+  /^bounces\+/i,
   /jack@greensock\.com/i,  // GSAP author attribution inside vendored gsap.min.js (license header, not a leak)
 ];
 
@@ -83,6 +92,10 @@ const ALLOWLIST_PATHS = [
   // docs legitimately contain [[...]] examples (generic syntax like [[links]], never vault-note names).
   /obsidian-brain-install[\\\/]commands[\\\/].*\.md$/,
   /obsidian-brain-install[\\\/]scripts[\\\/]templates[\\\/].*\.md$/,
+  // overlay-director move implementations are pure SVG geometry. Coordinate triplets
+  // like "1072 245 1004" inside a path/points attribute match the US phone-number
+  // pattern. These files contain no prose and no addresses.
+  /overlay-director[\\\/]references[\\\/]moves-library[\\\/]_impl[\\\/].*\.html$/,
 ];
 
 async function isTextFile(filePath) {

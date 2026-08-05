@@ -112,6 +112,13 @@ Scan `~/.claude/projects/` for any folder matching `*-headline-creator/`. If fou
 
 Then AskUserQuestion: Resume [client] / Start new project
 
+**Step 0a-bis: Scan-state resume (idempotency guard).** When resuming a project, read `registry.json` `phases.market_scan`:
+- `"complete"` or `"partial"` → do NOT re-run the scan. Load the existing `market-scan.md` (its `scan_summary` block) and carry it into Phase 3.
+- `"skipped"` → do not re-offer the scan; go to Phase 3.
+- absent/null AND status is `ica_complete` → re-enter at Phase 2B and offer the scan.
+- The user can type **"re-scan market"** at any time to force a fresh scan that overwrites `market-scan.md`.
+- Rationale: the live Ad Library is non-idempotent — a second scan can return a different winning angle and silently change generation. Reuse the saved scan unless explicitly told to re-scan.
+
 **Step 0b: Check for incoming handoff**
 Scan `~/.claude/projects/*/handoff.json` for ICA-shaped data (look for `data.ica` or top-level `ica` keys with `ceiling`/`floor`/`below_floor` structure). **Only surface handoffs where `"handoff": "pending"`** — skip any with `"handoff": "consumed"` or missing handoff field. Also scan `~/.claude/projects/*/ica.json`.
 
@@ -141,7 +148,7 @@ If imported: map incoming data to the ICA JSON schema using these rules:
 
 **Multiple handoff files detected:** If more than one ICA-shaped handoff is found across project folders, display all with source skill, client name, and date. AskUserQuestion to let the user pick which one to import. Only surface handoffs where `"handoff": "pending"` (skip consumed handoffs).
 
-After mapping, show summary. AskUserQuestion: "Anything to add or adjust?" with options: Looks good, generate headlines / I want to adjust some fields / Start fresh instead. If "Looks good" — skip to Phase 3. If "Adjust" — proceed to abbreviated interview (only ask about blank fields).
+After mapping, show summary. AskUserQuestion: "Anything to add or adjust?" with options: Looks good, generate headlines / I want to adjust some fields / Start fresh instead. If "Looks good" — proceed to Phase 2B (offer the market scan — imported ICAs benefit most from a current-market check), then Phase 3. If "Adjust" — proceed to abbreviated interview (only ask about blank fields).
 
 **If no existing projects and no handoff:** Proceed to Phase 1.
 
@@ -227,8 +234,68 @@ Before starting, AskUserQuestion for client/project name (used for folder naming
 2. Display the drafted ICA JSON in a code block.
 3. If this is an UPDATE to existing ICA: AskUserQuestion "Merge new answers into existing ICA, or overwrite completely?" — Merge / Overwrite / Cancel
 4. Save ICA JSON to `~/.claude/projects/[client]-headline-creator/ica.json`
-5. Create/update `registry.json` with status "ica_complete"
-6. Proceed to Phase 3.
+5. **First save only:** drop a `.client-data-boundary` marker file into `~/.claude/projects/[client]-headline-creator/` per `principles/client-data-boundary-sentinel.md` — this folder holds client PII (ICA) + competitive intel and must not be auto-promoted to the vault or auto-ingested by other skills without consent.
+6. Create/update `registry.json` with status "ica_complete"
+7. Proceed to Phase 2B.
+
+---
+
+## Phase 2B — Market Scan (Meta Ad Library) [opt-in; recommended for ad / paid-social headlines]
+
+**Goal:** Before generating, see which hooks are actually winning in the client's niche right now, so the set reflects current proven angles AND finds an unworked angle (the white space).
+
+**Progress display:** "Phase 2B of 5 — Market Scan (optional)" (2B is an optional sub-phase; it does not change the 5-phase count.)
+
+### Step 2B-1: Offer the scan
+AskUserQuestion: "Run a Meta Ad Library scan to see what's working in this niche right now? (Opens a browser, ~2-3 min for a full scan.)"
+- "Full scan (recommended for ads)" — 2-3 niche queries, ~2-3 min
+- "Quick scan (1 query, ~1 min)" — single best keyword, faster
+- "Skip — I already know the angle" — proceed straight to Phase 3
+
+If skipped, set `registry.json` `phases.market_scan = "skipped"`, note it, and proceed to Phase 3. Skipping is fine for organic/non-ad headlines.
+
+### Step 2B-2: Run the scan (if yes)
+1. Derive the keyword queries from `brand.niche` + `brand.offer_summary` + `ica.ceiling.who` (e.g., "songwriting masterclass", "music artist coach"). Full scan = 2-3 queries; quick scan = 1.
+2. Use Playwright (or the `/open-browser` skill) to load the Ad Library, one query at a time:
+   `https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=<URL-encoded keywords>&search_type=keyword_unordered&media_type=all`
+   Screenshot + read each result page. **Synthesize from the first ~15-20 ads per query** — do not exhaustively read hundreds; a broad keyword can return a flood, and the top results carry the signal. **Per-query timeout ~30s** — if a page hangs past it, mark the query `error` and move on. **Close the browser** when the scan completes or fails; never leave a session open into Phase 3.
+3. **Per-query coverage tracking (MUST — no silent truncation):** record each query's outcome as one of:
+   - `ok` — page loaded, ads returned (record the count)
+   - `empty` — page loaded fine, zero ads (a REAL signal: genuinely uncrowded)
+   - `blocked` — login wall / CAPTCHA / rate-limit / partial gated page (a BLIND SPOT, not a signal)
+   - `error` — unreachable / timeout
+4. **Fail-open (MUST):** if ALL queries are `blocked`/`error`, declare the scan failed: say so and AskUserQuestion to proceed without it. NEVER block generation. Set `phases.market_scan = "failed"`.
+5. **Partial-coverage gate (MUST):** if SOME but not all queries succeeded, do NOT present the scan as complete. State coverage explicitly ("Scanned 1 of 3; 2 blocked") and AskUserQuestion: Use partial findings (white-space flagged low-confidence) / Retry the blocked queries / Proceed without the scan. Set `phases.market_scan = "partial"`.
+
+### Step 2B-3: Synthesize findings
+Capture: **who's running** (advertisers by CATEGORY, not name — e.g. "a mid-size vocal coach") · **dominant winning angle(s)** · **formatting trends** (talking-head video, bold text covers, carousels, story-openers) · **white space** (the angle/aesthetic competitors AREN'T using).
+- **White-space guard (MUST):** claim white space ONLY from queries that returned `ok` or `empty`. NEVER infer white space from a `blocked`/`error` query — that is a blind spot, not an opening. If coverage is partial, label every white-space finding "low-confidence (partial scan)."
+- **Quick-scan cap (MUST):** a quick scan (single query) caps `white_space_confidence` at `low(single-query)` regardless of outcome — one keyword cannot see adjacent angles, so its white-space read is a weak suggestion, never a directive.
+
+### Step 2B-4: Save + hand off
+- Save to `~/.claude/projects/[client]-headline-creator/market-scan.md`. Open the file with a confidentiality header and a structured `scan_summary` block so downstream stages bind to fields, not prose:
+  ```
+  > Client-confidential competitive research. Not for redistribution. Delete when project closes.
+  ```
+  ```json
+  {
+    "scan_status": "complete",        // complete | partial | failed | skipped
+    "queries": [{"kw": "", "outcome": "ok|empty|blocked|error", "count": 0}],
+    "coverage": "N of M queries returned data",
+    "proven_angles": [],              // ranked, most-crowded first
+    "white_space_angle": "",          // the ONE differentiation lane (omit if partial/low-confidence)
+    "white_space_confidence": "high|low(partial)",
+    "formatting_trends": [],
+    "scanned_iso": ""
+  }
+  ```
+  Prose synthesis goes below the block. Phase 3 and downstream stages read the BLOCK.
+- Set `registry.json` `phases.market_scan` to `"complete"` (or `"partial"`/`"failed"` per the gates above).
+- **Screenshots are working artifacts only** — delete them after synthesis. Never retain images showing reactor faces, commenter names, or personal-profile advertisers.
+- Confirm the `.client-data-boundary` sentinel exists in the project folder (drop it if not).
+- Carry the `scan_summary` into Phase 3 (generation weighting + reserve-2-for-white-space are specified there).
+
+This step is the headline-stage half of the `ad-creative-pipeline-speed-run` learned orchestration. Proceed to Phase 3.
 
 ---
 
@@ -241,7 +308,11 @@ Before starting, AskUserQuestion for client/project name (used for folder naming
 
 If any of these are empty or clearly generic (e.g., "people," "entrepreneurs," "coaching"), prompt the user: "The ICA needs more specificity before I can generate strong headlines. [field] is too broad." Then AskUserQuestion: Return to Phase 2 to refine / Proceed anyway (headlines may be weaker) / I'll type a more specific version now.
 
-Read the reference file: `reference/hook-library.md`
+Read the reference files: `reference/hook-library.md` and `reference/gold-standard-headlines.md`.
+
+**If a market scan ran (Phase 2B):** weight generation toward angles proven in the scan, and reserve at least 2 headlines for the identified white-space angle.
+
+**For ad / paid-social headlines, prefer the Brunson Curiosity Formulas (Patterns 10-12 in the hook library):** How-to-Without, The Secret/Hack To, and The Reason… Isn't What You Think. These are the highest-converting hook scripts in the corpus — see `gold-standard-headlines.md` for worked, counsel-scored examples and the "call them up" identity rule.
 
 Using the ICA JSON, generate:
 - **10 Ceiling ICA Headlines** — targeting the greenlight buyer. Use Desire Activation, Identity Shift, Curiosity Gap, Contrarian, and Social Proof angles. Draw from the Ceiling client's `top_desires`, `identity_shift`, and `language_swipes`.
@@ -249,7 +320,7 @@ Using the ICA JSON, generate:
 - **6 Below Floor Repellent Headlines** — polite filters. Use patterns from the hook library's Repellent section. Draw from `below_floor.red_flags` and `below_floor.dealbreakers`.
 
 **Generation constraints:**
-- Maximum 14 words per headline
+- Maximum 14 words per headline — EXCEPT the Brunson Curiosity Formulas (Patterns 10-12), which may run to 16 words when the "without" / open-loop clause needs the room. Tightness still wins; never pad to reach 16.
 - Every headline has a strong verb
 - Vary across angle categories — don't cluster
 - Use the ICA's own `language_swipes` words when possible
@@ -332,6 +403,7 @@ After refinements complete (or if no refinements selected):
   "status": "complete",
   "phases": {
     "ica_intake": "complete",
+    "market_scan": "complete",
     "generation": "complete",
     "counsel_review": "complete",
     "refinement": "complete"
@@ -340,6 +412,7 @@ After refinements complete (or if no refinements selected):
   "last_updated": "ISO timestamp"
 }
 ```
+(`phases.market_scan` is `"complete"` | `"partial"` | `"failed"` | `"skipped"` — set during Phase 2B, read by Phase 0 resume.)
 3. Generate `handoff.json`:
 ```json
 {
@@ -356,11 +429,19 @@ After refinements complete (or if no refinements selected):
       "below_floor_repellents": []
     },
     "refinements_applied": [],
-    "counsel_approved": true
+    "counsel_approved": true,
+    "market_scan": {
+      "scan_status": "skipped",
+      "white_space_angle": "",
+      "white_space_confidence": "",
+      "proven_angles": [],
+      "scan_file": "market-scan.md"
+    }
   }
 }
 ```
-4. Create `00-README.md` project index listing all files in the project folder.
+Populate `data.market_scan` from the `scan_summary` block in `market-scan.md` — it is a 4-5 field PROJECTION of that larger block (not all scan fields propagate by design; if you add a field to `scan_summary`, decide explicitly whether it belongs here). If the scan was skipped/failed, set `scan_status` accordingly and leave the rest empty — downstream consumers (`/imaginator`, `/ad-copy-forge`) MUST treat an empty `white_space_angle` as "no scan; proceed on ICA + hooks alone," and MUST treat `white_space_confidence: "low(partial)"` as a hedge (use the white-space angle as a weak suggestion, not a directive). This makes the "scan informs images/copy" handoff explicit, not a side-channel folder read.
+4. Create `00-README.md` project index listing all files in the project folder (include `market-scan.md` when present; mark "(not run)" if skipped).
 
 **Step 5d: Ethics check at close**
 
@@ -387,6 +468,7 @@ Display completion message:
 ║  Files:                                                     ║
 ║  - ica.json (ICA avatar data)                               ║
 ║  - headlines.md (3-tier headline sets)                       ║
+║  - market-scan.md (if scan ran)                              ║
 ║  - handoff.json (ready for cross-skill import)               ║
 ║  - registry.json (session state)                            ║
 ╚══════════════════════════════════════════════════════════════╝
@@ -415,4 +497,7 @@ Before delivering final output, verify all of these internally:
 - Counsel review completed before delivery
 - Ethics check passed at close
 - Files saved to project folder
-- Handoff.json generated with complete data
+- Handoff.json generated with complete data (including `market_scan` block)
+- All headlines within word cap (≤14, or ≤16 for Brunson Patterns 10-12)
+- If a market scan ran: generation weighted to proven angles + ≥2 white-space headlines reserved; white space claimed only from `ok`/`empty` queries
+- `phases.market_scan` status recorded; `.client-data-boundary` sentinel present; scan screenshots deleted

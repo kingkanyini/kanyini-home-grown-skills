@@ -4,6 +4,9 @@ version: 1
 move_type: image
 affects: [placement.horizontal, density]
 hero_capable: true
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: BLUR-STREAK
 ---
 
 # Image Card
@@ -38,10 +41,17 @@ An illustration/concept card carrying generated art (inherits `art-direction.md`
 
 ## GSAP
 ```js
+/* SMOOTH / BLUR-STREAK (Layer 1 motion upgrade). The container keeps a bare seek-safe opacity arc
+   with NO transform (gate: opacityArc + noTranslate). The fly-in + coupled velocity-blur live INSIDE:
+   the .od-lead streaks in on x while 2 opacity-decaying ghost copies trail behind and collapse into
+   it on the SAME window+ease (§0 recipe b — no live filter tween). House power3.out. */
 function odImageCard(el, t) {
-  const tl = gsap.timeline();
-  tl.set(el, { opacity: 0, left: (el.dataset.left) });                       // baked left/top, not translate
-  tl.to(el, { opacity: 1, duration: 0.45, ease: 'power2.out' }, t);
+  const tl = gsap.timeline(), lead = el.querySelector('.od-lead'), STEP = 14 /* BLUR_GHOST_STEP_PX */;
+  tl.set(el, { opacity: 0 });                                                // baked left/top, not translate
+  tl.fromTo(lead, { x: 3 * STEP }, { x: 0, duration: 0.5, ease: 'power3.out' }, t);
+  [1, 2].forEach(i => tl.fromTo(el.querySelector(`.od-ghost[data-i="${i}"]`),
+    { x: (i + 1) * STEP, opacity: 0.34 / i }, { x: 0, opacity: 0, duration: 0.5, ease: 'power3.out' }, t));
+  tl.to(el, { opacity: 1, duration: 0.45, ease: 'power3.out' }, t);
   tl.to(el, { opacity: 0, duration: 0.4, ease: 'power1.in' }, t + HOLD);     // fade owns life (principle 3)
   return tl;
 }

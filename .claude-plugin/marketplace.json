@@ -137,6 +137,30 @@
     {
       "name": "overlay-director",
       "source": "./plugins/overlay-director"
+    },
+    {
+      "name": "transcript-extractor-plus",
+      "source": "./plugins/transcript-extractor-plus"
+    },
+    {
+      "name": "snapshot",
+      "source": "./plugins/snapshot"
+    },
+    {
+      "name": "sixth-sense-scissors",
+      "source": "./plugins/sixth-sense-scissors"
+    },
+    {
+      "name": "sixth-sense-xray",
+      "source": "./plugins/sixth-sense-xray"
+    },
+    {
+      "name": "sixth-sense-sage",
+      "source": "./plugins/sixth-sense-sage"
+    },
+    {
+      "name": "sixth-sense",
+      "source": "./plugins/sixth-sense"
     }
   ]
 }

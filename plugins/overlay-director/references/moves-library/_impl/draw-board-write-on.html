@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <!-- Marker webfont (progressive enhancement; falls back to the system handwriting stack if offline). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+
+      /* Overlay root is TRANSPARENT in production — the footage IS the glass. */
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+
+      /* .od-footage-sim exists ONLY so the blue ink is visible in a standalone gate render.
+         It is NOT part of the overlay — delete it when compositing over real footage. */
+      .od-footage-sim {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(120% 90% at 22% 40%, #6c7a86 0%, #3f4a54 45%, #232a31 100%),
+          linear-gradient(180deg, #4a5560, #20262c);
+      }
+
+      .od-board { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
+      /* Optional darkening plate — GLASS default is opacity 0 (footage at full brightness). */
+      .od-dim { position: absolute; inset: 0; z-index: 1; background: rgba(0, 0, 0, 0.8); opacity: 0; }
+
+      /* Position baked on the container (principle 2); the ink layer owns opacity for the exit. */
+      .od-ink {
+        position: absolute; left: 1004px; top: 214px; width: 840px; z-index: 2;
+        font-family: "Permanent Marker", "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+        color: #3b9be8; /* DRAWBOARD_INK */
+        font-size: 62px; line-height: 1.32; text-transform: uppercase;
+        letter-spacing: 0.01em;
+      }
+      .od-line { display: block; white-space: nowrap; }
+      /* The word is now just the jitter + spacing container; the CLIP lives on each glyph. */
+      .od-word {
+        display: inline-block; margin-right: 0.28em;
+        transform-origin: left center;
+      }
+      /* Each glyph pen-traces itself L->R (seek-safe clipPath). Split from the word text at runtime. */
+      .od-char {
+        display: inline-block;
+        transform-origin: left center;
+        clip-path: inset(0 100% 0 0); /* hidden until this glyph's left-to-right stroke (seek-safe) */
+        -webkit-clip-path: inset(0 100% 0 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="draw-board-write-on"
+      data-root="true"
+      data-start="0"
+      data-duration="7"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div class="od-footage-sim" data-preview-only="true"></div>
+      <div class="od-dim"></div>
+      <div class="od-board">
+        <!-- Authored ALL-CAPS copy; JS splits each word into glyphs and pen-traces them in reading order. -->
+        <div class="od-ink">
+          <span class="od-line"><span class="od-word">Get</span><span class="od-word">as</span><span class="od-word">close</span><span class="od-word">to</span></span>
+          <span class="od-line"><span class="od-word">Revenue</span><span class="od-word">Generation</span></span>
+          <span class="od-line"><span class="od-word">as</span><span class="od-word">possible</span></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      // Mirrors reference/scripts/constants.js (impl HTML can't require() it — keep in sync).
+      const DRAWBOARD_WRITE_ON_WPS = 2.2; // ~1 word / 0.45s, speech-synced (word BEATS stay on this grid)
+      const WORD_SLOT = 1 / DRAWBOARD_WRITE_ON_WPS; // seconds allotted per word (0.4545s)
+      const PEN_LIFT_FRAC = 0.14; // fraction of the slot the pen "lifts" before the next word starts
+      const WRITE_WINDOW = WORD_SLOT * (1 - PEN_LIFT_FRAC); // time the glyphs of one word occupy
+      const CHAR_DUR_MAX = 0.14; // cap a single glyph's stroke so short words snap instead of crawl
+      const INK_EXIT_START = 6.2;
+
+      const S = '[data-composition-id="draw-board-write-on"]';
+      const tl = gsap.timeline({ paused: true, defaults: { overwrite: "auto" } });
+
+      // Deterministic jitter — a Math.sin hash (NO Math.random/Date.now). Applied ONCE via gsap.set
+      // (static): identical on every forward AND backward seek.
+      const jitter = (i, n) => {
+        const x = Math.sin(i * 12.9898 + n * 78.233) * 43758.5453;
+        return x - Math.floor(x); // 0..1
+      };
+      // Per-glyph hash keyed on (wordIndex, charIndex) so letters within a word are individually uneven.
+      const cjit = (wi, ci, n) => {
+        const x = Math.sin((wi * 31.7 + ci * 12.9898 + 7) * 1.13 + n * 78.233) * 43758.5453;
+        return x - Math.floor(x); // 0..1
+      };
+
+      // Per-LINE left-margin wander (±4px) so the left edge drifts line-to-line like a real hand. Static.
+      document.querySelectorAll(`${S} .od-line`).forEach((ln, li) => {
+        gsap.set(ln, { marginLeft: (jitter(li, 5) - 0.5) * 8 });
+      });
+
+      const words = document.querySelectorAll(`${S} .od-word`);
+      words.forEach((w, i) => {
+        const text = w.textContent;
+        w.textContent = ""; // rebuild the word out of per-glyph spans
+        const wordStart = i / DRAWBOARD_WRITE_ON_WPS; // word BEAT stays on the speech-synced grid
+        const chars = Array.from(text);
+        const n = chars.length;
+        const charStagger = WRITE_WINDOW / n; // glyphs fill the write window back-to-back (continuous stroke)
+        const charDur = Math.min(charStagger, CHAR_DUR_MAX);
+
+        // Per-word baseline jitter (sells the hand) — applied ONCE, static, deterministic.
+        gsap.set(w, {
+          y: (jitter(i, 1) - 0.5) * 10, // drifting baseline (±5px)
+          rotation: (jitter(i, 2) - 0.5) * 5, // uneven tilt (±2.5deg)
+          scale: 0.92 + jitter(i, 3) * 0.16, // irregular sizing (0.92–1.08)
+        });
+
+        chars.forEach((ch, c) => {
+          const span = document.createElement("span");
+          span.className = "od-char";
+          span.textContent = ch;
+          w.appendChild(span); // no whitespace text nodes between glyphs -> no inter-letter gap
+          // Subtle per-glyph jitter inside the word (deterministic — NO Math.random). Static.
+          gsap.set(span, {
+            y: (cjit(i, c, 1) - 0.5) * 4, // ±2px per-letter baseline unevenness
+            rotation: (cjit(i, c, 2) - 0.5) * 4, // ±2deg per-letter tilt
+            clipPath: "inset(0 100% 0 0)", // explicit start (no lazy-capture on backward seek)
+          });
+          // Per-CHARACTER left-to-right pen trace: each glyph WRITES (eased), it no longer wipes as a block.
+          // clipPath is seek-safe (full inset() string each frame); power1.inOut gives the stroke's
+          // accelerate-into / settle-out feel instead of the old linear swipe.
+          tl.to(
+            span,
+            { clipPath: "inset(0 0% 0 0)", duration: charDur, ease: "power1.inOut" },
+            wordStart + c * charStagger,
+          );
+        });
+      });
+
+      // Exit: fade the ink layer (never un-write), then hard-kill (seek-safety).
+      tl.to(`${S} .od-ink`, { opacity: 0, duration: 0.4, ease: "power1.in" }, INK_EXIT_START);
+      tl.set(`${S} .od-ink`, { opacity: 0 }, INK_EXIT_START + 0.4);
+
+      window.__timelines["draw-board-write-on"] = tl;
+    </script>
+  </body>
+</html>

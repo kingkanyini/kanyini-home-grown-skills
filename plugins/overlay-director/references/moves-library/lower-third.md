@@ -4,6 +4,9 @@ version: 1
 move_type: lower-third
 affects: [placement.vertical]
 hero_capable: false
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: SLIDE
 ---
 
 # Lower Third
@@ -32,11 +35,18 @@ Name / role / source label band, low and unobtrusive — identifies without stea
 
 ## GSAP
 ```js
+/* SMOOTH / SLIDE (Layer 1 motion upgrade). Container keeps the seek-safe left crawl (4%->6%, baked
+   left — NOT translate) on the house power3.out (was power2.out). Two additive touches: a small
+   inner scale-pop settle, and the clay accent bar now DRAWS on (svg strokeDashoffset len->0, 'none'
+   ease) instead of a static border — a distinct entrance flavor for easing/mechanism variety. */
 function odLowerThird(el, t) {
-  const tl = gsap.timeline();
-  tl.set(el, { opacity: 0, x: 0, left: '4%' });                              // animate left (px/%), not translate
-  tl.to(el, { opacity: 1, left: '6%', duration: 0.4, ease: 'power2.out' }, t);
-  tl.to(el, { opacity: 0, duration: 0.4, ease: 'power1.in' }, t + HOLD);     // fade owns life (principle 3)
+  const tl = gsap.timeline(), inner = el.querySelector('.od-inner'), bar = el.querySelector('.od-bar line');
+  tl.set(el, { opacity: 0, left: '4%' }).set(inner, { scale: 0.94, transformOrigin: '0% 50%' })
+    .set(bar, { strokeDashoffset: 100 });
+  tl.to(el, { opacity: 1, left: '6%', duration: 0.4, ease: 'power3.out' }, t);
+  tl.to(inner, { scale: 1, duration: 0.45, ease: 'power3.out' }, t + 0.05);
+  tl.to(bar, { strokeDashoffset: 0, duration: 0.4, ease: 'none' }, t);        // bar draws top->bottom
+  tl.to(el, { opacity: 0, duration: 0.4, ease: 'power1.in' }, t + HOLD);      // fade owns life (principle 3)
   return tl;
 }
 ```

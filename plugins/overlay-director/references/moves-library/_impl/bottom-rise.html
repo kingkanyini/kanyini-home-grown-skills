@@ -15,19 +15,39 @@
         border-radius: 22px; background: rgba(247,240,228,0.16); border: 1px solid rgba(255,255,255,0.35);
         border-left: 5px solid #B06A3B; backdrop-filter: blur(12px); box-shadow: 4px 6px 22px rgba(20,14,9,0.26);
         color: #241B14; font: 600 26px/1.25 'Inter', sans-serif; opacity: 0; }
+      /* seek-safe velocity-blur = opacity-decaying transform ghosts that collapse into the lead */
+      .od-ghost { position: absolute; left: 24px; right: 24px; top: 18px; color: #241B14;
+        font: 600 26px/1.25 'Inter', sans-serif; opacity: 0; pointer-events: none; }
+      .od-body { position: relative; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="bottom-rise" data-start="0" data-duration="3.6"
          data-width="1920" data-height="1080">
-      <div class="od-rise">This is your boss battle. Breathe, then press start.</div>
+      <div class="od-rise">
+        <div class="od-ghost" data-i="3" aria-hidden="true">This is your boss battle. Breathe, then press start.</div>
+        <div class="od-ghost" data-i="2" aria-hidden="true">This is your boss battle. Breathe, then press start.</div>
+        <div class="od-ghost" data-i="1" aria-hidden="true">This is your boss battle. Breathe, then press start.</div>
+        <div class="od-body">This is your boss battle. Breathe, then press start.</div>
+      </div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       const HOLD = 2.8; const S = '[data-composition-id="bottom-rise"]';
+      const STEP = 14; // BLUR_GHOST_STEP_PX (constants.js) — per-echo offset along the motion (y) axis
+      // MOTION UPGRADE (Layer 1): POP / RISE. Container keeps the seek-safe bottom rise (8%->12%,
+      // baked bottom) on back.out(2.5) so it still clears the gate's overshoot floor. The rise now
+      // carries a coupled velocity-blur: 3 opacity-decaying ghost copies trail BELOW the lead and
+      // collapse into it on the SAME window+ease (§0 recipe b — never a live filter/blur tween).
       tl.set(`${S} .od-rise`, { opacity: 0, bottom: '8%' });
-      tl.to(`${S} .od-rise`, { opacity: 1, bottom: '12%', duration: 0.5, ease: 'back.out(2.5)' }, 0);
+      const ghosts = ['[data-i="1"]', '[data-i="2"]', '[data-i="3"]'];
+      ghosts.forEach((g, k) => { const i = k + 1;
+        tl.fromTo(`${S} .od-ghost${g}`,
+          { y: i * STEP, opacity: 0.36 / i },
+          { y: 0, opacity: 0, duration: 0.5, ease: 'back.out(2.5)' }, 0);
+      });
+      tl.to(`${S} .od-rise`, { opacity: 1, bottom: '12%', duration: 0.5, ease: 'back.out(2.5)' }, 0); // overshoot
       tl.to(`${S} .od-rise`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
       tl.set(`${S} .od-rise`, { opacity: 0 }, HOLD + 0.4);
       window.__timelines["bottom-rise"] = tl;

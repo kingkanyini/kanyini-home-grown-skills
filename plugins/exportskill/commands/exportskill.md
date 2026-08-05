@@ -74,6 +74,13 @@ Step 2 of 5: Locating components...
 ✓ Reference files: [count] found — or "No reference files detected"
 ```
 
+**Export-anonymization gate (MUST — runs before any output):**
+Grep ALL components being packaged (command file + every detected reference file + merged CLAUDE.md context) for the marker `ANONYMIZE BEFORE EXPORT`. If the marker appears in ANY component:
+1. HARD-STOP. Do not proceed to Step 3/4.
+2. Show the user the exact file + the client-specific content flagged (client name, paid back-end name, audience psychographics, etc.).
+3. AskUserQuestion: "This file is flagged to anonymize before export. How do you want to proceed?" — options: "I've stripped/generalized it — re-scan and continue" / "Exclude this reference file from the export" / "Cancel export".
+4. Only continue once the marker is gone from packaged content (re-grep to confirm) OR the flagged file is excluded. NEVER package live client data flagged for anonymization. This implements the keep-but-protect contract from skills like headline-creator's `gold-standard-headlines.md`.
+
 ---
 
 ### Step 3 of 5: TRANSFORM & MERGE
@@ -309,6 +316,8 @@ If the user specifies the skill in the command, skip to Step 1 validation:
 6. **Overwrite warning** — If file already exists in export folder, note "Overwriting existing export"
 
 7. **Copy-ready output** — Always end with the full content displayed in chat for easy copying
+
+8. **Anonymization gate is non-negotiable** — Never package content carrying an `ANONYMIZE BEFORE EXPORT` marker until the flagged client-specific data is stripped or the file is excluded (see Step 2 gate). Scrubbing after distribution is impossible — gate before output.
 
 ---
 

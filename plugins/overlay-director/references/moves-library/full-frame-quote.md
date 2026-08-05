@@ -4,6 +4,9 @@ version: 1
 move_type: quote
 affects: [placement.horizontal]
 hero_capable: true
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: CLIP-REVEAL
 ---
 
 # Full Frame Quote
@@ -38,14 +41,23 @@ separate `chapter-divider` move, since full-frame-quote already owns the frame +
 
 ## GSAP
 ```js
+/* SMOOTH / CLIP-REVEAL (Layer 1 motion upgrade) — the highest-gap move gets a signature entrance.
+   The dark plate keeps its seek-safe opacity arc (gate: opacityArc), while the inner text is wiped
+   in left-to-right via a per-frame clipPath STRING set through a proxy onUpdate (§0: clipPath set as
+   a full string each frame, NEVER a filter tween), plus a gentle scale settle. House power3.out. */
 function odFullFrameQuote(el, t) {
-  const tl = gsap.timeline();
-  tl.set(el, { opacity: 0 });
-  tl.to(el, { opacity: 1, duration: 0.5, ease: 'power2.out' }, t);
+  const tl = gsap.timeline(), inner = el.querySelector('.od-inner'), wipe = { p: 100 };
+  const setClip = () => { inner.style.clipPath = `inset(0% ${wipe.p}% 0% 0%)`; }; setClip(); // seed frame 0
+  tl.set(el, { opacity: 0 }).set(inner, { scale: 0.97, transformOrigin: '50% 50%' });
+  tl.to(el, { opacity: 1, duration: 0.5, ease: 'power3.out' }, t);
+  tl.to(inner, { scale: 1, duration: 0.6, ease: 'power3.out' }, t + 0.05);
+  tl.to(wipe, { p: 0, duration: 1.0, ease: 'power3.out', onUpdate: setClip }, t + 0.05); // left->right reveal, dur = CLIP_REVEAL_DUR
   tl.to(el, { opacity: 0, duration: 0.5, ease: 'power1.in' }, t + HOLD);     // fade owns life (principle 3)
   return tl;
 }
 ```
+> Impl uses `CLIP_REVEAL_DUR` (1.0s) from `constants.js` — impls carry the literal (standalone HTML
+> can't `require`), the constant is the source of record (v2 hardening G1).
 
 ## Params
 | Param | Type | Default | Notes |

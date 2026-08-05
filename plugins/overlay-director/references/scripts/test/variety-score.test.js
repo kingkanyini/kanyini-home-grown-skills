@@ -1,6 +1,8 @@
 const { test } = require('node:test');
 const assert = require('node:assert');
-const { varietyScore, top3MoveShare, top3TypeShare, isCalcified, maxConcurrentCards, concurrencyFlag } = require('../variety-score.js');
+const { varietyScore, top3MoveShare, top3TypeShare, isCalcified, maxConcurrentCards, concurrencyFlag,
+  collectEaseStrings, distinctEasings, distinctMechanisms, belowMinEasings, motionVariety } = require('../variety-score.js');
+const C = require('../constants.js');
 
 test('empty plan: score 1, share 0', () => {
   assert.deepStrictEqual(varietyScore([], 0), { variety_score: 1, D: 1, R: 1, W: 1 });
@@ -73,6 +75,68 @@ test('isCalcified is N-gated: short plans never flag', () => {
   assert.strictEqual(isCalcified(0.9, 4), false);  // below N gate
   assert.strictEqual(isCalcified(0.9, 8), true);   // N>=8 and share>0.6
   assert.strictEqual(isCalcified(0.5, 8), false);  // share below threshold
+});
+
+// ── motion variety (Layer 1) ──────────────────────────────────────────────
+test('collectEaseStrings unions explicit easings[], per-axis eases, and archetype-derived (raw strings)', () => {
+  const m = [
+    { easings: ['power3.out', 'power1.in'] },
+    { ease: 'sine.inOut' },
+    { entrance_archetype: 'POP' },              // derives ENTRANCE_POP_EASE
+    { entrance_ease: 'none', exit_ease: 'power1.in' },
+  ];
+  const arr = collectEaseStrings(m);
+  assert.ok(arr.includes('power3.out') && arr.includes('power1.in') && arr.includes('sine.inOut'));
+  assert.ok(arr.includes(C.ENTRANCE_POP_EASE)); // back.out(1.4)
+  assert.ok(arr.includes('none'));
+});
+
+test('archetype-derived ease is skipped when an explicit entrance ease is present', () => {
+  // SMOOTH archetype but an explicit entrance_ease -> only the explicit one counts, not the derived default
+  const arr = collectEaseStrings([{ entrance_archetype: 'SMOOTH', entrance_ease: 'expo.out' }]);
+  assert.deepStrictEqual(arr, ['expo.out']);
+});
+
+test('distinctEasings counts FAMILIES not raw strings (L1-1 / PHANTOM#3)', () => {
+  // three DISTINCT back.out strings collapse to ONE 'back' family
+  const bouncy = [{ ease: 'back.out(1.4)' }, { ease: 'back.out(2.5)' }, { ease: 'back.out(1.7)' }];
+  assert.strictEqual(distinctEasings(bouncy), 1);
+  assert.strictEqual(belowMinEasings(bouncy), true); // N>=3 and only 1 family -> monotone flag fires
+  // power3.out + power1.in + back.out(1.4) + none = 4 families
+  assert.strictEqual(distinctEasings(
+    [{ ease: 'power3.out' }, { ease: 'power1.in' }, { ease: 'back.out(1.4)' }, { ease: 'none' }]), 4);
+});
+
+test('distinctMechanisms counts entrance_mechanism values', () => {
+  const m = [
+    { entrance_mechanism: 'SCALE-POP' }, { entrance_mechanism: 'SCALE-POP' },
+    { entrance_mechanism: 'RISE' }, { entrance_mechanism: 'CLIP-REVEAL' }, {},
+  ];
+  assert.strictEqual(distinctMechanisms(m), 3);
+});
+
+test('belowMinEasings flags a monotone plan but is N-gated', () => {
+  // 4 cards all power2.out -> 1 distinct family -> below the >=3 floor
+  const monotone = Array.from({ length: 4 }, () => ({ ease: 'power2.out' }));
+  assert.strictEqual(distinctEasings(monotone), 1);
+  assert.strictEqual(belowMinEasings(monotone), true);
+  // a varied plan clears the floor
+  const varied = [{ ease: 'power3.out' }, { ease: 'power1.in' }, { ease: 'back.out(1.4)' }, { ease: 'none' }];
+  assert.strictEqual(belowMinEasings(varied), false);
+  // a 2-card plan can't physically carry 3 eases -> never flagged (N gate)
+  assert.strictEqual(belowMinEasings([{ ease: 'power2.out' }, { ease: 'power2.out' }]), false);
+});
+
+test('motionVariety returns the plan facet with the constant floor', () => {
+  const mv = motionVariety([
+    { entrance_mechanism: 'SCALE-POP', ease: 'power3.out', exit_ease: 'power1.in' },
+    { entrance_mechanism: 'RISE', ease: 'back.out(2.5)' },
+    { entrance_mechanism: 'DRAW', ease: 'none' },
+  ]);
+  assert.strictEqual(mv.distinct_mechanisms, 3);
+  assert.ok(mv.distinct_easings >= 4);   // power3, power1, back, none
+  assert.strictEqual(mv.below_min_easings, false);
+  assert.strictEqual(mv.min_distinct_easings, C.MIN_DISTINCT_EASINGS);
 });
 
 test('maxConcurrentCards counts overlapping lifetimes; back-to-back is not overlap', () => {

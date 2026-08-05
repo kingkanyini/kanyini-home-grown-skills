@@ -4,6 +4,9 @@ version: 1
 move_type: card
 affects: [placement.horizontal, density]
 hero_capable: true
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: SCALE-POP
 ---
 
 # Liquid Glass Card
@@ -40,13 +43,16 @@ line and shifted off true-center to clear the talking head.
 
 ## GSAP
 ```js
-/* Visible life = this fade tween, not data-duration (principle 3).
-   Beats relative to data-start; position baked via left/top (principle 2). */
-function odLiquidGlassCard(el, t) { // t = data-start (s)
-  const tl = gsap.timeline();
-  tl.set(el, { opacity: 0, filter: 'blur(6px)' });
-  tl.to(el, { opacity: 1, filter: 'blur(0px)', duration: 0.4, ease: 'power2.out' }, t);          // entrance (lead-in)
-  tl.to(el, { opacity: 0, duration: 0.4, ease: 'power1.in' }, t + HOLD);                          // exit owns end of life
+/* SMOOTH / SCALE-POP (Layer 1 motion upgrade). House ease power3.out (was power2.out).
+   The inner .od-inner wrapper scale-pops 0.9->1 so the CONTAINER position stays baked (§0);
+   the blur->sharp two-layer cross-fade is the seek-safe coupled "comes into focus" velocity-blur
+   (see _impl — NEVER a live filter tween). Visible life = the fade (principle 3). */
+function odLiquidGlassCard(el, t) { // t = data-start (s); inner = the .od-inner scale wrapper
+  const tl = gsap.timeline(), inner = el.querySelector('.od-inner');
+  tl.set(inner, { scale: 0.9, transformOrigin: '50% 50%' });
+  tl.to(el, { opacity: 1, duration: 0.5, ease: 'power3.out' }, t);                 // entrance (lead-in)
+  tl.to(inner, { scale: 1, duration: 0.5, ease: 'power3.out' }, t);                // scale-pop settle
+  tl.to(el, { opacity: 0, duration: 0.4, ease: 'power1.in' }, t + HOLD);           // exit owns end of life
   return tl;
 }
 ```

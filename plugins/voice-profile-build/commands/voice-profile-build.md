@@ -9,18 +9,12 @@ You are running <your-name>'s canonical Voice DNA build pipeline. The skill take
 **Counsel for this skill:** **Copy Forensics Counsel #39** — Stefan Georgi (RMBC structural skeleton) / Kyle Milligan (modern social-native deconstruction) / Gary Bencivenga (granular micro-craftsmanship) / Gary Halbert (soul / persona / emotional contract). **AGENT MODE is mandatory** — this is a high-stakes artifact that downstream ghostwriting (emails, ads, VSLs, headlines) will rely on. Each counsel member must be dispatched as an independent parallel Agent subagent, not personified inline.
 
 **Reference files (read on-demand):**
-- `references/counsel-39-prompts.md` — the 4 reusable agent-mode prompt templates
-- `references/voice-profile-template.md` — the standard output structure (24 sections + Character Intake Card)
+- `reference/counsel-39-prompts.md` — the 4 reusable agent-mode prompt templates
+- `reference/voice-profile-template.md` — the standard output structure (24 sections + Character Intake Card)
 
-**Reference targets (read for rigor calibration — optional):** The exemplar profiles below are illustrative placeholders that do not ship with this skill. If no `*-voice.md` files exist in your `~/.claude/references/voice-profiles/` directory yet, skip them and use `references/voice-profile-template.md` as the rigor bar.
+**Reference targets (read for rigor calibration):**
 - `~/.claude/references/voice-profiles/exemplar-one-voice.md` — gold-standard reference
 - `~/.claude/references/voice-profiles/exemplar-two-voice.md` — second reference
-
----
-
-## Ethics & Consent
-
-This skill builds a deep profile of a real person from their public content. Use it on people who have consented, or on public figures for study — never to impersonate, deceive, or harm. Don't retain others' personal data beyond the profiling task, and respect each platform's terms of service. The Golden Rule: if they saw the profile you built, would they feel honored and studied, or violated?
 
 ---
 
@@ -94,7 +88,7 @@ For each provided IG post URL: `WebFetch` with prompt to extract caption verbati
 Note: IG bio + reel transcription often unscrapable in the broad sweep — flag what's missing as an open gap, don't block synthesis.
 
 ### Website
-For the subject's brand site:
+For Example Wellness Co-equivalent brand site:
 - `WebFetch` homepage (extract all visible copy verbatim — headlines, taglines, body, CTAs, footer)
 - `WebFetch` /about (mission, vision, founder bio, values)
 - Optional: founder/team page, blog index for any author-by-name posts
@@ -112,12 +106,12 @@ Write `[slug]-recon/corpus-index.md` listing every source with file path, char c
 
 ## Phase 3: Dispatch Copy Forensics Counsel #39 (AGENT MODE)
 
-**Read** `references/counsel-39-prompts.md` for the 4 prompt templates. Each has placeholders for `{NAME}`, `{SLUG}`, `{CORPUS_PATHS}`, `{INLINE_QUOTES}`, etc.
+**Read** `reference/counsel-39-prompts.md` for the 4 prompt templates. Each has placeholders for `{NAME}`, `{SLUG}`, `{CORPUS_PATHS}`, `{INLINE_QUOTES}`, etc.
 
 Dispatch all 4 agents **in parallel** in a single message — one `Agent` tool call per counsel member. Each must:
 - Receive the same corpus paths + inline quotes
 - Receive the role-specific lens (their template)
-- If a gold-standard reference profile exists in `~/.claude/references/voice-profiles/`, skim its Charisma Code, Voice DNA, WOULD/WOULD NEVER, and Tonal Modes sections to calibrate rigor. Otherwise use `references/voice-profile-template.md` as the structure + rigor bar.
+- Read the gold-standard reference (`exemplar-one-voice.md` lines 14-24 for Charisma Code, lines 126-142 for Voice DNA, lines 200-220 for WOULD/WOULD NEVER, lines 241-252 for Tonal Modes)
 - Return a 2500-4000 word structured markdown report
 
 **Critical:** Use `Agent` tool with `subagent_type: "general-purpose"`. Pass `description` like `"[CounselMember] forensics on [Name]"`. Run all 4 in foreground (default) — we need their output before synthesis.
@@ -130,7 +124,7 @@ If the corpus is genuinely large (>200K chars), pass file paths and trust the ag
 
 Once all 4 agent reports return:
 
-1. **Read** `references/voice-profile-template.md` for the section order and structure.
+1. **Read** `reference/voice-profile-template.md` for the section order and structure.
 2. **Merge** the 4 reports section-by-section. Where agents disagree on facts (e.g., archetype name, master verb), surface the disagreement to the user via `AskUserQuestion` and let them pick.
 3. **Write** the synthesized MD to `~/.claude/references/voice-profiles/[slug]-voice.md`.
 
@@ -189,7 +183,7 @@ The 6 fields, in order:
 
 Before declaring DONE, verify:
 - [ ] All 4 counsel agents returned reports (no silent failures)
-- [ ] Output MD has all 24 standard sections (see `references/voice-profile-template.md`)
+- [ ] Output MD has all 24 standard sections (see `reference/voice-profile-template.md`)
 - [ ] 6-field Character Intake Card is present and user-approved
 - [ ] Source Materials section lists every recon file with path
 - [ ] Open gaps section lists what wasn't captured (LinkedIn, exact pricing, email voice, etc.)
@@ -221,5 +215,5 @@ The user can fill these in later via `/voice-profile-build` Update Existing mode
 
 - This skill is a successor pattern to the ad-hoc 4-agent dispatch we ran for Exemplar One (2026-05-04) and Exemplar Two (2026-05-05). Outputs should be isomorphic with those two.
 - The 6-field Character Intake Card was added to the standard format on 2026-05-06 after <your-name> provided his Exemplar One answers. **Do not omit it.**
-- Counsel #39 (Copy Forensics) members are Stefan Georgi, Kyle Milligan, Gary Bencivenga, Gary Halbert. Stat sheets at `counsel/members/` if/when added to the vault. Until then, the prompts in `references/counsel-39-prompts.md` carry the lens specification.
+- Counsel #39 (Copy Forensics) members are Stefan Georgi, Kyle Milligan, Gary Bencivenga, Gary Halbert. Stat sheets at `counsel/members/` if/when added to the vault. Until then, the prompts in `reference/counsel-39-prompts.md` carry the lens specification.
 - Output dates inside the MD use ISO format `YYYY-MM-DD` (e.g., `2026-05-06`).

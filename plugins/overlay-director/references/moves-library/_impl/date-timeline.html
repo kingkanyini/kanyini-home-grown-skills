@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* colors from constants.js: CARD_LIME #C6F94E, CARD_TEAL #4FD6C8 */
+      .od-timeline { position: absolute; left: 7%; top: 24%; width: 44%; opacity: 0; }
+      .od-timeline .od-head { font: 800 108px/1.02 'Inter', sans-serif; color: #FFF; margin-bottom: 52px; }
+      .od-timeline .od-track { position: relative; padding-left: 72px; }
+      .od-timeline .od-connector { position: absolute; left: 13px; top: 10px; bottom: 80px; width: 5px;
+        transform-origin: top center; transform: scaleY(0); background: #4FD6C8; }
+      .od-timeline .od-node { position: relative; margin-bottom: 56px; opacity: 0; }
+      .od-timeline .od-dot { position: absolute; left: -72px; top: 6px; width: 28px; height: 28px;
+        border-radius: 50%; background: #4FD6C8; box-shadow: 0 0 0 7px rgba(79,214,200,0.18); }
+      .od-timeline .od-date { font: 800 46px/1 'Inter', sans-serif; color: #C6F94E; letter-spacing: .04em; }
+      .od-timeline .od-label { font: 600 32px/1.2 'Inter', sans-serif; color: rgba(255,255,255,0.6);
+        text-transform: uppercase; letter-spacing: .1em; margin-top: 10px; }
+      .od-timeline .od-pill { display: inline-flex; align-items: center; gap: 12px; margin-left: 72px;
+        padding: 16px 30px; border-radius: 999px; border: 1px solid rgba(198,249,78,0.5);
+        font: 700 26px/1 'Inter', sans-serif; letter-spacing: .1em; text-transform: uppercase;
+        color: #C6F94E; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="date-timeline" data-start="0" data-duration="4.6"
+         data-width="1920" data-height="1080">
+      <div class="od-timeline">
+        <div class="od-head">Preview<br />to GA</div>
+        <div class="od-track">
+          <div class="od-connector"></div>
+          <div class="od-node"><div class="od-dot"></div><div class="od-date">Jun 26</div><div class="od-label">Limited Preview</div></div>
+          <div class="od-node"><div class="od-dot"></div><div class="od-date">Jul 09</div><div class="od-label">General Availability</div></div>
+          <div class="od-pill">Available Broadly</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.6; const S = '[data-composition-id="date-timeline"]';
+      const root = document.querySelector(S);
+      const nodes = root.querySelectorAll('.od-node');
+      tl.set(`${S} .od-timeline`, { opacity: 1 });
+      tl.fromTo(`${S} .od-connector`, { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: 'power2.out' }, 0);
+      nodes.forEach((n, i) => {
+        tl.fromTo(n, { opacity: 0, y: -12 },
+                     { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' }, 0.15 + i * 0.2);
+      });
+      const end = 0.15 + nodes.length * 0.2 + 0.1;
+      tl.fromTo(`${S} .od-pill`, { opacity: 0, scale: 0.85 },
+                   { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.5)' }, end);
+      tl.to(`${S} .od-timeline`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-timeline`, { opacity: 0 }, HOLD + 0.4);   // hard-kill
+      window.__timelines["date-timeline"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

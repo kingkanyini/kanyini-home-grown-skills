@@ -1,17 +1,22 @@
 # PRINCIPLES-INDEX (GENERATED — do not edit by hand)
 
-<!-- index-hash: 928d07be33332967 -->
+<!-- index-hash: 156c6f7bd550a88b -->
 > Regenerated at Phase 0.5 from your vault notes. Vault is canonical; this is a digest.
 
-- **`overlay-anchor-cards-to-audio`** — Tie each card to its line with a ~0.4s lead-in.  _(affects: timing.anchor)_
-- **`overlay-bake-position-via-left-top-not-translate`** — GSAP wipes translate; capture pre-GSAP computed left/top and bake those.  _(affects: placement.bake)_
-- **`overlay-caption-legibility-plate`** — Captions over art sit on a dark blurred plate for mobile legibility.  _(affects: legibility)_
-- **`overlay-card-timing-discipline`** — Lead-in, read-time hold (2.5-4.5s), clean exits, collision-free.  _(affects: timing.discipline)_
-- **`overlay-content-area-centering`** — Shift cards off-center to clear the cam; full-frame elements stay centered.  _(affects: placement.horizontal)_
-- **`overlay-densify-keyframes-before-render`** — Sparse keyframes stall/freeze/lag; densify a scratch copy first.  _(affects: render.keyframes)_
-- **`overlay-fade-tween-owns-visible-lifetime`** — Extend a card by moving its fade-out, not data-duration.  _(affects: timing.lifetime)_
-- **`overlay-move-card-as-a-unit`** — Shift data_start and every GSAP beat by the same delta.  _(affects: timing.shift)_
-- **`overlay-mvp-density-first`** — Start sparse and promote select moments to hero.  _(affects: density)_
-- **`overlay-never-overwrite-source`** — Source is read-only; densify/copy-first (scoped CLAUDE.md Fidelity).  _(affects: source.safety)_
-- **`overlay-vary-move-types-for-rhythm`** — Density isn't variety; alternate move types so it reads authored.  _(affects: sequence.variety)_
-- **`overlay-verify-render-fidelity-vs-source`** — Freeze-detect both; rendered frozen% must be <= source.  _(affects: render.fidelity)_
+- **`overlay-anchor-cards-to-audio`** — Every overlay card is anchored to the spoken line it supports, with a lead-in (~0.4s, `LEAD_IN_S`) so the card arrives just before the word lands. Cards are never placed on a timeline grid divorced from speech.  _(affects: timing.anchor)_
+- **`overlay-bake-position-via-left-top-not-translate`** — GSAP sets `translate: none` on elements it animates, which wipes any CSS `transform: translate(...)` used for positioning. Capture the element's pre-GSAP computed `left`/`top` (in px) and bake the final position as `left`/`top`, not `translate`.  _(affects: placement.bake)_
+- **`overlay-caption-legibility-plate`** — Any caption rendered over generated art (image-card) sits on a dark, blurred plate (`rgba(20,14,9,0.55)` + `backdrop-filter: blur`) so it stays legible on mobile over a busy illustration.  _(affects: legibility)_
+- **`overlay-card-timing-discipline`** — A card's timing has four parts, all enforced: lead-in (~0.4s before the anchor word), read-time hold (clamp(words / 2.5 wps, 2.5s floor, 4.5s ceiling)), clean exit (its fade clears before the next card's entrance), and collision-freedom (no >2 cards live at once).  _(affects: timing.discipline)_
+- **`overlay-content-area-centering`** — Shift cards off true-center to clear the talking head / cam. Untouched cards get the shift from a global content-area class; hand-placed cards bake an inline `left`/`top`. Exception: wide / full-frame elements (full-frame-quote, center-hero) stay frame-centered — shifting them clips content.  _(affects: placement.horizontal)_
+- **`overlay-densify-keyframes-before-render`** — Sparse keyframes in the source cause stalls, frozen frames, and laggy scrubbing in the HyperFrames preview and render. Before building, probe keyframe density (`ffprobe`); if sparse, densify a scratch working copy with `ffmpeg -r 30 -g 30 -keyint_min 30` (never the source — see `overlay-never-overwrite-source`).  _(affects: render.keyframes)_
+- **`overlay-fade-tween-owns-visible-lifetime`** — The on-screen lifetime of an overlay card is owned by its GSAP opacity fade (in → hold → out), not by a `data-duration` attribute. To extend how long a card shows, move the fade-out beat later — do not edit `data-duration`.  _(affects: timing.lifetime)_
+- **`overlay-frosted-veil-under-center-stacks`** — Full-frame frosted veil (rgba gray 0.30 + backdrop blur) emitted as a SIBLING clip at z-index 9 — above video, below the z10 stack — mirroring the stack's entrance/fade with no beats of its own.  _(affects: layering.veil)_
+- **`overlay-move-card-as-a-unit`** — To retime a card, shift its `data_start` AND every GSAP beat (entrance, holds, fade-out) by the same delta. Never move one beat in isolation.  _(affects: timing.shift)_
+- **`overlay-mvp-density-first`** — Default to MVP density (~1 card / 25–40s, simple moves) and promote select moments to hero, rather than starting dense and cutting back.  _(affects: density)_
+- **`overlay-never-overwrite-source`** — The source video is read-only. Densify and build against a scratch working copy; copy the final render out atomically. Every write target is asserted to be outside the source's directory subtree.  _(affects: source.safety)_
+- **`overlay-pop-skin-cta-variants`** — CTA arrow sizes are plan-driven: placement.w:150 → big 150px green down-arrow (bounce y:26); no w → small 88px (y:16). Element variants ship as modifier classes (od-lower-id) — never edit the base class.  _(affects: skin.cta, skin.variants)_
+- **`overlay-render-time-calibration`** — Render ETA rule of thumb: ~2x realtime for 1080p30 overlay comps on a 28-core box (22min video → 43min render; ~85% of it frame capture, encode ~4min). Quote ETAs from this, not optimism.  _(affects: render.eta)_
+- **`overlay-story-segments-get-images`** — Hard rule: ~1 image per 15s in storytelling passages, topic-layer holds, center placement (two-up = frame center, solo = window center). <your-name> directive 2026-07-03, Voice DNA build.  _(affects: density, sequence.layering)_
+- **`overlay-vary-move-types-for-rhythm`** — Density is not variety. A sequence can hit its card-count target and still read as templated if it reuses the same move type. Alternate move types so the build reads authored, not generated: no same move_type within 3 consecutive cards (unless hero), ≥2 distinct types per ~90s window.  _(affects: sequence.variety)_
+- **`overlay-verify-render-fidelity-vs-source`** — After the final render, verify fidelity against the source: freeze-detect both, and require the rendered frozen-fraction ≤ the source's (`fidelityOk`, `FREEZE_TOLERANCE`). Also confirm stream + duration match. QC frames at card-visible times, not at card boundaries.  _(affects: render.fidelity)_
+- **`overlay-windows-powershell-for-heavy-video`** — On Windows sessions working near large video files (500MB+), run generators/verifiers via PowerShell — the Bash tool OOM-kills (exit 137) on the same operations. Snapshot/probe the video via ffmpeg, never load it into shell memory.  _(affects: env.windows)_

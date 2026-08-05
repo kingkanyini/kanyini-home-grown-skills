@@ -62,6 +62,31 @@ These patterns tested well across Facebook ads and short-form video hooks. Prefe
 **Floor example:** "Everyone says you need a big audience first. You don't. Here's why."
 **Floor example:** "Everyone says you need to master funnels. You don't. Here's what actually works."
 
+## Brunson Curiosity Formulas (PROVEN — prefer for ad / paid-social hooks)
+
+These three curiosity scripts test consistently highest as paid-ad hooks. Validated example-artist 2026-06-14 (counsel 8.5-9.0). Lead ad creative with these. See `gold-standard-headlines.md` for the full worked set.
+
+### Pattern 10: How-To Without
+**Structure:** "How to [achieve desire] without [biggest single objection]."
+**Why it works:** Names the exact outcome AND removes the #1 fear in one line. Self-selecting.
+**Discipline:** Keep "without" to ONE sharp objection, not two stacked (stacking dilutes).
+**Ceiling example:** "How to write your first song without one ounce of natural talent."
+**Floor example:** "How to finish your first song without waiting until you feel ready."
+
+### Pattern 11: The Secret / Hack To
+**Structure:** "The secret to [result] in [timeframe] (it's not what you'd guess)." / "The hack to finally [result] without [pain]."
+**Why it works:** Promises a mechanism + opens a loop. The parenthetical keeps the secret a secret so it pulls the click.
+**Discipline:** A secret the reader can already see isn't a secret — keep the loop OPEN. Don't stack two loops (timeframe + secret) without the open-loop tag.
+**Ceiling example:** "The secret to writing your first song in one hour (it's not what you'd guess)."
+**Floor example:** "The hack to begin your first song without proving you're 'good enough' first."
+
+### Pattern 12: The Reason… Isn't What You Think
+**Structure:** "The reason you still haven't [done X] isn't what you think." / "The reason [problem] isn't [blamed surface]. It's [deeper]."
+**Why it works:** The #1 open-loop scroll-stopper. Redirects blame from a surface object to an unseen mechanism (the belief-shift engine).
+**Discipline:** Powerful once. Max ~1 per set as the hero hook — three of these in a set reads as a trick, not a hand reaching out.
+**Ceiling example:** "The reason your first song isn't written... isn't what you think."
+**Floor example:** "The reason it feels too late to start isn't true. Here's why."
+
 ## Repellent Headline Patterns (Below Floor)
 
 Polite filters that attract the right people by explicitly naming who this is NOT for:
@@ -90,7 +115,7 @@ When generating headlines, vary across these angle categories. Don't cluster all
 
 ## Constraint Reminders
 
-- Maximum 14 words per headline
+- Maximum 14 words per headline (EXCEPT Brunson Curiosity Formulas, Patterns 10-12, which may run to 16 when the "without"/open-loop clause needs it — tightness still wins)
 - Verbs over adjectives — every headline should have a strong verb
 - No medical, financial, or legal claims
 - No hard CTAs (no "Buy now," "Sign up," "Limited time")

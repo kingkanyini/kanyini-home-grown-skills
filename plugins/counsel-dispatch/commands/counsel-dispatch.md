@@ -24,11 +24,11 @@ If no slug is provided, list all available counsel members from the vault.
 
 ## PHASE 1 — LOAD THE MEMBER
 
-> **No vault?** If the `obsidian-brain` MCP isn't available, read members from the local seed directory `~/.claude/references/counsel/members/` instead — that's where `/council-primer` seeds them on a no-vault install. List the directory and load `[slug].md` with the file tools. The rest of this flow is identical; only the member-file source changes.
+1. **Determine the member slug.** If user provided one, use it. If not, use `mcp__obsidian-brain__list_directory` with path `counsel/members` to list available members and ask which one.
 
-1. **Determine the member slug.** If user provided one, use it. If not, use `mcp__obsidian-brain__list_directory` with path `counsel/members` (or the local seed dir above) to list available members and ask which one.
+2. **Read the member file** via `mcp__obsidian-brain__read_note` at path `counsel/members/[slug].md`.
 
-2. **Read the member file** via `mcp__obsidian-brain__read_note` at path `counsel/members/[slug].md` (or the local seed dir above when there's no vault).
+2b. **Follow call-sign aliases (NSA squad).** If the loaded file's frontmatter has `is_alias: true` / an `alias_of:` slug, it is a call-sign stub, not a member sheet. Immediately read `counsel/members/[alias_of].md` and use THAT as the member file for the rest of dispatch. Keep the call-sign for display ("Dispatching **CIPHER** — Troy Hunt"), but embody the real operative's voice, frameworks, and shibboleth. Current NSA aliases: `cipher→troy-hunt`, `phantom→charity-majors`, `architect→martin-fowler`, `conduit→gregor-hohpe`. (Guard against alias loops: follow at most one hop.)
 
 3. **If file not found:** Gracefully report: *"No stat sheet exists yet for [slug]. Available members: [list]. Would you like to build a new stat sheet via /counsel-refresh?"* (Note: /counsel-refresh is a Phase 2+ skill; fallback gracefully.)
 
@@ -58,12 +58,12 @@ Build a system-prompt-shaped context block titled "YOU ARE [name]." Include:
 
 ## PHASE 3 — WRITE XP SCRATCHPAD
 
-Write an idempotency-safe scratchpad entry to track this dispatch. This is read by the Stop-event hook at session end and drained into the XP queue (per NSA/PHANTOM architecture).
+Write an idempotency-safe scratchpad entry to track this dispatch. This is read by the SessionEnd-hook drain (`scripts/drain-counsel-xp.js`) and appended to the member's XP/Session Log (per NSA/PHANTOM architecture).
 
-Use `mcp__obsidian-brain__write_note` with mode `append` to write to path `counsel/scratch/dispatch-[ISO8601-compact].jsonl` with a single JSONL line:
+Use `mcp__obsidian-brain__write_note` with mode `append` to write to path `counsel/scratch/dispatch-[ISO8601-compact]-[rand4].jsonl` (rand4 = 4 random lowercase hex chars — prevents same-second filename collisions) with a single JSONL line:
 
 ```json
-{"dispatch_uuid":"[uuidv4]","slug":"[slug]","timestamp":"[ISO8601]","session_id":"[available session id or placeholder]","sensitivity":"[from frontmatter]","project_context":"[brief tag: e.g., 'example-client' or 'general-consultation']","topic":"[1-sentence user ask]"}
+{"dispatch_uuid":"[uuidv4]","slug":"[slug]","timestamp":"[ISO8601]","session_id":"[real session id — REQUIRED when available; OMIT the field entirely if unknown. NEVER write a placeholder string: the drain merges entries by slug+session_id and a placeholder corrupts dedup]","sensitivity":"[from frontmatter]","project_context":"[brief tag: e.g., 'example-client' or 'general-consultation']","topic":"[1-sentence user ask]"}
 ```
 
 **Sensitivity-based redaction:**
@@ -71,7 +71,7 @@ Use `mcp__obsidian-brain__write_note` with mode `append` to write to path `couns
 - `med` → include project slug only, omit specific topic
 - `high` → omit both; just `{"dispatch_uuid", "slug", "timestamp", "session_id", "sensitivity":"high"}`
 
-If MCP write fails (vault down), fall back to local filesystem at `~/.claude/cache/counsel-dispatch/scratch-[ISO8601-compact].jsonl` so no XP data is lost. Flag to user that vault sync deferred.
+If MCP write fails (vault down), fall back to local filesystem at `~/.claude/cache/counsel-dispatch/scratch-[ISO8601-compact]-[rand4].jsonl` so no XP data is lost. Flag to user that vault sync deferred. (The drain scans this fallback dir too — fallback entries heal automatically.)
 
 ## PHASE 4 — EMBODY & RESPOND
 
@@ -94,6 +94,13 @@ Adopt the character's voice using the extracted context. Core rules:
 User ends via `/counsel-dispatch end` OR starts a new `/counsel-dispatch [other-slug]`. On end:
 - Return to Claude's default voice
 - Confirm the scratchpad entry was written (or flag the fallback)
+- **Write the XP synopsis line (REQUIRED — no synopsis, no XP).** Append ONE JSONL line to a scratch file at `counsel/scratch/dispatch-[ISO8601-compact]-[rand4].jsonl` (same dir as Phase 3; need NOT be the same file — the drain joins globally by `dispatch_uuid`):
+
+  ```json
+  {"type":"synopsis","dispatch_uuid":"[uuid from Phase 3]","slug":"[slug]","session_id":"[same rules as Phase 3]","timestamp":"[ISO8601]","topic_tag":"[a-z0-9- slug, ≤48 chars]","synopsis":"[2-3 lines: what they advised — their key position and recommendation. Single line, no newlines, ≤400 chars]"}
+  ```
+
+  Sensitivity redaction mirrors Phase 3: `low` → full synopsis; `med` → topic_tag only + generic synopsis ("consultation on [project slug]"); `high` → `"synopsis":""` and omit topic_tag (the session still counts; the drain renders it redacted). If the dispatch was abandoned (member loaded but no real consultation happened), write NOTHING — that is the substance threshold.
 - Note any follow-up XP-worthy moments: *"Noted [observation] for Troy's XP log."*
 
 ## MULTI-MEMBER COUNSEL DISPATCH (future)
@@ -108,7 +115,7 @@ For now, dispatch one member at a time. Future Phase 6 enhancement: `/counsel-di
 | Slug not found | List available members, ask user to pick or run /counsel-refresh to build new. |
 | File exists but schema_version is old | Flag: *"This stat sheet is on schema v[N] but current is v2. Consider running /counsel-migrate first."* Proceed with best-effort dispatch. |
 | File has `curation_locked: true` | Proceed with dispatch but log warning. Do not attempt any edits during session. |
-| Scratchpad write fails | Fall back to local filesystem at `~/.claude/cache/counsel-dispatch/scratch-[ISO8601].jsonl`. Flag sync deferral. |
+| Scratchpad write fails | Fall back to local filesystem at `~/.claude/cache/counsel-dispatch/scratch-[ISO8601]-[rand4].jsonl`. Flag sync deferral. |
 
 ## SECURITY / PRIVACY NOTES (from NSA review)
 

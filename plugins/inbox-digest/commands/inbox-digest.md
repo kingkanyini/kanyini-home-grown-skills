@@ -6,6 +6,14 @@ description: Scan Gmail for client emails, file into Obsidian vault per-client, 
 
 User-facing entry point for the inbox-digest skill. Orchestrates Phases 1–3 (Sprint 1). Phase 4 (counsel-prioritized cross-client morning digest) is deferred to Sprint 2 — gated on Sprint 1 usage data.
 
+> **v2 — Command Center Sentinel (2026-07-02).** The LIVE implementation is the Node CLI at
+> `scripts/digest.js` (this markdown + `modules/` are legacy design docs). v2 adds a Slack lane
+> for clients whose hub carries a `slack:` frontmatter block: two-phase channel sweep →
+> `slack/` vault notes (Phase 2b), #command-center reactions/replies read (Phase 2c), and a
+> Gutsy-posted digest with ✅/🚫 item contract (Phase 3.5). Spec:
+> `~/.claude/docs/superpowers/specs/2026-07-02-command-center-sentinel-design.md`. Setup:
+> `reference/slack-setup-runbook.md`. Gmail-only clients are untouched.
+
 ## Argument parsing
 
 Accepts (in any order, after the slash):

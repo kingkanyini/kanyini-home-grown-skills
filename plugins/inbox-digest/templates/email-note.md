@@ -13,6 +13,9 @@ to: {{to_safe_list}}
 cc: {{cc_safe_list}}
 date_first: "{{date_first}}"
 date_latest: "{{date_latest}}"
+last_from: "{{last_from}}"                 # me | them | unknown — sender of the LATEST message (reply-status)
+last_sender_email: "{{last_sender_email}}"
+last_msg_iso: "{{last_msg_iso}}"           # SERVER-observed time (CIPHER-F11). The aging clock reads THIS, never date_latest (header date is spoofable).
 attachments:
 {{#each attachments}}
   - filename: "{{filename}}"
@@ -33,7 +36,11 @@ Body sanitization rules applied by Phase 2 (CIPHER-F3 patch):
 3. Lines consisting only of `---` inside the body are escaped to `\---` so they cannot inject a YAML frontmatter block.
 4. Subject and sender display fields use {{*_safe}} placeholders meaning HTML-escaped (`<`, `>`, `"`) and newlines collapsed.
 
-Match reason values: from_email_match | domain_match | relay_with_alias | self_with_alias
+Match reason values: from_email_match | domain_match | to_email_match | to_domain_match | sent_reply | relay_with_alias | self_with_alias
+
+Reply-status fields (last_from / last_sender_email / last_msg_iso) are written by scripts/phase2.js and
+are the rebuildable source of truth for the .thread-status.jsonl projection. last_msg_iso uses Gmail's
+server-observed time (internalDate / filed time), never the sender-controlled Date: header.
 -->
 
 {{#each messages}}

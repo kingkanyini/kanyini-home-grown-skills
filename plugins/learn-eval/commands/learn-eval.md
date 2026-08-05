@@ -67,7 +67,7 @@ extracted_date: "YYYY-MM-DD"
 [Wikilinks to sibling skills / vault patterns / principles. Link by slug only; don't restate a sensitive target's contents. Omit this section ONLY if the Step 5a vault/skills search returned zero genuine siblings — cite that result.]
 ```
 
-**Section standard (forward-only):** `When NOT to Use`, `Empirical Validation`, and `Related` are the corpus standard — present in the gold-standard learned skills (`tool-backed-skill-portable-handoff`, `process-friction-as-user-signal`). `## Empirical Validation` is the canonical heading; older notes using `## Evidence` are grandfathered — don't rewrite them. Forward-only: new extractions follow this template; existing skills are not retro-fixed unless touched for another reason.
+**Section standard (forward-only):** `When NOT to Use`, `Empirical Validation`, and `Related` are the corpus standard — present in the gold-standard learned skills (`tool-backed-skill-portable-handoff`, `process-friction-as-user-signal` for the discipline/process class; `windows-scheduled-task-edit-reinstall-rule` for the reference/technique class). `## Empirical Validation` is the canonical heading; older notes using `## Evidence` are grandfathered — don't rewrite them. Forward-only: new extractions follow this template; existing skills are not retro-fixed unless touched for another reason.
 
 **Traceability rule:** `source_session` should point to the vault session note for the conversation that produced this skill. If `/savepoint` hasn't run yet (no session note exists), set `source_session: "pending"` and `/savepoint` will back-fill it on the next save. This is the skill-side analogue of the vault Knowledge-Artifact Source-Link Rule (which targets `gous/`, `patterns/`, `principles/` instead).
 
@@ -109,6 +109,31 @@ extracted_date: "YYYY-MM-DD"
 
 7. Save / Absorb to the determined location
 
+7b. **Index the new skill in `_index.md` (Global saves only)** — If the skill was saved to `~/.claude/skills/learned/`, add a one-liner for it to the matching domain section of `skills/learned/_index.md`, in the same `- <your-related-note> — one-liner.` shape as its neighbours. The one-liner is a *curated* line written here, not the frontmatter `description` pasted in: one sentence, the rule not the story. If no existing domain section fits, say so rather than forcing it into the nearest one — an honest gap beats a wrong home.
+
+   Then confirm it took — **per skill, by slug.** A bare `--check` prints ~185 gap names; confirming one slug against that list by eye is not a confirmation:
+   ```bash
+   # Run once per skill saved this session. Substitute the real slug.
+   # READ THE EXIT CODE — do not infer success from empty stdout. On a hard abort
+   # (exit 2: malformed markers, unreadable _index.md) --gaps prints NOTHING, and a
+   # bare `| grep -qx` pipe would report "OK" one line after the checker announced its
+   # own failure. Those abort states are exactly what a botched hand-edit of
+   # _index.md produces — i.e. the edit this step just made.
+   gaps=$(node ~/.claude/scripts/build-learned-index.js --gaps); rc=$?
+   if [ "$rc" -ge 2 ]; then
+     echo "learned-index: check FAILED (exit $rc) — <slug> NOT confirmed. Run --check."
+   elif printf '%s\n' "$gaps" | grep -qx "<slug>"; then
+     echo "learned-index: <slug> is NOT referenced — the 7b edit did not take"
+   else
+     echo "learned-index: <slug> referenced. OK"
+   fi
+   ```
+   This confirms the slug is now referenced *somewhere* in `_index.md`. It does not verify you filed it under the right domain section — that part is on you.
+
+   Include the `_index.md` edit in the Step 8 commit (`git add` both paths).
+
+   **Why this step exists:** `_index.md` calls itself the hub that guarantees no learned skill floats unreferenced, but the maintenance instruction lived *inside the index* — where the tool that creates entries never reads it. 28 of 203 skill-adding commits updated the index: a memory-dependent control at **14% efficacy**, and coverage fell to ~47%. This step and the `--check` in `/savepoint` step 3c are companions, not substitutes: this one is the same class of memory-dependent control that already failed, so the mechanical check is what actually catches a miss.
+
 8. **Commit the new file (if in a git repo)** — After saving, if the target folder is under git version control (e.g., `~/.claude/` or a project repo with `.git/`), stage and commit the specific file with message format `Save point: learned skill — [skill-name]`. Use targeted `git add <path>` not `git add -A` so unrelated in-flight work isn't swept up. This closes the workflow loop so chained `/savepoint` → `/learn-eval` doesn't leave orphan uncommitted files. If not in a git repo, skip silently.
 
 ## Chained Invocation Notes
@@ -118,6 +143,7 @@ When `/savepoint` and `/learn-eval` are chained (typical end-of-session pattern)
 - **Recommended order:** `/savepoint` FIRST, then `/learn-eval`. Savepoint creates the vault session note; learn-eval can then point `source_session` at it directly (no "pending" needed).
 - **Reverse order is supported:** if `/learn-eval` runs first, set `source_session: "pending"` and the next `/savepoint` should back-fill the link when it creates the session note.
 - **Either order, no orphans:** Step 8 (commit) ensures the new skill file lands in git regardless of which order ran.
+- **Ordering consequence for the index check:** under the recommended order (`/savepoint` FIRST), savepoint's step 3c runs **before** this session's skill exists — it cannot see it. Step 7b is therefore the *only* same-session catch for a skill created after the savepoint; 3c catches it at the **next** savepoint. That is why 7b's confirmation reads the exit code instead of inferring success from empty output: under this order it is the whole net.
 
 ## Output Format for Step 5
 

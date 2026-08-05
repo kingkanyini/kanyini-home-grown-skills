@@ -403,6 +403,120 @@ const METADATA = {
     command: '/overlay-director',
     usage: '/overlay-director path/to/talking-head.mp4',
   },
+  // Wave 3 (2026-08-04) — SixthSense video family. All T9, all requires: [] so nothing
+  // blocks an install; family relationships are expressed via `recommends` (which the
+  // schema permits to cycle). watch-autopilot is deliberately EXCLUDED — it has no
+  // plugin manifest or command and is a Windows Task Scheduler service, not a plugin.
+  'transcript-extractor-plus': {
+    tier: 'T9',
+    description: 'Transcribe videos in any language and translate to any target language using Whisper + AI translation',
+    requires: [],
+    recommends: [{ name: 'sixth-sense-scissors', version: '^1.0.0' }],
+    prereqs: {
+      mcps: [],
+      clis: ['ffmpeg', 'yt-dlp'],
+      envVars: [],
+      services: [
+        'whisper.cpp — Windows: built inside WSL at ~/whisper.cpp. macOS: brew install whisper-cpp. Linux: build from source.',
+        'Whisper model ggml-medium.bin — download via models/download-ggml-model.sh medium',
+      ],
+    },
+    command: '/transcript-extractor-plus',
+    usage: '/transcript-extractor-plus',
+  },
+  snapshot: {
+    tier: 'T9',
+    description: 'Take high-def screenshots from videos, websites, or extract photos from PDFs',
+    requires: [],
+    recommends: [],
+    prereqs: {
+      mcps: [],
+      clis: ['ffmpeg'],
+      envVars: [],
+      services: [
+        'Optional: Playwright MCP for website capture — without it, offer a different route',
+        'Optional: Canva MCP for Canva export routes',
+        'Optional: python + GEMINI_API_KEY for the Imaginator edit route',
+      ],
+    },
+    command: '/snapshot',
+    usage: '/snapshot',
+  },
+  'sixth-sense-scissors': {
+    tier: 'T9',
+    description: 'Auto-cut video recordings — silence detection, A/V-synced cuts, dual-language edit maps, and iterative creative cut consultation',
+    requires: [],
+    recommends: [
+      { name: 'sixth-sense', version: '^1.0.0' },
+      { name: 'transcript-extractor-plus', version: '^1.0.0' },
+    ],
+    prereqs: {
+      mcps: [],
+      clis: ['ffmpeg', 'ffprobe', 'python'],
+      envVars: [],
+      services: ['Optional: a local faster-whisper install accelerates the Phase 6 fidelity loop; an API transcription fallback is documented'],
+    },
+    command: '/sixth-sense-scissors',
+    usage: '/sixth-sense-scissors path/to/video.mp4',
+  },
+  'sixth-sense-xray': {
+    tier: 'T9',
+    description: 'Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links',
+    requires: [],
+    recommends: [{ name: 'sixth-sense', version: '^1.0.0' }],
+    prereqs: {
+      mcps: [],
+      clis: ['ffmpeg', 'ffprobe'],
+      envVars: [],
+      services: [
+        'Optional: yt-dlp for URL sources — a WebFetch fallback exists',
+        'Optional: Vercel CLI to publish the playbook; local save is always offered',
+      ],
+    },
+    command: '/sixth-sense-xray',
+    usage: '/sixth-sense-xray path/to/video.mp4',
+  },
+  'sixth-sense-sage': {
+    tier: 'T9',
+    description: 'B-roll placement intelligence — identifies moments, builds production briefs with bilingual mapping, Artgrid sourcing, and interactive HTML playbooks',
+    requires: [],
+    recommends: [
+      { name: 'sixth-sense', version: '^1.0.0' },
+      { name: 'transcript-extractor-plus', version: '^1.0.0' },
+    ],
+    prereqs: {
+      mcps: [],
+      clis: [],
+      envVars: [],
+      services: [
+        'Optional: Vercel CLI to publish the playbook; local save is offered',
+        'Optional: hyperframes-handoff powers Phase 7 — without it that phase reports unavailable and ends cleanly',
+      ],
+    },
+    command: '/sixth-sense-sage',
+    usage: '/sixth-sense-sage',
+  },
+  'sixth-sense': {
+    tier: 'T9',
+    description: '6-agent video intelligence scanner — identifies clip-worthy segments across Content, Emotion, and Structure',
+    requires: [],
+    recommends: [
+      { name: 'sixth-sense-scissors', version: '^1.0.0' },
+      { name: 'transcript-extractor-plus', version: '^1.0.0' },
+    ],
+    prereqs: {
+      mcps: [],
+      clis: ['sixth-sense', 'uv', 'ffmpeg'],
+      envVars: [],
+      services: [
+        'The sixth-sense preprocessing engine is a separate package and REQUIRED — this skill orchestrates, the engine does the ffmpeg/Whisper/scene work. Install: uv tool install git+https://github.com/kingkanyini/sixth-sense-engine',
+        'Do NOT run `pip install sixth-sense` — that name belongs to an unrelated PyPI package.',
+        'Python 3.13+. GPU optional: NVIDIA/CUDA accelerates transcription; CPU and Apple Silicon both work.',
+      ],
+    },
+    command: '/sixth-sense',
+    usage: '/sixth-sense path/to/video.mp4',
+  },
 };
 
 // ────────────────────────────────────────────────────────────────────────────

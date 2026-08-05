@@ -51,6 +51,11 @@
           },
           "density_tier": { "enum": ["base", "promoted", "hero"] },
           "hero": { "type": "boolean" },
+          "entrance_archetype": { "enum": ["POP", "SMOOTH"], "description": "the entrance FEEL (Layer 0 standard)" },
+          "entrance_mechanism": { "enum": ["FADE", "ZOOM-IN", "SCALE-POP", "RISE", "SLIDE", "DRAW", "BLUR-STREAK", "CLIP-REVEAL", "GROW-X", "GROW-Y"], "description": "the entrance MOVE (all seek-safe); GROW-X/Y = directional scaleX/scaleY fills" },
+          "standards": { "type": "array", "items": { "type": "string" }, "description": "resolved standard axis ids this card was checked against" },
+          "transition_in": { "enum": ["crossfade", "blur-crossfade", "zoom-through", "scale-swap", "card-morph", "hard-cut"], "description": "handoff from the previous card (kills dead-air)" },
+          "transition_out": { "enum": ["crossfade", "blur-crossfade", "zoom-through", "scale-swap", "card-morph", "hard-cut"] },
           "asset": {
             "type": "object",
             "properties": {
@@ -65,6 +70,8 @@
     "variety_score": { "type": "number", "minimum": 0, "maximum": 1 },
     "top3_move_share": { "type": "number", "minimum": 0, "maximum": 1, "description": "specific-move (move_id) concentration — reported metric" },
     "top3_type_share": { "type": "number", "minimum": 0, "maximum": 1, "description": "family (move_type) concentration — calcification is judged on this" },
-    "max_concurrent": { "type": "integer", "minimum": 0, "description": "most overlays live at once (legibility guard)" }
+    "max_concurrent": { "type": "integer", "minimum": 0, "description": "most overlays live at once (legibility guard)" },
+    "distinct_easings": { "type": "integer", "minimum": 0, "description": "count of distinct GSAP eases across the plan (>= MIN_DISTINCT_EASINGS)" },
+    "standards_report": { "type": "object", "description": "conformance report from standards-check.js (ok, violations, advisories)" }
   }
 }

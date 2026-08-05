@@ -1,3 +1,14 @@
+---
+status: active
+version: 1
+move_type: skin
+affects: []
+hero_capable: false
+standards: [color, writing]
+# NOTE: art-direction is a SKIN, not a move — it has no entrance of its own, so it carries
+# no entrance_archetype / entrance_mechanism (CONTRACT §2 applies those to moves only).
+---
+
 # Art Direction — Global Default Skin (Earthy Premium liquid-glass)
 
 This is the **single shared look** every generated art card in a video inherits, so the

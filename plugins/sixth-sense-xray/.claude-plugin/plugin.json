@@ -1,0 +1,28 @@
+{
+  "name": "sixth-sense-xray",
+  "version": "1.0.0",
+  "description": "Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "sixth-sense",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "ffmpeg",
+      "ffprobe"
+    ],
+    "envVars": [],
+    "services": [
+      "Optional: yt-dlp for URL sources — a WebFetch fallback exists",
+      "Optional: Vercel CLI to publish the playbook; local save is always offered"
+    ]
+  }
+}

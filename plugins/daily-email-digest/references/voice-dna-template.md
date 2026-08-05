@@ -43,8 +43,11 @@
 - [Offering 3] — [price range]
 
 ## 0.3 Email Cadence
-- [Day]: [Email Type] ([energy description])
-- [Day]: [Email Type] ([energy description])
+
+> **Schema note:** The §0.3 section header can also be `## 0.3 Register Catalog` (for register-based profiles like Exemplar Two's, where emails are not tied to a weekly cadence). The mode-gate parser accepts EITHER form, AND the §0.3 section MUST contain at least one bulleted line for downstream Path A register-name parsing. If your emails are register-based (post-session reflective / intake / warm-handoff / etc.), use Register Catalog. If weekly-cadence (Mon/Wed/Fri/Sun), use Email Cadence.
+
+- [Day OR Register Type]: [Email Type] ([energy description])
+- [Day OR Register Type]: [Email Type] ([energy description])
 
 ## 0.4 Voice DNA
 - Energy: [3 adjectives describing their writing tone]

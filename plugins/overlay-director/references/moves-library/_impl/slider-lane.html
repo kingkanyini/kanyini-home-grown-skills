@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* colors from constants.js: CARD_LIME #C6F94E, CARD_TEAL #4FD6C8 */
+      .od-slider { position: absolute; left: 6%; top: 30%; width: 52%; opacity: 0; }
+      .od-slider .od-kicker { font: 700 26px/1 'Inter', sans-serif; letter-spacing: .2em;
+        text-transform: uppercase; color: #C6F94E; margin-bottom: 34px; }
+      .od-slider .od-lane { margin: 40px 0; }
+      .od-slider .od-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+      .od-slider .od-name { font: 700 34px/1 'Inter', sans-serif; color: rgba(255,255,255,0.8);
+        text-transform: uppercase; letter-spacing: .06em; }
+      .od-slider .od-tag { font: 700 28px/1 'Inter', sans-serif; color: #C6F94E; opacity: 0;
+        text-transform: uppercase; letter-spacing: .08em; }
+      .od-slider .od-rail { position: relative; height: 16px; border-radius: 999px;
+        background: rgba(255,255,255,0.08); }
+      .od-slider .od-fill { position: absolute; inset: 0; border-radius: 999px; transform-origin: left center;
+        transform: scaleX(0); background: rgba(79,214,200,0.5); }
+      .od-slider .od-knob { position: absolute; top: 50%; left: 0; width: 40px; height: 40px;
+        margin: -20px 0 0 -20px; border-radius: 50%; background: #C6F94E; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="slider-lane" data-start="0" data-duration="4.2"
+         data-width="1920" data-height="1080">
+      <div class="od-slider">
+        <div class="od-kicker">&bull; Scanning the run</div>
+        <div class="od-lane">
+          <div class="od-head"><span class="od-name">Clarity</span><span class="od-tag">Strong</span></div>
+          <div class="od-rail"><div class="od-fill"></div><div class="od-knob" data-frac="0.86"></div></div>
+        </div>
+        <div class="od-lane">
+          <div class="od-head"><span class="od-name">Pace</span><span class="od-tag">Steady</span></div>
+          <div class="od-rail"><div class="od-fill"></div><div class="od-knob" data-frac="0.62"></div></div>
+        </div>
+        <div class="od-lane">
+          <div class="od-head"><span class="od-name">Courage</span><span class="od-tag">Rising</span></div>
+          <div class="od-rail"><div class="od-fill"></div><div class="od-knob" data-frac="0.44"></div></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.4; const S = '[data-composition-id="slider-lane"]';
+      const root = document.querySelector(S);
+      tl.set(`${S} .od-slider`, { opacity: 1 });
+      root.querySelectorAll('.od-lane').forEach((ln, i) => {
+        const rail = ln.querySelector('.od-rail'), knob = ln.querySelector('.od-knob'),
+              fill = ln.querySelector('.od-fill'), tag = ln.querySelector('.od-tag');
+        const frac = parseFloat(knob.dataset.frac), px = rail.clientWidth * frac, at = i * 0.16;
+        tl.fromTo(knob, { x: 0 }, { x: px, duration: 0.55, ease: 'power3.out' }, at);
+        tl.to(fill, { scaleX: frac, duration: 0.55, ease: 'power3.out' }, at);
+        tl.to(tag, { opacity: 1, duration: 0.25, ease: 'power2.out' }, at + 0.5);
+      });
+      tl.to(`${S} .od-slider`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-slider`, { opacity: 0 }, HOLD + 0.4);   // hard-kill
+      window.__timelines["slider-lane"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

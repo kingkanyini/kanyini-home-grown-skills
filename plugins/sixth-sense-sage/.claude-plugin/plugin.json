@@ -1,0 +1,29 @@
+{
+  "name": "sixth-sense-sage",
+  "version": "1.0.0",
+  "description": "B-roll placement intelligence — identifies moments, builds production briefs with bilingual mapping, Artgrid sourcing, and interactive HTML playbooks",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "sixth-sense",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "transcript-extractor-plus",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": [
+      "Optional: Vercel CLI to publish the playbook; local save is offered",
+      "Optional: hyperframes-handoff powers Phase 7 — without it that phase reports unavailable and ends cleanly"
+    ]
+  }
+}

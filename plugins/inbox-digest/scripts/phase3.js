@@ -23,11 +23,25 @@ const MAX_INPUT_CHARS = 200_000; // ~50K tokens budget for the bundle
  */
 export async function runPhase3(workTuple, phase2Summary, options = {}) {
   const dryRun = !!options.dryRun;
+  const nudges = options.nudges || [];
+  const archived = options.archived || 0;
+  const meetings = options.meetings || [];
+  const drafter = options.drafter || null;
+  const slackNotes = options.slack || []; // Sentinel: touched Slack notes summary (phase2b)
+  const timezone = workTuple.timezone || "UTC";
   const { client_slug, client_display, client_dir } = workTuple;
   const allPaths = [...phase2Summary.new_thread_paths, ...phase2Summary.merged_thread_paths];
+
   if (allPaths.length === 0) {
-    await log("info", `phase3 client=${client_slug} no new material; skipping brief`);
-    return { brief_path: null, action_items_added: 0, inferred_count: 0 };
+    // No new mail. If there are active nudges, drafter activity, OR new Slack
+    // activity, render a deterministic brief with NO LLM call (and no API key
+    // required). Otherwise skip entirely.
+    const drafterHasContent = !!(drafter && (drafter.drafts.length || drafter.dispositions.length || drafter.skipped.length || drafter.ceiling_hit));
+    if (nudges.length === 0 && !drafterHasContent && slackNotes.length === 0) {
+      await log("info", `phase3 client=${client_slug} no new material, no nudges; skipping brief`);
+      return { brief_path: null, action_items_added: 0, inferred_count: 0 };
+    }
+    return await writeNudgeOnlyBrief({ client_slug, client_display, client_dir, nudges, archived, drafter, slackNotes, dryRun });
   }
 
   if (!process.env.ANTHROPIC_API_KEY) {
@@ -57,7 +71,11 @@ export async function runPhase3(workTuple, phase2Summary, options = {}) {
   const clientVaultPath = path
     .relative(VAULT_ROOT, client_dir)
     .replace(/\\/g, "/");
-  const briefMarkdown = normalizeWikilinks(rawBriefMarkdown, clientVaultPath);
+  // Inject the deterministic 📅 SCHEDULE + 📮 REPLY STATUS blocks BEFORE wikilink
+  // normalization so their [[inbox/...]] links get rewritten like the rest of the brief.
+  const topBlock = renderSchedule(meetings, timezone) + renderReplyStatus(nudges, archived) + renderReceivedFyi(nudges) + renderDraftsSection(drafter) + renderSlackSection(slackNotes, clientVaultPath);
+  const withTop = injectReplyStatus(rawBriefMarkdown, topBlock);
+  const briefMarkdown = normalizeWikilinks(withTop, clientVaultPath);
 
   // 3.3 — write the brief
   const briefDir = path.join(client_dir, "briefs");
@@ -168,7 +186,7 @@ BUNDLE (new/merged threads + extracted attachments since last scan):
 ${bundleText}
 
 OUTPUT:
-Just the markdown brief, starting with the YAML frontmatter and ending with the closing </details>. No commentary before or after.`;
+Just the markdown brief, starting with the YAML frontmatter and ending with the closing </details>. No commentary before or after. Do NOT add a "REPLY STATUS" or "SCHEDULE" section — deterministic 📮 REPLY STATUS and 📅 SCHEDULE blocks are inserted automatically above TODAY'S 3 MOVES.`;
 
   // Prompt caching on the system prompt — ~500 tokens of identical instructions
   // every run. At 3 runs/day x 31 days that's ~46K tokens cached/month.
@@ -381,6 +399,368 @@ export function normalizeWikilinks(markdown, clientVaultPath) {
     }
     return `[[${rewritten}${anchor}${aliasSuffix}]]`;
   });
+}
+
+// ----- Meeting / schedule rendering (deterministic — never LLM) ----------
+
+/** Format an ICS start object for display in the client's timezone (best-effort, honest). */
+function formatWhen(start, timeZone) {
+  if (!start) return "time TBD";
+  try {
+    if (start.dateOnly) {
+      const d = new Date((start.iso || start.walltime + "Z"));
+      return new Intl.DateTimeFormat("en-US", { timeZone: start.iso ? timeZone : "UTC", weekday: "short", month: "short", day: "numeric", year: "numeric" }).format(d) + " (all day)";
+    }
+    if (start.iso) {
+      // True UTC instant — safe to convert to the client's tz.
+      return new Intl.DateTimeFormat("en-US", { timeZone, weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(start.iso));
+    }
+    // TZID/floating — show the wall-clock time as stated + its tz label (no reconversion).
+    const d = new Date(start.walltime + "Z");
+    const base = new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(d);
+    return start.tzid ? `${base} (${start.tzid})` : base;
+  } catch {
+    return start.walltime || "time TBD";
+  }
+}
+
+function locationText(loc) {
+  if (!loc) return null;
+  if (/zoom\.us/i.test(loc)) return `[Zoom](${loc.split(/\s/)[0]})`;
+  if (/meet\.google/i.test(loc)) return `[Google Meet](${loc.split(/\s/)[0]})`;
+  if (/^https?:\/\//i.test(loc)) return `[link](${loc.split(/\s/)[0]})`;
+  return loc.slice(0, 80);
+}
+
+const MEETING_EMOJI = { invite: "📅", update: "🔄", cancel: "❌", rsvp: "✅" };
+const MEETING_VERB = { invite: "New meeting", update: "Updated", cancel: "CANCELLED", rsvp: "RSVP" };
+
+/**
+ * Render the 📅 SCHEDULE section from meeting mail seen this scan. Dedupes by
+ * title+start (latest message wins, so a later cancellation supersedes its invite),
+ * sorts by start time, and surfaces date/time/location so <your-name> sees his schedule.
+ */
+export function renderSchedule(meetings, timeZone) {
+  if (!meetings || meetings.length === 0) return "";
+  const byKey = new Map();
+  for (const m of meetings) {
+    const key = `${(m.title || "").toLowerCase()}|${(m.start && m.start.walltime) || ""}`;
+    const prev = byKey.get(key);
+    if (!prev || (m.received_iso || "") > (prev.received_iso || "")) byKey.set(key, m);
+  }
+  const items = [...byKey.values()].sort((a, b) => {
+    const sa = (a.start && (a.start.iso || a.start.walltime)) || "";
+    const sb = (b.start && (b.start.iso || b.start.walltime)) || "";
+    return sa < sb ? -1 : sa > sb ? 1 : 0;
+  });
+
+  const lines = ["## 📅 SCHEDULE", "", "> Meeting mail from this scan. Add to your calendar / RSVP as needed.", ""];
+  for (const m of items) {
+    const emoji = MEETING_EMOJI[m.kind] || "📅";
+    const verb = MEETING_VERB[m.kind] || "Meeting";
+    let when = formatWhen(m.start, timeZone);
+    if (when === "time TBD" && m.display_when) when = m.display_when;
+    const who = m.from_me ? "you" : (m.sender || "?");
+    let line = `- ${emoji} **${verb}: ${m.title}** — ${when}`;
+    const loc = locationText(m.location);
+    if (loc) line += ` · ${loc}`;
+    line += `\n  from ${who}`;
+    if (m.note_path) line += ` · [[${m.note_path.replace(/\.md$/, "")}]]`;
+    lines.push(line);
+  }
+  lines.push("");
+  return lines.join("\n");
+}
+
+// ----- Reply-status rendering (deterministic — never LLM) ----------------
+
+const TIER_EMOJI = { red: "🔴", yellow: "🟡", blue: "🔵" };
+const KIND_LABEL = {
+  awaiting_you: "Reply overdue",
+  heads_up: "Heads-up — reply soon",
+  promised: "You promised",
+  chase: "Waiting on them",
+  courtesy: "Likely no reply needed",
+  unknown: "Reply from unknown sender",
+};
+const REPLY_STATUS_CAP = 7;
+
+/** Build a markdown link to the Gmail thread, escaping the subject for link text. */
+function nudgeLine(n) {
+  const subj = (n.subject || "(no subject)").replace(/[[\]]/g, "");
+  const note = n.note_path ? n.note_path.replace(/\.md$/, "") : null;
+  const ageWord =
+    n.kind === "chase" || n.kind === "promised" ? `${n.age_hours}h since you wrote` : `${n.age_hours}h since their message`;
+  let line = `- ${TIER_EMOJI[n.tier]} **${KIND_LABEL[n.kind] || n.kind}** — [${subj}](${n.deep_link}) · ${ageWord}`;
+  if (n.kind === "promised" && n.commitment_sentence) {
+    line += `\n  📌 *(inferred)* you wrote: "${n.commitment_sentence}"`;
+  }
+  if (note) line += `\n  [[${note}]]`;
+  return line;
+}
+
+/**
+ * Render the 📮 REPLY STATUS section. Hard cap ~7 items, BUT red (overdue) is never
+ * truncated — only yellow/blue roll up into "…N more". This is the eviction guarantee:
+ * a hard-tier principal 🔴 can never be pushed out of view by courtesy/unknown noise.
+ */
+// Matches at/above the AI floor (0.7) but below this get a plain-words "loose match" hint.
+const LIKELY_HANDLED_LOOSE = 0.8;
+
+/** Trim a quote to ≤maxWords with a mid-sentence ellipsis so it never reads as finished. */
+function clampQuote(q, maxWords = 12) {
+  const words = String(q || "").trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return words.join(" ");
+  return words.slice(0, maxWords).join(" ") + "…";
+}
+
+/**
+ * ✅ Likely handled block — Phase 2 AI suggestions you likely answered out-of-thread.
+ * SUGGEST-ONLY: shown for a one-glance verify, never auto-resolved. Rendered as a
+ * sub-section UNDER the REPLY STATUS H2 (CONDUIT passthrough-safe — no new top-level ##),
+ * BELOW the reds (triage: overdue work first), and NEVER truncated. Status is carried in
+ * TEXT ("Likely handled"); the ✅ is decorative (a11y — Watson). Sisters+NSA gate 2026-06-29.
+ */
+function renderLikelyHandled(covered) {
+  if (!covered || covered.length === 0) return [];
+  const out = [
+    "",
+    `### ✅ Likely handled — verify (${covered.length})`,
+    "",
+    "> You likely answered these in a separate email — confirm and close.",
+    "",
+  ];
+  for (const n of covered) {
+    const subj = (n.subject || "(no subject)").replace(/[[\]]/g, "");
+    const note = n.note_path ? n.note_path.replace(/\.md$/, "") : null;
+    const quote = clampQuote(n.match && n.match.quote);
+    const loose = n.match && n.match.confidence < LIKELY_HANDLED_LOOSE ? " *(loose match — worth a glance)*" : "";
+    let line = `- Likely handled — [${subj}](${n.deep_link}) — you replied: "${quote}"${loose}`;
+    if (note) line += `\n  [[${note}]]`;
+    out.push(line);
+  }
+  return out;
+}
+
+export function renderReplyStatus(nudges, archived = 0) {
+  // fyi-tier items render in their own 📥 Received(FYI) section, never here.
+  const all = (nudges || []).filter((n) => n.tier !== "fyi");
+  // likely_covered render in a dedicated never-truncated block (renderLikelyHandled) BELOW
+  // the reds — partitioned OUT here so they never compete for the cap budget and never
+  // inflate the "…N more" rollup (Sisters+NSA gate 2026-06-29; was the production bug).
+  const covered = all.filter((n) => n.kind === "likely_covered");
+  const items = all.filter((n) => n.kind !== "likely_covered");
+  if (items.length === 0 && covered.length === 0 && !archived) return "";
+  const red = items.filter((n) => n.tier === "red");
+  const rest = items.filter((n) => n.tier !== "red");
+  const restBudget = Math.max(0, REPLY_STATUS_CAP - red.length);
+  const restShown = rest.slice(0, restBudget);
+  const shown = [...red, ...restShown];
+  const more = rest.length - restShown.length; // rest excludes red AND covered — no double-count
+
+  const lines = ["## 📮 REPLY STATUS", ""];
+  if (red.length > 3) {
+    lines.push(`> ${red.length} threads are overdue for your reply — all shown (this is intentional).`, "");
+  }
+  for (const n of shown) lines.push(nudgeLine(n));
+  if (more > 0) lines.push(`- …and ${more} more lower-priority item(s) — see thread notes.`);
+  lines.push(...renderLikelyHandled(covered));
+  if (archived > 0) lines.push("", `> Auto-muted ${archived} stale thread(s) — no reply in 14 days.`);
+  lines.push("");
+  return lines.join("\n");
+}
+
+/**
+ * Render the 📥 Received (FYI) section — forwards / calendar invites that demoted out of
+ * the red list (reply-classifier v2). Collapsed by default (Eyal: count chip, not 20
+ * inline line-items) so it informs without rebuilding the noise it replaced. These
+ * auto-clear after 3 days via expireFyiRows; a new inbound re-arms them to 🔴.
+ */
+export function renderReceivedFyi(nudges) {
+  const fyi = (nudges || []).filter((n) => n.tier === "fyi");
+  if (fyi.length === 0) return "";
+  const lines = [
+    "<details>",
+    `<summary>📥 Received (FYI): ${fyi.length} — forwards/invites, no reply needed (auto-clears in 3 days)</summary>`,
+    "",
+  ];
+  for (const n of fyi) {
+    const subj = (n.subject || "(no subject)").replace(/[[\]]/g, "");
+    const note = n.note_path ? n.note_path.replace(/\.md$/, "") : null;
+    let line = `- [${subj}](${n.deep_link})`;
+    if (note) line += ` [[${note}]]`;
+    lines.push(line);
+  }
+  lines.push("", "</details>", "");
+  return lines.join("\n");
+}
+
+// ----- Drafts rendering (deterministic — never LLM) -----------------------
+
+/** Deterministic 📝 DRAFTS block — no LLM involvement. */
+export function renderDraftsSection(drafter) {
+  if (!drafter) return "";
+  const { drafts = [], dispositions = [], skipped = [], ceiling_hit = false } = drafter;
+  const pendingDispo = dispositions.filter((d) => d.status === "pending");
+  const resolvedDispo = dispositions.filter((d) => d.status !== "pending");
+  if (drafts.length === 0 && dispositions.length === 0 && skipped.length === 0 && !ceiling_hit) return "";
+
+  const lines = ["## 📝 DRAFTS", ""];
+  if (ceiling_hit) {
+    lines.push("> ⚠️ **Draft ceiling hit this run** — some eligible replies were NOT drafted. They will be retried next run.", "");
+  }
+  if (drafts.length > 0) {
+    lines.push(`**Awaiting review (${drafts.length})** — open, edit if needed, hit send:`);
+    for (const d of drafts) {
+      const subj = (d.subject || "(no subject)").replace(/[[\]]/g, "");
+      const flag = d.adopted ? " _(recovered from a previous run)_" : "";
+      lines.push(`- **${d.recipient}** — ${subj}${flag} → [open draft](${d.deep_link})`);
+    }
+    lines.push("");
+  }
+  if (pendingDispo.length > 0) {
+    lines.push("**Still pending from earlier runs:**");
+    for (const d of pendingDispo) {
+      const subj = (d.subject || "(no subject)").replace(/[[\]]/g, "");
+      lines.push(`- ⏳ pending ${d.age_days}d — **${d.recipient}** — ${subj}`);
+    }
+    lines.push("");
+  }
+  if (resolvedDispo.length > 0) {
+    lines.push("**Resolved since last brief:**");
+    for (const d of resolvedDispo) {
+      const subj = (d.subject || "(no subject)").replace(/[[\]]/g, "");
+      const icon = d.status === "sent" ? "✅ sent" : d.status === "edited" ? "✏️ edited & sent" : "🗑 discarded";
+      lines.push(`- ${icon} — **${d.recipient}** — ${subj}`);
+    }
+    lines.push("");
+  }
+  if (skipped.length > 0) {
+    // Newsletter audiences produce hundreds of skips per scan — aggregate by
+    // reason and show a small sample, or the brief drowns in suppressed mail.
+    const SKIP_SAMPLE_MAX = 10;
+    const byReason = {};
+    for (const s of skipped) byReason[s.reason] = (byReason[s.reason] || 0) + 1;
+    const histogram = Object.entries(byReason)
+      .sort((a, b) => b[1] - a[1])
+      .map(([reason, n]) => `${reason}: ${n}`)
+      .join(" · ");
+    lines.push(`<details><summary>Tracked, no draft (${skipped.length} — ${histogram})</summary>`, "");
+    for (const s of skipped.slice(0, SKIP_SAMPLE_MAX)) {
+      const subj = (s.subject || "(no subject)").replace(/[[\]]/g, "");
+      lines.push(`- ${s.sender} — ${subj} — tracked, no draft (${s.reason})`);
+    }
+    if (skipped.length > SKIP_SAMPLE_MAX) {
+      lines.push(`- _…and ${skipped.length - SKIP_SAMPLE_MAX} more (see op log for the full list)_`);
+    }
+    lines.push("", "</details>", "");
+  }
+  return lines.join("\n") + "\n";
+}
+
+/** Insert the REPLY STATUS block just above TODAY'S 3 MOVES (or after the H1 title). */
+export function injectReplyStatus(markdown, block) {
+  if (!block) return markdown;
+  const marker = "## ⚡ TODAY'S 3 MOVES";
+  const idx = markdown.indexOf(marker);
+  if (idx >= 0) return markdown.slice(0, idx) + block + "\n" + markdown.slice(idx);
+  // Fallback: after the first H1 line.
+  const h1 = markdown.match(/^# .+$/m);
+  if (h1) {
+    const at = markdown.indexOf(h1[0]) + h1[0].length;
+    return markdown.slice(0, at) + "\n\n" + block + markdown.slice(at);
+  }
+  return markdown + "\n\n" + block;
+}
+
+/**
+ * Deterministic 💬 SLACK ACTIVITY block for the brief (Sentinel spec §3 step 5 —
+ * the interleave surface for Slack items). mirror:false threads render with ZERO
+ * quoted text (spec §4 <your-username>-<example-client> rule, enforced at every render surface).
+ */
+const SLACK_LANE_EMOJI = { finance: "🟡", people: "🟢", ai: "🔵", funnel: "🟣", cx: "⚪" };
+export function renderSlackSection(slackNotes, clientVaultPath) {
+  if (!slackNotes || slackNotes.length === 0) return "";
+  const lines = ["## 💬 SLACK ACTIVITY", ""];
+  for (const n of slackNotes) {
+    const lane = n.lane ? `${SLACK_LANE_EMOJI[n.lane] || ""} ` : "";
+    const noteSlug = String(n.rel || "").replace(/^slack\//, "").replace(/\.md$/, "");
+    const link = noteSlug ? ` → [[${clientVaultPath}/slack/${noteSlug}]]` : "";
+    const label =
+      n.mirror === false
+        ? "1:1 thread activity (details in channel)"
+        : String(n.subject || "(no text)").replace(/[[\]`]/g, "").slice(0, 100);
+    const who = n.last_from === "them" ? "" : n.last_from === "me" ? " _(you replied last)_" : "";
+    lines.push(`- ${lane}**#${n.channel_name}** — ${label}${who}${link}`);
+  }
+  lines.push("");
+  return lines.join("\n") + "\n";
+}
+
+/** Render + write a deterministic nudge-only brief (no new mail, but active nudges or Slack activity). No LLM. */
+async function writeNudgeOnlyBrief({ client_slug, client_display, client_dir, nudges, archived, drafter = null, slackNotes = [], dryRun }) {
+  const date = todayIso();
+  const red = nudges.filter((n) => n.tier === "red");
+  const yellow = nudges.filter((n) => n.tier === "yellow");
+  const moves = [...red, ...yellow].slice(0, 3);
+
+  const fm = [
+    "---",
+    "type: client-brief",
+    `client: ${client_slug}`,
+    `date: "${date}"`,
+    "threads_scanned: 0",
+    "new_threads: 0",
+    "new_messages: 0",
+    "attachments_pulled: 0",
+    "action_items_added: 0",
+    "inferred_action_items: 0",
+    `reply_status_nudges: ${nudges.length}`,
+    "nudge_only: true",
+    "---",
+    "",
+  ].join("\n");
+
+  const moveLines =
+    moves.length > 0
+      ? moves
+          .map((n, i) => {
+            const subj = (n.subject || "(no subject)").replace(/[[\]]/g, "");
+            return `${i + 1}. **Reply: ${subj}** ([open thread](${n.deep_link})) — ${n.age_hours}h, ${n.tier === "red" ? "overdue" : "due soon"}`;
+          })
+          .join("\n")
+      : "_No overdue replies — follow-ups only. See REPLY STATUS below._";
+
+  const clientVaultPath = path.relative(VAULT_ROOT, client_dir).replace(/\\/g, "/");
+
+  const body = [
+    `# ${client_display} — ${date} Brief`,
+    "",
+    slackNotes.length
+      ? "> No new mail since last scan — reply status + Slack activity below."
+      : "> No new mail since last scan. This brief is reply-status only.",
+    "",
+    "## ⚡ TODAY'S 3 MOVES",
+    "",
+    moveLines,
+    "",
+    renderReplyStatus(nudges, archived) + renderReceivedFyi(nudges) + renderDraftsSection(drafter) + renderSlackSection(slackNotes, clientVaultPath),
+  ].join("\n");
+  const briefMarkdown = normalizeWikilinks(fm + body, clientVaultPath);
+
+  const briefDir = path.join(client_dir, "briefs");
+  let briefPath = path.join(briefDir, `${date}_brief.md`);
+  try {
+    await fs.stat(briefPath);
+    const stamp = new Date().toISOString().slice(11, 16).replace(":", "-");
+    briefPath = path.join(briefDir, `${date}T${stamp}_brief.md`);
+  } catch {
+    /* doesn't exist — good */
+  }
+
+  if (!dryRun) await atomicWrite(briefPath, briefMarkdown);
+  await log("info", `phase3 client=${client_slug} nudge-only brief=${path.basename(briefPath)} nudges=${nudges.length}`);
+  return { brief_path: briefPath, action_items_added: 0, inferred_count: 0, nudge_only: true };
 }
 
 // ----- Action item extraction --------------------------------------------

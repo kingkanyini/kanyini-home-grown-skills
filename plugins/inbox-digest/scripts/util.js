@@ -99,12 +99,32 @@ export function htmlEscape(s) {
     .replace(/\r?\n/g, " ");
 }
 
-/** Atomic file write: write to .tmp then rename. */
+/** Atomic file write: write to .tmp, fsync, then rename.
+ * Dropbox sync / Obsidian indexing can hold a transient lock on the destination
+ * and make fs.rename throw EPERM/EBUSY on Windows — retry with backoff. */
 export async function atomicWrite(targetPath, contents) {
   const tmp = `${targetPath}.tmp`;
   await fs.mkdir(path.dirname(targetPath), { recursive: true });
-  await fs.writeFile(tmp, contents, "utf8");
-  await fs.rename(tmp, targetPath);
+  const fh = await fs.open(tmp, "w");
+  try {
+    await fh.writeFile(contents, "utf8");
+    await fh.sync();
+  } finally {
+    await fh.close();
+  }
+  const delays = [100, 250, 500, 1000];
+  for (let attempt = 0; ; attempt++) {
+    try {
+      await fs.rename(tmp, targetPath);
+      return;
+    } catch (err) {
+      if ((err.code !== "EPERM" && err.code !== "EBUSY") || attempt >= delays.length) {
+        try { await fs.unlink(tmp); } catch { /* ignore */ }
+        throw err;
+      }
+      await new Promise((r) => setTimeout(r, delays[attempt]));
+    }
+  }
 }
 
 /** Parse "From: Display Name <email@host>" into {name, email}. */
@@ -164,6 +184,70 @@ export async function readJsonl(filePath) {
     if (err.code === "ENOENT") return [];
     throw err;
   }
+}
+
+/**
+ * Sanitize a subject before storing it in the .thread-status.jsonl ledger (CIPHER-F10).
+ * The ledger is a line-delimited JSON sink for untrusted subject strings, so:
+ *  - collapse newlines + the Unicode line/paragraph separators (U+2028/U+2029) to a
+ *    single space (stops a crafted subject from splitting one logical record into two
+ *    when a future reader parses line-by-line),
+ *  - strip remaining C0/C1 control chars,
+ *  - cap length at 200.
+ * Serialization itself MUST still go through JSON.stringify — this is defense in depth,
+ * not a substitute for proper encoding.
+ */
+export function sanitizeLedgerSubject(subject) {
+  let s = String(subject || "");
+  // Newlines + Unicode line/paragraph separators -> space
+  s = s.replace(/[\r\n\u2028\u2029]+/g, " ");
+  // Strip remaining C0/C1 control chars
+  s = s.replace(/[\u0000-\u001F\u007F-\u009F]+/g, "");
+  s = s.replace(/\s+/g, " ").trim();
+  return s.slice(0, 200);
+}
+
+/**
+ * Read the per-client status projection (.thread-status.jsonl) as a Map keyed on
+ * thread_id, last-line-wins. A single malformed line is skipped + logged, never zeroes
+ * the whole ledger (the status IS the source — there is nothing to "re-fetch").
+ */
+export async function readLedgerMap(filePath) {
+  const map = new Map();
+  let raw;
+  try {
+    raw = await fs.readFile(filePath, "utf8");
+  } catch (err) {
+    if (err.code === "ENOENT") return map;
+    throw err;
+  }
+  const lines = raw.split(/\r?\n/).filter(Boolean);
+  let skipped = 0;
+  for (const line of lines) {
+    try {
+      const rec = JSON.parse(line);
+      if (rec && rec.thread_id) map.set(rec.thread_id, rec);
+      else skipped++;
+    } catch {
+      skipped++;
+    }
+  }
+  if (skipped > 0) {
+    // eslint-disable-next-line no-console
+    console.log(`WARN ledger ${path.basename(filePath)} skipped ${skipped} malformed line(s)`);
+  }
+  return map;
+}
+
+/**
+ * Atomically write a ledger Map (or array of records) to a .thread-status.jsonl file.
+ * One record per line via JSON.stringify (never string concat). Single writer per run
+ * (enforced by the per-client PID lock in digest.js).
+ */
+export async function writeLedger(filePath, recordsOrMap) {
+  const records = recordsOrMap instanceof Map ? [...recordsOrMap.values()] : recordsOrMap;
+  const body = records.map((r) => JSON.stringify(r)).join("\n") + (records.length ? "\n" : "");
+  await atomicWrite(filePath, body);
 }
 
 /** Quick logger that also writes to the daily log. */

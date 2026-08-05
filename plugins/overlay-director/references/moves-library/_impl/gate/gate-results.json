@@ -3,62 +3,62 @@
   "results": {
     "liquid-glass-card": {
       "pass": true,
-      "hash": "8c0f7f57624cac6e14a589ee67e84c97d01804c4cb626dd2aa82969890c354d5",
+      "hash": "201c95078e0143dbf89b233b6e89e42b857df99d7825bc25b9d69d8809624ab9",
       "failures": []
     },
     "center-hero": {
       "pass": true,
-      "hash": "b48787e40947ae9c0cf8aa6557781be713e95330425bdde6aa0d347281fa057f",
+      "hash": "740055e5222abe5cadd10a1290530ee2c0a6da84386dcfca1725a57bc4aff0e5",
       "failures": []
     },
     "full-frame-quote": {
       "pass": true,
-      "hash": "05a36fea501ed74ba32c104d208d7c503188779c69cb40138ef485ab36d06e03",
+      "hash": "349ff6ce2c7803c958fa2e028f08250ed510a2b455754e0c3b8da325850d9eb4",
       "failures": []
     },
     "image-card": {
       "pass": true,
-      "hash": "888565ce5d2688957e772a81a0ac8316686d73335f2becdc8eb877a4870aef69",
+      "hash": "7ece74bc62d653ae9e8690ce95693505d3b3e9b99ec3174a85fd4c7c2a49ffb1",
       "failures": []
     },
     "lower-third": {
       "pass": true,
-      "hash": "573007b730f3916b123fb358aa162cde08e087b357d0d097c9c9336bbc39add4",
+      "hash": "064f3697b13c9ffa2aec2e3a179441707301ac6d725fc9f1768343964d9eee18",
       "failures": []
     },
     "top-pill": {
       "pass": true,
-      "hash": "8037cee5d20f025c7ac4adb47ac6f6c2c4b0800459e458fcff17f1428f14919a",
+      "hash": "736508f6c96089746e771a5732edbb27291f4f854668d4b402bb8cf44770e097",
       "failures": []
     },
     "bottom-rise": {
       "pass": true,
-      "hash": "ba1131ce64b9c01471a3afdcc731a5cc26fd947d4f8e866325b185ec5ce4f02d",
+      "hash": "b6f69ee448dd578a8c9295ebcca3f2e8bf60388874da8523673747993e515db3",
       "failures": []
     },
     "split-card": {
       "pass": true,
-      "hash": "7c223faf95f0c13f09cf8e7ad1d5b855b7d7475739c03365538b56e9e734abc6",
+      "hash": "8310110d7aa15c100fa9a39af057f4606e74c4d162504b787d94174cb87b0de2",
       "failures": []
     },
     "sandwich-stack": {
       "pass": true,
-      "hash": "1170419a1a0e12f1012f0949ca5b9109d37f8079693a64ed4d2fdb2a886ccf4b",
+      "hash": "e7510bc3c72a6207f96dd1ceded96fb0b692ba5b19aa56ab1350bda1f1db4838",
       "failures": []
     },
     "bouncing-arrows": {
       "pass": true,
-      "hash": "a45dcd3e8fd7a8d79832761fc47da6c55a130a6e95ba902478adca3892df4550",
+      "hash": "d56f7872b98357b17c05c49df30da06960e43096f174a119d457adce178e57f2",
       "failures": []
     },
     "reading-spotlight": {
       "pass": true,
-      "hash": "b4617e81994ad2c6a9f3aa42f62edc60dca43662348d16b1b282217f4bc76635",
+      "hash": "112823a91b1f393bff5cfc66ccea5af4c7afc45f6fc0e55add0b0aa8cc5e07da",
       "failures": []
     },
     "karaoke-caption": {
       "pass": true,
-      "hash": "ee1e80ec141201d19c42d0eee586e89af6ee898d8523335947b6665ec7c434c7",
+      "hash": "f47a1a405d2b96bbb47af7278581bafee133cbd7793c8677fdbe82fedf4676fa",
       "failures": []
     }
   }

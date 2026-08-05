@@ -24,7 +24,7 @@ builds. Hard stop-gates (`◆`) stay while the playbook is young.
 
 > **Invoking the engine:** the file-producing scripts have CLI entry points — call them directly:
 > `node references/scripts/gen-principles-index.js <notes.json>`, `… plan-to-table.js <plan.json>`,
-> `… studio-edits.js <plan.json> <studio-edits.json> <out.json>`, `… safe-copy-out.js <render> <dest>`,
+> `… studio-edits.js <plan.json> <studio-edits.json> <out.json>`, `… safe-copy-out.js <render> <dest-file.mp4>` (dest must be a FULL file path — a bare folder EPERM-fails at the rename step),
 > `… verify-fidelity.js <source> <render> <durationS>`, `… clean-scratch.js <scratchBase> [--active <p>] [--apply <p1,p2,…>]`.
 > The pure-compute helpers (`variety-score.js`,
 > `timing.js`, `preflight.js`) are called **inline** via `node -e "const {fn}=require('./references/scripts/X.js'); …"`
@@ -117,6 +117,18 @@ within `RUN_WINDOW` consecutive cards (unless hero), ≥2 distinct types per `WI
 Cheap **persona-mode** review of the plan (Visual Visionary #26) — catches bad card/move choices
 before build cost. (Full panel deferred to Phase 7 unless client-facing.)
 
+### Phase 3.6 — Standards gate  *(Layer 0 — surface conformance before build cost)*
+Stamp each card's resolved `standards[]` + `entrance_archetype`/`entrance_mechanism` (Phase 3 above),
+then run `node references/scripts/standards-check.js plan.json`. It RE-DERIVES each card's standards from
+the move-file frontmatter + generated `standards.map.json` (the resolver of record; the stamp is
+informational, drift is a `stamp-drift` advisory) and runs the machine checks — `min-easings` (distinct
+ease FAMILIES), `entrance-valid` (incl. GROW-X/GROW-Y), `palette-member`, `caption-length`,
+`map-coverage` (HARD) + `seek-safety`(static), `dead-air`, `bounce-heavy` (advisory) — printing
+`{ ok, violations[], advisories[], manual_review[] }`. Exit **0** clean / **1** hard violation / **2**
+checker error. Fix hard violations before build cost; carry the report on `plan.standards_report` so
+Phase 7 counsel reads it. `ok:true` does NOT verify the `manual_review` axes (layout; runtime
+seek-safety) — those are gated elsewhere. See `references/standards/_index.md` for the catalog.
+
 ### ◆ Plan approval
 Render the human table: `node references/scripts/plan-to-table.js` on `plan.json` (surfaces
 `variety_score`, `top3_*_share`, calcification flag). Present via **AskUserQuestion** to approve/edit.
@@ -133,7 +145,10 @@ omit a planned card.** Captions render on the card's dark plate, never baked int
 `npx hyperframes init` the project in scratch; emit `index.html` from the approved `plan.json` using
 `moves-library` components. Position baked via `left`/`top`, never `translate`
 (`overlay-bake-position-via-left-top-not-translate`); each card's visible life is its fade tween
-(`overlay-fade-tween-owns-visible-lifetime`). Run `npx hyperframes lint`.
+(`overlay-fade-tween-owns-visible-lifetime`). Run `npx hyperframes lint`, then the **runtime
+seek-safety gate** — `node references/scripts/seek-probe.js <emitted impls>` (the authoritative
+forward+backward seek probe, L0-3; the Phase 3.6 static scan only hints). A seek mismatch blocks the
+build. Re-run `standards-check.js` post-lint and update `plan.standards_report`.
 
 ### Phase 6 — Studio tweak loop
 `npx hyperframes preview` (the studio is a **read-only monitor + pointer** — it emits no edit file).
@@ -146,8 +161,10 @@ Re-lint. Loop until <your-name> is happy with the preview.
 
 ### Phase 7 — Counsel gate
 Mode-scaled (Decision 14): **persona-mode** for MVP/draft; **full 5-agent panel** (agent-mode,
-parallel) for Standard / Cinematic / client-facing. Apply BOTH rubrics from `counsel/review-rubric.md`
-(per-card + sequence-level) on **card-visible frames spanning the FULL duration** (MVP preview
+parallel) for Standard / Cinematic / client-facing. Counsel reads `plan.standards_report` (the Phase
+3.6 conformance report) as input — standards are the floor, counsel judges the ceiling. Apply BOTH
+rubrics from `counsel/review-rubric.md` (per-card + sequence-level) on **card-visible frames spanning
+the FULL duration** (MVP preview
 supplies whole-video proxy frames, not just the first 3 min). Synthesize the strongest notes;
 integrate dissent as hardening. → **◆ <your-name> approves** → apply the revision.
 
@@ -173,7 +190,14 @@ candidate at **three altitudes** (instance / type-tag / global); single-video de
 type-tag or a watch-list — global needs ≥ `GLOBAL_PROMOTION_VIDEOS` videos. Run **contradiction
 detection** on the `affects:` axis (surface opposing values on the same axis; force resolve:
 supersede / scope-narrow / reject). → **◆ <your-name> approves** before ANY vault/skill write. Vault
-write down → skill-local flat fallback (`emergency_fallback: true`), migrate later.
+write down → skill-local flat fallback (`emergency_fallback: true`), migrate later. If any standard OR
+move_type changed this build, regenerate both generated artifacts: `node
+references/scripts/gen-standards-map.js --write` (map from frontmatter) and `node
+references/scripts/gen-standards-index.js > references/STANDARDS-INDEX.md` (digest, staleness-hashed;
+`--check` in CI). The local `STANDARDS-INDEX.md` is the source of truth; MIRROR each changed standard
+into the vault by **upsert-by-id** (no dupes), each note carrying a populated `related:` session
+wikilink; when vault MCP is down, write the flat fallback with `emergency_fallback: true` and migrate
+later (L0-9/L0-10).
 
 ---
 

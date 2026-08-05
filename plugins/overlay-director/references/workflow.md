@@ -18,7 +18,9 @@ Deep mechanics behind `commands/overlay-director.md`. Subagent-readable (skill-l
 - `preflight.assertWriteSafe(sourceRealpath, target)` runs on every write target — it realpaths
   **both** sides (symlink/junction-aware) and throws if the target resolves inside the source's
   directory subtree.
-- Copy-out is atomic (`safe-copy-out.js`): temp file in the destination dir → size verify → rename;
+- Copy-out is atomic (`safe-copy-out.js`): temp file in the destination dir → size verify → rename.
+  The destination argument must be a **full file path** (`…\folder\final.mp4`) — passing a folder
+  makes the rename target the directory itself and fails with EPERM;
   temp is cleaned up on any rename failure. (Cross-volume: temp lives in dest so rename stays
   same-volume. A copy+fsync+verify+swap fallback for exotic DFS/junction cross-volume cases is a
   v1.1 enhancement.)
@@ -41,6 +43,45 @@ in the schema for future-proofing (if a later HyperFrames version emits one) but
 - `swap-move` → `move_id = new_move_id`; orchestrator re-resolves `move_type` from frontmatter.
 - `rewrite-copy` → `copy = new_copy`, `copy_provenance = 'distilled'` (re-run voice/ban check).
 - `delete` → drop the moment. `add` → append a full moment object.
+
+## Standards gate mechanics (Phase 3.6 + Phase 5 — Layer 0)
+- **Map is GENERATED (L0-1):** `reference/standards/standards.map.json` is generated from moves-library
+  `move_type:` frontmatter by `node reference/scripts/gen-standards-map.js --write` — keys are real
+  move_type FAMILIES, never move_ids, so the key-space can't drift from the library. CI/pre-flight:
+  `gen-standards-map.js --check` (nonzero on drift). A new move_type with no `AXIS_POLICY` entry is a
+  HARD generation error — you must decide its governing axes before the map regenerates.
+- **Resolver of record (L0-5):** `standards-check.js` RE-DERIVES each card's standards from the
+  move-file `standards:` frontmatter (`auto` → `by_move_type[type]`) + the map. The plan's stamped
+  `moment.standards[]` is informational; a mismatch is a `stamp-drift` advisory. Unknown `move_type`
+  fails LOUD as a HARD `map-coverage` violation — never a silent fallback to `defaults` (L0-2).
+- **Run:** `node reference/scripts/standards-check.js <plan.json>
+  [--standards-dir …] [--impl-dir …] [--moves-dir …]` → `{ ok, violations[], advisories[],
+  manual_review[], meta }`. `ok === no HARD violations`. Exit taxonomy: **0** clean · **1** hard
+  violation · **2** checker error (bad plan / IO). Every finding carries `severity: hard|advisory`.
+- **HARD machine checks:** `min-easings` (≥ `MIN_DISTINCT_EASINGS` distinct ease FAMILIES via the shared
+  `ease-extract.js`) · `entrance-valid` (valid POP|SMOOTH + mechanism incl. GROW-X/GROW-Y) ·
+  `palette-member` (color-axis impl hexes ∈ `color.md`) · `caption-length` (≤
+  `floor(WORDS_PER_SECOND_READ×MAX_HOLD_S)` = 11) · `map-coverage` (every active move_type is a map key).
+- **ADVISORY checks:** `seek-safety` static pre-filter (expanded banned list; the runtime probe is
+  authoritative — see below) · `dead-air` (positive gap + no `transition_in`; legit in MVP density) ·
+  `bounce-heavy` (> 60% non-POP eases in a bounce family; **POP moves exempt** — the archetype ease
+  wins, L0-7) · `stamp-drift` · `impl-missing` · `move-file-missing`.
+- **`manual_review` (L0-4):** the report lists axes an `ok:true` did NOT machine-verify — `layout` (no
+  machine check) and `animation` seek-safety (verified by the runtime probe, not the static scan) — so
+  a green result never launders an unchecked axis.
+- **Runtime seek-safety gate (Phase 5, L0-3):** `node reference/scripts/seek-probe.js <impl.html …>` is
+  the AUTHORITATIVE seek-safety check. It loads each impl in the gate's headless Chromium, seeks every
+  paused timeline to progress [0,.25,.5,.75,1] forward AND backward, and diffs the computed style of
+  every animated target; any forward≠backward mismatch fails (exit 1). The static scan only hints.
+- **Placement:** the static check runs AFTER the Phase 3.5 gut-check, BEFORE ◆ Plan approval (surfaces
+  violations before build cost); the runtime probe runs at Phase 5 (post-lint). Carry the report on
+  `plan.standards_report` so Phase 7 counsel reads it (standards are the floor; counsel judges the ceiling).
+- **Index + vault (Phase 9, L0-9/L0-10):** `node reference/scripts/gen-standards-index.js >
+  reference/STANDARDS-INDEX.md` regenerates the digest (deterministic sort-by-id + staleness hash
+  `STANDARDS_INDEX_HASH_LEN`; `--check` for CI drift). The local `STANDARDS-INDEX.md` is the source of
+  truth (always written). The vault is a MIRROR: upsert-by-id (no dupes) each changed standard as a note
+  carrying a populated `related:` session wikilink (CLAUDE.md knowledge-artifact rule); when vault MCP is
+  down, write the flat fallback with `emergency_fallback: true` and migrate when MCP returns.
 
 ## Learning loop mechanics (spec §8)
 - **Delta rule:** compare draft vs post-Studio `plan.json` field-by-field. Propose a principle only for

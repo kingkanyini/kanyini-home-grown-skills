@@ -4,6 +4,9 @@ version: 1
 move_type: stack
 affects: [density]
 hero_capable: false
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: SCALE-POP
 ---
 
 # Sandwich Stack
@@ -34,13 +37,15 @@ A sequential reveal of stacked items — a short list or steps that build one li
 
 ## GSAP
 ```js
-/* Each item reveals on its own beat; the WHOLE stack's visible life ends with the group fade. */
+/* SMOOTH / SCALE-POP (Layer 1 motion upgrade). Each item scale-pops into place (0.9->1) as it fades,
+   on the house power3.out (was a power2.out left-crawl). Items still reveal on their spoken-enumeration
+   beats (gate: staggerReveal). The WHOLE stack's visible life ends with the group fade. */
 function odSandwichStack(el, t, beats) { // beats = [t1, t2, ...] one per item, relative offsets added by caller
   const items = [...el.querySelectorAll('.od-item')];
   const tl = gsap.timeline();
   items.forEach((it, i) => {
-    tl.set(it, { opacity: 0, left: '6%' });
-    tl.to(it, { opacity: 1, left: '0%', duration: 0.35, ease: 'power2.out' }, beats[i]);
+    tl.set(it, { opacity: 0, scale: 0.9, transformOrigin: '0% 50%' });
+    tl.to(it, { opacity: 1, scale: 1, duration: 0.4, ease: 'power3.out' }, beats[i]);
   });
   tl.to(el, { opacity: 0, duration: 0.4, ease: 'power1.in' }, t + HOLD);     // group fade owns life (principle 3)
   return tl;

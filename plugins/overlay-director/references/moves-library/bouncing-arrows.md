@@ -4,6 +4,9 @@ version: 1
 move_type: accent
 affects: []
 hero_capable: false
+standards: auto
+entrance_archetype: POP
+entrance_mechanism: SCALE-POP
 ---
 
 # Bouncing Arrows
@@ -29,12 +32,15 @@ A brief attention accent — an arrow (or pair) bouncing toward on-screen action
 
 ## GSAP
 ```js
-/* The bounce is a looped sub-tween; the card's visible life is still the opacity fade (principle 3). */
+/* POP / SCALE-POP (Layer 1 motion upgrade). The accent pops in on back.out(1.4) (0.8->1 scale) — the
+   playful "look here" register — then the finite yoyo bounce carries the hold (gate: yExtrema). The
+   bounce is a y-transform ON TOP of the settled scale; base position stays baked via left/top (§0).
+   Math.floor per seek-safety (never round/ceil). Visible life is still the opacity fade (principle 3). */
 function odBouncingArrows(el, t) {
   const tl = gsap.timeline();
-  tl.set(el, { opacity: 0 });
-  tl.to(el, { opacity: 1, duration: 0.3, ease: 'power2.out' }, t);
-  tl.to(el, { y: -14, duration: 0.5, ease: 'sine.inOut', yoyo: true, repeat: Math.max(1, Math.floor(HOLD / 0.5)) }, t); // bounce within hold (Math.floor per seek-safety contract, never round/ceil)
+  tl.set(el, { opacity: 0, scale: 0.8, transformOrigin: '50% 50%', y: 0 });
+  tl.to(el, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(1.4)' }, t);   // POP entrance
+  tl.to(el, { y: -14, duration: 0.5, ease: 'sine.inOut', yoyo: true, repeat: Math.max(1, Math.floor(HOLD / 0.5)) }, t); // bounce within hold
   tl.to(el, { opacity: 0, duration: 0.3, ease: 'power1.in' }, t + HOLD);     // fade owns life
   return tl;
 }

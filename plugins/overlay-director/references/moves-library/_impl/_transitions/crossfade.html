@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('../assets/Inter.var.woff2') format('woff2'); }
+      .od-card { position: absolute; left: 33%; top: 34%; width: 34%; min-height: 150px;
+        display: grid; place-items: center; padding: 26px; border-radius: 24px;
+        background: rgba(247,240,228,0.16); border: 1px solid rgba(255,255,255,0.35);
+        box-shadow: 6px 8px 28px rgba(20,14,9,0.28); backdrop-filter: blur(14px) saturate(120%);
+        color: #241B14; font: 600 30px/1.25 'Inter', system-ui, sans-serif; text-align: center;
+        transform-origin: 50% 50%; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="transition-crossfade" data-start="0" data-duration="3.7"
+         data-width="1920" data-height="1080">
+      <div class="od-card od-out">Life happens FOR you.</div>
+      <div class="od-card od-in">Every challenge is a quest.</div>
+    </div>
+    <script>
+      // CROSSFADE — the baseline (related points continuing). Opacity only, no transform.
+      // Shapes mirror transitions.js TRANSITION_SPECS['crossfade']. Two child timelines overlap by
+      // TRANSITION_OVERLAP_S in compose; shown here in one paused timeline. See README.md.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const S = '[data-composition-id="transition-crossfade"]';
+      const OVERLAP = 0.3;    // TRANSITION_OVERLAP_BLUR_S (calm dissolve — crossfade + blur-crossfade get the longer co-visibility)
+      const XDUR = 0.5, HANDOFF = 1.4, IN_AT = HANDOFF + XDUR - OVERLAP;
+      tl.fromTo(`${S} .od-out`, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'power3.out' }, 0);
+      tl.to(`${S} .od-out`, { opacity: 0, duration: XDUR, ease: 'power1.inOut' }, HANDOFF);      // spec.out
+      tl.set(`${S} .od-out`, { opacity: 0 }, HANDOFF + XDUR);                                    // hard-kill
+      tl.fromTo(`${S} .od-in`, { opacity: 0 }, { opacity: 1, duration: XDUR, ease: 'power1.inOut' }, IN_AT); // spec.in
+      tl.to(`${S} .od-in`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, IN_AT + 1.5);
+      tl.set(`${S} .od-in`, { opacity: 0 }, IN_AT + 1.5 + 0.4);                                  // hard-kill
+      window.__timelines["transition-crossfade"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

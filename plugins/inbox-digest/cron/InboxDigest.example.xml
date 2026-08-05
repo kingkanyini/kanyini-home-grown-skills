@@ -4,51 +4,49 @@
     <Description>Daily inbox-digest run for <example-client>. Fires 3x: 5 min after sign-on, at 13:00 local, and at 18:00 local. Runs hidden via VBS wrapper. No new mail = no report (Phase 3 skip-empty behavior).</Description>
     <URI>\InboxDigest</URI>
   </RegistrationInfo>
-  <Triggers>
-    <LogonTrigger>
-      <Enabled>true</Enabled>
-      <Delay>PT5M</Delay>
-    </LogonTrigger>
-    <CalendarTrigger>
-      <Enabled>true</Enabled>
-      <StartBoundary>2026-05-12T13:00:00</StartBoundary>
-      <ScheduleByDay>
-        <DaysInterval>1</DaysInterval>
-      </ScheduleByDay>
-    </CalendarTrigger>
-    <CalendarTrigger>
-      <Enabled>true</Enabled>
-      <StartBoundary>2026-05-12T18:00:00</StartBoundary>
-      <ScheduleByDay>
-        <DaysInterval>1</DaysInterval>
-      </ScheduleByDay>
-    </CalendarTrigger>
-  </Triggers>
   <Principals>
     <Principal id="Author">
+      <UserId>S-1-5-21-3159817519-2078854985-2689775763-1002</UserId>
       <LogonType>InteractiveToken</LogonType>
-      <RunLevel>LeastPrivilege</RunLevel>
     </Principal>
   </Principals>
   <Settings>
-    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
     <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
     <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
-    <AllowHardTerminate>true</AllowHardTerminate>
+    <!-- PT60M: Slack sweeps at the ~1 req/min non-Marketplace API tier legitimately
+         run 30-45 min (Sentinel spec §5); still well under the shortest cron gap. -->
+    <ExecutionTimeLimit>PT60M</ExecutionTimeLimit>
+    <Hidden>true</Hidden>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
     <StartWhenAvailable>true</StartWhenAvailable>
     <RunOnlyIfNetworkAvailable>true</RunOnlyIfNetworkAvailable>
     <IdleSettings>
       <StopOnIdleEnd>false</StopOnIdleEnd>
       <RestartOnIdle>false</RestartOnIdle>
     </IdleSettings>
-    <AllowStartOnDemand>true</AllowStartOnDemand>
-    <Enabled>true</Enabled>
-    <Hidden>true</Hidden>
-    <RunOnlyIfIdle>false</RunOnlyIfIdle>
-    <WakeToRun>false</WakeToRun>
-    <ExecutionTimeLimit>PT15M</ExecutionTimeLimit>
-    <Priority>7</Priority>
+    <UseUnifiedSchedulingEngine>true</UseUnifiedSchedulingEngine>
   </Settings>
+  <Triggers>
+    <LogonTrigger />
+    <CalendarTrigger>
+      <StartBoundary>2026-06-02T08:00:00-04:00</StartBoundary>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+    <CalendarTrigger>
+      <StartBoundary>2026-06-02T12:00:00-04:00</StartBoundary>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+    <CalendarTrigger>
+      <StartBoundary>2026-06-02T18:00:00-04:00</StartBoundary>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+  </Triggers>
   <Actions Context="Author">
     <Exec>
       <Command>wscript.exe</Command>

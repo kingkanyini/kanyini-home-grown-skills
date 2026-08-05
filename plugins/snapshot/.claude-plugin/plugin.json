@@ -1,0 +1,23 @@
+{
+  "name": "snapshot",
+  "version": "1.0.0",
+  "description": "Take high-def screenshots from videos, websites, or extract photos from PDFs",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "ffmpeg"
+    ],
+    "envVars": [],
+    "services": [
+      "Optional: Playwright MCP for website capture — without it, offer a different route",
+      "Optional: Canva MCP for Canva export routes",
+      "Optional: python + GEMINI_API_KEY for the Imaginator edit route"
+    ]
+  }
+}

@@ -4,6 +4,9 @@ version: 1
 move_type: pill
 affects: [placement.vertical]
 hero_capable: false
+standards: auto
+entrance_archetype: POP
+entrance_mechanism: SCALE-POP
 ---
 
 # Top Pill
@@ -39,10 +42,15 @@ with a tail," not a new move).
 
 ## GSAP
 ```js
+/* POP / SCALE-POP (Layer 1 motion upgrade). A badge -> the "MTV pop" register. Container keeps the
+   seek-safe top drop (5%->7%, baked top) on power3.out for smoothness; the POP feel rides the inner
+   wrapper's back.out(1.4) scale overshoot (0.8->1), so the container position stays baked (§0).
+   back.out contributes a distinct ease vs the SMOOTH moves. */
 function odTopPill(el, t) {
-  const tl = gsap.timeline();
-  tl.set(el, { opacity: 0, top: '5%' });
-  tl.to(el, { opacity: 1, top: '7%', duration: 0.35, ease: 'power2.out' }, t);
+  const tl = gsap.timeline(), inner = el.querySelector('.od-inner');
+  tl.set(el, { opacity: 0, top: '5%' }).set(inner, { scale: 0.8, transformOrigin: '50% 50%' });
+  tl.to(el, { opacity: 1, top: '7%', duration: 0.4, ease: 'power3.out' }, t);
+  tl.to(inner, { scale: 1, duration: 0.4, ease: 'back.out(1.4)' }, t);       // POP settle
   tl.to(el, { opacity: 0, duration: 0.35, ease: 'power1.in' }, t + HOLD);    // fade owns life (principle 3)
   return tl;
 }

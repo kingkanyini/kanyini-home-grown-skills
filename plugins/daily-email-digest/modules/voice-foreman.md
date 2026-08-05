@@ -22,11 +22,23 @@ No path skips the Foreman. If a draft exists and counsel hasn't seen it yet, the
 ### Step 1: Load Ban Lists
 
 1. Read `reference/ai-ism-ban-list.md` from this plugin directory. This is the **Layer 1** source — universal bans that apply to every user, every email, no exceptions.
-2. Read the user's voice profile at `~/.claude/references/voice-profiles/[username]/[username]-email.md` (<your-name>'s path: `~/.claude/references/voice-profiles/<your-username>/<your-username>-email.md`). Load the `## 0.6 Guardrails MANIFEST` section (and, if present, the full `## 6.12 What [User] Never Does` list it points to — deep profiles keep the canonical ban list there). This is the **Layer 2** source — personal violations specific to that user's voice. Also load their `## 0.5 Signature Phrases` and `## 0.4 Voice DNA` sections for cross-reference. (Profiles follow the gold-standard email template — Part 0 holds these stable §0.x anchors.)
+2. Read the **active** voice profile at `~/.claude/references/voice-profiles/[active_profile_slug]/[active_profile_slug]-email.md`. The active slug is set by the mode gate (`modules/mode-gate.md`) at session start. For Personal mode, the slug is `<your-username>`; for Ghost Writing mode, the slug is the client profile picked at mode-gate entry. Load the `## 0.6 Guardrails MANIFEST` section (and, if present, the full `## 6.12 What [User] Never Does` list it points to — deep profiles keep the canonical ban list there). This is the **Layer 2** source — personal violations specific to that user's voice. Also load their `## 0.5 Signature Phrases` and `## 0.4 Voice DNA` sections for cross-reference. (Profiles follow the gold-standard email template — Part 0 holds these stable §0.x anchors.) Also read the frontmatter `critical_rules` block (top precedence, per Rule 6). Determine the draft's **Sovereignty Meter** position: use the meter declared in the Mode/Voice header anchor if present, else infer from recipient — peer/partner/negotiation → HIGH, broadcast teaching → MID, grief/onboarding/Heavy-Ask → LOW. When uncertain on a peer/partner recipient, default HIGH (bias to the loud failure the read-through catches, not the silent over-agreeable ship). Full dial → the profile's Guardrails pointer, canonical in <your-username>-voice.md §5.1.
 
 If the voice profile doesn't exist yet, run Layer 1 only and note that Layer 2 was skipped.
 
 3. Layer 3 — the Humanization Pass — needs no file. Its 7 commands are defined in Step 2 below and canonically in the gold standard `gold-standards/voice-profile/voice-profile-email.md` (your vault). It runs on every draft regardless of whether a voice profile exists.
+
+### Step 1.5: Recurring-Copy Check (anti-repetition across emails)
+
+Before scanning for AI patterns, read the most recent 1-2 saved emails in the active profile's save directory (`~/.claude/projects/[active_profile_slug]-emails/`). Extract the distinctive **phrases, metaphors, images, and scene details** each used (e.g., "cracked me open," "jungle humming," a specific opening scene).
+
+Compare the current draft against them. Flag any distinctive phrase, image, or metaphor that **repeats** a recent email and replace it with fresh language that carries the same emotional beat. The point is variety: each email earns its own imagery, even when the emotional move is the same.
+
+**Exempt from this check:**
+- Protected **§0.5 Signature Phrases** — they are *meant* to recur. Never flag them.
+- Factual recurring details (real place names, real people, the brand sign-off ritual). A real setting is not a repeated metaphor.
+
+Recurring-copy hits count toward the Step 3 match total (each repeat = one match).
 
 ### Step 2: Scan the Draft
 
@@ -38,6 +50,7 @@ If the voice profile doesn't exist yet, run Layer 1 only and note that Layer 2 w
 - Check against the user's "NEVER say" list from their Guardrails section.
 - Check against any voice violations listed in their profile (words, tones, or patterns they specifically reject).
 - Compare sentence rhythm to their Voice DNA. Flag if average sentence length drifts more than 40% from their documented range. Flag if the conversational-to-formal ratio doesn't match their profile.
+- **Sovereignty Meter check (only when meter = HIGH):** score approval-seeking tokens against a tight budget — reflexive-agreement openers ("you're absolutely right," "great point," "I completely agree"), trailing approval tags ("right?", "if that works for you," "hope that's okay"), stacked gratitude (>1, or gratitude in both open and close), hedge pile-up ("just," "I think," "maybe," "kind of"), and a declarative position followed by 2+ unprompted "because/since/to clarify" justifications when the thread shows no pushback. Each over-budget token = one match. **Skip entirely when meter = LOW or the email is a Heavy-Ask (§6.13)** — warm over-explaining is correct there.
 
 **Layer 3 — Humanization Pass (rewrite, not just scan):**
 

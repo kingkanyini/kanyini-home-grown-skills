@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* colors from constants.js: CARD_LIME #C6F94E, CARD_TEAL #4FD6C8 */
+      .od-bar-fill { position: absolute; left: 6%; top: 30%; width: 50%; opacity: 0; }
+      .od-bar-fill .od-kicker { font: 700 26px/1 'Inter', sans-serif; letter-spacing: .2em;
+        text-transform: uppercase; color: #C6F94E; margin-bottom: 34px; }
+      .od-bar-fill .od-row { display: grid; grid-template-columns: 300px 1fr; align-items: center;
+        gap: 28px; margin: 26px 0; }
+      .od-bar-fill .od-name { font: 700 34px/1 'Inter', sans-serif; color: rgba(255,255,255,0.78);
+        text-transform: uppercase; letter-spacing: .06em; }
+      .od-bar-fill .od-track { position: relative; height: 60px; border-radius: 12px;
+        background: rgba(255,255,255,0.07); }
+      .od-bar-fill .od-bar { position: absolute; inset: 0; border-radius: 12px;
+        transform-origin: left center; transform: scaleX(0); background: #C6F94E; }
+      .od-bar-fill .od-bar.teal { background: #4FD6C8; }
+      .od-bar-fill .od-count { position: absolute; top: 50%; left: 0; white-space: nowrap;
+        font: 800 34px/1 'Inter', sans-serif; opacity: 0; }
+      /* color + transform anchor set per-row in JS: dark ink riding inside the fill tip on long
+         bars, white ink just past the tip on short bars where it would strand off the fill */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="bar-fill" data-start="0" data-duration="4.0"
+         data-width="1920" data-height="1080">
+      <div class="od-bar-fill">
+        <div class="od-kicker">&bull; Where the hours went</div>
+        <div class="od-row"><div class="od-name">Reacting</div>
+          <div class="od-track"><div class="od-bar" data-frac="0.82"></div><div class="od-count">82%</div></div></div>
+        <div class="od-row"><div class="od-name">Creating</div>
+          <div class="od-track"><div class="od-bar teal" data-frac="0.46"></div><div class="od-count">46%</div></div></div>
+        <div class="od-row"><div class="od-name">Resting</div>
+          <div class="od-track"><div class="od-bar teal" data-frac="0.28"></div><div class="od-count">28%</div></div></div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.2; const S = '[data-composition-id="bar-fill"]';
+      const root = document.querySelector(S);
+      tl.set(`${S} .od-bar-fill`, { opacity: 1 });
+      root.querySelectorAll('.od-row').forEach((row, i) => {
+        const bar = row.querySelector('.od-bar'), count = row.querySelector('.od-count');
+        const frac = parseFloat(bar.dataset.frac), at = i * 0.12;
+        // Long bars: dark number rides INSIDE the fill, right edge at the tip.
+        // Short bars: number would strand off the fill -> sit just past the tip in WHITE ink.
+        const inside = frac >= 0.5;
+        count.style.color = inside ? '#0A0A0A' : '#FFFFFF';
+        gsap.set(count, inside ? { xPercent: -100, x: -14, yPercent: -50 }
+                               : { xPercent: 0,    x:  14, yPercent: -50 });
+        tl.to(bar, { scaleX: frac, duration: 0.45, ease: 'power3.out' }, at);
+        // label left travels with the fill tip, driven by the same progress (deterministic, seek-safe)
+        tl.fromTo(count, { left: '0%' },
+                         { left: (frac * 100) + '%', duration: 0.45, ease: 'power3.out' }, at);
+        tl.to(count, { opacity: 1, duration: 0.18, ease: 'back.out(1.6)' }, at + 0.28);
+      });
+      tl.to(`${S} .od-bar-fill`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-bar-fill`, { opacity: 0 }, HOLD + 0.4);   // hard-kill
+      window.__timelines["bar-fill"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

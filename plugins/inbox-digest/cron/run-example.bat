@@ -3,8 +3,9 @@ setlocal
 
 REM ============================================================
 REM Silent cron invocation of the inbox-digest Node CLI for the
-REM <example-client> client. Fires from Task Scheduler 3x
-REM daily (logon + 13:00 + 18:00 local).
+REM <example-client> client. Fires from Task Scheduler at
+REM logon + 08:00 + 12:00 + 18:00 ET. On a brief-writing run it
+REM also fires the time-of-day Compass via fire-compass.ps1.
 REM
 REM This replaces the deprecated `claude -p` path — claude's
 REM headless mode does not dispatch local plugin slash commands
@@ -45,11 +46,22 @@ if not defined NODE (
 )
 
 %NODE% "%SCRIPT%" --client <example-client> >> "%LOGFILE%" 2>&1
+set NODE_RC=%ERRORLEVEL%
 
-echo [%date% %time%] cron run complete (exit code %ERRORLEVEL%) >> "%LOGFILE%"
+echo [%date% %time%] cron run complete (exit code %NODE_RC%) >> "%LOGFILE%"
+
+REM ============================================================
+REM Event-driven Compass send. fire-compass.ps1 decides whether to
+REM fire (brief written this run? clock band? 20-min brake?) and
+REM triggers MorningCompass-Afternoon/-Evening. It never throws and
+REM never touches NODE_RC. Prefer pwsh 7; fall back to Windows PS 5.1.
+REM ============================================================
+set PWSH=C:\Program Files\PowerShell\7\pwsh.exe
+if not exist "%PWSH%" set PWSH=powershell.exe
+"%PWSH%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0fire-compass.ps1" -Slug <example-client> >> "%LOGFILE%" 2>&1
 
 REM Rotate logs: keep last 30 days
 forfiles /p "%LOGDIR%" /m <example-client>-*.log /d -30 /c "cmd /c del @path" 2>nul
 
-endlocal
-exit /b 0
+REM endlocal & exit on ONE line: endlocal discards NODE_RC, & expands it first.
+endlocal & exit /b %NODE_RC%

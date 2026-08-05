@@ -13,6 +13,7 @@
       .od-quote { position: absolute; inset: 0; display: grid; place-items: center; padding: 10%;
         background: rgba(20,14,9,0.5); color: #F7F0E4; text-align: center;
         font: 700 44px/1.3 'Inter', system-ui, sans-serif; opacity: 0; }
+      .od-inner { transform-origin: 50% 50%; }
       .od-quote .od-mark { color: #D9A05B; font-size: 1.4em; }
       .od-quote .od-attrib { font: 500 22px/1.2 'Inter', sans-serif; color: #D9A05B; margin-top: 18px; }
     </style>
@@ -21,7 +22,7 @@
     <div id="root" data-composition-id="full-frame-quote" data-start="0" data-duration="4.0"
          data-width="1920" data-height="1080">
       <div class="od-quote">
-        <div><span class="od-mark">&ldquo;</span>Life doesn't happen to you. It happens for you.<span class="od-mark">&rdquo;</span>
+        <div class="od-inner"><span class="od-mark">&ldquo;</span>Life doesn't happen to you. It happens for you.<span class="od-mark">&rdquo;</span>
         <div class="od-attrib">Your Name · Your Book</div></div>
       </div>
     </div>
@@ -29,8 +30,21 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       const HOLD = 3.2; const S = '[data-composition-id="full-frame-quote"]';
+      const STAGGER = 0.1;   // ENTRANCE_STAGGER_S (constants.js) — the scale-settle trails the plate fade (overlapping action)
+      // MOTION UPGRADE (Layer 1): SMOOTH / CLIP-REVEAL — the highest-gap move gets a signature
+      // entrance. The dark plate (.od-quote) keeps its seek-safe opacity arc (gate: opacityArc>=0.9),
+      // while the inner text is wiped in left-to-right via a per-frame clipPath string set through a
+      // proxy onUpdate (§0: clipPath set as a full string each frame, NEVER a filter tween), plus a
+      // gentle scale settle. power3.out house ease (was power2.out).
+      const inner = document.querySelector(`${S} .od-inner`);
+      const wipe = { p: 100 };
+      const setClip = () => { if (inner) inner.style.clipPath = `inset(0% ${wipe.p}% 0% 0%)`; };
+      setClip(); // seed frame 0 so a seek to t=0 lands the clipped (unrevealed) state
       tl.set(`${S} .od-quote`, { opacity: 0 });
-      tl.to(`${S} .od-quote`, { opacity: 1, duration: 0.5, ease: 'power2.out' }, 0);
+      tl.set(`${S} .od-inner`, { scale: 0.97, transformOrigin: '50% 50%' });
+      tl.to(`${S} .od-quote`, { opacity: 1, duration: 0.5, ease: 'power3.out' }, 0);               // plate fade leads at t
+      tl.to(wipe, { p: 0, duration: 1.0, ease: 'power3.out', onUpdate: setClip }, 0.05);           // left->right reveal wipe, dur = CLIP_REVEAL_DUR
+      tl.to(`${S} .od-inner`, { scale: 1, duration: 0.6, ease: 'power3.out' }, STAGGER);           // scale-settle trails the fade
       tl.to(`${S} .od-quote`, { opacity: 0, duration: 0.5, ease: 'power1.in' }, HOLD);
       tl.set(`${S} .od-quote`, { opacity: 0 }, HOLD + 0.5);
       window.__timelines["full-frame-quote"] = tl;

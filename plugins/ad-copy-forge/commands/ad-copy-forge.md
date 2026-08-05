@@ -320,7 +320,7 @@ AskUserQuestion:
 ### Step 1A: Client Selection
 
 AskUserQuestion:
-- "TBQ (The Breath Quotient)"
+- "EXAMPLE-BRAND (The Breath Quotient)"
 - "example-collective example-contact"
 - "Luna (Embodied Design)"
 - (Other — type client name)

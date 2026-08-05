@@ -48,8 +48,14 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `quicksave` | ROOT | Standalone |
 | `quickshare` | ROOT | Standalone |
 | `savepoint` | ROOT | Service-only |
+| `sixth-sense` | ROOT | Service-only |
+| `sixth-sense-sage` | ROOT | Service-only |
+| `sixth-sense-scissors` | ROOT | Service-only |
+| `sixth-sense-xray` | ROOT | Service-only |
 | `skill-to-site` | ROOT | Service-only |
+| `snapshot` | ROOT | Service-only |
 | `ss-ad-generator` | ROOT | Standalone |
+| `transcript-extractor-plus` | ROOT | Service-only |
 | `voice-dna-blueprint-builder` | MID | Standalone |
 | `voice-dna-extractor` | ROOT | Heavy-prereq |
 | `voice-profile-build` | ROOT | Vault-only |

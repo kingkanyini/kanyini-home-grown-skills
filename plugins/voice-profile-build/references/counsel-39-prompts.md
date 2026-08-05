@@ -5,7 +5,7 @@ Four prompt templates for parallel `Agent` dispatch. Each codifies one counsel m
 **Substitution placeholders:**
 - `{NAME}` — full name (e.g., "Exemplar Two")
 - `{SLUG}` — lowercase-hyphenated slug (e.g., `exemplar-two`)
-- `{DOMAIN}` — primary domain context (e.g., "psychedelic-assisted therapy / wellness-platform founder")
+- `{DOMAIN}` — primary domain context (e.g., "psychedelic-assisted therapy / Example Wellness Co founder")
 - `{CORPUS_PATHS}` — bullet list of every transcript / brand-copy / IG path (with file paths or persisted-output JSON paths)
 - `{INLINE_QUOTES}` — 5-15 most-load-bearing verbatim quotes from the corpus, used when an agent doesn't have file access to a particular source
 - `{REFERENCE_TARGET}` — the gold-standard reference profile path (default: `~/.claude/references/voice-profiles/exemplar-one-voice.md`)

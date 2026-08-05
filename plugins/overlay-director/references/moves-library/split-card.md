@@ -4,6 +4,9 @@ version: 1
 move_type: split
 affects: [placement.horizontal]
 hero_capable: false
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: SCALE-POP
 ---
 
 # Split Card
@@ -36,12 +39,15 @@ A two-up compare: this-vs-that, before/after, problem/solution — side by side.
 
 ## GSAP
 ```js
+/* SMOOTH / SCALE-POP (Layer 1 motion upgrade). Each side scale-pops (0.9->1) as it fades, on the
+   house power3.out (was power2.out). The staggered A-then-B reveal (0.25s lag) is preserved so the
+   compare still reads left-first (gate: crossoverLag). */
 function odSplitCard(el, t) {
-  const a = el.querySelector('.a'), b = el.querySelector('.b');
+  const a = el.querySelector('.od-a'), b = el.querySelector('.od-b');
   const tl = gsap.timeline();
-  tl.set(el, { opacity: 1 }).set([a, b], { opacity: 0 });
-  tl.to(a, { opacity: 1, duration: 0.35, ease: 'power2.out' }, t);
-  tl.to(b, { opacity: 1, duration: 0.35, ease: 'power2.out' }, t + 0.25);    // staggered reveal
+  tl.set(el, { opacity: 1 }).set([a, b], { opacity: 0, scale: 0.9, transformOrigin: '50% 50%' });
+  tl.to(a, { opacity: 1, scale: 1, duration: 0.4, ease: 'power3.out' }, t);
+  tl.to(b, { opacity: 1, scale: 1, duration: 0.4, ease: 'power3.out' }, t + 0.25);   // staggered reveal (lag)
   tl.to(el, { opacity: 0, duration: 0.4, ease: 'power1.in' }, t + HOLD);     // fade owns life (principle 3)
   return tl;
 }

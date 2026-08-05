@@ -1,4 +1,5 @@
 const C = require('./constants.js');
+const { distinctEaseFamilies } = require('./ease-extract.js'); // shared easing extractor (L0-6 / L1-1) — one source of truth
 
 function round2(x) { return Number(x.toFixed(2)); }
 
@@ -86,4 +87,63 @@ function maxConcurrentCards(moments) {
 // True when more than MAX_CONCURRENT_CARDS overlays are on screen at once (mobile illegibility).
 function concurrencyFlag(moments) { return maxConcurrentCards(moments) > C.MAX_CONCURRENT_CARDS; }
 
-module.exports = { varietyScore, top3MoveShare, top3TypeShare, isCalcified, maxConcurrentCards, concurrencyFlag };
+// ── MOTION VARIETY (Layer 1) ──────────────────────────────────────────────
+// The "generic" diagnosis (motion-grammar-spec Part 1) was: everything on power2.out,
+// one entrance flavor. HyperFrames' rule is ">=3 distinct easings/video or it reads
+// monotone." These pure helpers let Phase 3 / standards-check count easing + entrance-
+// mechanism variety across a plan and flag a monotone build BEFORE build cost.
+
+// Gather the raw ease STRINGS a plan's moments carry. A moment may carry easings explicitly
+// (m.easings[] — the builder's set), or per-axis (m.ease / m.entrance_ease / m.exit_ease), or
+// only an archetype, from which the house entrance ease is derived (POP vs SMOOTH). This is the
+// moment-DOMAIN collector (moments are plan objects, not impl HTML); family NORMALIZATION and
+// distinct-counting are delegated to the shared ease-extract util (L1-1 / L0-6) so this module and
+// standards-check.js can never drift on "how many distinct easings."
+function collectEaseStrings(moments) {
+  const out = [];
+  for (const m of moments) {
+    if (Array.isArray(m.easings)) for (const e of m.easings) { if (e) out.push(e); }
+    if (m.ease) out.push(m.ease);
+    if (m.entrance_ease) out.push(m.entrance_ease);
+    if (m.exit_ease) out.push(m.exit_ease);
+    // derive the entrance ease from the archetype only when no explicit entrance ease was given
+    if (!m.ease && !m.entrance_ease && m.entrance_archetype) {
+      out.push(m.entrance_archetype === 'POP' ? C.ENTRANCE_POP_EASE : C.ENTRANCE_SMOOTH_EASE);
+    }
+  }
+  return out;
+}
+// Distinct easing FAMILIES across the plan (back.out(1.4) / back.out(2.5) collapse to one 'back'
+// family) — families, not raw strings, are what MIN_DISTINCT_EASINGS gates on. Counting strings
+// would launder the exact monotony the floor exists to catch (PHANTOM#3). Delegated to ease-extract.
+function distinctEasings(moments) { return distinctEaseFamilies(collectEaseStrings(moments)).length; }
+
+// Distinct entrance MECHANISMS (the MOVE, not the feel): FADE|ZOOM-IN|SCALE-POP|RISE|
+// SLIDE|DRAW|BLUR-STREAK|CLIP-REVEAL. Half-identical opacity fades read the same even when
+// the move_type differs (Part 1), so mechanism diversity is a second, orthogonal lever.
+function distinctMechanisms(moments) {
+  const set = new Set();
+  for (const m of moments) { if (m.entrance_mechanism) set.add(m.entrance_mechanism); }
+  return set.size;
+}
+
+// The monotone flag: fewer than MIN_DISTINCT_EASINGS distinct eases across the plan.
+// Gated on N so a 1-2 card plan (which can't physically carry 3 eases) never false-flags.
+function belowMinEasings(moments) {
+  return moments.length >= C.MIN_DISTINCT_EASINGS && distinctEasings(moments) < C.MIN_DISTINCT_EASINGS;
+}
+
+// One call for Phase 3 / standards-check: the motion-variety facet of a plan.
+function motionVariety(moments) {
+  return {
+    distinct_easings: distinctEasings(moments),
+    distinct_mechanisms: distinctMechanisms(moments),
+    below_min_easings: belowMinEasings(moments),
+    min_distinct_easings: C.MIN_DISTINCT_EASINGS,
+  };
+}
+
+module.exports = {
+  varietyScore, top3MoveShare, top3TypeShare, isCalcified, maxConcurrentCards, concurrencyFlag,
+  collectEaseStrings, distinctEasings, distinctMechanisms, belowMinEasings, motionVariety,
+};

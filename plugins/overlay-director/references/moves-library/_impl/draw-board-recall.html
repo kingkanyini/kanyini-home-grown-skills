@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+
+      /* Standalone-gate footage sim ONLY — delete when compositing over real footage. */
+      .od-footage-sim {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(120% 90% at 18% 46%, #6c7a86 0%, #3f4a54 45%, #232a31 100%),
+          linear-gradient(180deg, #4a5560, #20262c);
+      }
+      .od-dim { position: absolute; inset: 0; z-index: 1; background: rgba(0, 0, 0, 0.8); opacity: 0; }
+      .od-board { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
+      /* One .od-ink layer holds every color layer — the exit (if any) fades this, never un-draws. */
+      .od-ink { position: absolute; inset: 0; }
+      .od-ink svg { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: visible; }
+
+      .od-stroke { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .ink-blue { stroke: #3b9be8; }   /* DRAWBOARD_INK — base diagram */
+      .ink-yellow { stroke: #f2d021; } /* DRAWBOARD_HL_YELLOW — emphasis pass 1 */
+      .ink-green { stroke: #3fbf52; }  /* DRAWBOARD_GREEN — emphasis pass 2 */
+      .ink-red { stroke: #e24b3a; }    /* DRAWBOARD_RED — emphasis pass 3 */
+      .thick { stroke-width: 11; }
+      .thin { stroke-width: 5.5; opacity: 0.9; }
+      .lasso-thick { stroke-width: 30; opacity: 0.5; }
+      .lasso-thin { stroke-width: 30; opacity: 0.28; }
+
+      .od-lbl {
+        position: absolute; z-index: 2; text-align: center;
+        font-family: "Permanent Marker", "Bradley Hand", "Segoe Print", cursive;
+        color: #3b9be8; text-transform: uppercase; font-size: 46px; line-height: 1.18;
+      }
+      .od-word {
+        display: inline-block; margin-right: 0.22em; transform-origin: left center;
+        clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0);
+      }
+      .od-num {
+        position: absolute; z-index: 3; transform-origin: center center; opacity: 0;
+        font-family: "Permanent Marker", "Bradley Hand", "Segoe Print", cursive;
+        color: #3b9be8; font-size: 52px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="draw-board-recall"
+      data-root="true"
+      data-start="0"
+      data-duration="9"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div class="od-footage-sim" data-preview-only="true"></div>
+      <div class="od-dim"></div>
+      <div class="od-board">
+        <div class="od-ink">
+          <svg viewBox="0 0 1920 1080" aria-hidden="true" data-layout-ignore>
+            <defs>
+              <filter id="od-wobble" x="-15%" y="-15%" width="130%" height="130%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.016 0.024" numOctaves="2" seed="4" result="n" />
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </defs>
+
+            <!-- ============ BLUE BASE LAYER (drawn first, 0.5–3.9s) ============ -->
+            <g filter="url(#od-wobble)">
+              <!-- SKILLS underline -->
+              <path class="od-stroke ink-blue thick" data-cue="0.55" data-dur="0.30" data-ease="power2.out"
+                d="M 700 268 C 760 262 812 272 872 264" />
+              <!-- stem down to the connector -->
+              <path class="od-stroke ink-blue thick" data-cue="0.75" data-dur="0.22" data-ease="power2.out"
+                d="M 806 288 C 804 300 806 312 805 326" />
+              <!-- horizontal connector across all three columns -->
+              <path class="od-stroke ink-blue thick" data-cue="0.95" data-dur="0.55" data-ease="power2.out"
+                d="M 806 330 C 1060 322 1340 336 1590 328" />
+              <!-- three drop-arrows into the circled numbers (shaft + head each, head LAST) -->
+              <path class="od-stroke ink-blue thick" data-cue="1.40" data-dur="0.22" data-ease="power2.out" d="M 806 332 C 804 348 806 360 805 376" />
+              <path class="od-stroke ink-blue thick" data-cue="1.58" data-dur="0.12" data-ease="none" d="M 790 360 L 805 380 L 820 358" />
+              <path class="od-stroke ink-blue thick" data-cue="1.48" data-dur="0.22" data-ease="power2.out" d="M 1190 334 C 1188 350 1190 362 1189 378" />
+              <path class="od-stroke ink-blue thick" data-cue="1.66" data-dur="0.12" data-ease="none" d="M 1174 362 L 1189 382 L 1204 360" />
+              <path class="od-stroke ink-blue thick" data-cue="1.56" data-dur="0.22" data-ease="power2.out" d="M 1590 330 C 1588 346 1590 358 1589 374" />
+              <path class="od-stroke ink-blue thick" data-cue="1.74" data-dur="0.12" data-ease="none" d="M 1574 358 L 1589 378 L 1604 356" />
+
+              <!-- three circled numbers (double-stroke, lumpy, start≠end) -->
+              <path class="od-stroke ink-blue thick" data-cue="1.85" data-dur="0.42" data-ease="power2.out"
+                d="M 762 408 C 758 384 792 374 818 382 C 840 389 828 380 827 408 C 826 434 792 442 766 434 C 750 428 774 422 782 414" />
+              <path class="od-stroke ink-blue thin" transform="translate(2 2)" data-cue="2.07" data-dur="0.34" data-ease="power2.out"
+                d="M 762 408 C 758 384 792 374 818 382 C 840 389 828 380 827 408 C 826 434 792 442 766 434 C 750 428 774 422 782 414" />
+              <path class="od-stroke ink-blue thick" data-cue="2.00" data-dur="0.42" data-ease="power2.out"
+                d="M 1162 408 C 1158 384 1192 374 1218 382 C 1240 389 1228 380 1227 408 C 1226 434 1192 442 1166 434 C 1150 428 1174 422 1182 414" />
+              <path class="od-stroke ink-blue thin" transform="translate(2 2)" data-cue="2.22" data-dur="0.34" data-ease="power2.out"
+                d="M 1162 408 C 1158 384 1192 374 1218 382 C 1240 389 1228 380 1227 408 C 1226 434 1192 442 1166 434 C 1150 428 1174 422 1182 414" />
+              <path class="od-stroke ink-blue thick" data-cue="2.15" data-dur="0.42" data-ease="power2.out"
+                d="M 1562 408 C 1558 384 1592 374 1618 382 C 1640 389 1628 380 1627 408 C 1626 434 1592 442 1566 434 C 1550 428 1574 422 1582 414" />
+              <path class="od-stroke ink-blue thin" transform="translate(2 2)" data-cue="2.37" data-dur="0.34" data-ease="power2.out"
+                d="M 1562 408 C 1558 384 1592 374 1618 382 C 1640 389 1628 380 1627 408 C 1626 434 1592 442 1566 434 C 1550 428 1574 422 1582 414" />
+
+              <!-- three boxes (double-stroke, corners overshoot) -->
+              <path class="od-stroke ink-blue thick" data-cue="2.35" data-dur="0.48" data-ease="power2.out"
+                d="M 686 470 L 892 462 L 898 470 L 892 632 L 690 640 L 682 630 L 688 478" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="2.57" data-dur="0.38" data-ease="power2.out"
+                d="M 686 470 L 892 462 L 898 470 L 892 632 L 690 640 L 682 630 L 688 478" />
+              <path class="od-stroke ink-blue thick" data-cue="2.55" data-dur="0.48" data-ease="power2.out"
+                d="M 1086 470 L 1292 462 L 1298 470 L 1292 632 L 1090 640 L 1082 630 L 1088 478" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="2.77" data-dur="0.38" data-ease="power2.out"
+                d="M 1086 470 L 1292 462 L 1298 470 L 1292 632 L 1090 640 L 1082 630 L 1088 478" />
+              <path class="od-stroke ink-blue thick" data-cue="2.75" data-dur="0.48" data-ease="power2.out"
+                d="M 1486 470 L 1692 462 L 1698 470 L 1692 632 L 1490 640 L 1482 630 L 1488 478" />
+              <path class="od-stroke ink-blue thin" transform="translate(3 2)" data-cue="2.97" data-dur="0.38" data-ease="power2.out"
+                d="M 1486 470 L 1692 462 L 1698 470 L 1692 632 L 1490 640 L 1482 630 L 1488 478" />
+            </g>
+
+            <!-- ============ YELLOW EMPHASIS (lasso around column 2, drawn LATER ~4.0s) ============ -->
+            <g filter="url(#od-wobble)">
+              <path class="od-stroke ink-yellow lasso-thick" data-cue="4.05" data-dur="0.55" data-ease="power2.out"
+                d="M 1064 552 C 1050 470 1190 446 1300 470 C 1330 476 1322 452 1320 548 C 1318 636 1196 664 1082 640 C 1044 632 1052 604 1100 588" />
+              <path class="od-stroke ink-yellow lasso-thin" transform="translate(4 3)" data-cue="4.27" data-dur="0.44" data-ease="power2.out"
+                d="M 1064 552 C 1050 470 1190 446 1300 470 C 1330 476 1322 452 1320 548 C 1318 636 1196 664 1082 640 C 1044 632 1052 604 1100 588" />
+            </g>
+
+            <!-- ============ GREEN EMPHASIS (top-left tick-box + checks, drawn LATER ~4.8s) ============ -->
+            <g filter="url(#od-wobble)">
+              <path class="od-stroke ink-green thick" data-cue="4.80" data-dur="0.42" data-ease="power2.out"
+                d="M 660 300 L 806 294 L 812 302 L 806 350 L 664 356 L 656 348 L 662 308" />
+              <path class="od-stroke ink-green thick" data-cue="5.10" data-dur="0.18" data-ease="power2.out" d="M 690 328 L 702 344 L 726 314" />
+              <path class="od-stroke ink-green thick" data-cue="5.26" data-dur="0.18" data-ease="power2.out" d="M 742 328 L 754 344 L 778 314" />
+              <!-- green check under box 1 -->
+              <path class="od-stroke ink-green thick" data-cue="5.42" data-dur="0.20" data-ease="power2.out" d="M 766 676 L 782 700 L 818 654" />
+            </g>
+
+            <!-- ============ RED EMPHASIS (strike over column 3, drawn LAST ~5.8s) ============ -->
+            <g filter="url(#od-wobble)">
+              <path class="od-stroke ink-red thick" data-cue="5.85" data-dur="0.30" data-ease="power2.out"
+                d="M 1502 512 C 1560 502 1636 540 1682 520" />
+              <path class="od-stroke ink-red thick" data-cue="6.05" data-dur="0.26" data-ease="power2.out"
+                d="M 1508 560 C 1566 550 1640 588 1686 566" />
+            </g>
+          </svg>
+
+          <!-- write-on labels (blue) — reveal word-by-word; circled-number glyphs pop after their circles -->
+          <div class="od-lbl" style="left: 686px; top: 486px; width: 212px;">
+            <span class="od-line"><span class="od-word">Making</span></span>
+            <span class="od-line"><span class="od-word">the</span></span>
+            <span class="od-line"><span class="od-word">Money</span></span>
+          </div>
+          <div class="od-lbl" style="left: 1086px; top: 486px; width: 212px;">
+            <span class="od-line"><span class="od-word">Doing</span></span>
+            <span class="od-line"><span class="od-word">the</span></span>
+            <span class="od-line"><span class="od-word">Work</span></span>
+          </div>
+          <div class="od-lbl" style="left: 1486px; top: 500px; width: 212px; font-size: 40px;">
+            <span class="od-line"><span class="od-word">Operating</span></span>
+            <span class="od-line"><span class="od-word">Admin</span></span>
+          </div>
+
+          <div class="od-num" style="left: 776px; top: 380px;">1</div>
+          <div class="od-num" style="left: 1176px; top: 380px;">2</div>
+          <div class="od-num" style="left: 1576px; top: 380px;">1</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      // Mirrors reference/scripts/constants.js.
+      const DRAWBOARD_WRITE_ON_WPS = 2.2;
+      const S = '[data-composition-id="draw-board-recall"]';
+      const tl = gsap.timeline({ paused: true, defaults: { overwrite: "auto" } });
+
+      // Deterministic per-word jitter (Math.sin hash of index — NO Math.random). Static via gsap.set.
+      const jitter = (i, n) => {
+        const x = Math.sin(i * 12.9898 + n * 78.233) * 43758.5453;
+        return x - Math.floor(x);
+      };
+
+      // Data-driven draw across ALL FOUR color layers — each stroke draws on its own cue; nothing fades.
+      document.querySelectorAll(`${S} .od-stroke`).forEach((p) => {
+        const len = p.getTotalLength() * 1.02;
+        gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+        tl.to(
+          p,
+          { strokeDashoffset: 0, duration: parseFloat(p.dataset.dur), ease: p.dataset.ease },
+          parseFloat(p.dataset.cue),
+        );
+      });
+
+      // Write-on labels, per column, cue-offset so each fills as its box finishes.
+      const columnStart = [2.9, 3.5, 4.1];
+      document.querySelectorAll(`${S} .od-lbl`).forEach((lbl, ci) => {
+        lbl.querySelectorAll(".od-word").forEach((w, i) => {
+          gsap.set(w, {
+            y: (jitter(i, 1) - 0.5) * 8,
+            rotation: (jitter(i, 2) - 0.5) * 4,
+            scale: 0.94 + jitter(i, 3) * 0.12,
+            clipPath: "inset(0 100% 0 0)", // explicit start (no lazy-capture on backward seek)
+          });
+          tl.to(
+            w,
+            { clipPath: "inset(0 0% 0 0)", duration: 0.34, ease: "none" },
+            columnStart[ci] + i / DRAWBOARD_WRITE_ON_WPS,
+          );
+        });
+      });
+
+      // Circled-number glyphs pop after their circles settle.
+      gsap.set(`${S} .od-num`, { scale: 0, opacity: 0 });
+      const numCue = [2.35, 2.5, 2.65];
+      document.querySelectorAll(`${S} .od-num`).forEach((n, i) => {
+        tl.to(n, { scale: 1, opacity: 1, duration: 0.32, ease: "back.out(1.6)" }, numCue[i]);
+      });
+
+      // DIAGRAM-RECALL holds to the cut — resting seek state = the complete accumulated diagram.
+      // Nothing ever fades (additive grammar). Optional whole-ink exit if the segment ends:
+      //   tl.to(`${S} .od-ink`, { opacity: 0, duration: 0.5, ease: "power1.in" }, 8.3);
+      //   tl.set(`${S} .od-ink`, { opacity: 0 }, 8.8);
+
+      window.__timelines["draw-board-recall"] = tl;
+    </script>
+  </body>
+</html>

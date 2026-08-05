@@ -4,6 +4,9 @@ version: 1
 move_type: hero
 affects: [placement.horizontal, density.hero]
 hero_capable: true
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: ZOOM-IN
 ---
 
 # Center Hero
@@ -38,12 +41,18 @@ A promoted signature beat that owns the frame for a moment — the visual exclam
 
 ## GSAP
 ```js
+/* SMOOTH / ZOOM-IN (Layer 1 motion upgrade). Deeper scale-pop (0.9->1, was 0.94) on power3.out,
+   plus an ambient glow-bloom "power-on": the .od-bloom halo fades in on the settle (peak <= 0.45)
+   then a bounded sine breathe (finite yoyo, opacity only = seek-safe). Scale the inner line, never
+   the full-frame container (§0). */
 function odCenterHero(el, t) {
-  const line = el.querySelector('.od-line');
+  const line = el.querySelector('.od-line'), bloom = el.querySelector('.od-bloom');
   const tl = gsap.timeline();
-  tl.set(el, { opacity: 0 }).set(line, { scale: 0.94 });                    // scale the inner line, not the full-frame container
+  tl.set(el, { opacity: 0 }).set(line, { scale: 0.9 }).set(bloom, { opacity: 0 });
   tl.to(el, { opacity: 1, duration: 0.5, ease: 'power3.out' }, t)
     .to(line, { scale: 1, duration: 0.5, ease: 'power3.out' }, t);
+  tl.to(bloom, { opacity: 0.45, duration: 0.5, ease: 'power3.out' }, t)                   // power-on peak = GLOW_BLOOM_PEAK
+    .to(bloom, { opacity: 0.30, duration: 1.0, ease: 'sine.inOut', yoyo: true, repeat: 1 }, t + 0.6); // breathe
   tl.to(el, { opacity: 0, duration: 0.5, ease: 'power1.in' }, t + HOLD);    // fade owns visible life (principle 3)
   return tl;
 }

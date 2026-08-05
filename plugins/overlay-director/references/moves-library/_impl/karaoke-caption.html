@@ -27,9 +27,12 @@
       const tl = gsap.timeline({ paused: true });
       const HOLD = 2.6; const S = '[data-composition-id="karaoke-caption"]';
       const words = ['Your','imagination','is','the','console.']; const per = 0.32;  // baked fixture word timings
+      // MOTION UPGRADE (Layer 1): SMOOTH / FADE. Calm by design (VV#26): NO per-word scale-punch.
+      // Only the track plate adopts the house power3.out fade-in; the word state changes stay a
+      // gentle color-only dissolve (ease 'none') so it carries the dictation mechanic, not hype.
       tl.set(`${S} .od-track`, { opacity: 0 });
       tl.set(`${S} .od-word`, { color: '#A59A86' });
-      tl.to(`${S} .od-track`, { opacity: 1, duration: 0.3, ease: 'power1.out' }, 0);
+      tl.to(`${S} .od-track`, { opacity: 1, duration: 0.3, ease: 'power3.out' }, 0);
       words.forEach((_, i) => { const t = 0.3 + i * per;
         tl.to(`${S} .od-word-${i}`, { color: '#8FA876', duration: 0.12, ease: 'none' }, t)          // active = sage
           .to(`${S} .od-word-${i}`, { color: '#FFFFFF', duration: 0.12, ease: 'none' }, t + per * 0.6); // spoken = bright white

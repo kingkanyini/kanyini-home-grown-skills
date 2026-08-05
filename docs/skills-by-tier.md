@@ -1,6 +1,6 @@
 # Skills by Tier
 
-The marketplace ships 33 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
+The marketplace ships 39 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
 
 ## T1 — Foundation / Memory
 
@@ -244,9 +244,51 @@ Craft 3-5 minute value-first video scripts (Power Clips) with a 3-advisor counse
 - **Requires:** _none_
 - **Recommends:** `voice-dna-blueprint-builder`
 
+### `sixth-sense`
+
+6-agent video intelligence scanner — identifies clip-worthy segments across Content, Emotion, and Structure
+
+- **Requires:** _none_
+- **Recommends:** `sixth-sense-scissors`, `transcript-extractor-plus`
+
+### `sixth-sense-sage`
+
+B-roll placement intelligence — identifies moments, builds production briefs with bilingual mapping, Artgrid sourcing, and interactive HTML playbooks
+
+- **Requires:** _none_
+- **Recommends:** `sixth-sense`, `transcript-extractor-plus`
+
+### `sixth-sense-scissors`
+
+Auto-cut video recordings — silence detection, A/V-synced cuts, dual-language edit maps, and iterative creative cut consultation
+
+- **Requires:** _none_
+- **Recommends:** `sixth-sense`, `transcript-extractor-plus`
+
+### `sixth-sense-xray`
+
+Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links
+
+- **Requires:** _none_
+- **Recommends:** `sixth-sense`
+
+### `snapshot`
+
+Take high-def screenshots from videos, websites, or extract photos from PDFs
+
+- **Requires:** _none_
+- **Recommends:** _none_
+
 ### `ss-ad-generator`
 
 Subconscious Seduction Ad Generator — generate 14 psychology-driven video ads using psychological triggers + framework with 3-hat counsel
 
 - **Requires:** _none_
 - **Recommends:** `counsel-dispatch`, `voice-dna-blueprint-builder`
+
+### `transcript-extractor-plus`
+
+Transcribe videos in any language and translate to any target language using Whisper + AI translation
+
+- **Requires:** _none_
+- **Recommends:** `sixth-sense-scissors`

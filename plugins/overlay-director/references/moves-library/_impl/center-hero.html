@@ -13,23 +13,37 @@
       .od-hero { position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
         color: #F7F0E4; opacity: 0; }
       .od-hero .od-line { width: 64%; font: 800 56px/1.1 'Inter', system-ui, sans-serif;
-        text-shadow: 0 2px 18px rgba(20,14,9,0.6); }
+        text-shadow: 0 2px 18px rgba(20,14,9,0.6); position: relative; z-index: 1; }
       .od-hero::before { content: ''; position: absolute; inset: -40% -20%; z-index: -1;
         background: radial-gradient(ellipse at center, rgba(20,14,9,0.45), transparent 70%); }
+      /* ambient glow-bloom "power-on" behind the line — opacity-only (seek-safe, no filter tween) */
+      .od-bloom { position: absolute; left: 50%; top: 50%; width: 56%; height: 46%;
+        transform: translate(-50%, -50%); border-radius: 50%; z-index: 0; opacity: 0;
+        background: radial-gradient(ellipse at center, rgba(217,160,91,0.55), rgba(176,106,59,0.18) 45%, transparent 72%); }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="center-hero" data-start="0" data-duration="3.8"
          data-width="1920" data-height="1080">
-      <div class="od-hero"><div class="od-line">Your imagination is the controller.</div></div>
+      <div class="od-hero">
+        <div class="od-bloom"></div>
+        <div class="od-line">Your imagination is the controller.</div>
+      </div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       const HOLD = 3.0; const S = '[data-composition-id="center-hero"]';
-      tl.set(`${S} .od-hero`, { opacity: 0 }).set(`${S} .od-line`, { scale: 0.94, transformOrigin: '50% 50%' });
+      // MOTION UPGRADE (Layer 1): SMOOTH / ZOOM-IN. Deeper scale-pop (0.9->1, was 0.94) on power3.out,
+      // + an ambient glow-bloom power-on: fades in on the settle then a bounded sine breathe (finite
+      // repeat, opacity only = seek-safe). The container stays full-frame/centered (§0).
+      tl.set(`${S} .od-hero`, { opacity: 0 })
+        .set(`${S} .od-line`, { scale: 0.9, transformOrigin: '50% 50%' })
+        .set(`${S} .od-bloom`, { opacity: 0 });
       tl.to(`${S} .od-hero`, { opacity: 1, duration: 0.5, ease: 'power3.out' }, 0)
         .to(`${S} .od-line`, { scale: 1, duration: 0.5, ease: 'power3.out' }, 0);
+      tl.to(`${S} .od-bloom`, { opacity: 0.45, duration: 0.5, ease: 'power3.out' }, 0);  // power-on peak = GLOW_BLOOM_PEAK (constants.js)
+      tl.to(`${S} .od-bloom`, { opacity: 0.30, duration: 1.0, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 0.6); // bounded breathe
       tl.to(`${S} .od-hero`, { opacity: 0, duration: 0.5, ease: 'power1.in' }, HOLD);
       tl.set(`${S} .od-hero`, { opacity: 0 }, HOLD + 0.5);
       window.__timelines["center-hero"] = tl;

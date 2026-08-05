@@ -13,13 +13,15 @@
         font-family: 'Inter'; font-style: normal; font-weight: 100 900;
         font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2');
       }
-      /* card container owns the glass shell + the overall fade */
+      /* card container owns the baked position + the overall fade (principle 2/3) */
       .od-card {
         position: absolute; left: 34%; top: 30%; width: 34%; min-height: 150px;
         border-radius: 24px; background: rgba(247,240,228,0.16);
         border: 1px solid rgba(255,255,255,0.35); box-shadow: 6px 8px 28px rgba(20,14,9,0.28);
         opacity: 0;
       }
+      /* inner wrapper rides the scale-pop settle so the CONTAINER position stays baked (§0) */
+      .od-inner { position: absolute; inset: 0; transform-origin: 50% 50%; }
       /* two stacked text layers, constant filters, cross-faded (seek-safe blur-in) */
       .od-layer {
         position: absolute; inset: 0; padding: 22px 26px; border-radius: 24px;
@@ -38,13 +40,15 @@
     <div id="root" data-composition-id="liquid-glass-card" data-start="0" data-duration="3.8"
          data-width="1920" data-height="1080">
       <div class="od-card">
-        <div class="od-layer od-blur">
-          <div class="od-eyebrow">Level Up</div>
-          <div class="od-body">Life doesn't happen to you. It happens for you, to learn from, and level up.</div>
-        </div>
-        <div class="od-layer od-sharp">
-          <div class="od-eyebrow">Level Up</div>
-          <div class="od-body">Life doesn't happen to you. It happens for you, to learn from, and level up.</div>
+        <div class="od-inner">
+          <div class="od-layer od-blur">
+            <div class="od-eyebrow">Level Up</div>
+            <div class="od-body">Life doesn't happen to you. It happens for you, to learn from, and level up.</div>
+          </div>
+          <div class="od-layer od-sharp">
+            <div class="od-eyebrow">Level Up</div>
+            <div class="od-body">Life doesn't happen to you. It happens for you, to learn from, and level up.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -52,15 +56,22 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });   // synchronous registration
       const HOLD = 3.0;
+      const STAGGER = 0.1;   // ENTRANCE_STAGGER_S (constants.js) — scale + focus trail the fade (overlapping action)
       const S = '[data-composition-id="liquid-glass-card"]';
+      // MOTION UPGRADE (Layer 1): SMOOTH / SCALE-POP. House ease power3.out (was power2.out).
+      // Overlapping action (Disney): the card FADE leads at t; the scale-pop settle and the
+      // blur->sharp "comes into focus" cross-fade start ENTRANCE_STAGGER_S later and finish slightly
+      // later — so the beats don't all start+stop on one synchronized window. Still §0 seek-safe:
+      // opacity + inner transform + the 2-layer opacity cross-fade, never a filter tween.
       tl.set(`${S} .od-blur`,  { opacity: 1 }).set(`${S} .od-sharp`, { opacity: 0 });
-      tl.to(`${S} .od-card`,  { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0);   // card fades in
-      tl.to(`${S} .od-sharp`, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0)     // sharp rises…
-        .to(`${S} .od-blur`,  { opacity: 0, duration: 0.4, ease: 'power2.out' }, 0);    // …blur falls = comes into focus
-      tl.to(`${S} .od-card`,  { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);  // exit owns end of life
-      tl.set(`${S} .od-card`, { opacity: 0 }, HOLD + 0.4);                              // hard-kill
+      tl.set(`${S} .od-inner`, { scale: 0.9, transformOrigin: '50% 50%' });
+      tl.to(`${S} .od-card`,   { opacity: 1, duration: 0.5, ease: 'power3.out' }, 0);            // fade leads at t
+      tl.to(`${S} .od-inner`,  { scale: 1, duration: 0.5, ease: 'power3.out' }, STAGGER);        // scale-pop settle trails
+      tl.to(`${S} .od-sharp`,  { opacity: 1, duration: 0.5, ease: 'power3.out' }, STAGGER)       // sharp rises…
+        .to(`${S} .od-blur`,   { opacity: 0, duration: 0.5, ease: 'power3.out' }, STAGGER);      // …blur falls = comes into focus
+      tl.to(`${S} .od-card`,   { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);  // exit owns end of life
+      tl.set(`${S} .od-card`,  { opacity: 0 }, HOLD + 0.4);                              // hard-kill
       window.__timelines["liquid-glass-card"] = tl;   // key === root data-composition-id (NOT 'root')
-      // registration above is synchronous; only first visual apply waits on fonts
       document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
     </script>
   </body>

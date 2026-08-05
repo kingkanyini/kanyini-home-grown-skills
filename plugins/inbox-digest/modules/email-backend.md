@@ -1,5 +1,13 @@
 # Email Backend Adapter (v1.5: gongrzhe Gmail MCP)
 
+> ⚠️ **LEGACY DOCUMENTATION — not the live code path.** The cron/CLI runtime executes
+> `scripts/*.js`, which talks to Gmail directly via `googleapis` in `scripts/gmail.js`
+> (real pagination; exposes server-authoritative `internalDate`). It does NOT route through
+> the gongrzhe MCP described below. When changing fetch/normalize behavior, edit
+> `scripts/gmail.js` — this doc describes the original MCP-based design and is kept for
+> reference only. The reply-status feature (outbox tracking, `last_from`, aging) lives
+> entirely in the JS layer (`scripts/{phase1,phase2,aging,phase3,digest}.js`).
+
 This module is the ONLY interface that Phases 1–3 use to talk to email.
 Phases never name MCP tools directly — they call this adapter's stable operations.
 

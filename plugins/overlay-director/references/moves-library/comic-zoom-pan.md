@@ -4,6 +4,9 @@ version: 1
 move_type: hero
 affects: [placement.horizontal, sequence.layering]
 hero_capable: true
+standards: auto
+entrance_archetype: SMOOTH
+entrance_mechanism: ZOOM-IN
 ---
 
 # Comic Zoom-Pan (signature "wow" move)
@@ -42,7 +45,7 @@ function odComicZoomPan(elSel, t, HOLD, W, H) {
   const SC = 1.9, seg = (HOLD - 1.2) / 4;
   const q = [[0,0],[-(W*SC-W),0],[0,-(H*SC-H)],[-(W*SC-W),-(H*SC-H)]]; // 4 quadrant offsets
   tl.set(elSel,{opacity:0}); tl.set(elSel+' .img',{scale:1,x:0,y:0});
-  tl.to(elSel,{opacity:1,duration:0.6,ease:'power2.out'},t);
+  tl.to(elSel,{opacity:1,duration:0.6,ease:'power3.out'},t);   // house entrance ease (Layer 1 motion upgrade)
   let k = t + 0.6;
   q.forEach((p,i)=>{ tl.to(elSel+' .img',{scale:SC,x:p[0],y:p[1],duration:i?0.7:0.8,ease:'power1.inOut'},k); k += seg; });
   tl.to(elSel,{opacity:0,duration:0.5,ease:'power1.in'},t+HOLD);

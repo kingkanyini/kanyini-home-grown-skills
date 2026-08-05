@@ -633,8 +633,8 @@
           - heading "That literally changes the chemistry of your brain and body." [level=1] [ref=e850]:
             - generic [ref=e852]: That literally changes the chemistry of your brain and body.
         - generic [ref=e855]:
-          - heading "After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, example-contact Hilz built the example-collective Immersion because he watched brilliant, successful people hit the same invisible ceiling." [level=1] [ref=e857]:
-            - generic [ref=e859]: After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, example-contact Hilz built the example-collective Immersion because he watched brilliant, successful people hit the same invisible ceiling.
+          - heading "After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, example-contact example-surname built the example-collective Immersion because he watched brilliant, successful people hit the same invisible ceiling." [level=1] [ref=e857]:
+            - generic [ref=e859]: After 18 years in fitness and performance, 12 years building businesses, and 300+ clients worked with 1:1, example-contact example-surname built the example-collective Immersion because he watched brilliant, successful people hit the same invisible ceiling.
           - heading [level=1] [ref=e861]:
             - generic [ref=e863]:
               - text: Not a capability ceiling. A regulation ceiling.
@@ -897,8 +897,8 @@
       - generic [ref=e1173]:
         - generic [ref=e1174]:
           - generic [ref=e1176]:
-            - 'heading "Meet Your Guide: example-contact Hilz" [level=1] [ref=e1178]':
-              - generic [ref=e1179]: "Meet Your Guide: example-contact Hilz"
+            - 'heading "Meet Your Guide: example-contact example-surname" [level=1] [ref=e1178]':
+              - generic [ref=e1179]: "Meet Your Guide: example-contact example-surname"
             - heading "Here is My Story." [level=1] [ref=e1181]:
               - generic [ref=e1182]: Here is My Story.
             - heading "I spent 18 years working with the body, training clients, building a studio, publishing a book, running businesses. Over 300 people trusted me to help them change. And for most of that time, I had no idea how much my own definition of success was about to unravel. I could see the patterns in my clients because I knew them from the inside. The grinding. The performing. The nervous system running a program I never chose. I just hadn't finished the work myself. The turning point didn't come from a new book or a better framework. It came when I stopped asking \"What else do I need to know?\" and started asking \"What am I avoiding feeling?\" That question shifted everything." [level=1] [ref=e1184]:
@@ -935,10 +935,10 @@
                 - text: “The biggest shift was realizing my personal life and my business aren't separate things. it's all just my path. my whole life. I kept putting the real stuff on hold thinking 'after the next launch' and the launch was never the thing”
                 - text: "- Catalina"
           - generic [ref=e1223]:
-            - heading "“I don't even know how to explain it. I walked in totally drained and confused and 2 hours later I'm glowing. like actually glowing. it wasn't strategy. it was his energy. something shifted in my body and everything looks different now” - Dilek" [level=1] [ref=e1225]:
+            - heading "“I don't even know how to explain it. I walked in totally drained and confused and 2 hours later I'm glowing. like actually glowing. it wasn't strategy. it was his energy. something shifted in my body and everything looks different now” - example-contact-two" [level=1] [ref=e1225]:
               - generic [ref=e1227]:
                 - text: “I don't even know how to explain it. I walked in totally drained and confused and 2 hours later I'm glowing. like actually glowing. it wasn't strategy. it was his energy. something shifted in my body and everything looks different now”
-                - text: "- Dilek"
+                - text: "- example-contact-two"
             - heading "“example-contact didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came” - Matias" [level=1] [ref=e1229]:
               - generic [ref=e1231]:
                 - text: “example-contact didn't teach me a funnel. he didn't give me a sales script. he helped me focus and get aligned and the money just came”

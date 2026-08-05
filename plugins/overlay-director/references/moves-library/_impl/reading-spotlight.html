@@ -17,7 +17,8 @@
       /* the lit box: transparent interior (shows doc), STATIC 9999px dim-surround shadow + gold edge.
          the "walk" moves its baked `top` between two regions (gate: distinctStates >=2). */
       .od-lit { position: absolute; left: 26%; width: 48%; height: 80px; border-radius: 14px;
-        box-shadow: 0 0 0 9999px rgba(38,27,20,0.52); outline: 2px solid rgba(217,160,91,0.55); }
+        box-shadow: 0 0 0 9999px rgba(38,27,20,0.52); outline: 2px solid rgba(217,160,91,0.55);
+        transform-origin: 50% 50%; }
     </style>
   </head>
   <body>
@@ -37,10 +38,15 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       const HOLD = 3.6; const S = '[data-composition-id="reading-spotlight"]';
+      // MOTION UPGRADE (Layer 1): SMOOTH / FADE — light touch on the crown-jewel move. House ease
+      // power3.out on the illumination (was power2.out) + a gentle scale-in on the lit box so it
+      // reads as "landing" on the passage. The block-to-block WALK stays a baked `top` change
+      // (seek-safe, NOT a shadow-spread tween) so each block holds independently (gate: distinctStates).
       tl.set(`${S} .od-spot`, { opacity: 0 });
-      tl.set(`${S} .od-lit`, { top: '30%' });
-      tl.to(`${S} .od-spot`, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0);   // surround dims, region 1 lit
-      tl.to(`${S} .od-lit`, { top: '55%', duration: 0.4, ease: 'power1.inOut' }, 1.8); // walk to region 2 (baked top, not shadow)
+      tl.set(`${S} .od-lit`, { top: '30%', scale: 0.96, transformOrigin: '50% 50%' });
+      tl.to(`${S} .od-spot`, { opacity: 1, duration: 0.4, ease: 'power3.out' }, 0);   // surround dims, region 1 lit
+      tl.to(`${S} .od-lit`, { scale: 1, duration: 0.4, ease: 'power3.out' }, 0);       // lit box settles onto the block
+      tl.to(`${S} .od-lit`, { top: '55%', duration: 0.4, ease: 'power1.inOut' }, 1.8); // walk to region 2 (baked top)
       tl.to(`${S} .od-spot`, { opacity: 0, duration: 0.35, ease: 'power1.in' }, HOLD);
       tl.set(`${S} .od-spot`, { opacity: 0 }, HOLD + 0.35);
       window.__timelines["reading-spotlight"] = tl;

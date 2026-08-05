@@ -14,7 +14,7 @@
         display: grid; grid-template-columns: 1fr 1fr; gap: 18px; opacity: 0; }
       .od-a, .od-b { padding: 20px 22px; border-radius: 20px; background: rgba(247,240,228,0.16);
         border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(12px); color: #241B14;
-        font: 600 24px/1.25 'Inter', sans-serif; }
+        font: 600 24px/1.25 'Inter', sans-serif; transform-origin: 50% 50%; }
       .od-b { border-color: #B06A3B; }
       .od-label { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
         color: #7C8B6F; margin-bottom: 8px; }
@@ -32,9 +32,17 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       const HOLD = 3.0; const S = '[data-composition-id="split-card"]';
-      tl.set(`${S} .od-split`, { opacity: 1 }).set([`${S} .od-a`, `${S} .od-b`], { opacity: 0 });
-      tl.to(`${S} .od-a`, { opacity: 1, duration: 0.35, ease: 'power2.out' }, 0);
-      tl.to(`${S} .od-b`, { opacity: 1, duration: 0.35, ease: 'power2.out' }, 0.25);
+      const STAGGER = 0.1;   // ENTRANCE_STAGGER_S (constants.js) — each side's scale-settle trails its fade (overlapping action)
+      // MOTION UPGRADE (Layer 1): SMOOTH / SCALE-POP. Each side fades then scale-pops (0.9->1) on the
+      // house power3.out (was power2.out). Overlapping action: within a side the scale-settle trails the
+      // fade by ENTRANCE_STAGGER_S. The staggered A-then-B reveal (0.25s lag) is preserved so the compare
+      // still reads left-first (gate: crossoverLag >= 0.2s reads the OPACITY beats, left untouched).
+      tl.set(`${S} .od-split`, { opacity: 1 });
+      tl.set([`${S} .od-a`, `${S} .od-b`], { opacity: 0, scale: 0.9, transformOrigin: '50% 50%' });
+      tl.to(`${S} .od-a`, { opacity: 1, duration: 0.4, ease: 'power3.out' }, 0);                  // A fade
+      tl.to(`${S} .od-a`, { scale: 1, duration: 0.4, ease: 'power3.out' }, STAGGER);              // …A scale-settle trails
+      tl.to(`${S} .od-b`, { opacity: 1, duration: 0.4, ease: 'power3.out' }, 0.25);              // B fade (lag preserved)
+      tl.to(`${S} .od-b`, { scale: 1, duration: 0.4, ease: 'power3.out' }, 0.25 + STAGGER);      // …B scale-settle trails
       tl.to(`${S} .od-split`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
       tl.set(`${S} .od-split`, { opacity: 0 }, HOLD + 0.4);
       window.__timelines["split-card"] = tl;

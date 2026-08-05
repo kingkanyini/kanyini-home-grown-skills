@@ -11,8 +11,12 @@
       @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
         font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
       /* base left:4% so the timeline slides left 4%->6% (gate: styleDelta left) */
-      .od-lower { position: absolute; left: 4%; bottom: 9%; padding: 12px 20px; border-radius: 16px;
-        background: rgba(20,14,9,0.55); border-left: 4px solid #B06A3B; color: #F7F0E4; opacity: 0; }
+      .od-lower { position: absolute; left: 4%; bottom: 9%; padding: 12px 20px 12px 24px; border-radius: 16px;
+        background: rgba(20,14,9,0.55); color: #F7F0E4; opacity: 0; overflow: hidden; }
+      /* accent bar is now DRAWN (svg strokeDashoffset) instead of a static border-left */
+      .od-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
+      .od-bar line { stroke: #B06A3B; stroke-width: 5; }
+      .od-inner { transform-origin: 0% 50%; }
       .od-lower .od-name { font: 700 26px/1.1 'Inter', sans-serif; }
       .od-lower .od-role { font: 500 17px/1.2 'Inter', sans-serif; color: #D9A05B; margin-top: 3px; }
     </style>
@@ -21,16 +25,29 @@
     <div id="root" data-composition-id="lower-third" data-start="0" data-duration="3.6"
          data-width="1920" data-height="1080">
       <div class="od-lower">
-        <div class="od-name">Your Name</div>
-        <div class="od-role">Your Title · Your Craft</div>
+        <svg class="od-bar" viewBox="0 0 5 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="2.5" y1="0" x2="2.5" y2="100" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" />
+        </svg>
+        <div class="od-inner">
+          <div class="od-name">Your Name</div>
+          <div class="od-role">Your Title · Your Craft</div>
+        </div>
       </div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
       const HOLD = 2.8; const S = '[data-composition-id="lower-third"]';
+      // MOTION UPGRADE (Layer 1): SMOOTH / SLIDE. Container keeps the seek-safe left crawl (4%->6%,
+      // baked left — NOT translate). House ease power3.out (was power2.out). Two additive touches:
+      // a small inner scale-pop settle, and the clay accent bar now DRAWS on (strokeDashoffset len->0,
+      // 'none' ease) instead of sitting as a static border — a distinct entrance flavor for variety.
       tl.set(`${S} .od-lower`, { opacity: 0, left: '4%' });
-      tl.to(`${S} .od-lower`, { opacity: 1, left: '6%', duration: 0.4, ease: 'power2.out' }, 0);
+      tl.set(`${S} .od-inner`, { scale: 0.94, transformOrigin: '0% 50%' });
+      tl.set(`${S} .od-bar line`, { strokeDashoffset: 100 });
+      tl.to(`${S} .od-lower`, { opacity: 1, left: '6%', duration: 0.4, ease: 'power3.out' }, 0);
+      tl.to(`${S} .od-inner`, { scale: 1, duration: 0.45, ease: 'power3.out' }, 0.05);
+      tl.to(`${S} .od-bar line`, { strokeDashoffset: 0, duration: 0.4, ease: 'none' }, 0);  // bar draws top->bottom
       tl.to(`${S} .od-lower`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
       tl.set(`${S} .od-lower`, { opacity: 0 }, HOLD + 0.4);
       window.__timelines["lower-third"] = tl;

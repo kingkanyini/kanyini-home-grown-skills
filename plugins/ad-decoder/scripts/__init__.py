@@ -1,0 +1,1 @@
+# youtube-scout scripts package

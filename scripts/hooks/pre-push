@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# scripts/hooks/pre-push
+# Last gate before code reaches the PUBLIC remote. Push = exposure, so the leak audit runs here too
+# (CONDUIT: detection-after-push is not prevention). Only needs fs/path — no node_modules dependency.
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+echo "[pre-push] leak-audit (final gate before public remote)..."
+node scripts/leak-audit.mjs || { echo "❌ leak-audit found client/owner PII. Push BLOCKED."; exit 1; }
+
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks detect --source . --redact --config .gitleaks.toml || { echo "❌ gitleaks found leaks. Push BLOCKED."; exit 1; }
+fi
+
+echo "[pre-push] ✅ clean — push allowed."

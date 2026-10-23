@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Runtime state (never commit)
+state/*.json
+state/runs/*.json
+state/seen/*.json
+state/*.lock
+state/seen/*.lock
+state/creatives/
+
+# Logs (may contain runtime data despite redaction)
+logs/
+!logs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

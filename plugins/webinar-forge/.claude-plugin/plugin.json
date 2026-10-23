@@ -1,0 +1,33 @@
+{
+  "name": "webinar-forge",
+  "version": "1.0.0",
+  "description": "Forge a Perfect Webinar script (outline + 90min + variants) with counsel guidance",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T7",
+  "requires": [
+    {
+      "name": "offer-optimizer",
+      "version": "^1.0.0"
+    }
+  ],
+  "recommends": [
+    {
+      "name": "propaganda-machine",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "webinar-dev-bot",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "python"
+    ],
+    "envVars": [],
+    "services": []
+  }
+}

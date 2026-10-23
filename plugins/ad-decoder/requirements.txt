@@ -1,0 +1,15 @@
+# Ad Recon Engine — Python dependencies. Pin deliberately.
+anthropic>=0.40.0,<1.0.0
+pydantic>=2.7.0,<3.0.0
+python-dotenv>=1.0.1
+PyYAML>=6.0.1
+tenacity>=9.0.0
+
+# Scraping the public Ad Library web UI (scrape-primary)
+playwright>=1.47.0
+
+# Groq SDK for Whisper transcription of ad audio
+groq>=0.11.0
+
+# ffmpeg-python for pulling audio + first frame from creatives
+ffmpeg-python>=0.2.0

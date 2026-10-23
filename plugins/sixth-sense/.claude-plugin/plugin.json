@@ -1,0 +1,34 @@
+{
+  "name": "sixth-sense",
+  "version": "1.0.0",
+  "description": "6-agent video intelligence scanner — identifies clip-worthy segments across Content, Emotion, and Structure",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "sixth-sense-scissors",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "transcript-extractor-plus",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "sixth-sense",
+      "uv",
+      "ffmpeg"
+    ],
+    "envVars": [],
+    "services": [
+      "The sixth-sense preprocessing engine is a separate package and REQUIRED — this skill orchestrates, the engine does the ffmpeg/Whisper/scene work. Install: uv tool install git+https://github.com/kingkanyini/sixth-sense-engine",
+      "Do NOT run `pip install sixth-sense` — that name belongs to an unrelated PyPI package.",
+      "Python 3.13+. GPU optional: NVIDIA/CUDA accelerates transcription; CPU and Apple Silicon both work."
+    ]
+  }
+}

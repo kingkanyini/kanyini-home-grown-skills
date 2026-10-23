@@ -1,0 +1,29 @@
+{
+  "name": "web-dev-bot",
+  "version": "1.0.0",
+  "description": "Build, clone, sketch, debug, and connect websites with Web Dev Counsel guidance",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T4",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__playwright__*"
+    ],
+    "clis": [
+      "node",
+      "python"
+    ],
+    "envVars": [],
+    "services": [
+      "Optional: mcp__obsidian-brain__* vault MCP powers the effects registry — without it the feature no-ops"
+    ]
+  }
+}

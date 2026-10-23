@@ -1,0 +1,11 @@
+# Dependabot — turn passive security alerts into ready-to-merge PRs.
+# Added after the 2026-07-22 brace-expansion/fast-uri advisories sat unnoticed
+# until a manual look (NSA PHANTOM recurrence-posture finding).
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Tooling-only repo (devDependencies); plugins ship zero deps.
+    open-pull-requests-limit: 5

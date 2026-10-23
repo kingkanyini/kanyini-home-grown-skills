@@ -1,0 +1,27 @@
+{
+  "name": "obsidian-brain-install",
+  "version": "1.0.0",
+  "description": "Scaffold a self-compounding Obsidian memory layer into an AI-Brain — /obsidian-brain-install plus /ingest, /brain-lint, /brain-status. Layer-1 becomes the wiki; deterministic, idempotent, PII-safe.",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T1",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "savepoint",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "node"
+    ],
+    "envVars": [],
+    "services": [
+      "git — OPTIONAL. If the target workspace is a git repo with a remote, the installer runs a safety HALT when confidential client files are tracked. Without git, the installer still scaffolds normally.",
+      "Obsidian desktop app — OPTIONAL, for the visual graph view. The memory layer is plain Markdown and works with or without Obsidian open."
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "soulcial-posts-v2-scripts",
+  "private": true,
+  "type": "commonjs",
+  "description": "Marks this plugin's scripts/ and hooks/ as CommonJS so they run regardless of any parent package.json. No dependencies."
+}

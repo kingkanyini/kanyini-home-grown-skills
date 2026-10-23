@@ -1,0 +1,21 @@
+{
+  "description": "soulcial-posts-v2 publish lock: every Blotato MCP call is denied unless /post-scheduler-v2 armed a single-use sentinel after the ethics gate cleared and the user confirmed.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__blotato__.*",
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/blotato-publish-guard.js\"" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__blotato__blotato_create_post",
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/blotato-sentinel-clear.js\"" }
+        ]
+      }
+    ]
+  }
+}

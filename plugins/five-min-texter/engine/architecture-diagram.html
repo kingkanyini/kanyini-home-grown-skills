@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Front Desk — 5-Minute Texter · Architecture (v1-c4)</title>
+<!-- FIDELITY RULE: this diagram is derived node-for-node, edge-for-edge from the deployed
+     engine/workflow.n8n.json (48 nodes / 48 connections) + engine/error-workflow.n8n.json
+     (4 nodes / 3 connections). On build day the n8n canvas must match this exactly. -->
+<style>
+  :root{
+    --bg:#0a0f18; --panel:#0e1522; --panel2:#101725; --line:#1d2940;
+    --ink:#e8eef9; --dim:#8fa3bf; --faint:#5b6c87;
+    --trigger:#4ade80; --code:#60a5fa; --airtable:#2dd4bf; --twilio:#d97ff0;
+    --telegram:#fb923c; --llm:#a78bfa; --ifg:#fbbf24; --term:#94a3b8;
+    --crisis:#ff5d5d; --badge:#f5d36b; --edge:#7d8ca3;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{padding:18px 26px 8px;}
+  header{border:1px solid var(--line);background:linear-gradient(180deg,#101a2c,#0c1320);
+    border-radius:14px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:18px;}
+  header h1{margin:0;font-size:22px;letter-spacing:.4px;}
+  header h1 .accent{color:var(--badge)}
+  header .sub{color:var(--dim);font-size:12.5px;margin-top:4px;letter-spacing:.6px;text-transform:uppercase;}
+  .chips{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
+  .chip{border:1px solid var(--line);background:#0b1626;color:#bcd0ea;font-size:11.5px;
+    padding:6px 12px;border-radius:999px;white-space:nowrap;}
+  .chip b{color:#7ee2a8;font-weight:600;}
+  .legend{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:14px 2px 4px;
+    border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--panel);}
+  .legend .ttl{font-size:10.5px;letter-spacing:1.4px;color:var(--faint);text-transform:uppercase;margin-right:6px;}
+  .key{display:flex;align-items:center;gap:6px;font-size:11px;color:#c4d3e8;white-space:nowrap;}
+  .sw{width:14px;height:14px;border-radius:4px;border:1.6px solid;background:#101725;display:inline-block;}
+  .sw.hex{clip-path:polygon(22% 0,78% 0,100% 50%,78% 100%,22% 100%,0 50%);border:none;}
+  .sw.sq{border-radius:0;box-shadow:inset 0 0 0 2px #0a0f18, inset 0 0 0 3.2px currentColor;}
+  .sw.dash{border-style:dashed;}
+  .sw.zone{border:1.6px dashed var(--crisis);background:rgba(255,93,93,.08);border-radius:3px;}
+  .keybadge{background:rgba(245,211,107,.12);border:1px solid rgba(245,211,107,.55);color:var(--badge);
+    font-size:9.5px;padding:2px 7px;border-radius:999px;letter-spacing:.4px;}
+  section.panel{margin:16px 2px;border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden;}
+  section.panel .phead{display:flex;align-items:baseline;gap:14px;padding:12px 18px 8px;}
+  section.panel .phead h2{margin:0;font-size:14px;letter-spacing:1.2px;text-transform:uppercase;color:#cfe0f5;}
+  section.panel .phead .cap{color:var(--dim);font-size:12px;}
+  .scrollwrap{overflow-x:auto;padding:4px 12px 14px;}
+  svg{display:block;}
+  footer.fidelity{margin:18px 2px 26px;border:1px solid rgba(245,211,107,.45);background:rgba(245,211,107,.07);
+    border-radius:12px;padding:13px 18px;font-size:12.5px;color:#f0ddA0;color:#f0dda0;line-height:1.55;}
+  footer.fidelity b{color:var(--badge);letter-spacing:1px;text-transform:uppercase;font-size:11px;margin-right:8px;}
+  @media print{
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .scrollwrap{overflow:visible;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <h1>FRONT DESK <span class="accent">— 5-MINUTE TEXTER</span></h1>
+      <div class="sub">v1-c4 — council-hardened (Automation Forge #61) · n8n workflow architecture</div>
+    </div>
+    <div class="chips">
+      <span class="chip"><b>48 nodes</b> · 2 legs + error workflow</span>
+      <span class="chip"><b>valid: true</b> · 0 errors (n8n-MCP, fill-simulated)</span>
+      <span class="chip"><b>64/64</b> tests green</span>
+    </div>
+  </header>
+
+  <div class="legend">
+    <span class="ttl">Legend</span>
+    <span class="key"><span class="sw" style="border-color:var(--trigger)"></span>Trigger (Gmail / Webhook / Error)</span>
+    <span class="key"><span class="sw" style="border-color:var(--code)"></span>Code / logic (Code · Set)</span>
+    <span class="key"><span class="sw" style="border-color:var(--airtable)"></span>Airtable</span>
+    <span class="key"><span class="sw" style="border-color:var(--twilio)"></span>Twilio send</span>
+    <span class="key"><span class="sw" style="border-color:var(--telegram)"></span>Telegram send + wait</span>
+    <span class="key"><span class="sw" style="border-color:var(--llm)"></span>LLM chain</span>
+    <span class="key"><span class="sw dash" style="border-color:var(--llm)"></span>Anthropic model sub-node (dashed ai_languageModel edge)</span>
+    <span class="key"><span class="sw hex" style="background:var(--ifg)"></span>IF gate (TRUE / FALSE labeled)</span>
+    <span class="key"><span class="sw sq" style="border-color:var(--term);color:var(--term)"></span>Terminal (NoOp — execution stops)</span>
+    <span class="key"><span class="sw zone"></span>Crisis sink (red zone)</span>
+    <span class="key"><span class="keybadge">BADGE</span>load-bearing safety feature</span>
+  </div>
+
+  <section class="panel">
+    <div class="phead"><h2>Leg 1 · SimplePractice Inquiry → Thin Alert</h2>
+      <span class="cap">linear 5-node chain — DB fill + alert to the owner only; no outbound to the prospect on Leg 1</span></div>
+    <div class="scrollwrap"><svg id="leg1"></svg></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Leg 2 · Inbound SMS → Drafted, Guarded, Human-Approved Reply</h2>
+      <span class="cap">webhook → fail-closed signature gate → STOP/START → dual crisis screens (one shared sink) → dedupe → match → classify → typed context → brain → guards → human approval + 15-min SLA re-ping → send. Scroll right for the full chain.</span></div>
+    <div class="scrollwrap"><svg id="leg2"></svg></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Error Workflow · 5-Min Texter — Error Handler</h2>
+      <span class="cap">dual-channel fail-loud — Telegram alerts first (onError: continue), Twilio fires regardless; either surviving channel delivers. Every main-workflow node failure lands here.</span></div>
+    <div class="scrollwrap"><svg id="errwf"></svg></div>
+  </section>
+
+  <footer class="fidelity">
+    <b>Build-day fidelity check</b>
+    Every node name on the n8n canvas must appear here exactly; every IF must have both branches wired
+    as labeled; both crisis IFs land on the same Crisis Canned Copy node; the classifier model node is
+    temp 0, the brain 0.4.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var NW=200, NH=62, STEP=252, X0=24;
+  var C = {
+    trigger:'#4ade80', code:'#60a5fa', set:'#60a5fa', airtable:'#2dd4bf',
+    twilio:'#d97ff0', telegram:'#fb923c', llm:'#a78bfa', model:'#a78bfa',
+    ifg:'#fbbf24', term:'#94a3b8', crisis:'#ff5d5d', edge:'#7d8ca3', badge:'#f5d36b'
+  };
+  function X(c){return X0+c*STEP;}
+  var SVGNS='http://www.w3.org/2000/svg';
+  function el(p,t,a){var e=document.createElementNS(SVGNS,t);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+  function txt(p,x,y,s,a){a=a||{};a.x=x;a.y=y;var e=el(p,'text',a);e.textContent=s;return e;}
+
+  function wrapName(n){
+    if(n.length<=25) return [n];
+    var mid=Math.floor(n.length/2), best=-1;
+    for(var i=0;i<n.length;i++) if(n[i]===' '&&(best<0||Math.abs(i-mid)<Math.abs(best-mid))) best=i;
+    if(best<0) return [n];
+    return [n.slice(0,best), n.slice(best+1)];
+  }
+
+  // ---------- node ----------
+  function drawNode(svg,n){
+    var col = n.crisis ? C.crisis : C[n.kind];
+    var fill = n.crisis ? 'rgba(255,80,80,.10)' : '#101725';
+    var g = el(svg,'g',{});
+    if(n.kind==='ifg'){
+      var x=n.x,y=n.y,p=[[x+16,y],[x+NW-16,y],[x+NW,y+NH/2],[x+NW-16,y+NH],[x+16,y+NH],[x,y+NH/2]];
+      el(g,'polygon',{points:p.map(function(q){return q.join(',');}).join(' '),
+        fill:n.crisis?fill:'rgba(251,191,36,.08)',stroke:col,'stroke-width':1.7});
+    } else if(n.kind==='term'){
+      el(g,'rect',{x:n.x,y:n.y,width:NW,height:NH,fill:fill,stroke:col,'stroke-width':1.6});
+      el(g,'rect',{x:n.x+4,y:n.y+4,width:NW-8,height:NH-8,fill:'none',stroke:col,'stroke-width':1,'stroke-opacity':.55});
+    } else {
+      var a={x:n.x,y:n.y,width:NW,height:NH,rx:9,fill:fill,stroke:col,'stroke-width':1.6};
+      if(n.kind==='model'){a['stroke-dasharray']='5 4';}
+      el(g,'rect',a);
+      if(n.kind!=='model') el(g,'rect',{x:n.x,y:n.y+8,width:3.5,height:NH-16,fill:col});
+    }
+    var tagCol = n.crisis ? '#ff9a9a' : col;
+    txt(g,n.x+NW/2,n.y+13,n.tag,{'text-anchor':'middle',fill:tagCol,
+      'font-size':'7.6','letter-spacing':'.8','font-weight':'600'});
+    var lines=wrapName(n.name);
+    var y0 = lines.length>1 ? n.y+30 : n.y+36;
+    lines.forEach(function(L,i){
+      txt(g,n.x+NW/2,y0+i*13,L,{'text-anchor':'middle',fill:'#e8eef9','font-size':'10.4','font-weight':'600'});
+    });
+    if(n.badge){
+      var bw=n.badge.length*4.9+14, bx=n.x+NW/2-bw/2, by=n.y-24;
+      el(g,'rect',{x:bx,y:by,width:bw,height:16,rx:8,fill:'rgba(245,211,107,.13)',
+        stroke:'rgba(245,211,107,.6)','stroke-width':1});
+      txt(g,n.x+NW/2,by+11.5,n.badge,{'text-anchor':'middle',fill:C.badge,'font-size':'8.4','letter-spacing':'.5','font-weight':'700'});
+      el(g,'line',{x1:n.x+NW/2,y1:by+16,x2:n.x+NW/2,y2:n.y,stroke:'rgba(245,211,107,.5)','stroke-width':1});
+    }
+  }
+
+  // ---------- edges ----------
+  function pts2d(pts){return pts.map(function(p,i){return (i?'L':'M')+p[0]+' '+p[1];}).join(' ');}
+  function pointAt(pts,frac){
+    var L=0,segs=[];
+    for(var i=1;i<pts.length;i++){var d=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);segs.push(d);L+=d;}
+    var target=L*frac;
+    for(i=1;i<pts.length;i++){var d=segs[i-1];
+      if(target<=d){var t=d?target/d:0;
+        return [pts[i-1][0]+(pts[i][0]-pts[i-1][0])*t, pts[i-1][1]+(pts[i][1]-pts[i-1][1])*t];}
+      target-=d;}
+    return pts[pts.length-1];
+  }
+  function drawEdge(svg,nodes,e){
+    var f=nodes[e.f], t=nodes[e.t], pts;
+    var route=e.route||'auto';
+    if(route==='auto'){
+      var p1=[f.x+NW,f.y+NH/2], p2=[t.x,t.y+NH/2];
+      if(Math.abs(p1[1]-p2[1])<2) pts=[p1,p2];
+      else {var mx=(p1[0]+p2[0])/2; pts=[p1,[mx,p1[1]],[mx,p2[1]],p2];}
+    } else if(route==='down'){
+      var p1=[f.x+NW/2,f.y+NH], p2=[t.x+NW/2,t.y];
+      if(Math.abs(p1[0]-p2[0])<2) pts=[p1,p2];
+      else {var my=(p1[1]+p2[1])/2; pts=[p1,[p1[0],my],[p2[0],my],p2];}
+    } else if(route==='longback'){
+      var p1=[f.x+NW/2,f.y+NH], p2=[t.x+NW/2,t.y+NH];
+      pts=[p1,[p1[0],e.busY],[p2[0],e.busY],p2];
+    } else if(route==='upback'){
+      var p1=[f.x+NW/2,f.y], p2=[t.x+NW/2,t.y+NH];
+      pts=[p1,[p1[0],e.busY],[p2[0],e.busY],p2];
+    } else if(route==='model'){
+      pts=[[f.x+NW/2,f.y],[t.x+NW/2,t.y+NH]];
+    }
+    var stroke = e.cls==='crisis'?C.crisis : e.cls==='model'?C.llm : C.edge;
+    var a={d:pts2d(pts),fill:'none',stroke:stroke,'stroke-width':e.cls==='crisis'?2.2:1.5,
+      'marker-end':'url(#arr-'+(e.cls||'n')+')'};
+    if(e.cls==='model')a['stroke-dasharray']='5 4';
+    el(svg,'path',a);
+    if(e.label){
+      var p=pointAt(pts, e.frac!=null?e.frac:.5);
+      var isT=e.label.indexOf('TRUE')===0, isF=e.label.indexOf('FALSE')===0;
+      var fg=e.cls==='crisis'?'#ff8d8d':(isT?'#6ee7a0':(isF?'#f9a8a8':'#bca8f5'));
+      var w=e.label.length*5.6+12;
+      el(svg,'rect',{x:p[0]-w/2,y:p[1]-8.5,width:w,height:17,rx:8.5,fill:'#0a0f18',
+        stroke:e.cls==='crisis'?'rgba(255,93,93,.65)':'#26344f','stroke-width':1});
+      txt(svg,p[0],p[1]+3.5,e.label,{'text-anchor':'middle',fill:fg,'font-size':'9.3','font-weight':'700','letter-spacing':'.4'});
+    }
+  }
+
+  function defs(svg){
+    var d=el(svg,'defs',{});
+    [['n',C.edge],['crisis',C.crisis],['model',C.llm]].forEach(function(m){
+      var mk=el(d,'marker',{id:'arr-'+m[0],viewBox:'0 0 10 10',refX:'9',refY:'5',
+        markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse'});
+      el(mk,'path',{d:'M0 0 L10 5 L0 10 z',fill:m[1]});
+    });
+  }
+
+  function render(id,W,H,nodesArr,edges,zones){
+    var svg=document.getElementById(id);
+    svg.setAttribute('width',W);svg.setAttribute('height',H);
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    defs(svg);
+    var nodes={};nodesArr.forEach(function(n){nodes[n.id]=n;});
+    (zones||[]).forEach(function(z){
+      el(svg,'rect',{x:z.x1,y:z.y1,width:z.x2-z.x1,height:z.y2-z.y1,rx:10,
+        fill:'rgba(255,93,93,.07)',stroke:C.crisis,'stroke-width':1.6,'stroke-dasharray':'7 5'});
+      txt(svg,z.lx,z.ly,z.label,{'text-anchor':z.anchor||'end',fill:C.crisis,
+        'font-size':'10','font-weight':'700','letter-spacing':'1.1'});
+    });
+    edges.forEach(function(e){drawEdge(svg,nodes,e);});
+    nodesArr.forEach(function(n){drawNode(svg,n);});
+  }
+
+  function N(id,name,kind,col,laneY,tag,opts){
+    var n={id:id,name:name,kind:kind,x:X(col),y:laneY,tag:tag};
+    if(opts)for(var k in opts)n[k]=opts[k];
+    return n;
+  }
+
+  // ================= LEG 1 =================
+  var L1Y=42;
+  var leg1Nodes=[
+    N('l1t','LEG1 · SP Inquiry (Gmail Trigger)','trigger',0,L1Y,'GMAIL TRIGGER · POLL 1 MIN'),
+    N('l1v','LEG1 · Verify Sender (DKIM/domain)','code',1,L1Y,'CODE · FROM-DOMAIN GATE'),
+    N('l1p','LEG1 · Parse + E.164 Normalize','code',2,L1Y,'CODE · lib/phone.js'),
+    N('l1u','LEG1 · Upsert Inquiry (Airtable)','airtable',3,L1Y,'AIRTABLE · UPSERT Inquiries'),
+    N('l1a','LEG1 · Thin Alert to the owner (Twilio)','twilio',4,L1Y,'TWILIO · SMS TO OWNER')
+  ];
+  var leg1Edges=[{f:'l1t',t:'l1v'},{f:'l1v',t:'l1p'},{f:'l1p',t:'l1u'},{f:'l1u',t:'l1a'}];
+  render('leg1', X(4)+NW+24, 130, leg1Nodes, leg1Edges);
+
+  // ================= LEG 2 =================
+  var A=40,B=148,M=278,CC=470,D=470, BUSDOWN=614, BUSUP=400;
+  var leg2Nodes=[
+    N('wh','LEG2 · Inbound SMS (Webhook)','trigger',0,M,'WEBHOOK · POST · onReceived'),
+    N('sig','LEG2 · Validate Twilio Signature','code',1,M,'CODE · lib/signature.js',
+      {badge:'HMAC SIGNATURE — FAIL-CLOSED'}),
+    N('rt','LEG2 · STOP/START Router','code',2,M,'CODE · lib/stop.js'),
+    N('ifstop','LEG2 · IF route=stop','ifg',3,M,'IF GATE'),
+    N('setstop','LEG2 · Set status=stop (Airtable)','airtable',4,A,'AIRTABLE · UPSERT Inquiries'),
+    N('stopterm','LEG2 · STOP terminal','term',5,A,'NO-OP · TERMINAL'),
+    N('ifstart','LEG2 · IF route=start','ifg',4,M,'IF GATE'),
+    N('clearstop','LEG2 · Clear status=stop (Airtable)','airtable',5,B,'AIRTABLE · UPSERT Inquiries'),
+    N('startterm','LEG2 · START terminal','term',6,B,'NO-OP · TERMINAL'),
+    N('cscreen','LEG2 · Crisis Screen (deterministic)','code',5,M,'CODE · lib/crisis.js'),
+    N('ifcr','LEG2 · IF Crisis (deterministic)','ifg',6,M,'IF GATE · CRISIS #1'),
+    N('canned','LEG2 · Crisis Canned Copy (Twilio)','twilio',6,CC,'TWILIO · 988 CANNED REPLY',{crisis:true}),
+    N('calert','LEG2 · Crisis Urgent Alert to the owner (Twilio)','twilio',7,CC,'TWILIO · URGENT ALERT',{crisis:true}),
+    N('cstatus','LEG2 · Set status=crisis (Airtable)','airtable',8,CC,'AIRTABLE · UPSERT Inquiries',{crisis:true}),
+    N('cterm','LEG2 · Crisis terminal (AI exits thread)','term',9,CC,'NO-OP · TERMINAL',{crisis:true}),
+    N('dd','LEG2 · Dedupe Search (MessageSid)','airtable',7,M,'AIRTABLE · SEARCH Messages'),
+    N('ddr','LEG2 · Dedupe Resolve','code',8,M,'CODE · seen?'),
+    N('ifseen','LEG2 · IF already seen','ifg',9,M,'IF GATE'),
+    N('dupterm','LEG2 · Duplicate terminal (no second send)','term',10,B,'NO-OP · TERMINAL'),
+    N('sid','LEG2 · Write SID before send (Airtable)','airtable',10,M,'AIRTABLE · CREATE Messages',
+      {badge:'SID WRITTEN BEFORE SEND — DEDUPE'}),
+    N('ack','LEG2 · Auto-Ack (Twilio, crisis-gated)','twilio',11,M,'TWILIO · AUTO-ACK'),
+    N('match','LEG2 · Match vs Airtable (E.164 exact)','code',12,M,'CODE · lib/phone.js'),
+    N('msearch','LEG2 · Match Search (Airtable)','airtable',13,M,'AIRTABLE · SEARCH Inquiries'),
+    N('mres','LEG2 · Match Resolve','code',14,M,'CODE · match_tier + first_name'),
+    N('tone','LEG2 · Tone Classifier (enum + crisis_flag)','llm',15,M,'LLM CHAIN · CLASSIFIER'),
+    N('tparse','LEG2 · Tone Parse (coerce, fail-closed)','code',16,M,'CODE · lib/toneparse.js'),
+    N('ifclf','LEG2 · IF Crisis (classifier flag)','ifg',17,M,'IF GATE · CRISIS #2'),
+    N('faq','LEG2 · Inject FAQ','set',18,M,'SET · faq_text + tone_band'),
+    N('ctx','LEG2 · buildContext','code',19,M,'CODE · lib/context.js',
+      {badge:'TYPED 4-KEY CONTEXT — RAW TEXT STOPS HERE'}),
+    N('brain','LEG2 · Reply Brain (Basic LLM Chain)','llm',20,M,'LLM CHAIN · DRAFTER',
+      {badge:'GENERATED CODE + PROMPTS — DRIFT-TESTED'}),
+    N('modelc','Anthropic Chat Model (Classifier)','model',15,CC,'ANTHROPIC · claude-sonnet-4-6 · TEMP 0'),
+    N('modelb','Anthropic Chat Model','model',20,CC,'ANTHROPIC · claude-sonnet-4-6 · TEMP 0.4'),
+    N('guards','LEG2 · Guards (clinical + numeric)','code',21,M,'CODE · GUARDS',
+      {badge:'GUARDS — CLINICAL + NUMERIC-IN-FAQ'}),
+    N('ifok','LEG2 · IF guards ok','ifg',22,M,'IF GATE'),
+    N('balert','LEG2 · Guard Block Alert to the owner (Twilio)','twilio',23,B,'TWILIO · BLOCK ALERT'),
+    N('bterm','LEG2 · Blocked terminal (held for the owner)','term',24,B,'NO-OP · TERMINAL'),
+    N('appr','LEG2 · Draft → the owner + Wait (Telegram)','telegram',23,M,'TELEGRAM · SEND + WAIT · 15 MIN MAX',
+      {badge:'HUMAN APPROVAL GATE + 15-MIN SLA'}),
+    N('ifappr','LEG2 · IF approved text present','ifg',24,M,'IF GATE · trim + notEmpty'),
+    N('send','LEG2 · Send Approved Reply (Twilio)','twilio',25,M,'TWILIO · APPROVED SEND'),
+    N('slaflag','LEG2 · Flag awaiting-approval (Airtable)','airtable',24,D,'AIRTABLE · UPSERT Inquiries'),
+    N('reping','LEG2 · Re-ping → the owner + Wait (Telegram)','telegram',25,D,'TELEGRAM · SEND + WAIT · INDEFINITE',
+      {badge:'ONE RE-PING — A NUDGE, NOT A NAG'}),
+    N('ifrp','LEG2 · IF approved on re-ping','ifg',26,D,'IF GATE · trim + notEmpty'),
+    N('eterm','LEG2 · Empty approval terminal (held, no send)','term',27,D,'NO-OP · TERMINAL')
+  ];
+  var leg2Edges=[
+    {f:'wh',t:'sig'},{f:'sig',t:'rt'},{f:'rt',t:'ifstop'},
+    {f:'ifstop',t:'setstop',label:'TRUE'},{f:'ifstop',t:'ifstart',label:'FALSE'},
+    {f:'setstop',t:'stopterm'},
+    {f:'ifstart',t:'clearstop',label:'TRUE'},{f:'ifstart',t:'cscreen',label:'FALSE'},
+    {f:'clearstop',t:'startterm'},
+    {f:'cscreen',t:'ifcr'},
+    {f:'ifcr',t:'canned',label:'TRUE',route:'down',cls:'crisis'},
+    {f:'ifcr',t:'dd',label:'FALSE'},
+    {f:'canned',t:'calert',cls:'crisis'},{f:'calert',t:'cstatus',cls:'crisis'},{f:'cstatus',t:'cterm',cls:'crisis'},
+    {f:'dd',t:'ddr'},{f:'ddr',t:'ifseen'},
+    {f:'ifseen',t:'dupterm',label:'TRUE'},{f:'ifseen',t:'sid',label:'FALSE'},
+    {f:'sid',t:'ack'},{f:'ack',t:'match'},{f:'match',t:'msearch'},{f:'msearch',t:'mres'},
+    {f:'mres',t:'tone'},{f:'tone',t:'tparse'},{f:'tparse',t:'ifclf'},
+    {f:'ifclf',t:'canned',label:'TRUE — SAME SINK',route:'longback',busY:BUSDOWN,cls:'crisis',frac:.06},
+    {f:'ifclf',t:'faq',label:'FALSE'},
+    {f:'faq',t:'ctx'},{f:'ctx',t:'brain'},{f:'brain',t:'guards'},{f:'guards',t:'ifok'},
+    {f:'ifok',t:'appr',label:'TRUE'},{f:'ifok',t:'balert',label:'FALSE'},
+    {f:'balert',t:'bterm'},
+    {f:'appr',t:'ifappr'},
+    {f:'ifappr',t:'send',label:'TRUE'},{f:'ifappr',t:'slaflag',label:'FALSE',route:'down'},
+    {f:'slaflag',t:'reping'},{f:'reping',t:'ifrp'},
+    {f:'ifrp',t:'send',label:'TRUE',route:'upback',busY:BUSUP,frac:.3},
+    {f:'ifrp',t:'eterm',label:'FALSE'},
+    {f:'modelc',t:'tone',route:'model',cls:'model',label:'ai_languageModel'},
+    {f:'modelb',t:'brain',route:'model',cls:'model',label:'ai_languageModel'}
+  ];
+  var crisisZone={x1:X(6)-14,y1:CC-32,x2:X(9)+NW+14,y2:CC+NH+14,
+    lx:X(9)+NW+4,ly:CC-16,anchor:'end',
+    label:'SINGLE CRISIS SINK — ONE HANDLER, NO SECOND PATH'};
+  render('leg2', X(27)+NW+30, 660, leg2Nodes, leg2Edges, [crisisZone]);
+
+  // ================= ERROR WORKFLOW =================
+  var EY=42;
+  var errNodes=[
+    N('et','On Workflow Error','trigger',0,EY,'ERROR TRIGGER'),
+    N('ef','Format Alert (defensive)','code',1,EY,'CODE · ONE ALERT LINE'),
+    N('eg','Alert the owner (Telegram)','telegram',2,EY,'TELEGRAM · onError: CONTINUE'),
+    N('ew','Alert the owner (Twilio)','twilio',3,EY,'TWILIO · SMS ALERT')
+  ];
+  var errEdges=[{f:'et',t:'ef'},{f:'ef',t:'eg'},{f:'eg',t:'ew'}];
+  render('errwf', X(3)+NW+24, 130, errNodes, errEdges);
+})();
+</script>
+</body>
+</html>

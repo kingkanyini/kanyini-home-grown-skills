@@ -1,0 +1,22 @@
+{
+  "name": "power-clip-pro",
+  "version": "1.0.0",
+  "description": "Craft 3-5 minute value-first video scripts (Power Clips) with a 3-advisor counsel and 12-part framework",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "voice-dna-blueprint-builder",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kanyini.dev/schemas/marketplace.schema.json",
+  "title": "Kanyini Home-Grown Skills — Marketplace Manifest",
+  "description": "Top-level .claude-plugin/marketplace.json contract. Mirrors Claude Code's OWN marketplace schema: `plugins` MUST be an array of { name, source } objects. Claude Code's /plugin marketplace add rejects any other shape.",
+  "$comment": "Release-train metadata (latest / yanked / deprecated, object-keyed plugins) was removed 2026-06-04. Reason: Claude Code never reads those fields, every skill is 1.0.0, and the object shape broke `/plugin marketplace add` with 'expected array, received object'. To re-introduce yank/deprecate later, add a SEPARATE release-train.json sidecar plus a custom installer that reads it — do NOT put it back in this file. Trigger to revisit: a bad version ships to an already-installed user base AND a custom installer exists.",
+  "type": "object",
+  "required": ["name", "plugins"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "Marketplace identifier. kebab-case."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "owner": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "Marketplace owner. EMAIL FIELD INTENTIONALLY OMITTED.",
+      "properties": {
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "plugins": {
+      "type": "array",
+      "description": "Claude Code requires an ARRAY of plugin entries. Each entry needs name + source. Per-plugin version/deps live in plugins/<name>/.claude-plugin/plugin.json, NOT here.",
+      "items": {
+        "type": "object",
+        "required": ["name", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+            "description": "Skill name. Must match plugins/<name>/.claude-plugin/plugin.json name."
+          },
+          "source": {
+            "type": "string",
+            "description": "Relative path to the plugin folder, e.g. ./plugins/savepoint"
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional. Claude Code falls back to the plugin's own plugin.json description if omitted."
+          }
+        }
+      }
+    }
+  }
+}

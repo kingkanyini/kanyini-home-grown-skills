@@ -1,0 +1,71 @@
+{
+  "workbook_num": 2,
+  "no_anchors_found": false,
+  "chapter_intro_page": 3,
+  "sections": [
+    {
+      "id": "sec1",
+      "title": "Introduction: The Big Domino",
+      "session": null,
+      "breakout": null,
+      "start_page": 3,
+      "end_page": 5
+    },
+    {
+      "id": "sec2",
+      "title": "Two Ingredients To Make Your Offer Irresistible",
+      "session": null,
+      "breakout": null,
+      "start_page": 6,
+      "end_page": 10
+    },
+    {
+      "id": "sec3",
+      "title": "Introduction: Breakout Session (Pitch Your Offer)",
+      "session": null,
+      "breakout": "Introduction Breakout",
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "id": "sec4",
+      "title": "Session #1: Your Curiosity Headline",
+      "session": "1",
+      "breakout": null,
+      "start_page": 12,
+      "end_page": 16
+    },
+    {
+      "id": "sec5",
+      "title": "Session #1: Breakout Session",
+      "session": "1",
+      "breakout": "Session 1 Breakout",
+      "start_page": 17,
+      "end_page": 17
+    },
+    {
+      "id": "sec6",
+      "title": "Session #2: The 3 Secrets",
+      "session": "2",
+      "breakout": null,
+      "start_page": 18,
+      "end_page": 22
+    },
+    {
+      "id": "sec7",
+      "title": "Session #2: Breakout Session",
+      "session": "2",
+      "breakout": "Session 2 Breakout",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "id": "sec8",
+      "title": "Next Week: What We'll Cover + Prework For Module #3",
+      "session": null,
+      "breakout": null,
+      "start_page": 24,
+      "end_page": 25
+    }
+  ]
+}

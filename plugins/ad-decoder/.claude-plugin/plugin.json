@@ -1,0 +1,32 @@
+{
+  "name": "ad-decoder",
+  "version": "1.0.0",
+  "description": "Scout + Study the Meta Ad Library: find long-running outlier ads, pick winners, and break down why they work on 9 dimensions for /ss-ad-generator and /ad-copy-forge",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "ss-ad-generator",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "ad-copy-forge",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "python",
+      "ffmpeg"
+    ],
+    "envVars": [],
+    "services": [
+      "Anthropic API key + Groq API key, set in the skill folder's .env (copy .env.example). No Meta token needed.",
+      "First run: pip install -r requirements.txt && playwright install chromium"
+    ]
+  }
+}

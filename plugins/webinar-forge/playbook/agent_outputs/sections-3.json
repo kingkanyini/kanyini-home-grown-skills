@@ -1,0 +1,87 @@
+{
+  "workbook_num": 3,
+  "no_anchors_found": false,
+  "chapter_intro_page": 3,
+  "sections": [
+    {
+      "id": "sec1",
+      "title": "Introduction: Crafting Your Presentation Slides (Prework + Perfect Webinar Framework Overview)",
+      "session": "intro",
+      "breakout": null,
+      "start_page": 3,
+      "end_page": 5
+    },
+    {
+      "id": "sec2",
+      "title": "Quick Wins: Fast and Easy Slides (Introductory Slide Build-Out + Workshop)",
+      "session": "quick-wins",
+      "breakout": null,
+      "start_page": 6,
+      "end_page": 14
+    },
+    {
+      "id": "sec3",
+      "title": "Quick Wins: Breakout Session",
+      "session": "quick-wins",
+      "breakout": "Quick Wins Breakout",
+      "start_page": 15,
+      "end_page": 15
+    },
+    {
+      "id": "sec4",
+      "title": "Session #1: Breaking the Chain of False Belief (False Beliefs & Storytelling, Epiphany Bridge, Workshop)",
+      "session": "1",
+      "breakout": null,
+      "start_page": 16,
+      "end_page": 22
+    },
+    {
+      "id": "sec5",
+      "title": "Session #1: Breakout Session (Epiphany Bridge Story Framework)",
+      "session": "1",
+      "breakout": "Session #1 Breakout",
+      "start_page": 23,
+      "end_page": 23
+    },
+    {
+      "id": "sec6",
+      "title": "Session #2: Origin Story Slides (Your Map's Origin, New Opportunity, Integrating Story, Workshop)",
+      "session": "2",
+      "breakout": null,
+      "start_page": 24,
+      "end_page": 27
+    },
+    {
+      "id": "sec7",
+      "title": "Session #2: Breakout Session (Origin Story Slide Review)",
+      "session": "2",
+      "breakout": "Session #2 Breakout",
+      "start_page": 28,
+      "end_page": 28
+    },
+    {
+      "id": "sec8",
+      "title": "Session #3: Teaching Your Frameworks Correctly (Map as Framework #1, How to Teach, Follow the Formula, Workshop)",
+      "session": "3",
+      "breakout": null,
+      "start_page": 29,
+      "end_page": 33
+    },
+    {
+      "id": "sec9",
+      "title": "Session #3: Breakout Session (Secret #1 Framework Review)",
+      "session": "3",
+      "breakout": "Session #3 Breakout",
+      "start_page": 34,
+      "end_page": 34
+    },
+    {
+      "id": "sec10",
+      "title": "Next Week: What We'll Cover + Prework For Module #4",
+      "session": "next-week",
+      "breakout": null,
+      "start_page": 35,
+      "end_page": 36
+    }
+  ]
+}

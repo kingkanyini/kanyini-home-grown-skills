@@ -1,0 +1,17 @@
+{
+  "name": "magnetic-offer-blueprint",
+  "version": "1.0.0",
+  "description": "Embodiment-first offer creation with 3-person Council — 6 parts from soul alignment to strategic skeleton",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T5",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

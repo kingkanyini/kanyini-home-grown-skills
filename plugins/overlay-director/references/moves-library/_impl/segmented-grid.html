@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* colors from constants.js: CARD_LIME #C6F94E */
+      .od-seg { position: absolute; left: 7%; top: 32%; width: 54%; opacity: 0;
+        display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 72px; }
+      .od-seg .od-num { font: 800 220px/0.9 'Inter', sans-serif; color: #FFFFFF; opacity: 0; }
+      .od-seg .od-cap { font: 700 32px/1.2 'Inter', sans-serif; letter-spacing: .12em;
+        text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 22px; max-width: 340px; }
+      .od-seg .od-cells { display: grid; grid-template-columns: repeat(10, 1fr); gap: 12px; }
+      .od-seg .od-cell { width: 100%; aspect-ratio: 1; border-radius: 9px;
+        background: rgba(255,255,255,0.08); opacity: 0.18; }
+      .od-seg .od-cell.on { background: #C6F94E; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="segmented-grid" data-start="0" data-duration="4.4"
+         data-width="1920" data-height="1080">
+      <div class="od-seg">
+        <div class="od-hero">
+          <div class="od-num">97%</div>
+          <div class="od-cap">Levels you can actually clear</div>
+        </div>
+        <div class="od-cells"></div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const S = '[data-composition-id="segmented-grid"]';
+      const TOTAL = 100, LIT = Math.floor(TOTAL * 0.97);          // 97 lit of 100 = 97%, proof == claim
+      const cellsWrap = document.querySelector(`${S} .od-cells`);
+      for (let i = 0; i < TOTAL; i++) {
+        const c = document.createElement('div');
+        c.className = 'od-cell' + (i < LIT ? ' on' : '');          // deterministic fill order
+        cellsWrap.appendChild(c);
+      }
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.4;
+      const onCells = document.querySelectorAll(`${S} .od-cell.on`), num = `${S} .od-num`;
+      tl.set(`${S} .od-seg`, { opacity: 1 });
+      const STAGGER = 0.014;   // tightened for 97 cells so the reveal still lands inside HOLD
+      onCells.forEach((c, i) => {
+        tl.to(c, { opacity: 1, duration: 0.14, ease: 'power1.out' }, i * STAGGER);
+      });
+      const end = onCells.length * STAGGER + 0.1;
+      tl.fromTo(num, { opacity: 0, scale: 0.85 },
+                   { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.5)' }, end);
+      tl.to(`${S} .od-seg`, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD);
+      tl.set(`${S} .od-seg`, { opacity: 0 }, HOLD + 0.4);   // hard-kill
+      window.__timelines["segmented-grid"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

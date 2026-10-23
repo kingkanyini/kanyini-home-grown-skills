@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "defaults": [
+    "animation",
+    "timing",
+    "writing"
+  ],
+  "by_move_type": {
+    "accent": [
+      "animation",
+      "timing"
+    ],
+    "callout": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "caption-track": [
+      "animation",
+      "timing",
+      "writing"
+    ],
+    "card": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "chart": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "draw-board": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "grid": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "headline": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "hero": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "image": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "lane": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "lower-third": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "pill": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "pip": [
+      "animation",
+      "entrance",
+      "timing",
+      "layout"
+    ],
+    "pipeline": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "quote": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing"
+    ],
+    "riser": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "skin": [
+      "color",
+      "writing"
+    ],
+    "split": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "spotlight": [
+      "animation",
+      "color",
+      "timing",
+      "layout"
+    ],
+    "stack": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ],
+    "timeline": [
+      "animation",
+      "color",
+      "entrance",
+      "timing",
+      "writing",
+      "layout"
+    ]
+  }
+}

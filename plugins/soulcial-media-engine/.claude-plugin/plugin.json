@@ -1,0 +1,34 @@
+{
+  "name": "soulcial-media-engine",
+  "version": "1.0.0",
+  "description": "Dual-mode social strategy engine: a 7-phase counsel-reviewed build that outputs a branded master doc, 30-day calendar, and scroll-stopping posts, in your voice or a client's",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T8",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "offer-optimizer",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "propaganda-machine",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "voice-profile-build",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "soulcial-posts-v2",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

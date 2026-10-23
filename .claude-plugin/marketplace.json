@@ -1,0 +1,178 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "kanyini-home-grown-skills",
+  "description": "Private Claude Code plugin marketplace — coaches, healers, spiritual entrepreneurs building their agentic chief of staff",
+  "owner": {
+    "name": "Kanyini"
+  },
+  "plugins": [
+    {
+      "name": "savepoint",
+      "source": "./plugins/savepoint"
+    },
+    {
+      "name": "quicksave",
+      "source": "./plugins/quicksave"
+    },
+    {
+      "name": "counsel-dispatch",
+      "source": "./plugins/counsel-dispatch"
+    },
+    {
+      "name": "council-primer",
+      "source": "./plugins/council-primer"
+    },
+    {
+      "name": "learn-eval",
+      "source": "./plugins/learn-eval"
+    },
+    {
+      "name": "obsidian-brain-install",
+      "source": "./plugins/obsidian-brain-install"
+    },
+    {
+      "name": "perplexity-research",
+      "source": "./plugins/perplexity-research"
+    },
+    {
+      "name": "voice-dna-extractor",
+      "source": "./plugins/voice-dna-extractor"
+    },
+    {
+      "name": "voice-dna-blueprint-builder",
+      "source": "./plugins/voice-dna-blueprint-builder"
+    },
+    {
+      "name": "voice-profile-build",
+      "source": "./plugins/voice-profile-build"
+    },
+    {
+      "name": "charisma-codes",
+      "source": "./plugins/charisma-codes"
+    },
+    {
+      "name": "exportskill",
+      "source": "./plugins/exportskill"
+    },
+    {
+      "name": "quickshare",
+      "source": "./plugins/quickshare"
+    },
+    {
+      "name": "skill-to-site",
+      "source": "./plugins/skill-to-site"
+    },
+    {
+      "name": "five-min-texter",
+      "source": "./plugins/five-min-texter"
+    },
+    {
+      "name": "offer-optimizer",
+      "source": "./plugins/offer-optimizer"
+    },
+    {
+      "name": "magnetic-offer-blueprint",
+      "source": "./plugins/magnetic-offer-blueprint"
+    },
+    {
+      "name": "propaganda-machine",
+      "source": "./plugins/propaganda-machine"
+    },
+    {
+      "name": "funnel-hack-research",
+      "source": "./plugins/funnel-hack-research"
+    },
+    {
+      "name": "funnel-hack-lvl-1",
+      "source": "./plugins/funnel-hack-lvl-1"
+    },
+    {
+      "name": "funnel-audit",
+      "source": "./plugins/funnel-audit"
+    },
+    {
+      "name": "funnel-translate",
+      "source": "./plugins/funnel-translate"
+    },
+    {
+      "name": "webinar-forge",
+      "source": "./plugins/webinar-forge"
+    },
+    {
+      "name": "vsl-activator",
+      "source": "./plugins/vsl-activator"
+    },
+    {
+      "name": "webinar-dev-bot",
+      "source": "./plugins/webinar-dev-bot"
+    },
+    {
+      "name": "daily-email-digest",
+      "source": "./plugins/daily-email-digest"
+    },
+    {
+      "name": "belief-shift-e-engine",
+      "source": "./plugins/belief-shift-e-engine"
+    },
+    {
+      "name": "headline-creator",
+      "source": "./plugins/headline-creator"
+    },
+    {
+      "name": "ad-copy-forge",
+      "source": "./plugins/ad-copy-forge"
+    },
+    {
+      "name": "ss-ad-generator",
+      "source": "./plugins/ss-ad-generator"
+    },
+    {
+      "name": "power-clip-pro",
+      "source": "./plugins/power-clip-pro"
+    },
+    {
+      "name": "web-dev-bot",
+      "source": "./plugins/web-dev-bot"
+    },
+    {
+      "name": "overlay-director",
+      "source": "./plugins/overlay-director"
+    },
+    {
+      "name": "transcript-extractor-plus",
+      "source": "./plugins/transcript-extractor-plus"
+    },
+    {
+      "name": "snapshot",
+      "source": "./plugins/snapshot"
+    },
+    {
+      "name": "sixth-sense-scissors",
+      "source": "./plugins/sixth-sense-scissors"
+    },
+    {
+      "name": "sixth-sense-xray",
+      "source": "./plugins/sixth-sense-xray"
+    },
+    {
+      "name": "sixth-sense-sage",
+      "source": "./plugins/sixth-sense-sage"
+    },
+    {
+      "name": "sixth-sense",
+      "source": "./plugins/sixth-sense"
+    },
+    {
+      "name": "ad-decoder",
+      "source": "./plugins/ad-decoder"
+    },
+    {
+      "name": "soulcial-media-engine",
+      "source": "./plugins/soulcial-media-engine"
+    },
+    {
+      "name": "soulcial-posts-v2",
+      "source": "./plugins/soulcial-posts-v2"
+    }
+  ]
+}

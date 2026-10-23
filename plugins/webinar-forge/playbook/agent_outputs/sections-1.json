@@ -1,0 +1,47 @@
+{
+  "workbook_num": 1,
+  "no_anchors_found": false,
+  "chapter_intro_page": 3,
+  "sections": [
+    {
+      "id": "sec1",
+      "title": "Introduction: Your Godfather Opportunity",
+      "session": null,
+      "breakout": null,
+      "start_page": 3,
+      "end_page": 6
+    },
+    {
+      "id": "sec2",
+      "title": "Session #1: Your Level 10 Opportunity",
+      "session": "1",
+      "breakout": null,
+      "start_page": 7,
+      "end_page": 11
+    },
+    {
+      "id": "sec3",
+      "title": "Session #2: Your New Opportunity",
+      "session": "2",
+      "breakout": null,
+      "start_page": 12,
+      "end_page": 18
+    },
+    {
+      "id": "sec4",
+      "title": "Session #3: Your Offer Stack",
+      "session": "3",
+      "breakout": null,
+      "start_page": 19,
+      "end_page": 29
+    },
+    {
+      "id": "sec5",
+      "title": "Next Week: What We'll Cover + Prework For Module #2",
+      "session": null,
+      "breakout": null,
+      "start_page": 30,
+      "end_page": 31
+    }
+  ]
+}

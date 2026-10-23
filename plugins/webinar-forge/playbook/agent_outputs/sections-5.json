@@ -1,0 +1,127 @@
+{
+  "workbook_num": 5,
+  "no_anchors_found": false,
+  "chapter_intro_page": 3,
+  "sections": [
+    {
+      "id": "sec1",
+      "title": "Front Matter + Table of Contents",
+      "session": null,
+      "breakout": null,
+      "start_page": 1,
+      "end_page": 2
+    },
+    {
+      "id": "sec2",
+      "title": "Session #1: Your Offer Stack's Superpower (Divider + Prework)",
+      "session": "1",
+      "breakout": null,
+      "start_page": 3,
+      "end_page": 4
+    },
+    {
+      "id": "sec3",
+      "title": "The Stack & Close Framework",
+      "session": "1",
+      "breakout": null,
+      "start_page": 5,
+      "end_page": 7
+    },
+    {
+      "id": "sec4",
+      "title": "Examples Of Effective Storytelling And Hook Techniques",
+      "session": "1",
+      "breakout": null,
+      "start_page": 8,
+      "end_page": 9
+    },
+    {
+      "id": "sec5",
+      "title": "Workshop: Crafting Your Offer Stack",
+      "session": "1",
+      "breakout": "Crafting Your Offer Stack",
+      "start_page": 10,
+      "end_page": 10
+    },
+    {
+      "id": "sec6",
+      "title": "Session #2: Building Your Offer Stack (Divider)",
+      "session": "2",
+      "breakout": null,
+      "start_page": 11,
+      "end_page": 11
+    },
+    {
+      "id": "sec7",
+      "title": "Mastering The Stack - Core Offer (Slides 1-5)",
+      "session": "2",
+      "breakout": null,
+      "start_page": 12,
+      "end_page": 17
+    },
+    {
+      "id": "sec8",
+      "title": "Workshop: The Close (Part 1) - Stack Braindumps (Products 2-5)",
+      "session": "2",
+      "breakout": "The Close (Part 1)",
+      "start_page": 18,
+      "end_page": 21
+    },
+    {
+      "id": "sec9",
+      "title": "Mastering The Close - Pricing & If-All Statements",
+      "session": "2",
+      "breakout": null,
+      "start_page": 22,
+      "end_page": 22
+    },
+    {
+      "id": "sec10",
+      "title": "Workshop: The Close (Part 2) - Price Justifications, Guarantee, Real Question",
+      "session": "2",
+      "breakout": "The Close (Part 2)",
+      "start_page": 23,
+      "end_page": 25
+    },
+    {
+      "id": "sec11",
+      "title": "Workshop: The Close (Part 3) - Recap Stack, Bonus, CTA",
+      "session": "2",
+      "breakout": "The Close (Part 3)",
+      "start_page": 26,
+      "end_page": 27
+    },
+    {
+      "id": "sec12",
+      "title": "Session #3: Crafting The Close Slides (Divider + Intro)",
+      "session": "3",
+      "breakout": null,
+      "start_page": 28,
+      "end_page": 29
+    },
+    {
+      "id": "sec13",
+      "title": "Actionable Steps For Enhancing Your Presentation",
+      "session": "3",
+      "breakout": null,
+      "start_page": 30,
+      "end_page": 32
+    },
+    {
+      "id": "sec14",
+      "title": "Module Five Homework",
+      "session": "3",
+      "breakout": null,
+      "start_page": 33,
+      "end_page": 33
+    },
+    {
+      "id": "sec15",
+      "title": "Back Matter",
+      "session": null,
+      "breakout": null,
+      "start_page": 34,
+      "end_page": 35
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# .github/workflows/windows-smoke.yml
+# Runs on every push to main — verifies tilde expansion, path separators, CRLF/LF
+# handling, case sensitivity, reserved Windows names per PHANTOM §6 catalog.
+# Per PLAN-v3.1 §6 + §6.1.
+
+name: Windows Smoke Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  windows-smoke:
+    runs-on: windows-2022   # Pin per PHANTOM Gap G2 — bump cadence documented in MARKETPLACE-CONTRACT.md
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dev dependencies
+        run: npm ci
+
+      - name: Validate plugin.json files
+        run: npm run validate:plugins
+
+      - name: Validate marketplace
+        run: npm run validate:marketplace
+
+      - name: Run windows smoke test
+        shell: pwsh
+        run: |
+          ./scripts/windows-smoke-test.ps1

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+      @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900;
+        font-display: block; src: local('Inter'), url('./assets/Inter.var.woff2') format('woff2'); }
+      /* colors from constants.js: CARD_LIME #C6F94E, CARD_TEAL #4FD6C8 */
+      .od-two-tone { position: absolute; left: 6%; top: 30%; width: 52%; opacity: 0; }
+      .od-two-tone .od-inner { transform-origin: left center; }
+      .od-two-tone .od-kicker { font: 700 30px/1 'Inter', sans-serif; letter-spacing: .22em;
+        text-transform: uppercase; color: #C6F94E; margin-bottom: 44px; opacity: 0; }
+      .od-two-tone .od-head { font: 800 148px/1.06 'Inter', sans-serif; color: #FFFFFF;
+        letter-spacing: -.01em; opacity: 0; }
+      .od-two-tone .od-accent { color: #C6F94E; display: inline-block; }
+      .od-two-tone .od-annot { font: 500 42px/1.3 'Inter', sans-serif;
+        color: rgba(255,255,255,0.55); margin-top: 40px; opacity: 0; }
+      .od-two-tone .od-scrim { position: absolute; inset: -6% -8% -8% -8%; z-index: -1;
+        background: radial-gradient(120% 120% at 0% 40%, rgba(10,10,10,0.72), rgba(10,10,10,0) 70%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="two-tone-headline" data-start="0" data-duration="4.2"
+         data-width="1920" data-height="1080">
+      <div class="od-two-tone">
+        <div class="od-scrim"></div>
+        <div class="od-inner">
+          <div class="od-kicker">&bull; The Imagination Revolution</div>
+          <div class="od-head">One life.<br /><span class="od-accent">Played</span> on purpose.</div>
+          <div class="od-annot">You hold the controller.</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const HOLD = 3.2; const S = '[data-composition-id="two-tone-headline"]';
+      const k = `${S} .od-kicker`, h = `${S} .od-head`, acc = `${S} .od-accent`, an = `${S} .od-annot`;
+      const STAGGER = 0.1;   // ENTRANCE_STAGGER_S (constants.js) — the SMOOTH head's scale trails its fade (overlapping action)
+      tl.set(`${S} .od-two-tone`, { opacity: 1 });
+      tl.to(k, { opacity: 1, duration: 0.3, ease: 'power2.out' }, 0);
+      // SMOOTH head: fade leads at 0.12; the scale-settle trails by ENTRANCE_STAGGER_S so the two
+      // beats don't start+stop on one synchronized window (POP accent below is untouched).
+      tl.set(h, { scale: 0.9 });
+      tl.to(h, { opacity: 1, duration: 0.55, ease: 'power3.out' }, 0.12);
+      tl.to(h, { scale: 1, duration: 0.55, ease: 'power3.out' }, 0.12 + STAGGER);
+      tl.fromTo(acc, { scale: 0.8 }, { scale: 1, duration: 0.42, ease: 'back.out(1.5)' }, 0.32);
+      tl.to(an, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0.5);
+      tl.to(k,  { opacity: 0, duration: 0.3, ease: 'power1.in' }, HOLD);
+      tl.to(h,  { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD + 0.12);
+      tl.to(an, { opacity: 0, duration: 0.4, ease: 'power1.in' }, HOLD + 0.24);
+      tl.set([`${S} .od-two-tone`], { opacity: 0 }, HOLD + 0.7);   // hard-kill
+      window.__timelines["two-tone-headline"] = tl;
+      document.fonts && document.fonts.ready && document.fonts.ready.then(() => {});
+    </script>
+  </body>
+</html>

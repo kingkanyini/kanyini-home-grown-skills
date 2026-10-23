@@ -1,0 +1,28 @@
+{
+  "name": "transcript-extractor-plus",
+  "version": "1.0.0",
+  "description": "Transcribe videos in any language and translate to any target language using Whisper + AI translation",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "sixth-sense-scissors",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "ffmpeg",
+      "yt-dlp"
+    ],
+    "envVars": [],
+    "services": [
+      "whisper.cpp — Windows: built inside WSL at ~/whisper.cpp. macOS: brew install whisper-cpp. Linux: build from source.",
+      "Whisper model ggml-medium.bin — download via models/download-ggml-model.sh medium"
+    ]
+  }
+}

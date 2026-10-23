@@ -1,0 +1,22 @@
+{
+  "name": "belief-shift-e-engine",
+  "version": "1.0.0",
+  "description": "Build dual-path belief-shifting email sequences with entry emails, nurture + conversion CTAs, and reminder templates",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T8",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "offer-optimizer",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

@@ -1,0 +1,120 @@
+# Ad Decoder — main configuration
+# Method: Scout -> Study (after Jack Roberts, "Claude Code Just Changed Everything about Ads")
+# Do NOT put secrets here. API keys live in .env (GROQ_API_KEY, ANTHROPIC_API_KEY).
+
+paths:
+  vault_root: "<your-vault-path>"   # optional: leave "" to skip the vault copy (HTML dashboard still writes)
+  vault_recon_dir: "context/ad-decoder"
+  log_dir: "logs"
+  state_dir: "state"
+  creatives_dir: "state/creatives"   # downloaded videos; auto-purged post-deconstruct
+
+# --- Brand presets: the client-fit gate normalizes each ad against the ACTIVE
+#     preset. Longevity thresholds are REAL numbers per preset (not "where
+#     possible"). Ship v1 with one; add rows as new clients come in. ---
+brand_presets:
+  default:
+    offer_type: "high-ticket-coaching"
+    price_band: "high"             # low | mid | high
+    platforms: ["facebook", "instagram"]
+    longevity: { strong: 45, unicorn: 90 }
+  dtc-impulse:
+    offer_type: "low-ticket-dtc"
+    price_band: "low"
+    platforms: ["instagram", "facebook"]
+    longevity: { strong: 21, unicorn: 45 }
+
+# --- Scout scoring (Ad Avengers-hardened). Weights sum to 1.0. ---
+scoring:
+  weights:
+    longevity: 0.50      # dominant — the one signal the library gives straight
+    variant: 0.20        # same-concept clustered + capped
+    scroll_stop: 0.20    # cheap creative check; soft-floor veto below
+    region: 0.10         # advertiser-size-normalized
+  variant_cap: 5         # max ads counted within a concept cluster
+  region_cap: 5          # cap region breadth so mega-brands don't dominate
+  scroll_stop_floor_pct: 25    # bottom-quartile scroll-stop caps composite
+  scroll_stop_floor_cap: 0.45  # ...to at most this — BELOW longevity's 0.5
+                               # ceiling, so a dead-frame ad can't out-rank a
+                               # watchable peer no matter how long it has run
+  # Scroll-stop rubric point ceilings (determinism — see references/scoring-model.md):
+  scroll_stop_rubric: { motion: 3, face: 2, text_hook: 3, pattern_interrupt: 2 }
+
+clustering:
+  strip_url_params: true          # normalize destination URL (drop UTM/query/#)
+  offer_match_merges: true        # merge no-shared-URL clusters on offer-string match
+  # embedding cosine similarity deferred to v1.1
+
+study:
+  catalog_target: 18              # aim to catalog ~15-20 ads for commonality
+  confidence_floor_pct: 40        # modal value below this → low-confidence/suppressed
+  gate_b_retry_once: true         # retry a rejected card once, then flag low-fidelity
+
+model_routing:
+  scroll_stop:
+    model: "claude-haiku-4-5"
+    max_output_tokens: 800
+  deconstruct:
+    model: "claude-sonnet-4-6"
+    max_output_tokens: 3000
+  gate:
+    model: "claude-sonnet-4-6"
+    max_output_tokens: 1500       # per NPC review
+  synthesis:
+    model: "claude-sonnet-4-6"
+    max_output_tokens: 2500
+
+whisper:
+  provider: "groq"
+  model: "whisper-large-v3"
+  max_duration_minutes: 10        # ads are short; refuse anything longer
+
+# --- Runtime counsel gates (persona-in-Python, NOT agent-mode) ---
+counsel_gates:
+  gate_a:                         # reviews the Scout ranking
+    id: 12
+    name: "Ad Avengers"
+    members:
+      - { slug: "charley-tichenor-iv", name: "Charley Tichenor IV", lens: "pixel/algorithm winner-signal validity" }
+      - { slug: "nicholas-kusmich",    name: "Nicholas Kusmich",    lens: "heart-centered fit / does it transfer" }
+      - { slug: "billy-gene-shaw",     name: "Billy Gene Shaw",     lens: "scroll-stop / watchability" }
+      - { slug: "russell-brunson",     name: "Russell Brunson",     lens: "offer/funnel-stage read" }
+  gate_b:                         # reviews each deconstruction card
+    id: 39
+    name: "Copy Forensics Counsel"
+    members:
+      - { slug: "stefan-georgi",   name: "Stefan Georgi",   lens: "RMBC mechanism — reject feature-restatement" }
+      - { slug: "kyle-milligan",   name: "Kyle Milligan",   lens: "subtext / on-screen text / modern social" }
+      - { slug: "gary-bencivenga", name: "Gary Bencivenga", lens: "proof & specificity / believability" }
+      - { slug: "gary-halbert",    name: "Gary Halbert",    lens: "avatar/crowd / controlled-vocab discipline" }
+
+scrape:
+  ad_library_base: "https://www.facebook.com/ads/library/"
+  country: "US"                   # default region scope
+  min_delay_seconds: 3.0          # human-paced jitter floor
+  max_delay_seconds: 7.0
+  max_ads_per_query: 60           # low volume — research, not harvest
+  headless: false                 # real browser session
+  nav_timeout_ms: 45000
+
+safety:
+  cost_cap_usd_per_run: 3.00      # recon_deconstruct aborts above this
+  allowed_vault_prefixes:
+    - "context/ad-decoder/"
+  log_redaction_patterns:
+    - "sk-ant-[A-Za-z0-9_-]+"
+    - "gsk_[A-Za-z0-9]{20,}"        # Groq key
+    - "AIza[A-Za-z0-9_-]{10,}"
+    - "Bearer [A-Za-z0-9_.~+/=-]+"
+    - "EAA[A-Za-z0-9]{20,}"          # Meta Graph token (defense even though unused)
+  log_retention_days: 30
+  max_slug_length: 80
+
+_meta:
+  spec_ref: "commands/ad-decoder.md"
+  source_video: "https://www.youtube.com/watch?v=zswO-Wuo0E0"
+  counsel_review_scores: { scout: 8.7, study: 9.1, build: 9.0 }
+  forks_locked:
+    data_source: "scrape-primary-public-ad-library"
+    whisper: "groq-whisper-v3"
+    transcription_blindspot_fix: "vision-ocr-merged-with-whisper"

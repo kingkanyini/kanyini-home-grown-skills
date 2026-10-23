@@ -1,0 +1,281 @@
+{
+  "workbook_num": 5,
+  "master": "Daniel Priestley",
+  "sections": {
+    "sec1": {
+      "lens": "A table of contents is a promise to the reader — keep it clean, sequential, and let the architecture of the module itself do the selling.",
+      "emphasis": [
+        "Signal that the Stack & Close is a craft, not a coercion",
+        "Frame the three sessions as a dignified progression: understand, build, refine"
+      ],
+      "common_traps": [
+        "Treating the TOC as filler rather than a trust-building roadmap",
+        "Rushing past the structural promise the TOC is making"
+      ],
+      "voice_notes": [
+        "Rather understated, really",
+        "The best closes feel like inevitable conclusions, not surprises"
+      ],
+      "score": 6
+    },
+    "sec2": {
+      "lens": "Three readiness gates before you pitch — because a close delivered without rehearsal is a close delivered with apology in the voice.",
+      "emphasis": [
+        "Rehearsal is the difference between sounding natural and sounding desperate",
+        "You cannot close with confidence on slides you haven't lived with",
+        "The word 'natural' in the checklist is doing enormous work — respect it"
+      ],
+      "common_traps": [
+        "Skipping rehearsal because the deck 'looks done'",
+        "Confusing familiarity with fluency",
+        "Treating the checklist as a formality rather than a gate"
+      ],
+      "voice_notes": [
+        "If it doesn't feel natural in rehearsal, it won't feel dignified on stage",
+        "The audience can always tell when you haven't earned your own offer yet"
+      ],
+      "score": 7
+    },
+    "sec3": {
+      "lens": "This is the oversubscription mechanic dressed as a sequence — cumulative value, then a price that looks almost absurd by comparison, stated with calm.",
+      "emphasis": [
+        "The human mind anchors on the last thing — so the last thing must be colossal value, not a minor bonus",
+        "The 4-step process is really one move: make perceived value outrun price by a factor that feels obvious",
+        "Transitions matter as much as content — the handover from teaching to offering is where trust is won or lost"
+      ],
+      "common_traps": [
+        "Spending the most energy on bonus #7 and throwing the core offer away in a sentence",
+        "Stacking features instead of cumulative value totals",
+        "A hard, awkward 'now I'm going to sell you something' transition that breaks the spell"
+      ],
+      "voice_notes": [
+        "Stack the value, then let the price fall — never the reverse",
+        "A billion dollars of sales isn't a coincidence, it's compounding arithmetic of perceived value",
+        "The close is a conclusion, not a pivot"
+      ],
+      "score": 9
+    },
+    "sec4": {
+      "lens": "Story is the multiplier — same markers, same ink, ten-fold the price because a Tony Robbins anecdote reframed the object itself.",
+      "emphasis": [
+        "Every stack item needs its own Hook to Story to Offer micro-structure, not just the headline offer",
+        "The story does the heavy lifting of perceived value; the offer is merely the container",
+        "Fit2Fat2Fit proves that a mediocre product with a magnificent hook will outsell a magnificent product with no hook"
+      ],
+      "common_traps": [
+        "Listing features and hoping price justifies itself",
+        "One big story for the whole stack instead of a story per component",
+        "Stories that are about you rather than about what the customer gets"
+      ],
+      "voice_notes": [
+        "Story is what turns a $10 marker into a $97 artifact",
+        "Never show an offer without a story — it's like serving wine without the glass",
+        "People don't buy products, they buy the meaning stories give them"
+      ],
+      "score": 9
+    },
+    "sec5": {
+      "lens": "The workshop is a story-audit for every stack item — and the 'opportunity cost if they skip' question is the most important one on the sheet.",
+      "emphasis": [
+        "Origin story, pain endured, and opportunity cost form the triangle of perceived value",
+        "If the creator can't articulate the pain behind a component, the audience will never feel its worth",
+        "Opportunity cost framing is the cleanest way to create urgency without pressure"
+      ],
+      "common_traps": [
+        "Fabricating pain when the real creation story is simpler and more honest",
+        "Skipping the opportunity-cost question because it feels uncomfortable",
+        "Writing feature descriptions instead of story arcs"
+      ],
+      "voice_notes": [
+        "What did it cost you to build this, truly?",
+        "If they walk away from this component, what life remains unlived?",
+        "The story must be earned, not manufactured"
+      ],
+      "score": 8
+    },
+    "sec6": {
+      "lens": "A divider page that signals the shift from theory to craft — from understanding the stack to actually building it, slide by slide.",
+      "emphasis": [
+        "The jump from framework to construction is where most practitioners stall",
+        "Session 2 is a builder's session — protect it from drift"
+      ],
+      "common_traps": [
+        "Treating the divider as decorative rather than as a mental gear-shift",
+        "Staying in theory mode when the workbook is asking for construction"
+      ],
+      "voice_notes": [
+        "Right, now we build"
+      ],
+      "score": 5
+    },
+    "sec7": {
+      "lens": "Five slides to convert abstraction into cumulative, testable perceived value — and the 'Get Rid Of' slide is the quiet weapon everyone underestimates.",
+      "emphasis": [
+        "The 'what they won't have to do anymore' slide carries as much persuasive weight as the feature list",
+        "Every stack iteration must end with a Total Value number — the escalation is the mechanic",
+        "This five-slide pattern is a template, not a one-off — the audience learns the rhythm and anticipates the payoff"
+      ],
+      "common_traps": [
+        "Skipping the capabilities slide and going straight to price",
+        "Vague 'Get Rid Of' lists that don't name specific tools, costs, or frictions",
+        "Inconsistent Total Value escalation that breaks the pattern the audience has learned"
+      ],
+      "voice_notes": [
+        "Tell them what they gain, then tell them what they get to put down",
+        "Each stack recap should land heavier than the last",
+        "The template is the trust — deviate from it and you break the spell"
+      ],
+      "score": 9
+    },
+    "sec8": {
+      "lens": "Four products, four braindumps, each with testimonials and concern-resolution baked in — this is where oversubscription is earned, not claimed.",
+      "emphasis": [
+        "Testimonials and concern-resolution are load-bearing inside each stack, not reserved for the close",
+        "Each product needs its own origin story — no shortcuts, no shared narrative",
+        "The slide-range mapping (64-72, 73-78, etc.) is the discipline that keeps construction on-rail"
+      ],
+      "common_traps": [
+        "Reusing the same testimonial across multiple stack items",
+        "Treating products 2-5 as filler rather than cumulative proof of generosity",
+        "Writing once and moving on rather than iterating each braindump with the same rigour"
+      ],
+      "voice_notes": [
+        "Four stories, four stacks, four moments where you could have lost them — don't",
+        "Each component must earn its place with its own testimony",
+        "Generosity is a structural decision, not a feeling"
+      ],
+      "score": 8
+    },
+    "sec9": {
+      "lens": "The 'If All' statements are the polite knock before you walk in with the price — three yeses in a row make the number inevitable rather than startling.",
+      "emphasis": [
+        "Trial closes from the start so the price moment isn't a sudden ask",
+        "Three If-All statements — Vehicle, Internal, External — cover functional, emotional, and practical framings of worth",
+        "Scarcity must have a reason — 'only today' without a why feels manipulative; with a why it feels considered"
+      ],
+      "common_traps": [
+        "Delivering If-All statements rhetorically without actually waiting for the audience to verbally agree",
+        "Using manufactured scarcity that insults the audience's intelligence",
+        "Launching the price cold, without the three-yes staircase in front of it"
+      ],
+      "voice_notes": [
+        "Would it be worth it? Genuinely wait for the nod",
+        "A price stated after three agreements feels inevitable; a price stated cold feels aggressive",
+        "Scarcity done clean is simply honouring the structure of the offer"
+      ],
+      "score": 9
+    },
+    "sec10": {
+      "lens": "Four objection tools — Price Justification, Two Choices, Guarantee, Real Question — each a dignifying invitation rather than a pressure tactic, if delivered with calm.",
+      "emphasis": [
+        "The guarantee reversal ('30 hours, 31 hours, 32 hours and 59 minutes') is warmth — it signals you trust them",
+        "The Real Question reframes risk: not 'will this work?' but 'what's the risk of not finding out?'",
+        "'Two Choices' framing must avoid shaming option 1 — contrast, not contempt"
+      ],
+      "common_traps": [
+        "Price justifications that compare the offer to luxuries they don't care about",
+        "Guarantees that read as legal boilerplate rather than personal assurance",
+        "Making 'Choice 1' sound pathetic — it breaks dignity and reduces conversion",
+        "The Real Question delivered as a rhetorical trick rather than a genuine reframe"
+      ],
+      "voice_notes": [
+        "The guarantee should sound like a friend, not a contract",
+        "If they saw how you handled their objection, would they feel respected?",
+        "The real question is always: what does this cost you if you don't find out?",
+        "Contrast the two choices with neutrality — never with scorn"
+      ],
+      "score": 9
+    },
+    "sec11": {
+      "lens": "The recap stack, a fast-mover bonus for momentum, and a CTA that names the exact action — three slides that close a two-hour conversation in ninety seconds if built right.",
+      "emphasis": [
+        "Recap stack is the final total-value moment — it must land with the weight of everything preceding it",
+        "Fast Movers Bonus should reward decisiveness, not punish deliberation",
+        "The CTA must be surgically specific — 'Submit Application with 50% deposit' beats 'sign up today'"
+      ],
+      "common_traps": [
+        "A recap stack that looks rushed or differently-styled from the earlier stack slides",
+        "Fast-movers bonuses that feel like bribes rather than rewards for trust",
+        "Vague CTAs ('Get Started') that leave the hand hovering over the button"
+      ],
+      "voice_notes": [
+        "Tell them exactly what happens next — no ambiguity is a kindness",
+        "The bonus for acting fast honours the ones who trust you quickly",
+        "The last slide is the handshake — make it clean"
+      ],
+      "score": 8
+    },
+    "sec12": {
+      "lens": "Ninety percent of sales come after the price — a number that should humble anyone who thinks the close ends when the number is revealed.",
+      "emphasis": [
+        "The presentation doesn't end at the price reveal — it pivots into sustained engagement",
+        "Most practitioners lose the room in the twenty minutes after the price because they stop selling and start waiting",
+        "The reflection prompt is an opportunity for honest self-audit — have you built enough to hold the room post-reveal?"
+      ],
+      "common_traps": [
+        "Mentally 'landing the plane' at the price and allowing energy to drop",
+        "Not preparing Session 3 material and scrambling live",
+        "Treating the post-price time as buffer rather than as the highest-leverage sales window of the entire event"
+      ],
+      "voice_notes": [
+        "Nine out of ten yeses come after the price — so the real work begins once the number is spoken",
+        "The close is not a finish line, it's a midpoint"
+      ],
+      "score": 8
+    },
+    "sec13": {
+      "lens": "Four post-reveal amplifiers — Q&A with countdown, pre-built questions, live success stories, and 'You're probably thinking this' — each designed to hold the room with grace rather than grip.",
+      "emphasis": [
+        "Pre-built FAQ slides are not manipulation, they are respect — you've anticipated the hesitation",
+        "Countdown clock creates structure, not pressure, if paired with substantive content",
+        "'You're probably thinking this' is the single most disarming phrase in a close when used with warmth",
+        "Live student stories post-price outperform every other persuasion tactic in the room"
+      ],
+      "common_traps": [
+        "Q&A that invites a loud skeptic to dominate the room",
+        "Countdown clock with no substance behind it — feels like a cheap sales tactic",
+        "'You're probably thinking this' delivered with condescension rather than empathy",
+        "Scripting student stories so tightly they feel performed"
+      ],
+      "voice_notes": [
+        "Prepare the top thirty questions — if you don't know them, you haven't sold this offer enough times yet",
+        "The countdown is a container, not a whip",
+        "Let your students speak — their words carry a trust yours cannot",
+        "You're probably thinking this — and you'd be right to"
+      ],
+      "score": 8
+    },
+    "sec14": {
+      "lens": "Record yourself, watch yourself, cringe appropriately, then refine — the discipline most presenters skip because it's uncomfortable, which is precisely why it works.",
+      "emphasis": [
+        "Recording and reviewing is the single highest-leverage rehearsal step",
+        "Polishing stories and images is not cosmetic — it's where congruence is built",
+        "Smooth delivery comes from discomfort tolerated in private"
+      ],
+      "common_traps": [
+        "Rehearsing mentally rather than out loud on camera",
+        "Reviewing the recording once and moving on",
+        "Treating the homework as optional because 'the deck is done'"
+      ],
+      "voice_notes": [
+        "Watch yourself back — that's where the work is",
+        "The polish is the respect you pay the audience",
+        "Rehearsal isn't about the words, it's about the room you'll be in"
+      ],
+      "score": 7
+    },
+    "sec15": {
+      "lens": "Back matter — the quiet close of the workbook itself, a reminder that good craft ends with a considered pause rather than a flourish.",
+      "emphasis": [
+        "Even back-cover design signals care to the reader"
+      ],
+      "common_traps": [
+        "Overlooking the final page as irrelevant"
+      ],
+      "voice_notes": [
+        "Let the final page breathe"
+      ],
+      "score": 5
+    }
+  }
+}

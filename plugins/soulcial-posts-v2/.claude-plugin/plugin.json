@@ -1,0 +1,32 @@
+{
+  "name": "soulcial-posts-v2",
+  "version": "1.0.0",
+  "description": "Seven-skill daily social suite: hook library, virality grader, repurposing, and gated publishing on your voice profile plus an ethics and claims-safety gate. Start with /content-coach-v2",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T8",
+  "requires": [],
+  "recommends": [
+    {
+      "name": "soulcial-media-engine",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "voice-profile-build",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [
+      "mcp__blotato__*"
+    ],
+    "clis": [
+      "node"
+    ],
+    "envVars": [],
+    "services": [
+      "Optional: Blotato account + mcp__blotato__* MCP, only for /post-scheduler-v2 publishing. Writing, grading, and repurposing work without it (help.blotato.com/claude-skills)"
+    ]
+  }
+}

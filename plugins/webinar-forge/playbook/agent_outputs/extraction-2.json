@@ -1,0 +1,344 @@
+{
+  "workbook_num": 2,
+  "sections": {
+    "sec1": {
+      "questions": [
+        "Have you figured out your offer stack slide?",
+        "Have you started creating the elements that are included in your offer (e.g., video trainings, worksheets, etc.)?",
+        "What are the two components of the Big Domino you will dive into in this module?",
+        "What is your Curiosity Headline (the hook to get them into the house)?",
+        "What are your 3 Secrets (your framework, or the frame of the house itself)?"
+      ],
+      "concepts": [
+        "The Big Domino: the single belief that, if shifted, makes all other objections irrelevant",
+        "Your First Three Slides framework: Curiosity Headline (The ONE Thing) -> The 3 Secrets -> The Offer",
+        "The Offer is the foundation of the house; if it is right, the rest naturally falls into place",
+        "Two Big Domino components for Module 2: Curiosity Headline (hook) and The 3 Secrets (framework)"
+      ],
+      "exercises": [
+        "Prework checklist: Check off that you figured out your offer stack slide",
+        "Prework checklist: Check off that you started creating the elements included in your offer (video trainings, worksheets, etc.)",
+        "Reference the Course Secrets training if you are struggling with creating your course, training, and frameworks",
+        "NOTES box to capture insights while reviewing Your First Three Slides"
+      ],
+      "teaching_slides": [
+        {
+          "page": 3,
+          "image_path": "page-003.png",
+          "caption": "Introduction cover page: The Big Domino module opener"
+        },
+        {
+          "page": 4,
+          "image_path": "page-004.png",
+          "caption": "Prework For Module #2 checklist: offer stack slide figured out, elements of offer created (video trainings, worksheets, etc.)"
+        },
+        {
+          "page": 5,
+          "image_path": "page-005.png",
+          "caption": "Your First Three Slides overview: Curiosity Headline (The ONE Thing), The 3 Secrets, The Offer — with note that the Offer is the foundation; if right, everything else falls into place"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 5,
+          "image_path": "page-005.png",
+          "what_illustrates": "Thumbnails of the three foundational webinar slides (Curiosity Headline, The 3 Secrets, The Offer) shown side-by-side as a visual reference for the Big Domino module flow"
+        }
+      ]
+    },
+    "sec2": {
+      "questions": [
+        "Does each part of your offer solve ONE problem but also create a NEW problem that the next component of your offer stack solves?",
+        "Does your whole offer stack make them FEEL complete?",
+        "For each Element (1-6): What problem does it solve? What new problem does it introduce?",
+        "Does the offer seem COMPLETE? If not, how can you tweak it?",
+        "Does the offer seem OVERWHELMING? If so, how can you tweak it?",
+        "How can you set your offer stack as a timeline? How soon can you get them the result?",
+        "Have you made sure there does NOT seem to be any problem introduced by the final element of your offer?"
+      ],
+      "concepts": [
+        "Two Ingredients To Make Your Offer Irresistible: (1) Solve One Problem + Create A New One, (2) Tie Your Offer To A Timeline",
+        "Offer Stack Chain: each component solves the new problem introduced by the previous component (traffic -> funnel -> software -> course -> copywriting, etc.)",
+        "Feel Complete: your customers should feel like you are giving them ALL the tools to make them successful",
+        "Tie to a Timeline: build the offer stack as a timeline so buyers can project themselves into the future having the result they want",
+        "Timeline example: 'Here is how to get six-pack abs in six weeks' / week-by-week build of offer results",
+        "Overwhelm-to-Achievable pivot: tying the offer to a timeline makes an overwhelming stack feel achievable step-by-step",
+        "ROI framing: buyers need to feel they can get a return on their investment in X weeks, not some vague time in the future",
+        "Final element rule: the last element in the stack must NOT introduce a new problem"
+      ],
+      "exercises": [
+        "STEP 1: For each of Elements #1-#6 fill out 'Problem solved' and 'Problem introduced'",
+        "STEP 2: Answer whether the offer seems COMPLETE — and how to tweak it if not",
+        "STEP 2: Answer whether the offer seems OVERWHELMING — and how to tweak it (hint: Step 3 may be the answer)",
+        "STEP 3: Fill out the Timeline table for Elements 1-8, mapping each element to a timeline",
+        "Reflection: verify the final element does not introduce a new problem"
+      ],
+      "teaching_slides": [
+        {
+          "page": 6,
+          "image_path": "page-006.png",
+          "caption": "Two Ingredients To Make Your Offer Irresistible — Solve One Problem, Create A New One (ClickFunnels chain example: traffic -> funnel -> software -> course -> copywriting)"
+        },
+        {
+          "page": 7,
+          "image_path": "page-007.png",
+          "caption": "Tie Your Offer To A Timeline — examples (six-pack abs in six weeks; week-by-week offer result projection) and ROI framing"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 6,
+          "image_path": "page-006.png",
+          "what_illustrates": "ClickFunnels case study walking through how each offer element solved one problem while creating the next (funnel -> software -> course -> copywriting) — illustrates the 'Solve One, Create One' chain in practice"
+        },
+        {
+          "page": 8,
+          "image_path": "page-008.png",
+          "what_illustrates": "Finalize Your Offer Stack Workshop — Step 1 Elements #1-#4 worksheet capturing 'Problem solved' / 'Problem introduced' for each element"
+        },
+        {
+          "page": 9,
+          "image_path": "page-009.png",
+          "what_illustrates": "Finalize Your Offer Stack Workshop continued — Elements #5-#6 plus Step 2 reflection questions on COMPLETE vs OVERWHELMING"
+        },
+        {
+          "page": 10,
+          "image_path": "page-010.png",
+          "what_illustrates": "STEP 3 Timeline worksheet — maps Elements 1-8 against a Timeline column so the offer stack is sequenced as an achievable project"
+        }
+      ]
+    },
+    "sec3": {
+      "questions": [
+        "Are you too close to your offer to objectively check whether it seems COMPLETE?",
+        "Does your offer seem OVERWHELMING when pitched aloud?",
+        "Can you pitch your offer in 2 to 3 minutes in the Breakout Room and get honest feedback?"
+      ],
+      "concepts": [
+        "Outside Feedback Principle: you may be too close to your offer to evaluate objectively — peer review reveals blind spots",
+        "2-3 Minute Pitch: a short verbal pitch surfaces whether the offer feels complete and non-overwhelming to an outsider",
+        "Breakout Session as a stress test for COMPLETE + not OVERWHELMING"
+      ],
+      "exercises": [
+        "Breakout Room exercise: Pitch your offer in 2 to 3 minutes",
+        "Collect feedback on whether the offer feels COMPLETE and whether it seems OVERWHELMING",
+        "Capture feedback notes in the NOTES box provided"
+      ],
+      "teaching_slides": [
+        {
+          "page": 11,
+          "image_path": "page-011.png",
+          "caption": "Introduction: Breakout Session — framing for pitching your offer to peers for 2-3 minutes"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec4": {
+      "questions": [
+        "What is the ONE thing you need to convince your customer of in order for them to take your offer?",
+        "What is the ONE Thing that, if your Big Domino goes down, makes everything else irrelevant?",
+        "What is your Big Domino Statement using the ClickFunnels template?",
+        "What is the hook that gets people into the house (your Curiosity Headline)?",
+        "What result does your audience want?",
+        "What is their biggest pain point that they want to avoid?",
+        "Have you built your Curiosity Headline for use on the registration page, the title slide, and to lead into your framework origin story?",
+        "Can you create 10 variations of your Curiosity Headline?"
+      ],
+      "concepts": [
+        "Jason Fladlien quote: 'The idea is to have a single point of belief that your message is built around and is emphasized over and over and over again from a variety of different angles.'",
+        "Big Domino Statement template: 'If I can make them believe that (my new opportunity) is the key to (what they desire most) and is only attainable through (my specific vehicle / framework) then all other objections and concerns become irrelevant and they have to give me money.'",
+        "Funnel Hacking = the new opportunity example plugged into the Big Domino template",
+        "Curiosity Headline = the HOOK of the presentation — appears on the registration page, title slide, and leads directly into the origin story of how you found your framework",
+        "Curiosity Headline template: 'How To (get the result they want) Without (their biggest pain point).'",
+        "Headline variation exercise: 10 variations (written by you or AI) to find the strongest pull",
+        "Example headlines: 'How To Get ALL Of Your Sales Letters, Scripts, Webinar Slides, Emails, and Ads Written (In Under 10 Minutes) Without Hiring An Expensive Copywriter'; 'How To Instantly Add High Ticket Sales To Your Sales Funnels Without You Personally Talking To Anyone On The Phone EVER!'; 'How To Create A 7-Figure Funnel In Less Than 30 Minutes Without Having To Hire, Or Be Held Hostage By A Tech Guy!'"
+      ],
+      "exercises": [
+        "STEP 1: Fill in the Big Domino Statement template — 'If I can make them believe that (new opportunity)... is the key to (what they desire most)... and is only attainable through (my specific vehicle / framework)... then all other objections and concerns become irrelevant and they have to give me money.'",
+        "STEP 2: Fill in the Curiosity Headline template — 'How To (get the result they want) Without (their biggest pain point).'",
+        "STEP 3: Write 10 variations of your Curiosity Headline (or have AI generate them)",
+        "Review the three example curiosity headlines and model the structure"
+      ],
+      "teaching_slides": [
+        {
+          "page": 12,
+          "image_path": "page-012.png",
+          "caption": "Session #1 cover: Your Curiosity Headline"
+        },
+        {
+          "page": 13,
+          "image_path": "page-013.png",
+          "caption": "The Big Domino Statement — Jason Fladlien quote on single point of belief + ClickFunnels example of the Funnel Hacking Big Domino"
+        },
+        {
+          "page": 14,
+          "image_path": "page-014.png",
+          "caption": "Your Curiosity Headline — defines it as the HOOK (registration page, title slide, origin story), template 'How To... Without...', plus 3 real example headlines"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 13,
+          "image_path": "page-013.png",
+          "what_illustrates": "Worked example plugging Funnel Hacking / growing THEIR company fast / ClickFunnels into the Big Domino Statement to show how the template reads when fully filled"
+        },
+        {
+          "page": 14,
+          "image_path": "page-014.png",
+          "what_illustrates": "Three real Curiosity Headline examples (copywriter, high-ticket phone sales, 7-figure funnel tech guy) demonstrating the 'How To X Without Y' formula in action"
+        },
+        {
+          "page": 15,
+          "image_path": "page-015.png",
+          "what_illustrates": "Big Domino Workshop — Step 1 Big Domino Statement fill-in template and Step 2 Curiosity Headline fill-in template side by side"
+        },
+        {
+          "page": 16,
+          "image_path": "page-016.png",
+          "what_illustrates": "Step 3 — 10-slot worksheet for generating Curiosity Headline variations"
+        }
+      ]
+    },
+    "sec5": {
+      "questions": [
+        "How does your Big Domino Statement land when you read it out loud to a peer?",
+        "Which of your 10 Curiosity Headline variations hits hardest when spoken?",
+        "What feedback does the breakout group give on the clarity and pull of your hook?"
+      ],
+      "concepts": [
+        "Peer Pressure-Test: speaking the Big Domino Statement and Curiosity Headlines aloud reveals which variation carries the most pull",
+        "Breakout feedback loop for Session 1 outputs (Big Domino + Curiosity Headline)"
+      ],
+      "exercises": [
+        "Share your Big Domino Statement and Curiosity Headline with the breakout group",
+        "Rank which of the 10 headline variations lands strongest based on peer feedback",
+        "Capture peer notes and your own refinement ideas in the NOTES box"
+      ],
+      "teaching_slides": [
+        {
+          "page": 17,
+          "image_path": "page-017.png",
+          "caption": "Session #1 Breakout Session — blank NOTES page for capturing peer feedback on Big Domino + Curiosity Headline"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec6": {
+      "questions": [
+        "What are the 3 Core False Beliefs your audience holds that you must address for your Big Domino to take everything else down with it?",
+        "What is the Vehicle belief — the false belief that your New Opportunity won't work in general?",
+        "What are the Internal Beliefs — the false beliefs they hold about themselves that they cannot succeed using your New Opportunity?",
+        "What are the External Beliefs — the false beliefs that external factors (outside them) will make it impossible somehow?",
+        "What is the headline for your first secret (addressing your Vehicle)?",
+        "What is the headline for your second secret (addressing their Internal Beliefs)?",
+        "What is the headline for your third secret (addressing their External Beliefs)?",
+        "Does it have to be exactly 3 Secrets, or could it be 3 Myths, 3 Lies, 3 Questions, etc.?"
+      ],
+      "concepts": [
+        "The 3 Secrets = the variety of different angles used to emphasize the single point of belief (Big Domino) over and over",
+        "Flexible format: doesn't have to literally be 3 Secrets — could be 3 Myths, 3 Lies, 3 Questions, etc.",
+        "Single Point of Belief principle (Jason Fladlien): one core belief emphasized from many different angles",
+        "The 3 Core False Beliefs framework: (1) The Vehicle — your New Opportunity itself; (2) Internal Beliefs — what they believe about themselves; (3) External Beliefs — what they believe about external factors",
+        "Vehicle belief: 'Your New Opportunity itself may convince some people in the room, but maybe not all of them.' You must prove the vehicle works.",
+        "Internal belief handling: convince them that they themselves can have success using your New Opportunity",
+        "External belief handling: address the final false belief that outside forces will block them even if the vehicle and they are fine",
+        "Worked Example — 'The 3 Secrets Of Funnel Hacking': Secret #1 Funnel Hacking (how to ethically study top funnels), Secret #2 Funnel Cloning (how to then clone their proven offer funnels in less than 10 minutes), Secret #3 My #1 Traffic Hack (how to get the same customers your competitors are currently going to)",
+        "Alternate worked example — 'The 3 Secrets' general template: Secret #1 'The 4 Stories You HAVE To Tell To Create A Table Rush', Secret #2 'How ONE Presentation Replaced 60+ Full Time Sales People', Secret #3 'How To Stand On Stages Without Leaving The Comfort Of Your Own Home'"
+      ],
+      "exercises": [
+        "Note the Fladlien quote on 'variety of different angles' and keep it as the design principle for the 3 Secrets",
+        "Identify the three core false beliefs your audience holds across Vehicle / Internal / External",
+        "Write the headline for Secret #1 addressing the Vehicle",
+        "Write the headline for Secret #2 addressing Internal Beliefs",
+        "Write the headline for Secret #3 addressing External Beliefs",
+        "Decide whether to frame as 3 Secrets, 3 Myths, 3 Lies, or 3 Questions based on what fits your audience"
+      ],
+      "teaching_slides": [
+        {
+          "page": 18,
+          "image_path": "page-018.png",
+          "caption": "Session #2 cover: The 3 Secrets"
+        },
+        {
+          "page": 19,
+          "image_path": "page-019.png",
+          "caption": "Session #2: The 3 Secrets — 3 Secrets as 'variety of different angles' on the single point of belief; flexibility (Secrets / Myths / Lies / Questions) with Fladlien quote"
+        },
+        {
+          "page": 20,
+          "image_path": "page-020.png",
+          "caption": "The Core False Beliefs framework: 1. The Vehicle (your New Opportunity), 2. Internal Beliefs (what they believe about themselves), 3. External Beliefs (outside factors) — all three must be addressed for the Big Domino to fall"
+        }
+      ],
+      "example_moments": [
+        {
+          "page": 21,
+          "image_path": "page-021.png",
+          "what_illustrates": "Side-by-side example slides — 'The 3 Secrets Of Funnel Hacking' (Funnel Hacking / Funnel Cloning / Traffic Hack) and the generic '3 Secrets' slide (4 Stories Table Rush / ONE Presentation replacing 60+ sales people / Standing on Stages from home) — shows two different angle sets addressing Vehicle, Internal, External beliefs"
+        },
+        {
+          "page": 22,
+          "image_path": "page-022.png",
+          "what_illustrates": "Your 3 Secrets Workshop — three fill-in boxes, one per Secret headline mapped to Vehicle / Internal Beliefs / External Beliefs"
+        }
+      ]
+    },
+    "sec7": {
+      "questions": [
+        "How do your three Secret headlines land when read aloud to a peer?",
+        "Does each Secret clearly map to Vehicle, Internal, or External beliefs?",
+        "Which Secret headline is weakest and needs the most rewriting?"
+      ],
+      "concepts": [
+        "Breakout pressure-test for Session 2 outputs (the 3 Secret headlines)",
+        "Peer review for belief-mapping accuracy across Vehicle / Internal / External"
+      ],
+      "exercises": [
+        "Share your three Secret headlines with your breakout group",
+        "Ask peers whether each clearly targets Vehicle / Internal / External beliefs",
+        "Capture rewrite suggestions in the NOTES box"
+      ],
+      "teaching_slides": [
+        {
+          "page": 23,
+          "image_path": "page-023.png",
+          "caption": "Session #2 Breakout Session — blank NOTES page for capturing peer feedback on the 3 Secrets headlines"
+        }
+      ],
+      "example_moments": []
+    },
+    "sec8": {
+      "questions": [
+        "How did you come up with this new opportunity (your Framework Origin Story — NOT your personal origin story)?",
+        "What are the high-level steps of your Framework itself (the WHAT, not the HOW)?",
+        "What steps will take them from where they are now to where they want to be?",
+        "Have you checked in with the community and your coaches and brainstormed with them?"
+      ],
+      "concepts": [
+        "Next Week preview: the first 30 minutes of your presentation consists of (1) Your Framework Origin Story — first 15 minutes; (2) Your Framework itself — next 15 minutes",
+        "Framework Origin Story vs. Personal Origin Story: NOT your life story — the story of how you came up with your framework / new opportunity",
+        "High-level steps of the Framework should be the WHAT, not the HOW",
+        "Community + coaches as brainstorming accelerators for the origin story and framework steps"
+      ],
+      "exercises": [
+        "Think through your Framework Origin Story: how did you come up with this new opportunity?",
+        "Think through the high-level steps of your Framework itself — what are the WHAT steps (not HOW) that take them from where they are now to where they want to be?",
+        "Check in with the community and your coaches, and brainstorm with them",
+        "Capture notes on origin story beats and framework steps in the NOTES box"
+      ],
+      "teaching_slides": [
+        {
+          "page": 24,
+          "image_path": "page-024.png",
+          "caption": "Next Week: What We'll Cover + Prework For Module #3 — Framework Origin Story (first 15 min), Framework itself (next 15 min), WHAT-not-HOW reminder, community brainstorm prompt"
+        },
+        {
+          "page": 25,
+          "image_path": "page-025.png",
+          "caption": "Module 2 back cover — Fountainhead / Etison LLC copyright"
+        }
+      ],
+      "example_moments": []
+    }
+  }
+}

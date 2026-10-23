@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<style>
+  :root { --bg:#0d0f14; --card:#161a23; --ink:#e7ecf3; --dim:#8b95a7;
+          --accent:#5ee0a0; --warn:#f0b15e; --bad:#e06a6a; --line:#222836; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif; }
+  header { padding:24px 28px; border-bottom:1px solid var(--line); }
+  h1 { margin:0 0 4px; font-size:22px; }
+  .sub { color:var(--dim); font-size:13px; }
+  main { padding:20px 28px; max-width:1100px; margin:0 auto; }
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.08em;
+       color:var(--dim); margin:30px 0 12px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
+  th { color:var(--dim); font-weight:600; font-size:12px; text-transform:uppercase; }
+  .bar { height:6px; border-radius:3px; background:var(--accent); }
+  .pill { display:inline-block; padding:1px 8px; border-radius:10px; font-size:12px;
+          background:#1d2433; color:var(--dim); }
+  .veto { color:var(--bad); } .warn { color:var(--warn); } .ok { color:var(--accent); }
+  .cards { display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); }
+  .c { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .c.low { border-color:var(--warn); }
+  .c h3 { margin:0 0 8px; font-size:14px; }
+  .c .row { font-size:13px; margin:4px 0; }
+  .c .lbl { color:var(--dim); }
+  .formula td:first-child { color:var(--dim); }
+  .ship { background:#11261c; border:1px solid #1f5e42; border-radius:12px;
+          padding:16px 18px; margin-top:8px; }
+  code { background:#1d2433; padding:1px 6px; border-radius:5px; color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Ad Recon</h1>
+  <div class="sub" id="meta"></div>
+</header>
+<main>
+  <h2>Scout — ranked outliers <span id="gatea" class="pill"></span></h2>
+  <table id="scout"><thead><tr>
+    <th>#</th><th>ad</th><th>advertiser</th><th>days</th><th>cluster</th>
+    <th>composite</th><th>fit</th></tr></thead><tbody></tbody></table>
+
+  <h2>Study — winning formula</h2>
+  <div class="sub" id="sample"></div>
+  <table class="formula" id="formula"><thead><tr>
+    <th>dimension</th><th>modal value</th><th>%</th><th></th></tr></thead><tbody></tbody></table>
+
+  <h2>Deconstruction cards</h2>
+  <div class="cards" id="cards"></div>
+
+  <h2>Ship handoff</h2>
+  <div class="ship" id="ship"></div>
+</main>
+<script>
+const DATA = /*__DATA__*/ {};
+const $ = s => document.querySelector(s);
+const esc = s => (s==null?'':String(s)).replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+document.title = $('#title').textContent = "Ad Recon — " + (DATA.run?.query||'');
+$('#meta').textContent = `run ${DATA.run?.run_id||''} · ${DATA.run?.search_mode||''} · `
+  + `preset ${DATA.run?.brand_preset||''} · ${(DATA.scored||[]).length} scouted · `
+  + `${(DATA.cards||[]).length} deconstructed`;
+if (DATA.gate_a?.avg != null) $('#gatea').textContent = `Gate A ${DATA.gate_a.avg}/10`;
+
+const sb = $('#scout tbody');
+(DATA.scored||[]).slice(0,15).forEach((s,i)=>{
+  const sc=s.score, tr=document.createElement('tr');
+  tr.innerHTML = `<td>${i+1}</td><td>${esc(s.ad.ad_id)}</td><td>${esc(s.ad.advertiser)}</td>`
+    +`<td>${s.ad.days_active}</td><td>${s.variant_count_in_cluster}</td>`
+    +`<td><div class="bar" style="width:${Math.round(sc.composite*100)}%"></div>${sc.composite}</td>`
+    +`<td>${s.fit_ok?'<span class=ok>✅</span>':'<span class=warn>⚠️</span>'}`
+    +`${sc.floor_vetoed?' <span class=veto>🚫</span>':''}</td>`;
+  sb.appendChild(tr);
+});
+
+const f = DATA.formula||{};
+$('#sample').textContent = `Sample: ${f.sample_size||0} cards (${f.rejected_count||0} excluded as low-fidelity)`;
+const fb = $('#formula tbody');
+(f.rows||[]).forEach(r=>{
+  const tr=document.createElement('tr');
+  tr.innerHTML = `<td>${esc(r.dimension)}</td><td><code>${esc(r.modal_value)}</code></td>`
+    +`<td>${r.pct}%</td><td>${r.low_confidence?'<span class=warn>⚠️ low-conf</span>':''}</td>`;
+  fb.appendChild(tr);
+});
+
+const cc = $('#cards');
+(DATA.cards||[]).forEach(c=>{
+  const d=document.createElement('div'); d.className='c'+(c.fidelity==='pass'?'':' low');
+  const nesb=[c.nesb_new&&'New',c.nesb_easy&&'Easy',c.nesb_safe&&'Safe',c.nesb_big&&'Big'].filter(Boolean).join(' · ');
+  d.innerHTML = `<h3>${esc(c.advertiser)} · ad ${esc(c.ad_id)}`
+    +`${c.fidelity!=='pass'?' <span class=warn>(low-fidelity)</span>':''}</h3>`
+    +`<div class=row><span class=lbl>Hook</span> <code>${esc(c.hook_type)}</code> ${esc(c.hook_evidence)}</div>`
+    +`<div class=row><span class=lbl>Mechanism</span> ${esc(c.unique_mechanism)}</div>`
+    +`<div class=row><span class=lbl>Awareness</span> <code>${esc(c.awareness_level)}</code></div>`
+    +`<div class=row><span class=lbl>Avatar</span> ${esc(c.avatar)}</div>`
+    +`<div class=row><span class=lbl>Wallet line</span> ${esc(c.wallet_line)}</div>`
+    +`<div class=row><span class=lbl>Belief</span> <code>${esc(c.subtext_belief_shift)}</code> · ${esc(nesb)}</div>`;
+  cc.appendChild(d);
+});
+
+// Ship handoff
+const rows = Object.fromEntries((f.rows||[]).map(r=>[r.dimension,r]));
+const val = d => { const r=rows[d]; return r&&!r.low_confidence ? `${r.modal_value} (${r.pct}%)` : '—(low-conf)'; };
+$('#ship').innerHTML =
+  `Apply the proven <b>structure</b> to YOUR offer — only the pattern transfers, never competitor data.<br><br>`
+  +`Hook <code>${esc(val('hook_type'))}</code> → ss-ad-generator hook code &middot; `
+  +`Narrative <code>${esc(val('narrative_structure'))}</code> → ad-copy-forge skeleton &middot; `
+  +`CTA <code>${esc(val('cta_placement'))}/${esc(val('cta_variant'))}</code> &middot; `
+  +`Awareness <code>${esc(val('awareness_level'))}</code> &middot; `
+  +`Belief <code>${esc(val('subtext_belief_shift'))}</code> → Prop Machine 6 beliefs<br><br>`
+  +`→ Run <code>/ss-ad-generator</code> or <code>/ad-copy-forge</code> with this structure.`;
+</script>
+</body>
+</html>

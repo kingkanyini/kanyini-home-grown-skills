@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kanyini.dev/schemas/plugin.schema.json",
+  "title": "Kanyini Home-Grown Skills — Plugin Manifest",
+  "description": "Per-skill .claude-plugin/plugin.json contract for the Kanyini Home-Grown Skills marketplace. See PLAN-v3.md §4.5 + §4.6.",
+  "type": "object",
+  "required": ["name", "version", "description", "author", "tier"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "Skill identifier. kebab-case, lowercase start, no consecutive hyphens, no underscores, no spaces."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Exact semver (MAJOR.MINOR.PATCH). No ranges, no prereleases in v1."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "One-line description shown in marketplace listings."
+    },
+    "author": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "Author metadata. EMAIL FIELD INTENTIONALLY OMITTED — community-marketplace privacy posture.",
+      "properties": {
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9"],
+      "description": "Marketplace tier per PLAN-v3.md §1. T1=Foundation, T2=Daily Intel, T3=Voice, T4=Build&Ship, T5=Offer, T6=Funnels, T7=Webinar/VSL, T8=Email/Copy, T9=Ads/Video."
+    },
+    "requires": {
+      "type": "array",
+      "default": [],
+      "description": "Hard dependencies — install BLOCKS until these skills are installed at compatible versions.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+            "description": "Bare-string form (means version=*). WARNED but allowed for v1."
+          },
+          {
+            "type": "object",
+            "required": ["name", "version"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+              },
+              "version": {
+                "type": "string",
+                "description": "semver range (e.g., '^1.0.0', '>=1.0.0 <2.0.0', '1.x')."
+              }
+            }
+          }
+        ]
+      }
+    },
+    "recommends": {
+      "type": "array",
+      "default": [],
+      "description": "Soft dependencies — install proceeds, skill warns at first invocation if missing. NOT included in cycle detection (can cycle safely).",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+          },
+          {
+            "type": "object",
+            "required": ["name", "version"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+              },
+              "version": { "type": "string" }
+            }
+          }
+        ]
+      }
+    },
+    "prereqs": {
+      "type": "object",
+      "default": {},
+      "additionalProperties": false,
+      "description": "External prerequisites consumed by preflight.mjs at first invocation.",
+      "properties": {
+        "mcps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^mcp__[a-zA-Z0-9_-]+(__.*)?$",
+            "description": "MCP server identifier (e.g., 'mcp__obsidian-brain__*', 'mcp__perplexity__perplexity_research')."
+          }
+        },
+        "clis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "description": "CLI tool name (e.g., 'yt-dlp', 'ffmpeg', 'node', 'python', 'gh', 'pwsh')."
+          }
+        },
+        "envVars": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*$",
+            "description": "POSIX env var name (e.g., 'PERPLEXITY_API_KEY')."
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "description": "External service name (e.g., 'Vercel', 'Composio', 'Canva', 'YouTube')."
+          }
+        }
+      }
+    },
+    "deprecated": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, resolver warns at install. See replacedBy."
+    },
+    "replacedBy": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "Name of the successor skill. Required when deprecated=true."
+    },
+    "compatibleClaudeCodeVersion": {
+      "type": "string",
+      "description": "semver range of Claude Code versions this skill supports (e.g., '>=1.0.0'). Resolver hard-blocks if current Claude Code version is outside range."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["deprecated"],
+        "properties": { "deprecated": { "const": true } }
+      },
+      "then": { "required": ["replacedBy"] }
+    }
+  ]
+}

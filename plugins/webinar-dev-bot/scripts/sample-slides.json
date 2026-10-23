@@ -1,0 +1,73 @@
+{
+  "title": "Practice Deck: The Calm Morning Method",
+  "brand": {
+    "primary": "#2E7D6B",
+    "primary_light": "#5FB8A2",
+    "secondary": "#B5543C",
+    "heading_font": "Playfair Display",
+    "body_font": "Source Sans 3"
+  },
+  "slides": [
+    {
+      "layout": "split",
+      "title": "The Calm Morning Method",
+      "subtitle": "How to start your day before your phone does",
+      "body": "A 20-minute practice for coaches who wake up already behind.",
+      "image": "sample-images/portrait-sunrise.jpg",
+      "notes": "Welcome everyone. Take one slow breath with me before we start."
+    },
+    {
+      "layout": "split-reverse",
+      "title": "Who this is for",
+      "bullets": [
+        "You check email before you get out of bed",
+        "Your best ideas show up at 11pm, when you're too tired to use them",
+        "You've tried morning routines and **quit by day four**"
+      ],
+      "image": "sample-images/wide-horizon.jpg",
+      "notes": "Ask for a show of hands on the first bullet."
+    },
+    {
+      "layout": "center",
+      "title": "If all I did today was give you **one quiet hour back**, would that be worth it?",
+      "notes": "Pause. Let them answer in the chat."
+    },
+    {
+      "layout": "stack",
+      "title": "The 3 beliefs we're going to shift",
+      "cards": [
+        {"title": "Old: I need more time", "body": "New: I need my first 20 minutes back"},
+        {"title": "Old: Routines are rigid", "body": "New: One anchor habit is enough"},
+        {"title": "Old: I'm not a morning person", "body": "New: Mornings are a skill, not a trait"}
+      ],
+      "notes": "Read each old belief out loud, then flip it."
+    },
+    {
+      "layout": "stack",
+      "title": "Everything you get today",
+      "table": [
+        ["4-week Calm Morning coaching group", "$1,200"],
+        ["Anchor Habit workbook", "$97"],
+        ["Weekly live Q&A", "$400"],
+        ["Total value", "$1,697"]
+      ],
+      "table_total": true,
+      "notes": "Slow down on the total."
+    },
+    {
+      "layout": "dark",
+      "title": "Your next step",
+      "body": "Join the group before Friday and the workbook is yours free.",
+      "image": "sample-images/square-calm.jpg",
+      "notes": "Drop the link in the chat now."
+    },
+    {
+      "layout": "split",
+      "title": "Thank you",
+      "body": "Questions? Stay on for the live Q&A.",
+      "image": "sample-images/this-one-is-missing-on-purpose.jpg",
+      "image_description": "smiling host waving goodbye",
+      "notes": "This slide's image is missing on purpose, so you can see what a placeholder looks like."
+    }
+  ]
+}

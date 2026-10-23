@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!--
+  calendar-template.html — Soulcial Media Engine
+  Week/day calendar execution document. Brand-neutral; assembly module overrides :root tokens.
+
+  TOKEN ROLE MAP (same as gold-standard-sidebar.html — keep in sync)
+  ─────────────────────────────────────────────────────────────────────────────
+  --ink        Body text / primary foreground
+  --leaf       Primary brand color (badges, links, labels)
+  --leaf-dk    Darker shade of brand primary (week-head h3, dlabel)
+  --leaf-deepest  Darkest brand shade — sidebar gradient terminus
+  --sand       Page background
+  --gold       Accent / CTA / week-head badge bg variant
+  --clay       Secondary warm accent (Reel format badge)
+  --mist       Week-head background surface
+  --line       Border / divider
+  --ok/--okbg       Exact-fit splice state
+  --mid/--midbg     Pillar-fit splice state
+  --warn/--warnbg   Sub-fit splice state
+  --bonus/--bonusbg Bonus splice state
+  --gap/--gapbg     No-footage / gap state
+  --sidew      Sidebar width (layout constant)
+  ─────────────────────────────────────────────────────────────────────────────
+
+  DENSITY NOTE (H4): The number of active post days vs. off-days is
+  CAPACITY-DRIVEN, not fixed-daily. Default plan spans 30 days. Assembly
+  module sets the actual post/off-day split based on brand interview output
+  (available bandwidth, existing footage, batch session cadence). Do NOT
+  hardcode a "post every day" assumption — use OFF-DAY cards where appropriate.
+
+  TWO CARD VARIANTS (documented below, search "DAY TEMPLATE"):
+    1. ACTIVE POST  — used on publishing days (has format badge, media badge, hook, .daygoal)
+    2. OFF-DAY      — used on engage/repost capacity days (lighter styling, no post fields)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{BRAND_NAME}} — {{DAY_COUNT}}-Day Content Calendar</title>
+<style>
+  :root{
+    --ink:#1d2b24;--leaf:#2f7d55;--leaf-dk:#1f5d3e;--leaf-deepest:#17492f;--sand:#f4f1e9;
+    --gold:#c89b3c;--clay:#b5654a;--mist:#eef3ee;--line:#dcd7c9;
+    --ok:#2f7d55;--okbg:#e6f2ea;--mid:#2c7a8a;--midbg:#e2f0f2;
+    --warn:#9a6a18;--warnbg:#fbf2d9;--bonus:#6b4a8a;--bonusbg:#efe7f5;
+    --gap:#8a8f88;--gapbg:#eeece6;--danger:#b5302a;--dangerbg:#fbe4e2;
+    --sidew:248px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--ink);
+    background:var(--sand);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+  .shell{display:flex;align-items:flex-start}
+  .sidebar{position:sticky;top:0;height:100vh;width:var(--sidew);flex:0 0 var(--sidew);
+    overflow-y:auto;background:linear-gradient(180deg,var(--leaf-dk),var(--leaf-deepest));color:#eaf2ec;
+    padding:22px 0 40px;box-shadow:2px 0 18px rgba(0,0,0,.12);z-index:10}
+  .main{flex:1;min-width:0}
+  .wrap{max-width:1080px;margin:0 auto;padding:30px 30px 90px}
+
+  .sbrand{padding:0 20px 16px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:12px}
+  .sbrand b{font-size:15px;font-weight:800;letter-spacing:.04em;display:block}
+  .sbrand span{font-size:11px;opacity:.75;display:block;margin-top:3px}
+  .nav{display:flex;flex-direction:column}
+  .nav a{color:#dbe8df;text-decoration:none;font-size:13px;padding:7px 20px;border-left:3px solid transparent;transition:.15s}
+  .nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+  .nav a.active{background:rgba(255,255,255,.13);border-left-color:var(--gold);color:#fff;font-weight:700}
+  .navgroup{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:800;padding:16px 20px 6px}
+  .navsub{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:#9fc4ad;padding:8px 20px 2px;font-weight:700}
+
+  h2.sec{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf-dk);
+    margin:46px 0 18px;font-weight:800;border-bottom:2px solid var(--line);padding-bottom:8px;scroll-margin-top:18px}
+
+  /* color-mix() in header box-shadow needs a modern browser — acceptable for local HTML deliverables */
+  header{background:linear-gradient(135deg,var(--leaf-dk),var(--leaf));color:#fff;
+    border-radius:18px;padding:34px 38px;box-shadow:0 12px 30px color-mix(in srgb, var(--leaf-dk) 25%, transparent);position:relative;overflow:hidden}
+  header:after{content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;
+    background:radial-gradient(circle,rgba(200,155,60,.35),transparent 70%);border-radius:50%}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;opacity:.85;font-weight:600}
+  header h1{font-size:30px;margin:8px 0 6px;font-weight:800}
+  header p{max-width:720px;opacity:.95;font-size:14.5px}
+  .meta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .meta div{background:rgba(255,255,255,.12);padding:9px 14px;border-radius:10px;font-size:12.5px}
+  .meta b{display:block;font-size:17px;font-weight:800}
+  .offerbar{background:linear-gradient(135deg,var(--gold),#a87f24);color:#fff;border-radius:12px;
+    padding:14px 20px;margin-top:18px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .offerbar code{background:rgba(255,255,255,.22);padding:2px 8px;border-radius:5px;font-size:13px}
+
+  /* ── WEEK / DAY CARD SYSTEM (verbatim from gold standard) ── */
+  .week{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:22px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.05);scroll-margin-top:18px}
+  .week-head{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:var(--mist);border-bottom:1px solid var(--line)}
+  .week-head .tag{display:flex;align-items:center;gap:14px}
+  .week-head .badge{background:var(--leaf);color:#fff;font-weight:800;font-size:13px;padding:6px 12px;border-radius:8px;white-space:nowrap}
+  .week-head h3{font-size:18px;color:var(--leaf-dk)}
+  .week-head .goal{font-size:12px;color:#6b756d;font-style:italic;max-width:300px;text-align:right}
+  .day{padding:16px 24px;border-bottom:1px solid #efece2}
+  .day:last-child{border-bottom:none}
+  .day-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .dlabel{font-weight:800;color:var(--leaf-dk);font-size:13px;min-width:96px}
+
+  /* ── FORMAT BADGES (verbatim) ── */
+  .fmt{display:inline-block;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .f-reel{background:#fbe9e3;color:var(--clay)}
+  .f-faceless{background:#e9f1ea;color:var(--leaf-dk)}
+  .f-story{background:#fbf2d9;color:#8a6a18}
+  .f-perm{background:#eaf4ee;color:var(--leaf-dk);border:1px dashed var(--leaf)}
+  .f-carousel{background:#efe7f5;color:#6b4a8a}
+  .f-static{background:#f0eee8;color:#6b6256}
+
+  /* ── MEDIA TYPE BADGES (verbatim) ── */
+  .media{display:inline-block;font-size:10px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.02em;white-space:nowrap}
+  .m-video{background:#e7eef9;color:#2c5a8a}
+  .m-carousel{background:#efe7f5;color:#6b4a8a}
+  .m-image{background:#e9f1ea;color:#1f5d3e}
+  .m-product{background:#fbf2d9;color:#8a6a18}
+  .m-article{background:#f0eee8;color:#6b6256}
+
+  /* ── SPLICE / FIT BADGES (verbatim) ── */
+  .hook{font-weight:700;font-size:14.5px;color:var(--ink);margin:6px 0 2px}
+  .body{font-size:12.5px;color:#5a655d;font-style:italic}
+  .splice{margin-top:10px;padding:10px 14px;border-radius:10px;font-size:12.5px;display:flex;gap:10px;align-items:flex-start}
+  .splice .clap{font-size:15px;line-height:1.2}
+  .splice .stxt{flex:1}.splice .stxt b{color:var(--ink)}
+  .fitbadge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;padding:2px 8px;border-radius:20px;margin-left:6px;text-transform:uppercase;vertical-align:middle}
+  .s-ok{background:var(--okbg)} .s-ok .fitbadge{background:var(--ok);color:#fff}
+  .s-mid{background:var(--midbg)} .s-mid .fitbadge{background:var(--mid);color:#fff}
+  .s-warn{background:var(--warnbg)} .s-warn .fitbadge{background:var(--warn);color:#fff}
+  .s-bonus{background:var(--bonusbg)} .s-bonus .fitbadge{background:var(--bonus);color:#fff}
+  .s-gap{background:var(--gapbg)} .s-gap .fitbadge{background:var(--gap);color:#fff}
+  .s-prod{background:#fbf2d9} .s-prod .fitbadge{background:var(--gold);color:#fff}
+
+  /* ── LEGEND (verbatim) ── */
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px;font-size:11.5px}
+  .legend span{padding:4px 10px;border-radius:20px;font-weight:600}
+
+  /* ── DAY GOAL CHIP (H10 — new element, not in donor) ──
+     Placed inside .day, below .body / .hook, to give each post day
+     its own goal-type indicator. The donor .goal lives on .week-head
+     (one per week). .daygoal is one per day / per post.
+     Values: reach | trust | buy
+     reach = top-of-funnel, new eyeballs, no CTA pressure
+     trust = mid-funnel, education + proof, soft CTA
+     buy   = bottom-of-funnel, offer + conversion CTA
+  ── */
+  .daygoal{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;
+    letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;
+    margin-top:7px;border:1px solid transparent}
+  .dg-reach{background:#e7eef9;color:#2c5a8a;border-color:#c4d5ec}
+  .dg-trust{background:var(--okbg);color:var(--leaf-dk);border-color:#b9d8c5}
+  .dg-buy{background:var(--warnbg);color:#7a5210;border-color:#e0c97a}
+
+  /* ── OFF-DAY CARD (H4 — capacity-driven, not fixed-daily) ── */
+  .day.offday{background:#f9f8f4;opacity:.85}
+  .day.offday .dlabel{color:#8a9490}
+  .offday-label{display:inline-block;font-size:10.5px;font-weight:700;padding:3px 10px;
+    border-radius:20px;background:var(--gapbg);color:var(--gap);letter-spacing:.04em;
+    text-transform:uppercase;margin-left:6px}
+  .offday-tasks{margin-top:8px;font-size:12px;color:#6b756d;padding-left:4px}
+  .offday-tasks li{list-style:none;padding:2px 0 2px 16px;position:relative}
+  .offday-tasks li:before{content:"·";position:absolute;left:4px;color:var(--leaf)}
+
+  /* ── BATCH PLAN PANEL (H4) ── */
+  .batchplan{background:#fff;border:2px dashed var(--gold);border-radius:14px;
+    padding:20px 24px;margin:22px 0;box-shadow:0 4px 12px rgba(200,155,60,.08)}
+  .batchplan .bp-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .batchplan .bp-badge{background:var(--gold);color:#fff;font-weight:800;font-size:11px;
+    padding:4px 10px;border-radius:6px;letter-spacing:.06em;text-transform:uppercase}
+  .batchplan h3{font-size:16px;color:var(--leaf-dk);font-weight:700}
+  .batchplan .bp-meta{font-size:12px;color:#6b756d;margin-bottom:14px;font-style:italic}
+  .bp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .bp-item{background:var(--mist);border-radius:10px;padding:12px 14px;border:1px solid var(--line)}
+  .bp-item .bp-label{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:4px}
+  .bp-item p{font-size:12.5px;color:#4a564e}
+  .bp-note{margin-top:12px;background:var(--mist);border-radius:8px;padding:10px 14px;
+    font-size:12px;color:#5a6e60}
+  .bp-note b{color:var(--leaf-dk)}
+
+  .note{background:#fff;border-left:4px solid var(--gold);border-radius:8px;padding:16px 20px;font-size:13px;color:#4a564e;margin-top:18px}
+  .note b{color:var(--leaf-dk)}
+  .gapbox{background:var(--gapbg);border:1px dashed #b9bdb4;border-radius:12px;padding:16px 20px;font-size:13px;color:#4a564e;margin-top:18px;scroll-margin-top:18px}
+  .gapbox b{color:var(--ink)}.gapbox ul{margin:8px 0 0 18px}
+  footer{margin-top:50px;font-size:11.5px;color:#9aa39b;line-height:1.7}
+
+  .navtoggle{display:none}
+  @media(max-width:880px){
+    .shell{flex-direction:column}
+    .sidebar{position:static;height:auto;width:100%;flex-basis:auto;max-height:60vh;padding:12px 0;display:none}
+    .sidebar.open{display:block}
+    .navtoggle{display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:20;
+      background:var(--leaf-dk);color:#fff;border:none;width:100%;padding:13px 18px;font-size:14px;font-weight:700;cursor:pointer}
+    .wrap{padding:22px 18px 70px}
+    .week-head{flex-direction:column;align-items:flex-start;gap:8px}.week-head .goal{text-align:left}
+    h2.sec,.week{scroll-margin-top:60px}
+    .bp-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<button class="navtoggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776; &nbsp;Jump to week</button>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="sbrand"><b>{{BRAND_NAME}}</b><span>{{BRAND_TAGLINE}}</span></div>
+    <nav class="nav">
+      <div class="navgroup">{{DAY_COUNT}}-Day Calendar</div>
+      <a href="#plan">The Plan</a>
+      <div class="navsub">{{ARC_1_NAME}}</div>
+      <a href="#wk1">Week 1</a>
+      <div class="navsub">{{ARC_2_NAME}}</div>
+      <a href="#wk2">Week 2</a>
+      <div class="navsub">{{ARC_3_NAME}}</div>
+      <a href="#wk3">Week 3</a>
+      <div class="navsub">{{ARC_4_NAME}}</div>
+      <a href="#wk4">Week 4</a>
+      <div class="navgroup">Batch &amp; Gaps</div>
+      <a href="#batchplan">Batch Plan</a>
+      <a href="#gaps">Production Gaps</a>
+    </nav>
+  </aside>
+
+  <main class="main"><div class="wrap">
+
+  <header>
+    <div class="eyebrow">{{BRAND_NAME}} · {{DAY_COUNT}}-Day Content Calendar</div>
+    <h1>{{BRAND_NAME}} — Content Calendar</h1>
+    <p>{{CALENDAR_DESCRIPTION}}</p>
+    <div class="offerbar">&#127775; ONE CTA EVERYWHERE: <code>{{PRIMARY_CTA_URL}}</code> &mdash; <b>{{PRIMARY_OFFER}}</b></div>
+    <div class="meta">
+      <div><b>{{FORMAT_COUNT}}</b>formats</div>
+      <div><b>{{ARC_COUNT}}</b>weekly arcs</div>
+      <div><b>{{ACTIVE_POST_COUNT}}</b>active post days</div>
+      <div><b>{{OFF_DAY_COUNT}}</b>off-days (engage/repost)</div>
+      <div><b>{{MEDIA_TYPE_COUNT}}</b>media types</div>
+    </div>
+  </header>
+
+  <!-- LEGEND -->
+  <h2 class="sec" id="plan">The {{DAY_COUNT}} Days</h2>
+  <div class="legend">
+    <span class="s-ok" style="background:var(--okbg)">&#10003; EXACT</span>
+    <span class="s-mid" style="background:var(--midbg)">&#9680; PILLAR</span>
+    <span class="s-warn" style="background:var(--warnbg)">&#9888; SUB</span>
+    <span class="s-bonus" style="background:var(--bonusbg)">&#65291; BONUS</span>
+    <span class="s-gap" style="background:var(--gapbg)">&#10005; NO FOOTAGE</span>
+    <span class="s-prod" style="background:#fbf2d9">&#128246; PRODUCT / STATIC</span>
+  </div>
+  <div class="legend" style="margin-top:6px">
+    <span class="daygoal dg-reach">&#128262; REACH</span>
+    <span class="daygoal dg-trust">&#128214; TRUST</span>
+    <span class="daygoal dg-buy">&#128176; BUY</span>
+    <span style="font-size:11.5px;color:#6b756d;padding:4px 0">&#8592; per-day goal chip (H10)</span>
+  </div>
+  <p style="font-size:12px;color:#6b756d;margin:8px 0 18px"><b style="color:var(--leaf-dk)">Density note (H4):</b> Active post days vs. off-days are <b>capacity-driven</b>, not fixed-daily. Assembly module sets the split based on brand bandwidth and batch session output. Off-day cards use the <code>.day.offday</code> variant below.</p>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       DAY TEMPLATE: ACTIVE POST
+       Use on days when a post publishes.
+       Required elements:
+         .dlabel          — day label (e.g. "Mon · F1", "🌿 Open", "Thu · F4")
+         .fmt             — format badge (.f-reel / .f-faceless / .f-story / .f-perm / .f-carousel / .f-static)
+         .media           — media type badge (.m-video / .m-carousel / .m-image / .m-product / .m-article)
+         .hook            — the scroll-stop hook line (bold, large)
+         .body            — angle / caption seed (italic, secondary)
+         .daygoal         — per-day goal chip (.dg-reach / .dg-trust / .dg-buy) — H10
+         .splice          — optional: existing asset splice note with .fitbadge fit indicator
+       ════════════════════════════════════════════════════════════════ -->
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       DAY TEMPLATE: OFF-DAY
+       Use on capacity-driven rest/engage days (H4). No post publishes.
+       Required elements:
+         .day.offday      — day card with offday modifier class
+         .dlabel          — day label
+         .offday-label    — "OFF DAY" pill badge
+         .offday-tasks ul — list of engagement / repost tasks for the day
+       No .hook / .body / .daygoal / .splice on off-days.
+       ════════════════════════════════════════════════════════════════ -->
+
+  <!-- WEEK 1 ──────────────────────────────────────────────────────── -->
+  <div class="week" id="wk1">
+    <div class="week-head">
+      <div class="tag">
+        <span class="badge">WEEK 1</span>
+        <h3>{{ARC_1_NAME}}</h3>
+      </div>
+      <div class="goal">{{ARC_1_WEEK_GOAL}}</div>
+    </div>
+
+    <!-- ACTIVE POST example -->
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">&#127807; {{DAY_1_LABEL}}</span>
+        <span class="fmt f-perm">{{DAY_1_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{DAY_1_HOOK}}</div>
+      <div class="body">{{DAY_1_ANGLE}}</div>
+      <span class="daygoal dg-reach">&#128262; reach</span>
+      <div class="splice s-ok">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{DAY_1_ASSET_NAME}}</b> — {{DAY_1_ASSET_NOTE}} <span class="fitbadge">&#10003; Exact</span></div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Mon · {{FORMAT_1_ID}}</span>
+        <span class="fmt f-reel">{{DAY_2_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{DAY_2_HOOK}}</div>
+      <div class="body">{{DAY_2_ANGLE}}</div>
+      <span class="daygoal dg-reach">&#128262; reach</span>
+      <div class="splice s-mid">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{DAY_2_ASSET_NAME}}</b> <span class="fitbadge">&#9680; Pillar</span><br>{{DAY_2_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Tue · {{FORMAT_2_ID}}</span>
+        <span class="fmt f-faceless">{{DAY_3_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{DAY_3_HOOK}}</div>
+      <div class="body">{{DAY_3_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-ok">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{DAY_3_ASSET_NAME}}</b> <span class="fitbadge">&#10003; Exact</span><br>{{DAY_3_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <!-- OFF-DAY example (H4 — capacity-driven) -->
+    <div class="day offday">
+      <div class="day-top">
+        <span class="dlabel">Wed</span>
+        <span class="offday-label">OFF-DAY</span>
+      </div>
+      <ul class="offday-tasks">
+        <li>Reply to all comments from Mon + Tue posts (Daily 15)</li>
+        <li>Repost a top-performing asset to Stories</li>
+        <li>Engage 10 accounts in target community</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Thu · {{FORMAT_3_ID}}</span>
+        <span class="fmt f-reel">{{DAY_5_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+        <span class="media m-article">&#128240; Article</span>
+      </div>
+      <div class="hook">{{DAY_5_HOOK}}</div>
+      <div class="body">{{DAY_5_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-mid">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{DAY_5_ASSET_NAME}}</b> <span class="fitbadge">&#9680; Pillar</span><br>{{DAY_5_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Fri · {{FORMAT_4_ID}}</span>
+        <span class="fmt f-reel">{{DAY_6_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{DAY_6_HOOK}}</div>
+      <div class="body">{{DAY_6_ANGLE}}</div>
+      <span class="daygoal dg-reach">&#128262; reach</span>
+      <div class="splice s-bonus">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{DAY_6_ASSET_NAME}}</b> <span class="fitbadge">&#65291; Bonus</span><br>{{DAY_6_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+  </div><!-- /week 1 -->
+
+  <!-- WEEK 2 ──────────────────────────────────────────────────────── -->
+  <div class="week" id="wk2">
+    <div class="week-head">
+      <div class="tag">
+        <span class="badge">WEEK 2</span>
+        <h3>{{ARC_2_NAME}}</h3>
+      </div>
+      <div class="goal">{{ARC_2_WEEK_GOAL}}</div>
+    </div>
+
+    <!-- Assembly: populate week 2 day cards using ACTIVE POST or OFF-DAY templates.
+         Density is capacity-driven — not every day needs a post. -->
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Mon · {{FORMAT_1_ID}}</span>
+        <span class="fmt f-story">{{WK2_D1_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK2_D1_HOOK}}</div>
+      <div class="body">{{WK2_D1_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-warn">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK2_D1_ASSET_NAME}}</b> <span class="fitbadge">&#9888; Sub</span><br>{{WK2_D1_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Tue · {{FORMAT_2_ID}}</span>
+        <span class="fmt f-story">{{WK2_D2_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK2_D2_HOOK}}</div>
+      <div class="body">{{WK2_D2_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-warn">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK2_D2_ASSET_NAME}}</b> <span class="fitbadge">&#9888; Sub</span><br>{{WK2_D2_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day offday">
+      <div class="day-top">
+        <span class="dlabel">Wed</span>
+        <span class="offday-label">OFF-DAY</span>
+      </div>
+      <ul class="offday-tasks">
+        <li>Engage top commenters from Mon + Tue</li>
+        <li>DM new followers (personal note, not a pitch)</li>
+        <li>Repost to Stories: last week's top-performing post</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">&#127807; Mid-arc</span>
+        <span class="fmt f-perm">{{WK2_D4_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK2_D4_HOOK}}</div>
+      <div class="body">{{WK2_D4_ANGLE}}</div>
+      <span class="daygoal dg-reach">&#128262; reach</span>
+      <div class="splice s-ok">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK2_D4_ASSET_NAME}}</b> <span class="fitbadge">&#10003; Exact</span></div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Thu · {{FORMAT_3_ID}}</span>
+        <span class="fmt f-reel">{{WK2_D5_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+        <span class="media m-article">&#128240; Article</span>
+      </div>
+      <div class="hook">{{WK2_D5_HOOK}}</div>
+      <div class="body">{{WK2_D5_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-gap">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><span class="fitbadge">&#10005; No footage</span> {{WK2_D5_GAP_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Fri · {{FORMAT_4_ID}}</span>
+        <span class="fmt f-reel">{{WK2_D6_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK2_D6_HOOK}}</div>
+      <div class="body">{{WK2_D6_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-gap">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><span class="fitbadge">&#10005; No footage</span> {{WK2_D6_GAP_NOTE}}</div>
+      </div>
+    </div>
+
+  </div><!-- /week 2 -->
+
+  <!-- WEEK 3 ──────────────────────────────────────────────────────── -->
+  <div class="week" id="wk3">
+    <div class="week-head">
+      <div class="tag">
+        <span class="badge">WEEK 3</span>
+        <h3>{{ARC_3_NAME}}</h3>
+      </div>
+      <div class="goal">{{ARC_3_WEEK_GOAL}}</div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Mon · {{FORMAT_1_ID}}</span>
+        <span class="fmt f-story">{{WK3_D1_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK3_D1_HOOK}}</div>
+      <div class="body">{{WK3_D1_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-warn">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK3_D1_ASSET_NAME}}</b> <span class="fitbadge">&#9888; Sub</span><br>{{WK3_D1_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Tue · {{FORMAT_2_ID}}</span>
+        <span class="fmt f-reel">{{WK3_D2_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK3_D2_HOOK}}</div>
+      <div class="body">{{WK3_D2_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-mid">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK3_D2_ASSET_NAME}}</b> <span class="fitbadge">&#9680; Pillar</span><br>{{WK3_D2_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day offday">
+      <div class="day-top">
+        <span class="dlabel">Wed</span>
+        <span class="offday-label">OFF-DAY</span>
+      </div>
+      <ul class="offday-tasks">
+        <li>Engage all comments — proof week drives higher comment volume</li>
+        <li>Story poll: "which symptom do you feel most?" (audience research)</li>
+        <li>Repost top asset from week 1 or 2 as Trial Reel if applicable</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Thu · {{FORMAT_3_ID}}</span>
+        <span class="fmt f-reel">{{WK3_D4_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+        <span class="media m-article">&#128240; Article</span>
+      </div>
+      <div class="hook">{{WK3_D4_HOOK}}</div>
+      <div class="body">{{WK3_D4_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-gap">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><span class="fitbadge">&#10005; No footage</span> {{WK3_D4_GAP_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Fri · {{FORMAT_4_ID}}</span>
+        <span class="fmt f-reel">{{WK3_D5_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK3_D5_HOOK}}</div>
+      <div class="body">{{WK3_D5_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-gap">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><span class="fitbadge">&#10005; No footage</span> {{WK3_D5_GAP_NOTE}}</div>
+      </div>
+    </div>
+
+  </div><!-- /week 3 -->
+
+  <!-- WEEK 4 ──────────────────────────────────────────────────────── -->
+  <div class="week" id="wk4">
+    <div class="week-head">
+      <div class="tag">
+        <span class="badge">WEEK 4</span>
+        <h3>{{ARC_4_NAME}}</h3>
+      </div>
+      <div class="goal">{{ARC_4_WEEK_GOAL}}</div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">&#127807; Pre-invite</span>
+        <span class="fmt f-perm">{{WK4_D1_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK4_D1_HOOK}}</div>
+      <div class="body">{{WK4_D1_ANGLE}}</div>
+      <span class="daygoal dg-trust">&#128214; trust</span>
+      <div class="splice s-ok">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK4_D1_ASSET_NAME}}</b> <span class="fitbadge">&#10003; Exact</span></div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Mon · {{FORMAT_1_ID}}</span>
+        <span class="fmt f-reel">{{WK4_D2_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK4_D2_HOOK}}</div>
+      <div class="body">{{WK4_D2_ANGLE}}</div>
+      <span class="daygoal dg-buy">&#128176; buy</span>
+      <div class="splice s-warn">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK4_D2_ASSET_NAME}}</b> <span class="fitbadge">&#9888; Sub</span><br>{{WK4_D2_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day offday">
+      <div class="day-top">
+        <span class="dlabel">Tue</span>
+        <span class="offday-label">OFF-DAY</span>
+      </div>
+      <ul class="offday-tasks">
+        <li>Engage all comments from Mon post — offer week needs high response speed</li>
+        <li>Story Q&amp;A: "What's been your biggest barrier to starting?"</li>
+        <li>Warm DM: personal note to anyone who commented on proof-week posts</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Wed</span>
+        <span class="fmt f-static">{{WK4_D4_FORMAT_NAME}}</span>
+        <span class="media m-product">&#128246; Product</span>
+      </div>
+      <div class="hook">{{WK4_D4_HOOK}}</div>
+      <div class="body">{{WK4_D4_ANGLE}}</div>
+      <span class="daygoal dg-buy">&#128176; buy</span>
+      <div class="splice s-prod">
+        <span class="clap">&#128247;</span>
+        <div class="stxt"><b>Static product image</b> <span class="fitbadge">&#128246; Product</span><br>{{WK4_D4_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Thu · {{FORMAT_3_ID}} · THE OFFER</span>
+        <span class="fmt f-reel">{{WK4_D5_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+        <span class="media m-article">&#128240; Article</span>
+      </div>
+      <div class="hook">{{WK4_D5_HOOK}}</div>
+      <div class="body">{{WK4_D5_ANGLE}}</div>
+      <span class="daygoal dg-buy">&#128176; buy</span>
+      <div class="splice s-gap">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><span class="fitbadge">&#10005; No footage</span> {{WK4_D5_GAP_NOTE}} Highest-value gap — prioritize.</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-top">
+        <span class="dlabel">Fri · {{FORMAT_4_ID}}</span>
+        <span class="fmt f-reel">{{WK4_D6_FORMAT_NAME}}</span>
+        <span class="media m-video">&#127909; Video</span>
+      </div>
+      <div class="hook">{{WK4_D6_HOOK}}</div>
+      <div class="body">{{WK4_D6_ANGLE}}</div>
+      <span class="daygoal dg-buy">&#128176; buy</span>
+      <div class="splice s-bonus">
+        <span class="clap">&#127907;</span>
+        <div class="stxt"><b>{{WK4_D6_ASSET_NAME}}</b> <span class="fitbadge">&#65291; Bonus</span><br>{{WK4_D6_SPLICE_NOTE}}</div>
+      </div>
+    </div>
+
+  </div><!-- /week 4 -->
+
+  <!-- BATCH PLAN PANEL (H4) ──────────────────────────────────────── -->
+  <h2 class="sec" id="batchplan">Batch Plan</h2>
+  <div class="batchplan">
+    <div class="bp-head">
+      <span class="bp-badge">Batch Session</span>
+      <h3>{{BATCH_SESSION_TITLE}}</h3>
+    </div>
+    <p class="bp-meta">{{BATCH_SESSION_DATE_PLACEHOLDER}} &mdash; {{BATCH_SESSION_DURATION}} &mdash; {{BATCH_SESSION_LOCATION}}</p>
+    <div class="bp-grid">
+      <div class="bp-item">
+        <div class="bp-label">Format focus</div>
+        <p>{{BATCH_FORMAT_FOCUS}}</p>
+      </div>
+      <div class="bp-item">
+        <div class="bp-label">Assets to capture</div>
+        <p>{{BATCH_ASSET_COUNT}} clips / stills targeted</p>
+      </div>
+      <div class="bp-item">
+        <div class="bp-label">Talent / setup</div>
+        <p>{{BATCH_TALENT_SETUP}}</p>
+      </div>
+      <div class="bp-item">
+        <div class="bp-label">Priority assets</div>
+        <p>{{BATCH_PRIORITY_1}}<br>{{BATCH_PRIORITY_2}}<br>{{BATCH_PRIORITY_3}}</p>
+      </div>
+      <div class="bp-item">
+        <div class="bp-label">Product / stills</div>
+        <p>{{BATCH_PRODUCT_STILLS}}</p>
+      </div>
+      <div class="bp-item">
+        <div class="bp-label">Reactive lane</div>
+        <p>{{BATCH_REACTIVE_NOTE}}</p>
+      </div>
+    </div>
+    <div class="bp-note">
+      <b>Density reminder (H4):</b> This batch plan covers {{BATCH_COVERS_N_WEEKS}} weeks of active post days. Off-days (engage/repost) require no new assets. Adjust asset count to actual bandwidth — one film day with {{BATCH_SESSION_DURATION}} can realistically yield {{BATCH_ASSET_COUNT}} clips.
+    </div>
+  </div>
+
+  <!-- PRODUCTION GAPS ──────────────────────────────────────────────── -->
+  <div class="gapbox" id="gaps">
+    <b>Still needs producing before the full {{DAY_COUNT}} days can run</b> (everything else already has a clip, a product still, or a clear plan):
+    <ul>
+      <li><b>{{GAP_1_TYPE}}</b> &mdash; {{GAP_1_DESCRIPTION}}</li>
+      <li><b>{{GAP_2_TYPE}}</b> &mdash; {{GAP_2_DESCRIPTION}}</li>
+      <li><b>{{GAP_3_TYPE}}</b> &mdash; {{GAP_3_DESCRIPTION}}</li>
+    </ul>
+    <b>Net:</b> {{GAPS_NET_SUMMARY}}
+  </div>
+
+  <div class="note">
+    <b>Minimum Viable Week</b> (run it tired): {{MVW_DESCRIPTION}}. A plan you can run tired is the only plan that survives month two.
+  </div>
+
+  <footer>
+    {{BRAND_NAME}} · {{DAY_COUNT}}-Day Content Calendar · Client-private &mdash; do not distribute.<br>
+    Generated by Soulcial Media Engine (2026-06-29).
+  </footer>
+
+  </div></main>
+</div>
+
+<script>
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    var map = links.map(function(a){ return { a:a, sec:document.querySelector(a.getAttribute('href')) }; }).filter(function(x){ return x.sec; });
+    function spy(){
+      var cur = null;
+      for (var i=0;i<map.length;i++){ if (map[i].sec.getBoundingClientRect().top <= 140) cur = map[i].a; }
+      links.forEach(function(a){ a.classList.remove('active'); });
+      if (cur) cur.classList.add('active');
+    }
+    document.addEventListener('scroll', spy, {passive:true});
+    window.addEventListener('resize', spy);
+    spy();
+    links.forEach(function(a){ a.addEventListener('click', function(){ if (window.innerWidth <= 880) document.querySelector('.sidebar').classList.remove('open'); }); });
+  })();
+</script>
+</body>
+</html>

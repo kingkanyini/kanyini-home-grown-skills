@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!--
+  gold-standard-sidebar.html — Soulcial Media Engine
+  Master strategy document shell. Brand-neutral; assembly module overrides :root tokens.
+
+  TOKEN ROLE MAP
+  ─────────────────────────────────────────────────────────────────────────────
+  --ink        Body text / primary foreground
+  --leaf       Primary brand color (CTA, badges, nav active border, links)
+  --leaf-dk    Darker shade of brand primary (headers, h2.sec, label text)
+  --leaf-deepest  Darkest brand shade — sidebar gradient terminus
+  --sand       Page background
+  --gold       Accent / CTA / highlight (offer bar, compliance border, pill .n)
+  --clay       Secondary warm accent (e.g. format badge variant)
+  --mist       Subtle tinted surface (week-head bg, pill hover, sidebar bg tint)
+  --line       Border / divider color
+  --ok / --okbg        Positive state (compliance "say" box, exact splice)
+  --mid / --midbg      Middle-tier state (pillar splice)
+  --warn / --warnbg    Warning / sub state (sub splice)
+  --bonus / --bonusbg  Bonus / extra state
+  --gap / --gapbg      No-footage / gap state
+  --danger / --dangerbg  Never-do / negative state (compliance "never" box)
+  --sidew      Sidebar width (layout constant)
+  ─────────────────────────────────────────────────────────────────────────────
+  Assembly override pattern:
+    <style>:root{ --leaf:#YOUR_COLOR; --leaf-dk:#YOUR_DARK; --gold:#YOUR_ACCENT; ... }</style>
+  Swap in brand colors for role tokens; do NOT hardcode any specific brand's hex here.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{BRAND_NAME}} — Content Strategy Master Doc</title>
+<style>
+  :root{
+    --ink:#1d2b24;--leaf:#2f7d55;--leaf-dk:#1f5d3e;--leaf-deepest:#17492f;--sand:#f4f1e9;
+    --gold:#c89b3c;--clay:#b5654a;--mist:#eef3ee;--line:#dcd7c9;
+    --ok:#2f7d55;--okbg:#e6f2ea;--mid:#2c7a8a;--midbg:#e2f0f2;
+    --warn:#9a6a18;--warnbg:#fbf2d9;--bonus:#6b4a8a;--bonusbg:#efe7f5;
+    --gap:#8a8f88;--gapbg:#eeece6;--danger:#b5302a;--dangerbg:#fbe4e2;
+    --sidew:248px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--ink);
+    background:var(--sand);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+  .shell{display:flex;align-items:flex-start}
+  .sidebar{position:sticky;top:0;height:100vh;width:var(--sidew);flex:0 0 var(--sidew);
+    overflow-y:auto;background:linear-gradient(180deg,var(--leaf-dk),var(--leaf-deepest));color:#eaf2ec;
+    padding:22px 0 40px;box-shadow:2px 0 18px rgba(0,0,0,.12);z-index:10}
+  .main{flex:1;min-width:0}
+  .wrap{max-width:1080px;margin:0 auto;padding:30px 30px 90px}
+
+  .sbrand{padding:0 20px 16px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:12px}
+  .sbrand b{font-size:15px;font-weight:800;letter-spacing:.04em;display:block}
+  .sbrand span{font-size:11px;opacity:.75;display:block;margin-top:3px}
+  .nav{display:flex;flex-direction:column}
+  .nav a{color:#dbe8df;text-decoration:none;font-size:13px;padding:7px 20px;border-left:3px solid transparent;transition:.15s}
+  .nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+  .nav a.active{background:rgba(255,255,255,.13);border-left-color:var(--gold);color:#fff;font-weight:700}
+  .navgroup{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:800;padding:16px 20px 6px}
+  .navsub{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:#9fc4ad;padding:8px 20px 2px;font-weight:700}
+
+  h2.sec{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf-dk);
+    margin:46px 0 18px;font-weight:800;border-bottom:2px solid var(--line);padding-bottom:8px;scroll-margin-top:18px}
+  section[id]{scroll-margin-top:18px}
+
+  /* color-mix() in header box-shadow needs a modern browser — acceptable for local HTML deliverables */
+  header{background:linear-gradient(135deg,var(--leaf-dk),var(--leaf));color:#fff;
+    border-radius:18px;padding:34px 38px;box-shadow:0 12px 30px color-mix(in srgb, var(--leaf-dk) 25%, transparent);position:relative;overflow:hidden}
+  header:after{content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;
+    background:radial-gradient(circle,rgba(200,155,60,.35),transparent 70%);border-radius:50%}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;opacity:.85;font-weight:600}
+  header h1{font-size:30px;margin:8px 0 6px;font-weight:800}
+  header p{max-width:720px;opacity:.95;font-size:14.5px}
+  .meta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .meta div{background:rgba(255,255,255,.12);padding:9px 14px;border-radius:10px;font-size:12.5px}
+  .meta b{display:block;font-size:17px;font-weight:800}
+  .offerbar{background:linear-gradient(135deg,var(--gold),#a87f24);color:#fff;border-radius:12px;
+    padding:14px 20px;margin-top:18px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .offerbar code{background:rgba(255,255,255,.22);padding:2px 8px;border-radius:5px;font-size:13px}
+
+  .compliance{background:#fff;border:2px solid var(--gold);border-radius:16px;overflow:hidden;
+    box-shadow:0 10px 26px rgba(200,155,60,.18);margin-top:24px;scroll-margin-top:18px}
+  .compliance .ch{background:linear-gradient(135deg,#8a6a18,var(--gold));color:#fff;padding:18px 24px}
+  .compliance .ch h3{font-size:18px;font-weight:800}
+  .compliance .ch p{font-size:12.5px;opacity:.92;margin-top:2px}
+  .compliance .cb{padding:22px 24px}
+  .claims{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+  .claims .box{border-radius:12px;padding:14px 16px;font-size:13.5px}
+  .claims .never{background:var(--dangerbg);border:1px solid #e9b8b4}
+  .claims .say{background:var(--okbg);border:1px solid #b9d8c5}
+  .claims .box h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+  .claims .never h4{color:var(--danger)}.claims .say h4{color:var(--leaf-dk)}
+  .claims code{background:rgba(0,0,0,.05);padding:1px 6px;border-radius:5px;font-size:12.5px}
+  .ctable{width:100%;border-collapse:collapse}
+  .ctable th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#7a857d;text-align:left;
+    padding:9px 14px;background:#fbfaf6;border-bottom:1px solid var(--line)}
+  .ctable td{padding:11px 14px;font-size:13px;border-bottom:1px solid #efece2;vertical-align:top}
+  .ctable td:first-child{color:var(--danger);width:42%}
+  .ctable td:last-child{color:var(--leaf-dk);font-weight:600}
+  .ctable tr:last-child td{border-bottom:none}
+  .hardrules{margin-top:16px;background:var(--mist);border-radius:10px;padding:14px 16px;font-size:12.5px;color:#3c473f}
+  .hardrules b{color:var(--leaf-dk)}
+
+  .strategy{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .pill{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+  .pill .n{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.08em}
+  .pill h3{font-size:15px;margin:5px 0;color:var(--leaf-dk)}
+  .pill p{font-size:12.5px;color:#4a564e}
+  .ladder{grid-column:1/-1;background:linear-gradient(135deg,#fff,#fdf8ec);border-color:var(--gold)}
+  .ladder .flow{font-size:14px;font-weight:700;color:var(--leaf-dk);margin-top:4px}
+  .ladder .flow span{color:var(--gold)}
+
+  /* Section body styles */
+  .sec-body{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-bottom:22px;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+  .sec-body h3{font-size:16px;color:var(--leaf-dk);margin-bottom:10px;font-weight:700}
+  .sec-body p{font-size:13.5px;color:#4a564e;margin-bottom:10px}
+  .sec-body ul{margin-left:18px;font-size:13px;color:#4a564e}
+  .sec-body li{padding:4px 0}
+  .stub-note{background:var(--mist);border-left:3px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:12px;color:#5a6e60;margin-top:12px}
+  .stub-note b{color:var(--leaf-dk)}
+
+  .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tool{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+  .tool .cat{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+  .tool h4{font-size:15px;margin:7px 0;color:var(--leaf-dk)}
+  .tool ul{list-style:none;font-size:12.5px;color:#4a564e}
+  .tool li{padding:3px 0 3px 16px;position:relative}
+  .tool li:before{content:"▸";position:absolute;left:0;color:var(--leaf)}
+  .note{background:#fff;border-left:4px solid var(--gold);border-radius:8px;padding:16px 20px;font-size:13px;color:#4a564e;margin-top:18px}
+  .note b{color:var(--leaf-dk)}
+  footer{margin-top:50px;font-size:11.5px;color:#9aa39b;line-height:1.7}
+
+  .navtoggle{display:none}
+  @media(max-width:880px){
+    .shell{flex-direction:column}
+    .sidebar{position:static;height:auto;width:100%;flex-basis:auto;max-height:60vh;padding:12px 0;display:none}
+    .sidebar.open{display:block}
+    .navtoggle{display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:20;
+      background:var(--leaf-dk);color:#fff;border:none;width:100%;padding:13px 18px;font-size:14px;font-weight:700;cursor:pointer}
+    .wrap{padding:22px 18px 70px}
+    .strategy,.tools,.claims{grid-template-columns:1fr}
+    .ctable td:first-child{width:auto}
+    h2.sec,.compliance,section[id]{scroll-margin-top:60px}
+  }
+</style>
+</head>
+<body>
+<button class="navtoggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776; &nbsp;Jump to section</button>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="sbrand"><b>{{BRAND_NAME}}</b><span>{{BRAND_TAGLINE}}</span></div>
+    <nav class="nav">
+      {{SIDEBAR_NAV}}
+      <!--
+        SIDEBAR_NAV STUB — replace with generated nav links:
+        <div class="navgroup">Strategy</div>
+        <a href="#strategy">Strategy Overview</a>
+        <a href="#audience">Audience</a>
+        <a href="#positioning">Positioning</a>
+        <a href="#pillars">Content Pillars</a>
+        <div class="navgroup">Execution</div>
+        <a href="#calendar">Calendar</a>
+        <a href="#posts">Posts</a>
+        <a href="#monetization">Monetization</a>
+      -->
+    </nav>
+  </aside>
+
+  <main class="main"><div class="wrap">
+
+  <header>
+    <div class="eyebrow">{{BRAND_NAME}} · Content Strategy</div>
+    <h1>{{BRAND_NAME}} — Social Media Engine</h1>
+    <p>{{BRAND_TAGLINE}}</p>
+    <div class="offerbar">&#127775; PRIMARY CTA: <code>{{PRIMARY_CTA_URL}}</code> &mdash; <b>{{PRIMARY_OFFER}}</b></div>
+    <div class="meta">
+      <div><b>{{PILLAR_COUNT}}</b>content pillars</div>
+      <div><b>{{FORMAT_COUNT}}</b>formats</div>
+      <div><b>{{DAY_COUNT}}</b>day plan</div>
+      <div><b>{{PLATFORM_LIST}}</b>platforms</div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SECTION: STRATEGY OVERVIEW
+       Sub-structure:
+         .pill × N — one per content format or strategic pillar
+         .ladder   — the full offer/conversion path (spans full width)
+       Assembly: populate .pill .n (format ID), .pill h3 (name), .pill p (description).
+       The .ladder.flow shows the content→CTA→conversion chain.
+       ════════════════════════════════════════════════════════════════ -->
+  <h2 class="sec">Strategy Overview</h2>
+  <section id="strategy">
+    <div class="strategy">
+      <!-- PILL TEMPLATE
+      <div class="pill">
+        <div class="n">{{FORMAT_ID}} · {{BATCH_OR_REACTIVE}} · {{TALENT}}</div>
+        <h3>{{FORMAT_NAME}}</h3>
+        <p>{{FORMAT_DESCRIPTION}} → {{CTA}}</p>
+      </div>
+      -->
+      <div class="pill">
+        <div class="n">{{FORMAT_1_ID}}</div>
+        <h3>{{FORMAT_1_NAME}}</h3>
+        <p>{{FORMAT_1_DESCRIPTION}}</p>
+      </div>
+      <div class="pill">
+        <div class="n">{{FORMAT_2_ID}}</div>
+        <h3>{{FORMAT_2_NAME}}</h3>
+        <p>{{FORMAT_2_DESCRIPTION}}</p>
+      </div>
+      <div class="pill">
+        <div class="n">{{FORMAT_3_ID}}</div>
+        <h3>{{FORMAT_3_NAME}}</h3>
+        <p>{{FORMAT_3_DESCRIPTION}}</p>
+      </div>
+      <div class="pill ladder">
+        <div class="n">THE OFFER PATH</div>
+        <div class="flow">Content <span>→</span> {{PRIMARY_CTA_URL}} <span>→</span> <b>{{PRIMARY_OFFER}}</b></div>
+        <p style="margin-top:6px">{{OFFER_PATH_DESCRIPTION}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SECTION: AUDIENCE
+       Sub-structure:
+         .sec-body containing:
+           h3 "Primary Audience" — demographics, psychographics, pain points
+           h3 "Secondary Audience" — if applicable
+           ul — audience insight bullets (fears, desires, language they use)
+           .stub-note — assembly reminder for brand-specific research
+       Assembly: replace placeholder text with brand research output.
+       ════════════════════════════════════════════════════════════════ -->
+  <h2 class="sec">Audience</h2>
+  <section id="audience">
+    <div class="sec-body">
+      <h3>Primary Audience</h3>
+      <p>{{PRIMARY_AUDIENCE_DESCRIPTION}}</p>
+      <ul>
+        <li><b>Core pain:</b> {{AUDIENCE_PAIN}}</li>
+        <li><b>Core desire:</b> {{AUDIENCE_DESIRE}}</li>
+        <li><b>Language they use:</b> {{AUDIENCE_LANGUAGE}}</li>
+        <li><b>Where they hang out:</b> {{AUDIENCE_PLATFORM}}</li>
+      </ul>
+      <div class="stub-note"><b>Assembly note:</b> Populate from brand intake interview, existing testimonials, and DM language audit. Primary audience drives all hook writing.</div>
+    </div>
+    <div class="sec-body">
+      <h3>Secondary Audience</h3>
+      <p>{{SECONDARY_AUDIENCE_DESCRIPTION}}</p>
+      <div class="stub-note"><b>Assembly note:</b> Only populate if brand has a distinct secondary segment. Leave blank if one audience.</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SECTION: POSITIONING
+       Sub-structure:
+         .sec-body containing:
+           h3 "Core Belief Reframes" — the 3–6 beliefs the content must shift
+           .claims grid — NEVER say / SAY INSTEAD compliance guardrails
+           .ctable — phrase-level compliance table (if applicable)
+           .hardrules — hard-stop rules for this brand/niche
+       Assembly: populate beliefs, compliance language, and hard rules from
+       brand guidelines and regulatory context.
+       ════════════════════════════════════════════════════════════════ -->
+  <h2 class="sec">Positioning &amp; Claims Guardrails</h2>
+  <section id="positioning">
+    <div class="compliance" id="compliance">
+      <div class="ch">
+        <h3>Claims Guardrails — keep open while creating content</h3>
+        <p>{{COMPLIANCE_SUBTITLE}}</p>
+      </div>
+      <div class="cb">
+        <div class="claims">
+          <div class="box never">
+            <h4>&#10005; Never claim</h4>
+            <p>{{NEVER_CLAIM_LIST}}</p>
+          </div>
+          <div class="box say">
+            <h4>&#10003; Say instead</h4>
+            <p>{{SAY_INSTEAD_LIST}}</p>
+          </div>
+        </div>
+        <table class="ctable">
+          <tr><th>If they'd say it this way (fine in person)</th><th>The post / caption says</th></tr>
+          <tr><td>{{PHRASE_INFORMAL_1}}</td><td>{{PHRASE_COMPLIANT_1}}</td></tr>
+          <tr><td>{{PHRASE_INFORMAL_2}}</td><td>{{PHRASE_COMPLIANT_2}}</td></tr>
+          <tr><td>{{PHRASE_INFORMAL_3}}</td><td>{{PHRASE_COMPLIANT_3}}</td></tr>
+        </table>
+        <div class="hardrules"><b>Hard rules:</b> {{HARD_RULES}}</div>
+      </div>
+    </div>
+    <div class="sec-body" style="margin-top:18px">
+      <h3>Unique Positioning Statement</h3>
+      <p>{{POSITIONING_STATEMENT}}</p>
+      <h3 style="margin-top:16px">Core Beliefs to Shift</h3>
+      <ul>
+        <li><b>Belief 1:</b> {{BELIEF_1}}</li>
+        <li><b>Belief 2:</b> {{BELIEF_2}}</li>
+        <li><b>Belief 3:</b> {{BELIEF_3}}</li>
+      </ul>
+      <div class="stub-note"><b>Assembly note:</b> Core beliefs drive hook writing and ad structure. Derive from offer optimizer output and intake interview.</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SECTION: CONTENT PILLARS
+       Sub-structure:
+         .strategy grid of .pill cards — one per content pillar
+         Each pillar card contains:
+           .n — pillar ID + cadence (BATCH/REACTIVE + talent)
+           h3 — pillar name
+           p  — what it does + CTA
+         .ladder — the full pillar→offer funnel map
+       Assembly: replace pill content with brand's content DNA.
+       ════════════════════════════════════════════════════════════════ -->
+  <h2 class="sec">Content Pillars</h2>
+  <section id="pillars">
+    <div class="strategy">
+      <div class="pill">
+        <div class="n">{{PILLAR_1_ID}} · {{PILLAR_1_CADENCE}}</div>
+        <h3>{{PILLAR_1_NAME}}</h3>
+        <p>{{PILLAR_1_DESCRIPTION}} &rarr; {{PILLAR_1_CTA}}</p>
+      </div>
+      <div class="pill">
+        <div class="n">{{PILLAR_2_ID}} · {{PILLAR_2_CADENCE}}</div>
+        <h3>{{PILLAR_2_NAME}}</h3>
+        <p>{{PILLAR_2_DESCRIPTION}} &rarr; {{PILLAR_2_CTA}}</p>
+      </div>
+      <div class="pill">
+        <div class="n">{{PILLAR_3_ID}} · {{PILLAR_3_CADENCE}}</div>
+        <h3>{{PILLAR_3_NAME}}</h3>
+        <p>{{PILLAR_3_DESCRIPTION}} &rarr; {{PILLAR_3_CTA}}</p>
+      </div>
+      <div class="pill">
+        <div class="n">{{PILLAR_4_ID}} · {{PILLAR_4_CADENCE}}</div>
+        <h3>{{PILLAR_4_NAME}}</h3>
+        <p>{{PILLAR_4_DESCRIPTION}} &rarr; {{PILLAR_4_CTA}}</p>
+      </div>
+      <div class="pill">
+        <div class="n">RECURRING</div>
+        <h3>{{RECURRING_FORMAT_NAME}}</h3>
+        <p>{{RECURRING_FORMAT_DESCRIPTION}}</p>
+      </div>
+      <div class="pill ladder">
+        <div class="n">PILLAR → OFFER MAP</div>
+        <div class="flow">{{PILLAR_1_ID}} + {{PILLAR_3_ID}} (BATCH) <span>·</span> {{PILLAR_4_ID}} (REACTIVE) <span>→</span> <b>{{PRIMARY_OFFER}}</b></div>
+        <p style="margin-top:6px">{{PILLAR_OFFER_DESCRIPTION}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SECTION: CALENDAR
+       Sub-structure:
+         Link or embed to calendar-template.html (sister file).
+         .sec-body summary of the plan arc:
+           h3 per arc (Week 1 / Phase 1, etc.)
+           p  — arc goal + dominant pillar
+         .note — production gaps / what still needs filming/creating
+       Assembly: summarize the calendar plan here; the week-by-week grid
+       lives in calendar-template.html.
+       ════════════════════════════════════════════════════════════════ -->
+  <h2 class="sec">Calendar — {{DAY_COUNT}}-Day Arc</h2>
+  <section id="calendar">
+    <div class="sec-body">
+      <h3>{{ARC_1_NAME}}</h3>
+      <p>{{ARC_1_GOAL}}</p>
+    </div>
+    <div class="sec-body">
+      <h3>{{ARC_2_NAME}}</h3>
+      <p>{{ARC_2_GOAL}}</p>
+    </div>
+    <div class="sec-body">
+      <h3>{{ARC_3_NAME}}</h3>
+      <p>{{ARC_3_GOAL}}</p>
+    </div>
+    <div class="sec-body">
+      <h3>{{ARC_4_NAME}}</h3>
+      <p>{{ARC_4_GOAL}}</p>
+    </div>
+    <div class="note">
+      <b>Full day-by-day grid:</b> See <code>calendar-template.html</code> (the sister file) for week/day cards, format badges, media badges, hooks, and batch plan. The arcs above are the narrative summary; the calendar file is the execution document.
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SECTION: POSTS (Ad Ideas / Hook Bank)
+       Sub-structure:
+         .hookintro — explains the hook system and format keys
+         .weeklabel — arc divider label
+         .adcard per ad idea:
+           .ahead > .ovl  — the overlay hook (scroll-stop text)
+           .ahead > .ameta — format code badge + ad number + belief
+           .adbody > .beat × 6 — the 7-beat SS structure seeds:
+             spoken hook / opening realization / real problem /
+             simple shift / proof+social / soft CTA
+         .note — how to use the hook bank
+       Assembly: generate one .adcard per hook idea from the prop machine
+       and hook bank. Each .beat .btext is a seed, not a script.
+       ════════════════════════════════════════════════════════════════ -->
+  <h2 class="sec">Posts &amp; Ad Hook Bank</h2>
+  <section id="posts">
+    <div class="note">
+      <b>Hook bank assembly note:</b> This section is generated by the Soulcial Media Engine's hook-bank module. Each <code>.adcard</code> below represents one hook idea with its 7-beat structure seed. Replace this block with the assembled hook bank output.
+      <br><br>
+      <b>Format codes:</b> DR = Direct contrarian &nbsp;|&nbsp; QO = Question &nbsp;|&nbsp; WI = "When X isn't working, do this" &nbsp;|&nbsp; HW = "How to [goal] without [fear]" &nbsp;|&nbsp; SS = "The secret to… without…"
+    </div>
+    <!-- ADCARD CSS — supplied by the assembly/hook-bank step (Task 4b/Task 10) -->
+    <!-- ADCARD TEMPLATE (repeat per hook idea)
+    <div class="adcard" id="{{AD_ID}}">
+      <div class="ahead">
+        <div class="ovl">{{OVERLAY_HOOK}}</div>
+        <div class="ameta">
+          <span class="fcode {{FORMAT_CODE_CLASS}}">{{FORMAT_CODE}}</span>
+          AD {{AD_NUMBER}} · {{BELIEF_LABEL}}
+        </div>
+      </div>
+      <div class="adbody">
+        <div class="beat"><div class="blabel">Spoken hook</div><div class="btext">{{SPOKEN_HOOK}}</div></div>
+        <div class="beat"><div class="blabel">Opening realization</div><div class="btext">{{OPENING_REALIZATION}}</div></div>
+        <div class="beat"><div class="blabel">The real problem</div><div class="btext">{{REAL_PROBLEM}}</div></div>
+        <div class="beat"><div class="blabel">The simple shift</div><div class="btext">{{SIMPLE_SHIFT}}</div></div>
+        <div class="beat"><div class="blabel">Proof + social</div><div class="btext">{{PROOF_SOCIAL}}</div></div>
+        <div class="beat cta"><div class="blabel">Soft CTA</div><div class="btext">{{SOFT_CTA}}</div></div>
+      </div>
+    </div>
+    -->
+    <div class="stub-note" style="margin-top:16px"><b>Stub:</b> Hook bank is empty. Run the engine's hook-bank module or manually author .adcard blocks above per the ADCARD TEMPLATE comment.</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SECTION: MONETIZATION
+       Sub-structure:
+         .tools grid — one .tool card per channel/tool:
+           .cat — category label (Edit / Capture / Offer / Distribute / Engage / Compound)
+           h4  — tool/channel name
+           ul  — bullet list of specifics
+         .note — Minimum Viable Week (the "run it tired" fallback)
+       Assembly: populate with brand's actual tools, platforms, and offer
+       mechanics. The .tools grid is intentionally modular — add/remove cards.
+       ════════════════════════════════════════════════════════════════ -->
+  <h2 class="sec">Monetization &amp; Toolkit</h2>
+  <section id="monetization">
+    <div class="tools">
+      <div class="tool">
+        <div class="cat">Edit</div>
+        <h4>{{EDIT_TOOL_NAME}}</h4>
+        <ul>
+          <li>{{EDIT_STEP_1}}</li>
+          <li>{{EDIT_STEP_2}}</li>
+          <li>{{EDIT_STEP_3}}</li>
+        </ul>
+      </div>
+      <div class="tool">
+        <div class="cat">Capture</div>
+        <h4>{{CAPTURE_APPROACH}}</h4>
+        <ul>
+          <li>{{CAPTURE_NOTE_1}}</li>
+          <li>{{CAPTURE_NOTE_2}}</li>
+        </ul>
+      </div>
+      <div class="tool">
+        <div class="cat">Offer &amp; Links</div>
+        <h4>{{OFFER_FUNNEL_NAME}}</h4>
+        <ul>
+          <li>{{OFFER_MECHANIC_1}}</li>
+          <li>{{OFFER_MECHANIC_2}}</li>
+          <li>{{OFFER_PRICE_POINT}}</li>
+        </ul>
+      </div>
+      <div class="tool">
+        <div class="cat">Distribute</div>
+        <h4>Repurpose Ladder</h4>
+        <ul>
+          <li>{{REPURPOSE_STEP_1}}</li>
+          <li>{{REPURPOSE_STEP_2}}</li>
+        </ul>
+      </div>
+      <div class="tool">
+        <div class="cat">Engage</div>
+        <h4>{{ENGAGE_ROUTINE_NAME}}</h4>
+        <ul>
+          <li>{{ENGAGE_ROUTINE_1}}</li>
+          <li>{{ENGAGE_ROUTINE_2}}</li>
+        </ul>
+      </div>
+      <div class="tool" style="border-color:var(--gold);background:linear-gradient(135deg,#fff,#fdf8ec)">
+        <div class="cat">Compound</div>
+        <h4>What-Landed Loop</h4>
+        <ul>
+          <li>{{COMPOUND_LOOP_1}}</li>
+          <li>{{COMPOUND_LOOP_2}}</li>
+          <li>Re-run top 2 (by saves + shares) as Trial posts</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <b>Minimum Viable Week</b> (run it tired): {{MVW_DESCRIPTION}}. A plan you can run tired is the only plan that survives month two.
+    </div>
+  </section>
+
+  <footer>
+    {{BRAND_NAME}} · Content Engine · Client-private — do not distribute.<br>
+    Generated by Soulcial Media Engine (2026-06-29).
+  </footer>
+
+  </div></main>
+</div>
+
+<script>
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    var map = links.map(function(a){ return { a:a, sec:document.querySelector(a.getAttribute('href')) }; }).filter(function(x){ return x.sec; });
+    function spy(){
+      var cur = null;
+      for (var i=0;i<map.length;i++){ if (map[i].sec.getBoundingClientRect().top <= 140) cur = map[i].a; }
+      links.forEach(function(a){ a.classList.remove('active'); });
+      if (cur) cur.classList.add('active');
+    }
+    document.addEventListener('scroll', spy, {passive:true});
+    window.addEventListener('resize', spy);
+    spy();
+    links.forEach(function(a){ a.addEventListener('click', function(){ if (window.innerWidth <= 880) document.querySelector('.sidebar').classList.remove('open'); }); });
+  })();
+</script>
+</body>
+</html>

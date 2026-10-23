@@ -1,0 +1,31 @@
+{
+  "name": "ad-copy-forge",
+  "version": "1.0.0",
+  "description": "Convert video ad scripts into Meta-ready ad copy using the OO + Prop Machine + learned ad patterns with counsel review",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [
+    {
+      "name": "offer-optimizer",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "propaganda-machine",
+      "version": "^1.0.0"
+    }
+  ],
+  "recommends": [
+    {
+      "name": "counsel-dispatch",
+      "version": "^1.0.0"
+    }
+  ],
+  "prereqs": {
+    "mcps": [],
+    "clis": [],
+    "envVars": [],
+    "services": []
+  }
+}

@@ -303,7 +303,7 @@ const METADATA = {
   },
   'webinar-dev-bot': {
     tier: 'T7',
-    version: '1.1.0',
+    version: '1.1.1',
     description: 'Build high-converting webinar presentations (HTML deck + Gemini slide art) from Offer Optimizer + Propaganda Machine data, then deliver them into Canva as an editable deck',
     requires: [],
     recommends: [

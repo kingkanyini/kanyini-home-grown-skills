@@ -20,9 +20,16 @@ Exit codes: 0 saved · 1 error · 2 model returned no image · 3 daily cap reach
 """
 
 import argparse
+import io
 import json
 import os
 import sys
+import warnings
+
+# Python 3.9 (the Mac's built-in python3) makes google-genai and urllib3 print
+# "end of life" / "LibreSSL" warnings on every run. Harmless, but they read as errors.
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", message=".*OpenSSL.*")
 from datetime import date, datetime
 from pathlib import Path
 
@@ -31,11 +38,12 @@ KEY_FILE = KIT_DIR / "gemini.env"
 COST_LOG = KIT_DIR / "generation_log.jsonl"
 
 MODELS = {
-    "standard": "gemini-2.5-flash-image",          # has a free tier (Google sets the daily limit)
-    "premium": "gemini-3.1-flash-image-preview",   # paid only, sharper
+    "standard": "gemini-3.1-flash-lite-image",     # Nano Banana 2 Lite
+    "premium": "gemini-3.1-flash-image",           # Nano Banana 2, sharper
 }
-# USD per image at 1K, from ai.google.dev/gemini-api/docs/pricing (checked 2026-10).
-PRICE = {"standard": 0.039, "premium": 0.067}
+# USD per image at 1K, from ai.google.dev/gemini-api/docs/pricing (checked 2026-10-26).
+# Image output has NO free tier: billing must be on in Google AI Studio.
+PRICE = {"standard": 0.034, "premium": 0.067}
 ASPECTS = {"1:1", "2:3", "3:2", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"}
 DEFAULT_DAILY_CAP = 60
 TIMEOUT_MS = 120_000   # one request; no automatic retries
@@ -88,7 +96,9 @@ def log(model, prompt, output, success):
 
 def today_count():
     today = date.today().isoformat()
-    return sum(1 for r in read_log() if str(r.get("timestamp", "")).startswith(today))
+    # Only images actually made count: a failed call is not charged.
+    return sum(1 for r in read_log()
+               if r.get("success") and str(r.get("timestamp", "")).startswith(today))
 
 
 def show_costs():
@@ -119,7 +129,7 @@ def generate(prompt, model, aspect, output, ref_image=None):
 
     key = load_key()
     if not key:
-        print("ERROR: no Gemini key found. Run /webinar-tutorial (Setup quest) or setup_key.py in your Terminal.")
+        print("ERROR: no Gemini key found. Run /webinar-tutorial (Gear Up, Step 1.3) or setup_key.py in your Terminal.")
         sys.exit(1)
 
     if today_count() >= daily_cap():
@@ -153,8 +163,12 @@ def generate(prompt, model, aspect, output, ref_image=None):
         if "401" in msg or "UNAUTHENTICATED" in msg or "API_KEY_INVALID" in msg:
             print("ERROR: Google rejected the key. Re-run setup_key.py with a fresh key.")
         elif "429" in msg or "RESOURCE_EXHAUSTED" in msg:
-            print("ERROR: Google said no more images right now. If this is your first image, billing probably "
-                  "isn't turned on yet (see /webinar-tutorial, Step 1.4). Otherwise wait a few minutes and try again.")
+            print("ERROR: Google said no. Making images needs billing turned on in Google AI Studio "
+                  "(there is no free tier for images; see /webinar-tutorial, Step 1.4). "
+                  "If billing is already on, wait a few minutes and try again.")
+        elif "404" in msg or "NOT_FOUND" in msg:
+            print("ERROR: Google no longer offers this image model. Update the kit: run "
+                  "/plugin marketplace update kanyini-home-grown-skills, then restart Claude Code.")
         elif "SAFETY" in msg or "blocked" in msg.lower():
             print("ERROR: the safety filter blocked this prompt. Rephrase it.")
         else:
@@ -165,7 +179,10 @@ def generate(prompt, model, aspect, output, ref_image=None):
         img = part.as_image() if part.text is None else None
         if img:
             Path(output).parent.mkdir(parents=True, exist_ok=True)
-            img.save(output)
+            pic = Image.open(io.BytesIO(img.image_bytes))   # Google may send JPEG bytes
+            if Path(output).suffix.lower() in (".jpg", ".jpeg"):
+                pic = pic.convert("RGB")
+            pic.save(output)                                # format follows the file name
             log(model, prompt, output, True)
             print(f"SAVED: {output}")
             return
@@ -185,7 +202,7 @@ def main():
     ap = Parser(description="Generate textless slide art with Gemini")
     ap.add_argument("--prompt")
     ap.add_argument("--aspect", default="16:9", help=f"One of: {', '.join(sorted(ASPECTS))}")
-    ap.add_argument("--output", help="Where to save the PNG")
+    ap.add_argument("--output", help="Where to save the image (.png)")
     ap.add_argument("--model", choices=list(MODELS), default="standard")
     ap.add_argument("--image", help="Reference photo (e.g. a real headshot to keep a person consistent)")
     ap.add_argument("--style", default="", help="Style words added before the prompt")

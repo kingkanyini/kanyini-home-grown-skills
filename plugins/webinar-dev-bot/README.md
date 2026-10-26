@@ -30,7 +30,7 @@ Canva's API can't lay out slides element by element, so this skill builds a nati
 
 ## Costs
 
-Slide art: about $0.04 per image (standard) or $0.07 (premium). The kit shows the price before every batch and stops at 60 images a day.
+Slide art: about $0.034 per image (standard) or $0.067 (premium). Google has no free tier for images, so art needs billing turned on in Google AI Studio; without it the kit builds the deck with labeled picture boxes. The kit shows the price before every batch and stops at 60 images a day.
 
 ## Check your setup
 

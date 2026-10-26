@@ -51,7 +51,12 @@ def main():
         sys.exit(1)
 
     print("Paste your Gemini API key and press Enter. (It won't show on screen.)")
-    key = getpass.getpass("Key: ").strip()
+    try:
+        key = getpass.getpass("Key: ").strip()
+    except (EOFError, KeyboardInterrupt):
+        print()
+        print("Cancelled. No changes made.")
+        sys.exit(1)
     if not key:
         print("Nothing entered. No changes made.")
         sys.exit(1)
@@ -77,7 +82,7 @@ def main():
     except OSError:
         pass
     print(f"Saved. Key ending in ...{key[-4:]} is stored in {KEY_FILE}")
-    print("Go back to Claude and say: key is saved.")
+    print("Go back to Claude and choose Done.")
 
 
 if __name__ == "__main__":

@@ -77,10 +77,10 @@ Rules:
 4. **Build:** `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/build_pptx.py" slides.json --strict`
    - Exit 0 = clean. Exit 2 = warnings: shorten long text, split overloaded slides, or confirm placeholders are intentional. Exit 1 = bad manifest (message says what to fix).
    - Re-run until clean, or until the user explicitly accepts the listed warnings.
-5. **Import (user's hands, ~30 seconds):** Run `open -R deck.pptx` (Windows: `explorer /select,deck.pptx`). Finder opens with the file highlighted. They drag it onto the canva.com home page. Backup: canva.com → **Create a design** → **Import file**. (The deck lives in a hidden folder, so the file picker alone may not show it; Cmd+Shift+. reveals hidden folders.)
+5. **Import (user's hands, ~30 seconds):** Run `open -R` with the **full path** to `deck.pptx` (Windows: `explorer /select,` + full path). Finder opens with the file highlighted. They put Finder and the browser side by side and drag it onto the canva.com home page. Backup: canva.com → **Create a design** (or **+ Create**) → **Import file** → in the file window press **Cmd+Shift+G**, paste the project folder path (put it on their clipboard with `pbcopy`), Enter, pick `deck.pptx`. The folder is hidden, so clicking through folders won't find it.
 6. **Confirm:** AskUserQuestion "How many slides does Canva show?" (page thumbnails along the bottom, or the page counter). It must match the slide count. If it doesn't, stop and investigate before saying it's done.
 7. **Tell them:**
-   - Fonts: if Canva swapped a font, select the text → pick the brand font from the font menu → click **Change all** if Canva offers it.
+   - Fonts: if Canva swapped a font, select the text → pick the brand font from the font menu → if Canva offers to change it everywhere, accept.
    - Any placeholder slides: print the slide → image list from `images/manifest.json` so they can drag images in.
 
 **No public-link import.** Canva's URL import needs the deck at a public link, which would expose the offer and prices. This kit always uses drag-and-drop.

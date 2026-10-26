@@ -1,0 +1,32 @@
+# .github/workflows/webinar-tutorial.yml
+# Walks every command in /webinar-tutorial on a real Mac and on Linux, with the
+# Mac's built-in Python version (3.9) and a current one. Fake key only; no spend.
+
+name: Webinar Tutorial CI
+
+on:
+  push:
+    branches: [main]
+    paths: ['plugins/webinar-dev-bot/**', 'scripts/ci/webinar-tutorial-ci.sh', '.github/workflows/webinar-tutorial.yml']
+  pull_request:
+    branches: [main]
+    paths: ['plugins/webinar-dev-bot/**', 'scripts/ci/webinar-tutorial-ci.sh', '.github/workflows/webinar-tutorial.yml']
+  workflow_dispatch:
+
+jobs:
+  tutorial:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04]
+        python: ['3.9', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Walk the tutorial
+        run: bash scripts/ci/webinar-tutorial-ci.sh

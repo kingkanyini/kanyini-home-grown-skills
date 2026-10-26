@@ -44,7 +44,7 @@ for (const cand of process.platform === 'win32' ? ['python', 'py', 'python3'] : 
   } catch { /* try next */ }
 }
 if (!py) {
-  line(false, 'Python 3.9+', process.platform === 'darwin' ? 'run: xcode-select --install   (or install from python.org)' : 'install from python.org');
+  line(false, 'Python 3.9+', process.platform === 'darwin' ? 'run /webinar-tutorial → Gear Up → Step 1.1' : 'install from python.org');
   missing.push('cli:python3');
 }
 
@@ -67,7 +67,7 @@ let hasKey = Boolean(process.env.GEMINI_API_KEY);
 if (!hasKey && existsSync(keyFile)) {
   try { hasKey = /^GEMINI_API_KEY=\S+/m.test(readFileSync(keyFile, 'utf8')); } catch { /* unreadable */ }
 }
-line(hasKey, 'Gemini key', 'run /webinar-tutorial → Setup quest → Gemini key');
+line(hasKey, 'Gemini key', 'run /webinar-tutorial → Gear Up → Step 1.3');
 if (!hasKey) missing.push('env:GEMINI_API_KEY');
 
 // 4. Companion skills (best-effort: read Claude Code's installed plugin list)

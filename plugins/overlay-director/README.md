@@ -3,7 +3,7 @@
 > Turn any talking-head/screen-recording video into a counsel-reviewed animated-overlay HyperFrames build — auto-drafted from an accumulating playbook, tweaked by you, getting faster with every video
 
 **Tier:** T9
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Command:** `/overlay-director`
 
 ## Usage

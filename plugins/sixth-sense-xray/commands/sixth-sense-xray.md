@@ -1,5 +1,5 @@
 ---
-description: Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links
+description: Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links, and/or a HyperFrames playbook that /overlay-director import learns from
 ---
 
 > **Paths:** every `references/`, `scripts/`, `assets/`, `templates/` (etc.) path in this file is relative to this plugin's folder, `${CLAUDE_PLUGIN_ROOT}`. Read them as `${CLAUDE_PLUGIN_ROOT}/references/...`, never relative to your current working folder. When you spawn subagents, pass them the absolute path.
@@ -8,7 +8,7 @@ description: Visual reverse-engineering — analyzes video effects and produces 
 
 ## Overview
 
-SixthSense X-Ray analyzes video frames to reverse-engineer every visual effect, template, and transition. It produces an interactive HTML playbook with step-by-step CapCut recreation instructions and validated YouTube tutorial links.
+SixthSense X-Ray analyzes video frames to reverse-engineer every visual effect, template, and transition. It produces an interactive HTML playbook with step-by-step CapCut recreation instructions and validated YouTube tutorial links, and/or a **HyperFrames playbook** (`HYPERFRAMES_PLAYBOOK_{slug}.md`) that `/overlay-director import` reads to learn the video's editing methods. The editor choice is made at scan setup (Phase 1, Step 4b).
 
 **Part of the SixthSense family:**
 - `/sixth-sense` → finds clip-worthy moments (words + emotion + structure)
@@ -21,6 +21,7 @@ SixthSense X-Ray analyzes video frames to reverse-engineer every visual effect, 
 - **Agent prompts:** `references/agent-prompts.md`
 - **HTML template:** `references/html-template.md`
 - **CapCut mapping:** `references/capcut-mapping.md`
+- **HyperFrames mapping:** `references/hyperframes-mapping.md` (A6 rules + how to find Overlay Director's live files)
 - **Micro-scan algorithm:** `references/micro-scan-algorithm.md`
 
 ## Counsel
@@ -48,8 +49,12 @@ Visual Visionary Counsel (#26): Justin Brown (Primal Video), Collin Michael, Mer
       "mosaic_count": 0,
       "scan_config": {
         "density": "smart",
-        "editor": "capcut",
+        "editor": "capcut | hyperframes | both",
         "video_type": "vsl"
+      },
+      "hyperframes": {
+        "od_reference_dir": null,
+        "od_type": null
       },
       "status": {
         "preprocessing": "pending",
@@ -60,8 +65,10 @@ Visual Visionary Counsel (#26): Justin Brown (Primal Video), Collin Michael, Mer
         "microscan": "pending",
         "A4_capcut_translate": "pending",
         "A5_gaps_analyst": "pending",
+        "A6_hyperframes_translate": "pending",
         "youtube_research": "pending",
         "playbook": "pending",
+        "hf_playbook": "pending",
         "deploy": "pending"
       },
       "agent_outputs": {
@@ -71,6 +78,7 @@ Visual Visionary Counsel (#26): Justin Brown (Primal Video), Collin Michael, Mer
         "microscan": "microscan_findings.md",
         "A4": "capcut_translated.md",
         "A5": "gaps_analysis.md",
+        "A6": "hyperframes_translated.md",
         "youtube": "youtube_validated.json"
       },
       "results_summary": null,
@@ -80,6 +88,25 @@ Visual Visionary Counsel (#26): Justin Brown (Primal Video), Collin Michael, Mer
   }
 }
 ```
+
+---
+
+**Editor-dependent steps.** Steps that don't apply to the chosen editor are set to `"skipped"` at
+Phase 1, Step 4b, and resume logic passes over them:
+
+| Step | `capcut` | `hyperframes` | `both` |
+|------|:--------:|:-------------:|:------:|
+| A4 CapCut Translator | run | skipped | run |
+| A5 Gaps Analyst | run | run | run |
+| A6 HyperFrames Translator | skipped | run | run |
+| YouTube research (Phase 5) | run | skipped | run |
+| HTML playbook + CapCut .md (Phase 6) → `playbook` | run | skipped | run |
+| HyperFrames playbook (Phase 6, Step 6b) → `hf_playbook` | skipped | run | run |
+| Deploy (Phase 7) | offer | local save only | offer |
+
+**Legacy projects** (registered before the editor choice existed) have no `A6_hyperframes_translate`
+or `hf_playbook` key: treat `editor` as `capcut` and both as `skipped`. To add a HyperFrames playbook to an old project,
+use Phase 8's "Add HyperFrames playbook" option.
 
 ---
 
@@ -115,7 +142,7 @@ back to WebFetch, then continue.
 ║  Preprocessing:  ████████████ COMPLETE                       ║
 ║  Configure:      ████████████ COMPLETE                       ║
 ║  Scanners:       ████████░░░░ 2/3                            ║
-║  Post-Process:   ░░░░░░░░░░░░ 0/2                            ║
+║  Post-Process:   ░░░░░░░░░░░░ 0/3                            ║
 ║  Micro-Scan:     ░░░░░░░░░░░░ PENDING                       ║
 ║  YouTube:        ░░░░░░░░░░░░ PENDING                       ║
 ║  Playbook:       ░░░░░░░░░░░░ PENDING                       ║
@@ -126,14 +153,14 @@ back to WebFetch, then continue.
 
 Progress bar rules (12 chars): `█` = complete, `░` = pending.
 - Scanners: count A1 + A2 + A3 statuses "complete" → X/3
-- Post-Process: count A4 + A5 statuses "complete" → X/2
-- Other phases: binary COMPLETE or PENDING
+- Post-Process: count A4 + A5 + A6 statuses "complete" → X/N, where N = how many of the three are not "skipped" (2 for capcut or hyperframes, 3 for both)
+- Other phases: binary COMPLETE or PENDING (show SKIPPED for a step the editor choice skipped)
 
 3. Present options via AskUserQuestion:
    - For each project: "Resume [Name]" with next recommended action
    - "New Scan" — start fresh
 
-4. **Resume logic:** Walk status in order: preprocessing → configure → A1/A2/A3 → microscan → A4 → A5 → youtube → playbook → deploy. Find first incomplete step.
+4. **Resume logic:** Walk status in order: preprocessing → configure → A1/A2/A3 → microscan → A4 → A5 → A6 → youtube → playbook → hf_playbook → deploy. Find the first step that is neither "complete" nor "skipped".
 
 ---
 
@@ -175,6 +202,20 @@ AskUserQuestion:
 - "Short-form (Reels/TikTok)" — fast-cut analysis, hook-first focus
 - "Educational / Tutorial" — longer holds, diagram focus
 - "Generic" — effects + transitions only, no pacing interpretation
+
+### Step 4b: Output Editor
+AskUserQuestion: "Who will rebuild these effects?"
+- **"Both (Recommended)"** — CapCut HTML playbook for a human editor + a HyperFrames playbook Overlay Director learns from. Sets editor: "both"
+- **"CapCut (human editor)"** — the original playbook: CapCut steps + YouTube tutorials. Sets editor: "capcut"
+- **"Overlay Director (auto-build overlays)"** — only the HyperFrames hand-off. Skips the CapCut translator, YouTube research and HTML. Sets editor: "hyperframes"
+
+Step 8 writes the choice into the registry, with skipped steps set per the editor table under
+Registry Schema.
+
+If editor is `hyperframes` or `both`, locate Overlay Director now (`references/hyperframes-mapping.md`,
+"Live Overlay Director sources"). Step 8 stores the path in `hyperframes.od_reference_dir` and the
+mapped type in `hyperframes.od_type`. Not found → tell the user, then AskUserQuestion: "Continue without library
+matching" or "Switch to CapCut only".
 
 ### Step 5: Scene Detection
 ```bash
@@ -316,9 +357,10 @@ Set `status.microscan = "complete"`.
 
 ## PHASE 4: Post-Processing
 
-**Deploy Agent 4 (CapCut Translator) then Agent 5 (Gaps Analyst). Sequential.**
+**Deploy Agent 4 (CapCut Translator), then Agent 5 (Gaps Analyst), then Agent 6 (HyperFrames Translator). Sequential. Skip any agent whose status is "skipped".**
 
 ### Agent 4: CapCut Language Translator
+*Runs when editor is `capcut` or `both`.*
 
 1. Read all scanner outputs (A1, A2, A3) + micro-scan findings (if exists)
 2. Read `references/capcut-mapping.md`
@@ -342,11 +384,49 @@ Set `status.A4_capcut_translate = "complete"` or "failed".
 Validate: `gaps_analysis.md` exists, contains `## TRANSITION MAP` and `## TIMESTAMPED RECREATION MAP`, minimum 40 lines.
 Set `status.A5_gaps_analyst = "complete"` or "failed".
 
-→ **Proceed to Phase 5.**
+### Agent 6: HyperFrames Translator
+*Runs when editor is `hyperframes` or `both`.*
+
+1. Read all scanner outputs + micro-scan findings + `gaps_analysis.md`
+2. Read `references/hyperframes-mapping.md`
+3. Build the `{OD_*}` inputs from `hyperframes.od_reference_dir` exactly as the "Live Overlay
+   Director sources" table in `hyperframes-mapping.md` says. **That table is the single source for
+   what goes in the catalog** (move files read directly, `_proposed/` included, plus the not-found
+   fallbacks). Don't build the catalog from `_index.md` alone: it doesn't list every move.
+4. Extract the A6 prompt from agent-prompts.md
+5. Resolve variables: `{SCANNER_OUTPUTS}`, `{MICROSCAN_RESULTS}`, `{GAPS_ANALYSIS}`,
+   `{HYPERFRAMES_MAPPING}`, `{OD_MOVES_CATALOG}`, `{OD_ENTRANCE_TABLE}`, `{OD_PALETTE}`,
+   `{OD_SEEK_SAFETY}`, `{SCAN_CONFIG}`, `{VIDEO_FILENAME}`, `{SLUG}`, `{SOURCE_ID}`,
+   `{VIDEO_DURATION}`, `{VIDEO_TYPE}`, `{OD_TYPE}`
+6. Append Shared Rules, inject and deploy
+
+Validate `hyperframes_translated.md`:
+- It exists and has the six H2 headings in order: `## Summary`, `## STYLE PROFILE`,
+  `## MOVE MATCHES`, `## NEW MOVE CANDIDATES`, `## STANDARDS PROPOSALS`, `## PORTABILITY FLAGS`.
+- The Summary counts match the number of H3 entries in each section. A video with no overlays
+  (every section `None.` except flags or style) is valid.
+- No `suggested_altitude: global` anywhere (Rule 6).
+- Every `entrance_mechanism` is in the injected entrance table (the fallback list when Overlay
+  Director wasn't found).
+- Every `evidence` field is a list holding `import:{SOURCE_ID}`.
+- Every candidate `move_id` matches `^[a-z0-9]+(-[a-z0-9]+){1,5}$`, is at most 48 characters, and
+  isn't an active move's id. **A bad name doesn't fail the run:** rename that one candidate to a
+  valid kebab-case id (or drop it if no sensible name exists), add a Portability Flag saying so, and
+  fix the Summary counts.
+
+On any other failed check, re-deploy A6 once with the failure named. Still failing → status "failed".
+Set `status.A6_hyperframes_translate = "complete"` or "failed".
+
+**A6 failed:** set `status.hf_playbook = "failed"` and skip Step 6b. The dashboard shows
+"HyperFrames: FAILED (re-run A6 from Phase 8)". The CapCut path, if chosen, carries on as normal.
+
+→ **Proceed to Phase 5** (or straight to Phase 6 if YouTube research is "skipped").
 
 ---
 
 ## PHASE 5: YouTube Research + Validation
+
+*Runs when editor is `capcut` or `both`. The searches are CapCut tutorials, so a HyperFrames-only scan skips this phase.*
 
 ### Deploy 3 Research Agents in PARALLEL
 
@@ -385,6 +465,9 @@ Set `status.youtube_research = "complete"`.
 
 ## PHASE 6: Playbook Generation
 
+*Steps 1–6 (HTML + CapCut .md) run when editor is `capcut` or `both`. Step 6b runs when editor is
+`hyperframes` or `both`. A HyperFrames-only scan goes straight from here to Step 2 (frames), then 6b.*
+
 ### Step 1: Read All Inputs
 - Agent 4 output: `capcut_translated.md` (templates, transitions, build steps)
 - Agent 5 output: `gaps_analysis.md` (timeline, pacing)
@@ -393,7 +476,7 @@ Set `status.youtube_research = "complete"`.
 - YouTube validated URLs: `youtube_validated.json`
 
 ### Step 2: Extract Representative Frames
-For each template's primary timestamp:
+For each template's primary timestamp (CapCut), and for each HyperFrames MATCH and CANDIDATE's first timestamp:
 ```bash
 ffmpeg -ss {timestamp} -i "{video_path}" -frames:v 1 -vf "scale=840:-1" "{output_dir}/frame_{slug}.jpg" -y
 ```
@@ -424,9 +507,35 @@ Write resolved HTML to: `{output_dir}/XRAY_PLAYBOOK.html`
 Also write a text-only markdown version: `{output_dir}/CAPCUT_PLAYBOOK_{slug}.md`
 Same content structure, no HTML/CSS, for reference and archival.
 
+### Step 6b: Generate HyperFrames Playbook
+*Only when `status.A6_hyperframes_translate = "complete"`. Set `status.hf_playbook = "in_progress"` first.*
+
+Write `{output_dir}/HYPERFRAMES_PLAYBOOK_{slug}.md`: the frontmatter below, then the full body of
+`hyperframes_translated.md`, then a `## FRAMES` section listing each frame **by filename only**
+(`frame_<slug>.jpg`, kept next to the playbook) against its MATCH or CANDIDATE number. Don't
+rewrite the A6 body; the headings are the import contract.
+
+**No absolute paths in this file.** It may be shared (with a teammate, or into another person's
+Overlay Director), and folder paths can carry user and client names. `source_id` identifies the video.
+
+```yaml
+---
+format: xray-hyperframes-playbook
+format_version: 1
+source_id: {SOURCE_ID}   # normalized, e.g. final-cut-v2-742s (hyperframes-mapping.md Rule 6)
+slug: {slug}
+xray_video_type: {video_type}
+od_type: {hyperframes.od_type}
+generated: YYYY-MM-DD
+counts: { matches: N, candidates: N, proposals: N, flags: N }
+---
+```
+
+Set `status.hf_playbook = "complete"`.
+
 ### Step 7: Update Registry
-Set `status.playbook = "complete"`.
-Populate `results_summary`:
+Set `status.playbook = "complete"` if Steps 1–6 ran (CapCut). `hf_playbook` is set by Step 6b.
+Populate `results_summary` (omit the keys for whichever editor was skipped):
 ```json
 {
   "template_count": N,
@@ -435,7 +544,12 @@ Populate `results_summary`:
   "font_count": N,
   "youtube_links": N,
   "playbook_path": "...",
-  "html_size_kb": N
+  "html_size_kb": N,
+  "hyperframes_playbook_path": "...",
+  "hf_matches": N,
+  "hf_candidates": N,
+  "hf_proposals": N,
+  "hf_flags": N
 }
 ```
 
@@ -445,7 +559,11 @@ Populate `results_summary`:
 
 ## PHASE 7: Deploy + Share
 
-AskUserQuestion with 3 options:
+**HyperFrames-only scan:** there is no HTML to deploy. Run Option 2 (save locally), set
+`status.deploy = "complete"`, and go to Phase 8. The HyperFrames playbook is never deployed: it is an
+input file for Overlay Director, not a page.
+
+Otherwise, AskUserQuestion with 3 options:
 
 ### Option 1: "Deploy as website (Vercel)"
 
@@ -495,12 +613,18 @@ Set `status.deploy = "complete"`.
 ║  YouTube links: [N] validated                                ║
 ║  Playbook: [output_dir]/XRAY_PLAYBOOK.html                  ║
 ║  Deploy URL: [vercel URL if deployed]                        ║
+║  HyperFrames: [N] matches | [N] new moves | [N] proposals    ║
+║  HF Playbook: [output_dir]/HYPERFRAMES_PLAYBOOK_[slug].md    ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
+Show only the lines for the editor(s) that ran. If `hf_playbook` is "failed", replace the two
+HyperFrames lines with `HyperFrames: FAILED (re-run A6 from Phase 8)`.
 
-AskUserQuestion:
+AskUserQuestion (offer only the options that apply to the editor that ran):
 - "Open playbook in browser" — Windows `start "" "{output_dir}/XRAY_PLAYBOOK.html"` · macOS `open "{output_dir}/XRAY_PLAYBOOK.html"` · Linux `xdg-open "{output_dir}/XRAY_PLAYBOOK.html"`
 - "Show template list" — display A4 merged template/transition names
+- "Send to Overlay Director" — invoke the `overlay-director` skill with args `import "{output_dir}/HYPERFRAMES_PLAYBOOK_{slug}.md"`. Overlay Director runs its own review and approval gates; X-Ray writes nothing into it.
+- "Add HyperFrames playbook" — for a CapCut-only or legacy project: set editor to `both`, set `A6_hyperframes_translate` and `hf_playbook` to "pending", locate Overlay Director (Phase 1, Step 4b), run A6, then Phase 6 Steps 2 + 6b. Scanners and A5 are reused, not re-run. Also the path for re-running a failed A6.
 - "Re-run a specific agent" — pick which agent to re-deploy
 - "Scan another video" — go to Phase 1
 - "Done for now" — save registry, end
@@ -531,6 +655,11 @@ Read micro-scan-algorithm.md for frame budget limits. If estimated mosaics > 60,
 ### yt-dlp Not Available
 Fall back to WebFetch for YouTube validation. If neither works, skip validation and include unvalidated URLs with a warning note.
 
+### Overlay Director Not Found
+Only matters for editor `hyperframes` or `both`. Say so at Phase 1, Step 4b and offer: continue
+without library matching (every element graded NONE) or switch to CapCut only. If a resumed project's
+`hyperframes.od_reference_dir` no longer exists, re-run the locate step before A6.
+
 ### Registry Corruption
 Always read before writing (merge, never overwrite). If registry is unreadable, offer to rebuild from existing output files.
 
@@ -548,3 +677,4 @@ Always read before writing (merge, never overwrite). If registry is unreadable, 
 8. **Registry update timing:** "in_progress" BEFORE deploy, "complete" AFTER validation, "failed" on failure.
 9. **HTML template is parameterized.** The orchestrator resolves all {VARIABLES} during playbook generation.
 10. **Vercel deployment is optional.** Always offer local save as default.
+11. **X-Ray never writes into Overlay Director.** A6 reads Overlay Director's library live; the hand-off is the `HYPERFRAMES_PLAYBOOK_{slug}.md` file. Only `/overlay-director import` changes Overlay Director, behind its own approval gate.

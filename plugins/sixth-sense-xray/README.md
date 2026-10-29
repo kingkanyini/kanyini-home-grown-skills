@@ -1,9 +1,9 @@
 # sixth-sense-xray
 
-> Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links
+> Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links, plus an optional hand-off to Overlay Director
 
 **Tier:** T9
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Command:** `/sixth-sense-xray`
 
 ## Usage

@@ -25,10 +25,28 @@ Each move file carries frontmatter: `status`, `version`, `move_type`, `affects`,
 | `reading-spotlight` | spotlight | held illumination box lighting one doc region while surround dims; walks block-by-block (screen-share) | base · promoted | screen-region | no |
 | `karaoke-caption` | caption-track | persistent word-by-word subtitle for Wispr-Flow dictation segments (opt-in, calm) | n/a (baseline track) | reserved bottom lane | no |
 | `comic-zoom-pan` | hero | **signature "wow" beat**: a 4-panel comic that scales + pans quadrant-to-quadrant over a 20-30s recap lull | hero | content-panel (frame-center, PIP-clear) | yes |
+| `two-tone-headline` | headline | a left-anchored statement: white headline with exactly one accent-color keyword (broadcast card skeleton) | promoted · hero | content-area (left third/half) | yes |
+| `callout-box` | callout | one figure, term or short phrase in a 1px teal box: "the thing to notice" | base · promoted | inline / content-area | no |
+| `bar-fill` | chart | a few values compared as bars growing left→right, counter snapping at each tip | promoted | content-area (left) | no |
+| `segmented-grid` | grid | cells lighting up in sequence to imply coverage/completion, paired with a hero number | promoted · hero | content-area (left) | no |
+| `slider-lane` | lane | one track per dimension with a knob gliding to a reading (a "scan" / eval beat) | promoted | content-area (left) | no |
+| `date-timeline` | timeline | dated nodes fading down a self-drawing vertical connector ("Preview → GA") | promoted | content-area (left, narrow) | no |
+| `pipeline-build` | pipeline | stage boxes revealing left→right for a sequence or fan-out, sealed by a status pill | promoted | content-area (left/lower) | no |
+| `draw-board` | draw-board | **marquee signature**: hand-drawn marker ink floating over live footage, as if drawn on glass | promoted · hero | full-frame overlay | yes |
+| `pip-reframe` | pip | the presenter picture-in-picture gliding between named presets between scenes (connective tissue, not a card) | n/a (persistent element) | the destination preset | no |
 
 > **Param-folds (VV#26 2026-06-01, "fold don't file"):** three Abdaal patterns ride existing moves as params, not new files —
 > **chapter-divider** → `full-frame-quote` (`kicker` + `icon`), **speech-bubble callout** → `top-pill` (`tether`),
 > **app-icon tool-tag** → `image-card` (`size: sticker` + `asset_ref`). See each move's Params table.
+
+## Proposed (from X-Ray imports)
+Draft moves learned from other creators' videos via `/overlay-director import`. Files live in
+`_proposed/` with `status: proposed`. **Not draftable**: the auto-draft and Variety Engine ignore
+them. Promote one only when a build needs it (`workflow.md` § Promoting a proposed move).
+
+| Proposed move (`move_id`) | `move_type` | New family? | Evidence (videos) | Needs rework? |
+|---------------------------|-------------|:-----------:|-------------------|---------------|
+| *(none yet)* | | | | |
 
 ## v1.1 backlog — coverage gaps (Visual Visionary #26, Milestone-2 review)
 Not blocking v1, but the 10 skew talking-head/insight; a full tutorial/ad set will want:

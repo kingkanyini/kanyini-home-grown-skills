@@ -17,7 +17,7 @@ Pick a mode (image, photo composite, scene stitch, video, diagram), choose a sty
 
 ## What it does
 
-- **Images** through Google Gemini: a free tier (about 500 a day) and a premium tier (up to 4K), with named style presets.
+- **Images** through Google Gemini: a standard tier (the cheapest model; Google has no free image tier, so billing must be on) and a premium tier (up to 4K), with named style presets.
 - **Photo composites:** keep a person exactly as they are and change the scene around them.
 - **Video B-roll** on two engines: Gemini Veo 3.1 (billed in dollars to your Google account) or the OpenArt MCP (17 models with sound and voices, clips up to 30s, billed in OpenArt credits).
 - **Diagram mode** for text-heavy graphics, built as HTML/SVG so labels never come out garbled.

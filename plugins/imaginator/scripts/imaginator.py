@@ -1,7 +1,7 @@
 """
 IMAGINATOR - Gemini Image Generator
 Generates images via Google's Gemini API.
-Free tier: gemini-2.5-flash-image (Nano Banana) - 500/day
+Standard ("free" flag): gemini-3.1-flash-lite-image - cheapest; Google has no free image tier, billing required (2.5-flash-image retired 2026-10-02)
 Premium: gemini-3.1-flash-image-preview (Nano Banana 2) - pay-per-image, up to 4K
 
 Usage:
@@ -363,7 +363,7 @@ def generate_image(prompt, model_tier, aspect_ratio, output_path, image_path=Non
 
     client = genai.Client(api_key=api_key)
 
-    model_id = "gemini-2.5-flash-image" if model_tier == "free" else "gemini-3.1-flash-image-preview"
+    model_id = "gemini-3.1-flash-lite-image" if model_tier == "free" else "gemini-3.1-flash-image-preview"
 
     # Normalize image_path to a list (None | str | list[str] all accepted)
     if image_path is None:

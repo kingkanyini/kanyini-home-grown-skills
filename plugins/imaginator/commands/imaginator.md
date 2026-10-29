@@ -58,7 +58,7 @@ Ask the user using AskUserQuestion:
 
 ### Step 2: Power Level
 Ask using AskUserQuestion:
-- **Free Mode** — Nano Banana (`gemini-2.5-flash-image`), 500/day, 1024x1024
+- **Free Mode** (cheapest, not actually free) — `gemini-3.1-flash-lite-image`, billing required. The old `gemini-2.5-flash-image` was retired 2026-10-02.
 - **Premium Mode** — Nano Banana 2 (`gemini-3.1-flash-image-preview`), pay-per-image, up to 4K
 
 If Premium, also ask aspect ratio (optional):

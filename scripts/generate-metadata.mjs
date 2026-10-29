@@ -321,6 +321,31 @@ const METADATA = {
     // Hand-authored README/CHANGELOG/preflight (2 commands, toolkit check that reads the key file).
     customDocs: true,
   },
+  // Wave 6 (2026-10-29) — image + video generation. Used by overlay-director, snapshot and
+  // soulcial-media-engine when installed; all of them work without it.
+  imaginator: {
+    tier: 'T9',
+    description: 'Generate images and videos - Gemini image presets, video B-roll on two engines (Gemini Veo 3.1 or 17 OpenArt models with sound, voices, and clips up to 30s), Canva integration',
+    requires: [],
+    recommends: [],
+    // The Gemini key may live in ~/.imaginator.env instead of an env var, and the OpenArt engine
+    // needs no key at all, so envVars stays empty; the hand-authored preflight checks both.
+    prereqs: {
+      mcps: [],
+      clis: ['python3'],
+      envVars: [],
+      services: [
+        'Google AI Studio (Gemini API key) for images and Veo video — first-run setup walks you through it',
+        'Python packages google-genai and Pillow (pip install google-genai pillow)',
+        'Optional: OpenArt MCP (mcp__openart__*) for the second video engine',
+        'Optional: Canva connector for Canva uploads',
+      ],
+    },
+    command: '/imaginator',
+    usage: '/imaginator or /imaginator "a misty cloud-forest sunrise, 16:9"',
+    // Hand-authored README/CHANGELOG/preflight (Python found under either name, key file check).
+    customDocs: true,
+  },
   // T8 Email/Copy
   'daily-email-digest': {
     tier: 'T8',
@@ -396,6 +421,7 @@ const METADATA = {
   },
   'overlay-director': {
     tier: 'T9',
+    version: '1.1.0',
     description: 'Turn any talking-head/screen-recording video into a counsel-reviewed animated-overlay HyperFrames build — auto-drafted from an accumulating playbook, tweaked by you, getting faster with every video',
     requires: [],
     recommends: [{ name: 'counsel-dispatch', version: '^1.0.0' }],
@@ -471,7 +497,8 @@ const METADATA = {
   },
   'sixth-sense-xray': {
     tier: 'T9',
-    description: 'Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links',
+    version: '1.1.0',
+    description: 'Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links, plus an optional hand-off to Overlay Director',
     requires: [],
     recommends: [{ name: 'sixth-sense', version: '^1.0.0' }],
     prereqs: {

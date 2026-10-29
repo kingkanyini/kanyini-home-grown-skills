@@ -34,6 +34,7 @@ Two orthogonal taxonomies — skill→skill graph tier AND external-prereq class
 | `funnel-hack-research` | ROOT | Standalone |
 | `funnel-translate` | ROOT | Service-only |
 | `headline-creator` | ROOT | Standalone |
+| `imaginator` | ROOT | Service-only |
 | `learn-eval` | ROOT | Standalone |
 | `magnetic-offer-blueprint` | ROOT | Standalone |
 | `obsidian-brain-install` | ROOT | Service-only |

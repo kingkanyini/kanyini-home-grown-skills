@@ -1,7 +1,7 @@
 {
   "name": "sixth-sense-xray",
   "version": "1.1.0",
-  "description": "Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links",
+  "description": "Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links, plus an optional hand-off to Overlay Director",
   "author": {
     "name": "Kanyini"
   },

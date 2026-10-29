@@ -1,6 +1,6 @@
 # Skills by Tier
 
-The marketplace ships 42 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
+The marketplace ships 43 skills across 9 tiers. Install order matters — install T1 Foundation first; later tiers may depend on earlier ones (see [dependency-graph.md](./dependency-graph.md)).
 
 ## T1 — Foundation / Memory
 
@@ -251,6 +251,13 @@ Scout + Study the Meta Ad Library: find long-running outlier ads, pick winners, 
 - **Requires:** _none_
 - **Recommends:** `ss-ad-generator`, `ad-copy-forge`
 
+### `imaginator`
+
+Generate images and videos - Gemini image presets, video B-roll on two engines (Gemini Veo 3.1 or 17 OpenArt models with sound, voices, and clips up to 30s), Canva integration
+
+- **Requires:** _none_
+- **Recommends:** _none_
+
 ### `overlay-director`
 
 Turn any talking-head/screen-recording video into a counsel-reviewed animated-overlay HyperFrames build — auto-drafted from an accumulating playbook, tweaked by you, getting faster with every video
@@ -288,7 +295,7 @@ Auto-cut video recordings — silence detection, A/V-synced cuts, dual-language 
 
 ### `sixth-sense-xray`
 
-Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links
+Visual reverse-engineering — analyzes video effects and produces interactive CapCut recreation playbooks with YouTube tutorial links, plus an optional hand-off to Overlay Director
 
 - **Requires:** _none_
 - **Recommends:** `sixth-sense`

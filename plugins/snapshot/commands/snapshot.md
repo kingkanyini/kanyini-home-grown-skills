@@ -320,7 +320,7 @@ Turn a fresh capture into a finished asset without leaving the skill. Routes: HT
 
 **Just-in-time, after a route is chosen (Phase 1) and consent given (Phase 2):**
 2. **>1 image** (PDF multi-photo) → first ask WHICH image using `AskUserQuestion`, labeling options with the manifest descriptions (e.g., "Photo_001 — elderly woman, garden"), not filenames.
-3. **Dependency check** for the chosen route: HTML needs Playwright MCP; Canva needs Canva MCP auth; Imaginator needs `python` + `GEMINI_API_KEY` + the separate Imaginator skill (`~/.claude/scripts/imaginator.py` or an installed `/imaginator`), which is NOT part of this marketplace. If neither exists, leave the Imaginator option out of the Phase 1 menu. If missing, say so plainly and offer a different route instead of failing mid-flow.
+3. **Dependency check** for the chosen route: HTML needs Playwright MCP; Canva needs Canva MCP auth; Imaginator needs `python` + `GEMINI_API_KEY` + the Imaginator skill (`imaginator` in this marketplace): its script is `~/.claude/scripts/imaginator.py`, or `scripts/imaginator.py` inside the installed plugin (Glob `~/.claude/plugins/**/imaginator/scripts/imaginator.py`), plus an installed `/imaginator` for the studio option. If neither the script nor `/imaginator` exists, leave the Imaginator option out of the Phase 1 menu. If missing, say so plainly and offer a different route instead of failing mid-flow.
 4. **Size guard (HTML route only):** if the source image's longest edge > 4096px, offer to downscale for the render.
 
 ### Phase 1 — Route menu
@@ -368,7 +368,7 @@ The Canva MCP has NO local-file upload (`upload-asset-from-url` / `import-design
 
 ### Route 3 — Imaginator (Gemini)
 
-> **Optional: requires the separate Imaginator skill (not in this marketplace).** Quick composite needs `~/.claude/scripts/imaginator.py`; the studio option needs an installed `/imaginator` skill. Check before offering each option; if neither is present, say so and offer HTML Overlay or Canva instead.
+> **Optional: requires the Imaginator skill (`imaginator` in this marketplace).** Quick composite needs its script, `~/.claude/scripts/imaginator.py`, or `scripts/imaginator.py` inside the installed plugin (Glob `~/.claude/plugins/**/imaginator/scripts/imaginator.py`); use that path in the command below; the studio option needs an installed `/imaginator` skill. Check before offering each option; if neither is present, say so and offer HTML Overlay or Canva instead.
 
 1. Run the **Phase 2 consent gate** first.
 2. `AskUserQuestion`: **Quick composite (run it now)** / **Open full Imaginator studio**.

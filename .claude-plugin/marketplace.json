@@ -107,6 +107,10 @@
       "source": "./plugins/webinar-dev-bot"
     },
     {
+      "name": "imaginator",
+      "source": "./plugins/imaginator"
+    },
+    {
       "name": "daily-email-digest",
       "source": "./plugins/daily-email-digest"
     },

@@ -14,7 +14,7 @@ builds. Hard stop-gates (`◆`) stay while the playbook is young.
 ## Dependencies
 > **Paths:** every `references/…` path in this file is relative to this plugin's root, `${CLAUDE_PLUGIN_ROOT}`. Run the engine as `node "${CLAUDE_PLUGIN_ROOT}/references/scripts/<script>.js" …` and `require()` helpers by that absolute path, never from the user's working directory. Files the skill writes back (`PRINCIPLES-INDEX.md`, `STANDARDS-INDEX.md`, `playbook/LEARNINGS.md`) also live there, and a plugin update replaces them: copy `LEARNINGS.md` out before updating.
 - **HyperFrames:** `npx hyperframes <transcribe|preview|render|lint|validate|inspect|init>` (v0.6.x).
-- **Imaginator (optional):** art via `~/.claude/scripts/imaginator.py` (Gemini) from the separate `/imaginator` skill, if installed. Not installed → skip generation and use images the user supplies or labeled placeholder cards (Phase 4).
+- **Imaginator (optional):** art via the Imaginator skill's Gemini script (`imaginator` in this marketplace), if installed: `~/.claude/scripts/imaginator.py`, or `scripts/imaginator.py` inside the installed plugin (Glob `~/.claude/plugins/**/imaginator/scripts/imaginator.py`). Not installed → skip generation and use images the user supplies or labeled placeholder cards (Phase 4).
 - **ffmpeg / ffprobe:** keyframe probe, densify, freeze-detect.
 - **Engine (this skill):** `references/scripts/*.js` — run with `node`. Pure, unit-tested.
 - **Knowledge (this skill):** `references/{moves-library,counsel,playbook,density-modes.md,PRINCIPLES-INDEX.md}`.
@@ -191,7 +191,7 @@ The **build reads `plan.json`, not the table.** Do not proceed until approved.
 
 ### Phase 4 — Generate assets
 For each moment with art, compose the Imaginator prompt + the **`moves-library/art-direction.md`
-Prompt Suffix** (shared look — one hand). Call `~/.claude/scripts/imaginator.py` if installed (not installed → ask the user for an image, else use the placeholder path below). On failure: **retry
+Prompt Suffix** (shared look — one hand). Call the Imaginator script (where it lives: see Dependencies) if installed (not installed → ask the user for an image, else use the placeholder path below). On failure: **retry
 once** → else emit a labeled placeholder card and carry a flag to the pre-render gate. **Never silently
 omit a planned card.** Captions render on the card's dark plate, never baked into art
 (`overlay-caption-legibility-plate`).

@@ -93,13 +93,16 @@ Some skills call out to managed services. You'll need accounts + auth for each.
 - **Do NOT run `pip install sixth-sense` — that name belongs to an unrelated PyPI package.** — used by `sixth-sense`
 - **First run: pip install -r requirements.txt && playwright install chromium** — used by `ad-decoder`
 - **Google AI Studio (Gemini API key)** — used by `webinar-dev-bot`
+- **Google AI Studio (Gemini API key) for images and Veo video — first-run setup walks you through it** — used by `imaginator`
 - **Instagram** — used by `voice-dna-extractor`
 - **Move-gate tooling: run npm install inside references/moves-library/_impl/gate/ before registering new moves** — used by `overlay-director`
 - **Obsidian desktop app — OPTIONAL, for the visual graph view. The memory layer is plain Markdown and works with or without Obsidian open.** — used by `obsidian-brain-install`
 - **Optional: Blotato account + mcp__blotato__* MCP, only for /post-scheduler-v2 publishing. Writing, grading, and repurposing work without it (help.blotato.com/claude-skills)** — used by `soulcial-posts-v2`
 - **Optional: Canva MCP for Canva export routes** — used by `snapshot`
+- **Optional: Canva connector for Canva uploads** — used by `imaginator`
 - **Optional: Imaginator art generation (Gemini) — without it, art cards become labeled placeholders** — used by `overlay-director`
 - **Optional: Imaginator edit route needs the separate Imaginator skill (not in this marketplace) plus python + GEMINI_API_KEY; without it the route is hidden** — used by `snapshot`
+- **Optional: OpenArt MCP (mcp__openart__*) for the second video engine** — used by `imaginator`
 - **Optional: Playwright MCP for website capture — without it, offer a different route** — used by `snapshot`
 - **Optional: Vercel CLI to publish the playbook; local save is always offered** — used by `sixth-sense-xray`
 - **Optional: Vercel CLI to publish the playbook; local save is offered** — used by `sixth-sense-sage`
@@ -109,6 +112,7 @@ Some skills call out to managed services. You'll need accounts + auth for each.
 - **Optional: yt-dlp for URL sources — a WebFetch fallback exists** — used by `sixth-sense-xray`
 - **Perplexity** — used by `perplexity-research`
 - **Python 3.13+. GPU optional: NVIDIA/CUDA accelerates transcription; CPU and Apple Silicon both work.** — used by `sixth-sense`
+- **Python packages google-genai and Pillow (pip install google-genai pillow)** — used by `imaginator`
 - **Telegram** — used by `five-min-texter`
 - **The sixth-sense preprocessing engine is a separate package and REQUIRED — this skill orchestrates, the engine does the ffmpeg/Whisper/scene work. Install: uv tool install git+https://github.com/kingkanyini/sixth-sense-engine** — used by `sixth-sense`
 - **Twilio** — used by `five-min-texter`

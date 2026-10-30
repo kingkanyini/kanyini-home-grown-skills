@@ -1,0 +1,24 @@
+{
+  "name": "imaginator",
+  "version": "1.0.0",
+  "description": "Generate images and videos - Gemini image presets, video B-roll on two engines (Gemini Veo 3.1 or 17 OpenArt models with sound, voices, and clips up to 30s), Canva integration",
+  "author": {
+    "name": "Kanyini"
+  },
+  "tier": "T9",
+  "requires": [],
+  "recommends": [],
+  "prereqs": {
+    "mcps": [],
+    "clis": [
+      "python3"
+    ],
+    "envVars": [],
+    "services": [
+      "Google AI Studio (Gemini API key) for images and Veo video — first-run setup walks you through it",
+      "Python packages google-genai and Pillow (pip install google-genai pillow)",
+      "Optional: OpenArt MCP (mcp__openart__*) for the second video engine",
+      "Optional: Canva connector for Canva uploads"
+    ]
+  }
+}

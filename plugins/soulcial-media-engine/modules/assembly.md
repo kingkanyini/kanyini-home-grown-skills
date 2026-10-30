@@ -547,7 +547,7 @@ build's actual content:
 
 | Skill | Fires when |
 |---|---|
-| `/imaginator` *(optional separate skill, not in this marketplace — offer only if installed, else suggest the user's own image tool)* | `30-day-calendar.html`'s `.gapbox` flags missing visual assets, or `scroll-posts.md` posts are tagged static/carousel and need cover images |
+| `/imaginator` *(optional: the `imaginator` skill in this marketplace — offer only if installed, else suggest the user's own image tool)* | `30-day-calendar.html`'s `.gapbox` flags missing visual assets, or `scroll-posts.md` posts are tagged static/carousel and need cover images |
 | `/vsl-activator` | `07-monetization.md`'s offer ladder points at a webinar/VSL-style conversion mechanism, or Phase 0's `intake_growth_goal` was "Direct sales" |
 | `/belief-shift-e-engine` | An email nurture/conversion layer is implied — `oo_prop_sources` includes a Propaganda Machine belief architecture, or `07-monetization.md` flags a need for offer follow-up beyond the social content itself |
 

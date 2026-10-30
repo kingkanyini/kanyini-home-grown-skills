@@ -68,6 +68,10 @@ const PHASE_1_SKILLS = [
 
   // Wave 5 (2026-10-23) — T7 Webinar/VSL.
   'webinar-dev-bot',
+
+  // Wave 6 (2026-10-29) — T9. Imaginator's Gemini script lives outside the skill folder in the
+  // owner's setup (~/.claude/scripts/imaginator.py); SKILL_EXTERNAL_FILES ships it in scripts/.
+  'imaginator',
 ];
 
 // --only=a,b,c rebuilds just those skills. A full run regenerates every published skill from
@@ -115,6 +119,18 @@ const SKILL_ALLOWLIST = {
     /^scripts\/(requirements\.txt|sample-slides\.json)$/,
     /^scripts\/sample-images\/(portrait-sunrise|square-calm|wide-horizon)\.jpg$/,
   ],
+  imaginator: [
+    /^\.claude-plugin\/plugin\.json$/,
+    /^(README|CHANGELOG)\.md$/,
+    /^preflight\.mjs$/,
+    /^commands\/imaginator\.md$/,
+  ],
+};
+
+// Files that live outside the skill folder in the owner's setup but ship inside the plugin.
+// Copied after copy + prune, so phase 3 edits, find-replace and the leak audit all cover them.
+const SKILL_EXTERNAL_FILES = {
+  imaginator: [{ from: path.join(os.homedir(), '.claude', 'scripts', 'imaginator.py'), to: 'scripts/imaginator.py' }],
 };
 function isExcluded(skill, rel, isFile = false) {
   if ((SKILL_EXCLUDES[skill] || []).some(re => re.test(rel))) return true;
@@ -395,6 +411,43 @@ const FIND_REPLACE = [
 
 // §3 sanitization findings — special-case skill-specific edits.
 // Each entry: { skill, file (relative to skill root), action: { type, ... } }
+// imaginator: the owner uses a private secrets helper (~/.claude/lib/secrets/) that doesn't ship.
+// Same rules (key typed in the user's own terminal, never in chat, never in .bashrc), plain shell.
+const IMAGINATOR_KEY_SETUP = [
+  '4. **DO NOT ask them to paste the key into chat.** Have them save it from a regular terminal outside Claude Code (Git Bash on Windows) into a private file their shell loads:',
+  '   ```bash',
+  '   # In a regular terminal (NOT the Claude Code chat):',
+  '   read -rsp "Paste your Gemini API key, then press Enter: " k; echo',
+  "   printf 'export GEMINI_API_KEY=%s\\n' \"$k\" > ~/.imaginator.env; unset k",
+  '   chmod 600 ~/.imaginator.env',
+  "   grep -qxF 'source ~/.imaginator.env' ~/.bashrc 2>/dev/null || echo 'source ~/.imaginator.env' >> ~/.bashrc",
+  '   ```',
+  '   The key is typed into THEIR terminal, never shown on screen, and never written into `.bashrc` itself. Re-running it replaces the old key.',
+  '5. Have them restart their shell (close terminal, reopen Claude Code) so the new env loads.',
+  '6. Verify without printing the key:',
+  '   ```bash',
+  '   source ~/.bashrc 2>/dev/null; [ -n "$GEMINI_API_KEY" ] && echo "GEMINI_API_KEY is set (${#GEMINI_API_KEY} chars)" || echo "GEMINI_API_KEY is missing"',
+  '   ```',
+  '   A Google AI Studio key is 39 characters and starts with `AIza`. If it says "missing", the file wasn\'t written or the shell didn\'t reload.',
+  '7. Run a test generation before proceeding.',
+  '',
+  '**Why this pattern:**',
+  '- `~/.imaginator.env` lives OUTSIDE any git repo → never accidentally committed',
+  '- `chmod 600` restricts read access to the owner only',
+  '- `.bashrc` contains only the source line, not the secret itself → safe to version-control',
+  '- If the key is ever leaked, rotate it in Google AI Studio and re-run step 4 to update `~/.imaginator.env`',
+].join('\n');
+// Python needs real paths (it never expands `~`), and shell state doesn't carry between Bash calls,
+// so the published command resolves the home and gallery folders once and writes them literally.
+const IMAGINATOR_PATHS_NOTE = [
+  '**Resolve two paths once per session**, then write them literally wherever `<HOME>` and `<GALLERY>` appear in this skill (Python never expands `~`, and shell variables don\'t carry between commands):',
+  '- `<HOME>` = the output of `cygpath -m "$HOME" 2>/dev/null || echo "$HOME"` (on Windows this is the drive-letter form with forward slashes; macOS and Linux give `/Users/<name>` or `/home/<name>`).',
+  '- `<GALLERY>` = `<HOME>/OneDrive/Desktop/imaginator` if `<HOME>/OneDrive/Desktop` exists, else `<HOME>/Desktop/imaginator`.',
+  '- The commands below say `python`. If that isn\'t found (common on macOS and Linux), use `python3`. `node "${CLAUDE_PLUGIN_ROOT}/preflight.mjs"` shows which name works.',
+  '',
+  '',
+].join('\n');
+
 const SPECIAL_CASE_EDITS = [
   { skill: 'soulcial-media-engine', file: 'modules/quality-gate.md', action: { type: 'replace', find: /(## Step 5 — XP logging \(fire-and-forget, never blocks\)\r?\n\r?\n)(?!\*\*Guard:\*\*)/, replace: '$1**Guard:** run this step only if `~/.claude/scripts/log-counsel-xp.js` exists. If the helper is not installed, skip Step 5 entirely and silently (no failure notes, no confirmation line), per the command file FALLBACKS table.\n\n' }, note: 'W5R2 PHANTOM: unguarded owner-only XP helper fired 8 failing calls per gate.' },
   { skill: 'soulcial-media-engine', file: 'modules/quality-gate.md', action: { type: 'replace', find: /via `log-counsel-xp\.js`, fire-and-forget \(see Step 4\)/, replace: 'via `log-counsel-xp.js` when installed, fire-and-forget (see Step 5)' }, note: 'W5R2 wrong step pointer + install guard.' },
@@ -403,7 +456,7 @@ const SPECIAL_CASE_EDITS = [
   //    source and the published form where they differ. soulcial-posts-v2's SKILL.md paths are handled by
   //    phase 4c; its log-scan command by the FIND_REPLACE rule above the generic scripts/ rule. ──
   { skill: "soulcial-media-engine", file: "modules/quality-gate.md", action: { type: 'replace', find: /\(stat sheet:\r?\n> `(?:<your-vault-path>|C:\\Users\\onebe\\Dropbox\\The Sanctuary\\Obsidian\\ClaudeBrain)\\counsel\\members\\\{slug\}\.md`\r?\n> — this vault path is the canonical source; Read it directly as a normal filesystem\r?\n> path, NOT via MCP — load it first\)\./g, replace: "(stat sheet: `{stat_sheet_path}` — the orchestrator fills this with the first that exists of\n> the user's vault `counsel/members/{slug}.md` or `~/.claude/references/counsel/members/{slug}.md`,\n> else `none`. Read it directly as a normal filesystem path, NOT via MCP. If `none` or unreadable,\n> review from the member's public body of work and say no stat sheet was loaded)." }, note: "W5R1 PHANTOM: all 8 subagents were told to load a stat sheet from an unreadable placeholder path, with no fallback." },
-  { skill: "soulcial-media-engine", file: "modules/assembly.md", action: { type: 'replace', find: /\| `\/imaginator` \| (`30-day-calendar\.html`'s `\.gapbox` flags missing visual assets, or `scroll-posts\.md` posts are tagged static\/carousel and need cover images) \|/g, replace: "| `/imaginator` *(optional separate skill, not in this marketplace — offer only if installed, else suggest the user's own image tool)* | $1 |" }, note: "W5R1 CONDUIT: the Step 6.1 handoff offered a skill that does not ship, with no guard." },
+  { skill: "soulcial-media-engine", file: "modules/assembly.md", action: { type: 'replace', find: /\| `\/imaginator` \| (`30-day-calendar\.html`'s `\.gapbox` flags missing visual assets, or `scroll-posts\.md` posts are tagged static\/carousel and need cover images) \|/g, replace: "| `/imaginator` *(optional: the `imaginator` skill in this marketplace — offer only if installed, else suggest the user's own image tool)* | $1 |" }, note: "W5R1 CONDUIT: the Step 6.1 handoff offered a skill that does not ship, with no guard." },
   { skill: "soulcial-media-engine", file: "commands/soulcial-media-engine.md", action: { type: 'replace', find: /Step 6\) per `~\/\.claude\/references\/principles\/client-data-boundary-sentinel\.md`\./g, replace: "Step 6.2, which holds the canonical sentinel content)." }, note: "W5R1 Dangling pointer to an owner-only principle file; the sentinel content ships inline in phase-0-intake.md." },
   { skill: "soulcial-media-engine", file: "modules/phase-0-intake.md", action: { type: 'replace', find: /\(per\r?\n`principles\/client-data-boundary-sentinel`\)\./g, replace: "(canonical content below)." }, note: "W5R1 Dangling pointer to an owner-only vault principle." },
   { skill: "soulcial-media-engine", file: "modules/phase-0-intake.md", action: { type: 'replace', find: /and eligible for normal vault promotion per the principle's "SHOULD NOT drop" guidance\./g, replace: "and eligible for normal handling; the sentinel is for client work only." }, note: "W5R1 Dangling pointer to an owner-only vault principle." },
@@ -519,8 +572,8 @@ const SPECIAL_CASE_EDITS = [
     [/a direct instance of the CLAUDE\.md Fidelity Principle/g, "a direct instance of the Fidelity Principle: re-derive downstream data from the transformed file"],
   ].map(([find, replace]) => ({ skill, file: 'references/gold-standard-editor-cut-map.md', action: { type: 'replace', find, replace }, note: "W4R3 cut-map: restore an operative pointer erased by the wikilink scrub" }))),
   // ── Wave 4 round 2 (NSA Elite, 2026-10-23): tested per-file rules ──
-  { skill: "snapshot", file: "commands/snapshot.md", action: { type: 'replace', find: /Imaginator needs `python` \+ `GEMINI_API_KEY`\./g, replace: "Imaginator needs `python` + `GEMINI_API_KEY` + the separate Imaginator skill (`~/.claude/scripts/imaginator.py` or an installed `/imaginator`), which is NOT part of this marketplace. If neither exists, leave the Imaginator option out of the Phase 1 menu." }, note: "W4R2 PHANTOM: the dependency check misses the owner-only script, so the route fails partway through on every install that lacks Imaginator." },
-  { skill: "snapshot", file: "commands/snapshot.md", action: { type: 'replace', find: /### Route 3 — Imaginator \(Gemini\)\r?\n/g, replace: "### Route 3 — Imaginator (Gemini)\n\n> **Optional: requires the separate Imaginator skill (not in this marketplace).** Quick composite needs `~/.claude/scripts/imaginator.py`; the studio option needs an installed `/imaginator` skill. Check before offering each option; if neither is present, say so and offer HTML Overlay or Canva instead.\n" }, note: "W4R2 CONDUIT: guards the invocation of a skill and script that are not in the marketplace (~/.claude/scripts/imaginator.py, /imaginator) as optio" },
+  { skill: "snapshot", file: "commands/snapshot.md", action: { type: 'replace', find: /Imaginator needs `python` \+ `GEMINI_API_KEY`\./g, replace: "Imaginator needs `python` + `GEMINI_API_KEY` + the Imaginator skill (`imaginator` in this marketplace): its script is `~/.claude/scripts/imaginator.py`, or `scripts/imaginator.py` inside the installed plugin (Glob `~/.claude/plugins/**/imaginator/scripts/imaginator.py`), plus an installed `/imaginator` for the studio option. If neither the script nor `/imaginator` exists, leave the Imaginator option out of the Phase 1 menu." }, note: "W4R2 PHANTOM: the dependency check misses the owner-only script, so the route fails partway through on every install that lacks Imaginator." },
+  { skill: "snapshot", file: "commands/snapshot.md", action: { type: 'replace', find: /### Route 3 — Imaginator \(Gemini\)\r?\n/g, replace: "### Route 3 — Imaginator (Gemini)\n\n> **Optional: requires the Imaginator skill (`imaginator` in this marketplace).** Quick composite needs its script, `~/.claude/scripts/imaginator.py`, or `scripts/imaginator.py` inside the installed plugin (Glob `~/.claude/plugins/**/imaginator/scripts/imaginator.py`); use that path in the command below; the studio option needs an installed `/imaginator` skill. Check before offering each option; if neither is present, say so and offer HTML Overlay or Canva instead.\n" }, note: "W4R2 CONDUIT: guards the invocation of a skill and script that are not in the marketplace (~/.claude/scripts/imaginator.py, /imaginator) as optio" },
   { skill: "snapshot", file: "commands/snapshot.md", action: { type: 'replace', find: /~\/OneDrive\/Desktop\/snapshot\//g, replace: "~/Desktop/snapshot/" }, note: "W4R2 CONDUIT: the owner's OneDrive layout does not carry over to macOS/Linux or to Windows users without OneDrive." },
   { skill: "sixth-sense-scissors", file: "commands/sixth-sense-scissors.md", action: { type: 'replace', find: / RPG style per CLAUDE\.md\./g, replace: " RPG-style framing is optional." }, note: "W4R2 Points at the owner's private CLAUDE.md, which no installer has." },
   { skill: "sixth-sense-scissors", file: "commands/sixth-sense-scissors.md", action: { type: 'replace', find: /`gous\/(scissors-half-second-tail-buffer|ffmpeg-fast-seek-keyframe-snap)\.md`/g, replace: "`references/$1.md`" }, note: "W4R2 The vault gous/ paths are broken pointers; both files ship under references/ (2 matches)." },
@@ -660,8 +713,8 @@ const SPECIAL_CASE_EDITS = [
   { skill: "web-dev-bot", file: "commands/web-dev-bot.md", action: { type: 'replace', find: /(A library of structural starting points stored at `~\/\.claude\/projects\/web-dev-bot\/templates\/`)\./, replace: "$1 (if present; the folder starts empty on a fresh install, so when a template file is missing, scaffold it on the fly from the Structure column below and save it there for next time)." }, note: "W4R2 PHANTOM: the 7 advertised starter templates ship nowhere, so BUILD/QUICK would offer files that don't exist. The guard keeps the feature by " },
   { skill: "web-dev-bot", file: "commands/web-dev-bot.md", action: { type: 'replace', find: /WEB DEV BOT v2 -- Select Your Mission( +)\|/, replace: "WEB DEV BOT -- Select Your Mission$1   |" }, note: "W4R2 ARCHITECT version mismatch: the banner says v2 while plugin.json/METADATA/CHANGELOG say 1.0.0. The smallest fix drops the label, and the ext" },
   { skill: "web-dev-bot", file: "phases/phase-1d-claude-design-import.md", action: { type: 'replace', find: /`~\/\.claude\/references\/design-library\/` OR explicit path/, replace: "`~/.claude/references/design-library/` (written by the separate `/design-decoder` skill, if installed) OR explicit path" }, note: "W4R2 CONDUIT: design-library is produced by /design-decoder, which is not in the marketplace; marked optional (the explicit --design-source path " },
-  { skill: "overlay-director", file: "commands/overlay-director.md", action: { type: 'replace', find: /- \*\*Imaginator:\*\* art via `~\/\.claude\/scripts\/imaginator\.py` \(Gemini\); see `\/imaginator`\./, replace: "- **Imaginator (optional):** art via `~/.claude/scripts/imaginator.py` (Gemini) from the separate `/imaginator` skill, if installed. Not installed → skip generation and use images the user supplies or labeled placeholder cards (Phase 4)." }, note: "W4R2 CONDUIT: the owner-only script and a skill not in the marketplace are listed as hard dependencies; marked optional with a defined fallback." },
-  { skill: "overlay-director", file: "commands/overlay-director.md", action: { type: 'replace', find: /Call `~\/\.claude\/scripts\/imaginator\.py`\. On failure:/, replace: "Call `~/.claude/scripts/imaginator.py` if installed (not installed → ask the user for an image, else use the placeholder path below). On failure:" }, note: "W4R2 PHANTOM: Phase 4 would retry a nonexistent script for every card; the guard routes straight to user art or the existing placeholder path." },
+  { skill: "overlay-director", file: "commands/overlay-director.md", action: { type: 'replace', find: /- \*\*Imaginator:\*\* art via `~\/\.claude\/scripts\/imaginator\.py` \(Gemini\); see `\/imaginator`\./, replace: "- **Imaginator (optional):** art via the Imaginator skill's Gemini script (`imaginator` in this marketplace), if installed: `~/.claude/scripts/imaginator.py`, or `scripts/imaginator.py` inside the installed plugin (Glob `~/.claude/plugins/**/imaginator/scripts/imaginator.py`). Not installed → skip generation and use images the user supplies or labeled placeholder cards (Phase 4)." }, note: "W4R2 CONDUIT: the owner-only script and a skill not in the marketplace are listed as hard dependencies; marked optional with a defined fallback." },
+  { skill: "overlay-director", file: "commands/overlay-director.md", action: { type: 'replace', find: /Call `~\/\.claude\/scripts\/imaginator\.py`\. On failure:/, replace: "Call the Imaginator script (where it lives: see Dependencies) if installed (not installed → ask the user for an image, else use the placeholder path below). On failure:" }, note: "W4R2 PHANTOM: Phase 4 would retry a nonexistent script for every card; the guard routes straight to user art or the existing placeholder path." },
   { skill: "overlay-director", file: "commands/overlay-director.md", action: { type: 'replace', find: /## Dependencies\r?\n/, replace: "## Dependencies\n> **Paths:** every `references/…` path in this file is relative to this plugin's root, `${CLAUDE_PLUGIN_ROOT}`. Run the engine as `node \"${CLAUDE_PLUGIN_ROOT}/references/scripts/<script>.js\" …` and `require()` helpers by that absolute path, never from the user's working directory. Files the skill writes back (`PRINCIPLES-INDEX.md`, `STANDARDS-INDEX.md`, `playbook/LEARNINGS.md`) also live there, and a plugin update replaces them: copy `LEARNINGS.md` out before updating.\n" }, note: "W4R2 PHANTOM: all ~14 engine invocations (node references/scripts/X.js, require('./references/scripts/X.js')) are cwd-relative and fail from the " },
   { skill: "overlay-director", file: "references/STANDARDS-INDEX.md", action: { type: 'replace', find: /\*\*\[\[(animation|color|entrance|layout|timing|writing)\]\]\*\*/g, replace: "**`$1`**" }, note: "W4R2 ARCHITECT regression: the global wikilink scrub turned all 6 standard names into '<your-related-note>', so the catalog can't be read. These " },
   { skill: "overlay-director", file: "references/standards/_index.md", action: { type: 'replace', find: /\*\*\[\[(animation|color|entrance|layout|timing|writing)\]\]\*\*/g, replace: "**`$1`**" }, note: "W4R2 Same regression in the human catalog table: the Standard column is 6x '<your-related-note>'. Matches RAW source only (6 matches); phase-4 si" },
@@ -905,6 +958,33 @@ const SPECIAL_CASE_EDITS = [
     ['soulcial-posts-v2', 'scripts/verify-compliance-arm.js', /const spine = path\.join\(os\.homedir\(\), '\.claude', 'references', 'social-spine'\);/, "const spine = path.join(__dirname, '..', 'references', 'social-spine');"],
     ...['soulcial-media-engine|references/soul-lens-rubric.md', 'soulcial-posts-v2|references/social-spine/soul-lens-rubric.md']
       .map(k => [...k.split('|'), /\(VISA \/ YOUniverse \/ IR-Station \/ GOUs\) \| Off — no Kanyini-specific framework terms/, '(your named frameworks) | Off — no signature framework terms']),
+  ]),
+  // ── Wave 6 (2026-10-29) — imaginator. Owner paths, the owner's secrets helper, the OpenArt
+  // account line and client names in preset comments. Replacements are functions so `$` in
+  // shell text is never read as a replace pattern.
+  ...wave4Edits([
+    ['imaginator', 'commands/imaginator.md', /through a Python script at `~\/\.claude\/scripts\/imaginator\.py`\./, () => 'through a Python script bundled with this plugin, `${CLAUDE_PLUGIN_ROOT}/scripts/imaginator.py`.'],
+    ['imaginator', 'commands/imaginator.md', /python ~\/\.claude\/scripts\/imaginator\.py/g, () => 'python "${CLAUDE_PLUGIN_ROOT}/scripts/imaginator.py"'],
+    ['imaginator', 'commands/imaginator.md', /4\. \*\*DO NOT ask them to paste the key into chat\.\*\*[\s\S]*?update only `~\/\.claude-secrets\.env`/, () => IMAGINATOR_KEY_SETUP],
+    ['imaginator', 'commands/imaginator.md', /\*\*Account:\*\* onebenson@gmail\.com, Starter plan\. Credits are shared with anything else Kanyini makes on openart\.ai, so always read the live balance\./, () => "**Account:** the user's own OpenArt login. Credits are shared with anything else they make on openart.ai, so always read the live balance."],
+    ['imaginator', 'commands/imaginator.md', /Create both directories if they don't exist\. Auto-generate filename:/, () => IMAGINATOR_PATHS_NOTE + "Create both directories if they don't exist. Auto-generate filename:"],
+    ['imaginator', 'commands/imaginator.md', /C:\/Users\/onebe\/OneDrive\/Desktop\/imaginator\//g, () => '<GALLERY>/'],
+    ['imaginator', 'commands/imaginator.md', /C:\/Users\/onebe\/\.claude\/projects\/imaginator\//g, () => '<HOME>/.claude/projects/imaginator/'],
+    ['imaginator', 'commands/imaginator.md', /~\/OneDrive\/Desktop\/imaginator\//g, () => '<GALLERY>/'],
+    ['imaginator', 'commands/imaginator.md', /\*\*IMPORTANT — Windows paths:\*\* (?:Always use|Use) `C:\/Users\/onebe\/` format(?: in Python)?, NEVER `\/c\/Users\/onebe\/`\./g, () => '**IMPORTANT — Windows paths:** Python needs drive-letter Windows paths with forward slashes (`<drive>:/…`), never the Git Bash form (`/c/…`). `<HOME>` from Step 5 is already in the right form.'],
+    ['imaginator', 'commands/imaginator.md', /- Desktop path on this machine: `C:\/Users\/onebe\/OneDrive\/Desktop\/`/, () => '- Desktop gallery on this machine: `<GALLERY>` (Step 5)'],
+    ['imaginator', 'scripts/imaginator.py', /# HUMAN IMAGES — GLOBAL RULE \(2026-07-17, Kanyini directive\)/, () => '# HUMAN IMAGES — GLOBAL RULE (2026-07-17)'],
+    ['imaginator', 'scripts/imaginator.py', /\(The Gut Center condition-page hero recipe, 2026-06-30\)/, () => '(condition-page hero recipe, 2026-06-30)'],
+    ['imaginator', 'scripts/imaginator.py', /Built from the leaky-gut "boat arrival" keeper\./, () => 'Built from a proven hero keeper.'],
+    ['imaginator', 'scripts/imaginator.py', /\(learned: image-gen-preset-medium-contract, TGC Post 7\)/, () => '(learned: image-gen-preset-medium-contract)'],
+    ['imaginator', 'scripts/imaginator.py', /TGC default for IG people-shots;/, () => 'Default for IG people-shots;'],
+    ['imaginator', 'scripts/imaginator.py', /\(TGC people-shot upgrade, 2026-07-17\)/, () => '(people-shot upgrade, 2026-07-17)'],
+    ['imaginator', 'scripts/imaginator.py', /TGC default going forward for/, () => 'Default going forward for'],
+    ['imaginator', 'scripts/imaginator.py', /\(Kanyini AASM brand version of Comic Realism\)/, () => '(warm earthy version of Comic Realism)'],
+    ['imaginator', 'scripts/imaginator.py', /in the warm AASM palette/, () => 'in a warm earthy palette'],
+    ['imaginator', 'scripts/imaginator.py', /Used for the Beyond Boundaries webinar deck/, () => 'Used for a webinar deck'],
+    ['imaginator', 'scripts/imaginator.py', /warm earthy AASM tones/, () => 'warm earthy tones'],
+    ['imaginator', 'scripts/imaginator.py', /\(Mara \/ TGC founder photos, 2026-07-21\)/, () => '(founder photos, 2026-07-21)'],
   ]),
 ];
 
@@ -1198,6 +1278,16 @@ async function applyOverrides(skill, result) {
   }
   await walk(root);
   if (REFRESH_OVERRIDE_HASHES) await fs.writeFile(hashesPath, JSON.stringify(seen, null, 2) + '\n');
+}
+
+async function vendorExternalFiles(skill, result) {
+  for (const { from, to } of SKILL_EXTERNAL_FILES[skill] || []) {
+    if (!await exists(from)) throw new Error(`[${skill}] external source missing: ${from}`);
+    const dst = path.join(DEST_ROOT, skill, to);
+    await fs.mkdir(path.dirname(dst), { recursive: true });
+    await fs.copyFile(from, dst);
+    result.actions.push({ type: 'vendor-external', file: to });
+  }
 }
 
 // Copy the publish-safe spine into the skill. Runs before phase 4, so find-replace and the
@@ -1560,6 +1650,7 @@ async function main() {
       if (SOCIAL_SPINE_SKILLS.includes(skill) && result.status === 'pruned') {
         await vendorSocialSpine(skill, result);
       }
+      if (result.status === 'pruned') await vendorExternalFiles(skill, result);
       if (result.status === 'pruned') await applyOverrides(skill, result);
       prune.push(result);
       console.log(`  ✓ ${skill}: ${result.status} (${result.actions.length} actions)`);

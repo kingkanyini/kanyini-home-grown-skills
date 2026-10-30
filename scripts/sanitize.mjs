@@ -986,6 +986,28 @@ const SPECIAL_CASE_EDITS = [
     ['imaginator', 'scripts/imaginator.py', /warm earthy AASM tones/, () => 'warm earthy tones'],
     ['imaginator', 'scripts/imaginator.py', /\(Mara \/ TGC founder photos, 2026-07-21\)/, () => '(founder photos, 2026-07-21)'],
   ]),
+  // W6 overlay-director 1.2.0: the first X-Ray import was a client's VSL. The import evidence log and
+  // the per-video style profile name the client and its brand; they stay owner-only. The learnings
+  // that ship (VSL type defaults, proposed moves) keep their structure with the source anonymized and
+  // the brand palette replaced by colour roles. LEAK_TOKENS carries the client names as the backstop.
+  { skill: 'overlay-director', file: 'references/playbook/WATCHLIST.md', action: { type: 'delete' }, note: 'W6 client data: import evidence log names the source client video and brand.' },
+  { skill: 'overlay-director', file: 'references/playbook/styles/detonate-intro-396s.md', action: { type: 'delete' }, note: 'W6 client data: per-video style profile of a client VSL.' },
+  ...[
+    'references/playbook/types/vsl.md',
+    'references/moves-library/_index.md',
+    'references/moves-library/_proposed/day-tile-grid.md',
+    'references/moves-library/_proposed/document-highlight-sweep.md',
+    'references/moves-library/_proposed/scrolling-agenda-column.md',
+    'references/moves-library/_proposed/scrolling-day-timeline.md',
+  ].flatMap((file) => [
+    [/HYPERFRAMES_PLAYBOOK_detonate-intro\.md/g, 'HYPERFRAMES_PLAYBOOK_example-vsl.md'],
+    [/detonate-intro-396s/g, 'example-vsl-01'],
+    [/crimson #[0-9A-Fa-f]{6}/g, 'accent-colour'],
+    [/cream #[0-9A-Fa-f]{6}/g, 'light-neutral'],
+    [/\bcrimson\b/g, 'accent'],
+    [/\bcream\b/g, 'light-neutral'],
+    [/VIP \/ non-VIP/g, 'premium / standard'],
+  ].map(([find, replace]) => ({ skill: 'overlay-director', file, action: { type: 'replace', find, replace }, note: 'W6 client data: anonymize the source VSL and its brand palette.' }))),
 ];
 
 function wave4Edits(rows) {
@@ -1017,6 +1039,7 @@ const LEAK_TOKENS = [
   { name: 'kanyini (lowercase)', pattern: /\bkanyini\b(?!-home-grown-skills)/g },  // marketplace name is public on purpose
   { name: 'kingkanyini (GitHub handle)', pattern: /kingkanyini(?!\/sixth-sense-engine)/gi },
   { name: 'Wave 4 client tokens', pattern: /Luna Lauren|\bLauren\b|\bMiriam\b|\bNess\b|Sacral Uproar|\bKayla\b|\bTGC\b|\bAurea\b|Warrior Sanctuary|Sommeremission/g },
+  { name: 'Wave 6 client tokens', pattern: /detonate|otherside/gi },
   { name: 'Chris Benson', pattern: /Chris Benson/g },
   { name: 'onebenson email/handle', pattern: /onebenson/g },
   // Path-adjacent Dropbox only (i.e., Dropbox followed by slash + capital — heuristic for personal vault paths)

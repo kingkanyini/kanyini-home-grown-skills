@@ -40,6 +40,7 @@ const LEAK_TOKENS = [
   // The public marketplace name ("kanyini-home-grown-skills") is required in install commands.
   { name: 'kanyini (lowercase)', pattern: /\bkanyini\b(?!-home-grown-skills)/g },
   { name: 'kingkanyini (GitHub handle)', pattern: /kingkanyini(?!\/sixth-sense-engine)/gi },
+  { name: 'Wave 6 client tokens', pattern: /detonate|otherside/gi },
   { name: 'Wave 4 client tokens', pattern: /Luna Lauren|\bLauren\b|\bMiriam\b|\bNess\b|Sacral Uproar|\bKayla\b|\bTGC\b|\bAurea\b|Warrior Sanctuary|Sommeremission/g },
   { name: 'Chris/Christapher Benson', pattern: /Christapher Benson|Chris Benson/g },
   { name: 'christapher (handle/standalone)', pattern: /\bchristapher\b/gi },
